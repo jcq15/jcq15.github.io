@@ -12,6 +12,8 @@ permalink: /about/
 
 来自公众号“精神病人欢乐多”
 
+![](../images/gzh.jpg)
+
 内容基本一样，这里会保留公众号被和谐的东西
 
 联系/商业合作：mail.shazi@foxmail.com
