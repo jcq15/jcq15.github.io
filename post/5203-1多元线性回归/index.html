@@ -1,0 +1,518 @@
+<!doctype html><html lang=zh-cn dir=content/zh-cn>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
+<title> 线性回归（一）-多元线性回归 - 沙雕园 </title>
+<meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享">
+<meta name=author content="精神病人">
+<meta property="og:title" content="线性回归（一）-多元线性回归">
+<meta property="og:site_name" content="沙雕园">
+<meta property="og:image" content="/img/author.jpg">
+<meta name=title content="线性回归（一）-多元线性回归 - 沙雕园">
+<meta name=description content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
+<link rel="shortcut icon" href=/img/favicon.ico>
+<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
+<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
+<link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet>
+<link href=/css/main.css rel=stylesheet type=text/css>
+<link href=/css/syntax.css rel=stylesheet type=text/css>
+</head>
+<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
+<div class="container one-collumn sidebar-position-left page-home">
+<div class=headband></div>
+<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
+<div class=header-inner> <div class=site-brand-container>
+<div class=site-nav-toggle>
+<div class=toggle role=button style=opacity:1;top:0>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+</div>
+</div>
+<div class=site-meta>
+<div class=custom-logo-site-title>
+<a href=/ class=brand rel=start>
+<span class=logo-line-before><i></i></span>
+<span class=site-title>沙雕园</span>
+<span class=logo-line-after><i></i></span>
+</a>
+</div>
+<p class=site-subtitle>沙雕使人进步。</p>
+</div>
+<div class=site-nav-right>
+<div class="toggle popup-trigger" style=opacity:1;top:0>
+<i class="fa fa-search fa-fw fa-lg"></i>
+</div>
+</div>
+</div>
+<nav class=site-nav>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a href=/ rel=section>
+<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页
+</a>
+</li>
+<li class="menu-item menu-item-active">
+<a href=/post rel=section>
+<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档
+</a>
+</li>
+<li class=menu-item>
+<a href=/about.html rel=section>
+<i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我
+</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> 搜索</a>
+</li>
+</ul>
+<div class=site-search>
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class=search-icon><i class="fa fa-search"></i> </span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
+<div class=local-search-input-wrapper>
+<input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
+</div>
+</div>
+<div id=local-search-result></div>
+</div>
+</div>
+</nav> </div>
+</header>
+<main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=/post/5203-1%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/ itemprop=url>
+线性回归（一）-多元线性回归
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-pushdate>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-08-15">
+2021-08-15
+</time>
+</span>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>3198 字</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>7分钟</span>
+</span>
+<span id=/post/5203-1%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/ class="leancloud_visitors post-visitor" data-flag-title=线性回归（一）-多元线性回归>
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>阅读次数：</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>这节的内容是整个回归分析的核心，后面几节看似是不同的模型，其实都可以转化成 MLE.</p>
+<p>这一系列的文章里面很多乱七八糟的矩阵公式，看不懂很正常，多动手就好了。按照文中的思路把每个公式都亲自推导一遍，就能写出来比这个更完善的教程。</p>
+<h2 id=基本模型>基本模型</h2>
+<p>多元线性回归（MLE）模型是
+$$
+\mathbf{Y} = \mathbf{X}\boldsymbol{\beta}+\boldsymbol\varepsilon.
+$$</p>
+<p>各矩阵大小为：</p>
+<ul>
+<li>$\mathbf{Y}: n\times1$</li>
+<li>$\mathbf{X}: n\times p$</li>
+<li>$\boldsymbol\beta: p\times n$</li>
+<li>$\boldsymbol\varepsilon:p\times n$</li>
+</ul>
+<p>误差项满足 $\boldsymbol\varepsilon\sim N(0, \sigma^2\mathbf{I})$.</p>
+<p>这里面有两个参数：$\boldsymbol{\beta}$ 和 $\sigma^2$。</p>
+<p>注意参数的个数，$\boldsymbol\beta$ 的维度是 $p$，意味着有 $p-1$ 个解释变量和 $1$ 个截距项。可能有的教材习惯把解释变量个数记作 $p$，此时 $\boldsymbol\beta$ 就是 $p+1$ 维。</p>
+<h2 id=参数估计>参数估计</h2>
+<h3 id=hatboldsymbolbeta>$\hat{\boldsymbol\beta}$</h3>
+<p>回忆<a href=https://zh.wikipedia.org/wiki/%E9%AB%98%E6%96%AF-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%AE%9A%E7%90%86 target=_blank rel=noopener><strong>高斯－马尔可夫定理(Gauss-Markov Theorem)</strong></a>
+：在线性回归模型中，如果误差满足零均值、同质方差且互不相关，则回归系数的<strong>最佳线性无偏估计</strong>就是普通最小二乘法估计。</p>
+<p>使用<strong>最小二乘法</strong>，容易算出其最佳线性无偏估计是
+$$
+\hat{\boldsymbol{\beta}}=(\mathbf{X}^{\mathrm T}\mathbf{X})^{-1}\mathbf{X}^{\mathrm T}\mathbf{Y}.
+$$</p>
+<p>它服从正态分布 $N(\boldsymbol\beta, \sigma^2(\mathbf{X}^{\mathrm T}\mathbf{X})^{-1})$。</p>
+<h3 id=hatsigma2>$\hat\sigma^2$</h3>
+<p>$\sigma^2$ 的估计则类似于“样本方差”：
+$$
+\hat\sigma^2=\dfrac{(\mathbf{Y}-\hat{\mathbf{Y}})^{\mathrm T}(\mathbf{Y}-\hat{\mathbf{Y}})}{n-p}.
+$$</p>
+<p>我们知道，独立标准正态分布的平方和是卡方分布，即
+$$
+\chi^2_k\sim \sum_{i=1}^kN(0,1).
+$$</p>
+<p>$k$ 称为卡方分布的<strong>自由度</strong>，并且有 ${\mathrm E}(\chi^2_k)=k$。</p>
+<p>关于多元正态分布和卡方分布，我们有一个重要结论：设 $X\sim N_p(0,\sigma^2I_p)$，$A$ 是对称幂等矩阵，且 $\mathrm{rank}(A)=r$，则二次型 $X^{\mathrm T}AX/\sigma^2\sim \chi^2_r$。</p>
+<p>计算可得，$(\mathbf{Y}-\hat{\mathbf{Y}})^{\mathrm T}(\mathbf{Y}-\hat{\mathbf{Y}})=\boldsymbol\varepsilon^{\mathrm T}(\mathbf I - \mathbf{X}(\mathbf{X}^{\mathrm T}\mathbf{X})^{-1}\mathbf{X}^{\mathrm T})\boldsymbol\varepsilon$。中间那个矩阵是对称幂等矩阵，秩是 $n-p$，而 $\boldsymbol\varepsilon$ 是一个多元正态分布，所以</p>
+<p>$$
+(n-p)\hat\sigma^2/\sigma^2\sim \chi^2_{n-p}.
+$$</p>
+<p>从而 $\hat\sigma^2$ 是 $\sigma^2$ 的一个无偏估计。</p>
+<h2 id=决定系数>决定系数</h2>
+<h3 id=预备知识方差分解>预备知识：方差分解</h3>
+<p>我们来观察这个式子：
+$$
+y = \beta_0+\beta_1x_1+\cdots+\beta_{p-1}x_{p-1}+\varepsilon,
+$$
+我们得到了一堆 $y_i$，它们互不相同。有两个原因造就了 $y_i$ 之间的差异：</p>
+<ul>
+<li>$x$ 不同导致 $y$ 不同（由自变量解释的部分）</li>
+<li>随机误差 $\varepsilon$</li>
+</ul>
+<blockquote>
+<p>这里的记号非常恶心。有的教材里把 E 当作 explain，R 当作 residual；有的地方又把 E 当作 error，R 当作 regression。这导致 R 和 E 在不同场合表达完全相反的含义。并且有的地方把 SS 放前面，称作“SSE，SSR”，又有的地方放后面，叫“ESS，RSS”。建议谁来规范一下这里的乱象。</p>
+</blockquote>
+<p>骂完了，接着看。$y_i$ 之间的差异性可以用总平方和 $S^2$ 来衡量：
+$$
+S^2=\sum_i (y_i-\bar y)^2.
+$$
+回归模型做的事情就是让自变量来解释因变量的变化，所以由自变量解释的部分可以用拟合的 $\hat y$ 的均方和 $S_1^2$ 来衡量。由于 $\bar{\hat y}=\bar y$，我们有
+$$
+S_1^2=\sum_i (\hat y_i-\bar y)^2.
+$$
+随机误差的影响就是剩下的部分 $S_2^2$：
+$$
+S_2^2=\sum_i(y_i-\hat y_i)^2.
+$$
+我们有一个非常漂亮的结论：
+$$
+S^2=S_1^2+S_2^2.
+$$
+证明留给读者作为练习。<strong>这一结论成功将 $y_i$ 的差异性分成了两部分：可被回归模型解释的部分和随机误差。</strong></p>
+<h3 id=r-平方-r-squared>R 平方 （R-squared）</h3>
+<p>我们定义决定系数（coefficient of determination）
+$$
+R^2=1-\dfrac{S_2^2}{S^2}.
+$$
+这种定义对于回归模型都适用（包括非线性回归）。我们认为回归之前，$y$ 的变动完全由随机误差造成，也就是随机误差占比为 $1$；而在回归之后，随机误差占比为 $\dfrac{S_2^2}{S^2}$，活活减少了 $R^2$ 这么多，这就是回归模型的功劳！</p>
+<h3 id=调整后的-r-平方adjusted-r-squared>调整后的 R 平方（Adjusted R-squared）</h3>
+<p>$R^2$ 有一个缺陷，只要我们无脑增加解释变量的个数，哪怕增加的是随机误差，$R^2$ 也不会下降（通常都是增加），也就是所谓的“力大砖飞”。证明留作习题（只要注意线性回归的优化目标和 $R^2$ 的关系即可）。</p>
+<p>调整后的 $R^2$ 增加了一个惩罚项，使得解释变量越多，它的值越小。
+$$
+R^2_{\rm adj}=1- \dfrac{S_2^2/(n-p)}{S^2/(n-1)}.
+$$</p>
+<p>$S_2^2$ 就是 $(\mathbf{Y}-\hat{\mathbf{Y}})^{\mathrm T}(\mathbf{Y}-\hat{\mathbf{Y}})$，即 $\dfrac{S_2^2}{\sigma^2}\sim \chi^2_{n-p}$. 而 $S^2$ 是正态分布的样本方差，所以 $\dfrac{S^2}{\sigma^2}\sim\chi^2_{n-1}$. 这样一来，所谓“调整”其实就是除以了各自的自由度。</p>
+<p>（再次强调一定要搞清楚究竟是 $p$ 还是 $p+1$，这是很多资料记号不一致，容易混淆的地方。）</p>
+<h3 id=决定系数和相关系数有啥关系>决定系数和相关系数有啥关系</h3>
+<p>两组数据 $x_i,y_i$ 的相关系数定义为
+$$
+\rho(x_i, y_i)=\dfrac{{\rm Cov}(x_i,y_i)}{\sqrt{{\rm Var}(x_i){\rm Var}(y_i)}}.
+$$
+一般来说，决定系数和相关系数是 Java 和 Javascript 的关系。但对于线性回归模型，我们可以证明：
+$$
+\rho(y,\hat y)=\sqrt{R^2}.
+$$
+<a href=https://www.zhihu.com/question/32021302/answer/739464752 target=_blank rel=noopener>关于相关系数和 R 方的更多讨论可以移步这里</a>
+。由于不是核心内容，就不过多介绍了。</p>
+<h2 id=假设检验>假设检验</h2>
+<p>常用的是 $t$ 检验和 $F$ 检验。</p>
+<h3 id=t-检验>$t$ 检验</h3>
+<p>独立的标准正态分布除以卡方分布的平方根就得到 $t$-分布。</p>
+<p>设 $X\sim N(0, 1),\ Y\sim\chi^2_p$，$X, Y$ 独立，则定义
+$$
+\dfrac{X}{\sqrt{Y/p}}
+$$
+是自由度为 $p$ 的 $t$-分布。</p>
+<p>我们可以从样本均值和样本方差导出 $t$-分布。设 $\bar X, S^2$ 分别是从 $N(\mu, \sigma^2)$ 中抽样得到的 $n$ 个样本的样本均值和样本方差，则由正态分布的性质知：</p>
+<ul>
+<li>$\bar X$ 和 $S^2$ 独立</li>
+<li>$\bar X\sim N(\mu, \sigma^2/n)$</li>
+<li>$(n-1)S^2/\sigma^2\sim \chi^2_{n-1}$</li>
+</ul>
+<p>于是
+$$
+\dfrac{\bar X-\mu}{\sqrt{S^2/n}}
+$$
+就是自由度为 $n-1$ 的 $t$-分布。</p>
+<p>言归正传，我们想要<strong>检验某一个回归系数 $\beta_j$ 是不是 $0$</strong>。构造统计量
+$$
+t_j=\dfrac{\hat\beta_j-\beta_j}{\sqrt{\hat\sigma^2(\mathbf{X}^{\mathrm T}\mathbf{X})^{-1}_{jj}}}.
+$$
+线性回归中有一个结论：$\hat{\boldsymbol{\beta}}$ 和 $\hat\sigma^2$ 独立。因此 $t_j$ 服从自由度为 $n-p$ 的 $t$-分布。</p>
+<p>接下来，把 $\beta_j=0$ 和估计出来的 $\hat\beta_j$ 带入，算出 $t$ 值，再查表得到 p-value 即可。</p>
+<h3 id=f-检验>$F$ 检验</h3>
+<p>将两个独立的卡方分布分别除以自由度，然后再相除，可以得到 $F$ 分布：
+$$
+F(d_1,d_2)=\dfrac{\chi^2_1/d_1}{\chi^2_2/d_2}.
+$$</p>
+<p>对于模型 $y=\beta_0+\beta_1x_1+\cdots+\beta_{p-1}x_{p-1}+\varepsilon$，$F$ 检验零假设为
+$$
+H_0:\beta=\beta_1=\cdots=\beta_{p-1}=0.
+$$
+即各个回归系数都是 $0$（<strong>不包括 $\beta_0$</strong>）。如果 $H_0$ 成立就房倒屋塌完犊子了，满地飘零。我们构造的统计量是
+$$
+F=\dfrac{S_1^2/(p-1)}{S_2^2/(n-p)}.
+$$</p>
+<p>$S_2^2$ 的分布前面讨论多次了。而 $S_1^2=(\hat{\mathbf{Y}}-\bar{\mathbf{Y}})^{\mathrm T}(\hat{\mathbf{Y}}-\bar{\mathbf{Y}})$. 记 ${\mathbf 1}_n$ 为 $n\times n$ 的全 $1$ 矩阵，在 $H_0$ 成立时有
+$\hat{\mathbf{Y}}-\bar{\mathbf{Y}}=\left(\mathbf{X}(\mathbf{X}^{\mathrm T}\mathbf{X})^{-1}\mathbf{X}^{\mathrm T}-\frac{1}{n}\mathbf{1}_n\right)\boldsymbol\varepsilon $
+.</p>
+<p>可以验证，$\mathbf{X}(\mathbf{X}^{\mathrm T}\mathbf{X})^{-1}\mathbf{X}^{\mathrm T}-\frac{1}{n}\mathbf{1}_{n}$ 是对称幂等矩阵，秩为 $p-1$（该命题的证明可作为经典的线性代数题目，请自行练习）。</p>
+<p>于是 $S_1^2/\sigma^2\sim\chi^2_{p}$. 从而 $F\sim F(p-1, n-p)$.</p>
+<p>这个统计量的含义便是看 $S_1^2$ 和 $S_2^2$ 谁占上风。$F$ 越大，表明能被回归解释的部分越大，所以线性模型是成功的，也就越有可能拒绝 $H_0$。</p>
+<h3 id=区别与联系>区别与联系</h3>
+<p>简单来说，$F$ 检验是判断线性模型是否正确，如果不显著，可能要考虑换其他模型；而 $t$ 检验用来判断模型中是否该有这个变量。</p>
+<p>$t$ 检验判断单个系数是否为 0，$F$ 检验判断整体是否为 0. 看起来是重复的——我对每个系数都做一次 $t$ 检验不就可以代替 $F$ 检验了吗？其实不然。有以下两个原因：</p>
+<ul>
+<li>假设检验的个数越多，第一类错误概率越大</li>
+<li>多重共线性（Multicollinearity）会导致所有 $t$ 检验显著时，$F$ 检验不显著</li>
+</ul>
+<h2 id=残差分析>残差分析</h2>
+<p>回归模型中的一个基本假设是 $\varepsilon\overset{i.i.d.}\sim N(0,\sigma^2)$. 如果这个假设不成立，后面所做的东西就有可能完犊子。残差分析就是在做完回归之后检查一下关于 $\varepsilon$ 的假定是否成立。</p>
+<h3 id=残差图>残差图</h3>
+<p>残差（residual）就是 $r_i=y_i-\hat y_i$. 它可以看成对 $\varepsilon_i$ 的估计。以残差为纵坐标，其他量为横坐标作散点图，就叫做<strong>残差图</strong>（residual plots）。残差图是进行残差分析的有力武器。</p>
+<p>常用的是以 $\hat y$ 作为横坐标和以 $x$ 作为横坐标的两种图。由于 $\hat y$ 和 $x$ 之间有线性关系，所以这两者的分析是几乎一样的。如下图（图片来自 <a href=https://blog.csdn.net/mengjizhiyou/article/details/82216278 target=_blank rel=noopener>https://blog.csdn.net/mengjizhiyou/article/details/82216278</a>
+）：</p>
+<p><img src=/5203/2.png alt></p>
+<p>（a）表示的是理想的残差图，均匀分布在平行带中，没有任何可预测的信息。（b）中残差的波动范围与 $x$ 有关系，意味着每个 $\varepsilon_i$ 的方差可能不一致。（c）虽然方差一致，但是均值在变化，说明模型没有很好地解释 $y$ 的变化，需要考虑引入高次项或更换模型。</p>
+<h3 id=q-q-图>Q-Q 图</h3>
+<p>Q-Q 图是 quantile-quantile 的意思，即横纵坐标都是分位数。在残差分析中，横坐标用正态分布的分位数，纵坐标用残差的分位数画散点图。具体来说，残差有 $n$ 个，将其递增排序为 $r_{(1)},\cdots,r_{(n)}$，然后算出正态分布在 $(i-0.5)/n$ 处的分位数 $z_1,\cdots,z_n$， 画出 $(z_i,r_{(i)})$ 的散点图就是 Q-Q 图。</p>
+<p>显然，理想的图应该分布在 $y=x$ 上，偏了或者弯了都有毛病。</p>
+<h2 id=结语>结语</h2>
+<p>本文只是快速浏览了一遍线性回归的相关知识，很多地方写的不详细。复习时可以以此为线索，遇到不熟悉的地方再去查找其他资料。里面提到的没有证明的结论也最好自己亲自推导一下，很有意思。</p>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class=article-copyright>
+<div class=article-copyright-img>
+<img src=/img/qq_qrcode.png width=129px height=129px>
+<div style=text-align:center>QQ扫一扫交流</div>
+</div>
+<div class=article-copyright-info>
+<p>
+<span>标题：</span>线性回归（一）-多元线性回归
+</p>
+<p>
+<span>链接：</span>/post/5203-1%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/
+</p>
+<p>
+<span>作者：</span>精神病人
+</p>
+<p>
+<span>声明： </span>本博客文章除特别声明外，均采用 <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！
+</p>
+</div>
+</div>
+<div class=clear></div>
+</div>
+<div class=reward-qr-info>
+<div>创作实属不易，如有帮助，那就打赏博主些许茶钱吧 ^_^</div>
+<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>赏</span>
+</button>
+<div id=QR style=display:none>
+<div id=wechat style=display:inline-block>
+<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
+<p>微信打赏</p>
+</div>
+<div id=alipay style=display:inline-block>
+<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
+<p>支付宝打赏</p>
+</div>
+</div>
+</div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+<a href=/post/changyongyao/ rel=next title=常见疾病及常备药物>
+<i class="fa fa-chevron-left"></i> 常见疾病及常备药物
+</a>
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=/post/luojimiuwu/ rel=prev title="教你如何做杠精 —— 经典逻辑谬误">
+教你如何做杠精 —— 经典逻辑谬误
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
+<div class=sidebar-toggle>
+<div class=sidebar-toggle-line-wrap>
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id=sidebar class=sidebar>
+<div class=sidebar-inner>
+<section class="site-overview sidebar-panel sidebar-panel-active">
+<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
+<img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人>
+<p class=site-author-name itemprop=name>精神病人</p>
+<p class="site-description motion-element" itemprop=description>
+精神病人欢乐多!
+</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href=/post/>
+<span class=site-state-item-count>25</span>
+<span class=site-state-item-name>日志</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href=/categories/>
+<span class=site-state-item-count>2</span>
+<span class=site-state-item-name>分类</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href=/tags/>
+<span class=site-state-item-count>10</span>
+<span class=site-state-item-name>标签</span>
+</a>
+</div>
+</nav>
+<div class="links-of-author motion-element">
+<span class=links-of-author-item>
+<a href=https://github.com/jcq15/ target=_blank title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+GitHub
+</a>
+</span>
+</div>
+<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
+<div class=tagcloud-of-blogroll-title>
+<i class="fa fa-fw fa-tags"></i>
+标签云
+</div>
+<ul class=tagcloud-of-blogroll-list>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E5%AD%A6%E4%B9%A0>学习
+<sup>15</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%8A%80%E6%9C%AF>技术
+<sup>4</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%B8%B8%E6%88%8F>游戏
+<sup>2</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E7%A7%91%E6%99%AE>科普
+<sup>2</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/css>Css
+<sup>1</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/html>HTML
+<sup>1</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/markdown>Markdown
+<sup>1</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%B2%99%E9%9B%95>沙雕
+<sup>1</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
+<sup>1</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E9%A9%AC%E5%85%8B%E5%BD%93>马克当
+<sup>1</sup>
+</a>
+</li>
+</ul>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=copyright>
+<span class=copyright-year>
+&copy; 2010 - 2022
+</span>
+<span class=with-love><i class="fa fa-heart"></i></span>
+<span class=copyright-author>沙雕园</span>
+</div>
+<div class=powered-info>
+<span class=powered-by>
+Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.89.2</a>
+</span>
+<span class=separator-line>/</span>
+<span class=theme-info>
+Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
+</a>
+</span>
+</div>
+<div class=vistor-info>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv>
+<i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span>
+</span>
+<span class=separator-line>/</span>
+<span class=site-pv>
+<i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span>
+</span>
+</div>
+<div class=license-info>
+<span class=storage-info>
+Storage by
+<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a>
+</span>
+<span class=separator-line>/</span>
+<span class=license-num>
+<a href target=_blank></a>
+</span>
+</div>
+</div>
+</footer>
+<div class=back-to-top>
+<i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span>
+</div>
+</div>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<script type=text/javascript src=/js/search.js></script>
+<script type=text/javascript src=/js/affix.js></script>
+<script type=text/javascript src=/js/scrollspy.js></script>
+<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
+<script type=text/javascript>const locale={placeholder:'欢迎留下您的宝贵建议，请填写您的昵称和邮箱便于后续交流. ^_^'};$(function(){detectIE()>0?$.getScript(document.location.protocol+'//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js',function(){new Waline({el:'#wcomments',visitor:!0,emoji:['https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq','https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/alus','https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili'],wordLimit:'200',uploadImage:!1,locale,requiredMeta:['nick','mail'],serverURL:"Your WalineSerURL",lang:"zh-cn"})}):$('#wcomments').html('抱歉，Waline插件不支持IE或Edge，建议使用Chrome浏览器。')})</script>
+<script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</body>
+</html>

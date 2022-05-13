@@ -1,0 +1,569 @@
+<!doctype html><html lang=zh-cn dir=content/zh-cn>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
+<title> 线性回归（二）-单因素方差分析 - 沙雕园 </title>
+<meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享">
+<meta name=author content="精神病人">
+<meta property="og:title" content="线性回归（二）-单因素方差分析">
+<meta property="og:site_name" content="沙雕园">
+<meta property="og:image" content="/img/author.jpg">
+<meta name=title content="线性回归（二）-单因素方差分析 - 沙雕园">
+<meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。">
+<link rel="shortcut icon" href=/img/favicon.ico>
+<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
+<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
+<link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet>
+<link href=/css/main.css rel=stylesheet type=text/css>
+<link href=/css/syntax.css rel=stylesheet type=text/css>
+</head>
+<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
+<div class="container one-collumn sidebar-position-left page-home">
+<div class=headband></div>
+<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
+<div class=header-inner> <div class=site-brand-container>
+<div class=site-nav-toggle>
+<div class=toggle role=button style=opacity:1;top:0>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+</div>
+</div>
+<div class=site-meta>
+<div class=custom-logo-site-title>
+<a href=/ class=brand rel=start>
+<span class=logo-line-before><i></i></span>
+<span class=site-title>沙雕园</span>
+<span class=logo-line-after><i></i></span>
+</a>
+</div>
+<p class=site-subtitle>沙雕使人进步。</p>
+</div>
+<div class=site-nav-right>
+<div class="toggle popup-trigger" style=opacity:1;top:0>
+<i class="fa fa-search fa-fw fa-lg"></i>
+</div>
+</div>
+</div>
+<nav class=site-nav>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a href=/ rel=section>
+<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页
+</a>
+</li>
+<li class="menu-item menu-item-active">
+<a href=/post rel=section>
+<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档
+</a>
+</li>
+<li class=menu-item>
+<a href=/about.html rel=section>
+<i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我
+</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> 搜索</a>
+</li>
+</ul>
+<div class=site-search>
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class=search-icon><i class="fa fa-search"></i> </span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
+<div class=local-search-input-wrapper>
+<input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
+</div>
+</div>
+<div id=local-search-result></div>
+</div>
+</div>
+</nav> </div>
+</header>
+<main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=/post/5203-2%E5%8D%95%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/ itemprop=url>
+线性回归（二）-单因素方差分析
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-pushdate>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-10-11">
+2021-10-11
+</time>
+</span>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>1751 字</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>4分钟</span>
+</span>
+<span id=/post/5203-2%E5%8D%95%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/ class="leancloud_visitors post-visitor" data-flag-title=线性回归（二）-单因素方差分析>
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>阅读次数：</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>方差分析模型（ANOVA）可以看成是线性模型的一类，但它重点考虑的是离散自变量对连续因变量的影响。</p>
+<h2 id=基本模型>基本模型</h2>
+<p>我们有 $k$ 组数据，每组有 $n_i$ 个观察值。基本模型为
+$$
+y_{i,j}=\mu_i+e_{i,j},\ i=1,\cdots,k,\ j=1,\cdots,n_i,
+$$
+其中 $e_{i,j}\sim N(0,\sigma^2)$.</p>
+<p>如果令 $\eta=\sum\mu_i/k,\ \tau_i=\mu_i-\eta$，便可以写成
+$$
+y_{i,j}=\eta+\tau_i+e_{i,j}.
+$$</p>
+<h2 id=模型求解>模型求解</h2>
+<p>我们直接把他看成多元线性回归问题，自变量 $x$ 使用 one-hot 编码，设计矩阵为
+$$
+X=
+\begin{pmatrix}
+X_1\\
+\vdots\\
+X_k
+\end{pmatrix},
+$$
+其中
+$$
+X_i=
+\begin{pmatrix}
+0 & \cdots & 1 & \cdots & 0\\
+\vdots&\ddots&\vdots&\ddots&\vdots\\
+0 & \cdots & 1 & \cdots & 0\\
+\end{pmatrix}.
+$$
+即只有第 $i$ 列是 $1$，其他都是 $0$. 显然 $X$ 是列满秩的。计算可得
+$$
+(X^TX)^{-1}=
+\begin{pmatrix}
+\frac{1}{n_1} &&\\
+&\ddots&\\
+&&\frac{1}{n_k}
+\end{pmatrix}.
+$$</p>
+<p>于是有最优估计（请自行推导）：
+$$
+\mu_i=\bar y_{i,\cdot}.
+$$
+同样有方差估计
+$$
+\hat\sigma^2=\dfrac{1}{N-k}\sum_i\sum_j (y_{i,j}-\bar y_{i,\cdot})^2.
+$$</p>
+<h2 id=anova-表>ANOVA 表</h2>
+<p>记
+$$
+\begin{align}
+S^2&=\sum_i\sum_j (y_{i,j}-y_{\cdot,\cdot})^2,\\
+S_1^2&=\sum_i n_i (y_{i,\cdot}-y_{\cdot,\cdot})^2,\\
+S_2^2&=\sum_i\sum_j (y_{i,j}-y_{i,\cdot})^2.\\
+\end{align}
+$$
+类似地，有方差分解：
+$$
+S^2=S_1^2+S_2^2.
+$$
+我们可以得到 ANOVA 表：</p>
+<table>
+<thead>
+<tr>
+<th>来源</th>
+<th>自由度</th>
+<th>平方和</th>
+<th>平方和均值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>处理组（Treatments）</td>
+<td>$k-1$</td>
+<td>$S_1^2$</td>
+<td>$S_1^2/(k-1)$</td>
+</tr>
+<tr>
+<td>误差（Error）</td>
+<td>$N-k$</td>
+<td>$S_2^2$</td>
+<td>$S_2^2/(N-k)$</td>
+</tr>
+<tr>
+<td>合计</td>
+<td>$N-1$</td>
+<td>$S^2$</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id=假设检验>假设检验</h2>
+<h3 id=f-检验>$F$-检验</h3>
+<p>$H_0:\mu_1=\cdots=\mu_k$（等价于 $\tau_1=\cdots=\tau_k=0$）. 构造 $F$-统计量：
+$$
+F=\dfrac{S_1^2/(k-1)}{S_2^2/(N-k)}\sim F_{k-1,N-k}.
+$$
+$F$ 足够大时拒绝 $H_0$.</p>
+<h3 id=t-检验>$t$-检验</h3>
+<p>传统的 $t$ 检验是类似的。这里我们更关心两组之间有无明显差异，于是令 $H_0:\mu_i=\mu_j$. 注意到 ${\rm Var}(\mu_i-\mu_j)=\dfrac{1}{n_i}+\dfrac{1}{n_j}$, 于是构造统计量
+$$
+T_{i,j}=\dfrac{\bar y_{i,\cdot}-\bar y_{j,\cdot}}{\sqrt{\hat\sigma^2\left(1/n_i+1/n_j\right)}}\sim t_{N-k}.
+$$
+当 $|t_{i,j}|>t_{N-k,\alpha/2}$ 时拒绝 $H_0$.</p>
+<blockquote>
+<p>独立样本 $t$ 检验和配对样本 $t$ 检验的主要区别是样本之间有无配对关系。如果是把一堆人平均分成两组，就是独立样本，如果是在同一个人身上先后测了两次数据，则应该是配对样本。独立样本 $t$ 检验的模型是 $y_{i,j}\sim N(\mu_i,\sigma^2)$，而配对样本则是 $y_{1,i}-y_{0,i}\sim N(\mu,\sigma^2)$. 这导致了自由度直接差了 2 倍。本文讨论的 ANOVA 可以看成是独立样本 $t$ 检验的拓展，组数是 2 的 ANOVA 和独立样本 $t$ 检验是等价的。</p>
+</blockquote>
+<h3 id=多重检验>多重检验</h3>
+<p>如果我们想要检验多组数据之间有无差异，比如 $H_0:\mu_1=\mu_2=\mu_3=\mu_4$，就要做 $6$ 组两两之间的 $t$-检验。任意检验犯第一类错误的概率是 $\alpha$, 则整体犯错的概率显然大于 $\alpha$. 这怎么办呢？</p>
+<h4 id=bonferroni-method>Bonferroni Method</h4>
+<p>简单粗暴的方法：如果一共做 $k'$ 组检验，就把单个检验的 significant level 设置为 $\alpha/k'$，这样整体的 significant level 就会小于 $\alpha$.</p>
+<h4 id=tukey-method>Tukey Method</h4>
+<p>我们先介绍 studentized range q 统计量。设我们从分布 $N(\mu,\sigma^2)$ 中取出了 $k$ 组样本，每组 $n$ 个 , 则
+$$
+q=\dfrac{\bar y_\max-\bar y_\min}{S\sqrt{1/n}}
+$$
+服从一个叫做 studentized range ($q$) distribution 的东西。它的分布函数可以在 R 中使用 <code>ptukey</code> 得到。</p>
+<p>后来 Karmer 将其推广到每组样本数不同的情况（Karmer，1956）——把 $1/n$ 换成 $1/2(1/n_i+1/n_j)$. 具体来说，构造统计量
+$$
+Q=\sqrt{2}\max_{i,j}\dfrac{|\bar y_{i,\cdot}-\bar y_{j,\cdot}|}{\hat\sigma\sqrt{1/n_i+1/n_j}}\sim Q_{k,N-k}.
+$$
+其中 $N$ 为总样本数。然后查表就行了。$|Q|$ 越大，越倾向于拒绝 $H_0$.</p>
+<h3 id=对比检验>对比检验</h3>
+<p>我们可以推广普通 $t$-检验的概念，令
+$$
+C=c_1\mu_1+\cdots+c_k\mu_k,
+$$
+其中 $\sum_i c_i=0$. $H_0:C=0$，此时可以构造 $t$-统计量：
+$$
+T_C=\dfrac{\sum_i c_i\hat\mu_i}{\sqrt{\hat\sigma^2\sum_i c_i^2/n_i}}\sim t_{N-k}.
+$$</p>
+<h2 id=随机效应模型浅谈>随机效应模型浅谈</h2>
+<h3 id=基本模型-1>基本模型</h3>
+<p>这个例子来自[3]。假设我们现在要调查一棵萝卜的含钙量。先验知识告诉我们，只要随便取一片叶子测定叶子的含钙量，就可以代表整颗萝卜的含钙量。我们取了 4 片叶子，每片进行了 4 次测试，得到了 16 个数据。</p>
+<p>我们关注的并不是对比叶片之间的差异，而是想得到整颗萝卜的含钙量。不同的叶片在这里不视为 treatment，而视为 block。假设一共 $N$ 个观测值，分 $k$ 组，建立模型如下：
+$$
+y_{i,j}=\eta+a_i+e_{i,j},
+$$
+其中 $e_{i,j}\overset{i.i.d.}\sim N(0,\sigma_e^2)$ 是一样的，但 $a_i\overset{i.i.d.}\sim N(0,\sigma_a^2)$ 也变成随机的了。容易得到
+$$
+{\rm Var}(y_{i,j})=\sigma_e^2+\sigma_a^2.
+$$
+同组的不同观察值不再独立，因为 $j\ne k$ 时，
+$$
+{\rm Cov}(y_{i,j},y_{i,k})=\sigma_a^2.
+$$
+显然
+$$
+\hat\eta=\bar y_{\cdot,\cdot}.
+$$</p>
+<h3 id=anova-表-1>ANOVA 表</h3>
+<p>这里我们不加证明地给出 ANOVA 表。</p>
+<blockquote>
+<p>证法类似，写矩阵硬算就行，挺麻烦的，还需要计算技巧。这里最后要落到 $N+k$ 维的独立正态分布上，$N$ 个 $e$ 和 $k$ 个 $a$. 所以矩阵就不是正方形的了，不过 $A^TA$ 仍然是正方形的。注意只有在 $n_i$ 相等时，$S_1^2$ 才是卡方分布，否则它只是方差不同的几个正态分布的和。</p>
+</blockquote>
+<p>对于 $n_i=n$ 的情况：</p>
+<table>
+<thead>
+<tr>
+<th>来源</th>
+<th>自由度</th>
+<th>平方和</th>
+<th>平方和均值（MS）</th>
+<th>E(MS)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>区组（Block）</td>
+<td>$k-1$</td>
+<td>$S_1^2$</td>
+<td>$S_1^2/(k-1)$</td>
+<td>$\sigma_e^2+n\sigma_a^2$</td>
+</tr>
+<tr>
+<td>误差（Error）</td>
+<td>$N-k$</td>
+<td>$S_2^2$</td>
+<td>$S_2^2/(N-k)$</td>
+<td>$\sigma_e^2$</td>
+</tr>
+<tr>
+<td>合计</td>
+<td>$N-1$</td>
+<td>$S^2$</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>如果 $n_i$ 各不相等，平方和将不是卡方分布，但我们仍可以算它的期望，只需把 $n$ 换成 $\dfrac{N}{k}-\dfrac{\sum_{i=1}^k n_i^2}{kN}$.</p>
+<p>有了这个，我们可以给出方差的无偏估计（$n_i$ 不相等时按照上面的替换）：
+$$
+\begin{align}
+\hat\sigma_a^2&=\dfrac{1}{n}\left(\dfrac{S_1^2}{k-1}-\dfrac{S_2^2}{N-k}\right),\\
+\hat\sigma_e^2&=\dfrac{S_2^2}{N-k}.
+\end{align}
+$$</p>
+<p>注：$\hat\sigma_a^2$ 有可能是负的，但方差是负的实在天理难容，这时候我们可以用 $0$ 作为估计值，<strong>并骂一句“他娘的”</strong>。</p>
+<h3 id=f-检验-1>$F$-检验</h3>
+<p>此时我们关注的是 $H_0:\sigma_a^2=0$. 只要推翻了 $H_0$，就说明单个叶片的观测值可以代表整体了。在 $H_0$ 成立时，请自行证明以下统计量服从 $F$-分布：
+$$
+F=\dfrac{S_1^2/(k-1)}{S_2^2/(N-k)}\sim F(k-1,N-k).
+$$
+这和固定效应模型是一样的！当 $F$ 足够大时拒绝 $H_0$.</p>
+<h2 id=参考文献>参考文献</h2>
+<ol>
+<li><a href=https://en.wikipedia.org/wiki/Tukey%27s_range_test target=_blank rel=noopener>https://en.wikipedia.org/wiki/Tukey%27s_range_test</a>
+</li>
+<li>Karmer, C. Y. (1956). Extension of multiple range tests to group means with unequal numbers of replication. <em>Biometrics</em>, <em>12</em>, 307-310.</li>
+<li><a href=https://faculty.franklin.uga.edu/dhall/sites/faculty.franklin.uga.edu.dhall/files/STAT8200-Fall13-lec2.pdf target=_blank rel=noopener>https://faculty.franklin.uga.edu/dhall/sites/faculty.franklin.uga.edu.dhall/files/STAT8200-Fall13-lec2.pdf</a>
+</li>
+</ol>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class=article-copyright>
+<div class=article-copyright-img>
+<img src=/img/qq_qrcode.png width=129px height=129px>
+<div style=text-align:center>QQ扫一扫交流</div>
+</div>
+<div class=article-copyright-info>
+<p>
+<span>标题：</span>线性回归（二）-单因素方差分析
+</p>
+<p>
+<span>链接：</span>/post/5203-2%E5%8D%95%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/
+</p>
+<p>
+<span>作者：</span>精神病人
+</p>
+<p>
+<span>声明： </span>本博客文章除特别声明外，均采用 <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！
+</p>
+</div>
+</div>
+<div class=clear></div>
+</div>
+<div class=reward-qr-info>
+<div>创作实属不易，如有帮助，那就打赏博主些许茶钱吧 ^_^</div>
+<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>赏</span>
+</button>
+<div id=QR style=display:none>
+<div id=wechat style=display:inline-block>
+<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
+<p>微信打赏</p>
+</div>
+<div id=alipay style=display:inline-block>
+<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
+<p>支付宝打赏</p>
+</div>
+</div>
+</div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+<a href=/post/5203-3%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/ rel=next title=线性回归（三）-非线性回归>
+<i class="fa fa-chevron-left"></i> 线性回归（三）-非线性回归
+</a>
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=/post/comment_and_rss/ rel=prev title=更新！支持评论和RSS订阅了！>
+更新！支持评论和RSS订阅了！
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
+<div class=sidebar-toggle>
+<div class=sidebar-toggle-line-wrap>
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id=sidebar class=sidebar>
+<div class=sidebar-inner>
+<section class="site-overview sidebar-panel sidebar-panel-active">
+<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
+<img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人>
+<p class=site-author-name itemprop=name>精神病人</p>
+<p class="site-description motion-element" itemprop=description>
+精神病人欢乐多!
+</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href=/post/>
+<span class=site-state-item-count>25</span>
+<span class=site-state-item-name>日志</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href=/categories/>
+<span class=site-state-item-count>2</span>
+<span class=site-state-item-name>分类</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href=/tags/>
+<span class=site-state-item-count>10</span>
+<span class=site-state-item-name>标签</span>
+</a>
+</div>
+</nav>
+<div class="links-of-author motion-element">
+<span class=links-of-author-item>
+<a href=https://github.com/jcq15/ target=_blank title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+GitHub
+</a>
+</span>
+</div>
+<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
+<div class=tagcloud-of-blogroll-title>
+<i class="fa fa-fw fa-tags"></i>
+标签云
+</div>
+<ul class=tagcloud-of-blogroll-list>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E5%AD%A6%E4%B9%A0>学习
+<sup>15</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%8A%80%E6%9C%AF>技术
+<sup>4</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%B8%B8%E6%88%8F>游戏
+<sup>2</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E7%A7%91%E6%99%AE>科普
+<sup>2</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/css>Css
+<sup>1</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/html>HTML
+<sup>1</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/markdown>Markdown
+<sup>1</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%B2%99%E9%9B%95>沙雕
+<sup>1</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
+<sup>1</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E9%A9%AC%E5%85%8B%E5%BD%93>马克当
+<sup>1</sup>
+</a>
+</li>
+</ul>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=copyright>
+<span class=copyright-year>
+&copy; 2010 - 2022
+</span>
+<span class=with-love><i class="fa fa-heart"></i></span>
+<span class=copyright-author>沙雕园</span>
+</div>
+<div class=powered-info>
+<span class=powered-by>
+Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.89.2</a>
+</span>
+<span class=separator-line>/</span>
+<span class=theme-info>
+Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
+</a>
+</span>
+</div>
+<div class=vistor-info>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv>
+<i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span>
+</span>
+<span class=separator-line>/</span>
+<span class=site-pv>
+<i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span>
+</span>
+</div>
+<div class=license-info>
+<span class=storage-info>
+Storage by
+<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a>
+</span>
+<span class=separator-line>/</span>
+<span class=license-num>
+<a href target=_blank></a>
+</span>
+</div>
+</div>
+</footer>
+<div class=back-to-top>
+<i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span>
+</div>
+</div>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<script type=text/javascript src=/js/search.js></script>
+<script type=text/javascript src=/js/affix.js></script>
+<script type=text/javascript src=/js/scrollspy.js></script>
+<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
+<script type=text/javascript>const locale={placeholder:'欢迎留下您的宝贵建议，请填写您的昵称和邮箱便于后续交流. ^_^'};$(function(){detectIE()>0?$.getScript(document.location.protocol+'//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js',function(){new Waline({el:'#wcomments',visitor:!0,emoji:['https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq','https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/alus','https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili'],wordLimit:'200',uploadImage:!1,locale,requiredMeta:['nick','mail'],serverURL:"Your WalineSerURL",lang:"zh-cn"})}):$('#wcomments').html('抱歉，Waline插件不支持IE或Edge，建议使用Chrome浏览器。')})</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</body>
+</html>
