@@ -4,13 +4,13 @@
 <meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
 <meta http-equiv=content-security-policy content="upgrade-insecure-requests">
-<title> 线性回归（三）-非线性回归 - 沙雕园 </title>
+<title> Python数据处理速查表 - 沙雕园 </title>
 <meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享">
 <meta name=author content="精神病人">
-<meta property="og:title" content="线性回归（三）-非线性回归">
+<meta property="og:title" content="Python数据处理速查表">
 <meta property="og:site_name" content="沙雕园">
 <meta property="og:image" content="/img/author.jpg">
-<meta name=title content="线性回归（三）-非线性回归 - 沙雕园">
+<meta name=title content="Python数据处理速查表 - 沙雕园">
 <meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。">
 <link rel="shortcut icon" href=/img/favicon.ico>
 <link rel=apple-touch-icon href=/img/apple-touch-icon.png>
@@ -91,24 +91,24 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=/post/5203-3%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/ itemprop=url>
-线性回归（三）-非线性回归
+<a class=post-title-link href=/post/python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E9%80%9F%E6%9F%A5%E8%A1%A8cheatsheet/ itemprop=url>
+Python数据处理速查表
 </a>
 </h1>
 <div class=post-meta>
 <span class=post-pushdate>
 <i class="fa fa-calendar-o fa-fw"></i>
 <span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-10-12">
-2021-10-12
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2022-05-23">
+2022-05-23
 </time>
 </span>
 <span class=post-category>
 <i class="fa fa-folder-o fa-fw"></i>
 <span class=post-meta-item-text>分类：</span>
 <span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0 itemprop=url rel=index>
-<span itemprop=name>课程笔记</span>
+<a class=post-category-a href=/categories/%E6%8A%80%E6%9C%AF itemprop=url rel=index>
+<span itemprop=name>技术</span>
 </a>
 &nbsp;
 </span>
@@ -116,14 +116,14 @@
 <span class=post-wordcount>
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>1081 字</span>
+<span class=leancloud-world-count>691 字</span>
 </span>
 <span class=post-readtime>
 <i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>3分钟</span>
+<span class=leancloud-view-count>2分钟</span>
 </span>
-<span id=/post/5203-3%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/ class="leancloud_visitors post-visitor" data-flag-title=线性回归（三）-非线性回归>
+<span id=/post/python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E9%80%9F%E6%9F%A5%E8%A1%A8cheatsheet/ class="leancloud_visitors post-visitor" data-flag-title=Python数据处理速查表>
 <i class="fa fa-binoculars fa-fw"></i>
 <span class=post-meta-item-text>阅读次数：</span>
 <span class=leancloud-visitors-count></span>
@@ -131,107 +131,78 @@
 </div>
 </header>
 <div class=post-body itemprop=articleBody>
-<p>很多时候，线性模型并不能满足我们的需求，这时候考虑非线性模型是一个不错的选择。但习说不是胡说，改变不是瞎编，我们还是要利用之前学过的线性模型的。</p>
-<h2 id=多项式回归>多项式回归</h2>
-<h3 id=基本模型>基本模型</h3>
-<p>我们只看单变量的情况，这时候由它的不同次幂构成每一项：
-$$
-y=\beta_0+\beta_1x+\beta_2x^2+\cdots+\beta_mx^m+\varepsilon,
-$$
-其中 $\varepsilon\sim N(0,\sigma^2)$.</p>
-<p>求解老掉牙了，不说了。</p>
-<h3 id=问题>问题</h3>
-<p>我们需要关注它的两个缺点：</p>
-<ul>
-<li>可能有严重的多重共线性</li>
-<li>增删某一项之后，其他系数需要重新计算</li>
-</ul>
-<p>比如在 $x$ 比较小时，每一列都差不多是 $0$，多重共线性严重。至于第二个缺点，我们可以假设，现在有一个 $m$ 阶的模型，我们发现结果不显著，想引入 $m+1$ 次项。设原来的设计矩阵是 $X_m$，新的设计矩阵为 $X=\begin{pmatrix}X_m &x^{m+1}\end{pmatrix}$. 则
-$$
-X^TX=
-\begin{pmatrix}
-X_m^TX_m & X_m^Tx^{m+1}\\
-(x^{m+1})^TX_m & (x^{m+1})^Tx^{m+1}\\
-\end{pmatrix}.
-$$
-这都纠缠到一起了，新的 $\beta_i$ 要重新计算。</p>
-<h3 id=正交多项式回归>正交多项式回归</h3>
-<p>为了解决这一问题，我们引入正交多项式回归。其基本思想是，用一个 $k$ 次多项式 $P_k(x)$ 代替 $x^k$。这时模型变为
-$$
-y=\beta_0P_0(x)+\beta_1P_1(x)+\cdots+\beta_mP_m(x)+\varepsilon.
-$$
-多项式正交，采用最直观的定义，即 $\sum_{i=1}^n P(x_i)Q(x_i)=0$ 则称 $P,Q$ 正交。</p>
-<p>如果模型中 $P_i,P_j$ 两两正交，计算
-$$
-X^TX=\begin{pmatrix}
-X_m^TX_m & 0\\
-0 & P_{m+1}(x)^TP_{m+1}(x)\\
-\end{pmatrix}.
-$$
-这样当我们在模型中增删项的时候，就不用重新计算系数了。</p>
-<h3 id=计算正交多项式>计算正交多项式</h3>
-<p>一般来说，要算正交多项式就得老老实实列方程算。由于多项式乘个常数没有任何影响，所以 $P_k(x)$ 有 $k$ 个参数。利用 $P_k$ 和 $P_0,\cdots,P_{k-1}$ 正交，就能解出来了。</p>
-<p>对于 $x$ 等间隔的情况，有如下的快速计算公式：</p>
-<p><img src=5203%5C1.png alt=image-20210906152000802></p>
-<p>其中 $d$ 是间距，$\lambda$ 可自由选择，不影响结果。通常选取 $\lambda$ 使得多项式中各个系数都是整数，好算。</p>
-<h3 id=参考文献>参考文献</h3>
-<ol>
-<li><a href=http://home.iitk.ac.in/~shalab/regression/Chapter12-Regression-PolynomialRegression.pdf target=_blank rel=noopener>http://home.iitk.ac.in/~shalab/regression/Chapter12-Regression-PolynomialRegression.pdf</a>
-</li>
-</ol>
-<h2 id=异方差---box-cox-变换>异方差 - BOX-COX 变换</h2>
-<p>我们之前的所有模型都假定误差同方差，但现实却经常遇到异方差的情况。这是一个很大的话题，我们这里只简单介绍一种处理方案——对 $y$ 进行 BOX-COX 变换。</p>
-<p>BOX-COX 变换有一个参数 $\lambda$，公式为</p>
-<p>$$
-z=f(y)=\left{\begin{align}
-&\frac{y^\lambda -1}{\lambda},\ \lambda\ne 0,\\
-&\log y,\ \lambda=0.
-\end{align}\right.
-$$</p>
-<p>这样定义的好处是导数非常简洁：</p>
-<p>$$
-f'(y)=y^{\lambda-1}.
-$$</p>
-<h3 id=理论分析>理论分析</h3>
-<p>我们可以把线性模型表达为 $y=\mu+\varepsilon$，其中 $\mu$ 可以是 $\beta x$ 或者类似的东西，总之就是能被回归解释的部分，$\varepsilon$ 是误差。我们假设标准差是 $\mu$ 的指数函数，即 ${\rm Var}(y)=k\mu^{2\alpha}$. 做变换 $z=f(y)$，在 $\mu$ 处 Taylor 展开：
-$$
-z=f(y)\approx f(\mu)+ f'(\mu)(y-\mu).
-$$
-于是
-$$
-{\rm Var}(z)\approx {\rm Var}(f'(\mu)(y-\mu))=f'(\mu)^2 k\mu^{2\alpha}=k\mu^{2\lambda-2+2\alpha}.
-$$
-如果 $\lambda=1-\alpha$, 就有
-$$
-{\rm Var}(z)=k.
-$$
-是常数了。</p>
-<h3 id=选取-lambda---scaled-lambda-plot>选取 $\lambda$ - Scaled $\lambda$ Plot</h3>
-<p>一般我们都是从表里选 $\lambda$:</p>
-<p><img src=5203/3.png alt></p>
-<p>把表里的挨个试一遍，每个模型都计算每个系数的 $t$ 值，然后以 $\lambda$ 为横坐标，$t$ 为纵坐标画线。选个合适的。如下图：</p>
-<p><img src=5203/4.png alt></p>
-<p>选的原则是，模型简洁，$t$ 越大越好。这里我们选 $\lambda=0$。$\lambda=-1/2$ 虽然大，但是多了个 BC 交叉项，不简洁。</p>
-<h3 id=选取-lambda---empirical-estimation>选取 $\lambda$ - Empirical Estimation</h3>
-<p>一个我觉得挺无赖的方法。注意到 $\sigma_i=k\mu_i^{\alpha}$, 有 $\log \sigma_i=\log k +\alpha\log \mu_i$. 线性回归可以得到 $\mu_i$ 和 $\sigma_i$ 的估计，然后再做一次线性回归估计 $\alpha$.</p>
-<blockquote>
-<p>可是线性回归的假设是同方差，现在有异方差的情况下估计，不是套娃了吗？</p>
-</blockquote>
+<p>以前的速查表有点乱，近期重整一下。</p>
+<h2 id=pandas>Pandas</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>pandas</span> <span style=color:#a2f;font-weight:700>as</span> <span style=color:#00f;font-weight:700>pd</span>
+</code></pre></div><h3 id=数据读取>数据读取</h3>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>df <span style=color:#666>=</span> pd<span style=color:#666>.</span>read_excel(<span style=color:#b44>&#39;filepath/name.xlsx&#39;</span>, <span style=color:#666>0</span>, header<span style=color:#666>=</span><span style=color:#666>0</span>)
+<span style=color:#080;font-style:italic># 第0个sheet</span>
+<span style=color:#080;font-style:italic># header=0: 第一行为表头，header=None：无表头</span>
+
+df <span style=color:#666>=</span> pd<span style=color:#666>.</span>read_csv(<span style=color:#b44>&#39;file.csv&#39;</span>)
+
+df <span style=color:#666>=</span> pd<span style=color:#666>.</span>read_csv(<span style=color:#b44>&#39;file.txt&#39;</span>, sep<span style=color:#666>=</span><span style=color:#b44>&#39;</span><span style=color:#b62;font-weight:700>\t</span><span style=color:#b44>&#39;</span>)
+</code></pre></div><p>新建 dataframe，从 dict 直接创建：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>data <span style=color:#666>=</span> {
+    <span style=color:#b44>&#39;name&#39;</span>: [<span style=color:#b44>&#39;李华&#39;</span>, <span style=color:#b44>&#39;二傻子&#39;</span>],
+    <span style=color:#b44>&#39;age&#39;</span>: [<span style=color:#666>114</span>, <span style=color:#666>514</span>]
+}
+df <span style=color:#666>=</span> pd<span style=color:#666>.</span>Dataframe(data)
+</code></pre></div><h3 id=索引与切片>索引与切片</h3>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#080;font-style:italic># 直接通过&#39;[]&#39;，字符串表示列，数字表示行</span>
+df[<span style=color:#b44>&#39;price&#39;</span>]       				<span style=color:#080;font-style:italic># 选取名字为&#39;price&#39;的列</span>
+df[[<span style=color:#b44>&#39;name&#39;</span>, <span style=color:#b44>&#39;price&#39;</span>]]			<span style=color:#080;font-style:italic># 选取多列，把列名放在list里</span>
+df[:<span style=color:#666>2</span>]							<span style=color:#080;font-style:italic># 第0行和第1行，这里和list的切片操作一样</span>
+
+<span style=color:#080;font-style:italic># iloc和loc：索引用iloc，列名用loc。iloc和loc的优势是可以进行筛选</span>
+<span style=color:#080;font-style:italic># loc用法：df.loc[index, column_name]</span>
+<span style=color:#080;font-style:italic># 一个大坑：loc的行索引是闭区间，而不是python通用的左闭右开（但iloc是正常的）</span>
+df<span style=color:#666>.</span>loc[<span style=color:#666>2</span>, <span style=color:#b44>&#39;price&#39;</span>]				<span style=color:#080;font-style:italic># 第2行，名字为&#39;price&#39;的列</span>
+df<span style=color:#666>.</span>loc[[<span style=color:#666>2</span>,<span style=color:#666>3</span>],[<span style=color:#b44>&#39;name&#39;</span>,<span style=color:#b44>&#39;price&#39;</span>]]  <span style=color:#080;font-style:italic># index和column_name都可灵活使用list或切片</span>
+df<span style=color:#666>.</span>loc[df[<span style=color:#b44>&#39;price&#39;</span>]<span style=color:#666>&lt;</span><span style=color:#666>100</span>,<span style=color:#b44>&#39;name&#39;</span>]  <span style=color:#080;font-style:italic># 筛选，注意筛选条件是针对行的</span>
+
+<span style=color:#080;font-style:italic># iloc用法：只要把loc的列名改成索引</span>
+df<span style=color:#666>.</span>iloc[df[<span style=color:#b44>&#39;price&#39;</span>]<span style=color:#666>&lt;</span><span style=color:#666>100</span>, <span style=color:#666>2</span>:<span style=color:#666>5</span>]   <span style=color:#080;font-style:italic># 一样可以灵活组合list和切片</span>
+df<span style=color:#666>.</span>iloc[df[<span style=color:#b44>&#39;price&#39;</span>]<span style=color:#666>&lt;</span><span style=color:#666>100</span> <span style=color:#666>|</span> df[<span style=color:#b44>&#39;price&#39;</span>]<span style=color:#666>&gt;</span><span style=color:#666>200</span>]  <span style=color:#080;font-style:italic># 筛选条件&#39;|&#39;表示或，&#39;&amp;&#39;表示与</span>
+</code></pre></div><h3 id=删除>删除</h3>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>df<span style=color:#666>.</span>drop(columns<span style=color:#666>=</span>[<span style=color:#b44>&#39;name&#39;</span>, <span style=color:#b44>&#39;gender&#39;</span>], inplace<span style=color:#666>=</span><span style=color:#a2f;font-weight:700>True</span>) <span style=color:#080;font-style:italic># 列</span>
+df<span style=color:#666>.</span>drop(index<span style=color:#666>=</span>[<span style=color:#666>0</span>, <span style=color:#666>1</span>], inplace<span style=color:#666>=</span><span style=color:#a2f;font-weight:700>True</span>)   <span style=color:#080;font-style:italic># 行</span>
+df<span style=color:#666>.</span>drop(df[df[<span style=color:#b44>&#39;age&#39;</span>] <span style=color:#666>&gt;</span> <span style=color:#666>80</span>]<span style=color:#666>.</span>index)     <span style=color:#080;font-style:italic># 按条件删除</span>
+</code></pre></div><h3 id=预处理>预处理</h3>
+<p>描述性统计</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>df<span style=color:#666>.</span>count()    <span style=color:#080;font-style:italic># 非空观测数量</span>
+df<span style=color:#666>.</span>sum()      <span style=color:#080;font-style:italic># 和，可指定axis；mean, median, mode 同理</span>
+df<span style=color:#666>.</span>std()      <span style=color:#080;font-style:italic># 标准差</span>
+df<span style=color:#666>.</span>min()      <span style=color:#080;font-style:italic># max</span>
+</code></pre></div><p>缺失值</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>df<span style=color:#666>.</span>isna<span style=color:#666>.</span>sum()   <span style=color:#080;font-style:italic># 每列缺失值个数</span>
+
+df<span style=color:#666>.</span>fillna(<span style=color:#666>0</span>)    <span style=color:#080;font-style:italic># NaN用0填充</span>
+df<span style=color:#666>.</span>fillna(df<span style=color:#666>.</span>mean())
+
+df<span style=color:#666>.</span>isnull()<span style=color:#666>.</span>any()     <span style=color:#080;font-style:italic># 有缺失值的列</span>
+df<span style=color:#666>.</span>isnull()<span style=color:#666>.</span>T<span style=color:#666>.</span>any()   <span style=color:#080;font-style:italic># 有缺失值的行</span>
+</code></pre></div><p>异常值</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#080;font-style:italic># 3σ</span>
+zscore <span style=color:#666>=</span> (df[<span style=color:#b44>&#39;salary&#39;</span>] <span style=color:#666>-</span> df[<span style=color:#b44>&#39;salary&#39;</span>]<span style=color:#666>.</span>mean()) <span style=color:#666>/</span> df[<span style=color:#b44>&#39;salary&#39;</span>]<span style=color:#666>.</span>std()
+zscore<span style=color:#666>.</span>abs() <span style=color:#666>&gt;</span> <span style=color:#666>3</span>    <span style=color:#080;font-style:italic># 是outlier的mask</span>
+</code></pre></div><p>重复值</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>df<span style=color:#666>.</span>drop_duplicates([<span style=color:#b44>&#39;name&#39;</span>, <span style=color:#b44>&#39;age&#39;</span>], <span style=color:#b44>&#39;first&#39;</span>, inplace<span style=color:#666>=</span><span style=color:#a2f;font-weight:700>True</span>)
+<span style=color:#080;font-style:italic># subset用来指定特定的列，默认所有列</span>
+<span style=color:#080;font-style:italic># keep : {‘first’, ‘last’, False}, default ‘first’，保留第一个</span>
+</code></pre></div>
 </div>
 <footer class=post-footer>
 <div class=post-tags>
-<a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a>
+<a href=/tags/%e6%8a%80%e6%9c%af rel=tag title=技术>#技术#</a>
 </div>
 <div class=addthis_inline_share_toolbox></div>
 <div class=post-nav>
 <div class="post-nav-next post-nav-item">
-<a href=/post/5221-1markov_chain/ rel=next title=随机过程（上）-马尔可夫链>
-<i class="fa fa-chevron-left"></i> 随机过程（上）-马尔可夫链
-</a>
 </div>
 <div class="post-nav-prev post-nav-item">
-<a href=/post/5203-2%E5%8D%95%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/ rel=prev title=线性回归（二）-单因素方差分析>
-线性回归（二）-单因素方差分析
+<a href=/post/%E5%A4%AA%E5%B9%B3%E6%B4%8B%E6%B6%88%E6%9D%80/ rel=prev title=基于社会面消杀的太平洋消杀方案>
+基于社会面消杀的太平洋消杀方案
 <i class="fa fa-chevron-right"></i>
 </a>
 </div>
@@ -403,10 +374,6 @@ Storage by
 <script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
 <script type=text/javascript>function showTime(d){var b=new AV.Query(d),a=[],c=$(".leancloud_visitors");c.each(function(){a.push($(this).attr("id").trim())}),b.containedIn('url',a),b.find().then(d=>{var e='.leancloud-visitors-count',b,h,f,j,g,i;if(d.length==0){c.find(e).text(0);return}for(b=0;b<d.length;b++)h=d[b],f=h.get('url'),j=h.get('time'),g=document.getElementById(f),$(g).find(e).text(j);for(b=0;b<a.length;b++)f=a[b],g=document.getElementById(f),i=$(g).find(e),i.text()==''&&i.text(0)},a=>{console.log('Query vistors failed: '+a)})}function addCount(d){var b=$(".leancloud_visitors"),a=b.attr('id').trim(),e=b.attr('data-flag-title').trim(),c=new AV.Query('Counter');c.equalTo("url",a),c.find().then(g=>{var f,c,b;g.length>0?(f=g[0],f.increment('time',1),f.save(null,{query:new AV.Query('Counter').equalTo('url',a),fetchWhenSave:!0}).then(b=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log('Update vistor failed: '+a)})):(c=new AV.ACL,c.setPublicReadAccess(!0),c.setPublicWriteAccess(!0),b=new d,b.set("title",e),b.set("url",a),b.set("time",1),b.setACL(c),b.save().then(d=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log("Save new vistor failed: "+a)}))})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const a=AV.Object.extend("Counter");$('.leancloud_visitors').length==1?addCount(a):$('.post-title-link').length>1&&showTime(a)})</script>
 <script type=text/javascript>(function(){var a=document.createElement('script');a.type='text/javascript',a.async=!0,a.setAttribute('issue-term',"title"),a.setAttribute('theme',"github-light"),a.setAttribute('repo',"jcq15/blog"),a.crossorigin='anonymous',a.src='https://utteranc.es/client.js',document.getElementById('ucomments').appendChild(a)})()</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
-<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
 <script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
 <script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
 </body>
