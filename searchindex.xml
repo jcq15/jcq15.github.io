@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>挖光所有金币的期望步数</title><url>/post/%E6%8C%96%E5%85%89%E6%89%80%E6%9C%89%E9%87%91%E5%B8%81%E7%9A%84%E6%9C%9F%E6%9C%9B%E6%AD%A5%E6%95%B0/</url><categories><category>李华大冒险</category></categories><tags><tag>李华大冒险</tag></tags><content type="html"> 前几天李华做肛拭子的的时候，豆浆机收到了一条儿童节活动的推送【加链接】。李华看着看着，突然想到一道有意思的题，瞬间花枝乱颤，拭子还没拔出来就打了一架飞机飞奔回家。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>挖光所有金币的期望步数</title><url>/post/%E6%8C%96%E5%85%89%E6%89%80%E6%9C%89%E9%87%91%E5%B8%81%E7%9A%84%E6%9C%9F%E6%9C%9B%E6%AD%A5%E6%95%B0/</url><categories><category>李华大冒险</category></categories><tags><tag>李华大冒险</tag></tags><content type="html"> 前几天李华做肛拭子的的时候，豆浆机收到了一条儿童节活动的推送
+。李华看着看着，突然想到一道有意思的题，瞬间花枝乱颤，拭子还没拔出来就打了一架飞机飞奔回家。
 活动规则很简单：网页上有 10000 个格子，其中 100 个格子下面有金币。每次随机挖开一个格子，金币挖光则世界重启。
 李华问赵铁柱，挖光所有金币的期望次数是多少？
 1 这可男不住赵铁柱。没有什么是暴力计算解决不了的。赵铁柱拔出李华的拭子，在墙上刷刷写下了公式： $$ P(k)=\frac{\binom{k-1}{M-1}}{\binom{N}{M}}. $$ 赵铁柱在墙上蹭了蹭手，解释道：$N$ 是格子的个数，$M$ 是金币个数。$P(k)$ 表示恰好 $k$ 次挖光金币的概率。这相当于最后一个金币出现在第 $k$ 个位置上，前面的 $k-1$ 个位置恰好包含 $M-1$ 个金币。于是期望就是 $$ E = \sum_{k=M}^N \frac{k\binom{k-1}{M-1}}{\binom{N}{M}}=\sum_{k=M}^N \frac{M\binom{k}{M}}{\binom{N}{M}}=\frac{M}{\binom{N}{M}}\sum_{k=M}^N \binom{k}{M}. $$ 那个求和要怎么计算呢？赵铁柱百思不得其解，开始啃指甲。
