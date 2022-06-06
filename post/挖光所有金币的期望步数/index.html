@@ -4,13 +4,13 @@
 <meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
 <meta http-equiv=content-security-policy content="upgrade-insecure-requests">
-<title> - 沙雕园 </title>
+<title> 挖光所有金币的期望步数 - 沙雕园 </title>
 <meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享">
 <meta name=author content="精神病人">
-<meta property="og:title" content>
+<meta property="og:title" content="挖光所有金币的期望步数">
 <meta property="og:site_name" content="沙雕园">
 <meta property="og:image" content="/img/author.jpg">
-<meta name=title content=" - 沙雕园">
+<meta name=title content="挖光所有金币的期望步数 - 沙雕园">
 <meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。">
 <link rel="shortcut icon" href=/img/favicon.ico>
 <link rel=apple-touch-icon href=/img/apple-touch-icon.png>
@@ -92,27 +92,38 @@
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=/post/%E6%8C%96%E5%85%89%E6%89%80%E6%9C%89%E9%87%91%E5%B8%81%E7%9A%84%E6%9C%9F%E6%9C%9B%E6%AD%A5%E6%95%B0/ itemprop=url>
+挖光所有金币的期望步数
 </a>
 </h1>
 <div class=post-meta>
 <span class=post-pushdate>
 <i class="fa fa-calendar-o fa-fw"></i>
 <span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="0001-01-01">
-0001-01-01
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2022-06-06">
+2022-06-06
 </time>
+</span>
+<span class=post-category>
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分类：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a class=post-category-a href=/categories/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9 itemprop=url rel=index>
+<span itemprop=name>李华大冒险</span>
+</a>
+&nbsp;
+</span>
 </span>
 <span class=post-wordcount>
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>16 字</span>
+<span class=leancloud-world-count>692 字</span>
 </span>
 <span class=post-readtime>
 <i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>1分钟</span>
+<span class=leancloud-view-count>2分钟</span>
 </span>
-<span id=/post/%E6%8C%96%E5%85%89%E6%89%80%E6%9C%89%E9%87%91%E5%B8%81%E7%9A%84%E6%9C%9F%E6%9C%9B%E6%AD%A5%E6%95%B0/ class="leancloud_visitors post-visitor" data-flag-title>
+<span id=/post/%E6%8C%96%E5%85%89%E6%89%80%E6%9C%89%E9%87%91%E5%B8%81%E7%9A%84%E6%9C%9F%E6%9C%9B%E6%AD%A5%E6%95%B0/ class="leancloud_visitors post-visitor" data-flag-title=挖光所有金币的期望步数>
 <i class="fa fa-binoculars fa-fw"></i>
 <span class=post-meta-item-text>阅读次数：</span>
 <span class=leancloud-visitors-count></span>
@@ -120,17 +131,75 @@
 </div>
 </header>
 <div class=post-body itemprop=articleBody>
-<p>今天是儿童节（什么？是昨天？）。</p>
+<p>前几天李华做肛拭子的的时候，豆浆机收到了一条儿童节活动的推送【加链接】。李华看着看着，突然想到一道有意思的题，瞬间花枝乱颤，拭子还没拔出来就打了一架飞机飞奔回家。</p>
+<p>活动规则很简单：网页上有 10000 个格子，其中 100 个格子下面有金币。每次随机挖开一个格子，金币挖光则世界重启。</p>
+<p>李华问赵铁柱，挖光所有金币的期望次数是多少？</p>
+<h2 id=1>1</h2>
+<p>这可男不住赵铁柱。没有什么是暴力计算解决不了的。赵铁柱拔出李华的拭子，在墙上刷刷写下了公式：
+$$
+P(k)=\frac{\binom{k-1}{M-1}}{\binom{N}{M}}.
+$$
+赵铁柱在墙上蹭了蹭手，解释道：$N$ 是格子的个数，$M$ 是金币个数。$P(k)$ 表示恰好 $k$ 次挖光金币的概率。这相当于最后一个金币出现在第 $k$ 个位置上，前面的 $k-1$ 个位置恰好包含 $M-1$ 个金币。于是期望就是
+$$
+E = \sum_{k=M}^N \frac{k\binom{k-1}{M-1}}{\binom{N}{M}}=\sum_{k=M}^N \frac{M\binom{k}{M}}{\binom{N}{M}}=\frac{M}{\binom{N}{M}}\sum_{k=M}^N \binom{k}{M}.
+$$
+那个求和要怎么计算呢？赵铁柱百思不得其解，开始啃指甲。</p>
+<p>“写个程序来算这个和吧！”</p>
+<h2 id=2>2</h2>
+<p>与此同时，李华那边有了新的发现：既然要写程序，为什么不一开始就用适合程序的算法呢？如果我们用 $d_{m,n}$ 表示 m 个金币 n 个格子需要的期望步数，则有
+$$
+d_{m,n}=\frac{m}{n}d_{m-1,n-1}+\frac{n-m}{n}d_{m, n-1},
+$$
+边界条件为 $d_{m,m}=m,\ d_{0,n}=0$.</p>
+<p>想到这里，李华穿上裤子，抄起豆浆机开始写代码。</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>M <span style=color:#666>=</span> <span style=color:#666>100</span>
+N <span style=color:#666>=</span> <span style=color:#666>10000</span>
+
+dp <span style=color:#666>=</span> [m <span style=color:#a2f;font-weight:700>for</span> m <span style=color:#a2f;font-weight:700>in</span> <span style=color:#a2f>range</span>(M<span style=color:#666>+</span><span style=color:#666>1</span>)]  <span style=color:#080;font-style:italic># diff=n-m, 压缩空间</span>
+
+<span style=color:#a2f;font-weight:700>for</span> diff <span style=color:#a2f;font-weight:700>in</span> <span style=color:#a2f>range</span>(<span style=color:#666>1</span>, N<span style=color:#666>-</span>M<span style=color:#666>+</span><span style=color:#666>1</span>):
+    <span style=color:#a2f;font-weight:700>for</span> i <span style=color:#a2f;font-weight:700>in</span> <span style=color:#a2f>range</span>(<span style=color:#666>1</span>, M<span style=color:#666>+</span><span style=color:#666>1</span>):
+        dp[i] <span style=color:#666>=</span> i <span style=color:#666>/</span> (i <span style=color:#666>+</span> diff) <span style=color:#666>*</span> dp[i<span style=color:#666>-</span><span style=color:#666>1</span>] <span style=color:#666>+</span> diff <span style=color:#666>/</span> (i <span style=color:#666>+</span> diff) <span style=color:#666>*</span> dp[i] <span style=color:#666>+</span> <span style=color:#666>1</span>
+
+<span style=color:#a2f>print</span>(dp[M])
+</code></pre></div><p>效果拔群！李华计算出结果为 9901.98.</p>
+<p>“需要这么多步啊。”</p>
+<p>两人见算出了答案，开开心心地跑去继续做肛拭子了。</p>
+<h2 id=3>3</h2>
+<p>几分钟后，一个神秘人走了进来，端详着墙上屎黄色的公式：
+$$
+\sum_{k=M}^N \binom{k}{M}.
+$$
+只见他捡起地上的一个神秘物体，刷刷地写了起来：
+$$
+\begin{align}
+\sum_{k=M}^N \binom{k}{M}&=\sum_{k=M+1}^N\left[\binom{k+1}{M+1}-\binom{k}{M+1}\right]+1\\
+&=\binom{N+1}{M+1}-\binom{M+1}{M+1}+1\\
+&=\binom{N+1}{M+1}
+\end{align}.
+$$
+于是
+$$
+E=\frac{M(N+1)}{M+1}.
+$$</p>
+<p>随后，神秘人提上裤子，头也不回地离开了。</p>
+<blockquote>
+<p>思考：如果有 N 个格子，M 个金币，你能求出挖出第 m 个金币所需的期望步数吗？这一结果让你联想到什么，是否有更直观的解释？</p>
+</blockquote>
 </div>
 <footer class=post-footer>
+<div class=post-tags>
+<a href=/tags/%e6%9d%8e%e5%8d%8e%e5%a4%a7%e5%86%92%e9%99%a9 rel=tag title=李华大冒险>#李华大冒险#</a>
+</div>
 <div class=addthis_inline_share_toolbox></div>
 <div class=post-nav>
 <div class="post-nav-next post-nav-item">
-<a href=/post/python/ rel=next title="Python 速查表">
-<i class="fa fa-chevron-left"></i> Python 速查表
-</a>
 </div>
 <div class="post-nav-prev post-nav-item">
+<a href=/post/clonexinde/ rel=prev title=如何玩好王者荣耀克隆大作战模式（上）>
+如何玩好王者荣耀克隆大作战模式（上）
+<i class="fa fa-chevron-right"></i>
+</a>
 </div>
 </div>
 <div id=ucomments></div>
@@ -165,13 +234,13 @@
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>9</span>
+<span class=site-state-item-count>10</span>
 <span class=site-state-item-name>分类</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>9</span>
+<span class=site-state-item-count>10</span>
 <span class=site-state-item-name>标签</span>
 </a>
 </div>
@@ -217,6 +286,11 @@ GitHub
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/tags/%E6%95%B4%E6%B4%BB>整活
+<sup>1</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
 <sup>1</sup>
 </a>
 </li>
@@ -300,6 +374,10 @@ Storage by
 <script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
 <script type=text/javascript>function showTime(d){var b=new AV.Query(d),a=[],c=$(".leancloud_visitors");c.each(function(){a.push($(this).attr("id").trim())}),b.containedIn('url',a),b.find().then(d=>{var e='.leancloud-visitors-count',b,h,f,j,g,i;if(d.length==0){c.find(e).text(0);return}for(b=0;b<d.length;b++)h=d[b],f=h.get('url'),j=h.get('time'),g=document.getElementById(f),$(g).find(e).text(j);for(b=0;b<a.length;b++)f=a[b],g=document.getElementById(f),i=$(g).find(e),i.text()==''&&i.text(0)},a=>{console.log('Query vistors failed: '+a)})}function addCount(d){var b=$(".leancloud_visitors"),a=b.attr('id').trim(),e=b.attr('data-flag-title').trim(),c=new AV.Query('Counter');c.equalTo("url",a),c.find().then(g=>{var f,c,b;g.length>0?(f=g[0],f.increment('time',1),f.save(null,{query:new AV.Query('Counter').equalTo('url',a),fetchWhenSave:!0}).then(b=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log('Update vistor failed: '+a)})):(c=new AV.ACL,c.setPublicReadAccess(!0),c.setPublicWriteAccess(!0),b=new d,b.set("title",e),b.set("url",a),b.set("time",1),b.setACL(c),b.save().then(d=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log("Save new vistor failed: "+a)}))})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const a=AV.Object.extend("Counter");$('.leancloud_visitors').length==1?addCount(a):$('.post-title-link').length>1&&showTime(a)})</script>
 <script type=text/javascript>(function(){var a=document.createElement('script');a.type='text/javascript',a.async=!0,a.setAttribute('issue-term',"title"),a.setAttribute('theme',"github-light"),a.setAttribute('repo',"jcq15/blog"),a.crossorigin='anonymous',a.src='https://utteranc.es/client.js',document.getElementById('ucomments').appendChild(a)})()</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
 <script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
 <script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
 </body>

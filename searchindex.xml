@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>如何玩好王者荣耀克隆大作战模式（上）</title><url>/post/clonexinde/</url><categories/><tags><tag>游戏</tag></tags><content type="html"> 在克隆模式杀人往往是亏的。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>挖光所有金币的期望步数</title><url>/post/%E6%8C%96%E5%85%89%E6%89%80%E6%9C%89%E9%87%91%E5%B8%81%E7%9A%84%E6%9C%9F%E6%9C%9B%E6%AD%A5%E6%95%B0/</url><categories><category>李华大冒险</category></categories><tags><tag>李华大冒险</tag></tags><content type="html"> 前几天李华做肛拭子的的时候，豆浆机收到了一条儿童节活动的推送【加链接】。李华看着看着，突然想到一道有意思的题，瞬间花枝乱颤，拭子还没拔出来就打了一架飞机飞奔回家。
+活动规则很简单：网页上有 10000 个格子，其中 100 个格子下面有金币。每次随机挖开一个格子，金币挖光则世界重启。
+李华问赵铁柱，挖光所有金币的期望次数是多少？
+1 这可男不住赵铁柱。没有什么是暴力计算解决不了的。赵铁柱拔出李华的拭子，在墙上刷刷写下了公式： $$ P(k)=\frac{\binom{k-1}{M-1}}{\binom{N}{M}}. $$ 赵铁柱在墙上蹭了蹭手，解释道：$N$ 是格子的个数，$M$ 是金币个数。$P(k)$ 表示恰好 $k$ 次挖光金币的概率。这相当于最后一个金币出现在第 $k$ 个位置上，前面的 $k-1$ 个位置恰好包含 $M-1$ 个金币。于是期望就是 $$ E = \sum_{k=M}^N \frac{k\binom{k-1}{M-1}}{\binom{N}{M}}=\sum_{k=M}^N \frac{M\binom{k}{M}}{\binom{N}{M}}=\frac{M}{\binom{N}{M}}\sum_{k=M}^N \binom{k}{M}. $$ 那个求和要怎么计算呢？赵铁柱百思不得其解，开始啃指甲。
+“写个程序来算这个和吧！”
+2 与此同时，李华那边有了新的发现：既然要写程序，为什么不一开始就用适合程序的算法呢？如果我们用 $d_{m,n}$ 表示 m 个金币 n 个格子需要的期望步数，则有 $$ d_{m,n}=\frac{m}{n}d_{m-1,n-1}+\frac{n-m}{n}d_{m, n-1}, $$ 边界条件为 $d_{m,m}=m,\ d_{0,n}=0$.
+想到这里，李华穿上裤子，抄起豆浆机开始写代码。
+M = 100 N = 10000 dp = [m for m in range(M+1)] # diff=n-m, 压缩空间 for diff in range(1, N-M+1): for i in range(1, M+1): dp[i] = i / (i + diff) * dp[i-1] + diff / (i + diff) * dp[i] + 1 print(dp[M]) 效果拔群！李华计算出结果为 9901.98.
+“需要这么多步啊。”
+两人见算出了答案，开开心心地跑去继续做肛拭子了。
+3 几分钟后，一个神秘人走了进来，端详着墙上屎黄色的公式： $$ \sum_{k=M}^N \binom{k}{M}. $$ 只见他捡起地上的一个神秘物体，刷刷地写了起来： $$ \begin{align} \sum_{k=M}^N \binom{k}{M}&amp;=\sum_{k=M+1}^N\left[\binom{k+1}{M+1}-\binom{k}{M+1}\right]+1\\ &amp;=\binom{N+1}{M+1}-\binom{M+1}{M+1}+1\\ &amp;=\binom{N+1}{M+1} \end{align}. $$ 于是 $$ E=\frac{M(N+1)}{M+1}. $$
+随后，神秘人提上裤子，头也不回地离开了。
+思考：如果有 N 个格子，M 个金币，你能求出挖出第 m 个金币所需的期望步数吗？这一结果让你联想到什么，是否有更直观的解释？</content></entry><entry><title>如何玩好王者荣耀克隆大作战模式（上）</title><url>/post/clonexinde/</url><categories/><tags><tag>游戏</tag></tags><content type="html"> 在克隆模式杀人往往是亏的。
 超级兵多的一方几乎必胜。
 一流法师坦克，二流坦克战士，三流射手辅助，刺客选了等输。
 之前有一阵觉得打排位只能当演员，没什么意思（具体见此篇
