@@ -1,4 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>挖光所有金币的期望步数</title><url>/post/%E6%8C%96%E5%85%89%E6%89%80%E6%9C%89%E9%87%91%E5%B8%81%E7%9A%84%E6%9C%9F%E6%9C%9B%E6%AD%A5%E6%95%B0/</url><categories><category>李华大冒险</category></categories><tags><tag>李华大冒险</tag></tags><content type="html"> 前几天李华做肛拭子的的时候，豆浆机收到了一条儿童节活动的推送
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>telegram bot+beancount+fava 打造自己的记账系统</title><url>/post/%E8%AE%B0%E8%B4%A6/</url><categories><category>技术</category></categories><tags><tag>技术</tag></tags><content type="html"> 之前用过一些记账 APP，但 APP 有很多缺点无法解决：
+开屏广告/动画无法跳过，每次记账都要看好几秒动画，很影响体验 有可能泄露隐私，尤其是国产 APP，谁知道它拿着你的数据干啥了呢 有数据丢失风险，数据都在人家服务器上，他们跑路了就完犊子了 为此，我经过研究，决定使用 telegram bot + beancount + fava 进行记账。只需要在 telegram 上对机器人说句话，就能自动记录到自己的服务器上，并且随时可以在网页端查看统计图：
+便捷操作，自己搭建，高效安全，功能完整！
+注意：如果你在服务器上使用 telegram bot，需要确保你的服务器能翻墙！
+Beancount 安装与配置 简介 Beancount 是个很强大的复式记账工具，使用纯文本记录并通过 python 生成报表，非常自由。它的消费记录长这样：
+2022-07-04 * "午饭" Expenses:Food:吃饭:午饭 20 CNY Assets:现金 不仅可以记录何时花了多少钱，还可以分类（比如这里就是 Food 大类下的吃饭子类下的午饭类），还知道钱是从哪出的（现金、支付宝、银行卡等）。
+这篇主要讲如何配置，就不详细介绍 beancount 的语法了，可以在这里查看官方使用教程
+，或者在这里看中文版教程
+。
+安装 它是个 python 库，通过 pip 安装：
+pip install beancount pip install fava 如果报错 fatal error: Python.h: No such file or directory，则需要安装 python-dev：
+apt-get install python3-dev # 如果还无法解决，可以根据python版本指定python-dev的版本，比如你用python3.9，就是 apt-get install python3.9-dev 使用 找个地方新建一个文件，比如叫 account.beancount，在里面写东西就行了。初始化可以这样：
+;; -*- mode: beancount; coding: utf-8; fill-column: 400; -*- option "title" "记叭账！" option "operating_currency" "CNY" option "operating_currency" "USD" ;初始化账户 1970-01-01 open Assets:Cash CNY 1970-01-01 open Equity:Init CNY 1970-01-01 * "账户初始化" Assets:Cash 200 CNY Equity:Init 2022-07-04 * "午饭" Expenses:Food:吃饭:午饭 20 CNY Assets:Cash 第一行指定了 utf-8 编码，似乎可有可无。后面几个 option 指定了标题和使用的币种。下一段初始化，开设了一个叫 Cash 的账户，表示现在我有 200 元现金。最后三行是一次消费记录 —— 午饭花了 20 元，现金支付。
+然后打开可视化界面：
+fava account.beancount 默认端口在 5000，只要打开 localhost:5000 就可以看到网页了。
+以后记账则要修改 account.beancount 文件（也可以在网页左侧点击“编辑器”编辑这个文件）。这样很麻烦，所以我们要用 telegram bot 简化这一操作。
+使用 telegram bot 实现随时记账 首先点击这里
+添加 BotFather 为好友，然后对它发送 /newbot，之后按提示操作便可得到一个 bot。记录下它给的 HTTP API 并妥善保管，这是操作 bot 的唯一凭证！
+可以参考我的脚本，也可以自己写。就是把 telegram 上收到的消息 parse 成 beancount 的格式。只有一小段代码，就直接放在文末了。
+现在，只要对 telegram bot 说 午饭 20 现金，就可以自动转换成下面这一串，然后写入账本：
+2022-07-04 * "午饭" Expenses:Food:吃饭:午饭 20 CNY Assets:Cash 可以在手机主屏幕添加一个 telegram 的小工具，更方便。
+登录认证 我有一个域名，所以就把 localhost:5000 映射到公网了，可以随时查看报表。但财务状况涉及隐私，我们不希望别人能看见，于是想用 nginx 的 auth_basic 设置一个密码。
+安装：
+apt-get install apache2-utils 在要存放密码文件的地方生成密码（不要放在 root 目录下！否则 nginx 没有权限读取，会一直 500）：
+htpasswd -c /etc/nginx/auth_basic/passwdfile {username} #执行上命令后会要求输入两次密码，./passwdfile 是在当前目录下创建密码文件passwdfile ，username即为需要设置的账号 改nginx配置，增加一个 server 进行映射，并启用验证（自己替换 [] 中的内容）：
+server { listen 443 ssl; server_name [your url]; auth_basic "Please type your account name and password"; auth_basic_user_file [location of the passwdfile]; # 建议使用https，不然数据会在网上裸奔，也不安全 ssl_certificate /etc/letsencrypt/live/shadiao.online/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/shadiao.online/privkey.pem; ssl_session_timeout 5m; ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4; #加密算法 ssl_protocols TLSv1 TLSv1.1 TLSv1.2; #安全链接可选的加密协议 ssl_prefer_server_ciphers on; #使用服务器端的首选算法 location / { proxy_pass http://127.0.0.1:5000; } } service nginx restart 大功告成！
+附录 HTTP API 放在同一目录下的 password.py 中，token = 'xxxx'。
+Python 代码：
+from telegram import Update from telegram.ext import CallbackContext from telegram.ext import Updater from telegram.ext import CommandHandler from telegram.ext import MessageHandler, Filters import logging from datetime import datetime from urwid import str_util # 计算字符宽度 # 在telegram上输入'早饭'，会自动转换成'Expenses:Food:吃饭:早饭' # 这个表可以自己维护 translate = { '早饭': 'Expenses:Food:吃饭:早饭', '午饭': 'Expenses:Food:吃饭:午饭', '晚饭': 'Expenses:Food:吃饭:晚饭', '夜宵': 'Expenses:Food:吃饭:夜宵', 'a': 'Assets:Bank:OCBC-Frank', 'frank': 'Assets:Bank:OCBC-Frank', 'b': 'Assets:Cash-SGD', '现金': 'Assets:Cash-SGD', } ## utils # 字符串的显示宽度 def str_width(text): return sum([str_util.get_width(ord(c)) for c in text]) # 输入文本，返回beancount格式的字符串 # 第一个返回值是返回给用户的提示语，第二个返回值是beancount，要在外部写入文件 ''' 2022-07-04 * "午饭" Expenses:Food:吃饭:午饭 9.1 SGD Assets:Bank:OCBC-Frank ''' def parse_bill(text): align = 32 # 钱数在32个字符处对齐 ingredients = text.split(' ') if len(ingredients) == 3: title, money, account = ingredients # 干了啥，多少钱，从哪出的 for i in [title, account]: if i not in translate: reply = '错误！“%s”不在翻译表里！' % i return reply, '' date = datetime.today().strftime('%Y-%m-%d') line1 = f'{date}* "{title}"' line2 = f' {translate[title]}' width2 = str_width(line2) padding2 = 32 - width2 # 空格补齐 while padding2 &lt;= 0: padding2 += 4 # 超长就多补齐4个 line2 = line2 + ' ' * padding2 + money + ' SGD' line3 = f' {translate[account]}' ''' # 只从一个账户支付，后面可以不写，beancount会自动计算 width3 = str_width(line3) padding3 = 32 - width3 # 空格补齐 while padding3 &lt;= 0: padding3 += 4 # 超长就多补齐4个 line3 = line3 + ' -' * padding3 + money + ' SGD' ''' parsed = line1 + '\n' + line2 + '\n' + line3 return '', parsed else: # todo reply = '错误！ingredients的长度需要是3，可你是%d！' % len(ingredients) return reply, '' # text message # 目前输入格式：项目 金额 账户，例如“午饭 10 现金” def bill(update: Update, context: CallbackContext): text = update.message.text # 早饭 6 frank reply, parsed = parse_bill(text) if parsed: # 成了！ # 一定要用a，不然内容没了 with open('./account.beancount', 'a', encoding='utf-8') as file: # 前后加换行 file.write('\n' + parsed + '\n') reply = '成功写入以下内容：\n\n' + parsed context.bot.send_message(chat_id=update.effective_chat.id, text=reply) context.bot.send_message(chat_id=update.effective_chat.id, text=str(translate)) # the bot import password updater = Updater(token=password.token) # 在这里指定token，也可改成命令行输入 dispatcher = updater.dispatcher # log logging.basicConfig(format='%(asctime)s- %(name)s- %(levelname)s- %(message)s', level=logging.INFO) # turn functions to handlers here start_handler = CommandHandler('start', start) echo_handler = MessageHandler(Filters.text &amp; (~Filters.command), bill) # add handlers dispatcher.add_handler(start_handler) dispatcher.add_handler(echo_handler) # start the bot updater.start_polling()</content></entry><entry><title>挖光所有金币的期望步数</title><url>/post/%E6%8C%96%E5%85%89%E6%89%80%E6%9C%89%E9%87%91%E5%B8%81%E7%9A%84%E6%9C%9F%E6%9C%9B%E6%AD%A5%E6%95%B0/</url><categories><category>李华大冒险</category></categories><tags><tag>李华大冒险</tag></tags><content type="html"> 前几天李华做肛拭子的的时候，豆浆机收到了一条儿童节活动的推送
 。李华看着看着，突然想到一道有意思的题，瞬间花枝乱颤，拭子还没拔出来就打了一架飞机飞奔回家。
 活动规则很简单：网页上有 10000 个格子，其中 100 个格子下面有金币。每次随机挖开一个格子，金币挖光则世界重启。
 李华问赵铁柱，挖光所有金币的期望次数是多少？
@@ -37,7 +65,7 @@ M = 100 N = 10000 dp = [m for m in range(M+1)] # diff=n-m, 压缩空间 for diff
 克隆模式有额外经济加成，使得本就弱势的打野更加发育不起来，实际上哪怕两人吃一路线都比打野发育的好（并且带线还有利于推塔） “模式专属平衡”使得脆皮不那么脆，高爆发英雄也没那么高的爆发，所以抓人的成功率也下降了。更何况这模式杀人根本没用 打野刀浪费一个宝贵的装备格子。克隆模式装备格子十分宝贵，恨不得一个格子掰成两半用，有时候连鞋子都没机会出，你却用一个格子出一个主词条是打野的装备？ 注意回蓝 任何有蓝条的英雄都要考虑这点。在加载的时候，我们就要考虑这局会不会缺蓝。如果有缺蓝的风险，务必靠装备来保证回蓝，而不是依赖蓝 buff。你和 4 个队友是一样的英雄，你缺蓝他们也缺蓝，1~2 个 buff 5 个人根本不够分，更何况你每隔 90 秒就去打个蓝，多影响节奏哇。
 小缺蓝可以出回蓝鞋，大缺蓝最好出圣杯。也有先出回蓝鞋后期换圣杯的打法，或者小回蓝散件堆叠渡过缺蓝前期，后期再弃子整形。具体的回蓝方案需要具体问题具体分析，我们会在装备篇里详述。
 英雄强度分析 因为克隆是五个人用同一个英雄，所以英雄的强度和排位赛有较大差别。很多排位厉害的英雄到了克隆就是废物。下面按照我的个人理解，按照五（七？）个等级进行强度分类。（随着游戏环境变化，此列表可能会过时，我尽量随时更新）
-等级 英雄 Bug 闭眼推塔：米莱狄 T0 推塔厉害：刘禅
+等级 英雄 T0 推塔厉害：刘禅
 老不死：程咬金，猪八戒
 强势法师：小乔，妲己，安琪拉，甄姬，王昭君
 强势战士：铠 T1 多数战坦：廉颇，孙策，盘古，苏烈，吕布，关羽，钟无艳，杨戬，亚瑟，项羽，夏侯惇
@@ -46,13 +74,15 @@ M = 100 N = 10000 dp = [m for m in range(M+1)] # diff=n-m, 压缩空间 for diff
 强势射手：李元芳，虞姬 T2 弱势战坦：典韦，白起，张飞，哪吒，司空震，老夫子，梦奇，李信，狂铁，达摩，蒙恬
 多数辅助：蔡文姬，张飞，明世隐，孙膑，大乔
 弱势法师：不知火舞，张良，沈梦溪，杨玉环，高渐离，周瑜
-传统射手：蒙犽，后羿，艾琳，鲁班七号，孙尚香 T3 没伤害的英雄：夏洛特，刘备，花木兰，宫本武藏，曹操，上官婉儿
+传统射手：蒙犽，后羿，艾琳，鲁班七号，孙尚香 T3 没伤害的英雄：夏洛特，刘备，花木兰，曹操，上官婉儿
 实在没伤害的辅助：牛魔，鬼谷子，太乙真人，鲁班大师
 弱势射手：百里守约，伽罗，公孙离，成吉思汗，狄仁杰，马可波罗
-没啥存在感的英雄：弈星，裴擒虎，雅典娜，刘邦 T4 相对不那么废的刺客：娜可露露，孙悟空，曜，兰陵王，云缨，云中君，司马懿，橘右京，赵云 狗都不玩 狗都不玩：韩信，百里玄策，阿轲，澜，马超，元歌，露娜，李白，镜 大体规律是：一流法师坦克，二流坦克战士，三流射手辅助，刺客选了等输。
+没啥存在感的英雄：弈星，裴擒虎，雅典娜，刘邦 T4 相对不那么废的刺客：宫本武藏，娜可露露，孙悟空，曜，兰陵王，云缨，云中君，司马懿，橘右京，赵云 狗都不玩 狗都不玩：韩信，百里玄策，阿轲，澜，马超，元歌，露娜，李白，镜 大体规律是：一流法师坦克，二流坦克战士，三流射手辅助，刺客选了等输。
 一般来说，上面 7 行的后两行坚决不选，选了就是找虐。倒数第三行如果你想娱乐一下可以选。要是你想玩的有点意思，就不要选米莱狄，太简单无聊了。想虐人可以从 T0，T1 里选。米莱狄虐不了人，米莱狄打架打不过别人，战绩肯定不如对面，但它就是能推塔。
-最近米莱狄有被暗改削弱的感觉，貌似没那么强了，我会再观察一段时间，考虑将其下调到T0.
-另外，不要轻视辅助。由于克隆有专属的平衡性调整，做了输出装的辅助，其输出往往在 T1~T2 级别，和射手持平，碾压各路刺客。而且它还肉！所以辅助在克隆模式极为强势（一定要当输出打，千万别出辅助装！）。</content></entry><entry><title>Python数据处理速查表</title><url>/post/python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E9%80%9F%E6%9F%A5%E8%A1%A8cheatsheet/</url><categories><category>技术</category></categories><tags><tag>技术</tag></tags><content type="html"> 以前的速查表有点乱，近期重整一下。
+另外，不要轻视辅助。由于克隆有专属的平衡性调整，做了输出装的辅助，其输出往往在 T1~T2 级别，和射手持平，碾压各路刺客。而且它还肉！所以辅助在克隆模式极为强势（一定要当输出打，千万别出辅助装！）。
+更新日志：
+2022/06/11
+米莱狄明显受到系统针对，可能100%胜率太过分了，最近不让米莱狄赢。建议近期不要选。暂时将其从表格中删除. 宫本武藏重做之后彻底废了，初步下调到T4，考虑是否要调到“狗都不玩”级别</content></entry><entry><title>Python数据处理速查表</title><url>/post/python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E9%80%9F%E6%9F%A5%E8%A1%A8cheatsheet/</url><categories><category>技术</category></categories><tags><tag>技术</tag></tags><content type="html"> 以前的速查表有点乱，近期重整一下。
 Pandas import pandas as pd 数据读取 df = pd.read_excel('filepath/name.xlsx', 0, header=0) # 第0个sheet # header=0: 第一行为表头，header=None：无表头 df = pd.read_csv('file.csv') df = pd.read_csv('file.txt', sep='\t') 新建 dataframe，从 dict 直接创建：
 data = { 'name': ['李华', '二傻子'], 'age': [114, 514] } df = pd.Dataframe(data) 索引与切片 # 直接通过'[]'，字符串表示列，数字表示行 df['price'] # 选取名字为'price'的列 df[['name', 'price']] # 选取多列，把列名放在list里 df[:2] # 第0行和第1行，这里和list的切片操作一样 # iloc和loc：索引用iloc，列名用loc。iloc和loc的优势是可以进行筛选 # loc用法：df.loc[index, column_name] # 一个大坑：loc的行索引是闭区间，而不是python通用的左闭右开（但iloc是正常的） df.loc[2, 'price'] # 第2行，名字为'price'的列 df.loc[[2,3],['name','price']] # index和column_name都可灵活使用list或切片 df.loc[df['price']&lt;100,'name'] # 筛选，注意筛选条件是针对行的 # iloc用法：只要把loc的列名改成索引 df.iloc[df['price']&lt;100, 2:5] # 一样可以灵活组合list和切片 df.iloc[df['price']&lt;100 | df['price']>200] # 筛选条件'|'表示或，'&amp;'表示与 删除 df.drop(columns=['name', 'gender'], inplace=True) # 列 df.drop(index=[0, 1], inplace=True) # 行 df.drop(df[df['age'] > 80].index) # 按条件删除 预处理 描述性统计
 df.count() # 非空观测数量 df.sum() # 和，可指定axis；mean, median, mode 同理 df.std() # 标准差 df.min() # max 缺失值
@@ -1124,4 +1154,33 @@ a = np.array([[1,2], [3, 4], [5, 6]]) bool_idx = (a > 2) # Find the elements of 
 虽然左上角可以切换英文，但我还没有写英文版的内容。
 有任何意见/建议/bug反馈，可直接在下方评论，或发邮件至：qq842205264@gmail.com，有想看的内容也欢迎提出鸭~
 可以点此订阅本站的 RSS
-。</content></entry></search>
+。</content></entry><entry><title>李华大冒险4 - 和赵铁柱因为分蛋糕吵起来了</title><url>/post/lihua4/</url><categories><category>李华大冒险</category></categories><tags><tag>李华大冒险</tag></tags><content type="html"> 附近的咖啡厅里，两个人在激烈的争吵：
+“这么分肯定不行，奶油不平均！”
+“你取个三等分点，把他俩连线，然后以这个点为焦点画一条抛物线……”
+“我不管……”
+李华在恰当的时间准时和赵铁柱碰面了，两人进了附近的一家咖啡厅。服务员用豆浆机做了个蛋糕，端了上来。李华这才想起，今天是他的生日。
+可是，天有不测风云，人有可测风云。两人在分蛋糕问题上发生了争吵。他们都不希望对方的蛋糕比自己的多，所以只有平分才能让两人都满意。然而如何做到完美平分呢？
+正当两人吵得不可开交的时候，在一旁暗中观察的服务员说话了：
+“你们俩，一个人分，另一个人挑，不就都满意了吗？”
+……
+沉默
+……
+沉默是今晚的南京市长
+江大桥
+然而李华是一个善于思考的好学生，他很快把这个问题推广了一下：
+如果有n个人，大家怎样才会满意，又该制定怎样的策略，才能让大家都满意呢？</content></entry><entry><title>李华大冒险3 - 怎样才能和赵铁柱见面的概率最大</title><url>/post/lihua3/</url><categories><category>李华大冒险</category></categories><tags><tag>李华大冒险</tag></tags><content type="html"> 李华手忙脚乱，终于骑着出租车按时到了学校。
+第一节课下课，李华的豆浆机突然收到一条传真，是后桌同学发来的。上面写着：
+“明天下午在公园见面，时间在2点～3点之间，具体时间随机，不管我们谁先到，都等且只等对方10分钟，10分钟一过就离开，能不能见面就看你的咯～”
+这里有必要介绍一下，李华的后桌是他暗恋的一个女生，名字叫赵铁柱。李华收到纸条后欣喜若狂，十分想和赵铁柱见面，但他知道赵铁柱是个足够聪明的人，如果他不按照纸条的要求去做，肯定会好感度下降。那么，李华该什么时间去公园，才能使两人见面的概率最大呢？</content></entry><entry><title>李华大冒险2 - 开倒车是为了更快到达学校</title><url>/post/lihua2/</url><categories><category>李华大冒险</category></categories><tags><tag>李华大冒险</tag></tags><content type="html"> 李华风风火火地洗完澡以后，便匆忙收拾好书包，抄起豆浆机准备去上学。
+他按照惯例，站在家门口等出出车，然而等了好久车还没有来，于是他决定先往学校走，遇到出租车再上。
+走着走着，李华觉得不太对：
+首先人走的肯定比车慢，因此他往前走是追不上前面的车的，也就是说往前走并不能增大他碰到出租车的机会，他在路上碰到的车都是从后面追上他的。既然如此，为什么要往前走呢？站在原地等车不是更好么？
+然而，机智的李华稍加思考，发现站在原地也不是最好的策略，因为有可能后面的车被其他人先截住，从这个角度思考，他应该往反方向走，才能更快地坐上出租车，更早到达学校。但这个结论怎么想都觉得别扭，为了早点到达目的地，竟然应该先往反方向走？
+大家怎么看呢？</content></entry><entry><title>李华大冒险1 - 浴室的羞耻play</title><url>/post/lihua1/</url><categories><category>李华大冒险</category></categories><tags><tag>李华大冒险</tag></tags><content type="html"> 浴室中，李华看着眼前的水管，邪恶地笑了起来。
+李华家的浴室如上图，有一个热水管和一个冷水管，淋浴头（并没有）出来的水由二者混合形成。
+已知热水管的水温是80度，冷水管的水温是20度，如下图：
+由于两个水管的水流量相等，因此出来的水温为50度，李华表示内存没有初始化，口中直呼烫烫烫
+正在李华一筹莫展时，他一低头，看到了胸前的红领巾（不要问我为什么洗澡要戴红领巾），他瞬间想起他是一名光荣的少先队员，他想起了老师的谆谆教导，遇到困难应该努力克服！
+经过一番思考，李华心生一计：
+把流出来的水喷射到热水管上，不就能降低热水管的温度了嘛！
+现在问题来了：这种情况下，流出来的水是多少度呢？</content></entry></search>
