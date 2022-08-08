@@ -1,157 +1,24 @@
-<!doctype html><html lang=zh-cn dir=content/zh-cn>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
-<title> 随机图与网络模型 - 沙雕园 </title>
-<meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享">
-<meta name=author content="精神病人">
-<meta property="og:title" content="随机图与网络模型">
-<meta property="og:site_name" content="沙雕园">
-<meta property="og:image" content="/img/author.jpg">
-<meta name=title content="随机图与网络模型 - 沙雕园">
-<meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。">
-<link rel="shortcut icon" href=/img/favicon.ico>
-<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
-<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
-<link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css>
-<link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet>
-<link href=/css/main.css rel=stylesheet type=text/css>
-<link href=/css/syntax.css rel=stylesheet type=text/css>
-</head>
-<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
-<div class="container one-collumn sidebar-position-left page-home">
-<div class=headband></div>
-<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
-<div class=header-inner> <div class=site-brand-container>
-<div class=site-nav-toggle>
-<div class=toggle role=button style=opacity:1;top:0>
+<!doctype html><html lang=zh-cn dir=content/zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=content-security-policy content="upgrade-insecure-requests"><title>随机图与网络模型 - 沙雕园</title><meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享"><meta name=author content="精神病人"><meta property="og:title" content="随机图与网络模型"><meta property="og:site_name" content="沙雕园"><meta property="og:image" content="/img/author.jpg"><meta name=title content="随机图与网络模型 - 沙雕园"><meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。"><link rel="shortcut icon" href=/img/favicon.ico><link rel=apple-touch-icon href=/img/apple-touch-icon.png><link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png><link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css><link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet><link href=/css/main.css rel=stylesheet type=text/css><link href=/css/syntax.css rel=stylesheet type=text/css></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-hans><div class="container one-collumn sidebar-position-left page-home"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle role=button style=opacity:1;top:0><span class=toggle-line></span>
 <span class=toggle-line></span>
-<span class=toggle-line></span>
-<span class=toggle-line></span>
-</div>
-</div>
-<div class=site-meta>
-<div class=custom-logo-site-title>
-<a href=/ class=brand rel=start>
-<span class=logo-line-before><i></i></span>
+<span class=toggle-line></span></div></div><div class=site-meta><div class=custom-logo-site-title><a href=/ class=brand rel=start><span class=logo-line-before><i></i></span>
 <span class=site-title>沙雕园</span>
-<span class=logo-line-after><i></i></span>
-</a>
-</div>
-<p class=site-subtitle>沙雕使人进步。</p>
-</div>
-<div class=site-nav-right>
-<div class="toggle popup-trigger" style=opacity:1;top:0>
-<i class="fa fa-search fa-fw fa-lg"></i>
-</div>
-</div>
-</div>
-<nav class=site-nav>
-<ul id=menu class=menu>
-<li class=menu-item>
-<a href=/ rel=section>
-<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页
-</a>
-</li>
-<li class="menu-item menu-item-active">
-<a href=/post rel=section>
-<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档
-</a>
-</li>
-<li class=menu-item>
-<a href=/about.html rel=section>
-<i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我
-</a>
-</li>
-<li class="menu-item menu-item-search">
-<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> 搜索</a>
-</li>
-</ul>
-<div class=site-search>
-<div class="popup search-popup local-search-popup">
-<div class="local-search-header clearfix">
-<span class=search-icon><i class="fa fa-search"></i> </span>
-<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
-<div class=local-search-input-wrapper>
-<input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
-</div>
-</div>
-<div id=local-search-result></div>
-</div>
-</div>
-</nav> </div>
-</header>
-<main id=main class=main>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=/post/5225-2%E9%9A%8F%E6%9C%BA%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/ itemprop=url>
-随机图与网络模型
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
+<span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>沙雕使人进步。</p></div><div class=site-nav-right><div class="toggle popup-trigger" style=opacity:1;top:0><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul id=menu class=menu><li class=menu-item><a href=/ rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-active"><a href=/post rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class=menu-item><a href=/about.html rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于我</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class=site-search><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class=search-icon><i class="fa fa-search"></i></span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span><div class=local-search-input-wrapper><input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off></div></div><div id=local-search-result></div></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><section id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=/post/5225-2%E9%9A%8F%E6%9C%BA%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/ itemprop=url>随机图与网络模型</a></h1><div class=post-meta><span class=post-pushdate><i class="fa fa-calendar-o fa-fw"></i>
 <span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-11-12">
-2021-11-12
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-11-12">2021-11-12</time></span>
+<span class=post-category><i class="fa fa-folder-o fa-fw"></i>
 <span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0 itemprop=url rel=index>
-<span itemprop=name>课程笔记</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing><a class=post-category-a href=/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0 itemprop=url rel=index><span itemprop=name>课程笔记</span></a>
+&nbsp;</span></span>
+<span class=post-wordcount><i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>1958 字</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
+<span class=leancloud-world-count>1958 字</span></span>
+<span class=post-readtime><i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>4分钟</span>
-</span>
-<span id=/post/5225-2%E9%9A%8F%E6%9C%BA%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/ class="leancloud_visitors post-visitor" data-flag-title=随机图与网络模型>
-<i class="fa fa-binoculars fa-fw"></i>
+<span class=leancloud-view-count>4分钟</span></span>
+<span id=/post/5225-2%E9%9A%8F%E6%9C%BA%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/ class="leancloud_visitors post-visitor" data-flag-title=随机图与网络模型><i class="fa fa-binoculars fa-fw"></i>
 <span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>感觉写的并不透彻，不过就这样吧。</p>
-<h1 id=网络模型>网络模型</h1>
-<h2 id=随机图模型>随机图模型</h2>
-<p>随机图模型，致力于在图构成的集合上构建概率测度。既然是概率，就可以用三元组 $(\mathcal{G},\mathcal{F},P)$ 表示。其中 $\mathcal{G}$ 是一些图的集合，$\mathcal{F}$ 是其上的 $\sigma$-代数，$P$ 是概率测度。通常 $\mathcal{G}$ 是有限集，此时 $\mathcal{F}=2^{\mathcal{G}}$.</p>
-<h3 id=经典模型>经典模型</h3>
-<p><strong>Erdos & Renyi 模型</strong>：用 $G(n,m)$ 表示所有 $n$ 个顶点，$m$ 条边的图的集合，共有 $\dbinom{\frac{n(n-1)}{2}}{m}$ 个。让每一个图等概率出现。</p>
-<p><strong>Gilbert 模型</strong>：记作 $G(n,p)$，它考虑所有 $n$ 个顶点的图，每个边的出现概率为 $p$，并且独立于其他边。共有 $2^{\frac{n(n-1)}{2}}$ 种不同的图。</p>
-<p><strong>等价性</strong>：在 Gilbert 模型中令 $np=m$，然后令 $n\to\infty$，根据大数定律，几乎所有的图边数都是 $m$，此时 E-R 模型和 Gilbert 模型行为是类似的。</p>
-<h4 id=度分布degree-distribution>度分布（degree distribution）</h4>
-<p>显然单个节点的度服从二项分布 $B(n-1,p)$.</p>
-<p>通常我们关心边数固定时的渐近情况，即令 $p=c/n$, $c$ 是常数。当 $n\to\infty$ 时，二项分布趋近于泊松分布 $Poisson((n-1)p)\approx Poisson(c)$ [2].</p>
-<p>现实中的图往往是非均匀网络，它的度分布更接近<strong>幂律分布</strong>，所以经典的随机图模型并不能很好地模拟现实情况。</p>
-<h3 id=一般模型>一般模型</h3>
-<p>一般模型允许我们在图上施加任意限制，例如考虑固定顶点数 $n$ 和度序列 $(k_1,\cdots,k_n)$，然后等概率选取。</p>
-<blockquote>
-<p>这使得我们可以针对观察到的图进行模拟：使用相同的度序列随机生成一些图，然后看一下我们观察到的特征是否显著。</p>
-</blockquote>
-<p>此外还可以加别的限制条件。根据指定的条件随机生成图的算法是一个复杂的话题，我们这里暂且不讨论。</p>
-<p>把图放进概率空间，手段就多了。我们可以给 $P$ 带上参数，变成分布族 $\mathcal{P}={P_\theta:\theta\in\Theta}$. 我们这就来介绍享誉全球的<strong>指数随机图模型（exponential random graph models, ERGM）</strong>。</p>
-<h2 id=指数随机图模型>指数随机图模型</h2>
-<p>图 $g\in G$ 的概率定义为
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>感觉写的并不透彻，不过就这样吧。</p><h1 id=网络模型>网络模型</h1><h2 id=随机图模型>随机图模型</h2><p>随机图模型，致力于在图构成的集合上构建概率测度。既然是概率，就可以用三元组 $(\mathcal{G},\mathcal{F},P)$ 表示。其中 $\mathcal{G}$ 是一些图的集合，$\mathcal{F}$ 是其上的 $\sigma$-代数，$P$ 是概率测度。通常 $\mathcal{G}$ 是有限集，此时 $\mathcal{F}=2^{\mathcal{G}}$.</p><h3 id=经典模型>经典模型</h3><p><strong>Erdos & Renyi 模型</strong>：用 $G(n,m)$ 表示所有 $n$ 个顶点，$m$ 条边的图的集合，共有 $\dbinom{\frac{n(n-1)}{2}}{m}$ 个。让每一个图等概率出现。</p><p><strong>Gilbert 模型</strong>：记作 $G(n,p)$，它考虑所有 $n$ 个顶点的图，每个边的出现概率为 $p$，并且独立于其他边。共有 $2^{\frac{n(n-1)}{2}}$ 种不同的图。</p><p><strong>等价性</strong>：在 Gilbert 模型中令 $np=m$，然后令 $n\to\infty$，根据大数定律，几乎所有的图边数都是 $m$，此时 E-R 模型和 Gilbert 模型行为是类似的。</p><h4 id=度分布degree-distribution>度分布（degree distribution）</h4><p>显然单个节点的度服从二项分布 $B(n-1,p)$.</p><p>通常我们关心边数固定时的渐近情况，即令 $p=c/n$, $c$ 是常数。当 $n\to\infty$ 时，二项分布趋近于泊松分布 $Poisson((n-1)p)\approx Poisson(c)$ [2].</p><p>现实中的图往往是非均匀网络，它的度分布更接近<strong>幂律分布</strong>，所以经典的随机图模型并不能很好地模拟现实情况。</p><h3 id=一般模型>一般模型</h3><p>一般模型允许我们在图上施加任意限制，例如考虑固定顶点数 $n$ 和度序列 $(k_1,\cdots,k_n)$，然后等概率选取。</p><blockquote><p>这使得我们可以针对观察到的图进行模拟：使用相同的度序列随机生成一些图，然后看一下我们观察到的特征是否显著。</p></blockquote><p>此外还可以加别的限制条件。根据指定的条件随机生成图的算法是一个复杂的话题，我们这里暂且不讨论。</p><p>把图放进概率空间，手段就多了。我们可以给 $P$ 带上参数，变成分布族 $\mathcal{P}={P_\theta:\theta\in\Theta}$. 我们这就来介绍享誉全球的<strong>指数随机图模型（exponential random graph models, ERGM）</strong>。</p><h2 id=指数随机图模型>指数随机图模型</h2><p>图 $g\in G$ 的概率定义为
 $$
 P_\theta(g)=\frac{1}{\kappa(\theta)}e^{\theta^TT(g)}.
 $$
@@ -159,307 +26,88 @@ $$
 $$
 \kappa=\sum_{g\in G}e^{\theta^T T(g)}.
 $$
-显然它是个指数族。注意这里我们是根据感兴趣的特征量来确定 $T$，然后给他配上相同维度的 $\theta$.</p>
-<h3 id=估计>估计</h3>
-<p>通常我们使用极大似然估计，但对一般的模型来说并不容易。通常 $G$ 的规模异常巨大，$\kappa$ 很难求出解析形式，所以要使用 MCMC 进行模拟。</p>
-<h3 id=统计量>统计量</h3>
-<p>在 ERGM 中，$T$ 是钦定的。除了常见的边数、三角形数等，我们还有一些高大上的统计量。</p>
-<p><strong>Geometrically weighted edgewise shared partner (GWESP)</strong> 通常可以用来替代三角形数，它的定义是</p>
-<p>$$
+显然它是个指数族。注意这里我们是根据感兴趣的特征量来确定 $T$，然后给他配上相同维度的 $\theta$.</p><h3 id=估计>估计</h3><p>通常我们使用极大似然估计，但对一般的模型来说并不容易。通常 $G$ 的规模异常巨大，$\kappa$ 很难求出解析形式，所以要使用 MCMC 进行模拟。</p><h3 id=统计量>统计量</h3><p>在 ERGM 中，$T$ 是钦定的。除了常见的边数、三角形数等，我们还有一些高大上的统计量。</p><p><strong>Geometrically weighted edgewise shared partner (GWESP)</strong> 通常可以用来替代三角形数，它的定义是</p><p>$$
 \mathrm{GWESP}<em>\gamma(g)=e^\gamma\sum</em>{k=0}^{n-2}\left(1-(1-e^{-\gamma})^k\right)\mathrm{SP}_k(g),
-$$</p>
-<p>其中 $\gamma\ge 0$ 是钦定的，$\mathrm{SP}_k(g)=\sharp{(u,v)\in E:u,v\text{ 恰好有 }k\text{ 个公共邻居}}$.</p>
-<p><strong>Geometrically weighted degree (GWD)</strong> 则可以用来替代 $k$-star 的个数。它是</p>
-<p>$$
+$$</p><p>其中 $\gamma\ge 0$ 是钦定的，$\mathrm{SP}_k(g)=\sharp{(u,v)\in E:u,v\text{ 恰好有 }k\text{ 个公共邻居}}$.</p><p><strong>Geometrically weighted degree (GWD)</strong> 则可以用来替代 $k$-star 的个数。它是</p><p>$$
 \mathrm{GWD}<em>\gamma(g)=\sum</em>{k=0}^{n-1}e^{-k\gamma}D_k(g),
-$$</p>
-<p>其中 $D_k(g)$ 是度为 $k$ 的节点个数。</p>
-<h3 id=block-model>Block Model</h3>
-<p>这时 ERGM 的一种。我们假设图分成了 $I$ 组，一条边的连接概率只和两个端点所在的组有关。我们有参数 $b=(b_{11},\cdots,b_{II})$，若 $u$ 在第 $i$ 组，$v$ 在第 $j$ 组，则 $P_b((u,v)\in E)=b_{ij}$.</p>
-<p>对给定的图 $g$，我们可以计算他的概率
+$$</p><p>其中 $D_k(g)$ 是度为 $k$ 的节点个数。</p><h3 id=block-model>Block Model</h3><p>这时 ERGM 的一种。我们假设图分成了 $I$ 组，一条边的连接概率只和两个端点所在的组有关。我们有参数 $b=(b_{11},\cdots,b_{II})$，若 $u$ 在第 $i$ 组，$v$ 在第 $j$ 组，则 $P_b((u,v)\in E)=b_{ij}$.</p><p>对给定的图 $g$，我们可以计算他的概率
 $$
 P_b(g)=\prod_{i\le j}b_{ij}^{m_{ij}}\left(1-b_{ij}\right)^{N_{ij}-m_{ij}},
 $$
-其中 $n_i$ 为第 $i$ 组的点数，$N_{ij}$ 为可能出现的边数，$i=j$ 时 $N_{ii}=\dbinom{n_i}{2}$，$i\ne j$ 时 $N_{ij}=n_i n_j$. $m_{ij}$ 是第 $i$ 组和第 $j$ 组之间的边数。</p>
-<p>请自行验证它是指数族。</p>
-<p>这个极大似然估计我们能算出来：
+其中 $n_i$ 为第 $i$ 组的点数，$N_{ij}$ 为可能出现的边数，$i=j$ 时 $N_{ii}=\dbinom{n_i}{2}$，$i\ne j$ 时 $N_{ij}=n_i n_j$. $m_{ij}$ 是第 $i$ 组和第 $j$ 组之间的边数。</p><p>请自行验证它是指数族。</p><p>这个极大似然估计我们能算出来：
 $$
 \hat b_{ij}=\frac{m_{ij}}{N_{ij}}.
-$$</p>
-<h3 id=logistic-model>Logistic model</h3>
-<p>很多时候我们不仅要考虑图的连接方式，还要考虑节点的属性，例如年龄、性别等。</p>
-<p>我们设每个节点 $u$ 有一个属性向量 $x_u$. 我们用函数 $h(x_u,x_v)$ 表示我们感兴趣的东西。例如 $h(x,y)=(I(x_1=y_1),x_2+y_2)$ 意味着我们想看看“邻居的属性 1 是否一样，属性 2 的大小是否会影响连接概率”。考虑模型
+$$</p><h3 id=logistic-model>Logistic model</h3><p>很多时候我们不仅要考虑图的连接方式，还要考虑节点的属性，例如年龄、性别等。</p><p>我们设每个节点 $u$ 有一个属性向量 $x_u$. 我们用函数 $h(x_u,x_v)$ 表示我们感兴趣的东西。例如 $h(x,y)=(I(x_1=y_1),x_2+y_2)$ 意味着我们想看看“邻居的属性 1 是否一样，属性 2 的大小是否会影响连接概率”。考虑模型
 $$
 P((u,v)\in E)=p_{uv}=\frac{e^{\beta^T h(x_u,x_v)}}{1+e^{\beta^T h(x_u,x_v)}}.
-$$</p>
-<p>可以算出图 $g$ 出现的概率
+$$</p><p>可以算出图 $g$ 出现的概率
 $$
 P_\beta(g)=\frac{\exp\left(\sum_{(u,v)\in E}\beta^Th(x_u,x_v)\right)}{\prod_{u\le v}\left(1+\exp\left({\beta^Th(x_u,x_v)}\right)\right)}.
 $$
-哎，他还是指数族，没想到吧！</p>
-<p>我们可以用 logistic 回归来估计参数。如果 $(u,v)\in E$，$p_{uv}$ 的观测值就是 1，否则就是 0.</p>
-<h3 id=带有协变量的-ergm>带有协变量的 ERGM</h3>
-<p>推广一下 logistic model，我们把协变量和传统的 $T(g)$ 结合起来：
+哎，他还是指数族，没想到吧！</p><p>我们可以用 logistic 回归来估计参数。如果 $(u,v)\in E$，$p_{uv}$ 的观测值就是 1，否则就是 0.</p><h3 id=带有协变量的-ergm>带有协变量的 ERGM</h3><p>推广一下 logistic model，我们把协变量和传统的 $T(g)$ 结合起来：
 $$
 P_{\theta,\beta}(g)=\exp\left(\theta^T T(g)+\sum_{(u,v)\in E}\beta^Th(x_u,x_v)\right)\kappa_x^{-1}(\theta,\beta).
 $$
-其中 $\theta$ 和 $\beta$ 都是参数，他俩拼起来是完整参数。注意 $\theta=0$ 就是 logistic model 了。</p>
-<h3 id=odds>odds</h3>
-<p>事件 $A$ 的 odds 定义为 $P(A)/(1-P(A))$. 对于图来说，假设所有其他边都固定，只有 $(w,y)$ 不确定，则可以设 $g_+$ 表示 $(w,y)\in E$ 的图，$g_-$ 表示 $(w,y)\notin E$ 的图，于是 $(w,y)\in E$ 的 odds 是
+其中 $\theta$ 和 $\beta$ 都是参数，他俩拼起来是完整参数。注意 $\theta=0$ 就是 logistic model 了。</p><h3 id=odds>odds</h3><p>事件 $A$ 的 odds 定义为 $P(A)/(1-P(A))$. 对于图来说，假设所有其他边都固定，只有 $(w,y)$ 不确定，则可以设 $g_+$ 表示 $(w,y)\in E$ 的图，$g_-$ 表示 $(w,y)\notin E$ 的图，于是 $(w,y)\in E$ 的 odds 是
 $$
 O_1=\frac{\exp(\theta T(g_+)+\beta^T h(x_w,x_y))}{\exp(\theta T(g_-))}.
-$$</p>
-<h2 id=链接预测>链接预测</h2>
-<p>给出一张图，通过已知的边来预测可能出现的潜在的其他边，就是链接预测。通常来说，链接预测给每个顶点对 $(u,v)$ 一个分数 $s_{uv}$，该分值越大，越有可能连接。</p>
-<h3 id=ergm>ERGM</h3>
-<p>当我们拟合了 ERGM 模型之后，可以给出边的出现概率：
+$$</p><h2 id=链接预测>链接预测</h2><p>给出一张图，通过已知的边来预测可能出现的潜在的其他边，就是链接预测。通常来说，链接预测给每个顶点对 $(u,v)$ 一个分数 $s_{uv}$，该分值越大，越有可能连接。</p><h3 id=ergm>ERGM</h3><p>当我们拟合了 ERGM 模型之后，可以给出边的出现概率：
 $$
 p_{uv}=\frac{P(g_+)}{P(g_+)+P(g_-)}.
-$$</p>
-<h3 id=无-model-fitting>无 model-fitting</h3>
-<p>此外，还有许多不需要 model-fitting 的方法。我们寄 $S(u)$ 为顶点 $u$ 的邻居集合，$k_u=\sharp S(u)$。</p>
-<ul>
-<li>
-<p>Jaccard measure
+$$</p><h3 id=无-model-fitting>无 model-fitting</h3><p>此外，还有许多不需要 model-fitting 的方法。我们寄 $S(u)$ 为顶点 $u$ 的邻居集合，$k_u=\sharp S(u)$。</p><ul><li><p>Jaccard measure
 $$
 s_{uv}=\frac{\sharp [S(u)\cap S(v)]}{\sharp [S(u)\cup S(v)]},
-$$</p>
-</li>
-<li>
-<p>Adam-Adar measure
+$$</p></li><li><p>Adam-Adar measure
 $$
 s_{uv}=\sum_{w\in S(u)\cap S(v)}\frac{1}{\log k_w},
-$$</p>
-</li>
-<li>
-<p>Preferential attachment
+$$</p></li><li><p>Preferential attachment
 $$
 s_{uv}=k_u k_v.
-$$</p>
-</li>
-</ul>
-<p>还有基于邻接矩阵的。记邻接矩阵为 $A$，我们得到 $B$ 之后，$B_{uv}$ 就是分数。</p>
-<ul>
-<li>
-<p>matrix exponential
+$$</p></li></ul><p>还有基于邻接矩阵的。记邻接矩阵为 $A$，我们得到 $B$ 之后，$B_{uv}$ 就是分数。</p><ul><li><p>matrix exponential
 $$
 B=\exp(\alpha A)=\sum_{i=0}^\infty\frac{\alpha^i}{i!}A^i,
-$$</p>
-</li>
-<li>
-<p>von Neumann kernel
+$$</p></li><li><p>von Neumann kernel
 $$
 B=(I-\alpha A)^{-1}=\sum_{i=0}^\infty \alpha^i A^i.
-$$</p>
-</li>
-</ul>
-<p>其中 $\alpha$ 为参数。</p>
-<h3 id=pseudo-likelihood>pseudo-likelihood</h3>
-<p>我们可以考虑 pseudo-likelihood，它解决了传统 ERGM 无法求解的问题。Pseudo-likelihood 就是上面的 $p_{uv}$ 乘起来。具体地，在 ERGM 中可以计算出 $p_{uv}=\dfrac{P(g_+)}{P(g_+)+P(g_-)}$. 把所有边的 $p_{uv}$ 乘起来就行了。</p>
-<h2 id=参考文献>参考文献</h2>
-<ol>
-<li>Statistical Analysis of Network Data with R, 2nd edition. Eric D. Kolacyk and G´abor Cs´ardi, Springer (2018) [main].</li>
-<li><a href=https://zh.wikipedia.org/wiki/%E4%BA%8C%E9%A0%85%E5%BC%8F%E5%88%86%E5%B8%83#%E6%B3%8A%E6%9D%BE%E8%BF%91%E4%BC%BC target=_blank rel=noopener>https://zh.wikipedia.org/wiki/%E4%BA%8C%E9%A0%85%E5%BC%8F%E5%88%86%E5%B8%83#%E6%B3%8A%E6%9D%BE%E8%BF%91%E4%BC%BC</a>
-</li>
-<li><a href="https://www.youtube.com/watch?v=Ma2Bj33Qemc" target=_blank rel=noopener>https://www.youtube.com/watch?v=Ma2Bj33Qemc</a>
-</li>
-</ol>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-<a href=/post/5225-1%E8%B0%B1%E5%9B%BE%E7%90%86%E8%AE%BA%E5%85%A5%E9%97%A8/ rel=next title=谱图理论基础>
-<i class="fa fa-chevron-left"></i> 谱图理论基础
-</a>
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=/post/%E7%AC%94%E8%AE%B0%E5%AF%BC%E8%88%AA/ rel=prev title=2021秋季学期课程笔记导航>
-2021秋季学期课程笔记导航
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=ucomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
-<div class=sidebar-toggle>
-<div class=sidebar-toggle-line-wrap>
-<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+$$</p></li></ul><p>其中 $\alpha$ 为参数。</p><h3 id=pseudo-likelihood>pseudo-likelihood</h3><p>我们可以考虑 pseudo-likelihood，它解决了传统 ERGM 无法求解的问题。Pseudo-likelihood 就是上面的 $p_{uv}$ 乘起来。具体地，在 ERGM 中可以计算出 $p_{uv}=\dfrac{P(g_+)}{P(g_+)+P(g_-)}$. 把所有边的 $p_{uv}$ 乘起来就行了。</p><h2 id=参考文献>参考文献</h2><ol><li>Statistical Analysis of Network Data with R, 2nd edition. Eric D. Kolacyk and G´abor Cs´ardi, Springer (2018) [main].</li><li><a href=https://zh.wikipedia.org/wiki/%E4%BA%8C%E9%A0%85%E5%BC%8F%E5%88%86%E5%B8%83#%E6%B3%8A%E6%9D%BE%E8%BF%91%E4%BC%BC target=_blank rel=noopener>https://zh.wikipedia.org/wiki/%E4%BA%8C%E9%A0%85%E5%BC%8F%E5%88%86%E5%B8%83#%E6%B3%8A%E6%9D%BE%E8%BF%91%E4%BC%BC</a></li><li><a href="https://www.youtube.com/watch?v=Ma2Bj33Qemc" target=_blank rel=noopener>https://www.youtube.com/watch?v=Ma2Bj33Qemc</a></li></ol></div><footer class=post-footer><div class=post-tags><a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a></div><div class=addthis_inline_share_toolbox></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/5225-1%E8%B0%B1%E5%9B%BE%E7%90%86%E8%AE%BA%E5%85%A5%E9%97%A8/ rel=next title=谱图理论基础><i class="fa fa-chevron-left"></i> 谱图理论基础</a></div><div class="post-nav-prev post-nav-item"><a href=/post/%E7%AC%94%E8%AE%B0%E5%AF%BC%E8%88%AA/ rel=prev title=2021秋季学期课程笔记导航>2021秋季学期课程笔记导航
+<i class="fa fa-chevron-right"></i></a></div></div><div id=ucomments></div></footer></article></section></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
 <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-</div>
-</div>
-<aside id=sidebar class=sidebar>
-<div class=sidebar-inner>
-<section class="site-overview sidebar-panel sidebar-panel-active">
-<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
-<img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人>
-<p class=site-author-name itemprop=name>精神病人</p>
-<p class="site-description motion-element" itemprop=description>
-精神病人欢乐多!
-</p>
-</div>
-<nav class="site-state motion-element">
-<div class="site-state-item site-state-posts">
-<a href=/post/>
-<span class=site-state-item-count>34</span>
-<span class=site-state-item-name>日志</span>
-</a>
-</div>
-<div class="site-state-item site-state-categories">
-<a href=/categories/>
-<span class=site-state-item-count>10</span>
-<span class=site-state-item-name>分类</span>
-</a>
-</div>
-<div class="site-state-item site-state-tags">
-<a href=/tags/>
-<span class=site-state-item-count>10</span>
-<span class=site-state-item-name>标签</span>
-</a>
-</div>
-</nav>
-<div class="links-of-author motion-element">
-<span class=links-of-author-item>
-<a href=https://github.com/jcq15/ target=_blank title=GitHub>
-<i class="fa fa-fw fa-github"></i>
-GitHub
-</a>
-</span>
-</div>
-<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
-<div class=tagcloud-of-blogroll-title>
-<i class="fa fa-fw fa-tags"></i>
-标签云
-</div>
-<ul class=tagcloud-of-blogroll-list>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E5%AD%A6%E4%B9%A0>学习
-<sup>15</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%8A%80%E6%9C%AF>技术
-<sup>5</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
-<sup>5</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%B8%B8%E6%88%8F>游戏
-<sup>3</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%9B%B4%E6%96%B0>更新
-<sup>2</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E7%A7%91%E6%99%AE>科普
-<sup>2</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%95%B4%E6%B4%BB>整活
-<sup>1</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%B2%99%E9%9B%95>沙雕
-<sup>1</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80>王者荣耀
-<sup>1</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
-<sup>1</sup>
-</a>
-</li>
-</ul>
-</div>
-</section>
-</div>
-</aside>
-</div>
-</main>
-<footer id=footer class=footer>
-<div class=footer-inner>
-<div class=copyright>
-<span class=copyright-year>
-&copy; 2010 - 2022
-</span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><section class="site-overview sidebar-panel sidebar-panel-active"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人><p class=site-author-name itemprop=name>精神病人</p><p class="site-description motion-element" itemprop=description>精神病人欢乐多!</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href=/post/><span class=site-state-item-count>35</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>11</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>11</span>
+<span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/jcq15/ target=_blank title=GitHub><i class="fa fa-fw fa-github"></i>
+GitHub</a></span></div><div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline"><div class=tagcloud-of-blogroll-title><i class="fa fa-fw fa-tags"></i>
+标签云</div><ul class=tagcloud-of-blogroll-list><li class=tagcloud-of-blogroll-item><a href=/tags/%E5%AD%A6%E4%B9%A0>学习
+<sup>15</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%8A%80%E6%9C%AF>技术
+<sup>5</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
+<sup>5</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B8%B8%E6%88%8F>游戏
+<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9B%B4%E6%96%B0>更新
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%A7%91%E6%99%AE>科普
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%A2%E6%83%B3>敢想
+<sup>1</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%B4%E6%B4%BB>整活
+<sup>1</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B2%99%E9%9B%95>沙雕
+<sup>1</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80>王者荣耀
+<sup>1</sup></a></li></ul></div></section></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright><span class=copyright-year>&copy; 2010 - 2022</span>
 <span class=with-love><i class="fa fa-heart"></i></span>
-<span class=copyright-author>沙雕园</span>
-</div>
-<div class=powered-info>
-<span class=powered-by>
-Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.89.2</a>
-</span>
+<span class=copyright-author>沙雕园</span></div><div class=powered-info><span class=powered-by>Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.101.0</a></span>
 <span class=separator-line>/</span>
-<span class=theme-info>
-Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
-</a>
-</span>
-</div>
-<div class=vistor-info>
-<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<span class=site-uv>
-<i class="fa fa-user"></i>
-<span class=busuanzi-value id=busuanzi_value_site_uv></span>
-</span>
+<span class=theme-info>Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank>NexT</a></span></div><div class=vistor-info><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv><i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span></span>
 <span class=separator-line>/</span>
-<span class=site-pv>
-<i class="fa fa-eye"></i>
-<span class=busuanzi-value id=busuanzi_value_site_pv></span>
-</span>
-</div>
-<div class=license-info>
-<span class=storage-info>
-Storage by
-<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a>
-</span>
+<span class=site-pv><i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span></span></div><div class=license-info><span class=storage-info>Storage by
+<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a></span>
 <span class=separator-line>/</span>
-<span class=license-num>
-<a href target=_blank></a>
-</span>
-</div>
-</div>
-</footer>
-<div class=back-to-top>
-<i class="fa fa-arrow-up"></i>
-<span id=scrollpercent><span>0</span>%</span>
-</div>
-</div>
-<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<span class=license-num><a href target=_blank></a></span></div></div></footer><div class=back-to-top><i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span></div></div><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
 <script type=text/javascript src=/js/search.js></script>
 <script type=text/javascript src=/js/affix.js></script>
 <script type=text/javascript src=/js/scrollspy.js></script>
-<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
-<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
-<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
-<script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
-<script type=text/javascript>function showTime(d){var b=new AV.Query(d),a=[],c=$(".leancloud_visitors");c.each(function(){a.push($(this).attr("id").trim())}),b.containedIn('url',a),b.find().then(d=>{var e='.leancloud-visitors-count',b,h,f,j,g,i;if(d.length==0){c.find(e).text(0);return}for(b=0;b<d.length;b++)h=d[b],f=h.get('url'),j=h.get('time'),g=document.getElementById(f),$(g).find(e).text(j);for(b=0;b<a.length;b++)f=a[b],g=document.getElementById(f),i=$(g).find(e),i.text()==''&&i.text(0)},a=>{console.log('Query vistors failed: '+a)})}function addCount(d){var b=$(".leancloud_visitors"),a=b.attr('id').trim(),e=b.attr('data-flag-title').trim(),c=new AV.Query('Counter');c.equalTo("url",a),c.find().then(g=>{var f,c,b;g.length>0?(f=g[0],f.increment('time',1),f.save(null,{query:new AV.Query('Counter').equalTo('url',a),fetchWhenSave:!0}).then(b=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log('Update vistor failed: '+a)})):(c=new AV.ACL,c.setPublicReadAccess(!0),c.setPublicWriteAccess(!0),b=new d,b.set("title",e),b.set("url",a),b.set("time",1),b.setACL(c),b.save().then(d=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log("Save new vistor failed: "+a)}))})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const a=AV.Object.extend("Counter");$('.leancloud_visitors').length==1?addCount(a):$('.post-title-link').length>1&&showTime(a)})</script>
-<script type=text/javascript>(function(){var a=document.createElement('script');a.type='text/javascript',a.async=!0,a.setAttribute('issue-term',"title"),a.setAttribute('theme',"github-light"),a.setAttribute('repo',"jcq15/blog"),a.crossorigin='anonymous',a.src='https://utteranc.es/client.js',document.getElementById('ucomments').appendChild(a)})()</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
-<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type=text/javascript>function detectIE(){var e=window.navigator.userAgent,t=e.indexOf("MSIE "),n=e.indexOf("Trident/"),s=e.indexOf("Edge/");return t>0||n>0||s>0?-1:1}function getCntViewHeight(){var t=$("#content").height(),e=$(window).height(),n=t>e?t-e:$(document).height()-e;return n}function getScrollbarWidth(){var e=$("<div />").addClass("scrollbar-measure").prependTo("body"),t=e[0],n=t.offsetWidth-t.clientWidth;return e.remove(),n}function registerBackTop(){var t=50,e=$(".back-to-top");$(window).on("scroll",function(){e.toggleClass("back-to-top-on",window.pageYOffset>t);var s=$(window).scrollTop(),o=getCntViewHeight(),i=s/o,n=Math.round(i*100),a=n>100?100:n;$("#scrollpercent>span").html(a)}),e.on("click",function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var e=".post-toc",s=$(e),t=".active-current";s.on("activate.bs.scrollspy",function(){var t=$(e+" .active").last();n(),t.addClass("active-current")}).on("clear.bs.scrollspy",n),$("body").scrollspy({target:e});function n(){$(e+" "+t).removeClass(t.substring(1))}}function initAffix(){var e=$(".header-inner").height(),t=parseInt($(".main").css("padding-bottom"),10),n=e+10;$(".sidebar-inner").affix({offset:{top:n,bottom:t}}),$(document).on("affixed.bs.affix",function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){$(window).on("resize",function(){e&&clearTimeout(e),e=setTimeout(function(){var e=document.body.clientHeight-100;updateTOCHeight(e)},0)}),updateTOCHeight(document.body.clientHeight-100);var e,t=getScrollbarWidth();$(".post-toc").css("width","calc(100% + "+t+"px)")}function updateTOCHeight(e){e=e||"auto",$(".post-toc").css("max-height",e)}$(function(){var e,t,n,s,o=$(".header-inner").height()+10;$("#sidebar").css({"margin-top":o}).show(),t=parseInt($("#sidebar").css("margin-top")),n=parseInt($(".sidebar-inner").css("height")),e=t+n,s=$(".content-wrap").height(),s<e&&$(".content-wrap").css("min-height",e),$(".site-nav-toggle").on("click",function(){var e=$(".site-nav"),o=$(".toggle"),t="site-nav-on",i="toggle-close",n=e.hasClass(t),a=n?"slideUp":"slideDown",s=n?"removeClass":"addClass";e.stop()[a]("normal",function(){e[s](t),o[s](i)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$(".sidebar-nav-toc").click(function(){$(this).addClass("sidebar-nav-active"),$(this).next().removeClass("sidebar-nav-active"),$("."+$(this).next().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)}),$(".sidebar-nav-overview").click(function(){$(this).addClass("sidebar-nav-active"),$(this).prev().removeClass("sidebar-nav-active"),$("."+$(this).prev().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)})})</script><script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$(".post-body").viewer()})</script><script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
+<script type=text/javascript>function showTime(e){var n=new AV.Query(e),t=[],s=$(".leancloud_visitors");s.each(function(){t.push($(this).attr("id").trim())}),n.containedIn("url",t),n.find().then(e=>{var n,o,i,r,c,l,a=".leancloud-visitors-count";if(e.length==0){s.find(a).text(0);return}for(n=0;n<e.length;n++)r=e[n],o=r.get("url"),l=r.get("time"),i=document.getElementById(o),$(i).find(a).text(l);for(n=0;n<t.length;n++)o=t[n],i=document.getElementById(o),c=$(i).find(a),c.text()==""&&c.text(0)},e=>{console.log("Query vistors failed: "+e)})}function addCount(e){var n=$(".leancloud_visitors"),t=n.attr("id").trim(),o=n.attr("data-flag-title").trim(),s=new AV.Query("Counter");s.equalTo("url",t),s.find().then(n=>{if(n.length>0){var s,i,a=n[0];a.increment("time",1),a.save(null,{query:new AV.Query("Counter").equalTo("url",t),fetchWhenSave:!0}).then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(e.get("time"))},e=>{console.log("Update vistor failed: "+e)})}else i=new AV.ACL,i.setPublicReadAccess(!0),i.setPublicWriteAccess(!0),s=new e,s.set("title",o),s.set("url",t),s.set("time",1),s.setACL(i),s.save().then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(s.get("time"))},e=>{console.log("Save new vistor failed: "+e)})})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const e=AV.Object.extend("Counter");$(".leancloud_visitors").length==1?addCount(e):$(".post-title-link").length>1&&showTime(e)})</script><script type=text/javascript>(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.setAttribute("issue-term","title"),e.setAttribute("theme","github-light"),e.setAttribute("repo","jcq15/blog"),e.crossorigin="anonymous",e.src="https://utteranc.es/client.js",document.getElementById("ucomments").appendChild(e)})()</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
 <script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
-<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
-</body>
-</html>
+<script>(function(){var t,e=document.createElement("script"),n=window.location.protocol.split(":")[0];n==="https"?e.src="https://zz.bdstatic.com/linksubmit/push.js":e.src="http://push.zhanzhang.baidu.com/push.js",t=document.getElementsByTagName("script")[0],t.parentNode.insertBefore(e,t)})()</script></body></html>

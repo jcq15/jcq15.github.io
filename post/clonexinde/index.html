@@ -1,408 +1,56 @@
-<!doctype html><html lang=zh-cn dir=content/zh-cn>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
-<title> 如何玩好王者荣耀克隆大作战模式（上） - 沙雕园 </title>
-<meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享">
-<meta name=author content="精神病人">
-<meta property="og:title" content="如何玩好王者荣耀克隆大作战模式（上）">
-<meta property="og:site_name" content="沙雕园">
-<meta property="og:image" content="/img/author.jpg">
-<meta name=title content="如何玩好王者荣耀克隆大作战模式（上） - 沙雕园">
-<meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。">
-<link rel="shortcut icon" href=/img/favicon.ico>
-<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
-<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
-<link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css>
-<link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet>
-<link href=/css/main.css rel=stylesheet type=text/css>
-<link href=/css/syntax.css rel=stylesheet type=text/css>
-</head>
-<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
-<div class="container one-collumn sidebar-position-left page-home">
-<div class=headband></div>
-<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
-<div class=header-inner> <div class=site-brand-container>
-<div class=site-nav-toggle>
-<div class=toggle role=button style=opacity:1;top:0>
+<!doctype html><html lang=zh-cn dir=content/zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=content-security-policy content="upgrade-insecure-requests"><title>如何玩好王者荣耀克隆大作战模式（上） - 沙雕园</title><meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享"><meta name=author content="精神病人"><meta property="og:title" content="如何玩好王者荣耀克隆大作战模式（上）"><meta property="og:site_name" content="沙雕园"><meta property="og:image" content="/img/author.jpg"><meta name=title content="如何玩好王者荣耀克隆大作战模式（上） - 沙雕园"><meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。"><link rel="shortcut icon" href=/img/favicon.ico><link rel=apple-touch-icon href=/img/apple-touch-icon.png><link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png><link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css><link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet><link href=/css/main.css rel=stylesheet type=text/css><link href=/css/syntax.css rel=stylesheet type=text/css></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-hans><div class="container one-collumn sidebar-position-left page-home"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle role=button style=opacity:1;top:0><span class=toggle-line></span>
 <span class=toggle-line></span>
-<span class=toggle-line></span>
-<span class=toggle-line></span>
-</div>
-</div>
-<div class=site-meta>
-<div class=custom-logo-site-title>
-<a href=/ class=brand rel=start>
-<span class=logo-line-before><i></i></span>
+<span class=toggle-line></span></div></div><div class=site-meta><div class=custom-logo-site-title><a href=/ class=brand rel=start><span class=logo-line-before><i></i></span>
 <span class=site-title>沙雕园</span>
-<span class=logo-line-after><i></i></span>
-</a>
-</div>
-<p class=site-subtitle>沙雕使人进步。</p>
-</div>
-<div class=site-nav-right>
-<div class="toggle popup-trigger" style=opacity:1;top:0>
-<i class="fa fa-search fa-fw fa-lg"></i>
-</div>
-</div>
-</div>
-<nav class=site-nav>
-<ul id=menu class=menu>
-<li class=menu-item>
-<a href=/ rel=section>
-<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页
-</a>
-</li>
-<li class="menu-item menu-item-active">
-<a href=/post rel=section>
-<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档
-</a>
-</li>
-<li class=menu-item>
-<a href=/about.html rel=section>
-<i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我
-</a>
-</li>
-<li class="menu-item menu-item-search">
-<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> 搜索</a>
-</li>
-</ul>
-<div class=site-search>
-<div class="popup search-popup local-search-popup">
-<div class="local-search-header clearfix">
-<span class=search-icon><i class="fa fa-search"></i> </span>
-<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
-<div class=local-search-input-wrapper>
-<input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
-</div>
-</div>
-<div id=local-search-result></div>
-</div>
-</div>
-</nav> </div>
-</header>
-<main id=main class=main>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=/post/clonexinde/ itemprop=url>
-如何玩好王者荣耀克隆大作战模式（上）
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
+<span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>沙雕使人进步。</p></div><div class=site-nav-right><div class="toggle popup-trigger" style=opacity:1;top:0><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul id=menu class=menu><li class=menu-item><a href=/ rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-active"><a href=/post rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class=menu-item><a href=/about.html rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于我</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class=site-search><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class=search-icon><i class="fa fa-search"></i></span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span><div class=local-search-input-wrapper><input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off></div></div><div id=local-search-result></div></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><section id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=/post/clonexinde/ itemprop=url>如何玩好王者荣耀克隆大作战模式（上）</a></h1><div class=post-meta><span class=post-pushdate><i class="fa fa-calendar-o fa-fw"></i>
 <span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2022-06-04">
-2022-06-04
-</time>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2022-06-04">2022-06-04</time></span>
+<span class=post-wordcount><i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>2691 字</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
+<span class=leancloud-world-count>2691 字</span></span>
+<span class=post-readtime><i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>6分钟</span>
-</span>
-<span id=/post/clonexinde/ class="leancloud_visitors post-visitor" data-flag-title=如何玩好王者荣耀克隆大作战模式（上）>
-<i class="fa fa-binoculars fa-fw"></i>
+<span class=leancloud-view-count>6分钟</span></span>
+<span id=/post/clonexinde/ class="leancloud_visitors post-visitor" data-flag-title=如何玩好王者荣耀克隆大作战模式（上）><i class="fa fa-binoculars fa-fw"></i>
 <span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>在克隆模式杀人往往是亏的。</p>
-<p>超级兵多的一方几乎必胜。</p>
-<p>一流法师坦克，二流坦克战士，三流射手辅助，刺客选了等输。</p>
-<p>之前有一阵觉得打排位只能当演员，没什么意思（<a href=/post/act_wzry/>具体见此篇</a>
-），就转向了娱乐模式。娱乐模式里克隆最有意思。经过一段时间的克隆大战，我摸索出一些克隆大作战的心得。</p>
-<p>本系列将从以下几个方面介绍：</p>
-<ul>
-<li>战略与意识</li>
-<li>英雄强度分析</li>
-<li>装备逐件分析</li>
-<li>整体出装思路与实例</li>
-</ul>
-<p>本期将介绍前两部分。</p>
-<h2 id=战略与意识>战略与意识</h2>
-<h3 id=杀人的是坑货推塔才是正事>杀人的是坑货，推塔才是正事</h3>
-<p>鲁班曾经说过，<strong>王者荣耀就是个推塔游戏</strong>。这句话在克隆模式更为重要，甚至更为极端：</p>
-<p><strong>一切为推塔服务，在克隆模式杀人往往是亏的。</strong></p>
-<p>这是整篇攻略最最重要的一点。认识到这一点，你的克隆水平就能超过 84.1% 的人。</p>
-<p>杀人可以拉开经济差。但克隆模式有额外经济加成，大家发育都很快。而经济是会饱和的，双方都神装的情况下，你领先十万经济也没用。在克隆模式下，即便早期经济领先，过个几分钟大家就都神装了，并不能带来什么优势。</p>
-<p><strong>带线推塔比杀人重要得多。</strong></p>
-<p>很多人看到对方在你眼前晃，下意识地就想去追杀，甚至兵线都进塔了还跑出去追人，这是典型的昏招 —— 为了杀人错失了重要的推塔或守塔机会。甚至还有的专门跑去野区抓人，这样的选手即便打出 20-0 的战绩，也是妥妥的坑货，因为他对团队没有任何贡献 —— 在野区杀了人，你能收获什么？人头那 200 金币？那对我们取胜有什么帮助？</p>
-<p>克隆模式我们会打得非常极端（因为克隆就是个很极端的模式，五个人甚至十个人是一样的英雄）：</p>
-<p><strong>只清兵推塔，从不主动打人。</strong></p>
-<p>即便对方是残血从你眼前走过，也要毫不犹豫地放走他。如果和你一路的队友冲上去抓人，千万别激动上去帮忙，让他们自生自灭吧，因为我们有更重要的事去做。哪怕多清一个兵，在兰彻斯特方程的作用下都会带来滚雪球般的优势。</p>
-<p>当然，我们不愿打，但必要时不得不打。对面来打我们，肯定不能坐以待毙。如果有十足的把握就去和他干，但如果你觉得有风险，最好是清完兵线换一条路接着带。只要你一直清兵，对方推不掉我们的塔，而我们的兵线却会频频骚扰对面，逼着对面满场去清兵。</p>
-<h3 id=高地的重要性>高地的重要性</h3>
-<p>破坏掉对面高地塔，会派出超级兵。实战当中，基本到了15分钟以后就算大后期了，大家都做完了出装的最终形态，这时候如果双方超级兵个数不一样，<strong>超级兵多的一方几乎必胜</strong>。</p>
-<p>高地优势一方的策略很简单：和以前一样无脑清兵就行，兵清完了就躲在塔下挂机。随着时间推进，兵线会越来越强，到后期超级兵一拳可以干掉脆皮或水晶的一半血，英雄是绝对打不过超级兵的。</p>
-<p><strong>优势方务必避战</strong>，千万别被对面诱惑了出去杀人或打团，万一被对方趁机偷了高地，或者打团输了被对面推了高地，优势荡然无存，这时候赶紧关了对面的消息：到手的胜利因为你们的愚蠢被别人夺走了，会被活活羞辱死的。</p>
-<p>高地是如此重要，所以对面高地残血时，我们要敢于强行推塔，拿命换塔。毕竟人死了可以复活，塔没了就是没了。两三条命换一座塔也就三五分钟，如果对面没有守塔意识，我们10分钟时开始拿命换高地，中间死几次，可以在15分钟之前抢下一路高地，这时候大可宣告胜利，只要队友不是猪，就必胜。</p>
-<blockquote>
-<p>当然，实战中队友往往没有这个意识，高地优势的时候还到处打架，甚至还有打野的，他还喷你为什么不去打架。只能说坑货无处不在。</p>
-</blockquote>
-<h3 id=一般不打野>一般不打野</h3>
-<p><strong>不管你是什么位置，打野在克隆模式都是亏的</strong>。甚至我还见过 5 个鲁班单独分出来一个人走打野位的，这简直是滑天下之大稽。本来打野位就弱，鲁班打野则弱上加弱，你不输谁输？</p>
-<ul>
-<li>克隆模式有额外经济加成，使得本就弱势的打野更加发育不起来，实际上哪怕两人吃一路线都比打野发育的好（并且带线还有利于推塔）</li>
-<li>“模式专属平衡”使得脆皮不那么脆，高爆发英雄也没那么高的爆发，所以抓人的成功率也下降了。更何况这模式杀人根本没用</li>
-<li>打野刀浪费一个宝贵的装备格子。克隆模式装备格子十分宝贵，恨不得一个格子掰成两半用，有时候连鞋子都没机会出，你却用一个格子出一个主词条是打野的装备？</li>
-</ul>
-<h3 id=注意回蓝>注意回蓝</h3>
-<p>任何有蓝条的英雄都要考虑这点。在加载的时候，我们就要考虑这局会不会缺蓝。如果有缺蓝的风险，务必靠装备来保证回蓝，而不是依赖蓝 buff。你和 4 个队友是一样的英雄，你缺蓝他们也缺蓝，1~2 个 buff 5 个人根本不够分，更何况你每隔 90 秒就去打个蓝，多影响节奏哇。</p>
-<p>小缺蓝可以出回蓝鞋，大缺蓝最好出圣杯。也有先出回蓝鞋后期换圣杯的打法，或者小回蓝散件堆叠渡过缺蓝前期，后期再弃子整形。具体的回蓝方案需要具体问题具体分析，我们会在装备篇里详述。</p>
-<h2 id=英雄强度分析>英雄强度分析</h2>
-<p>因为克隆是五个人用同一个英雄，所以英雄的强度和排位赛有较大差别。很多排位厉害的英雄到了克隆就是废物。下面按照我的个人理解，按照五（七？）个等级进行强度分类。（随着游戏环境变化，此列表可能会过时，我尽量随时更新）</p>
-<table>
-<thead>
-<tr>
-<th>等级</th>
-<th>英雄</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>T0</td>
-<td>推塔厉害：刘禅<br>老不死：程咬金，猪八戒<br>强势法师：小乔，妲己，安琪拉，甄姬，王昭君<br>强势战士：铠</td>
-</tr>
-<tr>
-<td>T1</td>
-<td>多数战坦：廉颇，孙策，盘古，苏烈，吕布，关羽，钟无艳，杨戬，亚瑟，项羽，夏侯惇<br>被误归为辅助的高输出法师：庄周，东皇太一，姜子牙<br>多数法师：扁鹊，诸葛亮，干将莫邪，西施，女娲，钟馗，嫦娥，芈月<br>强势射手：李元芳，虞姬</td>
-</tr>
-<tr>
-<td>T2</td>
-<td>弱势战坦：典韦，白起，张飞，哪吒，司空震，老夫子，梦奇，李信，狂铁，达摩，蒙恬<br>多数辅助：蔡文姬，张飞，明世隐，孙膑，大乔<br>弱势法师：不知火舞，张良，沈梦溪，杨玉环，高渐离，周瑜<br>传统射手：蒙犽，后羿，艾琳，鲁班七号，孙尚香</td>
-</tr>
-<tr>
-<td>T3</td>
-<td>没伤害的英雄：夏洛特，刘备，花木兰，曹操，上官婉儿<br>实在没伤害的辅助：牛魔，鬼谷子，太乙真人，鲁班大师<br>弱势射手：百里守约，伽罗，公孙离，成吉思汗，狄仁杰，马可波罗<br>没啥存在感的英雄：弈星，裴擒虎，雅典娜，刘邦</td>
-</tr>
-<tr>
-<td>T4</td>
-<td>相对不那么废的刺客：宫本武藏，娜可露露，孙悟空，曜，兰陵王，云缨，云中君，司马懿，橘右京，赵云</td>
-</tr>
-<tr>
-<td>狗都不玩</td>
-<td>狗都不玩：韩信，百里玄策，阿轲，澜，马超，元歌，露娜，李白，镜</td>
-</tr>
-</tbody>
-</table>
-<p>大体规律是：一流法师坦克，二流坦克战士，三流射手辅助，刺客选了等输。</p>
-<p>一般来说，上面 7 行的后两行坚决不选，选了就是找虐。倒数第三行如果你想娱乐一下可以选。要是你想玩的有点意思，就不要选米莱狄，太简单无聊了。想虐人可以从 T0，T1 里选。米莱狄虐不了人，米莱狄打架打不过别人，战绩肯定不如对面，但它就是能推塔。</p>
-<p>另外，不要轻视辅助。由于克隆有专属的平衡性调整，做了输出装的辅助，其输出往往在 T1~T2 级别，和射手持平，碾压各路刺客。而且它还肉！所以辅助在克隆模式极为强势（一定要当输出打，千万别出辅助装！）。</p>
-<blockquote>
-<p>更新日志：</p>
-<p>2022/06/11</p>
-<ul>
-<li>米莱狄明显受到系统针对，可能100%胜率太过分了，最近不让米莱狄赢。建议近期不要选。暂时将其从表格中删除.</li>
-<li>宫本武藏重做之后彻底废了，初步下调到T4，考虑是否要调到“狗都不玩”级别</li>
-</ul>
-</blockquote>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/tags/%e6%b8%b8%e6%88%8f rel=tag title=游戏>#游戏#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-<a href=/post/%E6%8C%96%E5%85%89%E6%89%80%E6%9C%89%E9%87%91%E5%B8%81%E7%9A%84%E6%9C%9F%E6%9C%9B%E6%AD%A5%E6%95%B0/ rel=next title=挖光所有金币的期望步数>
-<i class="fa fa-chevron-left"></i> 挖光所有金币的期望步数
-</a>
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=/post/python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E9%80%9F%E6%9F%A5%E8%A1%A8cheatsheet/ rel=prev title=Python数据处理速查表>
-Python数据处理速查表
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=ucomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
-<div class=sidebar-toggle>
-<div class=sidebar-toggle-line-wrap>
-<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>在克隆模式杀人往往是亏的。</p><p>超级兵多的一方几乎必胜。</p><p>一流法师坦克，二流坦克战士，三流射手辅助，刺客选了等输。</p><p>之前有一阵觉得打排位只能当演员，没什么意思（<a href=/post/act_wzry/>具体见此篇</a>
+），就转向了娱乐模式。娱乐模式里克隆最有意思。经过一段时间的克隆大战，我摸索出一些克隆大作战的心得。</p><p>本系列将从以下几个方面介绍：</p><ul><li>战略与意识</li><li>英雄强度分析</li><li>装备逐件分析</li><li>整体出装思路与实例</li></ul><p>本期将介绍前两部分。</p><h2 id=战略与意识>战略与意识</h2><h3 id=杀人的是坑货推塔才是正事>杀人的是坑货，推塔才是正事</h3><p>鲁班曾经说过，<strong>王者荣耀就是个推塔游戏</strong>。这句话在克隆模式更为重要，甚至更为极端：</p><p><strong>一切为推塔服务，在克隆模式杀人往往是亏的。</strong></p><p>这是整篇攻略最最重要的一点。认识到这一点，你的克隆水平就能超过 84.1% 的人。</p><p>杀人可以拉开经济差。但克隆模式有额外经济加成，大家发育都很快。而经济是会饱和的，双方都神装的情况下，你领先十万经济也没用。在克隆模式下，即便早期经济领先，过个几分钟大家就都神装了，并不能带来什么优势。</p><p><strong>带线推塔比杀人重要得多。</strong></p><p>很多人看到对方在你眼前晃，下意识地就想去追杀，甚至兵线都进塔了还跑出去追人，这是典型的昏招 —— 为了杀人错失了重要的推塔或守塔机会。甚至还有的专门跑去野区抓人，这样的选手即便打出 20-0 的战绩，也是妥妥的坑货，因为他对团队没有任何贡献 —— 在野区杀了人，你能收获什么？人头那 200 金币？那对我们取胜有什么帮助？</p><p>克隆模式我们会打得非常极端（因为克隆就是个很极端的模式，五个人甚至十个人是一样的英雄）：</p><p><strong>只清兵推塔，从不主动打人。</strong></p><p>即便对方是残血从你眼前走过，也要毫不犹豫地放走他。如果和你一路的队友冲上去抓人，千万别激动上去帮忙，让他们自生自灭吧，因为我们有更重要的事去做。哪怕多清一个兵，在兰彻斯特方程的作用下都会带来滚雪球般的优势。</p><p>当然，我们不愿打，但必要时不得不打。对面来打我们，肯定不能坐以待毙。如果有十足的把握就去和他干，但如果你觉得有风险，最好是清完兵线换一条路接着带。只要你一直清兵，对方推不掉我们的塔，而我们的兵线却会频频骚扰对面，逼着对面满场去清兵。</p><h3 id=高地的重要性>高地的重要性</h3><p>破坏掉对面高地塔，会派出超级兵。实战当中，基本到了15分钟以后就算大后期了，大家都做完了出装的最终形态，这时候如果双方超级兵个数不一样，<strong>超级兵多的一方几乎必胜</strong>。</p><p>高地优势一方的策略很简单：和以前一样无脑清兵就行，兵清完了就躲在塔下挂机。随着时间推进，兵线会越来越强，到后期超级兵一拳可以干掉脆皮或水晶的一半血，英雄是绝对打不过超级兵的。</p><p><strong>优势方务必避战</strong>，千万别被对面诱惑了出去杀人或打团，万一被对方趁机偷了高地，或者打团输了被对面推了高地，优势荡然无存，这时候赶紧关了对面的消息：到手的胜利因为你们的愚蠢被别人夺走了，会被活活羞辱死的。</p><p>高地是如此重要，所以对面高地残血时，我们要敢于强行推塔，拿命换塔。毕竟人死了可以复活，塔没了就是没了。两三条命换一座塔也就三五分钟，如果对面没有守塔意识，我们10分钟时开始拿命换高地，中间死几次，可以在15分钟之前抢下一路高地，这时候大可宣告胜利，只要队友不是猪，就必胜。</p><blockquote><p>当然，实战中队友往往没有这个意识，高地优势的时候还到处打架，甚至还有打野的，他还喷你为什么不去打架。只能说坑货无处不在。</p></blockquote><h3 id=一般不打野>一般不打野</h3><p><strong>不管你是什么位置，打野在克隆模式都是亏的</strong>。甚至我还见过 5 个鲁班单独分出来一个人走打野位的，这简直是滑天下之大稽。本来打野位就弱，鲁班打野则弱上加弱，你不输谁输？</p><ul><li>克隆模式有额外经济加成，使得本就弱势的打野更加发育不起来，实际上哪怕两人吃一路线都比打野发育的好（并且带线还有利于推塔）</li><li>“模式专属平衡”使得脆皮不那么脆，高爆发英雄也没那么高的爆发，所以抓人的成功率也下降了。更何况这模式杀人根本没用</li><li>打野刀浪费一个宝贵的装备格子。克隆模式装备格子十分宝贵，恨不得一个格子掰成两半用，有时候连鞋子都没机会出，你却用一个格子出一个主词条是打野的装备？</li></ul><h3 id=注意回蓝>注意回蓝</h3><p>任何有蓝条的英雄都要考虑这点。在加载的时候，我们就要考虑这局会不会缺蓝。如果有缺蓝的风险，务必靠装备来保证回蓝，而不是依赖蓝 buff。你和 4 个队友是一样的英雄，你缺蓝他们也缺蓝，1~2 个 buff 5 个人根本不够分，更何况你每隔 90 秒就去打个蓝，多影响节奏哇。</p><p>小缺蓝可以出回蓝鞋，大缺蓝最好出圣杯。也有先出回蓝鞋后期换圣杯的打法，或者小回蓝散件堆叠渡过缺蓝前期，后期再弃子整形。具体的回蓝方案需要具体问题具体分析，我们会在装备篇里详述。</p><h2 id=英雄强度分析>英雄强度分析</h2><p>因为克隆是五个人用同一个英雄，所以英雄的强度和排位赛有较大差别。很多排位厉害的英雄到了克隆就是废物。下面按照我的个人理解，按照五（七？）个等级进行强度分类。（随着游戏环境变化，此列表可能会过时，我尽量随时更新）</p><table><thead><tr><th>等级</th><th>英雄</th></tr></thead><tbody><tr><td>T0</td><td>推塔厉害：刘禅<br>老不死：程咬金，猪八戒<br>强势法师：小乔，妲己，安琪拉，甄姬，王昭君<br>强势战士：铠</td></tr><tr><td>T1</td><td>多数战坦：廉颇，孙策，盘古，苏烈，吕布，关羽，钟无艳，杨戬，亚瑟，项羽，夏侯惇<br>被误归为辅助的高输出法师：庄周，东皇太一，姜子牙<br>多数法师：扁鹊，诸葛亮，干将莫邪，西施，女娲，钟馗，嫦娥，芈月<br>强势射手：李元芳，虞姬</td></tr><tr><td>T2</td><td>弱势战坦：典韦，白起，张飞，哪吒，司空震，老夫子，梦奇，李信，狂铁，达摩，蒙恬<br>多数辅助：蔡文姬，张飞，明世隐，孙膑，大乔<br>弱势法师：不知火舞，张良，沈梦溪，杨玉环，高渐离，周瑜<br>传统射手：蒙犽，后羿，艾琳，鲁班七号，孙尚香</td></tr><tr><td>T3</td><td>没伤害的英雄：夏洛特，刘备，花木兰，曹操，上官婉儿<br>实在没伤害的辅助：牛魔，鬼谷子，太乙真人，鲁班大师<br>弱势射手：百里守约，伽罗，公孙离，成吉思汗，狄仁杰，马可波罗<br>没啥存在感的英雄：弈星，裴擒虎，雅典娜，刘邦</td></tr><tr><td>T4</td><td>相对不那么废的刺客：宫本武藏，娜可露露，孙悟空，曜，兰陵王，云缨，云中君，司马懿，橘右京，赵云</td></tr><tr><td>狗都不玩</td><td>狗都不玩：韩信，百里玄策，阿轲，澜，马超，元歌，露娜，李白，镜</td></tr></tbody></table><p>大体规律是：一流法师坦克，二流坦克战士，三流射手辅助，刺客选了等输。</p><p>一般来说，上面 7 行的后两行坚决不选，选了就是找虐。倒数第三行如果你想娱乐一下可以选。要是你想玩的有点意思，就不要选米莱狄，太简单无聊了。想虐人可以从 T0，T1 里选。米莱狄虐不了人，米莱狄打架打不过别人，战绩肯定不如对面，但它就是能推塔。</p><p>另外，不要轻视辅助。由于克隆有专属的平衡性调整，做了输出装的辅助，其输出往往在 T1~T2 级别，和射手持平，碾压各路刺客。而且它还肉！所以辅助在克隆模式极为强势（一定要当输出打，千万别出辅助装！）。</p><blockquote><p>更新日志：</p><p>2022/06/11</p><ul><li>米莱狄明显受到系统针对，可能100%胜率太过分了，最近不让米莱狄赢。建议近期不要选。暂时将其从表格中删除.</li><li>宫本武藏重做之后彻底废了，初步下调到T4，考虑是否要调到“狗都不玩”级别</li></ul></blockquote></div><footer class=post-footer><div class=post-tags><a href=/tags/%e6%b8%b8%e6%88%8f rel=tag title=游戏>#游戏#</a></div><div class=addthis_inline_share_toolbox></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/%E6%8C%96%E5%85%89%E6%89%80%E6%9C%89%E9%87%91%E5%B8%81%E7%9A%84%E6%9C%9F%E6%9C%9B%E6%AD%A5%E6%95%B0/ rel=next title=挖光所有金币的期望步数><i class="fa fa-chevron-left"></i> 挖光所有金币的期望步数</a></div><div class="post-nav-prev post-nav-item"><a href=/post/python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E9%80%9F%E6%9F%A5%E8%A1%A8cheatsheet/ rel=prev title=Python数据处理速查表>Python数据处理速查表
+<i class="fa fa-chevron-right"></i></a></div></div><div id=ucomments></div></footer></article></section></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
 <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-</div>
-</div>
-<aside id=sidebar class=sidebar>
-<div class=sidebar-inner>
-<section class="site-overview sidebar-panel sidebar-panel-active">
-<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
-<img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人>
-<p class=site-author-name itemprop=name>精神病人</p>
-<p class="site-description motion-element" itemprop=description>
-精神病人欢乐多!
-</p>
-</div>
-<nav class="site-state motion-element">
-<div class="site-state-item site-state-posts">
-<a href=/post/>
-<span class=site-state-item-count>34</span>
-<span class=site-state-item-name>日志</span>
-</a>
-</div>
-<div class="site-state-item site-state-categories">
-<a href=/categories/>
-<span class=site-state-item-count>10</span>
-<span class=site-state-item-name>分类</span>
-</a>
-</div>
-<div class="site-state-item site-state-tags">
-<a href=/tags/>
-<span class=site-state-item-count>10</span>
-<span class=site-state-item-name>标签</span>
-</a>
-</div>
-</nav>
-<div class="links-of-author motion-element">
-<span class=links-of-author-item>
-<a href=https://github.com/jcq15/ target=_blank title=GitHub>
-<i class="fa fa-fw fa-github"></i>
-GitHub
-</a>
-</span>
-</div>
-<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
-<div class=tagcloud-of-blogroll-title>
-<i class="fa fa-fw fa-tags"></i>
-标签云
-</div>
-<ul class=tagcloud-of-blogroll-list>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E5%AD%A6%E4%B9%A0>学习
-<sup>15</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%8A%80%E6%9C%AF>技术
-<sup>5</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
-<sup>5</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%B8%B8%E6%88%8F>游戏
-<sup>3</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%9B%B4%E6%96%B0>更新
-<sup>2</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E7%A7%91%E6%99%AE>科普
-<sup>2</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%95%B4%E6%B4%BB>整活
-<sup>1</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%B2%99%E9%9B%95>沙雕
-<sup>1</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80>王者荣耀
-<sup>1</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
-<sup>1</sup>
-</a>
-</li>
-</ul>
-</div>
-</section>
-</div>
-</aside>
-</div>
-</main>
-<footer id=footer class=footer>
-<div class=footer-inner>
-<div class=copyright>
-<span class=copyright-year>
-&copy; 2010 - 2022
-</span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><section class="site-overview sidebar-panel sidebar-panel-active"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人><p class=site-author-name itemprop=name>精神病人</p><p class="site-description motion-element" itemprop=description>精神病人欢乐多!</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href=/post/><span class=site-state-item-count>35</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>11</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>11</span>
+<span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/jcq15/ target=_blank title=GitHub><i class="fa fa-fw fa-github"></i>
+GitHub</a></span></div><div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline"><div class=tagcloud-of-blogroll-title><i class="fa fa-fw fa-tags"></i>
+标签云</div><ul class=tagcloud-of-blogroll-list><li class=tagcloud-of-blogroll-item><a href=/tags/%E5%AD%A6%E4%B9%A0>学习
+<sup>15</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%8A%80%E6%9C%AF>技术
+<sup>5</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
+<sup>5</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B8%B8%E6%88%8F>游戏
+<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9B%B4%E6%96%B0>更新
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%A7%91%E6%99%AE>科普
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%A2%E6%83%B3>敢想
+<sup>1</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%B4%E6%B4%BB>整活
+<sup>1</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B2%99%E9%9B%95>沙雕
+<sup>1</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80>王者荣耀
+<sup>1</sup></a></li></ul></div></section></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright><span class=copyright-year>&copy; 2010 - 2022</span>
 <span class=with-love><i class="fa fa-heart"></i></span>
-<span class=copyright-author>沙雕园</span>
-</div>
-<div class=powered-info>
-<span class=powered-by>
-Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.89.2</a>
-</span>
+<span class=copyright-author>沙雕园</span></div><div class=powered-info><span class=powered-by>Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.101.0</a></span>
 <span class=separator-line>/</span>
-<span class=theme-info>
-Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
-</a>
-</span>
-</div>
-<div class=vistor-info>
-<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<span class=site-uv>
-<i class="fa fa-user"></i>
-<span class=busuanzi-value id=busuanzi_value_site_uv></span>
-</span>
+<span class=theme-info>Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank>NexT</a></span></div><div class=vistor-info><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv><i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span></span>
 <span class=separator-line>/</span>
-<span class=site-pv>
-<i class="fa fa-eye"></i>
-<span class=busuanzi-value id=busuanzi_value_site_pv></span>
-</span>
-</div>
-<div class=license-info>
-<span class=storage-info>
-Storage by
-<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a>
-</span>
+<span class=site-pv><i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span></span></div><div class=license-info><span class=storage-info>Storage by
+<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a></span>
 <span class=separator-line>/</span>
-<span class=license-num>
-<a href target=_blank></a>
-</span>
-</div>
-</div>
-</footer>
-<div class=back-to-top>
-<i class="fa fa-arrow-up"></i>
-<span id=scrollpercent><span>0</span>%</span>
-</div>
-</div>
-<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<span class=license-num><a href target=_blank></a></span></div></div></footer><div class=back-to-top><i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span></div></div><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
 <script type=text/javascript src=/js/search.js></script>
 <script type=text/javascript src=/js/affix.js></script>
 <script type=text/javascript src=/js/scrollspy.js></script>
-<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
-<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
-<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
-<script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
-<script type=text/javascript>function showTime(d){var b=new AV.Query(d),a=[],c=$(".leancloud_visitors");c.each(function(){a.push($(this).attr("id").trim())}),b.containedIn('url',a),b.find().then(d=>{var e='.leancloud-visitors-count',b,h,f,j,g,i;if(d.length==0){c.find(e).text(0);return}for(b=0;b<d.length;b++)h=d[b],f=h.get('url'),j=h.get('time'),g=document.getElementById(f),$(g).find(e).text(j);for(b=0;b<a.length;b++)f=a[b],g=document.getElementById(f),i=$(g).find(e),i.text()==''&&i.text(0)},a=>{console.log('Query vistors failed: '+a)})}function addCount(d){var b=$(".leancloud_visitors"),a=b.attr('id').trim(),e=b.attr('data-flag-title').trim(),c=new AV.Query('Counter');c.equalTo("url",a),c.find().then(g=>{var f,c,b;g.length>0?(f=g[0],f.increment('time',1),f.save(null,{query:new AV.Query('Counter').equalTo('url',a),fetchWhenSave:!0}).then(b=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log('Update vistor failed: '+a)})):(c=new AV.ACL,c.setPublicReadAccess(!0),c.setPublicWriteAccess(!0),b=new d,b.set("title",e),b.set("url",a),b.set("time",1),b.setACL(c),b.save().then(d=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log("Save new vistor failed: "+a)}))})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const a=AV.Object.extend("Counter");$('.leancloud_visitors').length==1?addCount(a):$('.post-title-link').length>1&&showTime(a)})</script>
-<script type=text/javascript>(function(){var a=document.createElement('script');a.type='text/javascript',a.async=!0,a.setAttribute('issue-term',"title"),a.setAttribute('theme',"github-light"),a.setAttribute('repo',"jcq15/blog"),a.crossorigin='anonymous',a.src='https://utteranc.es/client.js',document.getElementById('ucomments').appendChild(a)})()</script>
-<script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
-<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
-</body>
-</html>
+<script type=text/javascript>function detectIE(){var e=window.navigator.userAgent,t=e.indexOf("MSIE "),n=e.indexOf("Trident/"),s=e.indexOf("Edge/");return t>0||n>0||s>0?-1:1}function getCntViewHeight(){var t=$("#content").height(),e=$(window).height(),n=t>e?t-e:$(document).height()-e;return n}function getScrollbarWidth(){var e=$("<div />").addClass("scrollbar-measure").prependTo("body"),t=e[0],n=t.offsetWidth-t.clientWidth;return e.remove(),n}function registerBackTop(){var t=50,e=$(".back-to-top");$(window).on("scroll",function(){e.toggleClass("back-to-top-on",window.pageYOffset>t);var s=$(window).scrollTop(),o=getCntViewHeight(),i=s/o,n=Math.round(i*100),a=n>100?100:n;$("#scrollpercent>span").html(a)}),e.on("click",function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var e=".post-toc",s=$(e),t=".active-current";s.on("activate.bs.scrollspy",function(){var t=$(e+" .active").last();n(),t.addClass("active-current")}).on("clear.bs.scrollspy",n),$("body").scrollspy({target:e});function n(){$(e+" "+t).removeClass(t.substring(1))}}function initAffix(){var e=$(".header-inner").height(),t=parseInt($(".main").css("padding-bottom"),10),n=e+10;$(".sidebar-inner").affix({offset:{top:n,bottom:t}}),$(document).on("affixed.bs.affix",function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){$(window).on("resize",function(){e&&clearTimeout(e),e=setTimeout(function(){var e=document.body.clientHeight-100;updateTOCHeight(e)},0)}),updateTOCHeight(document.body.clientHeight-100);var e,t=getScrollbarWidth();$(".post-toc").css("width","calc(100% + "+t+"px)")}function updateTOCHeight(e){e=e||"auto",$(".post-toc").css("max-height",e)}$(function(){var e,t,n,s,o=$(".header-inner").height()+10;$("#sidebar").css({"margin-top":o}).show(),t=parseInt($("#sidebar").css("margin-top")),n=parseInt($(".sidebar-inner").css("height")),e=t+n,s=$(".content-wrap").height(),s<e&&$(".content-wrap").css("min-height",e),$(".site-nav-toggle").on("click",function(){var e=$(".site-nav"),o=$(".toggle"),t="site-nav-on",i="toggle-close",n=e.hasClass(t),a=n?"slideUp":"slideDown",s=n?"removeClass":"addClass";e.stop()[a]("normal",function(){e[s](t),o[s](i)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$(".sidebar-nav-toc").click(function(){$(this).addClass("sidebar-nav-active"),$(this).next().removeClass("sidebar-nav-active"),$("."+$(this).next().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)}),$(".sidebar-nav-overview").click(function(){$(this).addClass("sidebar-nav-active"),$(this).prev().removeClass("sidebar-nav-active"),$("."+$(this).prev().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)})})</script><script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$(".post-body").viewer()})</script><script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
+<script type=text/javascript>function showTime(e){var n=new AV.Query(e),t=[],s=$(".leancloud_visitors");s.each(function(){t.push($(this).attr("id").trim())}),n.containedIn("url",t),n.find().then(e=>{var n,o,i,r,c,l,a=".leancloud-visitors-count";if(e.length==0){s.find(a).text(0);return}for(n=0;n<e.length;n++)r=e[n],o=r.get("url"),l=r.get("time"),i=document.getElementById(o),$(i).find(a).text(l);for(n=0;n<t.length;n++)o=t[n],i=document.getElementById(o),c=$(i).find(a),c.text()==""&&c.text(0)},e=>{console.log("Query vistors failed: "+e)})}function addCount(e){var n=$(".leancloud_visitors"),t=n.attr("id").trim(),o=n.attr("data-flag-title").trim(),s=new AV.Query("Counter");s.equalTo("url",t),s.find().then(n=>{if(n.length>0){var s,i,a=n[0];a.increment("time",1),a.save(null,{query:new AV.Query("Counter").equalTo("url",t),fetchWhenSave:!0}).then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(e.get("time"))},e=>{console.log("Update vistor failed: "+e)})}else i=new AV.ACL,i.setPublicReadAccess(!0),i.setPublicWriteAccess(!0),s=new e,s.set("title",o),s.set("url",t),s.set("time",1),s.setACL(i),s.save().then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(s.get("time"))},e=>{console.log("Save new vistor failed: "+e)})})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const e=AV.Object.extend("Counter");$(".leancloud_visitors").length==1?addCount(e):$(".post-title-link").length>1&&showTime(e)})</script><script type=text/javascript>(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.setAttribute("issue-term","title"),e.setAttribute("theme","github-light"),e.setAttribute("repo","jcq15/blog"),e.crossorigin="anonymous",e.src="https://utteranc.es/client.js",document.getElementById("ucomments").appendChild(e)})()</script><script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
+<script>(function(){var t,e=document.createElement("script"),n=window.location.protocol.split(":")[0];n==="https"?e.src="https://zz.bdstatic.com/linksubmit/push.js":e.src="http://push.zhanzhang.baidu.com/push.js",t=document.getElementsByTagName("script")[0],t.parentNode.insertBefore(e,t)})()</script></body></html>

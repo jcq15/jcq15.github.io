@@ -9,8 +9,7 @@ Blockquote with attribution Don&rsquo;t communicate by sharing memory, share mem
 Tables Tables aren&rsquo;t part of the core Markdown spec, but Hugo supports supports them out-of-the-box.
 Name Age Bob 27 Alice 23 Inline Markdown within tables Italics Bold Code italics bold code Image ![Image Description](Image URL) Demo Normal SVG Google Chrome
 Firefox Browser
-Icons
-Try to click the image to visit the URL.
+Icons Try to click the image to visit the URL.
 Code Blocks Code block with backticks &lt;!doctype html> &lt;html lang="en"> &lt;head> &lt;meta charset="utf-8"> &lt;title>Example HTML5 Document&lt;/title> &lt;/head> &lt;body> &lt;p>Test&lt;/p> &lt;/body> &lt;/html> Code block indented with four spaces &lt;!doctype html>
 &lt;html lang="en">
 &lt;head>
@@ -36,8 +35,7 @@ Vimeo Simple Shortcode {{/&lt; vimeo_simple 48912912 >/}}
 Bilibili Shortcode</content></entry><entry><title>Placeholder Text</title><url>/en/post/placeholder-text/</url><categories/><tags><tag>markdown</tag><tag>text</tag></tags><content type="html"> Lorem est tota propiore conpellat pectoribus de pectora summo.
 Redit teque digerit hominumque toris verebor lumina non cervice subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.
 Exierant elisi ambit vivere dedere Duce pollice Eris modo Spargitque ferrea quos palude Rursus nulli murmur; hastile inridet ut ab gravi sententia! Nomine potitus silentia flumen, sustinet placuit petis in dilapsa erat sunt. Atria tractus malis.
-Comas hunc haec pietate fetum procerum dixit Post torum vates letum Tiresia Flumen querellas Arcanaque montibus omnes Quidem et Vagus elidunt
-The Van de Graaf Canon
+Comas hunc haec pietate fetum procerum dixit Post torum vates letum Tiresia Flumen querellas Arcanaque montibus omnes Quidem et Vagus elidunt The Van de Graaf Canon
 Mane refeci capiebant unda mulcebat Victa caducifer, malo vulnere contra dicere aurato, ludit regale, voca! Retorsit colit est profanae esse virescere furit nec; iaculi matertera et visa est, viribus. Divesque creatis, tecta novat collumque vulnus est, parvas. Faces illo pepulere tempus adest. Tendit flamma, ab opes virum sustinet, sidus sequendo urbis.
 Iubar proles corpore raptos vero auctor imperium; sed et huic: manus caeli Lelegas tu lux. Verbis obstitit intus oblectamina fixis linguisque ausus sperare Echionides cornuaque tenent clausit possit. Omnia putatur. Praeteritae refert ausus; ferebant e primus lora nutat, vici quae mea ipse. Et iter nil spectatae vulnus haerentia iuste et exercebat, sui et.
 Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel mitis temploque vocatus, inque alis, oculos nomen non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem Propoetides parte.</content></entry><entry><title>Math Typesetting</title><url>/en/post/math-typesetting/</url><categories/><tags/><content type="html"> Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.
@@ -92,16 +90,13 @@ function can be called directly in templates or Inline Shortcodes
 .
 To enable emoji globally, set enableEmoji to true in your site&rsquo;s configuration
 and then you can type emoji shorthand codes directly in content files; e.g.
-Monkey
-🙈 :see_no_evil:
+Monkey 🙈 :see_no_evil:
 🙉 :hear_no_evil:
 🙊 :speak_no_evil:
-Number
-1️⃣ :one:
+Number 1️⃣ :one:
 2️⃣ :two:
 3️⃣ :three:
-Building
-🏡 :house_with_garden:
+Building 🏡 :house_with_garden:
 🏣 :post_office:
 🏥 :hospital:
 The Emoji cheat sheet

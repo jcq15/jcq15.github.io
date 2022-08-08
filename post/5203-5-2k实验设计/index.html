@@ -1,141 +1,24 @@
-<!doctype html><html lang=zh-cn dir=content/zh-cn>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
-<title> 线性回归（五）-2^k 因子实验 - 沙雕园 </title>
-<meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享">
-<meta name=author content="精神病人">
-<meta property="og:title" content="线性回归（五）-2^k 因子实验">
-<meta property="og:site_name" content="沙雕园">
-<meta property="og:image" content="/img/author.jpg">
-<meta name=title content="线性回归（五）-2^k 因子实验 - 沙雕园">
-<meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。">
-<link rel="shortcut icon" href=/img/favicon.ico>
-<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
-<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
-<link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css>
-<link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet>
-<link href=/css/main.css rel=stylesheet type=text/css>
-<link href=/css/syntax.css rel=stylesheet type=text/css>
-</head>
-<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
-<div class="container one-collumn sidebar-position-left page-home">
-<div class=headband></div>
-<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
-<div class=header-inner> <div class=site-brand-container>
-<div class=site-nav-toggle>
-<div class=toggle role=button style=opacity:1;top:0>
+<!doctype html><html lang=zh-cn dir=content/zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=content-security-policy content="upgrade-insecure-requests"><title>线性回归（五）-2^k 因子实验 - 沙雕园</title><meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享"><meta name=author content="精神病人"><meta property="og:title" content="线性回归（五）-2^k 因子实验"><meta property="og:site_name" content="沙雕园"><meta property="og:image" content="/img/author.jpg"><meta name=title content="线性回归（五）-2^k 因子实验 - 沙雕园"><meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。"><link rel="shortcut icon" href=/img/favicon.ico><link rel=apple-touch-icon href=/img/apple-touch-icon.png><link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png><link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css><link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet><link href=/css/main.css rel=stylesheet type=text/css><link href=/css/syntax.css rel=stylesheet type=text/css></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-hans><div class="container one-collumn sidebar-position-left page-home"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle role=button style=opacity:1;top:0><span class=toggle-line></span>
 <span class=toggle-line></span>
-<span class=toggle-line></span>
-<span class=toggle-line></span>
-</div>
-</div>
-<div class=site-meta>
-<div class=custom-logo-site-title>
-<a href=/ class=brand rel=start>
-<span class=logo-line-before><i></i></span>
+<span class=toggle-line></span></div></div><div class=site-meta><div class=custom-logo-site-title><a href=/ class=brand rel=start><span class=logo-line-before><i></i></span>
 <span class=site-title>沙雕园</span>
-<span class=logo-line-after><i></i></span>
-</a>
-</div>
-<p class=site-subtitle>沙雕使人进步。</p>
-</div>
-<div class=site-nav-right>
-<div class="toggle popup-trigger" style=opacity:1;top:0>
-<i class="fa fa-search fa-fw fa-lg"></i>
-</div>
-</div>
-</div>
-<nav class=site-nav>
-<ul id=menu class=menu>
-<li class=menu-item>
-<a href=/ rel=section>
-<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页
-</a>
-</li>
-<li class="menu-item menu-item-active">
-<a href=/post rel=section>
-<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档
-</a>
-</li>
-<li class=menu-item>
-<a href=/about.html rel=section>
-<i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我
-</a>
-</li>
-<li class="menu-item menu-item-search">
-<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> 搜索</a>
-</li>
-</ul>
-<div class=site-search>
-<div class="popup search-popup local-search-popup">
-<div class="local-search-header clearfix">
-<span class=search-icon><i class="fa fa-search"></i> </span>
-<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
-<div class=local-search-input-wrapper>
-<input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
-</div>
-</div>
-<div id=local-search-result></div>
-</div>
-</div>
-</nav> </div>
-</header>
-<main id=main class=main>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=/post/5203-5-2k%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1/ itemprop=url>
-线性回归（五）-2^k 因子实验
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
+<span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>沙雕使人进步。</p></div><div class=site-nav-right><div class="toggle popup-trigger" style=opacity:1;top:0><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul id=menu class=menu><li class=menu-item><a href=/ rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-active"><a href=/post rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class=menu-item><a href=/about.html rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于我</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class=site-search><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class=search-icon><i class="fa fa-search"></i></span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span><div class=local-search-input-wrapper><input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off></div></div><div id=local-search-result></div></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><section id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=/post/5203-5-2k%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1/ itemprop=url>线性回归（五）-2^k 因子实验</a></h1><div class=post-meta><span class=post-pushdate><i class="fa fa-calendar-o fa-fw"></i>
 <span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-12-28">
-2021-12-28
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-12-28">2021-12-28</time></span>
+<span class=post-category><i class="fa fa-folder-o fa-fw"></i>
 <span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0 itemprop=url rel=index>
-<span itemprop=name>课程笔记</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing><a class=post-category-a href=/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0 itemprop=url rel=index><span itemprop=name>课程笔记</span></a>
+&nbsp;</span></span>
+<span class=post-wordcount><i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>3756 字</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
+<span class=leancloud-world-count>3762 字</span></span>
+<span class=post-readtime><i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>8分钟</span>
-</span>
-<span id=/post/5203-5-2k%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1/ class="leancloud_visitors post-visitor" data-flag-title="线性回归（五）-2^k 因子实验">
-<i class="fa fa-binoculars fa-fw"></i>
+<span class=leancloud-view-count>8分钟</span></span>
+<span id=/post/5203-5-2k%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1/ class="leancloud_visitors post-visitor" data-flag-title="线性回归（五）-2^k 因子实验"><i class="fa fa-binoculars fa-fw"></i>
 <span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>这部分我写的比较抽象，估计只有学过的才看得懂，没学过的可能云里雾里，不过我功力实在有限，难以用自然语言表达清楚这件事……</p>
-<h2 id=模型>模型</h2>
-<h3 id=multiple-way-anova>Multiple way ANOVA</h3>
-<p>这是一种特殊的 multiple way ANOVA. 假设我们有 $k$ 个因子，每个只有 2 个 level，记作 $-$ 和 $+$.</p>
-<p>以 $2^3$ 为例，我们有三个因子 $A,B,C$，模型为：
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>这部分我写的比较抽象，估计只有学过的才看得懂，没学过的可能云里雾里，不过我功力实在有限，难以用自然语言表达清楚这件事……</p><h2 id=模型>模型</h2><h3 id=multiple-way-anova>Multiple way ANOVA</h3><p>这是一种特殊的 multiple way ANOVA. 假设我们有 $k$ 个因子，每个只有 2 个 level，记作 $-$ 和 $+$.</p><p>以 $2^3$ 为例，我们有三个因子 $A,B,C$，模型为：
 $$
 \begin{align}
 y_i=&\mu +\alpha x_{i,A}+\beta x_{i,B} +\gamma x_{i,C}\
@@ -143,46 +26,19 @@ y_i=&\mu +\alpha x_{i,A}+\beta x_{i,B} +\gamma x_{i,C}\
 &+(\alpha\beta\gamma)x_{i,ABC}+\varepsilon_i,
 \end{align}
 $$
-其中</p>
-<ul>
-<li>$x_{i,A}$ 在 $A+$ 时取值 $1$，在 $A-$ 时取 $-1$,</li>
-<li>$x_{i,AB}=x_{i,A}x_{i,B}$，也只有 $1$ 或 $-1$ 两个值，</li>
-<li>$x_{i,ABC}=x_{i,A}x_{i,B}x_{i,C}$,</li>
-<li>$\varepsilon_i\overset{i.i.d.}\sim N(0,\sigma^2)$.</li>
-</ul>
-<p>注：这里面每个交叉项只有一个，例如 $\alpha\beta$，而不是像一般的模型那样有 $(\alpha\beta)_{ij}$. 这样正好 $2^k$ 个自由参数，就不必额外加约束条件了。</p>
-<p>一般地，用 $A_1,\cdots,A_k$ 表示 $k$ 个 factor，模型可以写为
+其中</p><ul><li>$x_{i,A}$ 在 $A+$ 时取值 $1$，在 $A-$ 时取 $-1$,</li><li>$x_{i,AB}=x_{i,A}x_{i,B}$，也只有 $1$ 或 $-1$ 两个值，</li><li>$x_{i,ABC}=x_{i,A}x_{i,B}x_{i,C}$,</li><li>$\varepsilon_i\overset{i.i.d.}\sim N(0,\sigma^2)$.</li></ul><p>注：这里面每个交叉项只有一个，例如 $\alpha\beta$，而不是像一般的模型那样有 $(\alpha\beta)_{ij}$. 这样正好 $2^k$ 个自由参数，就不必额外加约束条件了。</p><p>一般地，用 $A_1,\cdots,A_k$ 表示 $k$ 个 factor，模型可以写为
 $$
 y_i=\sum_{\mathcal{I}\in 2^{{1,2,\cdots,k}}} \theta_{\mathcal{I}}x_{i,\mathcal{I}}.
 $$
-这里 $\mathcal{I}$ 是指标集。例如 $\mathcal{I}={1,2,3}$，则 $x_{i,\mathcal{I}}$ 指的就是前面的 $x_{i,A_1A_2A_3}$. 特别地，$x_{i,\varnothing}=1,\theta_{\varnothing}=\mu$.</p>
-<p>有了这种记号，我们可以方便的写出参数估计（就不推导了）：
+这里 $\mathcal{I}$ 是指标集。例如 $\mathcal{I}={1,2,3}$，则 $x_{i,\mathcal{I}}$ 指的就是前面的 $x_{i,A_1A_2A_3}$. 特别地，$x_{i,\varnothing}=1,\theta_{\varnothing}=\mu$.</p><p>有了这种记号，我们可以方便的写出参数估计（就不推导了）：
 $$
 \theta_{\mathcal{I}}=\frac{1}{2}\left(\bar y(x_{\mathcal{I}}=1)-\bar y(x_{\mathcal{I}}=-1) \right).
 $$
-这么看太抽象，还是回到前面 $2^3$ 的例子，有：</p>
-<ul>
-<li>$\alpha=\bar y(A+)-\bar y(A-)$,</li>
-<li>$(\alpha\beta)=\dfrac{1}{2}\left(\bar y(A+,B+)+\bar y(A-,B-)\right)-\dfrac{1}{2}\left(\bar y(A+,B-)+\bar y(A-,B+)\right)$.</li>
-</ul>
-<p>我们定义 <strong>effect</strong> 是系数的二倍，这样就没有 $1/2$ 了。即
+这么看太抽象，还是回到前面 $2^3$ 的例子，有：</p><ul><li>$\alpha=\bar y(A+)-\bar y(A-)$,</li><li>$(\alpha\beta)=\dfrac{1}{2}\left(\bar y(A+,B+)+\bar y(A-,B-)\right)-\dfrac{1}{2}\left(\bar y(A+,B-)+\bar y(A-,B+)\right)$.</li></ul><p>我们定义 <strong>effect</strong> 是系数的二倍，这样就没有 $1/2$ 了。即
 $$
 E(A_{i_1}\cdots A_{i_m})=2\theta_{i_1,\cdots,i_m}.
 $$
-例如 $A$ 组和 $B$ 组的交互作用项 $E(AB)=\left(\bar y(A+,B+)+\bar y(A-,B-)\right)-\left(\bar y(A+,B-)+\bar y(A-,B+)\right)$.</p>
-<blockquote>
-<p>注：这里的 $E(AB)$ 就是书上的 $AB$，表示 effect，$E$ 只是个记号，和期望没关系。我们一会要用 $AB$ 表示群中的元素，所以只好这样了。</p>
-</blockquote>
-<h3 id=群论视角>群论视角</h3>
-<p>我们想知道，对于一般情况，如何得知某个 effect $E(A_{i_1}\cdots A_{i_m})$ 是怎么算的 —— 即哪些是加，哪些是减？为此，我们需要新的武器。</p>
-<p>表一：</p>
-<p><img src=5203/6.png alt></p>
-<ul>
-<li>第一列是观测值，ab 表示 $A+,B+$ 组的观测结果（每组只有一个），(1) 表示全 $-$ 的观测结果；</li>
-<li>右边 8 列是 8 个参数，也就是各种 effect。例如 $AB$ 列表示 $AB$ 的联合 effect 是 $E(AB)=((1)-a-b+ab+c-ac-bc+abc)/4$.</li>
-</ul>
-<p>可以看出，每个 effect 都是各个观测值的组合，要么是加要么是减。所以研究这个表格的行和列的性质至关重要。</p>
-<p>令 $\Omega={(a_1,\cdots,a_{2^k}):a_i\in{+,-}}$，即由 $+,-$ 组成的 $k$ 维向量。定义 $\Omega$ 上的乘法：
+例如 $A$ 组和 $B$ 组的交互作用项 $E(AB)=\left(\bar y(A+,B+)+\bar y(A-,B-)\right)-\left(\bar y(A+,B-)+\bar y(A-,B+)\right)$.</p><blockquote><p>注：这里的 $E(AB)$ 就是书上的 $AB$，表示 effect，$E$ 只是个记号，和期望没关系。我们一会要用 $AB$ 表示群中的元素，所以只好这样了。</p></blockquote><h3 id=群论视角>群论视角</h3><p>我们想知道，对于一般情况，如何得知某个 effect $E(A_{i_1}\cdots A_{i_m})$ 是怎么算的 —— 即哪些是加，哪些是减？为此，我们需要新的武器。</p><p>表一：</p><p><img src=5203/6.png alt></p><ul><li>第一列是观测值，ab 表示 $A+,B+$ 组的观测结果（每组只有一个），(1) 表示全 $-$ 的观测结果；</li><li>右边 8 列是 8 个参数，也就是各种 effect。例如 $AB$ 列表示 $AB$ 的联合 effect 是 $E(AB)=((1)-a-b+ab+c-ac-bc+abc)/4$.</li></ul><p>可以看出，每个 effect 都是各个观测值的组合，要么是加要么是减。所以研究这个表格的行和列的性质至关重要。</p><p>令 $\Omega={(a_1,\cdots,a_{2^k}):a_i\in{+,-}}$，即由 $+,-$ 组成的 $k$ 维向量。定义 $\Omega$ 上的乘法：
 $$
 (a_1,\cdots,a_{2^k})(b_1,\cdots,b_{2^k})=(a_1b_1,\cdots,a_{2^k}b_{2^k}),
 $$
@@ -197,148 +53,26 @@ $$
 设
 $$
 G=\left{\prod_{i\in\mathcal{I}} A_{i}:\mathcal{I}\subset {1,\cdots,k}\right}.
-$$</p>
-<p>$G$ 上的乘法继承自 $\Omega$. 特别地，定义 $\prod_{i\in\varnothing} A_{i}=\mu=(+,\cdots,+)$. 我们可以迅速得到 $G$ 的一些基本性质（自行证明）：</p>
-<ol>
-<li>
-<p>$G$ 在乘法下构成一个 Abel 群，$\mu$ 是单位元；</p>
-</li>
-<li>
-<p>$G$ 中除单位元外，所有元素的阶都是 2；</p>
-</li>
-<li>
-<p>$|G|=2^k$；（$G$ 中的元素就是表一中的列，它定义了各个 effect 的计算方式）</p>
-</li>
-<li>
-<p>更进一步地，有 $G\cong (\mathbb{Z}_2)^k$. （$k$ 个 $\mathbb{Z}_2$ 的直积）</p>
-</li>
-</ol>
-<p>对 $g\in G$，定义重量 $w(g)=g\text{中'-&lsquo;的个数}$。其中 $i_k$ 各不相等。根据式(1)不难看出 $w(A_{i_1}\cdots A_{i_m})=1/2^{k-1}$，即 $G$ 中除了 $\mu$ 外的元素都是一半 $+$ 一半 $-$. 这意味着<strong>每个 effect 都是一半观测值的均值减掉另一半观测值的均值</strong>。</p>
-<h2 id=yates-算法>Yates 算法</h2>
-<p>我们有一个快速计算各个 effect 的算法：</p>
-<ol>
-<li>把观测值按<strong>标准顺序</strong>排成一列</li>
-<li>在右边新建 $k$ 列：
-<ul>
-<li>每一列的前半部分：第 $i$ 个元素是前一列的第 $2i-1$ 个和第 $2i$ 个之和；</li>
-<li>每一列的后半部分：第 $i$ 个元素是前一列的第 $2i$ 个和第 $2i-1$ 个之差；</li>
-</ul>
-</li>
-<li>在右边在写一列（$k+1$ 列），第一个元素是 $2^k$，其它全是 $2^{k-1}$，</li>
-<li>此时用新建第 $k$ 列除以 $k+1$ 列，就是对应的 effect.</li>
-</ol>
-<p>如下表：</p>
-<p><img src=5203/5.png alt></p>
-<p>标准顺序就是最右边的顺序，$ab$ 表示 $A+,B+,C-$，其它类似。</p>
-<blockquote>
-<p>这个过程是不是感到莫名熟悉？其实它就是<strong>快速傅里叶算法</strong>的早期版本。原始论文：</p>
-<p><a href=https://en.wikipedia.org/wiki/Frank_Yates target=_blank rel=noopener>Yates, Frank</a>
+$$</p><p>$G$ 上的乘法继承自 $\Omega$. 特别地，定义 $\prod_{i\in\varnothing} A_{i}=\mu=(+,\cdots,+)$. 我们可以迅速得到 $G$ 的一些基本性质（自行证明）：</p><ol><li><p>$G$ 在乘法下构成一个 Abel 群，$\mu$ 是单位元；</p></li><li><p>$G$ 中除单位元外，所有元素的阶都是 2；</p></li><li><p>$|G|=2^k$；（$G$ 中的元素就是表一中的列，它定义了各个 effect 的计算方式）</p></li><li><p>更进一步地，有 $G\cong (\mathbb{Z}_2)^k$. （$k$ 个 $\mathbb{Z}_2$ 的直积）</p></li></ol><p>对 $g\in G$，定义重量 $w(g)=g\text{中&rsquo;-&lsquo;的个数}$。其中 $i_k$ 各不相等。根据式(1)不难看出 $w(A_{i_1}\cdots A_{i_m})=1/2^{k-1}$，即 $G$ 中除了 $\mu$ 外的元素都是一半 $+$ 一半 $-$. 这意味着<strong>每个 effect 都是一半观测值的均值减掉另一半观测值的均值</strong>。</p><h2 id=yates-算法>Yates 算法</h2><p>我们有一个快速计算各个 effect 的算法：</p><ol><li>把观测值按<strong>标准顺序</strong>排成一列</li><li>在右边新建 $k$ 列：<ul><li>每一列的前半部分：第 $i$ 个元素是前一列的第 $2i-1$ 个和第 $2i$ 个之和；</li><li>每一列的后半部分：第 $i$ 个元素是前一列的第 $2i$ 个和第 $2i-1$ 个之差；</li></ul></li><li>在右边在写一列（$k+1$ 列），第一个元素是 $2^k$，其它全是 $2^{k-1}$，</li><li>此时用新建第 $k$ 列除以 $k+1$ 列，就是对应的 effect.</li></ol><p>如下表：</p><p><img src=5203/5.png alt></p><p>标准顺序就是最右边的顺序，$ab$ 表示 $A+,B+,C-$，其它类似。</p><blockquote><p>这个过程是不是感到莫名熟悉？其实它就是<strong>快速傅里叶算法</strong>的早期版本。原始论文：</p><p><a href=https://en.wikipedia.org/wiki/Frank_Yates target=_blank rel=noopener>Yates, Frank</a>
 (1937). &ldquo;The design and analysis of factorial experiments&rdquo;. <em>Technical Communication No. 35 of the Commonwealth Bureau of Soils</em>. <strong>142</strong> (3585): 90–92. <a href=https://en.wikipedia.org/wiki/Bibcode_%28identifier%29 target=_blank rel=noopener>Bibcode</a>
 :<a href=https://ui.adsabs.harvard.edu/abs/1938Natur.142...90F target=_blank rel=noopener>1938Natur.142&mldr;90F</a>
 . <a href=https://en.wikipedia.org/wiki/Doi_%28identifier%29 target=_blank rel=noopener>doi</a>
 :<a href=https://doi.org/10.1038%2F142090a0 target=_blank rel=noopener>10.1038/142090a0</a>
 . <a href=https://en.wikipedia.org/wiki/S2CID_%28identifier%29 target=_blank rel=noopener>S2CID</a>
 <a href=https://api.semanticscholar.org/CorpusID:23501205 target=_blank rel=noopener>23501205</a>
-.</p>
-</blockquote>
-<h2 id=显著性分析>显著性分析</h2>
-<h3 id=方案-a>方案 A</h3>
-<p>每个 effect 都是一半观测值的均值减掉另一半观测值的均值，所以 $\mathrm{Var}(\dfrac{4\sigma^2}{N})$，$N$ 为总观测样本数。只要有了 $\sigma^2$ 的估计，置信区间就有了。</p>
-<p>可设某些高阶 interaction 为 0. 例如对 $2^4$，设三阶和四阶 interaction 为 0，此时我们算出来的 $ABC,ABD,ACD,BCD, ABCD$ 就服从 $N(0,\dfrac{4\sigma^2}{N})$，且独立（这是因为设计矩阵的列正交）。于是可以进行方差估计：
+.</p></blockquote><h2 id=显著性分析>显著性分析</h2><h3 id=方案-a>方案 A</h3><p>每个 effect 都是一半观测值的均值减掉另一半观测值的均值，所以 $\mathrm{Var}(\dfrac{4\sigma^2}{N})$，$N$ 为总观测样本数。只要有了 $\sigma^2$ 的估计，置信区间就有了。</p><p>可设某些高阶 interaction 为 0. 例如对 $2^4$，设三阶和四阶 interaction 为 0，此时我们算出来的 $ABC,ABD,ACD,BCD, ABCD$ 就服从 $N(0,\dfrac{4\sigma^2}{N})$，且独立（这是因为设计矩阵的列正交）。于是可以进行方差估计：
 $$
 \hat\sigma^2=\frac{N}{4}\frac{ABC^2+ABD^2+ACD^2+BCD^2+ ABCD^2}{5}.
-$$</p>
-<blockquote>
-<p>自由度是 5。注意这里均值是已知的 0，所以自由度就是 $n$。之前是因为均值未知，用样本均值替代，自由度就是 $n-1$ 了。</p>
-</blockquote>
-<p>某个 effect 的置信区间是
+$$</p><blockquote><p>自由度是 5。注意这里均值是已知的 0，所以自由度就是 $n$。之前是因为均值未知，用样本均值替代，自由度就是 $n-1$ 了。</p></blockquote><p>某个 effect 的置信区间是
 $$
 \hat\theta\pm t_{5,\frac{\alpha}{2}}\sqrt\frac{4\hat\sigma^2}{N}.
-$$</p>
-<h3 id=方案-b-daniel>方案 B (Daniel)</h3>
-<p>我们假设所有 effect 都是 0，此时只有均值和误差项。那么共有 $2^k-1$ 个 effect，它们服从 $N(0,\dfrac{4\sigma^2}{N})$. 我们对这 $2^k-1$ 个点进行正态性检验，哪些不合群哪些就显著。</p>
-<p>具体地，把 $\hat\theta_i,1\le i\le 2^k-1$ 加上绝对值，然后从小到大排序，然后画 half normal plot。它类似 Q-Q 图，只是有两点不同：</p>
-<ul>
-<li>只考虑 $x>0$，相当于截尾正态分布</li>
-<li>横坐标是标准 half normal quantile，但纵坐标是 $N(0,\dfrac{4\sigma^2}{N})$ 的 quantile</li>
-</ul>
-<p>令 $I=2^k-1$，图上包含的点是
+$$</p><h3 id=方案-b-daniel>方案 B (Daniel)</h3><p>我们假设所有 effect 都是 0，此时只有均值和误差项。那么共有 $2^k-1$ 个 effect，它们服从 $N(0,\dfrac{4\sigma^2}{N})$. 我们对这 $2^k-1$ 个点进行正态性检验，哪些不合群哪些就显著。</p><p>具体地，把 $\hat\theta_i,1\le i\le 2^k-1$ 加上绝对值，然后从小到大排序，然后画 half normal plot。它类似 Q-Q 图，只是有两点不同：</p><ul><li>只考虑 $x>0$，相当于截尾正态分布</li><li>横坐标是标准 half normal quantile，但纵坐标是 $N(0,\dfrac{4\sigma^2}{N})$ 的 quantile</li></ul><p>令 $I=2^k-1$，图上包含的点是
 $$
 (z_{0.5+0.5[i-0.5]/I},|\hat\theta|_{(i)}).
 $$
-然后目测一条直线，拟合 0 附近的点，看谁不合群。比如这个例子：</p>
-<p><img src=5203/7.png alt></p>
-<p>B 不合群，说明 B 显著。</p>
-<h3 id=方案-c-lenth>方案 C (Lenth)</h3>
-<p>看<a href=http://utstat.toronto.edu/~nathan/teaching/STA305/classnotes/week10/sta305-classnotes-week10.html#lenths-method-testing-significance-for-experiments-without-variance-estimates target=_blank rel=noopener>这里</a>
-吧，感觉写的巨详细，我就不抄一遍了。</p>
-<h2 id=ofat-approach>Ofat Approach</h2>
-<p>暂略，之后补上</p>
-<h2 id=混淆confounding>混淆（confounding）</h2>
-<h3 id=2k-design-in-2-blocks>2^k Design in 2 Blocks</h3>
-<p>Confounding, 直译为“混淆”。在因果推断中表示干扰因素：当我们研究自变量 X 与因变量 Y 的相关性时，存在一个共同的原因 Z 同时影响了 X 和 Y。最典型的就是我们常说的“相关不等于因果”：冰淇淋的销量和溺水率正相关，但其原因是天气炎热导致冰淇淋销量上升，同时也导致人们游泳变多，溺水事故自然也变多了，而非“冰淇淋导致溺水”。</p>
-<blockquote>
-<p>这也是一个经典的逻辑谬误，详见我的另一篇文章中的<a href=/post/luojimiuwu/>因果谬误</a>
-。</p>
-</blockquote>
-<p>我们通常考虑 $2^k$ 因子设计。以 $2^2$ 设计为例，两个因子为 $A,B$，此外还有一个干扰变量 $C$，它有两个取值 $C1,C2$. 设计时应该考虑到 $C$ 的分配，我们给出三种方案：</p>
-<table>
-<thead>
-<tr>
-<th>Runs</th>
-<th>A</th>
-<th>B</th>
-<th>AB</th>
-<th>方案1</th>
-<th>方案2</th>
-<th>方案3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$(1)$</td>
-<td>$-$</td>
-<td>$-$</td>
-<td>$+$</td>
-<td>$C1$</td>
-<td>$C1$</td>
-<td>$C1$</td>
-</tr>
-<tr>
-<td>$a$</td>
-<td>$+$</td>
-<td>$-$</td>
-<td>$-$</td>
-<td>$C1$</td>
-<td>$C2$</td>
-<td>$C1$</td>
-</tr>
-<tr>
-<td>$b$</td>
-<td>$-$</td>
-<td>$+$</td>
-<td>$-$</td>
-<td>$C2$</td>
-<td>$C1$</td>
-<td>$C2$</td>
-</tr>
-<tr>
-<td>$ab$</td>
-<td>$+$</td>
-<td>$+$</td>
-<td>$+$</td>
-<td>$C2$</td>
-<td>$C2$</td>
-<td>$C1$</td>
-</tr>
-</tbody>
-</table>
-<p>直观上看，方案 1 中 $C$ 的分配和 $B$ 的分配一样，这会导致因子 $B$ 出现 confounding；方案 2 会导致因子 $A$ confounding；而方案 3 则没有 confounding。</p>
-<blockquote>
-<p>你能提出一个使得 $AB$ confounding 而 $A$ 和 $B$ 都没有 confounding 的方案吗？</p>
-</blockquote>
-<h3 id=数学解释>数学解释</h3>
-<p>模型：
+然后目测一条直线，拟合 0 附近的点，看谁不合群。比如这个例子：</p><p><img src=5203/7.png alt></p><p>B 不合群，说明 B 显著。</p><h3 id=方案-c-lenth>方案 C (Lenth)</h3><p>看<a href=http://utstat.toronto.edu/~nathan/teaching/STA305/classnotes/week10/sta305-classnotes-week10.html#lenths-method-testing-significance-for-experiments-without-variance-estimates target=_blank rel=noopener>这里</a>
+吧，感觉写的巨详细，我就不抄一遍了。</p><h2 id=ofat-approach>Ofat Approach</h2><p>暂略，之后补上</p><h2 id=混淆confounding>混淆（confounding）</h2><h3 id=2k-design-in-2-blocks>2^k Design in 2 Blocks</h3><p>Confounding, 直译为“混淆”。在因果推断中表示干扰因素：当我们研究自变量 X 与因变量 Y 的相关性时，存在一个共同的原因 Z 同时影响了 X 和 Y。最典型的就是我们常说的“相关不等于因果”：冰淇淋的销量和溺水率正相关，但其原因是天气炎热导致冰淇淋销量上升，同时也导致人们游泳变多，溺水事故自然也变多了，而非“冰淇淋导致溺水”。</p><blockquote><p>这也是一个经典的逻辑谬误，详见我的另一篇文章中的<a href=/post/luojimiuwu/>因果谬误</a>
+。</p></blockquote><p>我们通常考虑 $2^k$ 因子设计。以 $2^2$ 设计为例，两个因子为 $A,B$，此外还有一个干扰变量 $C$，它有两个取值 $C1,C2$. 设计时应该考虑到 $C$ 的分配，我们给出三种方案：</p><table><thead><tr><th>Runs</th><th>A</th><th>B</th><th>AB</th><th>方案1</th><th>方案2</th><th>方案3</th></tr></thead><tbody><tr><td>$(1)$</td><td>$-$</td><td>$-$</td><td>$+$</td><td>$C1$</td><td>$C1$</td><td>$C1$</td></tr><tr><td>$a$</td><td>$+$</td><td>$-$</td><td>$-$</td><td>$C1$</td><td>$C2$</td><td>$C1$</td></tr><tr><td>$b$</td><td>$-$</td><td>$+$</td><td>$-$</td><td>$C2$</td><td>$C1$</td><td>$C2$</td></tr><tr><td>$ab$</td><td>$+$</td><td>$+$</td><td>$+$</td><td>$C2$</td><td>$C2$</td><td>$C1$</td></tr></tbody></table><p>直观上看，方案 1 中 $C$ 的分配和 $B$ 的分配一样，这会导致因子 $B$ 出现 confounding；方案 2 会导致因子 $A$ confounding；而方案 3 则没有 confounding。</p><blockquote><p>你能提出一个使得 $AB$ confounding 而 $A$ 和 $B$ 都没有 confounding 的方案吗？</p></blockquote><h3 id=数学解释>数学解释</h3><p>模型：
 $$
 y=\mu+\frac{A}{2}x_A+\frac{B}{2}x_B+\frac{AB}{2}x_Ax_B.
 $$
@@ -357,261 +91,49 @@ $$
 $$
 y=\frac{\tau_2-\tau_1}{2}+\frac{A}{2}x_A+(\tau_1+\tau_2)x_B+\tau_1\frac{AB}{2}x_Ax_B.
 $$
-可见我们解不出 $B,\mu_1,\mu_2$，但其它的都能解。所以 $B$ 被“混淆”了。</p>
-<blockquote>
-<p>以上讨论给我们的启发：混淆是无法避免的。有干扰因子时，未知数个数多于方程个数，肯定无法全部解出，所以实验设计时应当直接牺牲一个 effect，把它和干扰因子进行混淆，让其它的顺利解出。如果一个都不牺牲，结局就是一个也解不出。</p>
-</blockquote>
-<h3 id=一般理论2n-blocks-nge2>一般理论：$2^n$ Blocks ($n\ge2$)</h3>
-<p>当混淆因子有 4 个 level 时，我们就得牺牲两列，如下：</p>
-<table>
-<thead>
-<tr>
-<th>Effect 1 ($D1$)</th>
-<th>Effect 2 ($D2$)</th>
-<th>Blocks</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$-$</td>
-<td>$-$</td>
-<td>1</td>
-</tr>
-<tr>
-<td>$+$</td>
-<td>$-$</td>
-<td>2</td>
-</tr>
-<tr>
-<td>$-$</td>
-<td>$+$</td>
-<td>3</td>
-</tr>
-<tr>
-<td>$+$</td>
-<td>$+$</td>
-<td>4</td>
-</tr>
-</tbody>
-</table>
-<p>正好对应。类似地，干扰因子有 $2^n$ 个 level，就得牺牲 $n$ 列。</p>
-<p>但事实没有那么美好，对于上例，如果 $D_1=AB$, $D_2=A$，我们可以证明 $B$ 也惨遭混淆。如果 $D_1=A,D_2=B$ 呢？那 $AB$ 会被混淆。更一般地，我们如果选取 $G$ 中的非单位元 ${h_1,\cdots,h_n}$ 作为牺牲契约，可以证明 ${h_1,\cdots,h_n}$ <strong>生成的子群 $H$ 中的 $2^n$ 个元素都会被混淆</strong>，而不在 $H$ 中的元素都不会被混淆。</p>
-<blockquote>
-<p>具体证明比较繁琐，和群没啥关系，需要研究每一列生成的规律（二进制按位与），就略去了。有人有好的证法可以评论一手。</p>
-</blockquote>
-<h2 id=分式析因设计>分式析因设计</h2>
-<p>分式析因设计（Fractional Factorial Experiments, F.F.）是 $2^k$ 因子设计的变种。对 block 来说，“混淆”相当于集合的减法，而分式析因设计则相当于除法，也就是商群。</p>
-<p>先来说说动机。根据层次原则，高阶的交叉项显著的概率很低。比如一个 10 因子设计，需要做 1024 次试验，而如果我们假定大于等于 4 阶的 effect 都不显著，我们可以忽略掉整整 968 个。这不禁让我们动起歪脑筋：既然忽略了 968 个 effect，有没有办法少做 968 次试验呢？这不是活活省钱吗？</p>
-<h3 id=做法>做法</h3>
-<p>我们可以从 $G$ 中选取若干非单位元 $h_1,\cdots, h_p$，记它们生成的子群为 $H$，显然 $|H|=2^p$. 我们认为 $H$ 中的元素所代表的 effect 可以忽略，此时我们只需做 $2^{k-p}$ 次实验。具体来说，只要考虑 $h_1,\cdots, h_p$ 中全为正的行即可。这样做相当于考虑商群 $G/H$. 对于 $gH\in G/H$，我们认为 $gH$ 中的元素所代表的 effect 都相等。$H$ 称为 defining contrast subgroup.</p>
-<p>为了方便，人们规定了 $H$ 的几种表达方式。</p>
-<p>$H$ 有 $p$ 个生成元，如果依次记作 $h_1,\cdots,h_p$，则可以写 $I=h_1,I=h_2,\cdots,I=h_p$. 这组 $p$ 个式子称为 defining relation. （$\mu$ 也写作 $I$）</p>
-<p>注意到 $A_i$ 是 $G$ 的生成元，我们总可以将其划分为不交的两部分，$\mathcal{L}={A_{l_1},\cdots,A_{l_p}}$，$\mathcal{R}={A_{r_1},\cdots,A_{r_{k-p}}}$，使得对于 $i=1,\cdots,p$ 有
+可见我们解不出 $B,\mu_1,\mu_2$，但其它的都能解。所以 $B$ 被“混淆”了。</p><blockquote><p>以上讨论给我们的启发：混淆是无法避免的。有干扰因子时，未知数个数多于方程个数，肯定无法全部解出，所以实验设计时应当直接牺牲一个 effect，把它和干扰因子进行混淆，让其它的顺利解出。如果一个都不牺牲，结局就是一个也解不出。</p></blockquote><h3 id=一般理论2n-blocks-nge2>一般理论：$2^n$ Blocks ($n\ge2$)</h3><p>当混淆因子有 4 个 level 时，我们就得牺牲两列，如下：</p><table><thead><tr><th>Effect 1 ($D1$)</th><th>Effect 2 ($D2$)</th><th>Blocks</th></tr></thead><tbody><tr><td>$-$</td><td>$-$</td><td>1</td></tr><tr><td>$+$</td><td>$-$</td><td>2</td></tr><tr><td>$-$</td><td>$+$</td><td>3</td></tr><tr><td>$+$</td><td>$+$</td><td>4</td></tr></tbody></table><p>正好对应。类似地，干扰因子有 $2^n$ 个 level，就得牺牲 $n$ 列。</p><p>但事实没有那么美好，对于上例，如果 $D_1=AB$, $D_2=A$，我们可以证明 $B$ 也惨遭混淆。如果 $D_1=A,D_2=B$ 呢？那 $AB$ 会被混淆。更一般地，我们如果选取 $G$ 中的非单位元 ${h_1,\cdots,h_n}$ 作为牺牲契约，可以证明 ${h_1,\cdots,h_n}$ <strong>生成的子群 $H$ 中的 $2^n$ 个元素都会被混淆</strong>，而不在 $H$ 中的元素都不会被混淆。</p><blockquote><p>具体证明比较繁琐，和群没啥关系，需要研究每一列生成的规律（二进制按位与），就略去了。有人有好的证法可以评论一手。</p></blockquote><h2 id=分式析因设计>分式析因设计</h2><p>分式析因设计（Fractional Factorial Experiments, F.F.）是 $2^k$ 因子设计的变种。对 block 来说，“混淆”相当于集合的减法，而分式析因设计则相当于除法，也就是商群。</p><p>先来说说动机。根据层次原则，高阶的交叉项显著的概率很低。比如一个 10 因子设计，需要做 1024 次试验，而如果我们假定大于等于 4 阶的 effect 都不显著，我们可以忽略掉整整 968 个。这不禁让我们动起歪脑筋：既然忽略了 968 个 effect，有没有办法少做 968 次试验呢？这不是活活省钱吗？</p><h3 id=做法>做法</h3><p>我们可以从 $G$ 中选取若干非单位元 $h_1,\cdots, h_p$，记它们生成的子群为 $H$，显然 $|H|=2^p$. 我们认为 $H$ 中的元素所代表的 effect 可以忽略，此时我们只需做 $2^{k-p}$ 次实验。具体来说，只要考虑 $h_1,\cdots, h_p$ 中全为正的行即可。这样做相当于考虑商群 $G/H$. 对于 $gH\in G/H$，我们认为 $gH$ 中的元素所代表的 effect 都相等。$H$ 称为 defining contrast subgroup.</p><p>为了方便，人们规定了 $H$ 的几种表达方式。</p><p>$H$ 有 $p$ 个生成元，如果依次记作 $h_1,\cdots,h_p$，则可以写 $I=h_1,I=h_2,\cdots,I=h_p$. 这组 $p$ 个式子称为 defining relation. （$\mu$ 也写作 $I$）</p><p>注意到 $A_i$ 是 $G$ 的生成元，我们总可以将其划分为不交的两部分，$\mathcal{L}={A_{l_1},\cdots,A_{l_p}}$，$\mathcal{R}={A_{r_1},\cdots,A_{r_{k-p}}}$，使得对于 $i=1,\cdots,p$ 有
 $$
 A_{l_i}H=A_{r_{i_1}}\cdots A_{r_{i_{s_i}}}H
 $$
-这种形式。也就是左边的每个元素都能用右边的表示出来（可以自己试着证明下）。这种形式叫 generators。</p>
-<h3 id=ff-的评价>F.F. 的评价</h3>
-<p>如何评价 F.F. 的好坏？分辨率是一个指标。我们商掉了 $H$，自然希望 $H$ 中尽可能是高阶项。$H$ 中元素对应 effect 阶数称为字长（word-length），例如 $ABC$ 字长为 3. <strong>分辨率</strong> 定义为 $H$ 中非单位元的最短字长。</p>
-<p><strong>Clear effect</strong>: 对于字长为 1 或 2 的元素 $g$，称它是 clear 的，如果陪集 $gH$ 中没有其他的字长为 1 或 2 的元素；若 $gH$ 中没有其他的字长为 1，2，3 的元素，则称为 strongly clear.</p>
-<p>更进一步，我们可以考虑 $H$ 中元素的字长，记 $n_i$ 为 $H$ 中字长为 $i$ 的元素个数，则 $W=(n_3,n_4,\cdots)$ 称为 wordlength pattern. （通常我们要求 $n_2=0$，否则糟糕透了，两个字长为 1 的 effect 在同一个陪集中）</p>
-<p>选择 $W$ 的字典序最小的设计。</p>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-<a href=/post/5215-2%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8B/ rel=next title=公理化概率论（下）>
-<i class="fa fa-chevron-left"></i> 公理化概率论（下）
-</a>
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=/post/5215-3%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8A-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E5%88%86%E5%B8%83%E6%97%8F/ rel=prev title=统计学基础（上）-统计量&分布族>
-统计学基础（上）-统计量&分布族
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=ucomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
-<div class=sidebar-toggle>
-<div class=sidebar-toggle-line-wrap>
-<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+这种形式。也就是左边的每个元素都能用右边的表示出来（可以自己试着证明下）。这种形式叫 generators。</p><h3 id=ff-的评价>F.F. 的评价</h3><p>如何评价 F.F. 的好坏？分辨率是一个指标。我们商掉了 $H$，自然希望 $H$ 中尽可能是高阶项。$H$ 中元素对应 effect 阶数称为字长（word-length），例如 $ABC$ 字长为 3. <strong>分辨率</strong> 定义为 $H$ 中非单位元的最短字长。</p><p><strong>Clear effect</strong>: 对于字长为 1 或 2 的元素 $g$，称它是 clear 的，如果陪集 $gH$ 中没有其他的字长为 1 或 2 的元素；若 $gH$ 中没有其他的字长为 1，2，3 的元素，则称为 strongly clear.</p><p>更进一步，我们可以考虑 $H$ 中元素的字长，记 $n_i$ 为 $H$ 中字长为 $i$ 的元素个数，则 $W=(n_3,n_4,\cdots)$ 称为 wordlength pattern. （通常我们要求 $n_2=0$，否则糟糕透了，两个字长为 1 的 effect 在同一个陪集中）</p><p>选择 $W$ 的字典序最小的设计。</p></div><footer class=post-footer><div class=post-tags><a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a></div><div class=addthis_inline_share_toolbox></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/5215-4%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8B-%E4%BC%B0%E8%AE%A1%E4%B8%8E%E6%8E%A8%E6%96%AD/ rel=next title=统计学基础（下）-点估计><i class="fa fa-chevron-left"></i> 统计学基础（下）-点估计</a></div><div class="post-nav-prev post-nav-item"><a href=/post/5203-4%E5%A4%9A%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/ rel=prev title=线性回归（四）-多因素方差分析>线性回归（四）-多因素方差分析
+<i class="fa fa-chevron-right"></i></a></div></div><div id=ucomments></div></footer></article></section></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
 <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-</div>
-</div>
-<aside id=sidebar class=sidebar>
-<div class=sidebar-inner>
-<section class="site-overview sidebar-panel sidebar-panel-active">
-<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
-<img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人>
-<p class=site-author-name itemprop=name>精神病人</p>
-<p class="site-description motion-element" itemprop=description>
-精神病人欢乐多!
-</p>
-</div>
-<nav class="site-state motion-element">
-<div class="site-state-item site-state-posts">
-<a href=/post/>
-<span class=site-state-item-count>34</span>
-<span class=site-state-item-name>日志</span>
-</a>
-</div>
-<div class="site-state-item site-state-categories">
-<a href=/categories/>
-<span class=site-state-item-count>10</span>
-<span class=site-state-item-name>分类</span>
-</a>
-</div>
-<div class="site-state-item site-state-tags">
-<a href=/tags/>
-<span class=site-state-item-count>10</span>
-<span class=site-state-item-name>标签</span>
-</a>
-</div>
-</nav>
-<div class="links-of-author motion-element">
-<span class=links-of-author-item>
-<a href=https://github.com/jcq15/ target=_blank title=GitHub>
-<i class="fa fa-fw fa-github"></i>
-GitHub
-</a>
-</span>
-</div>
-<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
-<div class=tagcloud-of-blogroll-title>
-<i class="fa fa-fw fa-tags"></i>
-标签云
-</div>
-<ul class=tagcloud-of-blogroll-list>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E5%AD%A6%E4%B9%A0>学习
-<sup>15</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%8A%80%E6%9C%AF>技术
-<sup>5</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
-<sup>5</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%B8%B8%E6%88%8F>游戏
-<sup>3</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%9B%B4%E6%96%B0>更新
-<sup>2</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E7%A7%91%E6%99%AE>科普
-<sup>2</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%95%B4%E6%B4%BB>整活
-<sup>1</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%B2%99%E9%9B%95>沙雕
-<sup>1</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80>王者荣耀
-<sup>1</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
-<sup>1</sup>
-</a>
-</li>
-</ul>
-</div>
-</section>
-</div>
-</aside>
-</div>
-</main>
-<footer id=footer class=footer>
-<div class=footer-inner>
-<div class=copyright>
-<span class=copyright-year>
-&copy; 2010 - 2022
-</span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><section class="site-overview sidebar-panel sidebar-panel-active"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人><p class=site-author-name itemprop=name>精神病人</p><p class="site-description motion-element" itemprop=description>精神病人欢乐多!</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href=/post/><span class=site-state-item-count>35</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>11</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>11</span>
+<span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/jcq15/ target=_blank title=GitHub><i class="fa fa-fw fa-github"></i>
+GitHub</a></span></div><div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline"><div class=tagcloud-of-blogroll-title><i class="fa fa-fw fa-tags"></i>
+标签云</div><ul class=tagcloud-of-blogroll-list><li class=tagcloud-of-blogroll-item><a href=/tags/%E5%AD%A6%E4%B9%A0>学习
+<sup>15</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%8A%80%E6%9C%AF>技术
+<sup>5</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
+<sup>5</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B8%B8%E6%88%8F>游戏
+<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9B%B4%E6%96%B0>更新
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%A7%91%E6%99%AE>科普
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%A2%E6%83%B3>敢想
+<sup>1</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%B4%E6%B4%BB>整活
+<sup>1</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B2%99%E9%9B%95>沙雕
+<sup>1</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80>王者荣耀
+<sup>1</sup></a></li></ul></div></section></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright><span class=copyright-year>&copy; 2010 - 2022</span>
 <span class=with-love><i class="fa fa-heart"></i></span>
-<span class=copyright-author>沙雕园</span>
-</div>
-<div class=powered-info>
-<span class=powered-by>
-Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.89.2</a>
-</span>
+<span class=copyright-author>沙雕园</span></div><div class=powered-info><span class=powered-by>Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.101.0</a></span>
 <span class=separator-line>/</span>
-<span class=theme-info>
-Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
-</a>
-</span>
-</div>
-<div class=vistor-info>
-<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<span class=site-uv>
-<i class="fa fa-user"></i>
-<span class=busuanzi-value id=busuanzi_value_site_uv></span>
-</span>
+<span class=theme-info>Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank>NexT</a></span></div><div class=vistor-info><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv><i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span></span>
 <span class=separator-line>/</span>
-<span class=site-pv>
-<i class="fa fa-eye"></i>
-<span class=busuanzi-value id=busuanzi_value_site_pv></span>
-</span>
-</div>
-<div class=license-info>
-<span class=storage-info>
-Storage by
-<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a>
-</span>
+<span class=site-pv><i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span></span></div><div class=license-info><span class=storage-info>Storage by
+<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a></span>
 <span class=separator-line>/</span>
-<span class=license-num>
-<a href target=_blank></a>
-</span>
-</div>
-</div>
-</footer>
-<div class=back-to-top>
-<i class="fa fa-arrow-up"></i>
-<span id=scrollpercent><span>0</span>%</span>
-</div>
-</div>
-<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<span class=license-num><a href target=_blank></a></span></div></div></footer><div class=back-to-top><i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span></div></div><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
 <script type=text/javascript src=/js/search.js></script>
 <script type=text/javascript src=/js/affix.js></script>
 <script type=text/javascript src=/js/scrollspy.js></script>
-<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
-<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
-<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
-<script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
-<script type=text/javascript>function showTime(d){var b=new AV.Query(d),a=[],c=$(".leancloud_visitors");c.each(function(){a.push($(this).attr("id").trim())}),b.containedIn('url',a),b.find().then(d=>{var e='.leancloud-visitors-count',b,h,f,j,g,i;if(d.length==0){c.find(e).text(0);return}for(b=0;b<d.length;b++)h=d[b],f=h.get('url'),j=h.get('time'),g=document.getElementById(f),$(g).find(e).text(j);for(b=0;b<a.length;b++)f=a[b],g=document.getElementById(f),i=$(g).find(e),i.text()==''&&i.text(0)},a=>{console.log('Query vistors failed: '+a)})}function addCount(d){var b=$(".leancloud_visitors"),a=b.attr('id').trim(),e=b.attr('data-flag-title').trim(),c=new AV.Query('Counter');c.equalTo("url",a),c.find().then(g=>{var f,c,b;g.length>0?(f=g[0],f.increment('time',1),f.save(null,{query:new AV.Query('Counter').equalTo('url',a),fetchWhenSave:!0}).then(b=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log('Update vistor failed: '+a)})):(c=new AV.ACL,c.setPublicReadAccess(!0),c.setPublicWriteAccess(!0),b=new d,b.set("title",e),b.set("url",a),b.set("time",1),b.setACL(c),b.save().then(d=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log("Save new vistor failed: "+a)}))})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const a=AV.Object.extend("Counter");$('.leancloud_visitors').length==1?addCount(a):$('.post-title-link').length>1&&showTime(a)})</script>
-<script type=text/javascript>(function(){var a=document.createElement('script');a.type='text/javascript',a.async=!0,a.setAttribute('issue-term',"title"),a.setAttribute('theme',"github-light"),a.setAttribute('repo',"jcq15/blog"),a.crossorigin='anonymous',a.src='https://utteranc.es/client.js',document.getElementById('ucomments').appendChild(a)})()</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
-<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type=text/javascript>function detectIE(){var e=window.navigator.userAgent,t=e.indexOf("MSIE "),n=e.indexOf("Trident/"),s=e.indexOf("Edge/");return t>0||n>0||s>0?-1:1}function getCntViewHeight(){var t=$("#content").height(),e=$(window).height(),n=t>e?t-e:$(document).height()-e;return n}function getScrollbarWidth(){var e=$("<div />").addClass("scrollbar-measure").prependTo("body"),t=e[0],n=t.offsetWidth-t.clientWidth;return e.remove(),n}function registerBackTop(){var t=50,e=$(".back-to-top");$(window).on("scroll",function(){e.toggleClass("back-to-top-on",window.pageYOffset>t);var s=$(window).scrollTop(),o=getCntViewHeight(),i=s/o,n=Math.round(i*100),a=n>100?100:n;$("#scrollpercent>span").html(a)}),e.on("click",function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var e=".post-toc",s=$(e),t=".active-current";s.on("activate.bs.scrollspy",function(){var t=$(e+" .active").last();n(),t.addClass("active-current")}).on("clear.bs.scrollspy",n),$("body").scrollspy({target:e});function n(){$(e+" "+t).removeClass(t.substring(1))}}function initAffix(){var e=$(".header-inner").height(),t=parseInt($(".main").css("padding-bottom"),10),n=e+10;$(".sidebar-inner").affix({offset:{top:n,bottom:t}}),$(document).on("affixed.bs.affix",function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){$(window).on("resize",function(){e&&clearTimeout(e),e=setTimeout(function(){var e=document.body.clientHeight-100;updateTOCHeight(e)},0)}),updateTOCHeight(document.body.clientHeight-100);var e,t=getScrollbarWidth();$(".post-toc").css("width","calc(100% + "+t+"px)")}function updateTOCHeight(e){e=e||"auto",$(".post-toc").css("max-height",e)}$(function(){var e,t,n,s,o=$(".header-inner").height()+10;$("#sidebar").css({"margin-top":o}).show(),t=parseInt($("#sidebar").css("margin-top")),n=parseInt($(".sidebar-inner").css("height")),e=t+n,s=$(".content-wrap").height(),s<e&&$(".content-wrap").css("min-height",e),$(".site-nav-toggle").on("click",function(){var e=$(".site-nav"),o=$(".toggle"),t="site-nav-on",i="toggle-close",n=e.hasClass(t),a=n?"slideUp":"slideDown",s=n?"removeClass":"addClass";e.stop()[a]("normal",function(){e[s](t),o[s](i)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$(".sidebar-nav-toc").click(function(){$(this).addClass("sidebar-nav-active"),$(this).next().removeClass("sidebar-nav-active"),$("."+$(this).next().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)}),$(".sidebar-nav-overview").click(function(){$(this).addClass("sidebar-nav-active"),$(this).prev().removeClass("sidebar-nav-active"),$("."+$(this).prev().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)})})</script><script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$(".post-body").viewer()})</script><script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
+<script type=text/javascript>function showTime(e){var n=new AV.Query(e),t=[],s=$(".leancloud_visitors");s.each(function(){t.push($(this).attr("id").trim())}),n.containedIn("url",t),n.find().then(e=>{var n,o,i,r,c,l,a=".leancloud-visitors-count";if(e.length==0){s.find(a).text(0);return}for(n=0;n<e.length;n++)r=e[n],o=r.get("url"),l=r.get("time"),i=document.getElementById(o),$(i).find(a).text(l);for(n=0;n<t.length;n++)o=t[n],i=document.getElementById(o),c=$(i).find(a),c.text()==""&&c.text(0)},e=>{console.log("Query vistors failed: "+e)})}function addCount(e){var n=$(".leancloud_visitors"),t=n.attr("id").trim(),o=n.attr("data-flag-title").trim(),s=new AV.Query("Counter");s.equalTo("url",t),s.find().then(n=>{if(n.length>0){var s,i,a=n[0];a.increment("time",1),a.save(null,{query:new AV.Query("Counter").equalTo("url",t),fetchWhenSave:!0}).then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(e.get("time"))},e=>{console.log("Update vistor failed: "+e)})}else i=new AV.ACL,i.setPublicReadAccess(!0),i.setPublicWriteAccess(!0),s=new e,s.set("title",o),s.set("url",t),s.set("time",1),s.setACL(i),s.save().then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(s.get("time"))},e=>{console.log("Save new vistor failed: "+e)})})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const e=AV.Object.extend("Counter");$(".leancloud_visitors").length==1?addCount(e):$(".post-title-link").length>1&&showTime(e)})</script><script type=text/javascript>(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.setAttribute("issue-term","title"),e.setAttribute("theme","github-light"),e.setAttribute("repo","jcq15/blog"),e.crossorigin="anonymous",e.src="https://utteranc.es/client.js",document.getElementById("ucomments").appendChild(e)})()</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
 <script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
-<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
-</body>
-</html>
+<script>(function(){var t,e=document.createElement("script"),n=window.location.protocol.split(":")[0];n==="https"?e.src="https://zz.bdstatic.com/linksubmit/push.js":e.src="http://push.zhanzhang.baidu.com/push.js",t=document.getElementsByTagName("script")[0],t.parentNode.insertBefore(e,t)})()</script></body></html>
