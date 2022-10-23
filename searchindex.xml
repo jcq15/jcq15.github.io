@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>我修改了十篇高考古诗词，使其充满正能量</title><url>/post/%E5%8F%A4%E8%AF%97%E8%AF%8D/</url><categories><category>整活</category></categories><tags><tag>整活</tag></tags><content type="html"> 塞下春来真景气，衡阳雁归无去意。广袤大地颂歌起。华夏里，灯红酒绿顺民意。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>李华大冒险19 - 和赵铁柱抢夺屎馅包子</title><url>/post/lihua19/</url><categories><category>李华大冒险</category></categories><tags><tag>李华大冒险</tag></tags><content type="html"> 李华正在兴高采烈地挖金币，突然豆浆机接到一封电报。李华打开豆浆机用鼻孔一看，随即门牙紧锁，赶紧坐上微波炉赶回家中。
+怎么回事呢？原来赵铁柱在家拉屎把撤硕堵了。李华一拍裤衩心生一计：不如就用溢出的屎做屎馅包子吧！
+1 李华包了 37 个屎馅包子，对赵铁柱说：
+我们两个人轮流拿包子，每次只能拿 $2^k$ 个（k 为自然数），谁拿到最后一个包子谁就是今天的屎王！
+赵铁柱心想，这个问题先手必胜。我只要先手拿走 32 个，剩下 5 个，李华只有两种选择：拿 1 个或 4 个，然后我把剩下的全拿走就行了！屎王稳了！
+2 赵铁柱想，这个问题似乎可以继续推广：
+如果有 $n$ 个包子，每次拿 $2^k$ 个。$n$ 取哪些值先手胜，哪些值后手胜呢？
+赵铁柱打开洗衣机开始了演算，几分钟后便得出了结论，并且给出了证明。
+3 赵铁柱继续思考：
+如果有 $n$ 个包子，每次拿 $p^k$ 个。$n$ 取哪些值先手胜，哪些值后手胜呢？（$p$ 为固定的素数）
+这个问题似乎可以用和上面类似的思路解决。
+4 最后，赵铁柱儿开始考虑更一般的问题：
+如果有 $n$ 个包子，每次拿 $m^k$ 个。$n$ 取哪些值先手胜，哪些值后手胜呢？（$m$ 为固定的正整数）
+和前面的问题比起来稍显复杂，但这也难不住赵铁柱的洗衣机。这次赵铁柱花 15 分钟找到了规律并给出了证明。
+End 想到这里，赵铁柱觉得屎王稳了，兴高采烈地去找李华玩这个游戏。但找了一圈，李华并不在房间里。
+“李华，李华！”没人答应。
+正在赵铁柱纳闷的时候，一阵雷声大作，下起了大雨。
+赵铁柱不知道的是，距此几千公里外的一个海岸上，一个沉静多年的干骸眨了眨眼，从浪花洗涤千遍的沙堆里爬出来…… （待续）</content></entry><entry><title>我修改了十篇高考古诗词，使其充满正能量</title><url>/post/%E5%8F%A4%E8%AF%97%E8%AF%8D/</url><categories><category>整活</category></categories><tags><tag>整活</tag></tags><content type="html"> 塞下春来真景气，衡阳雁归无去意。广袤大地颂歌起。华夏里，灯红酒绿顺民意。
 送杜少府之任蜀州 王勃
 城阙辅三秦，风烟望五津。
 与君重逢意，同创新征程。
@@ -1271,4 +1288,42 @@ a = np.array([[1,2], [3, 4], [5, 6]]) bool_idx = (a > 2) # Find the elements of 
 正在李华一筹莫展时，他一低头，看到了胸前的红领巾（不要问我为什么洗澡要戴红领巾），他瞬间想起他是一名光荣的少先队员，他想起了老师的谆谆教导，遇到困难应该努力克服！
 经过一番思考，李华心生一计：
 把流出来的水喷射到热水管上，不就能降低热水管的温度了嘛！
-现在问题来了：这种情况下，流出来的水是多少度呢？</content></entry></search>
+现在问题来了：这种情况下，流出来的水是多少度呢？</content></entry><entry><title/><url>/post/%E5%AF%BC%E5%87%BA%E5%BE%AE%E4%BF%A1%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95/</url><categories/><tags/><content type="html"> 导出微信聊天记录 摘要
+微信是一个在简中互联网知名度很高的软件，但其用户体验一直备受诟病。其中一个痛点是换手机会丢失尿天记录。尽管可以通过电脑儿进行备份，但体验极差，且用户无法自由把玩自己的数据，非常不爽。本文使用 ADB 提取出微信的数据库，并提供解密方式。
+有别于网上的教程们，我们不使用 sqlcipher 等软件，只用 ADB 和 python 完成操作。并且针对高版本（Android Q）出现的解密失败给出解决方案。
+需要准备 root 过的 Android 手机。
+如果你的手机不支持 root，可以考虑电脑安装 Android 模拟器，然后备份聊天记录至电脑，再在模拟器里把电脑里的聊天记录同步下来。
+Step1 电脑安装 ADB 调试程序 Windows版本：https://dl.google.com/android/repository/platform-tools-latest-windows.zip
+Mac版本：https://dl.google.com/android/repository/platform-tools-latest-darwin.zip
+Linux版本：https://dl.google.com/android/repository/platform-tools-latest-linux.zip
+解压后将路径添加到 path，然后
+adb 检查是否装好 ADB。
+Step2 连接手机 用 USB 连接手机和电脑（记得手机打开 USB 调教调试）
+adb devices 此时应该看到你的手机，类似这样：
+List of devices attached b5f0c03e device 如果没有，可能是需要安装手机驱动。
+Step3 获得微信数据库 更多 ADB 命令：https://zhuanlan.zhihu.com/p/89060003
+首先连接手机端 shell 并提升权限：
+adb shell su root 此时手机可能会弹出授权提示，授权即可。下一步打开数据库所在文件夹
+cd /data/data/com.tencent.mm/MicroMsg ls 你会看到里面有一长串字符的文件夹（可能有多个，一个微信号对应一个），文件夹名类似 ee1d************************e79f （32位）。文件夹里的 EnMicroMsg.db 就是我们要的数据库了。但它在 /data 分区，adb 没有权限获取，所以我们要在 shell 里把它复制到手机里其他的地方。
+cp /data/data/com.tencent.mm/MicroMsg/ee1d************************e79f/EnMicroMsg.db /sdcard/Download/ee1d.db 这个文件较大，可能会卡几十秒（我这个数据库足足有3个G）。
+复制完后退出 shell 模式 （需要退两次，一次退出 root，一次断开连接）：
+exit exit 此时回到电脑终端，我们要通过 adb pull 把手机上的数据库整过来：
+adb pull /sdcard/Download/ee1d.db C:/Users/yourname/Desktop/ 同样，文件巨大的话也会卡一会。复制完成后，别急着断开手机，一会还要用。
+Step4 破解数据库密码 这个数据库是加密的，我们得破解它。破解密码需要两个数据：微信 UIN 和手机 IMEI。
+再次进入手机 shell：
+adb shell su root 我们要获取微信的 UIN，它藏在一个文件里：
+cat /data/data/com.tencent.mm/shared_prefs/auth_info_key_prefs.xml 里面有一个 &lt;int name="_auth_uin" value="xxxx" />，这个 value 就是 UIN。现在可以断开手机了。
+然后打开手机拨号键盘，输入 *#06#，可以看到 IMEI，记录下来。（双卡手机有两个 IMEI，通常我们使用第一个，但保险起见两个都记下来吧）
+把 IMEI 和 UID 两个字符串直接拼接，然后做 MD5 编码（32位小写），结果的前 7 位就是数据库密码。（UIN 如果是负的也没事，直接当成字符串用就行。）
+可以使用这个工具：http://tool.chinaz.com/tools/md5.aspx
+解密失败的处理方法：
+微信毕竟老奸巨猾，有可能有的人发现密码不对。此时可以尝试以下几种方案：
+可以把 IMEI 换成 MEID 试试 把 IMEI 换成 1234567890ABCDEF （这个可能性较大，因为从 Android Q 开始，由于 Google 的安全策略，微信获取不到 IMEI，只能用 123&hellip;F 替代） 把 IMEI 换成 15 个 0 如果还不行，可以考虑暴力破解，密码是 7 位 16 进制小写，只有 16^7=268435456 种可能。甚至有人写好了暴力破解脚本，可以参考这里
+，用 GPU 只需要不到 1 个小时。 Step5 打开数据库 到了这一步，网上大多用 sqlcipher 操作，但我并不推荐，原因有三：
+sqlcipher 付费，需要折腾找破解版 如果数据库较大，导出时程序会崩溃，无法继续进行（我就是！） 图形界面没有敲代码逼格高！ 接下来
+https://www.jianshu.com/p/90224ab9cdf2
+数据库毕竟不太方便，我们可以导出 CSV 方便后续操作。
+点此下载 sqlcipher
+，用软件打开数据库，输入密码，就可以看到里面内容了。
+这个数据库里有很多东西，大家可以自行探索。聊天记录存在 message 表里，点击 File-Export，然后选择 Table name: message 即可。有了 csv，配合 python 就可以为所欲为了。
+注意：如果数据库十分巨大，导出会卡一会。这时候导出完了</content></entry></search>
