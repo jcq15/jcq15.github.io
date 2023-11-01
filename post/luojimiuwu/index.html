@@ -1,65 +1,558 @@
-<!doctype html><html lang=zh-cn dir=content/zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=content-security-policy content="upgrade-insecure-requests"><title>教你如何做杠精 —— 经典逻辑谬误 - 沙雕园</title><meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享"><meta name=author content="精神病人"><meta property="og:title" content="教你如何做杠精 —— 经典逻辑谬误"><meta property="og:site_name" content="沙雕园"><meta property="og:image" content="/img/author.jpg"><meta name=title content="教你如何做杠精 —— 经典逻辑谬误 - 沙雕园"><meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。"><link rel="shortcut icon" href=/img/favicon.ico><link rel=apple-touch-icon href=/img/apple-touch-icon.png><link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png><link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css><link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet><link href=/css/main.css rel=stylesheet type=text/css><link href=/css/syntax.css rel=stylesheet type=text/css></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-hans><div class="container one-collumn sidebar-position-left page-home"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle role=button style=opacity:1;top:0><span class=toggle-line></span>
+<!doctype html><html lang=zh-cn dir=content/zh-cn>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
+<title> 教你如何做杠精 —— 经典逻辑谬误 - 沙雕园 </title>
+<meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享">
+<meta name=author content="精神病人">
+<meta property="og:title" content="教你如何做杠精 —— 经典逻辑谬误">
+<meta property="og:site_name" content="沙雕园">
+<meta property="og:image" content="/img/author.jpg">
+<meta name=title content="教你如何做杠精 —— 经典逻辑谬误 - 沙雕园">
+<meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。">
+<link rel="shortcut icon" href=/img/favicon.ico>
+<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
+<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
+<link href=//unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=//unpkg.com/imageviewer@1.1.0/dist/viewer.min.css rel=stylesheet>
+<link href=/css/main.css rel=stylesheet type=text/css>
+<link href=/css/syntax.css rel=stylesheet type=text/css>
+</head>
+<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
+<div class="container one-collumn sidebar-position-left page-home">
+<div class=headband></div>
+<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
+<div class=header-inner> <div class=site-brand-container>
+<div class=site-nav-toggle>
+<div class=toggle role=button style=opacity:1;top:0>
 <span class=toggle-line></span>
-<span class=toggle-line></span></div></div><div class=site-meta><div class=custom-logo-site-title><a href=/ class=brand rel=start><span class=logo-line-before><i></i></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+</div>
+</div>
+<div class=site-meta>
+<div class=custom-logo-site-title>
+<a href=/ class=brand rel=start>
+<span class=logo-line-before><i></i></span>
 <span class=site-title>沙雕园</span>
-<span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>沙雕使人进步。</p></div><div class=site-nav-right><div class="toggle popup-trigger" style=opacity:1;top:0><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul id=menu class=menu><li class=menu-item><a href=/ rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-active"><a href=/post rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class=menu-item><a href=/about.html rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于我</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class=site-search><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class=search-icon><i class="fa fa-search"></i></span>
-<span class=popup-btn-close><i class="fa fa-times-circle"></i></span><div class=local-search-input-wrapper><input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off></div></div><div id=local-search-result></div></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><section id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=/post/luojimiuwu/ itemprop=url>教你如何做杠精 —— 经典逻辑谬误</a></h1><div class=post-meta><span class=post-pushdate><i class="fa fa-calendar-o fa-fw"></i>
+<span class=logo-line-after><i></i></span>
+</a>
+</div>
+<p class=site-subtitle>沙雕使人进步。</p>
+</div>
+<div class=site-nav-right>
+<div class="toggle popup-trigger" style=opacity:1;top:0>
+<i class="fa fa-search fa-fw fa-lg"></i>
+</div>
+</div>
+</div>
+<nav class=site-nav>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a href=/ rel=section>
+<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页
+</a>
+</li>
+<li class="menu-item menu-item-active">
+<a href=/post rel=section>
+<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档
+</a>
+</li>
+<li class=menu-item>
+<a href=/about.html rel=section>
+<i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我
+</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> 搜索</a>
+</li>
+</ul>
+<div class=site-search>
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class=search-icon><i class="fa fa-search"></i> </span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
+<div class=local-search-input-wrapper>
+<input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
+</div>
+</div>
+<div id=local-search-result></div>
+</div>
+</div>
+</nav> </div>
+</header>
+<main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=/post/luojimiuwu/ itemprop=url>
+教你如何做杠精 —— 经典逻辑谬误
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-pushdate>
+<i class="fa fa-calendar-o fa-fw"></i>
 <span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2022-04-26">2022-04-26</time></span>
-<span class=post-category><i class="fa fa-folder-o fa-fw"></i>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2022-04-26">
+2022-04-26
+</time>
+</span>
+<span class=post-category>
+<i class="fa fa-folder-o fa-fw"></i>
 <span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing><a class=post-category-a href=/categories/%E7%A7%91%E6%99%AE itemprop=url rel=index><span itemprop=name>科普</span></a>
-&nbsp;</span></span>
-<span class=post-wordcount><i class="fa fa-file-word-o fa-fw"></i>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a class=post-category-a href=/categories/%E7%A7%91%E6%99%AE itemprop=url rel=index>
+<span itemprop=name>科普</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>5685 字</span></span>
-<span class=post-readtime><i class="fa fa-eye fa-fw"></i>
+<span class=leancloud-world-count>5685 字</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>12分钟</span></span>
-<span id=/post/luojimiuwu/ class="leancloud_visitors post-visitor" data-flag-title="教你如何做杠精 —— 经典逻辑谬误"><i class="fa fa-binoculars fa-fw"></i>
+<span class=leancloud-view-count>12分钟</span>
+</span>
+<span id=/post/luojimiuwu/ class="leancloud_visitors post-visitor" data-flag-title="教你如何做杠精 —— 经典逻辑谬误">
+<i class="fa fa-binoculars fa-fw"></i>
 <span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>”家里姐姐妹妹都没有，单我有，我说没趣儿；如今来了这个神仙似的妹妹也没有，可知这不是个好东西。“</p><h2 id=稻草人>稻草人</h2><p>指夸张、歪曲，甚至凭空创造别人的观点，使自己能够更加轻松的攻击别人。</p><blockquote><p>例：</p><p>赵铁柱：你怎么不回我消息？</p><p>李华：啊？我刚才一直在开会，没看见。</p><p>赵铁柱：你果然是不爱我了！</p></blockquote><p>李华因为忙工作没有及时回消息，却被女朋友赵铁柱曲解为“你不爱我了”，这就是典型的稻草人谬误。<em>所以<del>这时候应该严厉指出女朋友犯了稻草人谬误，这样她就会认错了</del>。</em></p><blockquote><p>例：</p><p>李华：国家应该投入更多的预算来发展教育行业。</p><p>赵铁柱：想不到你这么不爱国，居然想减少国防开支，让外国列强有机可乘。</p></blockquote><p>李华的观点本来是“增加教育行业的预算”，却被歪曲成“想减少国防开支”，进而上升到不爱国，这帽子扣的，帽子戏法啊！</p><blockquote><p>例：</p><p>李华：不能因为中医是老祖宗传下来的，就认为他是对的。老祖宗也会犯错。</p><p>赵铁柱：作为一个中国人你竟然这么不热爱传统文化，说传统文化是错的？</p></blockquote><p>李华的观点是：“通过老祖宗来论证中医的正确性”这一论证过程是不对的，可赵铁柱把它歪曲成“不热爱传统文化”，甚至于“传统文化都是错的”。（画外音：没给你扣个境外势力的帽子就偷着乐吧）（此外，这句话还有强加因果的问题）</p><p>练习：</p><ul><li>甲：“我们应该追责隐瞒疫情导致瘟疫扩散的官员。” 乙：“现在最重要的是救灾，应该把重心放在救灾上。”</li></ul><h2 id=红鲱鱼转移话题>红鲱鱼（转移话题）</h2><p>将一个不相干的话题插进来，从而把读者或者听众的注意力转移到另一个论题上，赢得论战。它的基本顺序是：</p><ol><li>A 话题正在被讨论</li><li>B 话题突然插了进来，好像和A有关，但实际上并不相关</li><li>A 话题被置之不理</li></ol><p>红鲱鱼和稻草人有点相似。倒不必非要分得那么清楚，只要知道它们都是错误的论证方式就行了。</p><blockquote><p>例：</p><p>李华：中药的研发过程不符合科学要求。</p><p>赵铁柱：你不试试怎么知道有没有用？</p></blockquote><p>这里李华在讨论中药研发过程是否合理，而赵铁柱绕开对研发过程的讨论，转而讨论“通过亲自尝试来证明有效性”这一话题。</p><blockquote><p>例：</p><p>路人：这小鲜肉演技也太差了吧？尴尬癌犯了。</p><p>粉丝：你知道他有多努力吗？</p></blockquote><p>粉丝把话题从其业务能力转移到某明星个人的努力上。</p><p>需要注意的是，B 话题可能确实有讨论价值，但转移到 B 话题并不能驳倒 A 话题。A 话题所带来的问题仍未解决。此外，如果一直转移话题，会产生越来越多的没讨论完的话题，迟早爆栈，所以转移话题这种操作不讲武德。</p><h2 id=因果谬误>因果谬误</h2><p>因果谬误泛指各种未有充分证据便轻率断定因果关系的不当推论。</p><blockquote><p>例：</p><p>李华感冒了，吃了一些感冒药，结果发烧了。所以是感冒药导致疾病恶化。</p></blockquote><p>这里的错误在于，并不能证明发烧是感冒药导致的。可能是感冒导致的发烧，不吃药还是会发烧（甚至烧的更厉害）。</p><blockquote><p>例：</p><p>冰淇淋会导致溺水，因为有数据表明冰淇淋的销量和溺水事故发生数正相关。</p></blockquote><p>我们暂且认为数据是准确的，确实冰淇淋的销量和溺水率正相关。但它们之间仅仅是相关性，并没有因果关系。事实上，可能是天气炎热导致冰淇淋销量上升，同时也导致人们游泳变多，溺水事故自然也变多了。</p><blockquote><p>例：</p><p>男同性恋中艾滋病患者那么多，说明同性性行为会导致艾滋病。</p></blockquote><p>同样地没有证据，强加因果。</p><h2 id=诉诸感情>诉诸感情</h2><p>就是情感绑架。</p><blockquote><p>例：</p><p>猪猪那么可爱，怎么可以吃猪肉呢？猪猪就跟小朋友一样，你怎么忍心伤害小朋友？</p></blockquote><blockquote><p>例：</p><p>你是中国人，你连我们老祖宗留下来的中医都不信？</p></blockquote><blockquote><p>例：（诉诸自然）</p><p>异性相吸是自然规律，所以同性恋是不合理的。</p></blockquote><p>认为一个事物是“自然”的，所以它是合理、必然并且更好的。这是不对的，这也算诉诸感情的一种。一个事物是自然的并不一定代表它就更好。例如弱肉强食是大自然中普遍存在的现象，这不能证明社会达尔文主义的正确性。</p><p>诉诸感情详细说来，有很多种，这里就不一一列举了：</p><ul><li>诉诸恐惧：某事会产生某种可怕的后果，因此我们应该反对某事或接受预防某事的建议</li><li>诉诸厌恶：某事令人恶人，因此是不对的</li><li>诉诸仇恨：某事有些令人不愉快的相关经验，因此不该支持某事</li><li>诉诸谄媚：奉承与谄媚他人，冀使其支持自己的观点。</li><li>诉诸怜悯：挑起对方的同情与愧疚，以博取他人支持自己的想法。</li><li>诉诸荒谬：主张对方的说词荒谬、可笑、幽默，因而该说法不值得接受。</li><li>诉诸自然：某个现象很自然，因而是可取的；或主张某个现象不自然，因而是不可取的。</li><li>诉诸新潮：宣称某事物最新、最符合时代潮流，以吸引他人接受。</li><li>非我所创：某观念或知识是由外人所创造，而对其不信任或低估其价值。</li><li>是我所创：某观念或知识是由自己人所创造，而对其不信任或低估其价值。</li></ul><h2 id=片面谬误>片面谬误</h2><p>主张某些情况是一般性原则的例外，却提出无关的理由。</p><blockquote><p>例：</p><p>我国国情不同，因此西式民主暂时不适合我国。</p></blockquote><p>一句“国情不同”草草了事是没有说服力的，必须有合理的理由说明国情有何不同，并论证此等不同为何会导致“西式”民主不适用。否则随便一个什么理论，都可以套用一个“XX不同，所以不适合”。</p><blockquote><p>例：</p><p>女生该注重外表，应该常保自己的外表干干净净的，应该留长头发但不该有体毛，而且皮肤要白、身材要瘦、身上不能有痘子或疤痕；不过男生和女生不一样，不必注重外表。</p></blockquote><p>男女之间的确存在客观差异，但不能仅仅因为男女存在差异，就论证某些规则对女生适用但对男生不适用。必须明确指出男生和女生在哪一方面有差异，这种差异又是怎样导致了这些规则不适用，否则就是胡诌八扯。</p><blockquote><p>例：</p><p>为了节省开支，员工出差只准买最便宜的机票，但我是老板，所以我可以买最好的。</p></blockquote><p>要有合理的理由说明为什么身为老板就能买最好的机票，而其他员工必须节省支出。</p><h2 id=转移举证责任诉诸无知>转移举证责任/诉诸无知</h2><p>这两个放在一起讲，因为常常同时出现。</p><p>诉诸无知的意思是，某件事不能证明是错的，就认为它是对的。</p><p>转移举证责任则是违背了“谁主张谁举证”的原则。要由观点/理论/方法的提出者证明它是对的，而不是让别人证明它是错的。</p><blockquote><p>例：</p><p>没有人能证明飞天拉面之神不存在，所以应该相信飞天拉面神教。</p></blockquote><p>显然，应该由提出者证明飞面神存在，然后人们才会相信。如果提出观点的人将举证责任推卸给别人，就是一种谬误了。</p><p>（<del>但飞面神真的存在！</del>）</p><blockquote><p>例：</p><p>中药有用，因为你不能证明它无用。</p></blockquote><h2 id=乐队花车从众效应>乐队花车（从众效应）</h2><p>意思是将许多人或所有人所相信的事情视为真实。正所谓“参加者只要跳上了这台乐队花车，就能够轻松地享受游行中的音乐，又不用走路”，也因此英文词组“jumping on the bandwagon”（跳上乐队花车）就代表了“进入主流”。</p><p>实际上，一个事物、观点的流行程度和它本身是否合理没有关系。地球是球形的，在人们相信地球是平的时代的时候，地球也是球形的，地球才不管你信不信它。</p><blockquote><p>例：</p><p>3亿人都在用拼夕夕，你怎么还不下载？</p></blockquote><p>大家都用，就一定是好的？</p><blockquote><p>许多事实证明，多数或所有人相信的事情，在当下或经过时间的演进，并不一定是对的。例如在18世纪，美国绝大多数人都认为这世界上可以有奴隶存在，但在今日美国有这样想法的人已经很少了。或是有人可以宣称“因为有那么多人吸烟，所以吸烟是健康的”，但事实上许多医学证明指出吸烟有害健康，所以应该说：“吸烟有害健康，虽然有那么多人吸烟。</p><p>（引自《每天学点心理学》，牧之著）</p></blockquote><h2 id=诉诸权威>诉诸权威</h2><p>要证明一个观点，只是摘录别人的观点是不够的， 至少要知道所提到的权威为什么有那样的观点，他的依据是什么。应该是“某权威提出XX，依据是XX，所以XX”，而不是“某权威提出XX，所以XX”。</p><blockquote><p>例：</p><p>钟南山说板蓝根可以用来预防新冠。</p></blockquote><p>仅仅这样是不足以让人相信的，因为没有论证。实际上，真正严谨的文章都会在提出观点的同时附带上理由。<strong>权威之所以是权威，是因为他们总能提出令人信服的理由。是理由让我们相信观点，而不是权威让我们相信观点。否则，“权威”便和“神棍”无异。</strong></p><blockquote><p>例：</p><p>电视上都说了，这四种食物吃了可以防癌！你快转发到你加的群里！</p></blockquote><p>电视其实根本不是权威……不过无所谓了。</p><blockquote><p>注：乐队花车和诉诸权威往往同时出现。在流量小鲜肉粉丝的吹嘘中会经常看到乐队花车和诉诸权威的谬误，粉丝们会拿出一系列数据来证明他们的偶像多么受欢迎，又会拿出种种奖项来说他们的偶像有多么专业，但其实数据都是粉丝刷出来，奖项也只是注水分的，所以这两点并不能说明这个流量小鲜肉的作品有多么的好。</p><p>引自：乐队花车谬误到底是什么？ - Nevoeiro的回答 - 知乎 <a href=https://www.zhihu.com/question/351149817/answer/888174693 target=_blank rel=noopener>https://www.zhihu.com/question/351149817/answer/888174693</a></p></blockquote><h2 id=没有真正的苏格兰人>没有真正的苏格兰人</h2><p>指在遇到反例时修改标准。</p><blockquote><p>例：</p><p>李华：广东人都喜欢吃福建人。</p><p>赵铁柱：我是广东人，我就不喜欢吃福建人。</p><p>李华：你不是真正的广东人，真正的广东人都喜欢吃福建人。</p></blockquote><p>设 $A$ 为广东人集合， $B$ 是喜欢吃福建人的人集合，李华认为 $A\subset B$，赵铁柱却给出一个反例：$a\in A$，但$a\notin B$。然后李华说，还存在一个“真正的$A$”集合——$A_{True}$， 满足 $A_{True}\subset B$。可仔细想想，$A_{True}$ 的定义是 $A_{True}:=A\cap B$，所以 $A_{True}\subset B$ 是完全正确的。可是这毫无意义，原来的问题并没有解决——<strong>给出 $A$ 中的一个元素，我们还是不知道它是否在 $B$ 中。</strong></p><p>最典型的例子当属中医粉的常见言论：xx不是真正的中医：</p><blockquote><p>例：</p><p>李华：我家楼下那个中医诊所，前几天给人开中药耽误了治疗，那人病死了。</p><p>赵铁柱：那肯定不是真正的中医，真正的中医是很厉害的，连未病都能治，更不可能把人治死。</p></blockquote><p>当然，即便李华说的是事实，也不能就此说明中药能吃死人，因为只是个案。但赵铁柱反驳的方式是错的，也犯了逻辑谬误。</p><h2 id=轶事证据>轶事证据</h2><p>就是编了一个栩栩如生的故事，然后通过这个故事得出了结论。有些传闻往往细节详细、诩诩如生，让人印象深刻；有些案例则以<a href=https://zh.wikipedia.org/wiki/%e6%96%b0%e8%81%9e target=_blank rel=noopener>新闻</a>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>”家里姐姐妹妹都没有，单我有，我说没趣儿；如今来了这个神仙似的妹妹也没有，可知这不是个好东西。“</p>
+<h2 id=稻草人>稻草人</h2>
+<p>指夸张、歪曲，甚至凭空创造别人的观点，使自己能够更加轻松的攻击别人。</p>
+<blockquote>
+<p>例：</p>
+<p>赵铁柱：你怎么不回我消息？</p>
+<p>李华：啊？我刚才一直在开会，没看见。</p>
+<p>赵铁柱：你果然是不爱我了！</p>
+</blockquote>
+<p>李华因为忙工作没有及时回消息，却被女朋友赵铁柱曲解为“你不爱我了”，这就是典型的稻草人谬误。<em>所以<del>这时候应该严厉指出女朋友犯了稻草人谬误，这样她就会认错了</del>。</em></p>
+<blockquote>
+<p>例：</p>
+<p>李华：国家应该投入更多的预算来发展教育行业。</p>
+<p>赵铁柱：想不到你这么不爱国，居然想减少国防开支，让外国列强有机可乘。</p>
+</blockquote>
+<p>李华的观点本来是“增加教育行业的预算”，却被歪曲成“想减少国防开支”，进而上升到不爱国，这帽子扣的，帽子戏法啊！</p>
+<blockquote>
+<p>例：</p>
+<p>李华：不能因为中医是老祖宗传下来的，就认为他是对的。老祖宗也会犯错。</p>
+<p>赵铁柱：作为一个中国人你竟然这么不热爱传统文化，说传统文化是错的？</p>
+</blockquote>
+<p>李华的观点是：“通过老祖宗来论证中医的正确性”这一论证过程是不对的，可赵铁柱把它歪曲成“不热爱传统文化”，甚至于“传统文化都是错的”。（画外音：没给你扣个境外势力的帽子就偷着乐吧）（此外，这句话还有强加因果的问题）</p>
+<p>练习：</p>
+<ul>
+<li>甲：“我们应该追责隐瞒疫情导致瘟疫扩散的官员。” 乙：“现在最重要的是救灾，应该把重心放在救灾上。”</li>
+</ul>
+<h2 id=红鲱鱼转移话题>红鲱鱼（转移话题）</h2>
+<p>将一个不相干的话题插进来，从而把读者或者听众的注意力转移到另一个论题上，赢得论战。它的基本顺序是：</p>
+<ol>
+<li>A 话题正在被讨论</li>
+<li>B 话题突然插了进来，好像和A有关，但实际上并不相关</li>
+<li>A 话题被置之不理</li>
+</ol>
+<p>红鲱鱼和稻草人有点相似。倒不必非要分得那么清楚，只要知道它们都是错误的论证方式就行了。</p>
+<blockquote>
+<p>例：</p>
+<p>李华：中药的研发过程不符合科学要求。</p>
+<p>赵铁柱：你不试试怎么知道有没有用？</p>
+</blockquote>
+<p>这里李华在讨论中药研发过程是否合理，而赵铁柱绕开对研发过程的讨论，转而讨论“通过亲自尝试来证明有效性”这一话题。</p>
+<blockquote>
+<p>例：</p>
+<p>路人：这小鲜肉演技也太差了吧？尴尬癌犯了。</p>
+<p>粉丝：你知道他有多努力吗？</p>
+</blockquote>
+<p>粉丝把话题从其业务能力转移到某明星个人的努力上。</p>
+<p>需要注意的是，B 话题可能确实有讨论价值，但转移到 B 话题并不能驳倒 A 话题。A 话题所带来的问题仍未解决。此外，如果一直转移话题，会产生越来越多的没讨论完的话题，迟早爆栈，所以转移话题这种操作不讲武德。</p>
+<h2 id=因果谬误>因果谬误</h2>
+<p>因果谬误泛指各种未有充分证据便轻率断定因果关系的不当推论。</p>
+<blockquote>
+<p>例：</p>
+<p>李华感冒了，吃了一些感冒药，结果发烧了。所以是感冒药导致疾病恶化。</p>
+</blockquote>
+<p>这里的错误在于，并不能证明发烧是感冒药导致的。可能是感冒导致的发烧，不吃药还是会发烧（甚至烧的更厉害）。</p>
+<blockquote>
+<p>例：</p>
+<p>冰淇淋会导致溺水，因为有数据表明冰淇淋的销量和溺水事故发生数正相关。</p>
+</blockquote>
+<p>我们暂且认为数据是准确的，确实冰淇淋的销量和溺水率正相关。但它们之间仅仅是相关性，并没有因果关系。事实上，可能是天气炎热导致冰淇淋销量上升，同时也导致人们游泳变多，溺水事故自然也变多了。</p>
+<blockquote>
+<p>例：</p>
+<p>男同性恋中艾滋病患者那么多，说明同性性行为会导致艾滋病。</p>
+</blockquote>
+<p>同样地没有证据，强加因果。</p>
+<h2 id=诉诸感情>诉诸感情</h2>
+<p>就是情感绑架。</p>
+<blockquote>
+<p>例：</p>
+<p>猪猪那么可爱，怎么可以吃猪肉呢？猪猪就跟小朋友一样，你怎么忍心伤害小朋友？</p>
+</blockquote>
+<blockquote>
+<p>例：</p>
+<p>你是中国人，你连我们老祖宗留下来的中医都不信？</p>
+</blockquote>
+<blockquote>
+<p>例：（诉诸自然）</p>
+<p>异性相吸是自然规律，所以同性恋是不合理的。</p>
+</blockquote>
+<p>认为一个事物是“自然”的，所以它是合理、必然并且更好的。这是不对的，这也算诉诸感情的一种。一个事物是自然的并不一定代表它就更好。例如弱肉强食是大自然中普遍存在的现象，这不能证明社会达尔文主义的正确性。</p>
+<p>诉诸感情详细说来，有很多种，这里就不一一列举了：</p>
+<ul>
+<li>诉诸恐惧：某事会产生某种可怕的后果，因此我们应该反对某事或接受预防某事的建议</li>
+<li>诉诸厌恶：某事令人恶人，因此是不对的</li>
+<li>诉诸仇恨：某事有些令人不愉快的相关经验，因此不该支持某事</li>
+<li>诉诸谄媚：奉承与谄媚他人，冀使其支持自己的观点。</li>
+<li>诉诸怜悯：挑起对方的同情与愧疚，以博取他人支持自己的想法。</li>
+<li>诉诸荒谬：主张对方的说词荒谬、可笑、幽默，因而该说法不值得接受。</li>
+<li>诉诸自然：某个现象很自然，因而是可取的；或主张某个现象不自然，因而是不可取的。</li>
+<li>诉诸新潮：宣称某事物最新、最符合时代潮流，以吸引他人接受。</li>
+<li>非我所创：某观念或知识是由外人所创造，而对其不信任或低估其价值。</li>
+<li>是我所创：某观念或知识是由自己人所创造，而对其不信任或低估其价值。</li>
+</ul>
+<h2 id=片面谬误>片面谬误</h2>
+<p>主张某些情况是一般性原则的例外，却提出无关的理由。</p>
+<blockquote>
+<p>例：</p>
+<p>我国国情不同，因此西式民主暂时不适合我国。</p>
+</blockquote>
+<p>一句“国情不同”草草了事是没有说服力的，必须有合理的理由说明国情有何不同，并论证此等不同为何会导致“西式”民主不适用。否则随便一个什么理论，都可以套用一个“XX不同，所以不适合”。</p>
+<blockquote>
+<p>例：</p>
+<p>女生该注重外表，应该常保自己的外表干干净净的，应该留长头发但不该有体毛，而且皮肤要白、身材要瘦、身上不能有痘子或疤痕；不过男生和女生不一样，不必注重外表。</p>
+</blockquote>
+<p>男女之间的确存在客观差异，但不能仅仅因为男女存在差异，就论证某些规则对女生适用但对男生不适用。必须明确指出男生和女生在哪一方面有差异，这种差异又是怎样导致了这些规则不适用，否则就是胡诌八扯。</p>
+<blockquote>
+<p>例：</p>
+<p>为了节省开支，员工出差只准买最便宜的机票，但我是老板，所以我可以买最好的。</p>
+</blockquote>
+<p>要有合理的理由说明为什么身为老板就能买最好的机票，而其他员工必须节省支出。</p>
+<h2 id=转移举证责任诉诸无知>转移举证责任/诉诸无知</h2>
+<p>这两个放在一起讲，因为常常同时出现。</p>
+<p>诉诸无知的意思是，某件事不能证明是错的，就认为它是对的。</p>
+<p>转移举证责任则是违背了“谁主张谁举证”的原则。要由观点/理论/方法的提出者证明它是对的，而不是让别人证明它是错的。</p>
+<blockquote>
+<p>例：</p>
+<p>没有人能证明飞天拉面之神不存在，所以应该相信飞天拉面神教。</p>
+</blockquote>
+<p>显然，应该由提出者证明飞面神存在，然后人们才会相信。如果提出观点的人将举证责任推卸给别人，就是一种谬误了。</p>
+<p>（<del>但飞面神真的存在！</del>）</p>
+<blockquote>
+<p>例：</p>
+<p>中药有用，因为你不能证明它无用。</p>
+</blockquote>
+<h2 id=乐队花车从众效应>乐队花车（从众效应）</h2>
+<p>意思是将许多人或所有人所相信的事情视为真实。正所谓“参加者只要跳上了这台乐队花车，就能够轻松地享受游行中的音乐，又不用走路”，也因此英文词组“jumping on the bandwagon”（跳上乐队花车）就代表了“进入主流”。</p>
+<p>实际上，一个事物、观点的流行程度和它本身是否合理没有关系。地球是球形的，在人们相信地球是平的时代的时候，地球也是球形的，地球才不管你信不信它。</p>
+<blockquote>
+<p>例：</p>
+<p>3亿人都在用拼夕夕，你怎么还不下载？</p>
+</blockquote>
+<p>大家都用，就一定是好的？</p>
+<blockquote>
+<p>许多事实证明，多数或所有人相信的事情，在当下或经过时间的演进，并不一定是对的。例如在18世纪，美国绝大多数人都认为这世界上可以有奴隶存在，但在今日美国有这样想法的人已经很少了。或是有人可以宣称“因为有那么多人吸烟，所以吸烟是健康的”，但事实上许多医学证明指出吸烟有害健康，所以应该说：“吸烟有害健康，虽然有那么多人吸烟。</p>
+<p>（引自《每天学点心理学》，牧之著）</p>
+</blockquote>
+<h2 id=诉诸权威>诉诸权威</h2>
+<p>要证明一个观点，只是摘录别人的观点是不够的， 至少要知道所提到的权威为什么有那样的观点，他的依据是什么。应该是“某权威提出XX，依据是XX，所以XX”，而不是“某权威提出XX，所以XX”。</p>
+<blockquote>
+<p>例：</p>
+<p>钟南山说板蓝根可以用来预防新冠。</p>
+</blockquote>
+<p>仅仅这样是不足以让人相信的，因为没有论证。实际上，真正严谨的文章都会在提出观点的同时附带上理由。<strong>权威之所以是权威，是因为他们总能提出令人信服的理由。是理由让我们相信观点，而不是权威让我们相信观点。否则，“权威”便和“神棍”无异。</strong></p>
+<blockquote>
+<p>例：</p>
+<p>电视上都说了，这四种食物吃了可以防癌！你快转发到你加的群里！</p>
+</blockquote>
+<p>电视其实根本不是权威……不过无所谓了。</p>
+<blockquote>
+<p>注：乐队花车和诉诸权威往往同时出现。在流量小鲜肉粉丝的吹嘘中会经常看到乐队花车和诉诸权威的谬误，粉丝们会拿出一系列数据来证明他们的偶像多么受欢迎，又会拿出种种奖项来说他们的偶像有多么专业，但其实数据都是粉丝刷出来，奖项也只是注水分的，所以这两点并不能说明这个流量小鲜肉的作品有多么的好。</p>
+<p>引自：乐队花车谬误到底是什么？ - Nevoeiro的回答 - 知乎 <a href=https://www.zhihu.com/question/351149817/answer/888174693 target=_blank rel=noopener>https://www.zhihu.com/question/351149817/answer/888174693</a>
+</p>
+</blockquote>
+<h2 id=没有真正的苏格兰人>没有真正的苏格兰人</h2>
+<p>指在遇到反例时修改标准。</p>
+<blockquote>
+<p>例：</p>
+<p>李华：广东人都喜欢吃福建人。</p>
+<p>赵铁柱：我是广东人，我就不喜欢吃福建人。</p>
+<p>李华：你不是真正的广东人，真正的广东人都喜欢吃福建人。</p>
+</blockquote>
+<p>设 $A$ 为广东人集合， $B$ 是喜欢吃福建人的人集合，李华认为 $A\subset B$，赵铁柱却给出一个反例：$a\in A$，但$a\notin B$。然后李华说，还存在一个“真正的$A$”集合——$A_{True}$， 满足 $A_{True}\subset B$。可仔细想想，$A_{True}$ 的定义是 $A_{True}:=A\cap B$，所以 $A_{True}\subset B$ 是完全正确的。可是这毫无意义，原来的问题并没有解决——<strong>给出 $A$ 中的一个元素，我们还是不知道它是否在 $B$ 中。</strong></p>
+<p>最典型的例子当属中医粉的常见言论：xx不是真正的中医：</p>
+<blockquote>
+<p>例：</p>
+<p>李华：我家楼下那个中医诊所，前几天给人开中药耽误了治疗，那人病死了。</p>
+<p>赵铁柱：那肯定不是真正的中医，真正的中医是很厉害的，连未病都能治，更不可能把人治死。</p>
+</blockquote>
+<p>当然，即便李华说的是事实，也不能就此说明中药能吃死人，因为只是个案。但赵铁柱反驳的方式是错的，也犯了逻辑谬误。</p>
+<h2 id=轶事证据>轶事证据</h2>
+<p>就是编了一个栩栩如生的故事，然后通过这个故事得出了结论。有些传闻往往细节详细、诩诩如生，让人印象深刻；有些案例则以<a href=https://zh.wikipedia.org/wiki/%e6%96%b0%e8%81%9e target=_blank rel=noopener>新闻</a>
 、<a href=https://zh.wikipedia.org/wiki/%e5%85%ab%e5%8d%a6%e6%96%b0%e9%97%bb target=_blank rel=noopener>八卦</a>
-的形式被人一传再传，造成三人成虎，让人听久了便信以为真。</p><p>这种奇葩论证手法广泛见于：卖祖传秘方的电视广告、“相亲相爱一家人”微信群、高中语文课堂和高中文科生作文等逻辑重灾区。</p><blockquote><p>例：</p><p>我给你讲个故事，真事的。我隔壁老王头，今年90多岁了，我那天出门拉屎碰见他，问他怎么保养得这么好，活了这么久。人家点了一根烟，不紧不慢地说：“我觉得吧，现在人压力都太大，不会发泄。像我，饭前便后都抽一根烟，我抽的是美国进口的核弹，啊不是，美国进口的养生烟，劲大，疏通血管杠杠的！”完后人家从裤裆里掏出一条烟，800块钱一包啊，他说看我小子面善，给我打个骨折，10块钱卖我。这不，我一口气卖了10包，从今天开始你也饭前便后抽这个核弹，啊不是，养生烟！</p></blockquote><p>看起来像一本正经的胡说八道，但仔细回想一下，许多保健品、中医药、“祖传秘方”是不是都是这个套路？</p><p>这种论证方式犯了两个错误：</p><p>第一，没法确认这件事的真实性。讲述人可能是从上一个讲述人那里听来的故事，而上一个讲述人可能骗他；即便没有故意骗他，在不断口耳相传的过程中也会产生极大的偏差。即便此故事是讲述人亲眼所见，记忆也可能出现偏差，更不用说眼见未必为实——</p><p><img src=/image/1.jpeg alt="新传角度看热点| 从刘强东性侵案中看反转新闻_舆论"></p><p>第二，即便这件事是真实客观的，仅仅凭一个孤例也不能证明什么。就像上例，老王真的天天抽烟活了90多岁，有可能人家包了八个二奶，心情舒畅才活得久。也有可能人家要是不抽烟，能活200岁，抽烟导致只活了90岁。<strong>“孤例不证”乃是做人最基本的底线。</strong></p><h2 id=德克萨斯神枪手>德克萨斯神枪手</h2><p>名字逐渐怪异起来。他还有一个更形象的说法叫“先射箭再画靶”。通俗地讲，就是在大量的数据/证据中刻意地挑选出对自己的观点有利的数据/证据，而将其余对自己不利的数据/证据弃之不用。</p><blockquote><p>例：</p><p>1992年瑞典有个研究试图找出电源线对健康的影响，他们收集了高压电源线300米范围内所有住户的样本长达25年，对超过800种疾病一一检查发生率的统计差异。他们发现幼年白血病的发病率是一般人的4倍，还推动政府为此采取行动。</p></blockquote><p>要解释这个问题，需要点统计学知识。一般来说统计上 p-value &lt; 0.05 便认为显著，而这种显著性有 5% 的概率是因为随机因素引起的。当我们统计 800 种疾病，至少有一种疾病由随机因素产生“假阳性”结果的概率是：
+的形式被人一传再传，造成三人成虎，让人听久了便信以为真。</p>
+<p>这种奇葩论证手法广泛见于：卖祖传秘方的电视广告、“相亲相爱一家人”微信群、高中语文课堂和高中文科生作文等逻辑重灾区。</p>
+<blockquote>
+<p>例：</p>
+<p>我给你讲个故事，真事的。我隔壁老王头，今年90多岁了，我那天出门拉屎碰见他，问他怎么保养得这么好，活了这么久。人家点了一根烟，不紧不慢地说：“我觉得吧，现在人压力都太大，不会发泄。像我，饭前便后都抽一根烟，我抽的是美国进口的核弹，啊不是，美国进口的养生烟，劲大，疏通血管杠杠的！”完后人家从裤裆里掏出一条烟，800块钱一包啊，他说看我小子面善，给我打个骨折，10块钱卖我。这不，我一口气卖了10包，从今天开始你也饭前便后抽这个核弹，啊不是，养生烟！</p>
+</blockquote>
+<p>看起来像一本正经的胡说八道，但仔细回想一下，许多保健品、中医药、“祖传秘方”是不是都是这个套路？</p>
+<p>这种论证方式犯了两个错误：</p>
+<p>第一，没法确认这件事的真实性。讲述人可能是从上一个讲述人那里听来的故事，而上一个讲述人可能骗他；即便没有故意骗他，在不断口耳相传的过程中也会产生极大的偏差。即便此故事是讲述人亲眼所见，记忆也可能出现偏差，更不用说眼见未必为实——</p>
+<p><img src=/image/1.jpeg alt="新传角度看热点| 从刘强东性侵案中看反转新闻_舆论"></p>
+<p>第二，即便这件事是真实客观的，仅仅凭一个孤例也不能证明什么。就像上例，老王真的天天抽烟活了90多岁，有可能人家包了八个二奶，心情舒畅才活得久。也有可能人家要是不抽烟，能活200岁，抽烟导致只活了90岁。<strong>“孤例不证”乃是做人最基本的底线。</strong></p>
+<h2 id=德克萨斯神枪手>德克萨斯神枪手</h2>
+<p>名字逐渐怪异起来。他还有一个更形象的说法叫“先射箭再画靶”。通俗地讲，就是在大量的数据/证据中刻意地挑选出对自己的观点有利的数据/证据，而将其余对自己不利的数据/证据弃之不用。</p>
+<blockquote>
+<p>例：</p>
+<p>1992年瑞典有个研究试图找出电源线对健康的影响，他们收集了高压电源线300米范围内所有住户的样本长达25年，对超过800种疾病一一检查发生率的统计差异。他们发现幼年白血病的发病率是一般人的4倍，还推动政府为此采取行动。</p>
+</blockquote>
+<p>要解释这个问题，需要点统计学知识。一般来说统计上 p-value &lt; 0.05 便认为显著，而这种显著性有 5% 的概率是因为随机因素引起的。当我们统计 800 种疾病，至少有一种疾病由随机因素产生“假阳性”结果的概率是：
 $$
 1-(1-0.05)^{800}>1-10^{-17}
 $$
-也就是说，如果我们故意针对它，我们有超过 $1-10^{-17}$ 的概率找到一种疾病来让它背锅，而实际上这只是随机因素引起的。</p><p>数据聚集现象无处不在。比如我们在平面上随机生成一些点，总会有某些区域的数据恰好呈现出某种规律性，想要寻找某种解释的人一定会找到一种解释。</p><p>当遇到一些巧合时，经常有人会说“哪有那么巧的事？一定是超自然力量作祟”。但是仔细想想，我们活了这么多年，见过和经历过大大小小的事件不计其数，<strong>要是一次巧合都没有遇到过，那才是巧了</strong>。</p><h2 id=不当类比>不当类比</h2><p>就是字面意思，不合适的类比。多见于心灵鸡汤。</p><blockquote><p>例：</p><p>李华整天只顾读书，却不认真赚钱谋生，妻子赵铁柱无法忍受决定和他离婚。几年后小朱成为大官，衣锦还乡。妻子要求和他复合，李华不同意。妻子问为什么，李华把水泼在地上说：“我们的关系就像这水一样，再也收不回来了。”</p></blockquote><p>如果李华只是想气赵铁柱，这样是没问题的。但如果李华像把“覆水难收”当作不能复合的理由，则并没有回答赵铁柱的问题。覆水的确难收，但那和婚姻有什么关系？</p><blockquote><p>例：</p><p>牛天天吃草，身体那么壮，所以吃素有益健康。</p></blockquote><blockquote><p>例：</p><p>彩虹，在大雨后出现；腊梅，在风雪中吐蕊；雄鹰，在险峰上空盘旋；人，在困境中弥坚。</p></blockquote><p>即便彩虹、腊梅、雄鹰都这样，也不能证明人就非得遭遇点什么困境才能成长。（当然，写作文的时候泼点鸡汤增强气势没问题，但要清楚，这不能用于论证，顶多用于论证之后锦上添花）</p><p>没事不要瞎比喻，即便 A 和 B 有相似之处，也不能认为对 A 成立的结论对 B 也成立，更何况许多不当类比中，被比较的两件事一毛钱关系都没有。</p><h2 id=滑坡谬误>滑坡谬误</h2><p>认为一件事，如果发生了A，就会发生B，接着会发生C，…… 那么Z也一定会发生，以此来表示A不应该发生。</p><blockquote><p>例：</p><p>如果我们允许和同性结婚，那是不是也能和动物结婚？是不是也能和纸片人、桌椅板凳结婚？</p></blockquote><p>能同性结婚不意味着可以和动物结婚，也不意味着和纸片人结婚！</p><blockquote><p>例：（不玩炉石的同学们可以忽略这条）</p><p>一个詹姆斯（银背族长）能单防4个报告兵，4个报告兵能打4个岩浆暴怒者，4个岩浆暴怒者能打4个竞技场主宰，4个竞技场主宰能打4个伊瑟拉，所以詹姆斯=4个伊瑟拉。詹皇，yyds！</p></blockquote><p><del>虽然但是，银背族长 yyds！</del></p><h2 id=后记>后记</h2><p>需要说明：</p><ol><li>很多人想当然地认为，如果一句话有逻辑谬误，就错了。实际上，这又犯了逻辑谬误 —— 包含逻辑谬误的句子，其结论可能是对的，也可能是错的。但不论结论对错，其论证方式一定是不合理的，从而导致这句话并没有为论证观点提供任何正面或负面的帮助。</li><li>在日常聊天中往往不必太注意细节，否则会被不懂这些的人扣上“低情商”、“直男”之类的帽子。（<del>不过被扣这种帽子倒不见得是坏事</del>）</li></ol></div><footer class=post-footer><div class=post-tags><a href=/tags/%e7%a7%91%e6%99%ae rel=tag title=科普>#科普#</a></div><div class=addthis_inline_share_toolbox></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/act_wzry/ rel=next title=演员大型教程——怎么演气人还不被举报？><i class="fa fa-chevron-left"></i> 演员大型教程——怎么演气人还不被举报？</a></div><div class="post-nav-prev post-nav-item"><a href=/post/5215-1%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8A/ rel=prev title=公理化概率论（上）>公理化概率论（上）
-<i class="fa fa-chevron-right"></i></a></div></div><div id=ucomments></div></footer></article></section></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+也就是说，如果我们故意针对它，我们有超过 $1-10^{-17}$ 的概率找到一种疾病来让它背锅，而实际上这只是随机因素引起的。</p>
+<p>数据聚集现象无处不在。比如我们在平面上随机生成一些点，总会有某些区域的数据恰好呈现出某种规律性，想要寻找某种解释的人一定会找到一种解释。</p>
+<p>当遇到一些巧合时，经常有人会说“哪有那么巧的事？一定是超自然力量作祟”。但是仔细想想，我们活了这么多年，见过和经历过大大小小的事件不计其数，<strong>要是一次巧合都没有遇到过，那才是巧了</strong>。</p>
+<h2 id=不当类比>不当类比</h2>
+<p>就是字面意思，不合适的类比。多见于心灵鸡汤。</p>
+<blockquote>
+<p>例：</p>
+<p>李华整天只顾读书，却不认真赚钱谋生，妻子赵铁柱无法忍受决定和他离婚。几年后小朱成为大官，衣锦还乡。妻子要求和他复合，李华不同意。妻子问为什么，李华把水泼在地上说：“我们的关系就像这水一样，再也收不回来了。”</p>
+</blockquote>
+<p>如果李华只是想气赵铁柱，这样是没问题的。但如果李华像把“覆水难收”当作不能复合的理由，则并没有回答赵铁柱的问题。覆水的确难收，但那和婚姻有什么关系？</p>
+<blockquote>
+<p>例：</p>
+<p>牛天天吃草，身体那么壮，所以吃素有益健康。</p>
+</blockquote>
+<blockquote>
+<p>例：</p>
+<p>彩虹，在大雨后出现；腊梅，在风雪中吐蕊；雄鹰，在险峰上空盘旋；人，在困境中弥坚。</p>
+</blockquote>
+<p>即便彩虹、腊梅、雄鹰都这样，也不能证明人就非得遭遇点什么困境才能成长。（当然，写作文的时候泼点鸡汤增强气势没问题，但要清楚，这不能用于论证，顶多用于论证之后锦上添花）</p>
+<p>没事不要瞎比喻，即便 A 和 B 有相似之处，也不能认为对 A 成立的结论对 B 也成立，更何况许多不当类比中，被比较的两件事一毛钱关系都没有。</p>
+<h2 id=滑坡谬误>滑坡谬误</h2>
+<p>认为一件事，如果发生了A，就会发生B，接着会发生C，…… 那么Z也一定会发生，以此来表示A不应该发生。</p>
+<blockquote>
+<p>例：</p>
+<p>如果我们允许和同性结婚，那是不是也能和动物结婚？是不是也能和纸片人、桌椅板凳结婚？</p>
+</blockquote>
+<p>能同性结婚不意味着可以和动物结婚，也不意味着和纸片人结婚！</p>
+<blockquote>
+<p>例：（不玩炉石的同学们可以忽略这条）</p>
+<p>一个詹姆斯（银背族长）能单防4个报告兵，4个报告兵能打4个岩浆暴怒者，4个岩浆暴怒者能打4个竞技场主宰，4个竞技场主宰能打4个伊瑟拉，所以詹姆斯=4个伊瑟拉。詹皇，yyds！</p>
+</blockquote>
+<p><del>虽然但是，银背族长 yyds！</del></p>
+<h2 id=后记>后记</h2>
+<p>需要说明：</p>
+<ol>
+<li>很多人想当然地认为，如果一句话有逻辑谬误，就错了。实际上，这又犯了逻辑谬误 —— 包含逻辑谬误的句子，其结论可能是对的，也可能是错的。但不论结论对错，其论证方式一定是不合理的，从而导致这句话并没有为论证观点提供任何正面或负面的帮助。</li>
+<li>在日常聊天中往往不必太注意细节，否则会被不懂这些的人扣上“低情商”、“直男”之类的帽子。（<del>不过被扣这种帽子倒不见得是坏事</del>）</li>
+</ol>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/tags/%e7%a7%91%e6%99%ae rel=tag title=科普>#科普#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+<a href=/post/act_wzry/ rel=next title=演员大型教程——怎么演气人还不被举报？>
+<i class="fa fa-chevron-left"></i> 演员大型教程——怎么演气人还不被举报？
+</a>
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=/post/5215-1%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8A/ rel=prev title=公理化概率论（上）>
+公理化概率论（上）
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=ucomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
+<div class=sidebar-toggle>
+<div class=sidebar-toggle-line-wrap>
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
 <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-<span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><section class="site-overview sidebar-panel sidebar-panel-active"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人><p class=site-author-name itemprop=name>精神病人</p><p class="site-description motion-element" itemprop=description>精神病人欢乐多!</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href=/post/><span class=site-state-item-count>40</span>
-<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>11</span>
-<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>11</span>
-<span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/jcq15/ target=_blank title=GitHub><i class="fa fa-fw fa-github"></i>
-GitHub</a></span></div><div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline"><div class=tagcloud-of-blogroll-title><i class="fa fa-fw fa-tags"></i>
-标签云</div><ul class=tagcloud-of-blogroll-list><li class=tagcloud-of-blogroll-item><a href=/tags/%E5%AD%A6%E4%B9%A0>学习
-<sup>15</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
-<sup>6</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%8A%80%E6%9C%AF>技术
-<sup>5</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B8%B8%E6%88%8F>游戏
-<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%A7%91%E6%99%AE>科普
-<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%B4%E6%B4%BB>整活
-<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9B%B4%E6%96%B0>更新
-<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
-<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%A2%E6%83%B3>敢想
-<sup>1</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B2%99%E9%9B%95>沙雕
-<sup>1</sup></a></li></ul></div></section></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright><span class=copyright-year>&copy; 2010 - 2023</span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id=sidebar class=sidebar>
+<div class=sidebar-inner>
+<section class="site-overview sidebar-panel sidebar-panel-active">
+<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
+<img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人>
+<p class=site-author-name itemprop=name>精神病人</p>
+<p class="site-description motion-element" itemprop=description>
+精神病人欢乐多!
+</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href=/post/>
+<span class=site-state-item-count>41</span>
+<span class=site-state-item-name>日志</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href=/categories/>
+<span class=site-state-item-count>11</span>
+<span class=site-state-item-name>分类</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href=/tags/>
+<span class=site-state-item-count>11</span>
+<span class=site-state-item-name>标签</span>
+</a>
+</div>
+</nav>
+<div class="links-of-author motion-element">
+<span class=links-of-author-item>
+<a href=https://github.com/jcq15/ target=_blank title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+GitHub
+</a>
+</span>
+</div>
+<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
+<div class=tagcloud-of-blogroll-title>
+<i class="fa fa-fw fa-tags"></i>
+标签云
+</div>
+<ul class=tagcloud-of-blogroll-list>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E5%AD%A6%E4%B9%A0>学习
+<sup>15</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
+<sup>6</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%8A%80%E6%9C%AF>技术
+<sup>5</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%9B%B4%E6%96%B0>更新
+<sup>3</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%B8%B8%E6%88%8F>游戏
+<sup>3</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E7%A7%91%E6%99%AE>科普
+<sup>3</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%95%B4%E6%B4%BB>整活
+<sup>2</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
+<sup>2</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%95%A2%E6%83%B3>敢想
+<sup>1</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%B2%99%E9%9B%95>沙雕
+<sup>1</sup>
+</a>
+</li>
+</ul>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=copyright>
+<span class=copyright-year>
+&copy; 2010 - 2023
+</span>
 <span class=with-love><i class="fa fa-heart"></i></span>
-<span class=copyright-author>沙雕园</span></div><div class=powered-info><span class=powered-by>Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.101.0</a></span>
+<span class=copyright-author>沙雕园</span>
+</div>
+<div class=powered-info>
+<span class=powered-by>
+Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.92.2</a>
+</span>
 <span class=separator-line>/</span>
-<span class=theme-info>Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank>NexT</a></span></div><div class=vistor-info><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<span class=site-uv><i class="fa fa-user"></i>
-<span class=busuanzi-value id=busuanzi_value_site_uv></span></span>
+<span class=theme-info>
+Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
+</a>
+</span>
+</div>
+<div class=vistor-info>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv>
+<i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span>
+</span>
 <span class=separator-line>/</span>
-<span class=site-pv><i class="fa fa-eye"></i>
-<span class=busuanzi-value id=busuanzi_value_site_pv></span></span></div><div class=license-info><span class=storage-info>Storage by
-<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a></span>
+<span class=site-pv>
+<i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span>
+</span>
+</div>
+<div class=license-info>
+<span class=storage-info>
+Storage by
+<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a>
+</span>
 <span class=separator-line>/</span>
-<span class=license-num><a href target=_blank></a></span></div></div></footer><div class=back-to-top><i class="fa fa-arrow-up"></i>
-<span id=scrollpercent><span>0</span>%</span></div></div><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<span class=license-num>
+<a href target=_blank></a>
+</span>
+</div>
+</div>
+</footer>
+<div class=back-to-top>
+<i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span>
+</div>
+</div>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
 <script type=text/javascript src=/js/search.js></script>
 <script type=text/javascript src=/js/affix.js></script>
 <script type=text/javascript src=/js/scrollspy.js></script>
-<script type=text/javascript>function detectIE(){var e=window.navigator.userAgent,t=e.indexOf("MSIE "),n=e.indexOf("Trident/"),s=e.indexOf("Edge/");return t>0||n>0||s>0?-1:1}function getCntViewHeight(){var t=$("#content").height(),e=$(window).height(),n=t>e?t-e:$(document).height()-e;return n}function getScrollbarWidth(){var e=$("<div />").addClass("scrollbar-measure").prependTo("body"),t=e[0],n=t.offsetWidth-t.clientWidth;return e.remove(),n}function registerBackTop(){var t=50,e=$(".back-to-top");$(window).on("scroll",function(){e.toggleClass("back-to-top-on",window.pageYOffset>t);var s=$(window).scrollTop(),o=getCntViewHeight(),i=s/o,n=Math.round(i*100),a=n>100?100:n;$("#scrollpercent>span").html(a)}),e.on("click",function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var e=".post-toc",s=$(e),t=".active-current";s.on("activate.bs.scrollspy",function(){var t=$(e+" .active").last();n(),t.addClass("active-current")}).on("clear.bs.scrollspy",n),$("body").scrollspy({target:e});function n(){$(e+" "+t).removeClass(t.substring(1))}}function initAffix(){var e=$(".header-inner").height(),t=parseInt($(".main").css("padding-bottom"),10),n=e+10;$(".sidebar-inner").affix({offset:{top:n,bottom:t}}),$(document).on("affixed.bs.affix",function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){$(window).on("resize",function(){e&&clearTimeout(e),e=setTimeout(function(){var e=document.body.clientHeight-100;updateTOCHeight(e)},0)}),updateTOCHeight(document.body.clientHeight-100);var e,t=getScrollbarWidth();$(".post-toc").css("width","calc(100% + "+t+"px)")}function updateTOCHeight(e){e=e||"auto",$(".post-toc").css("max-height",e)}$(function(){var e,t,n,s,o=$(".header-inner").height()+10;$("#sidebar").css({"margin-top":o}).show(),t=parseInt($("#sidebar").css("margin-top")),n=parseInt($(".sidebar-inner").css("height")),e=t+n,s=$(".content-wrap").height(),s<e&&$(".content-wrap").css("min-height",e),$(".site-nav-toggle").on("click",function(){var e=$(".site-nav"),o=$(".toggle"),t="site-nav-on",i="toggle-close",n=e.hasClass(t),a=n?"slideUp":"slideDown",s=n?"removeClass":"addClass";e.stop()[a]("normal",function(){e[s](t),o[s](i)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$(".sidebar-nav-toc").click(function(){$(this).addClass("sidebar-nav-active"),$(this).next().removeClass("sidebar-nav-active"),$("."+$(this).next().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)}),$(".sidebar-nav-overview").click(function(){$(this).addClass("sidebar-nav-active"),$(this).prev().removeClass("sidebar-nav-active"),$("."+$(this).prev().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)})})</script><script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
-<script type=text/javascript>$(function(){$(".post-body").viewer()})</script><script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
-<script type=text/javascript>function showTime(e){var n=new AV.Query(e),t=[],s=$(".leancloud_visitors");s.each(function(){t.push($(this).attr("id").trim())}),n.containedIn("url",t),n.find().then(e=>{var n,o,i,r,c,l,a=".leancloud-visitors-count";if(e.length==0){s.find(a).text(0);return}for(n=0;n<e.length;n++)r=e[n],o=r.get("url"),l=r.get("time"),i=document.getElementById(o),$(i).find(a).text(l);for(n=0;n<t.length;n++)o=t[n],i=document.getElementById(o),c=$(i).find(a),c.text()==""&&c.text(0)},e=>{console.log("Query vistors failed: "+e)})}function addCount(e){var n=$(".leancloud_visitors"),t=n.attr("id").trim(),o=n.attr("data-flag-title").trim(),s=new AV.Query("Counter");s.equalTo("url",t),s.find().then(n=>{if(n.length>0){var s,i,a=n[0];a.increment("time",1),a.save(null,{query:new AV.Query("Counter").equalTo("url",t),fetchWhenSave:!0}).then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(e.get("time"))},e=>{console.log("Update vistor failed: "+e)})}else i=new AV.ACL,i.setPublicReadAccess(!0),i.setPublicWriteAccess(!0),s=new e,s.set("title",o),s.set("url",t),s.set("time",1),s.setACL(i),s.save().then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(s.get("time"))},e=>{console.log("Save new vistor failed: "+e)})})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const e=AV.Object.extend("Counter");$(".leancloud_visitors").length==1?addCount(e):$(".post-title-link").length>1&&showTime(e)})</script><script type=text/javascript>(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.setAttribute("issue-term","title"),e.setAttribute("theme","github-light"),e.setAttribute("repo","jcq15/blog"),e.crossorigin="anonymous",e.src="https://utteranc.es/client.js",document.getElementById("ucomments").appendChild(e)})()</script><script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
-<script>(function(){var t,e=document.createElement("script"),n=window.location.protocol.split(":")[0];n==="https"?e.src="https://zz.bdstatic.com/linksubmit/push.js":e.src="http://push.zhanzhang.baidu.com/push.js",t=document.getElementsByTagName("script")[0],t.parentNode.insertBefore(e,t)})()</script></body></html>
+<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
+<script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
+<script type=text/javascript>function showTime(d){var b=new AV.Query(d),a=[],c=$(".leancloud_visitors");c.each(function(){a.push($(this).attr("id").trim())}),b.containedIn('url',a),b.find().then(d=>{var e='.leancloud-visitors-count',b,h,f,j,g,i;if(d.length==0){c.find(e).text(0);return}for(b=0;b<d.length;b++)h=d[b],f=h.get('url'),j=h.get('time'),g=document.getElementById(f),$(g).find(e).text(j);for(b=0;b<a.length;b++)f=a[b],g=document.getElementById(f),i=$(g).find(e),i.text()==''&&i.text(0)},a=>{console.log('Query vistors failed: '+a)})}function addCount(d){var b=$(".leancloud_visitors"),a=b.attr('id').trim(),e=b.attr('data-flag-title').trim(),c=new AV.Query('Counter');c.equalTo("url",a),c.find().then(g=>{var f,c,b;g.length>0?(f=g[0],f.increment('time',1),f.save(null,{query:new AV.Query('Counter').equalTo('url',a),fetchWhenSave:!0}).then(b=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log('Update vistor failed: '+a)})):(c=new AV.ACL,c.setPublicReadAccess(!0),c.setPublicWriteAccess(!0),b=new d,b.set("title",e),b.set("url",a),b.set("time",1),b.setACL(c),b.save().then(d=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log("Save new vistor failed: "+a)}))})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const a=AV.Object.extend("Counter");$('.leancloud_visitors').length==1?addCount(a):$('.post-title-link').length>1&&showTime(a)})</script>
+<script type=text/javascript>(function(){var a=document.createElement('script');a.type='text/javascript',a.async=!0,a.setAttribute('issue-term',"title"),a.setAttribute('theme',"github-light"),a.setAttribute('repo',"jcq15/blog"),a.crossorigin='anonymous',a.src='https://utteranc.es/client.js',document.getElementById('ucomments').appendChild(a)})()</script>
+<script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</body>
+</html>

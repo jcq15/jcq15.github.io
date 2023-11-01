@@ -1,24 +1,139 @@
-<!doctype html><html lang=zh-cn dir=content/zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=content-security-policy content="upgrade-insecure-requests"><title>统计学基础（上）-统计量&分布族 - 沙雕园</title><meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享"><meta name=author content="精神病人"><meta property="og:title" content="统计学基础（上）-统计量&分布族"><meta property="og:site_name" content="沙雕园"><meta property="og:image" content="/img/author.jpg"><meta name=title content="统计学基础（上）-统计量&分布族 - 沙雕园"><meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。"><link rel="shortcut icon" href=/img/favicon.ico><link rel=apple-touch-icon href=/img/apple-touch-icon.png><link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png><link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css><link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet><link href=/css/main.css rel=stylesheet type=text/css><link href=/css/syntax.css rel=stylesheet type=text/css></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-hans><div class="container one-collumn sidebar-position-left page-home"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle role=button style=opacity:1;top:0><span class=toggle-line></span>
+<!doctype html><html lang=zh-cn dir=content/zh-cn>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
+<title> 统计学基础（上）-统计量&分布族 - 沙雕园 </title>
+<meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享">
+<meta name=author content="精神病人">
+<meta property="og:title" content="统计学基础（上）-统计量&分布族">
+<meta property="og:site_name" content="沙雕园">
+<meta property="og:image" content="/img/author.jpg">
+<meta name=title content="统计学基础（上）-统计量&分布族 - 沙雕园">
+<meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。">
+<link rel="shortcut icon" href=/img/favicon.ico>
+<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
+<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
+<link href=//unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=//unpkg.com/imageviewer@1.1.0/dist/viewer.min.css rel=stylesheet>
+<link href=/css/main.css rel=stylesheet type=text/css>
+<link href=/css/syntax.css rel=stylesheet type=text/css>
+</head>
+<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
+<div class="container one-collumn sidebar-position-left page-home">
+<div class=headband></div>
+<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
+<div class=header-inner> <div class=site-brand-container>
+<div class=site-nav-toggle>
+<div class=toggle role=button style=opacity:1;top:0>
 <span class=toggle-line></span>
-<span class=toggle-line></span></div></div><div class=site-meta><div class=custom-logo-site-title><a href=/ class=brand rel=start><span class=logo-line-before><i></i></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+</div>
+</div>
+<div class=site-meta>
+<div class=custom-logo-site-title>
+<a href=/ class=brand rel=start>
+<span class=logo-line-before><i></i></span>
 <span class=site-title>沙雕园</span>
-<span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>沙雕使人进步。</p></div><div class=site-nav-right><div class="toggle popup-trigger" style=opacity:1;top:0><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul id=menu class=menu><li class=menu-item><a href=/ rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-active"><a href=/post rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class=menu-item><a href=/about.html rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于我</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class=site-search><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class=search-icon><i class="fa fa-search"></i></span>
-<span class=popup-btn-close><i class="fa fa-times-circle"></i></span><div class=local-search-input-wrapper><input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off></div></div><div id=local-search-result></div></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><section id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=/post/5215-3%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8A-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E5%88%86%E5%B8%83%E6%97%8F/ itemprop=url>统计学基础（上）-统计量&分布族</a></h1><div class=post-meta><span class=post-pushdate><i class="fa fa-calendar-o fa-fw"></i>
+<span class=logo-line-after><i></i></span>
+</a>
+</div>
+<p class=site-subtitle>沙雕使人进步。</p>
+</div>
+<div class=site-nav-right>
+<div class="toggle popup-trigger" style=opacity:1;top:0>
+<i class="fa fa-search fa-fw fa-lg"></i>
+</div>
+</div>
+</div>
+<nav class=site-nav>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a href=/ rel=section>
+<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页
+</a>
+</li>
+<li class="menu-item menu-item-active">
+<a href=/post rel=section>
+<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档
+</a>
+</li>
+<li class=menu-item>
+<a href=/about.html rel=section>
+<i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我
+</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> 搜索</a>
+</li>
+</ul>
+<div class=site-search>
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class=search-icon><i class="fa fa-search"></i> </span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
+<div class=local-search-input-wrapper>
+<input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
+</div>
+</div>
+<div id=local-search-result></div>
+</div>
+</div>
+</nav> </div>
+</header>
+<main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=/post/5215-3%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8A-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E5%88%86%E5%B8%83%E6%97%8F/ itemprop=url>
+统计学基础（上）-统计量&分布族
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-pushdate>
+<i class="fa fa-calendar-o fa-fw"></i>
 <span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-12-28">2021-12-28</time></span>
-<span class=post-category><i class="fa fa-folder-o fa-fw"></i>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-12-28">
+2021-12-28
+</time>
+</span>
+<span class=post-category>
+<i class="fa fa-folder-o fa-fw"></i>
 <span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing><a class=post-category-a href=/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0 itemprop=url rel=index><span itemprop=name>课程笔记</span></a>
-&nbsp;</span></span>
-<span class=post-wordcount><i class="fa fa-file-word-o fa-fw"></i>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a class=post-category-a href=/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0 itemprop=url rel=index>
+<span itemprop=name>课程笔记</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>3320 字</span></span>
-<span class=post-readtime><i class="fa fa-eye fa-fw"></i>
+<span class=leancloud-world-count>3308 字</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>7分钟</span></span>
-<span id=/post/5215-3%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8A-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E5%88%86%E5%B8%83%E6%97%8F/ class="leancloud_visitors post-visitor" data-flag-title=统计学基础（上）-统计量&分布族><i class="fa fa-binoculars fa-fw"></i>
+<span class=leancloud-view-count>7分钟</span>
+</span>
+<span id=/post/5215-3%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8A-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E5%88%86%E5%B8%83%E6%97%8F/ class="leancloud_visitors post-visitor" data-flag-title=统计学基础（上）-统计量&分布族>
+<i class="fa fa-binoculars fa-fw"></i>
 <span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>妙啊。</p><h2 id=统计学基本框架>统计学基本框架</h2><p>在统计学中，<strong>总体（population）<strong>指的是概率空间 $(\Omega,\mathcal{F},P)$，通常简记为 $P$. <strong>样本（sample）<strong>是总体上的随机向量 $X=(X_1,\cdots,X_n)$. $n$ 称为</strong>样本容量（sample size）</strong>。通常，我们知道但不完全知道总体的分布 $P$. <strong>统计模型（statistical model）<strong>便是 $P$ 的所有可能集合，即
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>妙啊。</p>
+<h2 id=统计学基本框架>统计学基本框架</h2>
+<p>在统计学中，<strong>总体（population）<strong>指的是概率空间 $(\Omega,\mathcal{F},P)$，通常简记为 $P$. <strong>样本（sample）<strong>是总体上的随机向量 $X=(X_1,\cdots,X_n)$. $n$ 称为</strong>样本容量（sample size）</strong>。通常，我们知道但不完全知道总体的分布 $P$. <strong>统计模型（statistical model）<strong>便是 $P$ 的所有可能集合，即
 $$
 P\in\mathcal{P}={Q:Q\text{满足某些条件}}.
 $$
@@ -26,41 +141,125 @@ $$
 $$
 \mathcal{P}={P_\theta:\theta\in\Theta}.
 $$
-其中 $\Theta\in\mathbb{R}^d$ 称为</strong>参数空间（parameter space）</strong>，$\mathcal{P}$ 称为 <strong>参数族（parametric family）</strong>。</p><p>通常，我们希望概率密度函数一致存在，也就是存在一个 $\sigma$-有限的测度 $\nu$，使得 $\forall P\in\mathcal{P},P\ll\nu$. 此时我们称 $\mathcal{P}$ 被 $\nu$ <strong>控制（dominated）</strong>。</p><p>**估计量（estimator）**是 $X$ 的函数，通过观测值 $X$ 来估计参数 $\theta$. 我们通常记作
+其中 $\Theta\in\mathbb{R}^d$ 称为</strong>参数空间（parameter space）</strong>，$\mathcal{P}$ 称为 <strong>参数族（parametric family）</strong>。</p>
+<p>通常，我们希望概率密度函数一致存在，也就是存在一个 $\sigma$-有限的测度 $\nu$，使得 $\forall P\in\mathcal{P},P\ll\nu$. 此时我们称 $\mathcal{P}$ 被 $\nu$ <strong>控制（dominated）</strong>。</p>
+<p>**估计量（estimator）**是 $X$ 的函数，通过观测值 $X$ 来估计参数 $\theta$. 我们通常记作
 $$
 \hat\theta=w(X_1,\cdots,X_n).
 $$
-统计学中关注的问题主要是：</p><ul><li>如何得到 $\hat\theta$（即 $w(X_1,\cdots,X_n)$）</li><li>如何对得到的估计量进行评价</li></ul><p>为此，我们先介绍统计量和分布族。</p><h2 id=统计量>统计量</h2><p>**统计量（statistic）**定义为样本 $X$ 的可测函数 $T(X)$。</p><p>众所周知，随机变量包含的信息可以用 $\sigma(X)$ 描述。容易证明，$\sigma(T\circ X)\subset\sigma(X)$，所以统计量简化了原来的随机变量所包含的信息。</p><h3 id=充分统计量>充分统计量</h3><p><strong>定义</strong> 统计量 $T(X)$ 是关于 $\mathcal{P}$ 的<strong>充分统计量（sufficient statistics）</strong>，如果给定 $T(X)$ 的值时，$X$ 的条件分布确定（与 $P\in\mathcal{P}$ 无关，或者说与 $\theta$ 无关）。</p><blockquote><p>充分统计量包含了原统计量关于参数的全部信息，而充分统计量作为统计量又缩减了信息，所以充分统计量是缩减了无用信息，只保留有用信息，这好极了。</p></blockquote><p>我们有一个很方便的定理，帮助我们寻找充分统计量：</p><p><strong>定理（Factorization theorem）</strong> 设 $\mathcal{P}$ 是 $(\mathbb{R}^n,\mathcal{B}^n)$ 上的分布族，且被 $\nu$ 控制。$T(X)$ 是关于 $\mathcal{P}$ 的充分统计量，当且仅当密度函数可写成
+统计学中关注的问题主要是：</p>
+<ul>
+<li>如何得到 $\hat\theta$（即 $w(X_1,\cdots,X_n)$）</li>
+<li>如何对得到的估计量进行评价</li>
+</ul>
+<p>为此，我们先介绍统计量和分布族。</p>
+<h2 id=统计量>统计量</h2>
+<p>**统计量（statistic）**定义为样本 $X$ 的可测函数 $T(X)$。</p>
+<p>众所周知，随机变量包含的信息可以用 $\sigma(X)$ 描述。容易证明，$\sigma(T\circ X)\subset\sigma(X)$，所以统计量简化了原来的随机变量所包含的信息。</p>
+<h3 id=充分统计量>充分统计量</h3>
+<p><strong>定义</strong> 统计量 $T(X)$ 是关于 $\mathcal{P}$ 的<strong>充分统计量（sufficient statistics）</strong>，如果给定 $T(X)$ 的值时，$X$ 的条件分布确定（与 $P\in\mathcal{P}$ 无关，或者说与 $\theta$ 无关）。</p>
+<blockquote>
+<p>充分统计量包含了原统计量关于参数的全部信息，而充分统计量作为统计量又缩减了信息，所以充分统计量是缩减了无用信息，只保留有用信息，这好极了。</p>
+</blockquote>
+<p>我们有一个很方便的定理，帮助我们寻找充分统计量：</p>
+<p><strong>定理（Factorization theorem）</strong> 设 $\mathcal{P}$ 是 $(\mathbb{R}^n,\mathcal{B}^n)$ 上的分布族，且被 $\nu$ 控制。$T(X)$ 是关于 $\mathcal{P}$ 的充分统计量，当且仅当密度函数可写成
 $$
 \frac{dP}{d\nu}(x)=g_P(T(x))h(x),
 $$
-其中 $h(x)$ 与 $P$ 无关，$h$ 和 $g_P$ 都是 Borel 函数。</p><blockquote><p>直观理解：$g_P$ 体现了原统计量中和 $P$ 有关的部分，它仅是 $T(x)$ 的函数。</p></blockquote><p><strong>结论</strong> 次序统计量是充分统计量。</p><p>证明留做习题。这说明获取样本的先后顺序通常不会对统计学问题造成影响。</p><h3 id=极小充分统计量>极小充分统计量</h3><p>我们知道，如果 $T(X)=\psi(S(X))$ 且 $T$ 是充分统计量，则 $S$ 也是充分统计量（自行证明）。这允许我们提出“极小”的概念：</p><p><strong>定义</strong> 设 $T$ 是充分统计量。如果对任意的充分统计量 $S$ 都有可测函数 $\psi$ 使 $T=\psi(S)$，则 $T$ 是<strong>极小充分统计量（minimal sufficient statistics）</strong>。</p><p>这个定义等价于 $S(x)=S(y)\Rightarrow T(x)=T(y)$.</p><p>我们有许多定理可以方便地判定极小充分统计量，这里介绍三个：</p><p><strong>定理</strong> 设 $\mathcal{P}_0\subset\mathcal{P}$ 且 $\mathcal{P}_0$-a.s. $\Rightarrow \mathcal{P}$-a.s.，若 $T$ 关于 $\mathcal{P}$ 是充分统计量，且关于 $\mathcal{P}_0$ 是极小充分统计量，则 $T$ 关于 $\mathcal{P}$ 是极小充分统计量。</p><blockquote><p>$\mathcal{P}$-a.s. 指的是对 $\mathcal{P}$ 中的所有东西都是 a.s..</p></blockquote><p><strong>定理</strong> 设 $\mathcal{P}$ 可列，其 p.d.f. 为 $f_0,f_1,\cdots$，则</p><ul><li>令 $c_i>0,\sum_{i=0}^\infty c_i=1$，且 $f_\infty(x)=\sum_{i=0}^\infty c_if_i(x)$. 可知 $f_\infty(x)\ne 0$, a.e.. 令 $T_i(x)=\dfrac{f_i(x)}{f_\infty (x)}$，则 $T(X)=(T_0(x),T_1(x),\cdots)$ 是 $\mathcal{P}$ 的极小充分统计量。</li><li>若 $\forall i,{x:f_i(x)>0}\subset{x:f_0(x)>0}$，则 $T(X)=(\dfrac{f_1(X)}{f_0(X)},\dfrac{f_2(X)}{f_0(X)},\cdots)$ 是 $\mathcal{P}$ 的极小充分统计量。</li></ul><p><strong>定理</strong> 设 $\mathcal{P}$ 都存在 p.d.f. $f_P$，$T(X)$ 是充分统计量，若对任意的 $x,y$，
+其中 $h(x)$ 与 $P$ 无关，$h$ 和 $g_P$ 都是 Borel 函数。</p>
+<blockquote>
+<p>直观理解：$g_P$ 体现了原统计量中和 $P$ 有关的部分，它仅是 $T(x)$ 的函数。</p>
+</blockquote>
+<p><strong>结论</strong> 次序统计量是充分统计量。</p>
+<p>证明留做习题。这说明获取样本的先后顺序通常不会对统计学问题造成影响。</p>
+<h3 id=极小充分统计量>极小充分统计量</h3>
+<p>我们知道，如果 $T(X)=\psi(S(X))$ 且 $T$ 是充分统计量，则 $S$ 也是充分统计量（自行证明）。这允许我们提出“极小”的概念：</p>
+<p><strong>定义</strong> 设 $T$ 是充分统计量。如果对任意的充分统计量 $S$ 都有可测函数 $\psi$ 使 $T=\psi(S)$，则 $T$ 是<strong>极小充分统计量（minimal sufficient statistics）</strong>。</p>
+<p>这个定义等价于 $S(x)=S(y)\Rightarrow T(x)=T(y)$.</p>
+<p>我们有许多定理可以方便地判定极小充分统计量，这里介绍三个：</p>
+<p><strong>定理</strong> 设 $\mathcal{P}_0\subset\mathcal{P}$ 且 $\mathcal{P}_0$-a.s. $\Rightarrow \mathcal{P}$-a.s.，若 $T$ 关于 $\mathcal{P}$ 是充分统计量，且关于 $\mathcal{P}_0$ 是极小充分统计量，则 $T$ 关于 $\mathcal{P}$ 是极小充分统计量。</p>
+<blockquote>
+<p>$\mathcal{P}$-a.s. 指的是对 $\mathcal{P}$ 中的所有东西都是 a.s..</p>
+</blockquote>
+<p><strong>定理</strong> 设 $\mathcal{P}$ 可列，其 p.d.f. 为 $f_0,f_1,\cdots$，则</p>
+<ul>
+<li>令 $c_i>0,\sum_{i=0}^\infty c_i=1$，且 $f_\infty(x)=\sum_{i=0}^\infty c_if_i(x)$. 可知 $f_\infty(x)\ne 0$, a.e.. 令 $T_i(x)=\dfrac{f_i(x)}{f_\infty (x)}$，则 $T(X)=(T_0(x),T_1(x),\cdots)$ 是 $\mathcal{P}$ 的极小充分统计量。</li>
+<li>若 $\forall i,{x:f_i(x)>0}\subset{x:f_0(x)>0}$，则 $T(X)=(\dfrac{f_1(X)}{f_0(X)},\dfrac{f_2(X)}{f_0(X)},\cdots)$ 是 $\mathcal{P}$ 的极小充分统计量。</li>
+</ul>
+<p><strong>定理</strong> 设 $\mathcal{P}$ 都存在 p.d.f. $f_P$，$T(X)$ 是充分统计量，若对任意的 $x,y$，
 $$
 \frac{f_P(x)}{f_P(y)}\text{与}P\text{无关}\Rightarrow T(x)=T(y),
 $$
-则 $T(X)$ 是极小充分统计量。</p><h3 id=完备统计量>完备统计量</h3><blockquote><p>极小充分统计量仍然有冗余信息。例如 $T$ 是极小充分统计量，则 $(T,e^T)$ 也他娘的是极小充分统计量，你说这上哪说理去？所以我们还得接着干。</p></blockquote><p><strong>定义</strong> 统计量 $T(X)$ 是<strong>完备的（complete）</strong>，当且仅当对任意 Borel 函数 $f$，$\forall P\in\mathcal{P},E_P(f(T))=0\Rightarrow f(T)=0$. 如果把 $f$ 限定为有界函数，则称为<strong>有界完备（boundedly complete）</strong>。</p><blockquote><p>这意味着没有任何 non-trivial 的函数能对 $T$ 的信息进一步压缩了。</p></blockquote><p><strong>定理</strong> 一个统计量是有界完备且充分的，则它是极小充分统计量。</p><h3 id=辅助统计量>辅助统计量</h3><p><strong>定义</strong> 统计量 $V(X)$ 是<strong>辅助统计量（ancillary statistics）</strong>，如果它的分布与 $P$ 无关。</p><p>和充分统计量恰恰相反，辅助统计量就像是某些领导讲话，听君一席话如听一席话，实际上没有任何信息量。</p><blockquote><p>对于完备统计量 $T$，如果能够造出辅助统计量 $V=f(T)$ 且 $f$ 不是常数，则 $g(T)=f(T)-\mathrm E(f(T))$ 就与定义矛盾了。所以完备意味着无法从中构造出辅助统计量。</p></blockquote><p>如下定理进一步解释了完备统计量和辅助统计量“势不两立”的关系：</p><p><strong>定理（Basu）</strong> $V$ 是辅助统计量，$T$ 有界完备且充分，则 $V$ 和 $T$ 独立。</p><h2 id=指数族>指数族</h2><h3 id=标准型>标准型</h3><p>指数族是非常重要的一类参数族，许多我们耳熟能详的分布都是指数族，我们即将看到，指数族有许多优良的数学性质。</p><p><strong>定义</strong> 设参数族 $\mathcal{P}={P_\theta}$ 被 $\sigma$-有限的测度 $\nu$ 控制，对应的概率密度函数 $f_\theta=\dfrac{d P_\theta}{d\nu}$. 称 $\mathcal{P}$ 是**指数族（exponential family）**当且仅当能写成如下形式：
+则 $T(X)$ 是极小充分统计量。</p>
+<h3 id=完备统计量>完备统计量</h3>
+<blockquote>
+<p>极小充分统计量仍然有冗余信息。例如 $T$ 是极小充分统计量，则 $(T,e^T)$ 也他娘的是极小充分统计量，你说这上哪说理去？所以我们还得接着干。</p>
+</blockquote>
+<p><strong>定义</strong> 统计量 $T(X)$ 是<strong>完备的（complete）</strong>，当且仅当对任意 Borel 函数 $f$，$\forall P\in\mathcal{P},E_P(f(T))=0\Rightarrow f(T)=0$. 如果把 $f$ 限定为有界函数，则称为<strong>有界完备（boundedly complete）</strong>。</p>
+<blockquote>
+<p>这意味着没有任何 non-trivial 的函数能对 $T$ 的信息进一步压缩了。</p>
+</blockquote>
+<p><strong>定理</strong> 一个统计量是有界完备且充分的，则它是极小充分统计量。</p>
+<h3 id=辅助统计量>辅助统计量</h3>
+<p><strong>定义</strong> 统计量 $V(X)$ 是<strong>辅助统计量（ancillary statistics）</strong>，如果它的分布与 $P$ 无关。</p>
+<p>和充分统计量恰恰相反，辅助统计量就像是某些领导讲话，听君一席话如听一席话，实际上没有任何信息量。</p>
+<blockquote>
+<p>对于完备统计量 $T$，如果能够造出辅助统计量 $V=f(T)$ 且 $f$ 不是常数，则 $g(T)=f(T)-\mathrm E(f(T))$ 就与定义矛盾了。所以完备意味着无法从中构造出辅助统计量。</p>
+</blockquote>
+<p>如下定理进一步解释了完备统计量和辅助统计量“势不两立”的关系：</p>
+<p><strong>定理（Basu）</strong> $V$ 是辅助统计量，$T$ 有界完备且充分，则 $V$ 和 $T$ 独立。</p>
+<h2 id=指数族>指数族</h2>
+<h3 id=标准型>标准型</h3>
+<p>指数族是非常重要的一类参数族，许多我们耳熟能详的分布都是指数族，我们即将看到，指数族有许多优良的数学性质。</p>
+<p><strong>定义</strong> 设参数族 $\mathcal{P}={P_\theta}$ 被 $\sigma$-有限的测度 $\nu$ 控制，对应的概率密度函数 $f_\theta=\dfrac{d P_\theta}{d\nu}$. 称 $\mathcal{P}$ 是**指数族（exponential family）**当且仅当能写成如下形式：
 $$
 f_\theta(\omega)=\exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right)h(\omega),\ \omega\in\Omega,
 $$
-其中 $T:\Omega\to\mathbb{R}^p$, $\eta:\Theta\to\mathbb{R}^p$, $h$ 是 $\Omega$ 上的非负 Borel 函数。$\xi(\theta)$ 是归一化用的，选取它的值使得 $f_\theta$ 的积分是 1 就好啦。</p><blockquote><p>教材和 PPT 都略过了 well-defined 的证明，我们进行了补充，见附录。</p></blockquote><p>由于各种变化因素，指数族的表达式五花八门。我们需要规定标准型。令 $\eta=\eta(\theta)$，我们得到
+其中 $T:\Omega\to\mathbb{R}^p$, $\eta:\Theta\to\mathbb{R}^p$, $h$ 是 $\Omega$ 上的非负 Borel 函数。$\xi(\theta)$ 是归一化用的，选取它的值使得 $f_\theta$ 的积分是 1 就好啦。</p>
+<blockquote>
+<p>教材和 PPT 都略过了 well-defined 的证明，我们进行了补充，见附录。</p>
+</blockquote>
+<p>由于各种变化因素，指数族的表达式五花八门。我们需要规定标准型。令 $\eta=\eta(\theta)$，我们得到
 $$
 f_\eta(\omega)=\exp\left(\eta^TT(\omega)-\zeta(\eta)\right)h(\omega).
 $$
-这叫做指数族的<strong>标准型（canonical form）</strong>，用标准型表示的指数族称为<strong>自然指数族（natural exponential family, NEF）</strong>。新的参数空间变为 $\Xi={\eta(\theta):\theta\in\Theta}\subset \mathbb{R}^p$. 如果 $\Xi$ 包含开集，则称指数族<strong>满秩（full rank）</strong>。</p><blockquote><p>满秩的条件可以防止 $T$ 线性相关，使得其具有更好的性质。</p></blockquote><h3 id=指数族的判定>指数族的判定</h3><p><strong>性质</strong> 设 $P_\theta$ 是指数族，则存在非零测度 $\lambda$ 使得 $\dfrac{dP_\theta}{d\lambda}>0,\ \lambda$-a.e..</p><p>事实上，只要取 $\lambda(A)=\int_A hd\nu$ 即可把 $h$ 消掉，于是性质得证。这给我们提供了一个很好的判定依据：如果 $\dfrac{dP_\theta}{d\lambda}=0\Rightarrow\lambda\equiv0$，那他就不是指数族。</p><p><strong>性质</strong> 指数族的 $f_\theta$ 有相同的支撑集 $\text{supp}(f_\theta)={x:h(x)>0}$.</p><p>这可以用来判定，如果支撑集不同，则不是指数族。</p><h3 id=统计量-t>统计量 $T$</h3><p>可以证明，对满秩的自然指数族，<strong>$T$ 是一个完备极小充分统计量</strong>。</p><p><strong>定理</strong> 设 $\mathcal{P}$ 是自然指数族，$f_\eta(\omega)=\exp\left(\eta^TT(\omega)-\zeta(\eta)\right)h(\omega)$. 如令 $T=(Y,U),\ \eta=(\vartheta,\varphi)$，其中 $Y$ 和 $\vartheta$ 维度相同（特别地，可以令 $Y=T$，就没有 $U$ 了）。则存在和 $\varphi$ 有关的测度，使得 $Y$ 在其上有 p.d.f.
+这叫做指数族的<strong>标准型（canonical form）</strong>，用标准型表示的指数族称为<strong>自然指数族（natural exponential family, NEF）</strong>。新的参数空间变为 $\Xi={\eta(\theta):\theta\in\Theta}\subset \mathbb{R}^p$. 如果 $\Xi$ 包含开集，则称指数族<strong>满秩（full rank）</strong>。</p>
+<blockquote>
+<p>满秩的条件可以防止 $T$ 线性相关，使得其具有更好的性质。</p>
+</blockquote>
+<h3 id=指数族的判定>指数族的判定</h3>
+<p><strong>性质</strong> 设 $P_\theta$ 是指数族，则存在非零测度 $\lambda$ 使得 $\dfrac{dP_\theta}{d\lambda}>0,\ \lambda$-a.e..</p>
+<p>事实上，只要取 $\lambda(A)=\int_A hd\nu$ 即可把 $h$ 消掉，于是性质得证。这给我们提供了一个很好的判定依据：如果 $\dfrac{dP_\theta}{d\lambda}=0\Rightarrow\lambda\equiv0$，那他就不是指数族。</p>
+<p><strong>性质</strong> 指数族的 $f_\theta$ 有相同的支撑集 $\text{supp}(f_\theta)={x:h(x)>0}$.</p>
+<p>这可以用来判定，如果支撑集不同，则不是指数族。</p>
+<h3 id=统计量-t>统计量 $T$</h3>
+<p>可以证明，对满秩的自然指数族，<strong>$T$ 是一个完备极小充分统计量</strong>。</p>
+<p><strong>定理</strong> 设 $\mathcal{P}$ 是自然指数族，$f_\eta(\omega)=\exp\left(\eta^TT(\omega)-\zeta(\eta)\right)h(\omega)$. 如令 $T=(Y,U),\ \eta=(\vartheta,\varphi)$，其中 $Y$ 和 $\vartheta$ 维度相同（特别地，可以令 $Y=T$，就没有 $U$ 了）。则存在和 $\varphi$ 有关的测度，使得 $Y$ 在其上有 p.d.f.
 $$
 f_Y(y)=\exp\left(\vartheta^Ty-\zeta(\eta)\right).
 $$
 此外，给定 $U=u$，存在和 $u$ 有关的测度，使得 $Y$ 在其上有条件分布
 $$
 f_{Y|U=u}(y)=\exp\left(\vartheta^Ty-\zeta_u(\vartheta)\right).
-$$</p><p><strong>定理</strong> 若 $\eta_0$ 是参数空间的内点（interior point），则 $T$ 的 MGF 在 $t=0$ 的邻域存在有限，具体地，
+$$</p>
+<p><strong>定理</strong> 若 $\eta_0$ 是参数空间的内点（interior point），则 $T$ 的 MGF 在 $t=0$ 的邻域存在有限，具体地，
 $$
 \mathrm E(e^{tT})=\psi_{\eta_0}(t)=\exp\left(\zeta(\eta_0+t)-\zeta(\eta_0)\right).
-$$</p><blockquote><p>这节就结束了……内容有点少，但是下一节点估计的内容巨多，如果这里不分节的话可能要炸……</p></blockquote><h2 id=附录>附录</h2><h3 id=指数族定义的证明>指数族定义的证明</h3><blockquote><p><strong>定义</strong> 设参数族 $\mathcal{P}={P_\theta}$ 被 $\sigma$-有限的测度 $\nu$ 控制，对应的概率密度函数 $f_\theta=\dfrac{d P_\theta}{d\nu}$. 称 $\mathcal{P}$ 是**指数族（exponential family）**当且仅当能写成如下形式：
+$$</p>
+<blockquote>
+<p>这节就结束了……内容有点少，但是下一节点估计的内容巨多，如果这里不分节的话可能要炸……</p>
+</blockquote>
+<h2 id=附录>附录</h2>
+<h3 id=指数族定义的证明>指数族定义的证明</h3>
+<blockquote>
+<p><strong>定义</strong> 设参数族 $\mathcal{P}={P_\theta}$ 被 $\sigma$-有限的测度 $\nu$ 控制，对应的概率密度函数 $f_\theta=\dfrac{d P_\theta}{d\nu}$. 称 $\mathcal{P}$ 是**指数族（exponential family）**当且仅当能写成如下形式：
 $$
 f_\theta(\omega)=\exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right)h(\omega),\ \omega\in\Omega,
 $$
-其中 $T$ 是 $p$ 维随机向量，$\eta:\Theta\to\mathbb{R}^p$, $h$ 是 $\Omega$ 上的非负 Borel 函数。$\xi(\theta)$ 是归一化用的，选取它的值使得 $f_\theta$ 的积分是 1 就好啦。</p></blockquote><p>如果选取不同的 $\nu$, $f_\theta$ 的表达形式会改变。我们需要证明 well-defined：如果存在 $\nu$ 使得 $\dfrac{dP_\theta}{d\nu}$ 可写成上述形式，则对另一控制 $\mathcal{P}$ 的测度 $\nu&rsquo;$，$\dfrac{dP_\theta}{d\nu&rsquo;}$ 仍能写成上述形式。</p><p><strong>证明</strong>：设 $\dfrac{dP_\theta}{d\nu}=\exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right)h(\omega)$, 定义测度 $\lambda(A)=\int_A hd\nu$. 对可测集 $A$，若 $\lambda(A)=0$，则有
+其中 $T$ 是 $p$ 维随机向量，$\eta:\Theta\to\mathbb{R}^p$, $h$ 是 $\Omega$ 上的非负 Borel 函数。$\xi(\theta)$ 是归一化用的，选取它的值使得 $f_\theta$ 的积分是 1 就好啦。</p>
+</blockquote>
+<p>如果选取不同的 $\nu$, $f_\theta$ 的表达形式会改变。我们需要证明 well-defined：如果存在 $\nu$ 使得 $\dfrac{dP_\theta}{d\nu}$ 可写成上述形式，则对另一控制 $\mathcal{P}$ 的测度 $\nu'$，$\dfrac{dP_\theta}{d\nu'}$ 仍能写成上述形式。</p>
+<p><strong>证明</strong>：设 $\dfrac{dP_\theta}{d\nu}=\exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right)h(\omega)$, 定义测度 $\lambda(A)=\int_A hd\nu$. 对可测集 $A$，若 $\lambda(A)=0$，则有
 $$
 \lambda(A)=\int_{A\cap {\omega:h(\omega)=0}} h(\omega)d\nu+ \int_{A\cap {\omega:h(\omega)>0}} h(\omega)d\nu=0.
 $$
@@ -76,49 +275,208 @@ $$
 $$
 \frac{dP_\theta}{d\lambda}=\frac{dP_\theta}{d\nu}\left(\frac{d\lambda}{d\nu}\right)^{-1}=\exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right).
 $$
-由于 $\dfrac{dP_\theta}{d\lambda}>0$，故 $\lambda\ll P_\theta$.</p><p>设 $\sigma$-有限的测度 $\nu&rsquo;$ 满足 $\nu&rsquo;\gg P_\theta$，我们有 $\nu&rsquo;\gg \lambda$，于是
+由于 $\dfrac{dP_\theta}{d\lambda}>0$，故 $\lambda\ll P_\theta$.</p>
+<p>设 $\sigma$-有限的测度 $\nu'$ 满足 $\nu'\gg P_\theta$，我们有 $\nu'\gg \lambda$，于是
 $$
-\frac{dP_\theta}{d\nu&rsquo;}=\frac{dP_\theta}{d\lambda}\frac{d\lambda}{d\nu&rsquo;}=\exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right)\frac{d\lambda}{d\nu&rsquo;}.
+\frac{dP_\theta}{d\nu'}=\frac{dP_\theta}{d\lambda}\frac{d\lambda}{d\nu'}=\exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right)\frac{d\lambda}{d\nu'}.
 $$
-注意到 $\dfrac{d\lambda}{d\nu&rsquo;}$ 只是 $\omega$ 的函数，因此我们得到了指数族的表达式。∎</p></div><footer class=post-footer><div class=post-tags><a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a></div><div class=addthis_inline_share_toolbox></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/5215-2%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8B/ rel=next title=公理化概率论（下）><i class="fa fa-chevron-left"></i> 公理化概率论（下）</a></div><div class="post-nav-prev post-nav-item"><a href=/post/5215-4%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8B-%E4%BC%B0%E8%AE%A1%E4%B8%8E%E6%8E%A8%E6%96%AD/ rel=prev title=统计学基础（下）-点估计>统计学基础（下）-点估计
-<i class="fa fa-chevron-right"></i></a></div></div><div id=ucomments></div></footer></article></section></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+注意到 $\dfrac{d\lambda}{d\nu'}$ 只是 $\omega$ 的函数，因此我们得到了指数族的表达式。∎</p>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+<a href=/post/5203-5-2k%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1/ rel=next title="线性回归（五）-2^k 因子实验">
+<i class="fa fa-chevron-left"></i> 线性回归（五）-2^k 因子实验
+</a>
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=/post/5215-4%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8B-%E4%BC%B0%E8%AE%A1%E4%B8%8E%E6%8E%A8%E6%96%AD/ rel=prev title=统计学基础（下）-点估计>
+统计学基础（下）-点估计
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=ucomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
+<div class=sidebar-toggle>
+<div class=sidebar-toggle-line-wrap>
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
 <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-<span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><section class="site-overview sidebar-panel sidebar-panel-active"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人><p class=site-author-name itemprop=name>精神病人</p><p class="site-description motion-element" itemprop=description>精神病人欢乐多!</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href=/post/><span class=site-state-item-count>40</span>
-<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>11</span>
-<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>11</span>
-<span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/jcq15/ target=_blank title=GitHub><i class="fa fa-fw fa-github"></i>
-GitHub</a></span></div><div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline"><div class=tagcloud-of-blogroll-title><i class="fa fa-fw fa-tags"></i>
-标签云</div><ul class=tagcloud-of-blogroll-list><li class=tagcloud-of-blogroll-item><a href=/tags/%E5%AD%A6%E4%B9%A0>学习
-<sup>15</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
-<sup>6</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%8A%80%E6%9C%AF>技术
-<sup>5</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B8%B8%E6%88%8F>游戏
-<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%A7%91%E6%99%AE>科普
-<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%B4%E6%B4%BB>整活
-<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9B%B4%E6%96%B0>更新
-<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
-<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%A2%E6%83%B3>敢想
-<sup>1</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B2%99%E9%9B%95>沙雕
-<sup>1</sup></a></li></ul></div></section></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright><span class=copyright-year>&copy; 2010 - 2023</span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id=sidebar class=sidebar>
+<div class=sidebar-inner>
+<section class="site-overview sidebar-panel sidebar-panel-active">
+<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
+<img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人>
+<p class=site-author-name itemprop=name>精神病人</p>
+<p class="site-description motion-element" itemprop=description>
+精神病人欢乐多!
+</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href=/post/>
+<span class=site-state-item-count>41</span>
+<span class=site-state-item-name>日志</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href=/categories/>
+<span class=site-state-item-count>11</span>
+<span class=site-state-item-name>分类</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href=/tags/>
+<span class=site-state-item-count>11</span>
+<span class=site-state-item-name>标签</span>
+</a>
+</div>
+</nav>
+<div class="links-of-author motion-element">
+<span class=links-of-author-item>
+<a href=https://github.com/jcq15/ target=_blank title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+GitHub
+</a>
+</span>
+</div>
+<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
+<div class=tagcloud-of-blogroll-title>
+<i class="fa fa-fw fa-tags"></i>
+标签云
+</div>
+<ul class=tagcloud-of-blogroll-list>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E5%AD%A6%E4%B9%A0>学习
+<sup>15</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
+<sup>6</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%8A%80%E6%9C%AF>技术
+<sup>5</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%9B%B4%E6%96%B0>更新
+<sup>3</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%B8%B8%E6%88%8F>游戏
+<sup>3</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E7%A7%91%E6%99%AE>科普
+<sup>3</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%95%B4%E6%B4%BB>整活
+<sup>2</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
+<sup>2</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%95%A2%E6%83%B3>敢想
+<sup>1</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%B2%99%E9%9B%95>沙雕
+<sup>1</sup>
+</a>
+</li>
+</ul>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=copyright>
+<span class=copyright-year>
+&copy; 2010 - 2023
+</span>
 <span class=with-love><i class="fa fa-heart"></i></span>
-<span class=copyright-author>沙雕园</span></div><div class=powered-info><span class=powered-by>Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.101.0</a></span>
+<span class=copyright-author>沙雕园</span>
+</div>
+<div class=powered-info>
+<span class=powered-by>
+Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.92.2</a>
+</span>
 <span class=separator-line>/</span>
-<span class=theme-info>Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank>NexT</a></span></div><div class=vistor-info><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<span class=site-uv><i class="fa fa-user"></i>
-<span class=busuanzi-value id=busuanzi_value_site_uv></span></span>
+<span class=theme-info>
+Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
+</a>
+</span>
+</div>
+<div class=vistor-info>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv>
+<i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span>
+</span>
 <span class=separator-line>/</span>
-<span class=site-pv><i class="fa fa-eye"></i>
-<span class=busuanzi-value id=busuanzi_value_site_pv></span></span></div><div class=license-info><span class=storage-info>Storage by
-<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a></span>
+<span class=site-pv>
+<i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span>
+</span>
+</div>
+<div class=license-info>
+<span class=storage-info>
+Storage by
+<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a>
+</span>
 <span class=separator-line>/</span>
-<span class=license-num><a href target=_blank></a></span></div></div></footer><div class=back-to-top><i class="fa fa-arrow-up"></i>
-<span id=scrollpercent><span>0</span>%</span></div></div><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<span class=license-num>
+<a href target=_blank></a>
+</span>
+</div>
+</div>
+</footer>
+<div class=back-to-top>
+<i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span>
+</div>
+</div>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
 <script type=text/javascript src=/js/search.js></script>
 <script type=text/javascript src=/js/affix.js></script>
 <script type=text/javascript src=/js/scrollspy.js></script>
-<script type=text/javascript>function detectIE(){var e=window.navigator.userAgent,t=e.indexOf("MSIE "),n=e.indexOf("Trident/"),s=e.indexOf("Edge/");return t>0||n>0||s>0?-1:1}function getCntViewHeight(){var t=$("#content").height(),e=$(window).height(),n=t>e?t-e:$(document).height()-e;return n}function getScrollbarWidth(){var e=$("<div />").addClass("scrollbar-measure").prependTo("body"),t=e[0],n=t.offsetWidth-t.clientWidth;return e.remove(),n}function registerBackTop(){var t=50,e=$(".back-to-top");$(window).on("scroll",function(){e.toggleClass("back-to-top-on",window.pageYOffset>t);var s=$(window).scrollTop(),o=getCntViewHeight(),i=s/o,n=Math.round(i*100),a=n>100?100:n;$("#scrollpercent>span").html(a)}),e.on("click",function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var e=".post-toc",s=$(e),t=".active-current";s.on("activate.bs.scrollspy",function(){var t=$(e+" .active").last();n(),t.addClass("active-current")}).on("clear.bs.scrollspy",n),$("body").scrollspy({target:e});function n(){$(e+" "+t).removeClass(t.substring(1))}}function initAffix(){var e=$(".header-inner").height(),t=parseInt($(".main").css("padding-bottom"),10),n=e+10;$(".sidebar-inner").affix({offset:{top:n,bottom:t}}),$(document).on("affixed.bs.affix",function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){$(window).on("resize",function(){e&&clearTimeout(e),e=setTimeout(function(){var e=document.body.clientHeight-100;updateTOCHeight(e)},0)}),updateTOCHeight(document.body.clientHeight-100);var e,t=getScrollbarWidth();$(".post-toc").css("width","calc(100% + "+t+"px)")}function updateTOCHeight(e){e=e||"auto",$(".post-toc").css("max-height",e)}$(function(){var e,t,n,s,o=$(".header-inner").height()+10;$("#sidebar").css({"margin-top":o}).show(),t=parseInt($("#sidebar").css("margin-top")),n=parseInt($(".sidebar-inner").css("height")),e=t+n,s=$(".content-wrap").height(),s<e&&$(".content-wrap").css("min-height",e),$(".site-nav-toggle").on("click",function(){var e=$(".site-nav"),o=$(".toggle"),t="site-nav-on",i="toggle-close",n=e.hasClass(t),a=n?"slideUp":"slideDown",s=n?"removeClass":"addClass";e.stop()[a]("normal",function(){e[s](t),o[s](i)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$(".sidebar-nav-toc").click(function(){$(this).addClass("sidebar-nav-active"),$(this).next().removeClass("sidebar-nav-active"),$("."+$(this).next().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)}),$(".sidebar-nav-overview").click(function(){$(this).addClass("sidebar-nav-active"),$(this).prev().removeClass("sidebar-nav-active"),$("."+$(this).prev().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)})})</script><script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
-<script type=text/javascript>$(function(){$(".post-body").viewer()})</script><script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
-<script type=text/javascript>function showTime(e){var n=new AV.Query(e),t=[],s=$(".leancloud_visitors");s.each(function(){t.push($(this).attr("id").trim())}),n.containedIn("url",t),n.find().then(e=>{var n,o,i,r,c,l,a=".leancloud-visitors-count";if(e.length==0){s.find(a).text(0);return}for(n=0;n<e.length;n++)r=e[n],o=r.get("url"),l=r.get("time"),i=document.getElementById(o),$(i).find(a).text(l);for(n=0;n<t.length;n++)o=t[n],i=document.getElementById(o),c=$(i).find(a),c.text()==""&&c.text(0)},e=>{console.log("Query vistors failed: "+e)})}function addCount(e){var n=$(".leancloud_visitors"),t=n.attr("id").trim(),o=n.attr("data-flag-title").trim(),s=new AV.Query("Counter");s.equalTo("url",t),s.find().then(n=>{if(n.length>0){var s,i,a=n[0];a.increment("time",1),a.save(null,{query:new AV.Query("Counter").equalTo("url",t),fetchWhenSave:!0}).then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(e.get("time"))},e=>{console.log("Update vistor failed: "+e)})}else i=new AV.ACL,i.setPublicReadAccess(!0),i.setPublicWriteAccess(!0),s=new e,s.set("title",o),s.set("url",t),s.set("time",1),s.setACL(i),s.save().then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(s.get("time"))},e=>{console.log("Save new vistor failed: "+e)})})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const e=AV.Object.extend("Counter");$(".leancloud_visitors").length==1?addCount(e):$(".post-title-link").length>1&&showTime(e)})</script><script type=text/javascript>(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.setAttribute("issue-term","title"),e.setAttribute("theme","github-light"),e.setAttribute("repo","jcq15/blog"),e.crossorigin="anonymous",e.src="https://utteranc.es/client.js",document.getElementById("ucomments").appendChild(e)})()</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
-<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
+<script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
+<script type=text/javascript>function showTime(d){var b=new AV.Query(d),a=[],c=$(".leancloud_visitors");c.each(function(){a.push($(this).attr("id").trim())}),b.containedIn('url',a),b.find().then(d=>{var e='.leancloud-visitors-count',b,h,f,j,g,i;if(d.length==0){c.find(e).text(0);return}for(b=0;b<d.length;b++)h=d[b],f=h.get('url'),j=h.get('time'),g=document.getElementById(f),$(g).find(e).text(j);for(b=0;b<a.length;b++)f=a[b],g=document.getElementById(f),i=$(g).find(e),i.text()==''&&i.text(0)},a=>{console.log('Query vistors failed: '+a)})}function addCount(d){var b=$(".leancloud_visitors"),a=b.attr('id').trim(),e=b.attr('data-flag-title').trim(),c=new AV.Query('Counter');c.equalTo("url",a),c.find().then(g=>{var f,c,b;g.length>0?(f=g[0],f.increment('time',1),f.save(null,{query:new AV.Query('Counter').equalTo('url',a),fetchWhenSave:!0}).then(b=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log('Update vistor failed: '+a)})):(c=new AV.ACL,c.setPublicReadAccess(!0),c.setPublicWriteAccess(!0),b=new d,b.set("title",e),b.set("url",a),b.set("time",1),b.setACL(c),b.save().then(d=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log("Save new vistor failed: "+a)}))})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const a=AV.Object.extend("Counter");$('.leancloud_visitors').length==1?addCount(a):$('.post-title-link').length>1&&showTime(a)})</script>
+<script type=text/javascript>(function(){var a=document.createElement('script');a.type='text/javascript',a.async=!0,a.setAttribute('issue-term',"title"),a.setAttribute('theme',"github-light"),a.setAttribute('repo',"jcq15/blog"),a.crossorigin='anonymous',a.src='https://utteranc.es/client.js',document.getElementById('ucomments').appendChild(a)})()</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
 <script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
-<script>(function(){var t,e=document.createElement("script"),n=window.location.protocol.split(":")[0];n==="https"?e.src="https://zz.bdstatic.com/linksubmit/push.js":e.src="http://push.zhanzhang.baidu.com/push.js",t=document.getElementsByTagName("script")[0],t.parentNode.insertBefore(e,t)})()</script></body></html>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</body>
+</html>

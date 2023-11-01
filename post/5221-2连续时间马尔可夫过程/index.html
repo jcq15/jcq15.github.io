@@ -1,24 +1,139 @@
-<!doctype html><html lang=zh-cn dir=content/zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=content-security-policy content="upgrade-insecure-requests"><title>随机过程（下）-连续时间过程 - 沙雕园</title><meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享"><meta name=author content="精神病人"><meta property="og:title" content="随机过程（下）-连续时间过程"><meta property="og:site_name" content="沙雕园"><meta property="og:image" content="/img/author.jpg"><meta name=title content="随机过程（下）-连续时间过程 - 沙雕园"><meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。"><link rel="shortcut icon" href=/img/favicon.ico><link rel=apple-touch-icon href=/img/apple-touch-icon.png><link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png><link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css><link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet><link href=/css/main.css rel=stylesheet type=text/css><link href=/css/syntax.css rel=stylesheet type=text/css></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-hans><div class="container one-collumn sidebar-position-left page-home"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle role=button style=opacity:1;top:0><span class=toggle-line></span>
+<!doctype html><html lang=zh-cn dir=content/zh-cn>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
+<title> 随机过程（下）-连续时间过程 - 沙雕园 </title>
+<meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享">
+<meta name=author content="精神病人">
+<meta property="og:title" content="随机过程（下）-连续时间过程">
+<meta property="og:site_name" content="沙雕园">
+<meta property="og:image" content="/img/author.jpg">
+<meta name=title content="随机过程（下）-连续时间过程 - 沙雕园">
+<meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。">
+<link rel="shortcut icon" href=/img/favicon.ico>
+<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
+<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
+<link href=//unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=//unpkg.com/imageviewer@1.1.0/dist/viewer.min.css rel=stylesheet>
+<link href=/css/main.css rel=stylesheet type=text/css>
+<link href=/css/syntax.css rel=stylesheet type=text/css>
+</head>
+<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
+<div class="container one-collumn sidebar-position-left page-home">
+<div class=headband></div>
+<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
+<div class=header-inner> <div class=site-brand-container>
+<div class=site-nav-toggle>
+<div class=toggle role=button style=opacity:1;top:0>
 <span class=toggle-line></span>
-<span class=toggle-line></span></div></div><div class=site-meta><div class=custom-logo-site-title><a href=/ class=brand rel=start><span class=logo-line-before><i></i></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+</div>
+</div>
+<div class=site-meta>
+<div class=custom-logo-site-title>
+<a href=/ class=brand rel=start>
+<span class=logo-line-before><i></i></span>
 <span class=site-title>沙雕园</span>
-<span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>沙雕使人进步。</p></div><div class=site-nav-right><div class="toggle popup-trigger" style=opacity:1;top:0><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul id=menu class=menu><li class=menu-item><a href=/ rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-active"><a href=/post rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class=menu-item><a href=/about.html rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于我</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class=site-search><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class=search-icon><i class="fa fa-search"></i></span>
-<span class=popup-btn-close><i class="fa fa-times-circle"></i></span><div class=local-search-input-wrapper><input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off></div></div><div id=local-search-result></div></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><section id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=/post/5221-2%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BF%87%E7%A8%8B/ itemprop=url>随机过程（下）-连续时间过程</a></h1><div class=post-meta><span class=post-pushdate><i class="fa fa-calendar-o fa-fw"></i>
+<span class=logo-line-after><i></i></span>
+</a>
+</div>
+<p class=site-subtitle>沙雕使人进步。</p>
+</div>
+<div class=site-nav-right>
+<div class="toggle popup-trigger" style=opacity:1;top:0>
+<i class="fa fa-search fa-fw fa-lg"></i>
+</div>
+</div>
+</div>
+<nav class=site-nav>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a href=/ rel=section>
+<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页
+</a>
+</li>
+<li class="menu-item menu-item-active">
+<a href=/post rel=section>
+<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档
+</a>
+</li>
+<li class=menu-item>
+<a href=/about.html rel=section>
+<i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我
+</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> 搜索</a>
+</li>
+</ul>
+<div class=site-search>
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class=search-icon><i class="fa fa-search"></i> </span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
+<div class=local-search-input-wrapper>
+<input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
+</div>
+</div>
+<div id=local-search-result></div>
+</div>
+</div>
+</nav> </div>
+</header>
+<main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=/post/5221-2%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BF%87%E7%A8%8B/ itemprop=url>
+随机过程（下）-连续时间过程
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-pushdate>
+<i class="fa fa-calendar-o fa-fw"></i>
 <span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-11-10">2021-11-10</time></span>
-<span class=post-category><i class="fa fa-folder-o fa-fw"></i>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-11-10">
+2021-11-10
+</time>
+</span>
+<span class=post-category>
+<i class="fa fa-folder-o fa-fw"></i>
 <span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing><a class=post-category-a href=/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0 itemprop=url rel=index><span itemprop=name>课程笔记</span></a>
-&nbsp;</span></span>
-<span class=post-wordcount><i class="fa fa-file-word-o fa-fw"></i>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a class=post-category-a href=/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0 itemprop=url rel=index>
+<span itemprop=name>课程笔记</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>3604 字</span></span>
-<span class=post-readtime><i class="fa fa-eye fa-fw"></i>
+<span class=leancloud-world-count>3604 字</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>8分钟</span></span>
-<span id=/post/5221-2%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BF%87%E7%A8%8B/ class="leancloud_visitors post-visitor" data-flag-title=随机过程（下）-连续时间过程><i class="fa fa-binoculars fa-fw"></i>
+<span class=leancloud-view-count>8分钟</span>
+</span>
+<span id=/post/5221-2%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BF%87%E7%A8%8B/ class="leancloud_visitors post-visitor" data-flag-title=随机过程（下）-连续时间过程>
+<i class="fa fa-binoculars fa-fw"></i>
 <span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>泊松过程、生灭过程、更新过程、布朗运动。</p><h2 id=泊松过程>泊松过程</h2><p>大名鼎鼎的泊松过程定义为满足下式的随机过程：
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>泊松过程、生灭过程、更新过程、布朗运动。</p>
+<h2 id=泊松过程>泊松过程</h2>
+<p>大名鼎鼎的泊松过程定义为满足下式的随机过程：
 $$
 \begin{gather}
 \lim_{h\to 0} P_{k,k+1}(h)=\lambda h,\\
@@ -26,14 +141,36 @@ $$
 X(0)=0.
 \end{gather}
 $$
-其中 $\lambda>0$ 为参数，称为强度。</p><p>性质：</p><ul><li><p>$T_k\sim Exp(\lambda)$，$T_k$ 之间独立</p></li><li><p>$S_n\sim \Gamma(n,\lambda)$，</p></li><li><p>$X(t+u)-X(u)\sim Pois(\lambda t)$，</p></li><li><p>在 $X(t)=n$ 的条件下，$S_1,\cdots,S_n$ 联合分布是均匀分布的次序统计量，具体地，设 $0\le s_1\le\cdots\le s_n\le t$，
+其中 $\lambda>0$ 为参数，称为强度。</p>
+<p>性质：</p>
+<ul>
+<li>
+<p>$T_k\sim Exp(\lambda)$，$T_k$ 之间独立</p>
+</li>
+<li>
+<p>$S_n\sim \Gamma(n,\lambda)$，</p>
+</li>
+<li>
+<p>$X(t+u)-X(u)\sim Pois(\lambda t)$，</p>
+</li>
+<li>
+<p>在 $X(t)=n$ 的条件下，$S_1,\cdots,S_n$ 联合分布是均匀分布的次序统计量，具体地，设 $0\le s_1\le\cdots\le s_n\le t$，
 $$
 P(S_i\le s_i,i=1,\cdots,n|X(t)=n)=\frac{n!}{t^n}\int_{0}^{s_1}\cdots\int_{x_{n-1}}^{x_n}dx_n\cdots dx_1.
-$$</p></li></ul><p>这意味着已知某时段发生的事件个数时，事件发生的时间是均匀的。</p><p>泊松过程可以推广到两个分支：出生-死亡过程和更新过程，我们一一介绍。</p><h2 id=出生-死亡过程>出生-死亡过程</h2><p>我们仍然考虑平稳过程。时间连续，状态离散的马尔可夫过程满足
+$$</p>
+</li>
+</ul>
+<p>这意味着已知某时段发生的事件个数时，事件发生的时间是均匀的。</p>
+<p>泊松过程可以推广到两个分支：出生-死亡过程和更新过程，我们一一介绍。</p>
+<h2 id=出生-死亡过程>出生-死亡过程</h2>
+<p>我们仍然考虑平稳过程。时间连续，状态离散的马尔可夫过程满足
 $$
 P_{ij}(t)=P{X(t+u)=j|X(u)=i}.
 $$
-只要给出了这个式子，随机过程就定义好了。</p><p>我们先从特殊的过程开始，逐渐推广到一般的出生-死亡过程。我们用 $X(t)$ 表示 $t$ 时刻存活的数量，$T_k$ 表示第 $k$ 个事件和第 $k+1$ 个事件之间的等待时间，$S_k$ 表示第 $k$ 个事件发生时间。具体地，$T_0=0$, $T_k=\inf {t>T_{k-1}:X(t)\ne X(T_{k-1})}$，$S_k=\sum_{i=0}^{k-1}T_i$.</p><h3 id=纯出生过程>纯出生过程</h3><p>我们推广泊松过程，允许每个事件发生后强度发生变化（也就是“出生率”和“人口数”有关）。设 ${\lambda_k}>0$ 为参数，
+只要给出了这个式子，随机过程就定义好了。</p>
+<p>我们先从特殊的过程开始，逐渐推广到一般的出生-死亡过程。我们用 $X(t)$ 表示 $t$ 时刻存活的数量，$T_k$ 表示第 $k$ 个事件和第 $k+1$ 个事件之间的等待时间，$S_k$ 表示第 $k$ 个事件发生时间。具体地，$T_0=0$, $T_k=\inf {t>T_{k-1}:X(t)\ne X(T_{k-1})}$，$S_k=\sum_{i=0}^{k-1}T_i$.</p>
+<h3 id=纯出生过程>纯出生过程</h3>
+<p>我们推广泊松过程，允许每个事件发生后强度发生变化（也就是“出生率”和“人口数”有关）。设 ${\lambda_k}>0$ 为参数，
 $$
 \begin{gather}
 \lim_{h\to 0} P_{k,k+1}(h)=\lambda_k h,\\
@@ -47,19 +184,42 @@ $$
 于是可以得到 $S_n$ 的特征函数
 $$
 \varphi_n(t)=\prod_{k=0}^{n-1}\frac{\lambda_k}{\lambda_k-it}.
-$$</p><h4 id=xt-的分布>$X(t)$ 的分布</h4><p>我们来考虑计算 $P_n(t)=P(X(t)=n)$. 利用 $P_0(t+h)=P_0(t)P_0(h)=P_0(t)(1-\lambda_0 h+o(h))$，有
+$$</p>
+<h4 id=xt-的分布>$X(t)$ 的分布</h4>
+<p>我们来考虑计算 $P_n(t)=P(X(t)=n)$. 利用 $P_0(t+h)=P_0(t)P_0(h)=P_0(t)(1-\lambda_0 h+o(h))$，有
 $$
-P&rsquo;<em>0(t)=\lim</em>{h\to 0}\frac{P_0(t+h)-P_0(t)}{h}=\lambda_0P_0(t).
+P'<em>0(t)=\lim</em>{h\to 0}\frac{P_0(t+h)-P_0(t)}{h}=\lambda_0P_0(t).
 $$
 类似地，$P_n(t+h)=P_n(t)P_0(h)+P_{n-1}(t)P_1(h)=P_n(t)(1-\lambda_n h)+P_{n-1}(t)\lambda_{n-1}h+o(h)$, 所以
 $$
-P&rsquo;<em>n(t)=\lambda</em>{n-1}P_{n-1}(t)-\lambda_n P_n(t),\quad n\ge 1.
+P'<em>n(t)=\lambda</em>{n-1}P_{n-1}(t)-\lambda_n P_n(t),\quad n\ge 1.
 $$
-我们得到了齐次线性微分方程组，边界条件 $P_0(0)=1,P_{n}(0)=0,n\ge 1$. 就可以确定下来了。虽然有通用解法，但其实只有特殊情况我们才能写出显式表示，一般情况下只能得到 $P_0(t)=e^{-\lambda_0t}$.</p><blockquote><p>另一种常用的求分布方法是转化到 $S_n(t)$，我们将在 Yule 过程中用到并在附录介绍。</p></blockquote><h4 id=yule-过程>Yule 过程</h4><p>出生率和人口数成正比，也即 $\lambda_n=n\beta$，$\beta>0$ 为参数。特别地，我们需要假设 $X(0)=N$（否则就一直是0了）。</p><blockquote><p>如果你实在绕不明白，可以令 $Y(t)=X(t)-N$，这样 $Y(t)$ 就是满足 $Y(0)=0$ 的出生过程了。</p></blockquote><p>它的分布是
+我们得到了齐次线性微分方程组，边界条件 $P_0(0)=1,P_{n}(0)=0,n\ge 1$. 就可以确定下来了。虽然有通用解法，但其实只有特殊情况我们才能写出显式表示，一般情况下只能得到 $P_0(t)=e^{-\lambda_0t}$.</p>
+<blockquote>
+<p>另一种常用的求分布方法是转化到 $S_n(t)$，我们将在 Yule 过程中用到并在附录介绍。</p>
+</blockquote>
+<h4 id=yule-过程>Yule 过程</h4>
+<p>出生率和人口数成正比，也即 $\lambda_n=n\beta$，$\beta>0$ 为参数。特别地，我们需要假设 $X(0)=N$（否则就一直是0了）。</p>
+<blockquote>
+<p>如果你实在绕不明白，可以令 $Y(t)=X(t)-N$，这样 $Y(t)$ 就是满足 $Y(0)=0$ 的出生过程了。</p>
+</blockquote>
+<p>它的分布是
 $$
 P(X(n)=t)=\binom{n-1}{n-N}e^{-N\beta t}(1-e^{-\beta t})^{n-N},\quad n\ge N.
 $$
-我们在附录给出推导过程。</p><h3 id=出生-死亡过程-1>出生-死亡过程</h3><p>来来来，接着推广。现在寿命不是无限的了，还允许死亡。但死亡也要按照基本法：足够短的时间内只能有一个人生或死。这就是出生-死亡过程，其严格定义为同时满足以下几条的随机过程（$\lambda_i,\mu_i$ 为参数）：</p><ul><li>$\lim_{h\to0} P_{i,i+1}(h)=\lambda_ih$,</li><li>$\lim_{h\to0} P_{i,i-1}(h)=\mu_i h,\ i\ge1$,</li><li>$\lim_{h\to0} P_{i,i}(h)=(1-\lambda_i-\mu_i)h$,</li><li>$P_{ij}(0)=\delta_{ij}$,</li><li>$\mu_0=0,\lambda_0>0,\mu_i,\lambda_i>0,i=1,2,\cdots$.</li></ul><p>我们记初始状态 $P(X(0)=i)=q_i$. 根据 Markov 性，规定了初始状态参数，这个过程就确定了。</p><h4 id=xt-的分布-1>$X(t)$ 的分布</h4><p>我们可以定义类似于转移矩阵的东西，叫做 infinitesimal generator：
+我们在附录给出推导过程。</p>
+<h3 id=出生-死亡过程-1>出生-死亡过程</h3>
+<p>来来来，接着推广。现在寿命不是无限的了，还允许死亡。但死亡也要按照基本法：足够短的时间内只能有一个人生或死。这就是出生-死亡过程，其严格定义为同时满足以下几条的随机过程（$\lambda_i,\mu_i$ 为参数）：</p>
+<ul>
+<li>$\lim_{h\to0} P_{i,i+1}(h)=\lambda_ih$,</li>
+<li>$\lim_{h\to0} P_{i,i-1}(h)=\mu_i h,\ i\ge1$,</li>
+<li>$\lim_{h\to0} P_{i,i}(h)=(1-\lambda_i-\mu_i)h$,</li>
+<li>$P_{ij}(0)=\delta_{ij}$,</li>
+<li>$\mu_0=0,\lambda_0>0,\mu_i,\lambda_i>0,i=1,2,\cdots$.</li>
+</ul>
+<p>我们记初始状态 $P(X(0)=i)=q_i$. 根据 Markov 性，规定了初始状态参数，这个过程就确定了。</p>
+<h4 id=xt-的分布-1>$X(t)$ 的分布</h4>
+<p>我们可以定义类似于转移矩阵的东西，叫做 infinitesimal generator：
 $$
 A=\begin{pmatrix}
 -\lambda_0 & \lambda_0 & 0 & \cdots\\
@@ -71,11 +231,17 @@ $$
 若记 $P(h)=(P(X(h)=0),P(X(h)=1),\cdots)$，则有 $P(t+h)=P(t)(I+A)h+o(h)$，于是有齐次线性微分方程组：
 $$
 \begin{gather}
-P&rsquo;(t)=P(t)A,\\
+P'(t)=P(t)A,\\
 P(0)=(q_0,q_1,\cdots),
 \end{gather}
 $$
-解微分方程即可确定 $X(t)$ 的分布。</p><h4 id=等待时间-t_k>等待时间 $T_k$</h4><p>类似地，我们可以得到 $T_k\sim Exp(0,\lambda_k+\mu_k)$.</p><h2 id=更新过程>更新过程</h2><h3 id=定义>定义</h3><p>泊松过程我们让 $T_k$ 是指数分布。如果令 $T_k>0$ 独立同分布，就得到了更新过程。 $X(t)=\sharp{n:0\le S_n\le t}$. <strong>更新函数</strong>定义为 $M(t)=\mathrm EX(t)$. 这是更新过程中一个很重要的东西。</p><p>用 $F_n(x)$ 表示 $S_n$ 的分布函数，则满足卷积方程
+解微分方程即可确定 $X(t)$ 的分布。</p>
+<h4 id=等待时间-t_k>等待时间 $T_k$</h4>
+<p>类似地，我们可以得到 $T_k\sim Exp(0,\lambda_k+\mu_k)$.</p>
+<h2 id=更新过程>更新过程</h2>
+<h3 id=定义>定义</h3>
+<p>泊松过程我们让 $T_k$ 是指数分布。如果令 $T_k>0$ 独立同分布，就得到了更新过程。 $X(t)=\sharp{n:0\le S_n\le t}$. <strong>更新函数</strong>定义为 $M(t)=\mathrm EX(t)$. 这是更新过程中一个很重要的东西。</p>
+<p>用 $F_n(x)$ 表示 $S_n$ 的分布函数，则满足卷积方程
 $$
 F_n(x)=\int_0^x F_{n-1}(x-y)dF(y).
 $$
@@ -87,28 +253,63 @@ $$
 $$
 M(t)=\sum_{n=1}^\infty F_n(t).
 $$
-我们有三个比较关心的随机变量：</p><ul><li>剩余寿命（excess or residual lifetime）：$\gamma_t=S_{N(t)+1}-t$,</li><li>年龄（current life / age）：$\delta_t=t-S_{N(t)}$,</li><li>总寿命（total life）：$\beta_t=\gamma_t+\delta_t$.</li></ul><h3 id=更新方程与更新定理>更新方程与更新定理</h3><p>这里水很深，有一套专门的更新理论。我们就只介绍关键的定理。</p><p>首先可以证明 $M(t)&lt;\infty$，并且有结论
+我们有三个比较关心的随机变量：</p>
+<ul>
+<li>剩余寿命（excess or residual lifetime）：$\gamma_t=S_{N(t)+1}-t$,</li>
+<li>年龄（current life / age）：$\delta_t=t-S_{N(t)}$,</li>
+<li>总寿命（total life）：$\beta_t=\gamma_t+\delta_t$.</li>
+</ul>
+<h3 id=更新方程与更新定理>更新方程与更新定理</h3>
+<p>这里水很深，有一套专门的更新理论。我们就只介绍关键的定理。</p>
+<p>首先可以证明 $M(t)&lt;\infty$，并且有结论
 $$
 M(t)=F(t)+\int_0^t M(t-y)dF(y).
 $$
-我们可以定义更一般地更新方程。</p><p><strong>定义（更新方程，renewal equation）</strong> 设 $a(t)$ 和 $F(x)$ 已知，如下关于 $A(t)$ 的方程称为更新方程：
+我们可以定义更一般地更新方程。</p>
+<p><strong>定义（更新方程，renewal equation）</strong> 设 $a(t)$ 和 $F(x)$ 已知，如下关于 $A(t)$ 的方程称为更新方程：
 $$
 A(t)=a(t)+\int_0^t A(t-x)dF(x),\quad t\ge 0.
 $$
-更新过程的很多问题，最后都会得到一个这样的方程，所以研究它的解很重要。如下几个定理都是围绕更新方程的解展开的。</p><p><strong>定理</strong> 设 $a(t)$ 有界，则上述更新方程存在唯一的有限区间内有界的解
+更新过程的很多问题，最后都会得到一个这样的方程，所以研究它的解很重要。如下几个定理都是围绕更新方程的解展开的。</p>
+<p><strong>定理</strong> 设 $a(t)$ 有界，则上述更新方程存在唯一的有限区间内有界的解
 $$
 A(t)=a(t)+\int_0^t a(t-x)dM(x).
 $$
-其中 $M(x)=\sum_{n=1}^\infty F_n(x)$ 为更新函数。</p><p>下一个定理我们要做一些铺垫。</p><p><strong>定义（格点分布，arithmetic）</strong> 随机变量 $X$ 是 arithmetic 的，如果存在 $\lambda>0$ 使得 $\sum_{n\in\mathbb{Z}} P(X=nd)=1$. 此时称 $F$ is arithmetic with span $\lambda$.</p><blockquote><p>讲义上的定义较为复杂，但说的是一个意思：</p><p><strong>定义（point of increase）</strong> 设 $F$ 是分布函数。对 $a\in\mathbb{R}$，如果 $\forall\varepsilon>0$ 都有 $F(a+\varepsilon)-F(a-\varepsilon)>0$，则称 $a$ 点是 a point of increase.</p><p>这个定义推广了递增函数的定义，允许在该点崩坏掉。最典型的就是 $X=a$ 的分布函数，$a$ 就是 a point of increase.</p><p><strong>定义（arithmetic）</strong> 如果存在 $\lambda$ 使得分布函数 $F$ 在且只在 $0,\pm\lambda,\pm2\lambda,\cdots$ 上 point of increase，则称 $F$ 是 arithmetic 的。</p></blockquote><p><strong>定义（directly Riemann integrable）</strong> 设 $g:\mathbb{R}^+\to\mathbb{R}$，对 $\delta>0,n=1,2,\cdots$，设</p><p>$$
+其中 $M(x)=\sum_{n=1}^\infty F_n(x)$ 为更新函数。</p>
+<p>下一个定理我们要做一些铺垫。</p>
+<p><strong>定义（格点分布，arithmetic）</strong> 随机变量 $X$ 是 arithmetic 的，如果存在 $\lambda>0$ 使得 $\sum_{n\in\mathbb{Z}} P(X=nd)=1$. 此时称 $F$ is arithmetic with span $\lambda$.</p>
+<blockquote>
+<p>讲义上的定义较为复杂，但说的是一个意思：</p>
+<p><strong>定义（point of increase）</strong> 设 $F$ 是分布函数。对 $a\in\mathbb{R}$，如果 $\forall\varepsilon>0$ 都有 $F(a+\varepsilon)-F(a-\varepsilon)>0$，则称 $a$ 点是 a point of increase.</p>
+<p>这个定义推广了递增函数的定义，允许在该点崩坏掉。最典型的就是 $X=a$ 的分布函数，$a$ 就是 a point of increase.</p>
+<p><strong>定义（arithmetic）</strong> 如果存在 $\lambda$ 使得分布函数 $F$ 在且只在 $0,\pm\lambda,\pm2\lambda,\cdots$ 上 point of increase，则称 $F$ 是 arithmetic 的。</p>
+</blockquote>
+<p><strong>定义（directly Riemann integrable）</strong> 设 $g:\mathbb{R}^+\to\mathbb{R}$，对 $\delta>0,n=1,2,\cdots$，设</p>
+<p>$$
 \begin{align}
 &\underline{m}_n=\inf{ g(t):(n-1)\delta\le t\le n\delta},\\
 &\overline{m}<em>n=\sup{ g(t):(n-1)\delta\le t\le n\delta},\\
 &\underline\sigma(\delta)=\delta\sum</em>{n=1}^\infty \underline{m}<em>n,\quad \overline\sigma(\delta)=\delta\sum</em>{n=1}^\infty \overline{m}_n.
 \end{align}
-$$</p><blockquote><p>这个公式我怎么编辑它都显示不出，本地明明没问题，我弃疗了……自己在脑中编译一下吧</p></blockquote><p>若 $\underline\sigma(\delta)$ 和 $\overline\sigma(\delta)$ 对任意的 $\delta>0$ 绝对收敛，且 $\lim_{\delta\to0}\left(\overline\sigma(\delta)-\underline\sigma(\delta)\right)=0$，则称 $g$ directly Riemann integrable.</p><blockquote><p>注：</p><ol><li>讲义的定义有瑕疵，应该用 $\inf$ 而不是 $\min$，除非给 $g$ 加别的条件才能保证最大值最小值存在。</li><li>这是比黎曼可积更强的条件，因为它要求上和和下和对任意的 $\delta$ 都收敛，而不只是 $\delta\to 0$ 的行为。</li></ol></blockquote><p><strong>定理（Basic renewal theorem）</strong> 设 $F$ 是正随机变量的分布函数，期望为 $\mu$（有限或无限）. 设函数 $a(t),t\ge0$ 是 directly Riemann integrable 的。考虑以下更新方程：
+$$</p>
+<blockquote>
+<p>这个公式我怎么编辑它都显示不出，本地明明没问题，我弃疗了……自己在脑中编译一下吧</p>
+</blockquote>
+<p>若 $\underline\sigma(\delta)$ 和 $\overline\sigma(\delta)$ 对任意的 $\delta>0$ 绝对收敛，且 $\lim_{\delta\to0}\left(\overline\sigma(\delta)-\underline\sigma(\delta)\right)=0$，则称 $g$ directly Riemann integrable.</p>
+<blockquote>
+<p>注：</p>
+<ol>
+<li>讲义的定义有瑕疵，应该用 $\inf$ 而不是 $\min$，除非给 $g$ 加别的条件才能保证最大值最小值存在。</li>
+<li>这是比黎曼可积更强的条件，因为它要求上和和下和对任意的 $\delta$ 都收敛，而不只是 $\delta\to 0$ 的行为。</li>
+</ol>
+</blockquote>
+<p><strong>定理（Basic renewal theorem）</strong> 设 $F$ 是正随机变量的分布函数，期望为 $\mu$（有限或无限）. 设函数 $a(t),t\ge0$ 是 directly Riemann integrable 的。考虑以下更新方程：
 $$
 A(t)=a(t)+\int_0^t A(t-x)dF(x),\quad t\ge 0.
-$$</p><ul><li><p>若 $F$ 不是 arithmetic 的，则
+$$</p>
+<ul>
+<li>
+<p>若 $F$ 不是 arithmetic 的，则
 $$
 \lim_{t\to\infty} A(t)=\left{
 \begin{align}
@@ -116,7 +317,10 @@ $$
 &0,&\text{若 }\mu=\infty.
 \end{align}
 \right.
-$$</p></li><li><p>若 $F$ is arithmetic with span $\lambda$，则 $\forall 0\le c\le \lambda$，
+$$</p>
+</li>
+<li>
+<p>若 $F$ is arithmetic with span $\lambda$，则 $\forall 0\le c\le \lambda$，
 $$
 \lim_{n\to\infty} A(c+n\lambda)=\left{
 \begin{align}
@@ -124,25 +328,55 @@ $$
 &0,&\text{若 }\mu=\infty.
 \end{align}
 \right.
-$$</p></li><li></li></ul><p>设 $h>0$，如果令 $a(y)=I(0\le y&lt; h)$，稍加分析可以得到下面有关更新过程的结论。</p><p><strong>定理</strong> 设 $F$ 是正随机变量的分布函数，期望为 $\mu$，设 $M(t)=\sum_{k=1}^\infty F_k(t)$，$h>0$，则</p><ul><li><p>若 $F$ 不是 arithmetic 的，则
+$$</p>
+</li>
+<li></li>
+</ul>
+<p>设 $h>0$，如果令 $a(y)=I(0\le y&lt; h)$，稍加分析可以得到下面有关更新过程的结论。</p>
+<p><strong>定理</strong> 设 $F$ 是正随机变量的分布函数，期望为 $\mu$，设 $M(t)=\sum_{k=1}^\infty F_k(t)$，$h>0$，则</p>
+<ul>
+<li>
+<p>若 $F$ 不是 arithmetic 的，则
 $$
 \lim_{t\to\infty}(M(t+h)-M(t))=\frac{h}{\mu}.
-$$</p></li><li><p>若 $F$ is arithmetic with span $\lambda$，当 $h$ 是 $\lambda$ 的整数倍时上述结论成立。</p></li></ul><p>上述定理可以推出如下初等更新定理。</p><p><strong>定理（初等更新定理，Elementary renewal theorem）</strong> 令 ${X_i}$ 是更新过程，$\mu=\mathrm EX_1&lt;\infty$，则
+$$</p>
+</li>
+<li>
+<p>若 $F$ is arithmetic with span $\lambda$，当 $h$ 是 $\lambda$ 的整数倍时上述结论成立。</p>
+</li>
+</ul>
+<p>上述定理可以推出如下初等更新定理。</p>
+<p><strong>定理（初等更新定理，Elementary renewal theorem）</strong> 令 ${X_i}$ 是更新过程，$\mu=\mathrm EX_1&lt;\infty$，则
 $$
 \lim_{t\to\infty}\frac{1}{t}M(t)=\frac{1}{\mu}.
 $$
-它表明更新函数增长速度恰好是时间间隔的倒数，非常直观。</p><h2 id=布朗运动>布朗运动</h2><p>考虑时间连续、状态连续的马尔可夫过程。记 $p(x,t|x_0)$ 为条件分布 $X(t+t_0)|X(t_0)=x_0$ 的概率密度函数。只要确定了 $X(0)$ 的分布和 $p(x,t|x_0)$，这个马尔可夫过程就唯一确定了。</p><p>一维布朗运动的定义是：</p><ul><li>$X(t+s)-X(s)\sim N(0,\sigma^2 t)$（通常令 $\sigma^2=1$）,</li><li>$\forall t_1&lt;t_2&lt;t_3&lt;t_4$, $X(t_4)-X(t_3)$ 和 $X(t_2)-X(t_1)$ 独立,</li><li>$X(0)=0$. 轨道函数 $X(t)$ 在 $t=0$ 处连续。</li></ul><p>显然其转移概率是
+它表明更新函数增长速度恰好是时间间隔的倒数，非常直观。</p>
+<h2 id=布朗运动>布朗运动</h2>
+<p>考虑时间连续、状态连续的马尔可夫过程。记 $p(x,t|x_0)$ 为条件分布 $X(t+t_0)|X(t_0)=x_0$ 的概率密度函数。只要确定了 $X(0)$ 的分布和 $p(x,t|x_0)$，这个马尔可夫过程就唯一确定了。</p>
+<p>一维布朗运动的定义是：</p>
+<ul>
+<li>$X(t+s)-X(s)\sim N(0,\sigma^2 t)$（通常令 $\sigma^2=1$）,</li>
+<li>$\forall t_1&lt;t_2&lt;t_3&lt;t_4$, $X(t_4)-X(t_3)$ 和 $X(t_2)-X(t_1)$ 独立,</li>
+<li>$X(0)=0$. 轨道函数 $X(t)$ 在 $t=0$ 处连续。</li>
+</ul>
+<p>显然其转移概率是
 $$
 p(x,t|x_0)=\frac{1}{\sqrt{2\pi t}\sigma}e^{-(x-x_0)^2/(2\sigma^2 t)}.
 $$
-<strong>定理</strong> 对 $t_1&lt;t&lt;t_2$，给定 $X(t_1)=A,X(t_2)=B$ 时 $X(t)$ 的条件分布服从 $N\left(A+\dfrac{B-A}{t_2-t_1},\dfrac{(t_2-t)(t-t_1)}{t_2-t_1}\right)$. 证明略。</p><p><strong>首达时间</strong> $T_a$ 定义为 $X(0)=0$ 时第一次到达 $a$ 的时间。我们有结论
+<strong>定理</strong> 对 $t_1&lt;t&lt;t_2$，给定 $X(t_1)=A,X(t_2)=B$ 时 $X(t)$ 的条件分布服从 $N\left(A+\dfrac{B-A}{t_2-t_1},\dfrac{(t_2-t)(t-t_1)}{t_2-t_1}\right)$. 证明略。</p>
+<p><strong>首达时间</strong> $T_a$ 定义为 $X(0)=0$ 时第一次到达 $a$ 的时间。我们有结论
 $$
 f_{T_a}(t)=\frac{a}{\sqrt{2\pi}}t^{-3/2}e^{-a^2/(2t)}.
 $$
-其推导见附录。利用此结论，我们可以得到下面的定理。</p><p>**定理 ** 轨道 $X(t)$ 在 $(t_0,t_1)$ 内有至少一个 0 的概率是
+其推导见附录。利用此结论，我们可以得到下面的定理。</p>
+<p>**定理 ** 轨道 $X(t)$ 在 $(t_0,t_1)$ 内有至少一个 0 的概率是
 $$
 \alpha=\frac{2}{\pi}\arccos\sqrt{\frac{t_0}{t_1}}.
-$$</p><h2 id=附录>附录</h2><h3 id=yule-过程求-pxtn>Yule 过程求 $P(X(t)=n)$</h3><p>讲义通过解微分方程求的，但那个微分方程按照一般流程计算极其复杂，多少需要一点目测猜解的功力。我们这里给出基于 $S_n$ 密度函数的推导，大力出奇迹即可。</p><p>令 $Y(t)=X(t)-N$，则 $Y(t)$ 为纯出生过程，$\lambda_k=(N+k)\beta$. 我们先利用特征函数来求 $S_n$ 的密度函数 $f_{S_n}$，即
+$$</p>
+<h2 id=附录>附录</h2>
+<h3 id=yule-过程求-pxtn>Yule 过程求 $P(X(t)=n)$</h3>
+<p>讲义通过解微分方程求的，但那个微分方程按照一般流程计算极其复杂，多少需要一点目测猜解的功力。我们这里给出基于 $S_n$ 密度函数的推导，大力出奇迹即可。</p>
+<p>令 $Y(t)=X(t)-N$，则 $Y(t)$ 为纯出生过程，$\lambda_k=(N+k)\beta$. 我们先利用特征函数来求 $S_n$ 的密度函数 $f_{S_n}$，即
 $$
 \begin{align}
 f_{S_n}(x)&=\frac{1}{2\pi}\int_{-\infty}^\infty e^{-itx}\prod_{k=0}^{n-1}\frac{(N+k)\beta}{(N+k)\beta-it}dt.\\
@@ -161,7 +395,8 @@ $$
 \sum_{k=0}^{n-1}Res(g,t_k)&=i\beta\frac{(N+n-1)!}{(N-1)!(n-1)!}e^{-N\beta x}\sum_{k=0}^{n-1}(-1)^k\binom{n-1}{k}e^{-k\beta x}\\
 &=i\beta n\binom{N+n-1}{N-1}e^{-N\beta x}(1-e^{-\beta x})^{n-1}.
 \end{align}
-$$</p><p>设路径 $L_1$ 为沿实轴 $-r$ 到 $r$，$L_2$ 为下半圆 $re^{i\theta},\pi\le\theta\le 2\pi$. 当 $r$ 充分大时，利用留数定理，
+$$</p>
+<p>设路径 $L_1$ 为沿实轴 $-r$ 到 $r$，$L_2$ 为下半圆 $re^{i\theta},\pi\le\theta\le 2\pi$. 当 $r$ 充分大时，利用留数定理，
 $$
 \begin{align}
 \int_{-L_1+L_2}g(z)dz&=2\pi i\sum_{k=0}^{n-1} Res(g,t_k).\\
@@ -195,7 +430,12 @@ $$
 终于，
 $$
 P(X(t)=n)=P(Y(t)=n-N)=\binom{n-1}{N-1}e^{-N\beta t}(1-e^{-\beta t})^{n-N}.
-$$</p><blockquote><p>所以说，本科的基础课都好好学，早晚会用上的…… 不说了，我接着复习复分析去了……</p></blockquote><h3 id=布朗运动首达时间>布朗运动首达时间</h3><p>感觉 lecture notes 写的不是很清楚。首先有
+$$</p>
+<blockquote>
+<p>所以说，本科的基础课都好好学，早晚会用上的…… 不说了，我接着复习复分析去了……</p>
+</blockquote>
+<h3 id=布朗运动首达时间>布朗运动首达时间</h3>
+<p>感觉 lecture notes 写的不是很清楚。首先有
 $$
 P(T_a\le t)=P(\max_{0\le u\le t} X(u)\ge a).
 $$
@@ -208,45 +448,203 @@ $$
 \end{align}
 \right.
 $$
-如果 $X(t)>a$，则 $\tilde X(t)&lt;a$，反之亦然，所以 $P(\max_{0\le u\le t} X(u)\ge a)=2P(X(t)> a)$. 然后就好算了。</p></div><footer class=post-footer><div class=post-tags><a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a></div><div class=addthis_inline_share_toolbox></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/%E7%AC%94%E8%AE%B0%E5%AF%BC%E8%88%AA/ rel=next title=2021秋季学期课程笔记导航><i class="fa fa-chevron-left"></i> 2021秋季学期课程笔记导航</a></div><div class="post-nav-prev post-nav-item"><a href=/post/5221-1markov_chain/ rel=prev title=随机过程（上）-马尔可夫链>随机过程（上）-马尔可夫链
-<i class="fa fa-chevron-right"></i></a></div></div><div id=ucomments></div></footer></article></section></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+如果 $X(t)>a$，则 $\tilde X(t)&lt;a$，反之亦然，所以 $P(\max_{0\le u\le t} X(u)\ge a)=2P(X(t)> a)$. 然后就好算了。</p>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+<a href=/post/%E7%AC%94%E8%AE%B0%E5%AF%BC%E8%88%AA/ rel=next title=2021秋季学期课程笔记导航>
+<i class="fa fa-chevron-left"></i> 2021秋季学期课程笔记导航
+</a>
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=/post/5221-1markov_chain/ rel=prev title=随机过程（上）-马尔可夫链>
+随机过程（上）-马尔可夫链
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=ucomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
+<div class=sidebar-toggle>
+<div class=sidebar-toggle-line-wrap>
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
 <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-<span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><section class="site-overview sidebar-panel sidebar-panel-active"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人><p class=site-author-name itemprop=name>精神病人</p><p class="site-description motion-element" itemprop=description>精神病人欢乐多!</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href=/post/><span class=site-state-item-count>40</span>
-<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>11</span>
-<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>11</span>
-<span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/jcq15/ target=_blank title=GitHub><i class="fa fa-fw fa-github"></i>
-GitHub</a></span></div><div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline"><div class=tagcloud-of-blogroll-title><i class="fa fa-fw fa-tags"></i>
-标签云</div><ul class=tagcloud-of-blogroll-list><li class=tagcloud-of-blogroll-item><a href=/tags/%E5%AD%A6%E4%B9%A0>学习
-<sup>15</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
-<sup>6</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%8A%80%E6%9C%AF>技术
-<sup>5</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B8%B8%E6%88%8F>游戏
-<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%A7%91%E6%99%AE>科普
-<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%B4%E6%B4%BB>整活
-<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9B%B4%E6%96%B0>更新
-<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
-<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%A2%E6%83%B3>敢想
-<sup>1</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B2%99%E9%9B%95>沙雕
-<sup>1</sup></a></li></ul></div></section></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright><span class=copyright-year>&copy; 2010 - 2023</span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id=sidebar class=sidebar>
+<div class=sidebar-inner>
+<section class="site-overview sidebar-panel sidebar-panel-active">
+<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
+<img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人>
+<p class=site-author-name itemprop=name>精神病人</p>
+<p class="site-description motion-element" itemprop=description>
+精神病人欢乐多!
+</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href=/post/>
+<span class=site-state-item-count>41</span>
+<span class=site-state-item-name>日志</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href=/categories/>
+<span class=site-state-item-count>11</span>
+<span class=site-state-item-name>分类</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href=/tags/>
+<span class=site-state-item-count>11</span>
+<span class=site-state-item-name>标签</span>
+</a>
+</div>
+</nav>
+<div class="links-of-author motion-element">
+<span class=links-of-author-item>
+<a href=https://github.com/jcq15/ target=_blank title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+GitHub
+</a>
+</span>
+</div>
+<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
+<div class=tagcloud-of-blogroll-title>
+<i class="fa fa-fw fa-tags"></i>
+标签云
+</div>
+<ul class=tagcloud-of-blogroll-list>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E5%AD%A6%E4%B9%A0>学习
+<sup>15</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
+<sup>6</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%8A%80%E6%9C%AF>技术
+<sup>5</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%9B%B4%E6%96%B0>更新
+<sup>3</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%B8%B8%E6%88%8F>游戏
+<sup>3</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E7%A7%91%E6%99%AE>科普
+<sup>3</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%95%B4%E6%B4%BB>整活
+<sup>2</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
+<sup>2</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%95%A2%E6%83%B3>敢想
+<sup>1</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%B2%99%E9%9B%95>沙雕
+<sup>1</sup>
+</a>
+</li>
+</ul>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=copyright>
+<span class=copyright-year>
+&copy; 2010 - 2023
+</span>
 <span class=with-love><i class="fa fa-heart"></i></span>
-<span class=copyright-author>沙雕园</span></div><div class=powered-info><span class=powered-by>Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.101.0</a></span>
+<span class=copyright-author>沙雕园</span>
+</div>
+<div class=powered-info>
+<span class=powered-by>
+Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.92.2</a>
+</span>
 <span class=separator-line>/</span>
-<span class=theme-info>Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank>NexT</a></span></div><div class=vistor-info><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<span class=site-uv><i class="fa fa-user"></i>
-<span class=busuanzi-value id=busuanzi_value_site_uv></span></span>
+<span class=theme-info>
+Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
+</a>
+</span>
+</div>
+<div class=vistor-info>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv>
+<i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span>
+</span>
 <span class=separator-line>/</span>
-<span class=site-pv><i class="fa fa-eye"></i>
-<span class=busuanzi-value id=busuanzi_value_site_pv></span></span></div><div class=license-info><span class=storage-info>Storage by
-<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a></span>
+<span class=site-pv>
+<i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span>
+</span>
+</div>
+<div class=license-info>
+<span class=storage-info>
+Storage by
+<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a>
+</span>
 <span class=separator-line>/</span>
-<span class=license-num><a href target=_blank></a></span></div></div></footer><div class=back-to-top><i class="fa fa-arrow-up"></i>
-<span id=scrollpercent><span>0</span>%</span></div></div><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<span class=license-num>
+<a href target=_blank></a>
+</span>
+</div>
+</div>
+</footer>
+<div class=back-to-top>
+<i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span>
+</div>
+</div>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
 <script type=text/javascript src=/js/search.js></script>
 <script type=text/javascript src=/js/affix.js></script>
 <script type=text/javascript src=/js/scrollspy.js></script>
-<script type=text/javascript>function detectIE(){var e=window.navigator.userAgent,t=e.indexOf("MSIE "),n=e.indexOf("Trident/"),s=e.indexOf("Edge/");return t>0||n>0||s>0?-1:1}function getCntViewHeight(){var t=$("#content").height(),e=$(window).height(),n=t>e?t-e:$(document).height()-e;return n}function getScrollbarWidth(){var e=$("<div />").addClass("scrollbar-measure").prependTo("body"),t=e[0],n=t.offsetWidth-t.clientWidth;return e.remove(),n}function registerBackTop(){var t=50,e=$(".back-to-top");$(window).on("scroll",function(){e.toggleClass("back-to-top-on",window.pageYOffset>t);var s=$(window).scrollTop(),o=getCntViewHeight(),i=s/o,n=Math.round(i*100),a=n>100?100:n;$("#scrollpercent>span").html(a)}),e.on("click",function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var e=".post-toc",s=$(e),t=".active-current";s.on("activate.bs.scrollspy",function(){var t=$(e+" .active").last();n(),t.addClass("active-current")}).on("clear.bs.scrollspy",n),$("body").scrollspy({target:e});function n(){$(e+" "+t).removeClass(t.substring(1))}}function initAffix(){var e=$(".header-inner").height(),t=parseInt($(".main").css("padding-bottom"),10),n=e+10;$(".sidebar-inner").affix({offset:{top:n,bottom:t}}),$(document).on("affixed.bs.affix",function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){$(window).on("resize",function(){e&&clearTimeout(e),e=setTimeout(function(){var e=document.body.clientHeight-100;updateTOCHeight(e)},0)}),updateTOCHeight(document.body.clientHeight-100);var e,t=getScrollbarWidth();$(".post-toc").css("width","calc(100% + "+t+"px)")}function updateTOCHeight(e){e=e||"auto",$(".post-toc").css("max-height",e)}$(function(){var e,t,n,s,o=$(".header-inner").height()+10;$("#sidebar").css({"margin-top":o}).show(),t=parseInt($("#sidebar").css("margin-top")),n=parseInt($(".sidebar-inner").css("height")),e=t+n,s=$(".content-wrap").height(),s<e&&$(".content-wrap").css("min-height",e),$(".site-nav-toggle").on("click",function(){var e=$(".site-nav"),o=$(".toggle"),t="site-nav-on",i="toggle-close",n=e.hasClass(t),a=n?"slideUp":"slideDown",s=n?"removeClass":"addClass";e.stop()[a]("normal",function(){e[s](t),o[s](i)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$(".sidebar-nav-toc").click(function(){$(this).addClass("sidebar-nav-active"),$(this).next().removeClass("sidebar-nav-active"),$("."+$(this).next().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)}),$(".sidebar-nav-overview").click(function(){$(this).addClass("sidebar-nav-active"),$(this).prev().removeClass("sidebar-nav-active"),$("."+$(this).prev().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)})})</script><script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
-<script type=text/javascript>$(function(){$(".post-body").viewer()})</script><script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
-<script type=text/javascript>function showTime(e){var n=new AV.Query(e),t=[],s=$(".leancloud_visitors");s.each(function(){t.push($(this).attr("id").trim())}),n.containedIn("url",t),n.find().then(e=>{var n,o,i,r,c,l,a=".leancloud-visitors-count";if(e.length==0){s.find(a).text(0);return}for(n=0;n<e.length;n++)r=e[n],o=r.get("url"),l=r.get("time"),i=document.getElementById(o),$(i).find(a).text(l);for(n=0;n<t.length;n++)o=t[n],i=document.getElementById(o),c=$(i).find(a),c.text()==""&&c.text(0)},e=>{console.log("Query vistors failed: "+e)})}function addCount(e){var n=$(".leancloud_visitors"),t=n.attr("id").trim(),o=n.attr("data-flag-title").trim(),s=new AV.Query("Counter");s.equalTo("url",t),s.find().then(n=>{if(n.length>0){var s,i,a=n[0];a.increment("time",1),a.save(null,{query:new AV.Query("Counter").equalTo("url",t),fetchWhenSave:!0}).then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(e.get("time"))},e=>{console.log("Update vistor failed: "+e)})}else i=new AV.ACL,i.setPublicReadAccess(!0),i.setPublicWriteAccess(!0),s=new e,s.set("title",o),s.set("url",t),s.set("time",1),s.setACL(i),s.save().then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(s.get("time"))},e=>{console.log("Save new vistor failed: "+e)})})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const e=AV.Object.extend("Counter");$(".leancloud_visitors").length==1?addCount(e):$(".post-title-link").length>1&&showTime(e)})</script><script type=text/javascript>(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.setAttribute("issue-term","title"),e.setAttribute("theme","github-light"),e.setAttribute("repo","jcq15/blog"),e.crossorigin="anonymous",e.src="https://utteranc.es/client.js",document.getElementById("ucomments").appendChild(e)})()</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
-<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
+<script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
+<script type=text/javascript>function showTime(d){var b=new AV.Query(d),a=[],c=$(".leancloud_visitors");c.each(function(){a.push($(this).attr("id").trim())}),b.containedIn('url',a),b.find().then(d=>{var e='.leancloud-visitors-count',b,h,f,j,g,i;if(d.length==0){c.find(e).text(0);return}for(b=0;b<d.length;b++)h=d[b],f=h.get('url'),j=h.get('time'),g=document.getElementById(f),$(g).find(e).text(j);for(b=0;b<a.length;b++)f=a[b],g=document.getElementById(f),i=$(g).find(e),i.text()==''&&i.text(0)},a=>{console.log('Query vistors failed: '+a)})}function addCount(d){var b=$(".leancloud_visitors"),a=b.attr('id').trim(),e=b.attr('data-flag-title').trim(),c=new AV.Query('Counter');c.equalTo("url",a),c.find().then(g=>{var f,c,b;g.length>0?(f=g[0],f.increment('time',1),f.save(null,{query:new AV.Query('Counter').equalTo('url',a),fetchWhenSave:!0}).then(b=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log('Update vistor failed: '+a)})):(c=new AV.ACL,c.setPublicReadAccess(!0),c.setPublicWriteAccess(!0),b=new d,b.set("title",e),b.set("url",a),b.set("time",1),b.setACL(c),b.save().then(d=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log("Save new vistor failed: "+a)}))})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const a=AV.Object.extend("Counter");$('.leancloud_visitors').length==1?addCount(a):$('.post-title-link').length>1&&showTime(a)})</script>
+<script type=text/javascript>(function(){var a=document.createElement('script');a.type='text/javascript',a.async=!0,a.setAttribute('issue-term',"title"),a.setAttribute('theme',"github-light"),a.setAttribute('repo',"jcq15/blog"),a.crossorigin='anonymous',a.src='https://utteranc.es/client.js',document.getElementById('ucomments').appendChild(a)})()</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
 <script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
-<script>(function(){var t,e=document.createElement("script"),n=window.location.protocol.split(":")[0];n==="https"?e.src="https://zz.bdstatic.com/linksubmit/push.js":e.src="http://push.zhanzhang.baidu.com/push.js",t=document.getElementsByTagName("script")[0],t.parentNode.insertBefore(e,t)})()</script></body></html>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</body>
+</html>

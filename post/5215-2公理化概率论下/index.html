@@ -1,24 +1,159 @@
-<!doctype html><html lang=zh-cn dir=content/zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=content-security-policy content="upgrade-insecure-requests"><title>公理化概率论（下） - 沙雕园</title><meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享"><meta name=author content="精神病人"><meta property="og:title" content="公理化概率论（下）"><meta property="og:site_name" content="沙雕园"><meta property="og:image" content="/img/author.jpg"><meta name=title content="公理化概率论（下） - 沙雕园"><meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。"><link rel="shortcut icon" href=/img/favicon.ico><link rel=apple-touch-icon href=/img/apple-touch-icon.png><link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png><link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css><link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet><link href=/css/main.css rel=stylesheet type=text/css><link href=/css/syntax.css rel=stylesheet type=text/css></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-hans><div class="container one-collumn sidebar-position-left page-home"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle role=button style=opacity:1;top:0><span class=toggle-line></span>
+<!doctype html><html lang=zh-cn dir=content/zh-cn>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
+<title> 公理化概率论（下） - 沙雕园 </title>
+<meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享">
+<meta name=author content="精神病人">
+<meta property="og:title" content="公理化概率论（下）">
+<meta property="og:site_name" content="沙雕园">
+<meta property="og:image" content="/img/author.jpg">
+<meta name=title content="公理化概率论（下） - 沙雕园">
+<meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。">
+<link rel="shortcut icon" href=/img/favicon.ico>
+<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
+<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
+<link href=//unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=//unpkg.com/imageviewer@1.1.0/dist/viewer.min.css rel=stylesheet>
+<link href=/css/main.css rel=stylesheet type=text/css>
+<link href=/css/syntax.css rel=stylesheet type=text/css>
+</head>
+<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
+<div class="container one-collumn sidebar-position-left page-home">
+<div class=headband></div>
+<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
+<div class=header-inner> <div class=site-brand-container>
+<div class=site-nav-toggle>
+<div class=toggle role=button style=opacity:1;top:0>
 <span class=toggle-line></span>
-<span class=toggle-line></span></div></div><div class=site-meta><div class=custom-logo-site-title><a href=/ class=brand rel=start><span class=logo-line-before><i></i></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+</div>
+</div>
+<div class=site-meta>
+<div class=custom-logo-site-title>
+<a href=/ class=brand rel=start>
+<span class=logo-line-before><i></i></span>
 <span class=site-title>沙雕园</span>
-<span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>沙雕使人进步。</p></div><div class=site-nav-right><div class="toggle popup-trigger" style=opacity:1;top:0><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul id=menu class=menu><li class=menu-item><a href=/ rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-active"><a href=/post rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class=menu-item><a href=/about.html rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于我</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class=site-search><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class=search-icon><i class="fa fa-search"></i></span>
-<span class=popup-btn-close><i class="fa fa-times-circle"></i></span><div class=local-search-input-wrapper><input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off></div></div><div id=local-search-result></div></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><section id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=/post/5215-2%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8B/ itemprop=url>公理化概率论（下）</a></h1><div class=post-meta><span class=post-pushdate><i class="fa fa-calendar-o fa-fw"></i>
+<span class=logo-line-after><i></i></span>
+</a>
+</div>
+<p class=site-subtitle>沙雕使人进步。</p>
+</div>
+<div class=site-nav-right>
+<div class="toggle popup-trigger" style=opacity:1;top:0>
+<i class="fa fa-search fa-fw fa-lg"></i>
+</div>
+</div>
+</div>
+<nav class=site-nav>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a href=/ rel=section>
+<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页
+</a>
+</li>
+<li class="menu-item menu-item-active">
+<a href=/post rel=section>
+<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档
+</a>
+</li>
+<li class=menu-item>
+<a href=/about.html rel=section>
+<i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我
+</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> 搜索</a>
+</li>
+</ul>
+<div class=site-search>
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class=search-icon><i class="fa fa-search"></i> </span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
+<div class=local-search-input-wrapper>
+<input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
+</div>
+</div>
+<div id=local-search-result></div>
+</div>
+</div>
+</nav> </div>
+</header>
+<main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=/post/5215-2%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8B/ itemprop=url>
+公理化概率论（下）
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-pushdate>
+<i class="fa fa-calendar-o fa-fw"></i>
 <span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-12-28">2021-12-28</time></span>
-<span class=post-category><i class="fa fa-folder-o fa-fw"></i>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-12-28">
+2021-12-28
+</time>
+</span>
+<span class=post-category>
+<i class="fa fa-folder-o fa-fw"></i>
 <span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing><a class=post-category-a href=/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0 itemprop=url rel=index><span itemprop=name>课程笔记</span></a>
-&nbsp;</span></span>
-<span class=post-wordcount><i class="fa fa-file-word-o fa-fw"></i>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a class=post-category-a href=/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0 itemprop=url rel=index>
+<span itemprop=name>课程笔记</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>3630 字</span></span>
-<span class=post-readtime><i class="fa fa-eye fa-fw"></i>
+<span class=leancloud-world-count>3630 字</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>8分钟</span></span>
-<span id=/post/5215-2%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8B/ class="leancloud_visitors post-visitor" data-flag-title=公理化概率论（下）><i class="fa fa-binoculars fa-fw"></i>
+<span class=leancloud-view-count>8分钟</span>
+</span>
+<span id=/post/5215-2%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8B/ class="leancloud_visitors post-visitor" data-flag-title=公理化概率论（下）>
+<i class="fa fa-binoculars fa-fw"></i>
 <span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>接着上一篇。</p><h2 id=条件分布>条件分布</h2><h3 id=条件期望>条件期望</h3><blockquote><p>书上的定义有些晦涩，这里我们直接用 R-N 导数作为条件期望的定义，然后把书上的定义当作性质。</p></blockquote><p><strong>定义</strong> 设 $X$ 是 $(\Omega,\mathcal{F},P)$ 上的<strong>非负</strong>随机变量且期望存在，$\mathcal{A}\subset\mathcal{F}$ 是一个 $\sigma$-代数。定义 $\mathcal{A}$ 上的测度 $\lambda(C)=\int_C XdP$，显然 $\lambda\ll P|<em>\mathcal{A}$. 称随机变量 $\dfrac{d\lambda}{dP|</em>\mathcal{A}}$ 为 $X$ 对 $\mathcal{A}$ 的<strong>条件期望</strong>，记作 $\mathrm E(X|\mathcal{A})$. 对一般的随机变量 $X$，$\mathrm E(X|\mathcal{A})$ 定义为 $\mathrm E(X_+|\mathcal{A})-\mathrm E(X_-|\mathcal{A})$.</p><blockquote><p>条件期望虽然记号和名字都是“期望”，但它是个随机变量。这是个很直观的定义：对 $\mathcal{A}$ 中的任意集合 $A$，$\mathrm E(X|\mathcal{A})$ 在 $A$ 上的取值就是 $X$ 在 $A$ 上进行平均，也就是忽略 $A$ 内部的差异，只考虑 $\mathcal{A}$ 中的集合之间的差异。这在数学上有“商”的感觉，正好符合 $X|\mathcal{A}$ 这种“商”的记号。</p></blockquote><p><strong>性质</strong> $\mathrm E(X|\mathcal{A})$ 是唯一的满足以下条件的随机变量：</p><ul><li>$\mathrm E(X|\mathcal{A})$ 是 $(\Omega,\mathcal{A})$ 上的可测函数，</li><li>$\int_C \mathrm E(X|\mathcal{A})dP=\int_C XdP,\ \forall C\in\mathcal{A}$.</li></ul><p><strong>定义</strong> <strong>条件概率</strong> $P(B|\mathcal{A})$ 定义为 $E(I_B|\mathcal{A})$.</p><p>特别地，若 $Y$ 也是随机变量，可将 $\mathrm E(X|\sigma(Y))$ 简记为 $\mathrm E(X|Y)$. 于是 $P(B|Y)=\mathrm E(I_B|Y)$.</p><p>下面我们考虑对 $Y=y$ 这样的事件定义条件概率。首先介绍一个引理，证明留做习题。</p><p><strong>引理</strong> 设 $Y:(\Omega,\mathcal{F})\to(\Lambda,\mathcal{G})$ 可测，$Z:\Omega\to\mathbb{R}^k$。则 $Z$ 是 $(\Omega,\sigma(Y))$ 上的可测函数，当且仅当存在可测函数 $h:(\Lambda,\mathcal{G})\to \mathbb{R}^k$ 满足 $Z=h\circ Y$.</p><p>于是我们有 $\mathrm E(X|Y)=h\circ Y$. 我们称 $h(y)$ 是给定 $Y=y$ 时 $X$ 的<strong>条件期望</strong>，记作 $\mathrm E(X|Y=y)$.</p><h3 id=条件分布-1>条件分布</h3><p>设 $X,Y$ 是随机变量，定义测度 $P_{X|Y}(\cdot|y)$ 满足 $P_{X|Y}(B|y)=P(X\in B|Y=y)$ a.s.. 它是个概率测度，称为<strong>条件分布</strong>，也记作 $P_{X|Y=y}$.</p><p>若联合分布 $f(x,y)$​ 存在，定义<strong>条件概率密度函数</strong>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>接着上一篇。</p>
+<h2 id=条件分布>条件分布</h2>
+<h3 id=条件期望>条件期望</h3>
+<blockquote>
+<p>书上的定义有些晦涩，这里我们直接用 R-N 导数作为条件期望的定义，然后把书上的定义当作性质。</p>
+</blockquote>
+<p><strong>定义</strong> 设 $X$ 是 $(\Omega,\mathcal{F},P)$ 上的<strong>非负</strong>随机变量且期望存在，$\mathcal{A}\subset\mathcal{F}$ 是一个 $\sigma$-代数。定义 $\mathcal{A}$ 上的测度 $\lambda(C)=\int_C XdP$，显然 $\lambda\ll P|<em>\mathcal{A}$. 称随机变量 $\dfrac{d\lambda}{dP|</em>\mathcal{A}}$ 为 $X$ 对 $\mathcal{A}$ 的<strong>条件期望</strong>，记作 $\mathrm E(X|\mathcal{A})$. 对一般的随机变量 $X$，$\mathrm E(X|\mathcal{A})$ 定义为 $\mathrm E(X_+|\mathcal{A})-\mathrm E(X_-|\mathcal{A})$.</p>
+<blockquote>
+<p>条件期望虽然记号和名字都是“期望”，但它是个随机变量。这是个很直观的定义：对 $\mathcal{A}$ 中的任意集合 $A$，$\mathrm E(X|\mathcal{A})$ 在 $A$ 上的取值就是 $X$ 在 $A$ 上进行平均，也就是忽略 $A$ 内部的差异，只考虑 $\mathcal{A}$ 中的集合之间的差异。这在数学上有“商”的感觉，正好符合 $X|\mathcal{A}$ 这种“商”的记号。</p>
+</blockquote>
+<p><strong>性质</strong> $\mathrm E(X|\mathcal{A})$ 是唯一的满足以下条件的随机变量：</p>
+<ul>
+<li>$\mathrm E(X|\mathcal{A})$ 是 $(\Omega,\mathcal{A})$ 上的可测函数，</li>
+<li>$\int_C \mathrm E(X|\mathcal{A})dP=\int_C XdP,\ \forall C\in\mathcal{A}$.</li>
+</ul>
+<p><strong>定义</strong> <strong>条件概率</strong> $P(B|\mathcal{A})$ 定义为 $E(I_B|\mathcal{A})$.</p>
+<p>特别地，若 $Y$ 也是随机变量，可将 $\mathrm E(X|\sigma(Y))$ 简记为 $\mathrm E(X|Y)$. 于是 $P(B|Y)=\mathrm E(I_B|Y)$.</p>
+<p>下面我们考虑对 $Y=y$ 这样的事件定义条件概率。首先介绍一个引理，证明留做习题。</p>
+<p><strong>引理</strong> 设 $Y:(\Omega,\mathcal{F})\to(\Lambda,\mathcal{G})$ 可测，$Z:\Omega\to\mathbb{R}^k$。则 $Z$ 是 $(\Omega,\sigma(Y))$ 上的可测函数，当且仅当存在可测函数 $h:(\Lambda,\mathcal{G})\to \mathbb{R}^k$ 满足 $Z=h\circ Y$.</p>
+<p>于是我们有 $\mathrm E(X|Y)=h\circ Y$. 我们称 $h(y)$ 是给定 $Y=y$ 时 $X$ 的<strong>条件期望</strong>，记作 $\mathrm E(X|Y=y)$.</p>
+<h3 id=条件分布-1>条件分布</h3>
+<p>设 $X,Y$ 是随机变量，定义测度 $P_{X|Y}(\cdot|y)$ 满足 $P_{X|Y}(B|y)=P(X\in B|Y=y)$ a.s.. 它是个概率测度，称为<strong>条件分布</strong>，也记作 $P_{X|Y=y}$.</p>
+<p>若联合分布 $f(x,y)$​ 存在，定义<strong>条件概率密度函数</strong>
 $$
 f_{X|Y}(x|y)=\frac{f(x,y)}{f_Y(y)}=\frac{f(x,y)}{\int f(x,y)dx}.
 $$
@@ -29,29 +164,65 @@ $$
 于是得到我们熟悉的形式
 $$
 \mathrm E(g(X,Y)|Y)=\int g(x,Y)f_{X|Y}(x|Y)dx.
-$$</p><h2 id=独立性>独立性</h2><p>设 $(\Omega,\mathcal{F},P)$ 为概率空间。</p><p><strong>定义（事件的独立性）</strong> 事件族 $\mathcal{C}\subset\mathcal{F}$ 独立，当且仅当对任意有限个不同的 $A_1,\cdots,A_n\in\mathcal{C}$,
+$$</p>
+<h2 id=独立性>独立性</h2>
+<p>设 $(\Omega,\mathcal{F},P)$ 为概率空间。</p>
+<p><strong>定义（事件的独立性）</strong> 事件族 $\mathcal{C}\subset\mathcal{F}$ 独立，当且仅当对任意有限个不同的 $A_1,\cdots,A_n\in\mathcal{C}$,
 $$
 P(A_1\cap\cdots\cap A_n)=P(A_1)\cdots P(A_n).
 $$
-<strong>定义（事件族的独立性）</strong> 事件族 $\mathcal{C_i}\subset \mathcal{F},i\in\mathcal{I}$ 独立，当且仅当事件 ${A_i\in\mathcal{C_i:}i\in\mathcal{I}}$ 独立。</p><p><strong>定义（随机变量的独立性）</strong> 随机变量 $X_1,\cdots,X_n$ 独立，当且仅当事件族 $\sigma(X_1),\cdots,\sigma(X_n)$ 独立。</p><p>同样，它和小学的定义一样。可以证明以下命题等价：</p><ul><li>随机变量 $X_1,\cdots,X_n$ 独立。</li><li>$\forall a_i,\ P(X_1\leq a_1,\cdots,X_n\leq a_n)=P(X_1\le a_1)\cdots P(X_n\le a_n)$.</li><li>（若联合分布存在）$f(x_1,\cdots,x_n)=f_1(x_1)\cdots f_n(x_n)$.</li></ul><p>独立性可以给出关于条件期望的更好的性质：</p><ul><li>若 $X,Y$ 独立，$\mathrm E(X|Y)=\mathrm EX$.</li><li>若 $(X,Y)$ 和 $Z$ 独立，$\mathrm E(X|(Y,Z))=\mathrm E(X|Y)$.</li></ul><h2 id=不等式>不等式</h2><p>这几个不等式是测度论中的名场面，我们用它来结束这一部分。我们将介绍测度论的形式，同时给出概率论中常用的形式。以下若无特殊说明，$(\Omega, \mathcal F,\mu)$ 是个测度空间，$f,g$ 是可测函数，$X,Y$ 是随机变量。</p><blockquote><p>下面的期望都可以换成条件期望。</p></blockquote><h3 id=cauchy-不等式>Cauchy 不等式</h3><p>对内积空间中的向量 $x$ 和 $y$，有
+<strong>定义（事件族的独立性）</strong> 事件族 $\mathcal{C_i}\subset \mathcal{F},i\in\mathcal{I}$ 独立，当且仅当事件 ${A_i\in\mathcal{C_i:}i\in\mathcal{I}}$ 独立。</p>
+<p><strong>定义（随机变量的独立性）</strong> 随机变量 $X_1,\cdots,X_n$ 独立，当且仅当事件族 $\sigma(X_1),\cdots,\sigma(X_n)$ 独立。</p>
+<p>同样，它和小学的定义一样。可以证明以下命题等价：</p>
+<ul>
+<li>随机变量 $X_1,\cdots,X_n$ 独立。</li>
+<li>$\forall a_i,\ P(X_1\leq a_1,\cdots,X_n\leq a_n)=P(X_1\le a_1)\cdots P(X_n\le a_n)$.</li>
+<li>（若联合分布存在）$f(x_1,\cdots,x_n)=f_1(x_1)\cdots f_n(x_n)$.</li>
+</ul>
+<p>独立性可以给出关于条件期望的更好的性质：</p>
+<ul>
+<li>若 $X,Y$ 独立，$\mathrm E(X|Y)=\mathrm EX$.</li>
+<li>若 $(X,Y)$ 和 $Z$ 独立，$\mathrm E(X|(Y,Z))=\mathrm E(X|Y)$.</li>
+</ul>
+<h2 id=不等式>不等式</h2>
+<p>这几个不等式是测度论中的名场面，我们用它来结束这一部分。我们将介绍测度论的形式，同时给出概率论中常用的形式。以下若无特殊说明，$(\Omega, \mathcal F,\mu)$ 是个测度空间，$f,g$ 是可测函数，$X,Y$ 是随机变量。</p>
+<blockquote>
+<p>下面的期望都可以换成条件期望。</p>
+</blockquote>
+<h3 id=cauchy-不等式>Cauchy 不等式</h3>
+<p>对内积空间中的向量 $x$ 和 $y$，有
 $$
 |\langle x,y\rangle|^2\leq \langle x,x\rangle \langle y,y\rangle.
-$$</p><p>等号成立当且仅当 $x=\lambda y$.</p><p>积分形式：
+$$</p>
+<p>等号成立当且仅当 $x=\lambda y$.</p>
+<p>积分形式：
 $$
 \left(\int_\Omega fgd\mu\right)^2\leq\int_\Omega fd\mu\int_\Omega gd\mu.
 $$
-概率论中常用的形式：</p><ul><li>期望</li></ul><p>$$
+概率论中常用的形式：</p>
+<ul>
+<li>期望</li>
+</ul>
+<p>$$
 \mathrm E (XY)^2\leq \mathrm E(X^2)\mathrm E (Y^2).
-$$</p><ul><li>协方差</li></ul><p>$$
+$$</p>
+<ul>
+<li>协方差</li>
+</ul>
+<p>$$
 \mathrm{Cov}(X,Y)^2\leq {\mathrm Var}(X){\mathrm Var}(Y).
-$$</p><h3 id=jensen-不等式>Jensen 不等式</h3><p>$\varphi$ 是凸函数，即 $\varphi(tx+(1-t)y)\leq t\varphi(x)+(1-t)\varphi(y)$，则
+$$</p>
+<h3 id=jensen-不等式>Jensen 不等式</h3>
+<p>$\varphi$ 是凸函数，即 $\varphi(tx+(1-t)y)\leq t\varphi(x)+(1-t)\varphi(y)$，则
 $$
 \varphi\left(\int_\Omega gd\mu\right)\leq \int_\Omega \varphi \circ gd\mu.
 $$
 积分换成期望就变成了概率论中的形式：
 $$
 \varphi(\mathrm E(X))\leq \mathrm E(\varphi(X)).
-$$</p><h3 id=chebyshev-不等式markov-不等式>Chebyshev 不等式（Markov 不等式）</h3><p>设 $(\Omega, \mathcal F,\mu)$ 是测度空间。若 $g$ 是非负非减函数，对任意实数 $t$ 有
+$$</p>
+<h3 id=chebyshev-不等式markov-不等式>Chebyshev 不等式（Markov 不等式）</h3>
+<p>设 $(\Omega, \mathcal F,\mu)$ 是测度空间。若 $g$ 是非负非减函数，对任意实数 $t$ 有
 $$
 g(t)\mu({x:f(x)\ge t})\leq \int_\Omega g\circ fd\mu.
 $$
@@ -63,24 +234,43 @@ $$
 $$
 P(|X-\mathrm E(X)|\ge t)\leq \frac{\mathrm{Var}(X)}{t^2},\ \forall t>0.
 $$
-若令 $t=k\sigma$，则可以理解为：与均值相差 $k$ 个标准差以上的值，数量不多于 $1/k^2$.</p><h3 id=holder-不等式>Holder 不等式</h3><p>设 $1\leq p,q\leq\infty$，并且 $\dfrac{1}{p}+\dfrac{1}{q}=1$，有结论 $|fg|<em>1\leq |f|<em>p |g|<em>q$，写成积分就是
+若令 $t=k\sigma$，则可以理解为：与均值相差 $k$ 个标准差以上的值，数量不多于 $1/k^2$.</p>
+<h3 id=holder-不等式>Holder 不等式</h3>
+<p>设 $1\leq p,q\leq\infty$，并且 $\dfrac{1}{p}+\dfrac{1}{q}=1$，有结论 $|fg|<em>1\leq |f|<em>p |g|<em>q$，写成积分就是
 $$
 \int</em>\Omega |fg|d\mu\leq \left(\int</em>\Omega |f|^pd\mu\right)^\frac{1}{p}\left(\int</em>\Omega |g|^qd\mu\right)^\frac{1}{q}.
-$$</p><blockquote><p>注：</p><ul><li>令 $p=q=2$，立刻可得 Cauchy 不等式。所以它可以看成 Cauchy 不等式的推广。</li><li>若 $p=\infty$，则 $|f|_\infty=\inf {a:\mu(f(x)>a)=0}$，称为本性上确界。</li><li>右端若出现 0 乘以 $\infty$，则视作 0.</li></ul></blockquote><p>积分换成期望，有
+$$</p>
+<blockquote>
+<p>注：</p>
+<ul>
+<li>令 $p=q=2$，立刻可得 Cauchy 不等式。所以它可以看成 Cauchy 不等式的推广。</li>
+<li>若 $p=\infty$，则 $|f|_\infty=\inf {a:\mu(f(x)>a)=0}$，称为本性上确界。</li>
+<li>右端若出现 0 乘以 $\infty$，则视作 0.</li>
+</ul>
+</blockquote>
+<p>积分换成期望，有
 $$
 \mathrm E\left(|XY|\right)\leq \left(E|X|^p\right)^\frac{1}{p}\left(E|Y|^q\right)^\frac{1}{q}.
-$$</p><h3 id=minkovski-不等式>Minkovski 不等式</h3><p>Minkovski 不等式是 $L^p$ 中的三角不等式。设 $1\leq p\leq\infty$，则 $|f+g|<em>p\leq |f|<em>p+|g|<em>p$. 写成积分：
+$$</p>
+<h3 id=minkovski-不等式>Minkovski 不等式</h3>
+<p>Minkovski 不等式是 $L^p$ 中的三角不等式。设 $1\leq p\leq\infty$，则 $|f+g|<em>p\leq |f|<em>p+|g|<em>p$. 写成积分：
 $$
 \left(\int</em>\Omega |f+g|^p d\mu\right)^\frac{1}{p}\le \left(\int</em>\Omega |f|^p d\mu\right)^\frac{1}{p}+\left(\int</em>\Omega |g|^p d\mu\right)^\frac{1}{p}.
 $$
 期望形式：
 $$
 \left(\mathrm E |X+Y|^p\right)^\frac{1}{p}\le \left(\mathrm E |X|^p\right)^\frac{1}{p} + \left(\mathrm E |Y|^p\right)^\frac{1}{p}.
-$$</p><h3 id=lyapunov-不等式>Lyapunov 不等式</h3><p>若 $0&lt;s&lt;t$，则
+$$</p>
+<h3 id=lyapunov-不等式>Lyapunov 不等式</h3>
+<p>若 $0&lt;s&lt;t$，则
 $$
 \left(\mathrm E|X|^s\right)^\frac{1}{s}\le \left(\mathrm E|X|^t\right)^\frac{1}{t}.
 $$
-证明只要令 $p=t/s,q=p/(p-1)$，然后对 $|X|^s$ 和 $1$ 用 Holder 不等式即可。过程中要用到测度有限，所以对一般的测度空间这个不成立。</p><h2 id=随机变量的极限性质>随机变量的极限性质</h2><h3 id=预备知识>预备知识</h3><h4 id=集合序列>集合序列</h4><p>首先我们定义集合的上下极限。对一列集合 $A_n$，它的上确界为它们的并，下确界为他们的交，即
+证明只要令 $p=t/s,q=p/(p-1)$，然后对 $|X|^s$ 和 $1$ 用 Holder 不等式即可。过程中要用到测度有限，所以对一般的测度空间这个不成立。</p>
+<h2 id=随机变量的极限性质>随机变量的极限性质</h2>
+<h3 id=预备知识>预备知识</h3>
+<h4 id=集合序列>集合序列</h4>
+<p>首先我们定义集合的上下极限。对一列集合 $A_n$，它的上确界为它们的并，下确界为他们的交，即
 $$
 \sup A_n=\bigcup_{n\ge 1}A_n,\quad\inf A_n=\bigcap_{n\ge 1}A_n.
 $$
@@ -91,7 +281,48 @@ $$
 \liminf_{n\to\infty} A_n=\bigcup_{n\ge 1}\bigcap_{j\ge n}A_j.
 \end{gather}
 $$
-上极限中的元素可以理解为“出现在无穷多个集合中”，而下极限中的元素可以理解为“只有有限多个集合里没有它”。</p><p><strong>定义</strong> 设 $A_n$ 是一列事件，我们称 $\omega$ 是 infinitely often 的，如果 ${\omega\in\Omega:\omega\in A_n \text{对无穷多的}n\text{成立}}$，记作 ${A_n\quad i.o.}$.</p><p>容易得知，$\omega$ 是 $A_n$ i.o. 的，等价于 $\omega\in\limsup A_n$.</p><h4 id=borel-cantelli-引理>Borel-Cantelli 引理</h4><p>我们可以介绍著名的 Borel-Cantelli 引理了。</p><p><strong>引理（Borel-Cantelli I）</strong> 若 $\sum_{n=1}^\infty P(A_n)&lt;\infty$，则 $P(A_n\quad i.o.)=0$.</p><p><strong>引理（Borel-Cantelli II）</strong> 对<strong>两两独立</strong>的事件序列 ${A_n}$，若 $\sum_{n=1}^\infty P(A_n)=\infty$，则 $P(A_n\quad i.o.)=1$.</p><blockquote><p>第二引理如果把“两两独立”改成“独立”则较为简单，读者可自行完成。两两独立的证明可以参考 <a href=https://www.ma.imperial.ac.uk/~bin06/Stochastic-Analysis/ma414soln5.pdf target=_blank rel=noopener>https://www.ma.imperial.ac.uk/~bin06/Stochastic-Analysis/ma414soln5.pdf</a></p></blockquote><h3 id=收敛有四种情况>收敛有四种情况</h3><p>考虑四种收敛：</p><ul><li><p>几乎必然收敛：$P(\lim_n X_n=X)=1$.</p></li><li><p>依概率收敛：$\forall\varepsilon>0,\lim_n P(|X_n-X|>\varepsilon) =0$.</p></li><li><p>$L^p$ 收敛（convergence in $L^p$）：$\lim_n\mathrm E|X_n-X|^p=0$.</p></li><li><p>依分布收敛（convergence in distribution, weak convergence）：在 $F(x)$ 的连续点上满足 $\lim_n F_n(x)=F(x)$.</p></li></ul><p>他们的关系如下图。</p><p><img src=5215/convergence.png alt></p><p>一些性质：</p><ul><li>若 $X_n\overset{d} \to c$，$c$ 为常数，则 $X_n\overset{p}\to c$.</li><li>若 $X_n\overset{P}\to X$，则存在子序列 $X_{n_j}\overset{a.s.}\to X$.</li><li>设 $X_n\overset{d}\to X$，则对任意 $r>0$，以下两条等价：<ul><li>$\lim_{n\to\infty} \mathrm E|X_n|^r=\mathrm E|X|^r&lt;\infty$，</li><li>$\lim_{t\to \infty}\sup_n \mathrm E(|X_n|^r I(|X_n|>t))=0$.</li></ul></li></ul><h4 id=as-收敛>a.s. 收敛</h4><p>对于 a.s. 收敛，我们有等价表述：
+上极限中的元素可以理解为“出现在无穷多个集合中”，而下极限中的元素可以理解为“只有有限多个集合里没有它”。</p>
+<p><strong>定义</strong> 设 $A_n$ 是一列事件，我们称 $\omega$ 是 infinitely often 的，如果 ${\omega\in\Omega:\omega\in A_n \text{对无穷多的}n\text{成立}}$，记作 ${A_n\quad i.o.}$.</p>
+<p>容易得知，$\omega$ 是 $A_n$ i.o. 的，等价于 $\omega\in\limsup A_n$.</p>
+<h4 id=borel-cantelli-引理>Borel-Cantelli 引理</h4>
+<p>我们可以介绍著名的 Borel-Cantelli 引理了。</p>
+<p><strong>引理（Borel-Cantelli I）</strong> 若 $\sum_{n=1}^\infty P(A_n)&lt;\infty$，则 $P(A_n\quad i.o.)=0$.</p>
+<p><strong>引理（Borel-Cantelli II）</strong> 对<strong>两两独立</strong>的事件序列 ${A_n}$，若 $\sum_{n=1}^\infty P(A_n)=\infty$，则 $P(A_n\quad i.o.)=1$.</p>
+<blockquote>
+<p>第二引理如果把“两两独立”改成“独立”则较为简单，读者可自行完成。两两独立的证明可以参考 <a href=https://www.ma.imperial.ac.uk/~bin06/Stochastic-Analysis/ma414soln5.pdf target=_blank rel=noopener>https://www.ma.imperial.ac.uk/~bin06/Stochastic-Analysis/ma414soln5.pdf</a>
+</p>
+</blockquote>
+<h3 id=收敛有四种情况>收敛有四种情况</h3>
+<p>考虑四种收敛：</p>
+<ul>
+<li>
+<p>几乎必然收敛：$P(\lim_n X_n=X)=1$.</p>
+</li>
+<li>
+<p>依概率收敛：$\forall\varepsilon>0,\lim_n P(|X_n-X|>\varepsilon) =0$.</p>
+</li>
+<li>
+<p>$L^p$ 收敛（convergence in $L^p$）：$\lim_n\mathrm E|X_n-X|^p=0$.</p>
+</li>
+<li>
+<p>依分布收敛（convergence in distribution, weak convergence）：在 $F(x)$ 的连续点上满足 $\lim_n F_n(x)=F(x)$.</p>
+</li>
+</ul>
+<p>他们的关系如下图。</p>
+<p><img src=5215/convergence.png alt></p>
+<p>一些性质：</p>
+<ul>
+<li>若 $X_n\overset{d} \to c$，$c$ 为常数，则 $X_n\overset{p}\to c$.</li>
+<li>若 $X_n\overset{P}\to X$，则存在子序列 $X_{n_j}\overset{a.s.}\to X$.</li>
+<li>设 $X_n\overset{d}\to X$，则对任意 $r>0$，以下两条等价：
+<ul>
+<li>$\lim_{n\to\infty} \mathrm E|X_n|^r=\mathrm E|X|^r&lt;\infty$，</li>
+<li>$\lim_{t\to \infty}\sup_n \mathrm E(|X_n|^r I(|X_n|>t))=0$.</li>
+</ul>
+</li>
+</ul>
+<h4 id=as-收敛>a.s. 收敛</h4>
+<p>对于 a.s. 收敛，我们有等价表述：
 $$
 \lim_n P(\bigcup_{m=n}^\infty{|X_m-X|>\varepsilon})=0,
 $$
@@ -99,7 +330,22 @@ $$
 $$
 P(\limsup_{n\to\infty} {|X_n-X|>\varepsilon})=0,
 $$
-由此可以一眼看出它比依概率收敛强。此外，根据 Borel-Cantelli 引理，若 $\forall\varepsilon>0,\ \sum_{n=1}^\infty P({\omega\in\Omega:|X_n(\omega)-X(\omega)|>\varepsilon})&lt;\infty$，则 $X_n\overset{a.s.}\to X$.</p><h4 id=依分布收敛>依分布收敛</h4><p>下面的定理允许我们通过依分布收敛构造出 a.s. 收敛，厉害死了。</p><p><strong>定理（Skorohod）</strong> 若 $X_n\overset{d}\to X$，则存在同一个概率空间上的随机变量 $Y,Y_1,Y_2,\cdots$，使得 $P_{Y_n}=P_{X_n},P_Y=P_X$（测度相等）且 $Y_n\overset{a.s.}\to Y$.</p><p>我们可以通过特征函数或密度函数来判断依分布收敛。</p><p><strong>定理（Levy continuity）</strong> $X_n\overset{d}\to X$ 当且仅当特征函数逐点收敛，即 $\lim_n \varphi_n(x)=\varphi(x)\ \forall x\in\mathbb{R}$.</p><p><strong>定理（Scheffes）</strong> 若密度函数存在且密度函数 a.e. 收敛，则 $X_n\overset{d}\to X$.</p><p>依分布收敛通常不能加减乘除，但如果有一个收敛到常数就可以：</p><p><strong>定理（Slutsky）</strong> 设 $X_n\overset{d}\to X,Y_n\overset{d}\to c$，则</p><ul><li>$X_n+Y_n\overset{d}\to X+c$</li><li>$X_nY_n\overset{d}\to cX$</li><li>$X_n/Y_n\overset{d}\to X/c$（$c\ne 0$）</li></ul><p>我们再来提供一个判定方法。</p><p><strong>定理（$\delta$-method）</strong> 设 $X_1,\cdots,Y$ 是 $k$ 维随机向量，${a_n}$ 是正数列，且 $\lim_n a_n=\infty$. 存在常数 $c\in\mathbb{R}^k$ 使得
+由此可以一眼看出它比依概率收敛强。此外，根据 Borel-Cantelli 引理，若 $\forall\varepsilon>0,\ \sum_{n=1}^\infty P({\omega\in\Omega:|X_n(\omega)-X(\omega)|>\varepsilon})&lt;\infty$，则 $X_n\overset{a.s.}\to X$.</p>
+<h4 id=依分布收敛>依分布收敛</h4>
+<p>下面的定理允许我们通过依分布收敛构造出 a.s. 收敛，厉害死了。</p>
+<p><strong>定理（Skorohod）</strong> 若 $X_n\overset{d}\to X$，则存在同一个概率空间上的随机变量 $Y,Y_1,Y_2,\cdots$，使得 $P_{Y_n}=P_{X_n},P_Y=P_X$（测度相等）且 $Y_n\overset{a.s.}\to Y$.</p>
+<p>我们可以通过特征函数或密度函数来判断依分布收敛。</p>
+<p><strong>定理（Levy continuity）</strong> $X_n\overset{d}\to X$ 当且仅当特征函数逐点收敛，即 $\lim_n \varphi_n(x)=\varphi(x)\ \forall x\in\mathbb{R}$.</p>
+<p><strong>定理（Scheffes）</strong> 若密度函数存在且密度函数 a.e. 收敛，则 $X_n\overset{d}\to X$.</p>
+<p>依分布收敛通常不能加减乘除，但如果有一个收敛到常数就可以：</p>
+<p><strong>定理（Slutsky）</strong> 设 $X_n\overset{d}\to X,Y_n\overset{d}\to c$，则</p>
+<ul>
+<li>$X_n+Y_n\overset{d}\to X+c$</li>
+<li>$X_nY_n\overset{d}\to cX$</li>
+<li>$X_n/Y_n\overset{d}\to X/c$（$c\ne 0$）</li>
+</ul>
+<p>我们再来提供一个判定方法。</p>
+<p><strong>定理（$\delta$-method）</strong> 设 $X_1,\cdots,Y$ 是 $k$ 维随机向量，${a_n}$ 是正数列，且 $\lim_n a_n=\infty$. 存在常数 $c\in\mathbb{R}^k$ 使得
 $$
 a_n(X_n-c)\overset{d}\to Y,
 $$
@@ -110,67 +356,282 @@ $$
 若 $g$ 在 $c$ 的邻域内 $m$ 阶连续可导，且对所有 $j$ 阶偏导数（$1\le j\le m-1$）为 0，而 $m$ 阶偏导数不全为 0，则
 $$
 a_n^m\left[g(X_n)-g(c)\right]\overset{d}\to\frac{1}{m!}\sum_{1\le i_1,\cdots,i_m\le k}\frac{\partial^m g(c)}{\partial x_{i_1}\cdots\partial x_{i_m}}Y_{i_1}\cdots Y_{i_m}.
-$$</p><blockquote><p>注：上述是对所有 $m$ 阶偏导数求和。对一元的情况，就是
+$$</p>
+<blockquote>
+<p>注：上述是对所有 $m$ 阶偏导数求和。对一元的情况，就是
 $$
 a_n^m\left[g(X_n)-g(c)\right]\overset{d}\to\frac{1}{m!}g^{(m)}(c)Y^m.
-$$</p></blockquote><p>大家可以自己尝试证明，用 Taylor 展开即可。</p><p><strong>定理</strong> 以下命题两两等价：</p><ul><li>$X_n\overset{d}\to X$,</li><li>$\mathrm E h(X_n)\to \mathrm E h(X)$，对任意有界连续函数 $h$，</li><li>对任意闭集 $C\subset \mathbb{R}^k$，$\limsup_n P_{X_n}(C)\le P_X(C)$，</li><li>对任意开集 $O\subset \mathbb{R}^k$，$\limsup_n P_{X_n}(O)\ge P_X(O)$.</li></ul><h3 id=随机变量的渐近性质>随机变量的渐近性质</h3><p>类似于数列的 $O$，$o$ 记号，我们有：</p><ul><li><p>$X_n=O_{a.s.}(Y_n)$，当且仅当 $P(|X_n|=O(Y_n))=1$，也即 $|X_n|\le c|Y_n|$ a.s.,</p></li><li><p>$X_n=o_{a.s.}(Y_n)$，当且仅当 $X_n/Y_n\overset{a.s.}\to 0$,</p></li><li><p>$X_n=O_P(Y_n)$，当且仅当 $\forall\varepsilon>0,\exists C>0,n_0\in\mathbb{N}$，使得
+$$</p>
+</blockquote>
+<p>大家可以自己尝试证明，用 Taylor 展开即可。</p>
+<p><strong>定理</strong> 以下命题两两等价：</p>
+<ul>
+<li>$X_n\overset{d}\to X$,</li>
+<li>$\mathrm E h(X_n)\to \mathrm E h(X)$，对任意有界连续函数 $h$，</li>
+<li>对任意闭集 $C\subset \mathbb{R}^k$，$\limsup_n P_{X_n}(C)\le P_X(C)$，</li>
+<li>对任意开集 $O\subset \mathbb{R}^k$，$\limsup_n P_{X_n}(O)\ge P_X(O)$.</li>
+</ul>
+<h3 id=随机变量的渐近性质>随机变量的渐近性质</h3>
+<p>类似于数列的 $O$，$o$ 记号，我们有：</p>
+<ul>
+<li>
+<p>$X_n=O_{a.s.}(Y_n)$，当且仅当 $P(|X_n|=O(Y_n))=1$，也即 $|X_n|\le c|Y_n|$ a.s.,</p>
+</li>
+<li>
+<p>$X_n=o_{a.s.}(Y_n)$，当且仅当 $X_n/Y_n\overset{a.s.}\to 0$,</p>
+</li>
+<li>
+<p>$X_n=O_P(Y_n)$，当且仅当 $\forall\varepsilon>0,\exists C>0,n_0\in\mathbb{N}$，使得
 $$
 \sup_{n\ge n_0}P({\omega\in\Omega:|X_n(\omega)|\ge C|Y_n(\omega)|})&lt;\varepsilon.
-$$</p></li><li><p>$X_n=o_P(Y_n)$，当且仅当 $X_n/Y_n\overset{P}\to 0$.</p></li></ul><p>特别地，若 $X_n=O_P(1)$，称 $X_n$ 依概率有界。</p><p>我们放出一些性质（$O$ 是 $O_P$ 或 $O_{a.s.}$）：</p><ul><li>传递性：$X_n=O(Y_n),Y_n=O(Z_n)\Rightarrow X_n=O(Z_n)$,</li><li>$X_n=O(Z_n)\Rightarrow X_nY_n=O(Y_nZ_n)$,</li><li>$X_n=O(Z_n),Y_n=O(Z_n)\Rightarrow X_n=O(Z_n)$,</li><li>若 $X_n\overset{a.s.}\to X$，则 ${\sup_{n\ge k}|X_n|}_k=O_P(1)$,</li><li>若 $X_n\overset{d}\to X$，则 $X_n=O_P(1)$,</li><li>若 $\mathrm E|X_n|=O({\text 或 } o)(a_n)$，则 $X_n=O({\text 或 } o)_P(a_n)$.</li></ul><p>上面最后一条可以用 Markov 不等式证明。</p><h2 id=大数定律与中心极限定理>大数定律与中心极限定理</h2><p>这两个东西在概率论中的地位家喻户晓。</p><h3 id=大数定律>大数定律</h3><p><strong>定理（强大数定律）</strong> $X_n$ i.i.d.，若 $\mathrm E|X_1|&lt;\infty$，则
+$$</p>
+</li>
+<li>
+<p>$X_n=o_P(Y_n)$，当且仅当 $X_n/Y_n\overset{P}\to 0$.</p>
+</li>
+</ul>
+<p>特别地，若 $X_n=O_P(1)$，称 $X_n$ 依概率有界。</p>
+<p>我们放出一些性质（$O$ 是 $O_P$ 或 $O_{a.s.}$）：</p>
+<ul>
+<li>传递性：$X_n=O(Y_n),Y_n=O(Z_n)\Rightarrow X_n=O(Z_n)$,</li>
+<li>$X_n=O(Z_n)\Rightarrow X_nY_n=O(Y_nZ_n)$,</li>
+<li>$X_n=O(Z_n),Y_n=O(Z_n)\Rightarrow X_n=O(Z_n)$,</li>
+<li>若 $X_n\overset{a.s.}\to X$，则 ${\sup_{n\ge k}|X_n|}_k=O_P(1)$,</li>
+<li>若 $X_n\overset{d}\to X$，则 $X_n=O_P(1)$,</li>
+<li>若 $\mathrm E|X_n|=O({\text 或 } o)(a_n)$，则 $X_n=O({\text 或 } o)_P(a_n)$.</li>
+</ul>
+<p>上面最后一条可以用 Markov 不等式证明。</p>
+<h2 id=大数定律与中心极限定理>大数定律与中心极限定理</h2>
+<p>这两个东西在概率论中的地位家喻户晓。</p>
+<h3 id=大数定律>大数定律</h3>
+<p><strong>定理（强大数定律）</strong> $X_n$ i.i.d.，若 $\mathrm E|X_1|&lt;\infty$，则
 $$
 \frac{1}{n}\sum_{i=1}^nX_i\overset{a.s.}\to \mathrm EX_1.
 $$
-反之，若 $\mathrm E|X_1|&lt;\infty$ 且 $\dfrac{1}{n}\sum_{i=1}^nX_i\overset{a.s.}\to c$，则 $c=\mathrm EX_1$.</p><p><strong>定理（弱大数定律）</strong> $X_n$ i.i.d.，若 $nP(|X_1|>n)\to 0$，则
+反之，若 $\mathrm E|X_1|&lt;\infty$ 且 $\dfrac{1}{n}\sum_{i=1}^nX_i\overset{a.s.}\to c$，则 $c=\mathrm EX_1$.</p>
+<p><strong>定理（弱大数定律）</strong> $X_n$ i.i.d.，若 $nP(|X_1|>n)\to 0$，则
 $$
 \frac{1}{n}\sum_{i=1}^nX_i-\mathrm E[X_1 I(|X_1|\le n)]\overset{P}\to 0.
 $$
-从而 $\dfrac{1}{n}\sum_{i=1}^nX_i\overset{P}\to \mathrm EX_1$.</p><p>对于不是 i.i.d. 的情况，我们也有大数定律。</p><p><strong>定理</strong> 设 $X_1,X_2,\cdots$ 独立且期望有限，则</p><ul><li><p>（强大数定律）若存在常数 $p\in[1,2]$ 使得 $\sum_{i=1}^\infty\dfrac{\mathrm E|X_i|^p}{i^p}&lt;\infty$，则</p><p>$$
+从而 $\dfrac{1}{n}\sum_{i=1}^nX_i\overset{P}\to \mathrm EX_1$.</p>
+<p>对于不是 i.i.d. 的情况，我们也有大数定律。</p>
+<p><strong>定理</strong> 设 $X_1,X_2,\cdots$ 独立且期望有限，则</p>
+<ul>
+<li>
+<p>（强大数定律）若存在常数 $p\in[1,2]$ 使得 $\sum_{i=1}^\infty\dfrac{\mathrm E|X_i|^p}{i^p}&lt;\infty$，则</p>
+<p>$$
 \frac{1}{n}\sum_{i=1}^nX_i\overset{a.s.}\to \mathrm EX_1.
-$$</p></li><li><p>（弱大数定律）若存在常数 $p\in[1,2]$ 使得 $\lim_{n\to\infty}\dfrac{1}{n^p}\sum_{i=1}^n\mathrm E|X_i|^p=0$，则
+$$</p>
+</li>
+<li>
+<p>（弱大数定律）若存在常数 $p\in[1,2]$ 使得 $\lim_{n\to\infty}\dfrac{1}{n^p}\sum_{i=1}^n\mathrm E|X_i|^p=0$，则
 $$
 \frac{1}{n}\sum_{i=1}^nX_i\overset{p}\to \mathrm EX_1.
-$$</p></li><li></li></ul><h3 id=中心极限定理>中心极限定理</h3><p><strong>定理</strong> 设 $X_n$ i.i.d. $k$ 维，且 $\Sigma=\mathrm{Var}X_1$ 有限，则
+$$</p>
+</li>
+<li></li>
+</ul>
+<h3 id=中心极限定理>中心极限定理</h3>
+<p><strong>定理</strong> 设 $X_n$ i.i.d. $k$ 维，且 $\Sigma=\mathrm{Var}X_1$ 有限，则
 $$
 \frac{\sum_{i=1}^n(X_i-\mathrm EX_i)}{\sqrt{n}}\overset{d}\to N(0,\Sigma).
-$$</p></div><footer class=post-footer><div class=post-tags><a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a></div><div class=addthis_inline_share_toolbox></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/5215-1%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8A/ rel=next title=公理化概率论（上）><i class="fa fa-chevron-left"></i> 公理化概率论（上）</a></div><div class="post-nav-prev post-nav-item"><a href=/post/5215-3%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8A-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E5%88%86%E5%B8%83%E6%97%8F/ rel=prev title=统计学基础（上）-统计量&分布族>统计学基础（上）-统计量&分布族
-<i class="fa fa-chevron-right"></i></a></div></div><div id=ucomments></div></footer></article></section></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+$$</p>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+<a href=/post/5215-1%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8A/ rel=next title=公理化概率论（上）>
+<i class="fa fa-chevron-left"></i> 公理化概率论（上）
+</a>
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=/post/5203-5-2k%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1/ rel=prev title="线性回归（五）-2^k 因子实验">
+线性回归（五）-2^k 因子实验
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=ucomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
+<div class=sidebar-toggle>
+<div class=sidebar-toggle-line-wrap>
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
 <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-<span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><section class="site-overview sidebar-panel sidebar-panel-active"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人><p class=site-author-name itemprop=name>精神病人</p><p class="site-description motion-element" itemprop=description>精神病人欢乐多!</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href=/post/><span class=site-state-item-count>40</span>
-<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>11</span>
-<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>11</span>
-<span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/jcq15/ target=_blank title=GitHub><i class="fa fa-fw fa-github"></i>
-GitHub</a></span></div><div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline"><div class=tagcloud-of-blogroll-title><i class="fa fa-fw fa-tags"></i>
-标签云</div><ul class=tagcloud-of-blogroll-list><li class=tagcloud-of-blogroll-item><a href=/tags/%E5%AD%A6%E4%B9%A0>学习
-<sup>15</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
-<sup>6</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%8A%80%E6%9C%AF>技术
-<sup>5</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B8%B8%E6%88%8F>游戏
-<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%A7%91%E6%99%AE>科普
-<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%B4%E6%B4%BB>整活
-<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9B%B4%E6%96%B0>更新
-<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
-<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%A2%E6%83%B3>敢想
-<sup>1</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B2%99%E9%9B%95>沙雕
-<sup>1</sup></a></li></ul></div></section></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright><span class=copyright-year>&copy; 2010 - 2023</span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id=sidebar class=sidebar>
+<div class=sidebar-inner>
+<section class="site-overview sidebar-panel sidebar-panel-active">
+<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
+<img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人>
+<p class=site-author-name itemprop=name>精神病人</p>
+<p class="site-description motion-element" itemprop=description>
+精神病人欢乐多!
+</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href=/post/>
+<span class=site-state-item-count>41</span>
+<span class=site-state-item-name>日志</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href=/categories/>
+<span class=site-state-item-count>11</span>
+<span class=site-state-item-name>分类</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href=/tags/>
+<span class=site-state-item-count>11</span>
+<span class=site-state-item-name>标签</span>
+</a>
+</div>
+</nav>
+<div class="links-of-author motion-element">
+<span class=links-of-author-item>
+<a href=https://github.com/jcq15/ target=_blank title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+GitHub
+</a>
+</span>
+</div>
+<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
+<div class=tagcloud-of-blogroll-title>
+<i class="fa fa-fw fa-tags"></i>
+标签云
+</div>
+<ul class=tagcloud-of-blogroll-list>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E5%AD%A6%E4%B9%A0>学习
+<sup>15</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
+<sup>6</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%8A%80%E6%9C%AF>技术
+<sup>5</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%9B%B4%E6%96%B0>更新
+<sup>3</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%B8%B8%E6%88%8F>游戏
+<sup>3</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E7%A7%91%E6%99%AE>科普
+<sup>3</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%95%B4%E6%B4%BB>整活
+<sup>2</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
+<sup>2</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%95%A2%E6%83%B3>敢想
+<sup>1</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/%E6%B2%99%E9%9B%95>沙雕
+<sup>1</sup>
+</a>
+</li>
+</ul>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=copyright>
+<span class=copyright-year>
+&copy; 2010 - 2023
+</span>
 <span class=with-love><i class="fa fa-heart"></i></span>
-<span class=copyright-author>沙雕园</span></div><div class=powered-info><span class=powered-by>Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.101.0</a></span>
+<span class=copyright-author>沙雕园</span>
+</div>
+<div class=powered-info>
+<span class=powered-by>
+Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.92.2</a>
+</span>
 <span class=separator-line>/</span>
-<span class=theme-info>Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank>NexT</a></span></div><div class=vistor-info><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<span class=site-uv><i class="fa fa-user"></i>
-<span class=busuanzi-value id=busuanzi_value_site_uv></span></span>
+<span class=theme-info>
+Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
+</a>
+</span>
+</div>
+<div class=vistor-info>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv>
+<i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span>
+</span>
 <span class=separator-line>/</span>
-<span class=site-pv><i class="fa fa-eye"></i>
-<span class=busuanzi-value id=busuanzi_value_site_pv></span></span></div><div class=license-info><span class=storage-info>Storage by
-<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a></span>
+<span class=site-pv>
+<i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span>
+</span>
+</div>
+<div class=license-info>
+<span class=storage-info>
+Storage by
+<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a>
+</span>
 <span class=separator-line>/</span>
-<span class=license-num><a href target=_blank></a></span></div></div></footer><div class=back-to-top><i class="fa fa-arrow-up"></i>
-<span id=scrollpercent><span>0</span>%</span></div></div><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<span class=license-num>
+<a href target=_blank></a>
+</span>
+</div>
+</div>
+</footer>
+<div class=back-to-top>
+<i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span>
+</div>
+</div>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
 <script type=text/javascript src=/js/search.js></script>
 <script type=text/javascript src=/js/affix.js></script>
 <script type=text/javascript src=/js/scrollspy.js></script>
-<script type=text/javascript>function detectIE(){var e=window.navigator.userAgent,t=e.indexOf("MSIE "),n=e.indexOf("Trident/"),s=e.indexOf("Edge/");return t>0||n>0||s>0?-1:1}function getCntViewHeight(){var t=$("#content").height(),e=$(window).height(),n=t>e?t-e:$(document).height()-e;return n}function getScrollbarWidth(){var e=$("<div />").addClass("scrollbar-measure").prependTo("body"),t=e[0],n=t.offsetWidth-t.clientWidth;return e.remove(),n}function registerBackTop(){var t=50,e=$(".back-to-top");$(window).on("scroll",function(){e.toggleClass("back-to-top-on",window.pageYOffset>t);var s=$(window).scrollTop(),o=getCntViewHeight(),i=s/o,n=Math.round(i*100),a=n>100?100:n;$("#scrollpercent>span").html(a)}),e.on("click",function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var e=".post-toc",s=$(e),t=".active-current";s.on("activate.bs.scrollspy",function(){var t=$(e+" .active").last();n(),t.addClass("active-current")}).on("clear.bs.scrollspy",n),$("body").scrollspy({target:e});function n(){$(e+" "+t).removeClass(t.substring(1))}}function initAffix(){var e=$(".header-inner").height(),t=parseInt($(".main").css("padding-bottom"),10),n=e+10;$(".sidebar-inner").affix({offset:{top:n,bottom:t}}),$(document).on("affixed.bs.affix",function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){$(window).on("resize",function(){e&&clearTimeout(e),e=setTimeout(function(){var e=document.body.clientHeight-100;updateTOCHeight(e)},0)}),updateTOCHeight(document.body.clientHeight-100);var e,t=getScrollbarWidth();$(".post-toc").css("width","calc(100% + "+t+"px)")}function updateTOCHeight(e){e=e||"auto",$(".post-toc").css("max-height",e)}$(function(){var e,t,n,s,o=$(".header-inner").height()+10;$("#sidebar").css({"margin-top":o}).show(),t=parseInt($("#sidebar").css("margin-top")),n=parseInt($(".sidebar-inner").css("height")),e=t+n,s=$(".content-wrap").height(),s<e&&$(".content-wrap").css("min-height",e),$(".site-nav-toggle").on("click",function(){var e=$(".site-nav"),o=$(".toggle"),t="site-nav-on",i="toggle-close",n=e.hasClass(t),a=n?"slideUp":"slideDown",s=n?"removeClass":"addClass";e.stop()[a]("normal",function(){e[s](t),o[s](i)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$(".sidebar-nav-toc").click(function(){$(this).addClass("sidebar-nav-active"),$(this).next().removeClass("sidebar-nav-active"),$("."+$(this).next().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)}),$(".sidebar-nav-overview").click(function(){$(this).addClass("sidebar-nav-active"),$(this).prev().removeClass("sidebar-nav-active"),$("."+$(this).prev().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)})})</script><script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
-<script type=text/javascript>$(function(){$(".post-body").viewer()})</script><script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
-<script type=text/javascript>function showTime(e){var n=new AV.Query(e),t=[],s=$(".leancloud_visitors");s.each(function(){t.push($(this).attr("id").trim())}),n.containedIn("url",t),n.find().then(e=>{var n,o,i,r,c,l,a=".leancloud-visitors-count";if(e.length==0){s.find(a).text(0);return}for(n=0;n<e.length;n++)r=e[n],o=r.get("url"),l=r.get("time"),i=document.getElementById(o),$(i).find(a).text(l);for(n=0;n<t.length;n++)o=t[n],i=document.getElementById(o),c=$(i).find(a),c.text()==""&&c.text(0)},e=>{console.log("Query vistors failed: "+e)})}function addCount(e){var n=$(".leancloud_visitors"),t=n.attr("id").trim(),o=n.attr("data-flag-title").trim(),s=new AV.Query("Counter");s.equalTo("url",t),s.find().then(n=>{if(n.length>0){var s,i,a=n[0];a.increment("time",1),a.save(null,{query:new AV.Query("Counter").equalTo("url",t),fetchWhenSave:!0}).then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(e.get("time"))},e=>{console.log("Update vistor failed: "+e)})}else i=new AV.ACL,i.setPublicReadAccess(!0),i.setPublicWriteAccess(!0),s=new e,s.set("title",o),s.set("url",t),s.set("time",1),s.setACL(i),s.save().then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(s.get("time"))},e=>{console.log("Save new vistor failed: "+e)})})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const e=AV.Object.extend("Counter");$(".leancloud_visitors").length==1?addCount(e):$(".post-title-link").length>1&&showTime(e)})</script><script type=text/javascript>(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.setAttribute("issue-term","title"),e.setAttribute("theme","github-light"),e.setAttribute("repo","jcq15/blog"),e.crossorigin="anonymous",e.src="https://utteranc.es/client.js",document.getElementById("ucomments").appendChild(e)})()</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
-<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
+<script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
+<script type=text/javascript>function showTime(d){var b=new AV.Query(d),a=[],c=$(".leancloud_visitors");c.each(function(){a.push($(this).attr("id").trim())}),b.containedIn('url',a),b.find().then(d=>{var e='.leancloud-visitors-count',b,h,f,j,g,i;if(d.length==0){c.find(e).text(0);return}for(b=0;b<d.length;b++)h=d[b],f=h.get('url'),j=h.get('time'),g=document.getElementById(f),$(g).find(e).text(j);for(b=0;b<a.length;b++)f=a[b],g=document.getElementById(f),i=$(g).find(e),i.text()==''&&i.text(0)},a=>{console.log('Query vistors failed: '+a)})}function addCount(d){var b=$(".leancloud_visitors"),a=b.attr('id').trim(),e=b.attr('data-flag-title').trim(),c=new AV.Query('Counter');c.equalTo("url",a),c.find().then(g=>{var f,c,b;g.length>0?(f=g[0],f.increment('time',1),f.save(null,{query:new AV.Query('Counter').equalTo('url',a),fetchWhenSave:!0}).then(b=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log('Update vistor failed: '+a)})):(c=new AV.ACL,c.setPublicReadAccess(!0),c.setPublicWriteAccess(!0),b=new d,b.set("title",e),b.set("url",a),b.set("time",1),b.setACL(c),b.save().then(d=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log("Save new vistor failed: "+a)}))})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const a=AV.Object.extend("Counter");$('.leancloud_visitors').length==1?addCount(a):$('.post-title-link').length>1&&showTime(a)})</script>
+<script type=text/javascript>(function(){var a=document.createElement('script');a.type='text/javascript',a.async=!0,a.setAttribute('issue-term',"title"),a.setAttribute('theme',"github-light"),a.setAttribute('repo',"jcq15/blog"),a.crossorigin='anonymous',a.src='https://utteranc.es/client.js',document.getElementById('ucomments').appendChild(a)})()</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
 <script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
-<script>(function(){var t,e=document.createElement("script"),n=window.location.protocol.split(":")[0];n==="https"?e.src="https://zz.bdstatic.com/linksubmit/push.js":e.src="http://push.zhanzhang.baidu.com/push.js",t=document.getElementsByTagName("script")[0],t.parentNode.insertBefore(e,t)})()</script></body></html>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</body>
+</html>
