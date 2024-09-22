@@ -1,158 +1,32 @@
-<!doctype html><html lang=zh-cn dir=content/zh-cn>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
-<title> 线性回归（四）-多因素方差分析 - 沙雕园 </title>
-<meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享">
-<meta name=author content="精神病人">
-<meta property="og:title" content="线性回归（四）-多因素方差分析">
-<meta property="og:site_name" content="沙雕园">
-<meta property="og:image" content="/img/author.jpg">
-<meta name=title content="线性回归（四）-多因素方差分析 - 沙雕园">
-<meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。">
-<link rel="shortcut icon" href=/img/favicon.ico>
-<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
-<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
-<link href=//unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css rel=stylesheet type=text/css>
-<link href=//unpkg.com/imageviewer@1.1.0/dist/viewer.min.css rel=stylesheet>
-<link href=/css/main.css rel=stylesheet type=text/css>
-<link href=/css/syntax.css rel=stylesheet type=text/css>
-</head>
-<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
-<div class="container one-collumn sidebar-position-left page-home">
-<div class=headband></div>
-<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
-<div class=header-inner> <div class=site-brand-container>
-<div class=site-nav-toggle>
-<div class=toggle role=button style=opacity:1;top:0>
+<!doctype html><html lang=zh-cn dir=content/zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=content-security-policy content="upgrade-insecure-requests"><title>线性回归（四）-多因素方差分析 - 沙雕园</title><meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享"><meta name=author content="精神病人"><meta property="og:title" content="线性回归（四）-多因素方差分析"><meta property="og:site_name" content="沙雕园"><meta property="og:image" content="/img/author.jpg"><meta name=title content="线性回归（四）-多因素方差分析 - 沙雕园"><meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。"><link rel="shortcut icon" href=/img/favicon.ico><link rel=apple-touch-icon href=/img/apple-touch-icon.png><link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png><link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css><link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet><link href=/css/main.css rel=stylesheet type=text/css><link href=/css/syntax.css rel=stylesheet type=text/css></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-hans><div class="container one-collumn sidebar-position-left page-home"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle role=button style=opacity:1;top:0><span class=toggle-line></span>
 <span class=toggle-line></span>
-<span class=toggle-line></span>
-<span class=toggle-line></span>
-</div>
-</div>
-<div class=site-meta>
-<div class=custom-logo-site-title>
-<a href=/ class=brand rel=start>
-<span class=logo-line-before><i></i></span>
+<span class=toggle-line></span></div></div><div class=site-meta><div class=custom-logo-site-title><a href=/ class=brand rel=start><span class=logo-line-before><i></i></span>
 <span class=site-title>沙雕园</span>
-<span class=logo-line-after><i></i></span>
-</a>
-</div>
-<p class=site-subtitle>沙雕使人进步。</p>
-</div>
-<div class=site-nav-right>
-<div class="toggle popup-trigger" style=opacity:1;top:0>
-<i class="fa fa-search fa-fw fa-lg"></i>
-</div>
-</div>
-</div>
-<nav class=site-nav>
-<ul id=menu class=menu>
-<li class=menu-item>
-<a href=/ rel=section>
-<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页
-</a>
-</li>
-<li class="menu-item menu-item-active">
-<a href=/post rel=section>
-<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档
-</a>
-</li>
-<li class=menu-item>
-<a href=/about.html rel=section>
-<i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我
-</a>
-</li>
-<li class="menu-item menu-item-search">
-<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> 搜索</a>
-</li>
-</ul>
-<div class=site-search>
-<div class="popup search-popup local-search-popup">
-<div class="local-search-header clearfix">
-<span class=search-icon><i class="fa fa-search"></i> </span>
-<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
-<div class=local-search-input-wrapper>
-<input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
-</div>
-</div>
-<div id=local-search-result></div>
-</div>
-</div>
-</nav> </div>
-</header>
-<main id=main class=main>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=/post/5203-4%E5%A4%9A%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/ itemprop=url>
-线性回归（四）-多因素方差分析
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
+<span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>沙雕使人进步。</p></div><div class=site-nav-right><div class="toggle popup-trigger" style=opacity:1;top:0><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul id=menu class=menu><li class=menu-item><a href=/ rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-active"><a href=/post rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class=menu-item><a href=/about.html rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于我</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class=site-search><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class=search-icon><i class="fa fa-search"></i></span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span><div class=local-search-input-wrapper><input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off></div></div><div id=local-search-result></div></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><section id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=/post/5203-4%E5%A4%9A%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/ itemprop=url>线性回归（四）-多因素方差分析</a></h1><div class=post-meta><span class=post-pushdate><i class="fa fa-calendar-o fa-fw"></i>
 <span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-12-28">
-2021-12-28
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-12-28">2021-12-28</time></span>
+<span class=post-category><i class="fa fa-folder-o fa-fw"></i>
 <span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0 itemprop=url rel=index>
-<span itemprop=name>课程笔记</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing><a class=post-category-a href=/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0 itemprop=url rel=index><span itemprop=name>课程笔记</span></a>
+&nbsp;</span></span>
+<span class=post-wordcount><i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>1440 字</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
+<span class=leancloud-world-count>1440 字</span></span>
+<span class=post-readtime><i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>3分钟</span>
-</span>
-<span id=/post/5203-4%E5%A4%9A%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/ class="leancloud_visitors post-visitor" data-flag-title=线性回归（四）-多因素方差分析>
-<i class="fa fa-binoculars fa-fw"></i>
+<span class=leancloud-view-count>3分钟</span></span>
+<span id=/post/5203-4%E5%A4%9A%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/ class="leancloud_visitors post-visitor" data-flag-title=线性回归（四）-多因素方差分析><i class="fa fa-binoculars fa-fw"></i>
 <span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>本节就不推导了。最艰难的部分已经过去了，多因素的推导过程和单因素大同小异，并且一大堆下标，真的认真计算的话会被水淹没不知所措的。只要多多观察总结规律就很容易。</p>
-<h2 id=two-way-anova-with-interactive>Two way ANOVA with interactive</h2>
-<h3 id=模型>模型</h3>
-<p>最主要的区别是多了个交叉项，我们要考虑两个维度的因素可能会存在协同作用。假设有两个因素 $A$ 和 $B$，因素 $A$ 有 $I$ 个等级，因素 $B$ 有 $J$ 个等级。<strong>每个处理组的个体数相等，记作 $n$</strong>（不然真的会被恶心死）。（所以一共有 $nIJ$ 个个体）
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>本节就不推导了。最艰难的部分已经过去了，多因素的推导过程和单因素大同小异，并且一大堆下标，真的认真计算的话会被水淹没不知所措的。只要多多观察总结规律就很容易。</p><h2 id=two-way-anova-with-interactive>Two way ANOVA with interactive</h2><h3 id=模型>模型</h3><p>最主要的区别是多了个交叉项，我们要考虑两个维度的因素可能会存在协同作用。假设有两个因素 $A$ 和 $B$，因素 $A$ 有 $I$ 个等级，因素 $B$ 有 $J$ 个等级。<strong>每个处理组的个体数相等，记作 $n$</strong>（不然真的会被恶心死）。（所以一共有 $nIJ$ 个个体）
 $$
 y_{i,j,l}=\eta+\alpha_i+\beta_j+\omega_{i,j}+e_{i,j,l},
 $$
-其中 $\omega_{i,j}$ 表示协同作用，$e_{i,j,l}\overset{i.i.d.}\sim N(0,\sigma^2)$.</p>
-<p>其实真正的自由参数只有 $IJ$ 个，即
+其中 $\omega_{i,j}$ 表示协同作用，$e_{i,j,l}\overset{i.i.d.}\sim N(0,\sigma^2)$.</p><p>其实真正的自由参数只有 $IJ$ 个，即
 $$
 y_{i,j,l}=\mu_{i,j}+e_{i,j,l}.
 $$
-它们的对应关系是：</p>
-<ul>
-<li>$\eta=\bar\mu_{\cdot,\cdot}$, 表示整体均值，</li>
-<li>$ \alpha_i=\bar\mu_{i,\cdot}-\eta$, 表示 $A$ 的第 $i$ 组的 buff，</li>
-<li>$\beta_j=\bar\mu_{\cdot,j}-\eta$, 表示 $B$ 的第 $j$ 组的 buff，</li>
-<li>$\omega_{i,j}=(\mu_{i,j}-\eta)-(\bar\mu_{i,\cdot}-\eta)-(\bar\mu_{\cdot,j}-\eta)=\mu_{i,j}-\bar\mu_{i,\cdot}-\bar\mu_{\cdot,j}+\eta$, 表示共同作用的额外 buff。</li>
-</ul>
-<p>模型估计 $\mu_{i,j}$ 换成 $\bar y_{i,j,\cdot}$ 即可，另外 $\hat e_{i,j,l}=y_{i,j,l}-\bar y_{i,j,\cdot}$.</p>
-<h3 id=anova-表>ANOVA 表</h3>
-<p>$$
+它们的对应关系是：</p><ul><li>$\eta=\bar\mu_{\cdot,\cdot}$, 表示整体均值，</li><li>$ \alpha_i=\bar\mu_{i,\cdot}-\eta$, 表示 $A$ 的第 $i$ 组的 buff，</li><li>$\beta_j=\bar\mu_{\cdot,j}-\eta$, 表示 $B$ 的第 $j$ 组的 buff，</li><li>$\omega_{i,j}=(\mu_{i,j}-\eta)-(\bar\mu_{i,\cdot}-\eta)-(\bar\mu_{\cdot,j}-\eta)=\mu_{i,j}-\bar\mu_{i,\cdot}-\bar\mu_{\cdot,j}+\eta$, 表示共同作用的额外 buff。</li></ul><p>模型估计 $\mu_{i,j}$ 换成 $\bar y_{i,j,\cdot}$ 即可，另外 $\hat e_{i,j,l}=y_{i,j,l}-\bar y_{i,j,\cdot}$.</p><h3 id=anova-表>ANOVA 表</h3><p>$$
 \begin{align}
 SST&=\sum_{i,j,l}(y_{i,j,l}-\bar y_{\cdot,\cdot,\cdot})^2,\
 SSA&=nJ\sum_i (\bar y_{i,\cdot,\cdot}-\bar y_{\cdot,\cdot,\cdot})^2,\
@@ -160,120 +34,23 @@ SSB&=nI\sum_j (\bar y_{\cdot,j,\cdot}-\bar y_{\cdot,\cdot,\cdot})^2,\
 SS(AB)&=n\sum_{i,j}(\bar y_{i,j,\cdot}-\bar y_{i,\cdot,\cdot}-\bar y_{\cdot,j,\cdot}+\bar y_{\cdot,\cdot,\cdot})^2,\
 SSE&=\sum_{i,j,l}(y_{i,j,l}-\bar y_{i,j,\cdot})^2.
 \end{align}
-$$</p>
-<p>打完这一串真要命。有等式
+$$</p><p>打完这一串真要命。有等式
 $$
 SST=SSA+SSB+SS(AB)+SSE.
-$$</p>
-<table>
-<thead>
-<tr>
-<th>来源</th>
-<th>自由度</th>
-<th>平方和</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Factor A</td>
-<td>$I-1$</td>
-<td>$SSA$</td>
-</tr>
-<tr>
-<td>Factor B</td>
-<td>$J-1$</td>
-<td>$SSB$</td>
-</tr>
-<tr>
-<td>Interaction</td>
-<td>$(I-1)(J-1)$</td>
-<td>$SS(AB)$</td>
-</tr>
-<tr>
-<td>Residual</td>
-<td>$IJ(n-1)$</td>
-<td>$SSE$</td>
-</tr>
-<tr>
-<td>Total</td>
-<td>$nIJ-1$</td>
-<td>$SST$</td>
-</tr>
-</tbody>
-</table>
-<h3 id=假设检验>假设检验</h3>
-<p>用 $F$-检验。检验啥玩意就用啥玩意除以 $MSE$.</p>
-<p>例如 $H_0: \alpha_i=0$，就是 $F_A=\frac{SSA/(I-1)}{SSE/(IJ(n-1))}\sim F_{I-1,IJ(n-1)}$. 老掉牙了，不多说了。</p>
-<p>如果交叉项的检验显著（$H_0: \omega_{i,j}=0$ 被拒绝），这意味着我们无法单独考虑一个变量的作用，必须联合起来考虑，所以应该回到用 $\mu_{i,j}$ 表示的模型，把 $A\times B$ 当成整体因素进行 one way ANOVA 的后续分析（例如多重比较）。</p>
-<p>如果交叉项检验不显著，模型立刻变为下面的——</p>
-<h2 id=two-way-anova-without-interactive>Two way ANOVA without interactive</h2>
-<blockquote>
-<p>注：令 $n=1$ 就是 PPT 中的 additive model。</p>
-</blockquote>
-<h3 id=模型-1>模型</h3>
-<p>直接粗暴地删掉 $\omega$ 即可：
+$$</p><table><thead><tr><th>来源</th><th>自由度</th><th>平方和</th></tr></thead><tbody><tr><td>Factor A</td><td>$I-1$</td><td>$SSA$</td></tr><tr><td>Factor B</td><td>$J-1$</td><td>$SSB$</td></tr><tr><td>Interaction</td><td>$(I-1)(J-1)$</td><td>$SS(AB)$</td></tr><tr><td>Residual</td><td>$IJ(n-1)$</td><td>$SSE$</td></tr><tr><td>Total</td><td>$nIJ-1$</td><td>$SST$</td></tr></tbody></table><h3 id=假设检验>假设检验</h3><p>用 $F$-检验。检验啥玩意就用啥玩意除以 $MSE$.</p><p>例如 $H_0: \alpha_i=0$，就是 $F_A=\frac{SSA/(I-1)}{SSE/(IJ(n-1))}\sim F_{I-1,IJ(n-1)}$. 老掉牙了，不多说了。</p><p>如果交叉项的检验显著（$H_0: \omega_{i,j}=0$ 被拒绝），这意味着我们无法单独考虑一个变量的作用，必须联合起来考虑，所以应该回到用 $\mu_{i,j}$ 表示的模型，把 $A\times B$ 当成整体因素进行 one way ANOVA 的后续分析（例如多重比较）。</p><p>如果交叉项检验不显著，模型立刻变为下面的——</p><h2 id=two-way-anova-without-interactive>Two way ANOVA without interactive</h2><blockquote><p>注：令 $n=1$ 就是 PPT 中的 additive model。</p></blockquote><h3 id=模型-1>模型</h3><p>直接粗暴地删掉 $\omega$ 即可：
 $$
 y_{i,j,l}=\eta+\alpha_i+\beta_j+e_{i,j,l},
 $$
-其中 $e_{i,j,l}\overset{i.i.d.}\sim N(0,\sigma^2)$.</p>
-<p>参数估计前面没变，只有 $\hat e_{i,j,l}$ 变了。具体地：</p>
-<ul>
-<li>$\hat\eta=\bar y_{\cdot,\cdot,\cdot}$,</li>
-<li>$\hat\alpha_i=\bar y_{i,\cdot,\cdot}-\bar y_{\cdot,\cdot,\cdot}$,</li>
-<li>$\hat\beta_j=\bar y_{\cdot,j,\cdot}-\bar y_{\cdot,\cdot,\cdot}$,</li>
-<li>$\hat e_{i,j,l}=y_{i,j,l}-\bar y_{i,\cdot,\cdot}-\bar y_{\cdot,j,\cdot} +\bar y_{\cdot,\cdot,\cdot}$.</li>
-</ul>
-<h3 id=anova>ANOVA</h3>
-<p>相应地，$SSE$ 要变一下：
+其中 $e_{i,j,l}\overset{i.i.d.}\sim N(0,\sigma^2)$.</p><p>参数估计前面没变，只有 $\hat e_{i,j,l}$ 变了。具体地：</p><ul><li>$\hat\eta=\bar y_{\cdot,\cdot,\cdot}$,</li><li>$\hat\alpha_i=\bar y_{i,\cdot,\cdot}-\bar y_{\cdot,\cdot,\cdot}$,</li><li>$\hat\beta_j=\bar y_{\cdot,j,\cdot}-\bar y_{\cdot,\cdot,\cdot}$,</li><li>$\hat e_{i,j,l}=y_{i,j,l}-\bar y_{i,\cdot,\cdot}-\bar y_{\cdot,j,\cdot} +\bar y_{\cdot,\cdot,\cdot}$.</li></ul><h3 id=anova>ANOVA</h3><p>相应地，$SSE$ 要变一下：
 $$
 SSE=\sum_{i,j,l}(y_{i,j,l}-\bar y_{i,\cdot,\cdot}-\bar y_{\cdot,j,\cdot} +\bar y_{\cdot,\cdot,\cdot})^2.
 $$
 其他定义不变，我们有
 $$
 SST=SSA+SSB+SSE.
-$$</p>
-<table>
-<thead>
-<tr>
-<th>来源</th>
-<th>自由度</th>
-<th>平方和</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Factor A</td>
-<td>$I-1$</td>
-<td>$SSA$</td>
-</tr>
-<tr>
-<td>Factor B</td>
-<td>$J-1$</td>
-<td>$SSB$</td>
-</tr>
-<tr>
-<td>Residual</td>
-<td>$nIJ-I-J+1$</td>
-<td>$SSE$</td>
-</tr>
-<tr>
-<td>Total</td>
-<td>$nIJ-1$</td>
-<td>$SST$</td>
-</tr>
-</tbody>
-</table>
-<h3 id=假设检验-1>假设检验</h3>
-<h4 id=f-检验>$F$-检验</h4>
-<p>$H_0:\alpha_i=0$, $F=\dfrac{SSA/(I-1)}{SSE/(nIJ-I-J+1)}\sim F_{I-1,nIJ-I-J+1}$.</p>
-<h4 id=多重比较>多重比较</h4>
-<p>$$
+$$</p><table><thead><tr><th>来源</th><th>自由度</th><th>平方和</th></tr></thead><tbody><tr><td>Factor A</td><td>$I-1$</td><td>$SSA$</td></tr><tr><td>Factor B</td><td>$J-1$</td><td>$SSB$</td></tr><tr><td>Residual</td><td>$nIJ-I-J+1$</td><td>$SSE$</td></tr><tr><td>Total</td><td>$nIJ-1$</td><td>$SST$</td></tr></tbody></table><h3 id=假设检验-1>假设检验</h3><h4 id=f-检验>$F$-检验</h4><p>$H_0:\alpha_i=0$, $F=\dfrac{SSA/(I-1)}{SSE/(nIJ-I-J+1)}\sim F_{I-1,nIJ-I-J+1}$.</p><h4 id=多重比较>多重比较</h4><p>$$
 T_{i_1,i_2}=\dfrac{\bar y_{i_1,\cdot,\cdot}-\bar y_{i_2,\cdot,\cdot}}{\sqrt{\hat\sigma^2 2/(nJ)}}\sim t_{nIJ-I-J+1}.
-$$</p>
-<p>其中 $\hat\sigma^2=SSE/(nIJ-I-J+1)$.</p>
-<p>Bonferroni method 和 Tukey method 是一样的。</p>
-<h2 id=multiple-way-anova>Multiple way ANOVA</h2>
-<p>二元到多元没什么本质区别，只不过公式更难写了…… 比如说 three way 的长这样：
+$$</p><p>其中 $\hat\sigma^2=SSE/(nIJ-I-J+1)$.</p><p>Bonferroni method 和 Tukey method 是一样的。</p><h2 id=multiple-way-anova>Multiple way ANOVA</h2><p>二元到多元没什么本质区别，只不过公式更难写了…… 比如说 three way 的长这样：
 $$
 \begin{align}
 y_{i,j,l,k}=&\eta+\alpha_i+\beta_j+\gamma_l +\
@@ -281,11 +58,7 @@ y_{i,j,l,k}=&\eta+\alpha_i+\beta_j+\gamma_l +\
 &(\alpha\beta\gamma)</em>{i,j,l}+e_{i,j,l,k.}.
 \end{align}
 $$
-其他的自己推罢。</p>
-<h2 id=拉丁方latin-square设计>拉丁方（Latin Square）设计</h2>
-<h3 id=实验设计>实验设计</h3>
-<p>这是你从未体验过的船新设计思路，它可以极大地缩减实验规模。假设有 $3$ 个因素，每个因素有 $5$ 个 level，而<strong>我们只关心其中一个的影响</strong>，另外两个视为 block。完全实验至少需要做 $5\times 5\times 5=125$ 次实验，而使用拉丁方设计，只需要 $25$ 次。</p>
-<p>具体来说，两个 block 组合，有 $5\times 5$ 种 level，每种 level 我们只对 treatment 的一个 level 做一次实验。如下矩阵表示了具体设计：
+其他的自己推罢。</p><h2 id=拉丁方latin-square设计>拉丁方（Latin Square）设计</h2><h3 id=实验设计>实验设计</h3><p>这是你从未体验过的船新设计思路，它可以极大地缩减实验规模。假设有 $3$ 个因素，每个因素有 $5$ 个 level，而<strong>我们只关心其中一个的影响</strong>，另外两个视为 block。完全实验至少需要做 $5\times 5\times 5=125$ 次实验，而使用拉丁方设计，只需要 $25$ 次。</p><p>具体来说，两个 block 组合，有 $5\times 5$ 种 level，每种 level 我们只对 treatment 的一个 level 做一次实验。如下矩阵表示了具体设计：
 $$
 \begin{pmatrix}
 e & a & b & c & d \
@@ -295,260 +68,49 @@ a&b&e&d&c\
 d&e&a&c&b\
 \end{pmatrix}.
 $$
-$a,b,c,d,e$ 是我们所关心的因素的 $5$ 个 level。第 $i$ 行 $j$ 列表示 block 的取值是 $i,j$ 时，用 treatment 的哪个 level 来做实验。</p>
-<p>为了消除 block 的影响，我们要求这个矩阵每一行和每一列不能有重复元素。这样的矩阵叫<strong>拉丁方阵</strong>，这也是“拉丁方设计”这一名字的来源。</p>
-<p>再次强调采用拉丁方设计需要满足的条件：</p>
-<ul>
-<li>三个因素有一个是关注因素（treatment），另外两个是捣乱的（block）；</li>
-<li>三个因素的水平数必须相同；</li>
-<li>三个因素之间不存在交互作用。</li>
-</ul>
-<h3 id=模型-2>模型</h3>
-<p>$\alpha,\beta$ 表示两个 block，$\tau$ 表示 treatment，每个因素有 $k$ 个 level。则
+$a,b,c,d,e$ 是我们所关心的因素的 $5$ 个 level。第 $i$ 行 $j$ 列表示 block 的取值是 $i,j$ 时，用 treatment 的哪个 level 来做实验。</p><p>为了消除 block 的影响，我们要求这个矩阵每一行和每一列不能有重复元素。这样的矩阵叫<strong>拉丁方阵</strong>，这也是“拉丁方设计”这一名字的来源。</p><p>再次强调采用拉丁方设计需要满足的条件：</p><ul><li>三个因素有一个是关注因素（treatment），另外两个是捣乱的（block）；</li><li>三个因素的水平数必须相同；</li><li>三个因素之间不存在交互作用。</li></ul><h3 id=模型-2>模型</h3><p>$\alpha,\beta$ 表示两个 block，$\tau$ 表示 treatment，每个因素有 $k$ 个 level。则
 $$
 y_{i,j,l}=\eta+\alpha_i+\beta_j+\tau_l+e_{i,j,l}.
 $$
-其中 $e_{i,j,l}\overset{i.i.d.}\sim N(0,\sigma^2)$. 估计值的定义显然。</p>
-<h3 id=anova-1>ANOVA</h3>
-<p>各个 $SS$ 的公式也不写了，自己写吧。我们把两个 block 成为 row 和column。</p>
-<table>
-<thead>
-<tr>
-<th>来源</th>
-<th>自由度</th>
-<th>平方和</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>row</td>
-<td>$k-1$</td>
-<td>$SS_{row}$</td>
-</tr>
-<tr>
-<td>column</td>
-<td>$k-1$</td>
-<td>$SS_{col}$</td>
-</tr>
-<tr>
-<td>treatment</td>
-<td>$k-1$</td>
-<td>$SS_{trt}$</td>
-</tr>
-<tr>
-<td>Error</td>
-<td>$(k-1)(k-2)$</td>
-<td>$SSE$</td>
-</tr>
-<tr>
-<td>Total</td>
-<td>$k^2-1$</td>
-<td>$SST$</td>
-</tr>
-</tbody>
-</table>
-<h3 id=假设检验-2>假设检验</h3>
-<p>$F$-检验：$H_0:\tau_i=0$, $F=\dfrac{SS_{trt}/(k-1)}{SSE/((k-1)(k-2))}\sim F_{k-1,(k-1)(k-2)}$.</p>
-<p>$t$-检验：$T_{i,j}=\dfrac{\bar y_{\cdot,\cdot,i}-\bar y_{\cdot,\cdot,j}}{\sqrt{\hat\sigma^2 (2/k)}}$.</p>
-<h2 id=结语>结语</h2>
-<p>写完了…… 感觉这一节就是抄了一遍 PPT 啊……</p>
-<p>方差分析的模型灵活多变，这里只是介绍了几种常用的。实际应用时，往往需要根据实际问题有针对性的建立模型。只要掌握原理，怎么折腾都行。</p>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-<a href=/post/5215-4%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8B-%E4%BC%B0%E8%AE%A1%E4%B8%8E%E6%8E%A8%E6%96%AD/ rel=next title=统计学基础（下）-点估计>
-<i class="fa fa-chevron-left"></i> 统计学基础（下）-点估计
-</a>
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=/post/5225-1%E8%B0%B1%E5%9B%BE%E7%90%86%E8%AE%BA%E5%85%A5%E9%97%A8/ rel=prev title=谱图理论基础>
-谱图理论基础
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=ucomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
-<div class=sidebar-toggle>
-<div class=sidebar-toggle-line-wrap>
-<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+其中 $e_{i,j,l}\overset{i.i.d.}\sim N(0,\sigma^2)$. 估计值的定义显然。</p><h3 id=anova-1>ANOVA</h3><p>各个 $SS$ 的公式也不写了，自己写吧。我们把两个 block 成为 row 和column。</p><table><thead><tr><th>来源</th><th>自由度</th><th>平方和</th></tr></thead><tbody><tr><td>row</td><td>$k-1$</td><td>$SS_{row}$</td></tr><tr><td>column</td><td>$k-1$</td><td>$SS_{col}$</td></tr><tr><td>treatment</td><td>$k-1$</td><td>$SS_{trt}$</td></tr><tr><td>Error</td><td>$(k-1)(k-2)$</td><td>$SSE$</td></tr><tr><td>Total</td><td>$k^2-1$</td><td>$SST$</td></tr></tbody></table><h3 id=假设检验-2>假设检验</h3><p>$F$-检验：$H_0:\tau_i=0$, $F=\dfrac{SS_{trt}/(k-1)}{SSE/((k-1)(k-2))}\sim F_{k-1,(k-1)(k-2)}$.</p><p>$t$-检验：$T_{i,j}=\dfrac{\bar y_{\cdot,\cdot,i}-\bar y_{\cdot,\cdot,j}}{\sqrt{\hat\sigma^2 (2/k)}}$.</p><h2 id=结语>结语</h2><p>写完了…… 感觉这一节就是抄了一遍 PPT 啊……</p><p>方差分析的模型灵活多变，这里只是介绍了几种常用的。实际应用时，往往需要根据实际问题有针对性的建立模型。只要掌握原理，怎么折腾都行。</p></div><footer class=post-footer><div class=post-tags><a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a></div><div class=addthis_inline_share_toolbox></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/5203-5-2k%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1/ rel=next title="线性回归（五）-2^k 因子实验"><i class="fa fa-chevron-left"></i> 线性回归（五）-2^k 因子实验</a></div><div class="post-nav-prev post-nav-item"><a href=/post/5225-1%E8%B0%B1%E5%9B%BE%E7%90%86%E8%AE%BA%E5%85%A5%E9%97%A8/ rel=prev title=谱图理论基础>谱图理论基础
+<i class="fa fa-chevron-right"></i></a></div></div><div id=ucomments></div></footer></article></section></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
 <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-</div>
-</div>
-<aside id=sidebar class=sidebar>
-<div class=sidebar-inner>
-<section class="site-overview sidebar-panel sidebar-panel-active">
-<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
-<img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人>
-<p class=site-author-name itemprop=name>精神病人</p>
-<p class="site-description motion-element" itemprop=description>
-精神病人欢乐多!
-</p>
-</div>
-<nav class="site-state motion-element">
-<div class="site-state-item site-state-posts">
-<a href=/post/>
-<span class=site-state-item-count>41</span>
-<span class=site-state-item-name>日志</span>
-</a>
-</div>
-<div class="site-state-item site-state-categories">
-<a href=/categories/>
-<span class=site-state-item-count>11</span>
-<span class=site-state-item-name>分类</span>
-</a>
-</div>
-<div class="site-state-item site-state-tags">
-<a href=/tags/>
-<span class=site-state-item-count>11</span>
-<span class=site-state-item-name>标签</span>
-</a>
-</div>
-</nav>
-<div class="links-of-author motion-element">
-<span class=links-of-author-item>
-<a href=https://github.com/jcq15/ target=_blank title=GitHub>
-<i class="fa fa-fw fa-github"></i>
-GitHub
-</a>
-</span>
-</div>
-<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
-<div class=tagcloud-of-blogroll-title>
-<i class="fa fa-fw fa-tags"></i>
-标签云
-</div>
-<ul class=tagcloud-of-blogroll-list>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E5%AD%A6%E4%B9%A0>学习
-<sup>15</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
-<sup>6</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%8A%80%E6%9C%AF>技术
-<sup>5</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%9B%B4%E6%96%B0>更新
-<sup>3</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%B8%B8%E6%88%8F>游戏
-<sup>3</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E7%A7%91%E6%99%AE>科普
-<sup>3</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%95%B4%E6%B4%BB>整活
-<sup>2</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
-<sup>2</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%95%A2%E6%83%B3>敢想
-<sup>1</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%B2%99%E9%9B%95>沙雕
-<sup>1</sup>
-</a>
-</li>
-</ul>
-</div>
-</section>
-</div>
-</aside>
-</div>
-</main>
-<footer id=footer class=footer>
-<div class=footer-inner>
-<div class=copyright>
-<span class=copyright-year>
-&copy; 2010 - 2023
-</span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><section class="site-overview sidebar-panel sidebar-panel-active"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人><p class=site-author-name itemprop=name>精神病人</p><p class="site-description motion-element" itemprop=description>精神病人欢乐多!</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href=/post/><span class=site-state-item-count>41</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>12</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>12</span>
+<span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/jcq15/ target=_blank title=GitHub><i class="fa fa-fw fa-github"></i>
+GitHub</a></span></div><div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline"><div class=tagcloud-of-blogroll-title><i class="fa fa-fw fa-tags"></i>
+标签云</div><ul class=tagcloud-of-blogroll-list><li class=tagcloud-of-blogroll-item><a href=/tags/%E5%AD%A6%E4%B9%A0>学习
+<sup>15</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
+<sup>6</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%8A%80%E6%9C%AF>技术
+<sup>5</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B8%B8%E6%88%8F>游戏
+<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%A7%91%E6%99%AE>科普
+<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%B4%E6%B4%BB>整活
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9B%B4%E6%96%B0>更新
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%A2%E6%83%B3>敢想
+<sup>1</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B2%99%E9%9B%95>沙雕
+<sup>1</sup></a></li></ul></div></section></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright><span class=copyright-year>&copy; 2010 - 2024</span>
 <span class=with-love><i class="fa fa-heart"></i></span>
-<span class=copyright-author>沙雕园</span>
-</div>
-<div class=powered-info>
-<span class=powered-by>
-Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.92.2</a>
-</span>
+<span class=copyright-author>沙雕园</span></div><div class=powered-info><span class=powered-by>Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.101.0</a></span>
 <span class=separator-line>/</span>
-<span class=theme-info>
-Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
-</a>
-</span>
-</div>
-<div class=vistor-info>
-<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<span class=site-uv>
-<i class="fa fa-user"></i>
-<span class=busuanzi-value id=busuanzi_value_site_uv></span>
-</span>
+<span class=theme-info>Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank>NexT</a></span></div><div class=vistor-info><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv><i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span></span>
 <span class=separator-line>/</span>
-<span class=site-pv>
-<i class="fa fa-eye"></i>
-<span class=busuanzi-value id=busuanzi_value_site_pv></span>
-</span>
-</div>
-<div class=license-info>
-<span class=storage-info>
-Storage by
-<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a>
-</span>
+<span class=site-pv><i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span></span></div><div class=license-info><span class=storage-info>Storage by
+<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a></span>
 <span class=separator-line>/</span>
-<span class=license-num>
-<a href target=_blank></a>
-</span>
-</div>
-</div>
-</footer>
-<div class=back-to-top>
-<i class="fa fa-arrow-up"></i>
-<span id=scrollpercent><span>0</span>%</span>
-</div>
-</div>
-<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<span class=license-num><a href target=_blank></a></span></div></div></footer><div class=back-to-top><i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span></div></div><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
 <script type=text/javascript src=/js/search.js></script>
 <script type=text/javascript src=/js/affix.js></script>
 <script type=text/javascript src=/js/scrollspy.js></script>
-<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
-<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
-<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
-<script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
-<script type=text/javascript>function showTime(d){var b=new AV.Query(d),a=[],c=$(".leancloud_visitors");c.each(function(){a.push($(this).attr("id").trim())}),b.containedIn('url',a),b.find().then(d=>{var e='.leancloud-visitors-count',b,h,f,j,g,i;if(d.length==0){c.find(e).text(0);return}for(b=0;b<d.length;b++)h=d[b],f=h.get('url'),j=h.get('time'),g=document.getElementById(f),$(g).find(e).text(j);for(b=0;b<a.length;b++)f=a[b],g=document.getElementById(f),i=$(g).find(e),i.text()==''&&i.text(0)},a=>{console.log('Query vistors failed: '+a)})}function addCount(d){var b=$(".leancloud_visitors"),a=b.attr('id').trim(),e=b.attr('data-flag-title').trim(),c=new AV.Query('Counter');c.equalTo("url",a),c.find().then(g=>{var f,c,b;g.length>0?(f=g[0],f.increment('time',1),f.save(null,{query:new AV.Query('Counter').equalTo('url',a),fetchWhenSave:!0}).then(b=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log('Update vistor failed: '+a)})):(c=new AV.ACL,c.setPublicReadAccess(!0),c.setPublicWriteAccess(!0),b=new d,b.set("title",e),b.set("url",a),b.set("time",1),b.setACL(c),b.save().then(d=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log("Save new vistor failed: "+a)}))})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const a=AV.Object.extend("Counter");$('.leancloud_visitors').length==1?addCount(a):$('.post-title-link').length>1&&showTime(a)})</script>
-<script type=text/javascript>(function(){var a=document.createElement('script');a.type='text/javascript',a.async=!0,a.setAttribute('issue-term',"title"),a.setAttribute('theme',"github-light"),a.setAttribute('repo',"jcq15/blog"),a.crossorigin='anonymous',a.src='https://utteranc.es/client.js',document.getElementById('ucomments').appendChild(a)})()</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
-<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type=text/javascript>function detectIE(){var e=window.navigator.userAgent,t=e.indexOf("MSIE "),n=e.indexOf("Trident/"),s=e.indexOf("Edge/");return t>0||n>0||s>0?-1:1}function getCntViewHeight(){var t=$("#content").height(),e=$(window).height(),n=t>e?t-e:$(document).height()-e;return n}function getScrollbarWidth(){var e=$("<div />").addClass("scrollbar-measure").prependTo("body"),t=e[0],n=t.offsetWidth-t.clientWidth;return e.remove(),n}function registerBackTop(){var t=50,e=$(".back-to-top");$(window).on("scroll",function(){e.toggleClass("back-to-top-on",window.pageYOffset>t);var s=$(window).scrollTop(),o=getCntViewHeight(),i=s/o,n=Math.round(i*100),a=n>100?100:n;$("#scrollpercent>span").html(a)}),e.on("click",function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var e=".post-toc",s=$(e),t=".active-current";s.on("activate.bs.scrollspy",function(){var t=$(e+" .active").last();n(),t.addClass("active-current")}).on("clear.bs.scrollspy",n),$("body").scrollspy({target:e});function n(){$(e+" "+t).removeClass(t.substring(1))}}function initAffix(){var e=$(".header-inner").height(),t=parseInt($(".main").css("padding-bottom"),10),n=e+10;$(".sidebar-inner").affix({offset:{top:n,bottom:t}}),$(document).on("affixed.bs.affix",function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){$(window).on("resize",function(){e&&clearTimeout(e),e=setTimeout(function(){var e=document.body.clientHeight-100;updateTOCHeight(e)},0)}),updateTOCHeight(document.body.clientHeight-100);var e,t=getScrollbarWidth();$(".post-toc").css("width","calc(100% + "+t+"px)")}function updateTOCHeight(e){e=e||"auto",$(".post-toc").css("max-height",e)}$(function(){var e,t,n,s,o=$(".header-inner").height()+10;$("#sidebar").css({"margin-top":o}).show(),t=parseInt($("#sidebar").css("margin-top")),n=parseInt($(".sidebar-inner").css("height")),e=t+n,s=$(".content-wrap").height(),s<e&&$(".content-wrap").css("min-height",e),$(".site-nav-toggle").on("click",function(){var e=$(".site-nav"),o=$(".toggle"),t="site-nav-on",i="toggle-close",n=e.hasClass(t),a=n?"slideUp":"slideDown",s=n?"removeClass":"addClass";e.stop()[a]("normal",function(){e[s](t),o[s](i)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$(".sidebar-nav-toc").click(function(){$(this).addClass("sidebar-nav-active"),$(this).next().removeClass("sidebar-nav-active"),$("."+$(this).next().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)}),$(".sidebar-nav-overview").click(function(){$(this).addClass("sidebar-nav-active"),$(this).prev().removeClass("sidebar-nav-active"),$("."+$(this).prev().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)})})</script><script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$(".post-body").viewer()})</script><script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
+<script type=text/javascript>function showTime(e){var n=new AV.Query(e),t=[],s=$(".leancloud_visitors");s.each(function(){t.push($(this).attr("id").trim())}),n.containedIn("url",t),n.find().then(e=>{var n,o,i,r,c,l,a=".leancloud-visitors-count";if(e.length==0){s.find(a).text(0);return}for(n=0;n<e.length;n++)r=e[n],o=r.get("url"),l=r.get("time"),i=document.getElementById(o),$(i).find(a).text(l);for(n=0;n<t.length;n++)o=t[n],i=document.getElementById(o),c=$(i).find(a),c.text()==""&&c.text(0)},e=>{console.log("Query vistors failed: "+e)})}function addCount(e){var n=$(".leancloud_visitors"),t=n.attr("id").trim(),o=n.attr("data-flag-title").trim(),s=new AV.Query("Counter");s.equalTo("url",t),s.find().then(n=>{if(n.length>0){var s,i,a=n[0];a.increment("time",1),a.save(null,{query:new AV.Query("Counter").equalTo("url",t),fetchWhenSave:!0}).then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(e.get("time"))},e=>{console.log("Update vistor failed: "+e)})}else i=new AV.ACL,i.setPublicReadAccess(!0),i.setPublicWriteAccess(!0),s=new e,s.set("title",o),s.set("url",t),s.set("time",1),s.setACL(i),s.save().then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(s.get("time"))},e=>{console.log("Save new vistor failed: "+e)})})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const e=AV.Object.extend("Counter");$(".leancloud_visitors").length==1?addCount(e):$(".post-title-link").length>1&&showTime(e)})</script><script type=text/javascript>(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.setAttribute("issue-term","title"),e.setAttribute("theme","github-light"),e.setAttribute("repo","jcq15/blog"),e.crossorigin="anonymous",e.src="https://utteranc.es/client.js",document.getElementById("ucomments").appendChild(e)})()</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
 <script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
-<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
-</body>
-</html>
+<script>(function(){var t,e=document.createElement("script"),n=window.location.protocol.split(":")[0];n==="https"?e.src="https://zz.bdstatic.com/linksubmit/push.js":e.src="http://push.zhanzhang.baidu.com/push.js",t=document.getElementsByTagName("script")[0],t.parentNode.insertBefore(e,t)})()</script></body></html>

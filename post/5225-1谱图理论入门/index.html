@@ -1,155 +1,34 @@
-<!doctype html><html lang=zh-cn dir=content/zh-cn>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
-<title> 谱图理论基础 - 沙雕园 </title>
-<meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享">
-<meta name=author content="精神病人">
-<meta property="og:title" content="谱图理论基础">
-<meta property="og:site_name" content="沙雕园">
-<meta property="og:image" content="/img/author.jpg">
-<meta name=title content="谱图理论基础 - 沙雕园">
-<meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。">
-<link rel="shortcut icon" href=/img/favicon.ico>
-<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
-<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
-<link href=//unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css rel=stylesheet type=text/css>
-<link href=//unpkg.com/imageviewer@1.1.0/dist/viewer.min.css rel=stylesheet>
-<link href=/css/main.css rel=stylesheet type=text/css>
-<link href=/css/syntax.css rel=stylesheet type=text/css>
-</head>
-<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
-<div class="container one-collumn sidebar-position-left page-home">
-<div class=headband></div>
-<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
-<div class=header-inner> <div class=site-brand-container>
-<div class=site-nav-toggle>
-<div class=toggle role=button style=opacity:1;top:0>
+<!doctype html><html lang=zh-cn dir=content/zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=content-security-policy content="upgrade-insecure-requests"><title>谱图理论基础 - 沙雕园</title><meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享"><meta name=author content="精神病人"><meta property="og:title" content="谱图理论基础"><meta property="og:site_name" content="沙雕园"><meta property="og:image" content="/img/author.jpg"><meta name=title content="谱图理论基础 - 沙雕园"><meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。"><link rel="shortcut icon" href=/img/favicon.ico><link rel=apple-touch-icon href=/img/apple-touch-icon.png><link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png><link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css><link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet><link href=/css/main.css rel=stylesheet type=text/css><link href=/css/syntax.css rel=stylesheet type=text/css></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-hans><div class="container one-collumn sidebar-position-left page-home"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle role=button style=opacity:1;top:0><span class=toggle-line></span>
 <span class=toggle-line></span>
-<span class=toggle-line></span>
-<span class=toggle-line></span>
-</div>
-</div>
-<div class=site-meta>
-<div class=custom-logo-site-title>
-<a href=/ class=brand rel=start>
-<span class=logo-line-before><i></i></span>
+<span class=toggle-line></span></div></div><div class=site-meta><div class=custom-logo-site-title><a href=/ class=brand rel=start><span class=logo-line-before><i></i></span>
 <span class=site-title>沙雕园</span>
-<span class=logo-line-after><i></i></span>
-</a>
-</div>
-<p class=site-subtitle>沙雕使人进步。</p>
-</div>
-<div class=site-nav-right>
-<div class="toggle popup-trigger" style=opacity:1;top:0>
-<i class="fa fa-search fa-fw fa-lg"></i>
-</div>
-</div>
-</div>
-<nav class=site-nav>
-<ul id=menu class=menu>
-<li class=menu-item>
-<a href=/ rel=section>
-<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页
-</a>
-</li>
-<li class="menu-item menu-item-active">
-<a href=/post rel=section>
-<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档
-</a>
-</li>
-<li class=menu-item>
-<a href=/about.html rel=section>
-<i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我
-</a>
-</li>
-<li class="menu-item menu-item-search">
-<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> 搜索</a>
-</li>
-</ul>
-<div class=site-search>
-<div class="popup search-popup local-search-popup">
-<div class="local-search-header clearfix">
-<span class=search-icon><i class="fa fa-search"></i> </span>
-<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
-<div class=local-search-input-wrapper>
-<input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
-</div>
-</div>
-<div id=local-search-result></div>
-</div>
-</div>
-</nav> </div>
-</header>
-<main id=main class=main>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=/post/5225-1%E8%B0%B1%E5%9B%BE%E7%90%86%E8%AE%BA%E5%85%A5%E9%97%A8/ itemprop=url>
-谱图理论基础
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
+<span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>沙雕使人进步。</p></div><div class=site-nav-right><div class="toggle popup-trigger" style=opacity:1;top:0><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul id=menu class=menu><li class=menu-item><a href=/ rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-active"><a href=/post rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class=menu-item><a href=/about.html rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于我</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class=site-search><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class=search-icon><i class="fa fa-search"></i></span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span><div class=local-search-input-wrapper><input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off></div></div><div id=local-search-result></div></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><section id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=/post/5225-1%E8%B0%B1%E5%9B%BE%E7%90%86%E8%AE%BA%E5%85%A5%E9%97%A8/ itemprop=url>谱图理论基础</a></h1><div class=post-meta><span class=post-pushdate><i class="fa fa-calendar-o fa-fw"></i>
 <span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-11-12">
-2021-11-12
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-11-12">2021-11-12</time></span>
+<span class=post-category><i class="fa fa-folder-o fa-fw"></i>
 <span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0 itemprop=url rel=index>
-<span itemprop=name>课程笔记</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing><a class=post-category-a href=/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0 itemprop=url rel=index><span itemprop=name>课程笔记</span></a>
+&nbsp;</span></span>
+<span class=post-wordcount><i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>2473 字</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
+<span class=leancloud-world-count>2473 字</span></span>
+<span class=post-readtime><i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>5分钟</span>
-</span>
-<span id=/post/5225-1%E8%B0%B1%E5%9B%BE%E7%90%86%E8%AE%BA%E5%85%A5%E9%97%A8/ class="leancloud_visitors post-visitor" data-flag-title=谱图理论基础>
-<i class="fa fa-binoculars fa-fw"></i>
+<span class=leancloud-view-count>5分钟</span></span>
+<span id=/post/5225-1%E8%B0%B1%E5%9B%BE%E7%90%86%E8%AE%BA%E5%85%A5%E9%97%A8/ class="leancloud_visitors post-visitor" data-flag-title=谱图理论基础><i class="fa fa-binoculars fa-fw"></i>
 <span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>图的基本定义啥的就不写了，满大街都是。从 Laplace 矩阵开始的。</p>
-<h1 id=谱图理论基础>谱图理论基础</h1>
-<h2 id=laplace-矩阵>Laplace 矩阵</h2>
-<h3 id=来源>来源</h3>
-<p>考虑微积分中的 Laplace 算子。对多元函数 $f(x_1,\cdots,x_n)$，Laplace 算子 $\Delta$ 定义为
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>图的基本定义啥的就不写了，满大街都是。从 Laplace 矩阵开始的。</p><h1 id=谱图理论基础>谱图理论基础</h1><h2 id=laplace-矩阵>Laplace 矩阵</h2><h3 id=来源>来源</h3><p>考虑微积分中的 Laplace 算子。对多元函数 $f(x_1,\cdots,x_n)$，Laplace 算子 $\Delta$ 定义为
 $$
 \Delta f=\sum_{i=1}^n \dfrac{\partial^2 f}{\partial x_i^2}.
 $$
 我们用右侧差分代替各个函数的导数，即
 $$
-f'(x)\approx \dfrac{f(x+\Delta x)-f(x)}{\Delta x}.
+f&rsquo;(x)\approx \dfrac{f(x+\Delta x)-f(x)}{\Delta x}.
 $$
-为简便起见，考虑二元函数 $f(x,y)$，并且统一步长为 $1$。此时二维平面变成了一张图，节点是所有格点，每个点连接了上下左右四个格点。对节点 $(x,y)$，它的四个邻居是 $(x+1,y),(x-1,y),(x,y+1),(x,y-1)$.</p>
-<p>容易算出差分形式的 Laplace 算子为</p>
-<p>$$
+为简便起见，考虑二元函数 $f(x,y)$，并且统一步长为 $1$。此时二维平面变成了一张图，节点是所有格点，每个点连接了上下左右四个格点。对节点 $(x,y)$，它的四个邻居是 $(x+1,y),(x-1,y),(x,y+1),(x,y-1)$.</p><p>容易算出差分形式的 Laplace 算子为</p><p>$$
 \Delta f(x,y)\approx f(x+1,y)+f(x-1,y)+f(x,y+1)+f(x,y-1)-4f(x,y).
-$$</p>
-<p>把它推广到图 $G(V,E)$，$f:V\to\mathbb{R}$，有</p>
-<p>$$
+$$</p><p>把它推广到图 $G(V,E)$，$f:V\to\mathbb{R}$，有</p><p>$$
 \begin{pmatrix}
 \Delta f(x_1)\\
 \vdots\\
@@ -160,41 +39,8 @@ f(x_1)\\
 \vdots\\
 f(x_n)
 \end{pmatrix}.
-$$</p>
-<p>Laplace 矩阵定义为 $D-W$ 而不是 $W-D$，是因为这样是半正定矩阵，而不是半负定矩阵。</p>
-<h3 id=性质>性质</h3>
-<ul>
-<li>$\forall x\in\mathbb{R}^n,x^TLx=\sum_{(u,v)\in E}w_{uv}(x_u-x_v)^2$,</li>
-<li>$L$ 对称半正定，</li>
-<li>最小特征值为 $0$，其中一个特征向量为所有分量为 $1$ 的向量，</li>
-<li>特征值 $0$ 的重数为连通子图的个数，</li>
-<li>所有非 $0$ 特征值的特征向量必然与 $1$ 正交（更一般地，实对称矩阵不同特征值的特征向量正交）。</li>
-</ul>
-<h2 id=中心性centrality>中心性（Centrality）</h2>
-<p>几种简单的中心性的度量：</p>
-<ul>
-<li>Degree centrality: $k_u$ ($k_u^{\rm in},k_u^{\rm out}$),</li>
-<li>Closeness centrality: $c_{CL}(u)=\left(\sum_v d_{uv}\right)^{-1}$,</li>
-<li>Betweenness centrality: 点对 $v,w$ 的个数 which 有通过 $u$ 的最短路径（有多条则按比例算），</li>
-</ul>
-<p>此外还有下面几种不那么 trivial 的。</p>
-<h3 id=katz-centrality-eigenvalue-centrality>Katz centrality (Eigenvalue centrality)</h3>
-<h4 id=perron-frobenius-定理>Perron-Frobenius 定理</h4>
-<p>我们要先介绍 Perron-Frobenius 定理，它描述了非负矩阵的谱的一些有趣性质。完整内容和证明请参考 <a href=https://dna049.com/perronFrobeniusTheory target=_blank rel=noopener>https://dna049.com/perronFrobeniusTheory</a>
-。</p>
-<p><strong>定义（置换相似）</strong> 两个矩阵称为置换相似的，若存在置换矩阵 $P$ 满足 $P^TXP=Y$.</p>
-<p>对于图的邻接矩阵，置换操作等价于更改节点的编号顺序。</p>
-<p><strong>定义（可约矩阵）</strong> 设 $A\in M_n$，称 $A$ 可约，若 $A$ 置换相似于一个形如 $\begin{pmatrix}B&0\\C&D\end{pmatrix}$ 的矩阵，其中 $B,D$ 是方阵。否则称 $A$ 不可约。</p>
-<p>图的邻接矩阵可约，等价于图不连通。</p>
-<p><strong>定义（谱半径）</strong> 矩阵 $A$ 的谱半径 $\rho(A)$ 定义为矩阵 $A$ 的所有特征值的绝对值的最大值。</p>
-<p><strong>定理（Perron-Frobenius）</strong> 设 $A$ 是非负不可约矩阵，则</p>
-<ol>
-<li>$\rho(A)>0$ 且 $\rho(A)$ 是矩阵 $A$ 的一个单重特征值</li>
-<li>$A$ 有一个对应于 $\rho(A)$ 的正特征向量</li>
-<li>$A$ 的每个非负特征向量都对应于特征值 $\rho(A)$</li>
-</ol>
-<h4 id=katz-的心路历程>Katz 的心路历程</h4>
-<p>$A$ 为邻接矩阵。对于 degree centrality，我们把各节点的中心度写成列向量，有
+$$</p><p>Laplace 矩阵定义为 $D-W$ 而不是 $W-D$，是因为这样是半正定矩阵，而不是半负定矩阵。</p><h3 id=性质>性质</h3><ul><li>$\forall x\in\mathbb{R}^n,x^TLx=\sum_{(u,v)\in E}w_{uv}(x_u-x_v)^2$,</li><li>$L$ 对称半正定，</li><li>最小特征值为 $0$，其中一个特征向量为所有分量为 $1$ 的向量，</li><li>特征值 $0$ 的重数为连通子图的个数，</li><li>所有非 $0$ 特征值的特征向量必然与 $1$ 正交（更一般地，实对称矩阵不同特征值的特征向量正交）。</li></ul><h2 id=中心性centrality>中心性（Centrality）</h2><p>几种简单的中心性的度量：</p><ul><li>Degree centrality: $k_u$ ($k_u^{\rm in},k_u^{\rm out}$),</li><li>Closeness centrality: $c_{CL}(u)=\left(\sum_v d_{uv}\right)^{-1}$,</li><li>Betweenness centrality: 点对 $v,w$ 的个数 which 有通过 $u$ 的最短路径（有多条则按比例算），</li></ul><p>此外还有下面几种不那么 trivial 的。</p><h3 id=katz-centrality-eigenvalue-centrality>Katz centrality (Eigenvalue centrality)</h3><h4 id=perron-frobenius-定理>Perron-Frobenius 定理</h4><p>我们要先介绍 Perron-Frobenius 定理，它描述了非负矩阵的谱的一些有趣性质。完整内容和证明请参考 <a href=https://dna049.com/perronFrobeniusTheory target=_blank rel=noopener>https://dna049.com/perronFrobeniusTheory</a>
+。</p><p><strong>定义（置换相似）</strong> 两个矩阵称为置换相似的，若存在置换矩阵 $P$ 满足 $P^TXP=Y$.</p><p>对于图的邻接矩阵，置换操作等价于更改节点的编号顺序。</p><p><strong>定义（可约矩阵）</strong> 设 $A\in M_n$，称 $A$ 可约，若 $A$ 置换相似于一个形如 $\begin{pmatrix}B&0\\C&D\end{pmatrix}$ 的矩阵，其中 $B,D$ 是方阵。否则称 $A$ 不可约。</p><p>图的邻接矩阵可约，等价于图不连通。</p><p><strong>定义（谱半径）</strong> 矩阵 $A$ 的谱半径 $\rho(A)$ 定义为矩阵 $A$ 的所有特征值的绝对值的最大值。</p><p><strong>定理（Perron-Frobenius）</strong> 设 $A$ 是非负不可约矩阵，则</p><ol><li>$\rho(A)>0$ 且 $\rho(A)$ 是矩阵 $A$ 的一个单重特征值</li><li>$A$ 有一个对应于 $\rho(A)$ 的正特征向量</li><li>$A$ 的每个非负特征向量都对应于特征值 $\rho(A)$</li></ol><h4 id=katz-的心路历程>Katz 的心路历程</h4><p>$A$ 为邻接矩阵。对于 degree centrality，我们把各节点的中心度写成列向量，有
 $$
 c_0=A
 \begin{pmatrix}
@@ -211,12 +57,9 @@ $$
 $$
 \lim_{r\to\infty} c_r=\left(\sum_i x_i\right)x.
 $$
-证明留作习题。而我们其实只关心节点之间的中心度的相对大小，所以 $x$ 可以随便乘个系数。我们令 $|x|=1, x_i>0$，然后定义 eigenvalue centrality (Katz centrality):</p>
-<p>$$
+证明留作习题。而我们其实只关心节点之间的中心度的相对大小，所以 $x$ 可以随便乘个系数。我们令 $|x|=1, x_i>0$，然后定义 eigenvalue centrality (Katz centrality):</p><p>$$
 c_E(u)=x_u.
-$$</p>
-<h3 id=pagerank-centrality>PageRank centrality</h3>
-<p>这是 Google 的网页排序指标。我们假设一个网络中，网页（顶点）$u$ 有 $x_u$ 的人在访问。下一时刻，有一部分人会从其他页面跳转而来。跳转的概率是 $\alpha$，等概率跳转到该页面连接的其他页面。则跳转到 $u$ 的人数是：
+$$</p><h3 id=pagerank-centrality>PageRank centrality</h3><p>这是 Google 的网页排序指标。我们假设一个网络中，网页（顶点）$u$ 有 $x_u$ 的人在访问。下一时刻，有一部分人会从其他页面跳转而来。跳转的概率是 $\alpha$，等概率跳转到该页面连接的其他页面。则跳转到 $u$ 的人数是：
 $$
 \alpha\sum_{v:(v,u)\in E}\dfrac{x_v}{k_v^{\rm out}}.
 $$
@@ -228,51 +71,28 @@ $$
 $$
 x=\beta(I-\alpha D^{-1}A)^{-1}\mathbf{1}.
 $$
-请自行证明那个矩阵可逆。</p>
-<h3 id=hits-hubs-and-authorities>HITS (hubs and authorities)</h3>
-<p>HITS (Hyperlink-Induced Topic Search) 与 PageRank 算法一样，也是一种用于对网页进行排序的算法。</p>
-<p>网页有两个功能：hub 和 authority。Hub 是网站导航方面的功能，比如臭名昭著的 hao123，authority 是真正的内容，比如我这篇文章（？）。我们给每个节点 $u$ 两个中心性：hub centrality $h_u$ 和 authority $a_u$. 我们希望：</p>
-<ul>
-<li>被高 $h$ 的节点指向，说明内容质量 $a$ 高</li>
-<li>指向高 $a$ 的节点，说明索引质量 $h$ 高</li>
-</ul>
-<p>有了！
+请自行证明那个矩阵可逆。</p><h3 id=hits-hubs-and-authorities>HITS (hubs and authorities)</h3><p>HITS (Hyperlink-Induced Topic Search) 与 PageRank 算法一样，也是一种用于对网页进行排序的算法。</p><p>网页有两个功能：hub 和 authority。Hub 是网站导航方面的功能，比如臭名昭著的 hao123，authority 是真正的内容，比如我这篇文章（？）。我们给每个节点 $u$ 两个中心性：hub centrality $h_u$ 和 authority $a_u$. 我们希望：</p><ul><li>被高 $h$ 的节点指向，说明内容质量 $a$ 高</li><li>指向高 $a$ 的节点，说明索引质量 $h$ 高</li></ul><p>有了！
 $$
 \begin{align}
 h_u&=\alpha\sum_{v:(u,v)\in E}a_v,\\
 a_v&=\beta \sum_{u:(u,v)\in E}h_u.
 \end{align}
-$$</p>
-<p>写成矩阵就是
+$$</p><p>写成矩阵就是
 $$
 \begin{align}
 h &= \alpha Aa,\\
 a &= \beta A^Th.
 \end{align}
-$$</p>
-<p>然后
+$$</p><p>然后
 $$
 \begin{align}
 AA^Th&=\dfrac{1}{\alpha\beta} h,\\
 A^TAa&=\dfrac{1}{\alpha\beta}a.
 \end{align}
-$$</p>
-<p>$h$ 是 $AA^T$ 的特征向量，根据 Perron-Frobenius 定理，要想 $h$ 是正的，他只能是最大特征值的特征向量，这个最大特征值就是 $\dfrac{1}{\alpha\beta}$。$a$ 同理。给出合适的归一化条件，就可以求出 $h$ 和 $a$。</p>
-<h2 id=network-cohesion>Network Cohesion</h2>
-<p>团（clique）是全连接子图。</p>
-<p>核心（core）：$k$-core 表示子图内每个顶点的度都不小于 $k$（只统计内部边）</p>
-<p>我们发现有一个有趣的性质：如果 $(u,v)$ 和 $(u,w)$ 都是边，往往 $(v,w)$ 也是边（共同好友），这一性质叫过渡性（transitivity）。我们想要引入聚类系数（clustering coefficient）来刻画过渡性。</p>
-<p>我们称 $uvw$ 是长度为 2 的闭合路径，如果 $(u,v),(u,w),(v,w)$ 都是边。定义聚类系数
+$$</p><p>$h$ 是 $AA^T$ 的特征向量，根据 Perron-Frobenius 定理，要想 $h$ 是正的，他只能是最大特征值的特征向量，这个最大特征值就是 $\dfrac{1}{\alpha\beta}$。$a$ 同理。给出合适的归一化条件，就可以求出 $h$ 和 $a$。</p><h2 id=network-cohesion>Network Cohesion</h2><p>团（clique）是全连接子图。</p><p>核心（core）：$k$-core 表示子图内每个顶点的度都不小于 $k$（只统计内部边）</p><p>我们发现有一个有趣的性质：如果 $(u,v)$ 和 $(u,w)$ 都是边，往往 $(v,w)$ 也是边（共同好友），这一性质叫过渡性（transitivity）。我们想要引入聚类系数（clustering coefficient）来刻画过渡性。</p><p>我们称 $uvw$ 是长度为 2 的闭合路径，如果 $(u,v),(u,w),(v,w)$ 都是边。定义聚类系数
 $$
 C=\dfrac{\sharp{\text 长度为 2 的闭合路径}}{\sharp{\text 长度为 2 的路径}}.
-$$</p>
-<h2 id=物以类聚homophily>物以类聚（homophily）</h2>
-<p>鲁迅曾经说过，物以类聚，人以群分。在图中，属性相似的节点可能更倾向于互相连接，这一特点就叫 homophily。</p>
-<h3 id=属性向量>属性向量</h3>
-<p>我们要构造 $y$ 和 $z$. 首先每个节点 $u$ 都有一个属性 $x_u$。设一共有 $m$ 条边，我们把 $(u,v)$ 和 $(v,u)$ 看成同时存在的两条边，这时就有 $2m$ 条边。我们给边编号 $j=1,\cdots,2m$，边 $e_j=(u,v)$，则 $y_j=x_u,z_j=x_v$.</p>
-<p>例如 $E={(1,2),(1,3)}$, 则 $y=(x_1,x_2,x_1,x_3),z=(x_2,x_1,x_3,x_1)$. 他们都是 $2m$ 维向量。显然 $y$ 和 $z$ 的变化趋势是否相同可以反映 homophily。下面介绍两种衡量方式：assortativity coefficient 和 modularity。</p>
-<h3 id=assortativity-coefficient>Assortativity coefficient</h3>
-<p>定义 assortativity coefficient 为 $y,z$ 的相关系数：
+$$</p><h2 id=物以类聚homophily>物以类聚（homophily）</h2><p>鲁迅曾经说过，物以类聚，人以群分。在图中，属性相似的节点可能更倾向于互相连接，这一特点就叫 homophily。</p><h3 id=属性向量>属性向量</h3><p>我们要构造 $y$ 和 $z$. 首先每个节点 $u$ 都有一个属性 $x_u$。设一共有 $m$ 条边，我们把 $(u,v)$ 和 $(v,u)$ 看成同时存在的两条边，这时就有 $2m$ 条边。我们给边编号 $j=1,\cdots,2m$，边 $e_j=(u,v)$，则 $y_j=x_u,z_j=x_v$.</p><p>例如 $E={(1,2),(1,3)}$, 则 $y=(x_1,x_2,x_1,x_3),z=(x_2,x_1,x_3,x_1)$. 他们都是 $2m$ 维向量。显然 $y$ 和 $z$ 的变化趋势是否相同可以反映 homophily。下面介绍两种衡量方式：assortativity coefficient 和 modularity。</p><h3 id=assortativity-coefficient>Assortativity coefficient</h3><p>定义 assortativity coefficient 为 $y,z$ 的相关系数：
 $$
 r=\dfrac{{\rm Cov}(y,z)}{\sqrt{{\rm Var}(y){\rm Var}(z)}},
 $$
@@ -280,10 +100,7 @@ $$
 $$
 r=\dfrac{2\sum_{(u,v)\in E}x_ux_v-2m\bar x_E^2}{\sum_{u\in V} k_u x_u^2-2m\bar x_E^2}.
 $$
-其中 $m$ 为边数，$k_u$ 为 degree, $\bar x_E=\dfrac{1}{2m}\sum_{u\in V} k_u x_u$.</p>
-<p>我们有 $-1\leq r\leq 1$. $r$ 越大越说明鲁迅说的对。$r$ 要是 $-1$ 则恰恰相反。</p>
-<h3 id=modularity>Modularity</h3>
-<p>Assortativity coefficient 适合连续属性，而它更适合离散的分类属性。假设某个 factor 有 $I$ 个取值，例如三个不同的班级，$x_u$ 采用 one-hot 编码，即 $u$ 如果属于第 $i$ 类，则 $x_u^{(i)}=1$, 否则 $x_u^{(i)}=0$. 类似地有 $y^{(i)},z^{(i)}$ 都是 $2m$ 维向量。定义 modularity:
+其中 $m$ 为边数，$k_u$ 为 degree, $\bar x_E=\dfrac{1}{2m}\sum_{u\in V} k_u x_u$.</p><p>我们有 $-1\leq r\leq 1$. $r$ 越大越说明鲁迅说的对。$r$ 要是 $-1$ 则恰恰相反。</p><h3 id=modularity>Modularity</h3><p>Assortativity coefficient 适合连续属性，而它更适合离散的分类属性。假设某个 factor 有 $I$ 个取值，例如三个不同的班级，$x_u$ 采用 one-hot 编码，即 $u$ 如果属于第 $i$ 类，则 $x_u^{(i)}=1$, 否则 $x_u^{(i)}=0$. 类似地有 $y^{(i)},z^{(i)}$ 都是 $2m$ 维向量。定义 modularity:
 $$
 Q=\sum_{i\in I} {\rm Cov}(y^{(i)},z^{(i)}).
 $$
@@ -294,213 +111,45 @@ Q&=\sum_{i\in I}Q^{(i)},\\
 Q^i&=\dfrac{1}{m}\sum_{(u,v)\in E}x_u^{(i)}x_v^{(i)}-\left(\bar x^{(i)}_E\right)^2.
 \end{align}
 $$
-$Q$ 越大越好，但 $Q\leq 1$（自行证明）。</p>
-<h3 id=agglomerative-clustering>Agglomerative Clustering</h3>
-<p>聚类是机器学习中的一个重要话题。这里我们简要介绍以下 agglomerative clustering。它是层次聚类中自底向上的算法（还有一种自顶向下的 divisive clustering）。Agglomerative clustering 可以采用许多不同的方式来度量两个聚类的相似度，这里介绍的是使用 modularity $Q$ 作为相似程度的实现。</p>
-<ul>
-<li>首先假设每个节点都是单独的一类；</li>
-<li>考虑合并其中两个节点，有 $n(n-1)/2$ 种合并方式，穷举选择使 $Q$ 最大的一种；</li>
-<li>现在只剩 $n-1$ 个类别了，重复上述步骤，选择一种使得 $Q$ 最大的方式合并其中两个类别；</li>
-<li>重复直到只剩一类；</li>
-<li>合并的过程可以画出一个树形图，它叫 dendrogram。</li>
-</ul>
-<p>然后就可以目测 dendrogram 来决定分几类了。</p>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-<a href=/post/5203-4%E5%A4%9A%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/ rel=next title=线性回归（四）-多因素方差分析>
-<i class="fa fa-chevron-left"></i> 线性回归（四）-多因素方差分析
-</a>
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=/post/5225-2%E9%9A%8F%E6%9C%BA%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/ rel=prev title=随机图与网络模型>
-随机图与网络模型
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=ucomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
-<div class=sidebar-toggle>
-<div class=sidebar-toggle-line-wrap>
-<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+$Q$ 越大越好，但 $Q\leq 1$（自行证明）。</p><h3 id=agglomerative-clustering>Agglomerative Clustering</h3><p>聚类是机器学习中的一个重要话题。这里我们简要介绍以下 agglomerative clustering。它是层次聚类中自底向上的算法（还有一种自顶向下的 divisive clustering）。Agglomerative clustering 可以采用许多不同的方式来度量两个聚类的相似度，这里介绍的是使用 modularity $Q$ 作为相似程度的实现。</p><ul><li>首先假设每个节点都是单独的一类；</li><li>考虑合并其中两个节点，有 $n(n-1)/2$ 种合并方式，穷举选择使 $Q$ 最大的一种；</li><li>现在只剩 $n-1$ 个类别了，重复上述步骤，选择一种使得 $Q$ 最大的方式合并其中两个类别；</li><li>重复直到只剩一类；</li><li>合并的过程可以画出一个树形图，它叫 dendrogram。</li></ul><p>然后就可以目测 dendrogram 来决定分几类了。</p></div><footer class=post-footer><div class=post-tags><a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a></div><div class=addthis_inline_share_toolbox></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/5203-4%E5%A4%9A%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/ rel=next title=线性回归（四）-多因素方差分析><i class="fa fa-chevron-left"></i> 线性回归（四）-多因素方差分析</a></div><div class="post-nav-prev post-nav-item"><a href=/post/5225-2%E9%9A%8F%E6%9C%BA%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/ rel=prev title=随机图与网络模型>随机图与网络模型
+<i class="fa fa-chevron-right"></i></a></div></div><div id=ucomments></div></footer></article></section></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
 <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-</div>
-</div>
-<aside id=sidebar class=sidebar>
-<div class=sidebar-inner>
-<section class="site-overview sidebar-panel sidebar-panel-active">
-<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
-<img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人>
-<p class=site-author-name itemprop=name>精神病人</p>
-<p class="site-description motion-element" itemprop=description>
-精神病人欢乐多!
-</p>
-</div>
-<nav class="site-state motion-element">
-<div class="site-state-item site-state-posts">
-<a href=/post/>
-<span class=site-state-item-count>41</span>
-<span class=site-state-item-name>日志</span>
-</a>
-</div>
-<div class="site-state-item site-state-categories">
-<a href=/categories/>
-<span class=site-state-item-count>11</span>
-<span class=site-state-item-name>分类</span>
-</a>
-</div>
-<div class="site-state-item site-state-tags">
-<a href=/tags/>
-<span class=site-state-item-count>11</span>
-<span class=site-state-item-name>标签</span>
-</a>
-</div>
-</nav>
-<div class="links-of-author motion-element">
-<span class=links-of-author-item>
-<a href=https://github.com/jcq15/ target=_blank title=GitHub>
-<i class="fa fa-fw fa-github"></i>
-GitHub
-</a>
-</span>
-</div>
-<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
-<div class=tagcloud-of-blogroll-title>
-<i class="fa fa-fw fa-tags"></i>
-标签云
-</div>
-<ul class=tagcloud-of-blogroll-list>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E5%AD%A6%E4%B9%A0>学习
-<sup>15</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
-<sup>6</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%8A%80%E6%9C%AF>技术
-<sup>5</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%9B%B4%E6%96%B0>更新
-<sup>3</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%B8%B8%E6%88%8F>游戏
-<sup>3</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E7%A7%91%E6%99%AE>科普
-<sup>3</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%95%B4%E6%B4%BB>整活
-<sup>2</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
-<sup>2</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%95%A2%E6%83%B3>敢想
-<sup>1</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%B2%99%E9%9B%95>沙雕
-<sup>1</sup>
-</a>
-</li>
-</ul>
-</div>
-</section>
-</div>
-</aside>
-</div>
-</main>
-<footer id=footer class=footer>
-<div class=footer-inner>
-<div class=copyright>
-<span class=copyright-year>
-&copy; 2010 - 2023
-</span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><section class="site-overview sidebar-panel sidebar-panel-active"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人><p class=site-author-name itemprop=name>精神病人</p><p class="site-description motion-element" itemprop=description>精神病人欢乐多!</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href=/post/><span class=site-state-item-count>41</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>12</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>12</span>
+<span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/jcq15/ target=_blank title=GitHub><i class="fa fa-fw fa-github"></i>
+GitHub</a></span></div><div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline"><div class=tagcloud-of-blogroll-title><i class="fa fa-fw fa-tags"></i>
+标签云</div><ul class=tagcloud-of-blogroll-list><li class=tagcloud-of-blogroll-item><a href=/tags/%E5%AD%A6%E4%B9%A0>学习
+<sup>15</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
+<sup>6</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%8A%80%E6%9C%AF>技术
+<sup>5</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B8%B8%E6%88%8F>游戏
+<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%A7%91%E6%99%AE>科普
+<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%B4%E6%B4%BB>整活
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9B%B4%E6%96%B0>更新
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%A2%E6%83%B3>敢想
+<sup>1</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B2%99%E9%9B%95>沙雕
+<sup>1</sup></a></li></ul></div></section></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright><span class=copyright-year>&copy; 2010 - 2024</span>
 <span class=with-love><i class="fa fa-heart"></i></span>
-<span class=copyright-author>沙雕园</span>
-</div>
-<div class=powered-info>
-<span class=powered-by>
-Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.92.2</a>
-</span>
+<span class=copyright-author>沙雕园</span></div><div class=powered-info><span class=powered-by>Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.101.0</a></span>
 <span class=separator-line>/</span>
-<span class=theme-info>
-Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
-</a>
-</span>
-</div>
-<div class=vistor-info>
-<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<span class=site-uv>
-<i class="fa fa-user"></i>
-<span class=busuanzi-value id=busuanzi_value_site_uv></span>
-</span>
+<span class=theme-info>Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank>NexT</a></span></div><div class=vistor-info><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv><i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span></span>
 <span class=separator-line>/</span>
-<span class=site-pv>
-<i class="fa fa-eye"></i>
-<span class=busuanzi-value id=busuanzi_value_site_pv></span>
-</span>
-</div>
-<div class=license-info>
-<span class=storage-info>
-Storage by
-<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a>
-</span>
+<span class=site-pv><i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span></span></div><div class=license-info><span class=storage-info>Storage by
+<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a></span>
 <span class=separator-line>/</span>
-<span class=license-num>
-<a href target=_blank></a>
-</span>
-</div>
-</div>
-</footer>
-<div class=back-to-top>
-<i class="fa fa-arrow-up"></i>
-<span id=scrollpercent><span>0</span>%</span>
-</div>
-</div>
-<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<span class=license-num><a href target=_blank></a></span></div></div></footer><div class=back-to-top><i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span></div></div><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
 <script type=text/javascript src=/js/search.js></script>
 <script type=text/javascript src=/js/affix.js></script>
 <script type=text/javascript src=/js/scrollspy.js></script>
-<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
-<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
-<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
-<script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
-<script type=text/javascript>function showTime(d){var b=new AV.Query(d),a=[],c=$(".leancloud_visitors");c.each(function(){a.push($(this).attr("id").trim())}),b.containedIn('url',a),b.find().then(d=>{var e='.leancloud-visitors-count',b,h,f,j,g,i;if(d.length==0){c.find(e).text(0);return}for(b=0;b<d.length;b++)h=d[b],f=h.get('url'),j=h.get('time'),g=document.getElementById(f),$(g).find(e).text(j);for(b=0;b<a.length;b++)f=a[b],g=document.getElementById(f),i=$(g).find(e),i.text()==''&&i.text(0)},a=>{console.log('Query vistors failed: '+a)})}function addCount(d){var b=$(".leancloud_visitors"),a=b.attr('id').trim(),e=b.attr('data-flag-title').trim(),c=new AV.Query('Counter');c.equalTo("url",a),c.find().then(g=>{var f,c,b;g.length>0?(f=g[0],f.increment('time',1),f.save(null,{query:new AV.Query('Counter').equalTo('url',a),fetchWhenSave:!0}).then(b=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log('Update vistor failed: '+a)})):(c=new AV.ACL,c.setPublicReadAccess(!0),c.setPublicWriteAccess(!0),b=new d,b.set("title",e),b.set("url",a),b.set("time",1),b.setACL(c),b.save().then(d=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log("Save new vistor failed: "+a)}))})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const a=AV.Object.extend("Counter");$('.leancloud_visitors').length==1?addCount(a):$('.post-title-link').length>1&&showTime(a)})</script>
-<script type=text/javascript>(function(){var a=document.createElement('script');a.type='text/javascript',a.async=!0,a.setAttribute('issue-term',"title"),a.setAttribute('theme',"github-light"),a.setAttribute('repo',"jcq15/blog"),a.crossorigin='anonymous',a.src='https://utteranc.es/client.js',document.getElementById('ucomments').appendChild(a)})()</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
-<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type=text/javascript>function detectIE(){var e=window.navigator.userAgent,t=e.indexOf("MSIE "),n=e.indexOf("Trident/"),s=e.indexOf("Edge/");return t>0||n>0||s>0?-1:1}function getCntViewHeight(){var t=$("#content").height(),e=$(window).height(),n=t>e?t-e:$(document).height()-e;return n}function getScrollbarWidth(){var e=$("<div />").addClass("scrollbar-measure").prependTo("body"),t=e[0],n=t.offsetWidth-t.clientWidth;return e.remove(),n}function registerBackTop(){var t=50,e=$(".back-to-top");$(window).on("scroll",function(){e.toggleClass("back-to-top-on",window.pageYOffset>t);var s=$(window).scrollTop(),o=getCntViewHeight(),i=s/o,n=Math.round(i*100),a=n>100?100:n;$("#scrollpercent>span").html(a)}),e.on("click",function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var e=".post-toc",s=$(e),t=".active-current";s.on("activate.bs.scrollspy",function(){var t=$(e+" .active").last();n(),t.addClass("active-current")}).on("clear.bs.scrollspy",n),$("body").scrollspy({target:e});function n(){$(e+" "+t).removeClass(t.substring(1))}}function initAffix(){var e=$(".header-inner").height(),t=parseInt($(".main").css("padding-bottom"),10),n=e+10;$(".sidebar-inner").affix({offset:{top:n,bottom:t}}),$(document).on("affixed.bs.affix",function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){$(window).on("resize",function(){e&&clearTimeout(e),e=setTimeout(function(){var e=document.body.clientHeight-100;updateTOCHeight(e)},0)}),updateTOCHeight(document.body.clientHeight-100);var e,t=getScrollbarWidth();$(".post-toc").css("width","calc(100% + "+t+"px)")}function updateTOCHeight(e){e=e||"auto",$(".post-toc").css("max-height",e)}$(function(){var e,t,n,s,o=$(".header-inner").height()+10;$("#sidebar").css({"margin-top":o}).show(),t=parseInt($("#sidebar").css("margin-top")),n=parseInt($(".sidebar-inner").css("height")),e=t+n,s=$(".content-wrap").height(),s<e&&$(".content-wrap").css("min-height",e),$(".site-nav-toggle").on("click",function(){var e=$(".site-nav"),o=$(".toggle"),t="site-nav-on",i="toggle-close",n=e.hasClass(t),a=n?"slideUp":"slideDown",s=n?"removeClass":"addClass";e.stop()[a]("normal",function(){e[s](t),o[s](i)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$(".sidebar-nav-toc").click(function(){$(this).addClass("sidebar-nav-active"),$(this).next().removeClass("sidebar-nav-active"),$("."+$(this).next().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)}),$(".sidebar-nav-overview").click(function(){$(this).addClass("sidebar-nav-active"),$(this).prev().removeClass("sidebar-nav-active"),$("."+$(this).prev().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)})})</script><script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$(".post-body").viewer()})</script><script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
+<script type=text/javascript>function showTime(e){var n=new AV.Query(e),t=[],s=$(".leancloud_visitors");s.each(function(){t.push($(this).attr("id").trim())}),n.containedIn("url",t),n.find().then(e=>{var n,o,i,r,c,l,a=".leancloud-visitors-count";if(e.length==0){s.find(a).text(0);return}for(n=0;n<e.length;n++)r=e[n],o=r.get("url"),l=r.get("time"),i=document.getElementById(o),$(i).find(a).text(l);for(n=0;n<t.length;n++)o=t[n],i=document.getElementById(o),c=$(i).find(a),c.text()==""&&c.text(0)},e=>{console.log("Query vistors failed: "+e)})}function addCount(e){var n=$(".leancloud_visitors"),t=n.attr("id").trim(),o=n.attr("data-flag-title").trim(),s=new AV.Query("Counter");s.equalTo("url",t),s.find().then(n=>{if(n.length>0){var s,i,a=n[0];a.increment("time",1),a.save(null,{query:new AV.Query("Counter").equalTo("url",t),fetchWhenSave:!0}).then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(e.get("time"))},e=>{console.log("Update vistor failed: "+e)})}else i=new AV.ACL,i.setPublicReadAccess(!0),i.setPublicWriteAccess(!0),s=new e,s.set("title",o),s.set("url",t),s.set("time",1),s.setACL(i),s.save().then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(s.get("time"))},e=>{console.log("Save new vistor failed: "+e)})})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const e=AV.Object.extend("Counter");$(".leancloud_visitors").length==1?addCount(e):$(".post-title-link").length>1&&showTime(e)})</script><script type=text/javascript>(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.setAttribute("issue-term","title"),e.setAttribute("theme","github-light"),e.setAttribute("repo","jcq15/blog"),e.crossorigin="anonymous",e.src="https://utteranc.es/client.js",document.getElementById("ucomments").appendChild(e)})()</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
 <script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
-<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
-</body>
-</html>
+<script>(function(){var t,e=document.createElement("script"),n=window.location.protocol.split(":")[0];n==="https"?e.src="https://zz.bdstatic.com/linksubmit/push.js":e.src="http://push.zhanzhang.baidu.com/push.js",t=document.getElementsByTagName("script")[0],t.parentNode.insertBefore(e,t)})()</script></body></html>

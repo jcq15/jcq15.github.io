@@ -1,183 +1,33 @@
-<!doctype html><html lang=zh-cn dir=content/zh-cn>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
-<title> 随机过程（上）-马尔可夫链 - 沙雕园 </title>
-<meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享">
-<meta name=author content="精神病人">
-<meta property="og:title" content="随机过程（上）-马尔可夫链">
-<meta property="og:site_name" content="沙雕园">
-<meta property="og:image" content="/img/author.jpg">
-<meta name=title content="随机过程（上）-马尔可夫链 - 沙雕园">
-<meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。">
-<link rel="shortcut icon" href=/img/favicon.ico>
-<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
-<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
-<link href=//unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css rel=stylesheet type=text/css>
-<link href=//unpkg.com/imageviewer@1.1.0/dist/viewer.min.css rel=stylesheet>
-<link href=/css/main.css rel=stylesheet type=text/css>
-<link href=/css/syntax.css rel=stylesheet type=text/css>
-</head>
-<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
-<div class="container one-collumn sidebar-position-left page-home">
-<div class=headband></div>
-<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
-<div class=header-inner> <div class=site-brand-container>
-<div class=site-nav-toggle>
-<div class=toggle role=button style=opacity:1;top:0>
+<!doctype html><html lang=zh-cn dir=content/zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=content-security-policy content="upgrade-insecure-requests"><title>随机过程（上）-马尔可夫链 - 沙雕园</title><meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享"><meta name=author content="精神病人"><meta property="og:title" content="随机过程（上）-马尔可夫链"><meta property="og:site_name" content="沙雕园"><meta property="og:image" content="/img/author.jpg"><meta name=title content="随机过程（上）-马尔可夫链 - 沙雕园"><meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。"><link rel="shortcut icon" href=/img/favicon.ico><link rel=apple-touch-icon href=/img/apple-touch-icon.png><link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png><link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css><link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet><link href=/css/main.css rel=stylesheet type=text/css><link href=/css/syntax.css rel=stylesheet type=text/css></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-hans><div class="container one-collumn sidebar-position-left page-home"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle role=button style=opacity:1;top:0><span class=toggle-line></span>
 <span class=toggle-line></span>
-<span class=toggle-line></span>
-<span class=toggle-line></span>
-</div>
-</div>
-<div class=site-meta>
-<div class=custom-logo-site-title>
-<a href=/ class=brand rel=start>
-<span class=logo-line-before><i></i></span>
+<span class=toggle-line></span></div></div><div class=site-meta><div class=custom-logo-site-title><a href=/ class=brand rel=start><span class=logo-line-before><i></i></span>
 <span class=site-title>沙雕园</span>
-<span class=logo-line-after><i></i></span>
-</a>
-</div>
-<p class=site-subtitle>沙雕使人进步。</p>
-</div>
-<div class=site-nav-right>
-<div class="toggle popup-trigger" style=opacity:1;top:0>
-<i class="fa fa-search fa-fw fa-lg"></i>
-</div>
-</div>
-</div>
-<nav class=site-nav>
-<ul id=menu class=menu>
-<li class=menu-item>
-<a href=/ rel=section>
-<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页
-</a>
-</li>
-<li class="menu-item menu-item-active">
-<a href=/post rel=section>
-<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档
-</a>
-</li>
-<li class=menu-item>
-<a href=/about.html rel=section>
-<i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我
-</a>
-</li>
-<li class="menu-item menu-item-search">
-<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> 搜索</a>
-</li>
-</ul>
-<div class=site-search>
-<div class="popup search-popup local-search-popup">
-<div class="local-search-header clearfix">
-<span class=search-icon><i class="fa fa-search"></i> </span>
-<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
-<div class=local-search-input-wrapper>
-<input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
-</div>
-</div>
-<div id=local-search-result></div>
-</div>
-</div>
-</nav> </div>
-</header>
-<main id=main class=main>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=/post/5221-1markov_chain/ itemprop=url>
-随机过程（上）-马尔可夫链
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
+<span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>沙雕使人进步。</p></div><div class=site-nav-right><div class="toggle popup-trigger" style=opacity:1;top:0><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul id=menu class=menu><li class=menu-item><a href=/ rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-active"><a href=/post rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class=menu-item><a href=/about.html rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于我</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class=site-search><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class=search-icon><i class="fa fa-search"></i></span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span><div class=local-search-input-wrapper><input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off></div></div><div id=local-search-result></div></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><section id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=/post/5221-1markov_chain/ itemprop=url>随机过程（上）-马尔可夫链</a></h1><div class=post-meta><span class=post-pushdate><i class="fa fa-calendar-o fa-fw"></i>
 <span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-10-18">
-2021-10-18
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-10-18">2021-10-18</time></span>
+<span class=post-category><i class="fa fa-folder-o fa-fw"></i>
 <span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0 itemprop=url rel=index>
-<span itemprop=name>课程笔记</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing><a class=post-category-a href=/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0 itemprop=url rel=index><span itemprop=name>课程笔记</span></a>
+&nbsp;</span></span>
+<span class=post-wordcount><i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>3245 字</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
+<span class=leancloud-world-count>3245 字</span></span>
+<span class=post-readtime><i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>7分钟</span>
-</span>
-<span id=/post/5221-1markov_chain/ class="leancloud_visitors post-visitor" data-flag-title=随机过程（上）-马尔可夫链>
-<i class="fa fa-binoculars fa-fw"></i>
+<span class=leancloud-view-count>7分钟</span></span>
+<span id=/post/5221-1markov_chain/ class="leancloud_visitors post-visitor" data-flag-title=随机过程（上）-马尔可夫链><i class="fa fa-binoculars fa-fw"></i>
 <span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>主要是按照讲义来的，课堂上讲得比较浅，所以这篇文章也不会讨论太深。如果发现错误欢迎指出~</p>
-<h2 id=基本概念>基本概念</h2>
-<p>随机过程（stochastic processes）本质是一个二元函数 $X(\omega,t)$，它既可以看成一族随机变量的集合，也可以看成一族样本函数的集合。</p>
-<p>例：扔三次傻子，样本空间是 ${1,2,3,4,5,6}^3$，$t$ 取值 $1,2,3$. 若是固定 $\omega=(2,5,1)$，则得到一个<strong>样本函数</strong> $X((2,5,1),t)$. 若是固定 $t=2$，则得到一个<strong>随机变量</strong> $X(\omega,2)=X_2$.</p>
-<p>总之：</p>
-<ul>
-<li>随机过程固定一个样本，得到一个样本函数（轨道）</li>
-<li>随机过程确定一个时间，得到一个随机变量</li>
-</ul>
-<blockquote>
-<p>注：这么一大坨随机变量，要定义在同一个概率空间上。概率空间的存在性不是那么显然。通常可以考虑用乘积概率空间。而当随机变量的个数是无穷个时，可以考虑 Kolmogorov 相容性定理。由于本课内容很浅，所以不过多讨论了。</p>
-</blockquote>
-<p>离散时间的马尔可夫过程 ${X_n, n=0,1,\cdots}$​ 叫做马尔可夫链。我们主要研究状态转移概率不随时间改变（stationary transition probabilities）的马尔可夫过程。可以写出状态转移矩阵 $P$​.</p>
-<p><strong>从此刻起，若无特别说明，我们讨论的都是 Markov chain with stationary transition probabilities.</strong></p>
-<p>于是有如下记号：</p>
-<p>$$
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>主要是按照讲义来的，课堂上讲得比较浅，所以这篇文章也不会讨论太深。如果发现错误欢迎指出~</p><h2 id=基本概念>基本概念</h2><p>随机过程（stochastic processes）本质是一个二元函数 $X(\omega,t)$，它既可以看成一族随机变量的集合，也可以看成一族样本函数的集合。</p><p>例：扔三次傻子，样本空间是 ${1,2,3,4,5,6}^3$，$t$ 取值 $1,2,3$. 若是固定 $\omega=(2,5,1)$，则得到一个<strong>样本函数</strong> $X((2,5,1),t)$. 若是固定 $t=2$，则得到一个<strong>随机变量</strong> $X(\omega,2)=X_2$.</p><p>总之：</p><ul><li>随机过程固定一个样本，得到一个样本函数（轨道）</li><li>随机过程确定一个时间，得到一个随机变量</li></ul><blockquote><p>注：这么一大坨随机变量，要定义在同一个概率空间上。概率空间的存在性不是那么显然。通常可以考虑用乘积概率空间。而当随机变量的个数是无穷个时，可以考虑 Kolmogorov 相容性定理。由于本课内容很浅，所以不过多讨论了。</p></blockquote><p>离散时间的马尔可夫过程 ${X_n, n=0,1,\cdots}$​ 叫做马尔可夫链。我们主要研究状态转移概率不随时间改变（stationary transition probabilities）的马尔可夫过程。可以写出状态转移矩阵 $P$​.</p><p><strong>从此刻起，若无特别说明，我们讨论的都是 Markov chain with stationary transition probabilities.</strong></p><p>于是有如下记号：</p><p>$$
 \begin{align}
 P_{ij}&=P(X_{1}=j|X_0=i),\\
 P_{ij}^n&=P(X_{n}=j|X_0=i).
 \end{align}
-$$</p>
-<blockquote>
-<p>为了和老师讲义的记号统一，这里用了 $P_{ij}^n$，但要注意 $n$ 不是指数运算。后面的 $f_{ij}^n$ 同理。</p>
-</blockquote>
-<p>特别地，$P_{ij}^0=\delta_{ij}$.</p>
-<p>接下来的概念可以结合图来理解。我们把马尔可夫链想象成一个加权有向图 $G(V,E)$，顶点是所有状态，$P$ 是邻接矩阵（图中可能存在自环）。</p>
-<p><strong>定义（accessible）</strong> 如果从状态 $i$ 到 $j$ 的概率不为 $0$ （$\exists n,P_{ij}^n>0$），则称 $j$ 可从 $i$ 到达（accessible）。</p>
-<p>对应图论，accessible 等价于存在 $i$ 到 $j$ 的路径（path）。</p>
-<p><strong>定义（communicate）</strong> 如果 $i$ 可达 $j$ 且 $j$ 可达 $i$，称 $i$ 和 $j$ 互通（communicate），记作 $i\leftrightarrow j$.</p>
-<p>对应图论，communicate 等价于双连通。显然 communicate 是一个等价关系，因此可以划分等价类。对应到图就是强连通分量。在同一个连通分量内的状态可以自由转移。后面我们将看到，对于常返类来说，而不在同一个连通分量则永世不得相见。</p>
-<p><strong>定义（irreducible）</strong> 如果任意两个状态都互通（即上述等价类只有一个），则称为不可约的（irreducible）。</p>
-<p>对应图论，就是强连通图。</p>
-<h2 id=周期性>周期性</h2>
-<p><strong>定义（period）</strong> 状态 $i$ 的周期（period）定义为 ${n\ge 1|P_{ii}^n>0}$ 的最大公约数（g.c.d.），记作 $d(i)$。特别地，若 $P_{ii}^n=0,n\geq 1$，则 $d(i)=0$.</p>
-<p><strong>定理</strong> 如果 $i\leftrightarrow j$，则 $d(i)=d(j)$.</p>
-<p>该定理表明，同一个互通分量周期是一样的，所以我们可以直接讨论互通分量的周期。证明留做习题。</p>
-<p><strong>定理</strong> 设 $i$ 的周期为 $d(i)$，则 $\exists N,\forall n>N,P_{ii}^{nd(i)}>0$.</p>
-<p>只要 $n$ 足够大，便可体现出“周期”的性质。</p>
-<p><strong>定义（aperiodic）</strong> 如果每个状态周期都是 1，则该马尔可夫链是非周期的（aperiodic）。</p>
-<p>从分析的角度看，周期蕴含着震荡，而震荡往往是分析中不想看到的，所以我们主要关注非周期的马尔可夫链。我们很快就会发现非周期很多优秀的分析性质。</p>
-<h2 id=常返性>常返性</h2>
-<p>我们定义首达概率 $f_{ij}^n$ 为：“从状态 $i$ 出发，下一次到达状态 $j$ 的步数为 $n$ 步”的概率。即
+$$</p><blockquote><p>为了和老师讲义的记号统一，这里用了 $P_{ij}^n$，但要注意 $n$ 不是指数运算。后面的 $f_{ij}^n$ 同理。</p></blockquote><p>特别地，$P_{ij}^0=\delta_{ij}$.</p><p>接下来的概念可以结合图来理解。我们把马尔可夫链想象成一个加权有向图 $G(V,E)$，顶点是所有状态，$P$ 是邻接矩阵（图中可能存在自环）。</p><p><strong>定义（accessible）</strong> 如果从状态 $i$ 到 $j$ 的概率不为 $0$ （$\exists n,P_{ij}^n>0$），则称 $j$ 可从 $i$ 到达（accessible）。</p><p>对应图论，accessible 等价于存在 $i$ 到 $j$ 的路径（path）。</p><p><strong>定义（communicate）</strong> 如果 $i$ 可达 $j$ 且 $j$ 可达 $i$，称 $i$ 和 $j$ 互通（communicate），记作 $i\leftrightarrow j$.</p><p>对应图论，communicate 等价于双连通。显然 communicate 是一个等价关系，因此可以划分等价类。对应到图就是强连通分量。在同一个连通分量内的状态可以自由转移。后面我们将看到，对于常返类来说，而不在同一个连通分量则永世不得相见。</p><p><strong>定义（irreducible）</strong> 如果任意两个状态都互通（即上述等价类只有一个），则称为不可约的（irreducible）。</p><p>对应图论，就是强连通图。</p><h2 id=周期性>周期性</h2><p><strong>定义（period）</strong> 状态 $i$ 的周期（period）定义为 ${n\ge 1|P_{ii}^n>0}$ 的最大公约数（g.c.d.），记作 $d(i)$。特别地，若 $P_{ii}^n=0,n\geq 1$，则 $d(i)=0$.</p><p><strong>定理</strong> 如果 $i\leftrightarrow j$，则 $d(i)=d(j)$.</p><p>该定理表明，同一个互通分量周期是一样的，所以我们可以直接讨论互通分量的周期。证明留做习题。</p><p><strong>定理</strong> 设 $i$ 的周期为 $d(i)$，则 $\exists N,\forall n>N,P_{ii}^{nd(i)}>0$.</p><p>只要 $n$ 足够大，便可体现出“周期”的性质。</p><p><strong>定义（aperiodic）</strong> 如果每个状态周期都是 1，则该马尔可夫链是非周期的（aperiodic）。</p><p>从分析的角度看，周期蕴含着震荡，而震荡往往是分析中不想看到的，所以我们主要关注非周期的马尔可夫链。我们很快就会发现非周期很多优秀的分析性质。</p><h2 id=常返性>常返性</h2><p>我们定义首达概率 $f_{ij}^n$ 为：“从状态 $i$ 出发，下一次到达状态 $j$ 的步数为 $n$ 步”的概率。即
 $$
 f_{ij}^n=P(X_n=j,X_v\ne j,v=1,\cdots,n-1|X_0=i).
 $$
-特别地，$f_{ij}^0=0$.</p>
-<p>记 $f_{ij}^<em>=\sum_{n=1}^{\infty}f_{ij}^n$, 表示状态 $i$ 能在有限步之内到达状态 $j$ 的概率。容易发现：
+特别地，$f_{ij}^0=0$.</p><p>记 $f_{ij}^<em>=\sum_{n=1}^{\infty}f_{ij}^n$, 表示状态 $i$ 能在有限步之内到达状态 $j$ 的概率。容易发现：
 $$
 \begin{align}
 i\rightarrow j&\Leftrightarrow f_{ij}^</em>>0,\\
@@ -196,76 +46,19 @@ $$
 $$
 F_{ij}(s)P_{jj}(s)=P_{ij}(s)-\delta_{ij},\ 0\leq s\leq 1.
 $$
-<strong>定义（recurrence）</strong> 我们称状态 $i$ 是常返的（recurrence），如果 $f_{ii}^*=1$. 反之称其为非常返态或过渡态（transient）。</p>
-<blockquote>
-<p>常返是一个非常浪漫的概念。一个状态是常返的，意味着每一次别离都不会是永别，尽管暂时离开了这个状态，在有限的时间内它几乎必然会再次和我们相见。</p>
-</blockquote>
-<p>关于常返，我们有以下两条重要结论。</p>
-<p><strong>定理</strong></p>
-<ul>
-<li>$\sum_{n=0}^\infty P_{ii}^n=\dfrac{1}{1-f_{ii}^*},\ (1/0=+\infty)$, 特别地，$i$ 常返当且仅当 $\sum P_{ii}^n=\infty$.</li>
-<li>如果 $i\leftrightarrow j$，则 $i$ 和 $j$ 常返性相同。</li>
-</ul>
-<p>$\sum_{n=0}^\infty P_{ii}^n$ 可以理解为状态 $i$ 出现的次数的期望。常返状态一定会在有限步之内返回，返回之后过有限步再次返回，子子孙孙无穷尽也，所以状态 $i$ 要出现无穷多次。</p>
-<p><strong>定理</strong> 定义 $Q_{ij}$ 为从状态 $i$ 出发无限多次到达状态 $j$ 的概率，可以得到以下结论（证明作为练习）：</p>
-<ul>
-<li>若 $j$ 非常返，对任意 $i$，$Q_{ij}=0$,</li>
-<li>若 $j$ 常返，对任意 $i$，$Q_{ij}=f_{ij}^*$,</li>
-<li>特别地，若 $i\leftrightarrow j$ 且常返，$Q_{ij}=f_{ij}^*=1$.</li>
-</ul>
-<p>我们再来介绍两个常返过程的判定定理。</p>
-<p><strong>定理</strong> 设 $B$ 是不可约马尔科夫链，状态空间是自然数。$B$ 过渡（即每个状态都是过渡态）的充要条件是方程组
+<strong>定义（recurrence）</strong> 我们称状态 $i$ 是常返的（recurrence），如果 $f_{ii}^*=1$. 反之称其为非常返态或过渡态（transient）。</p><blockquote><p>常返是一个非常浪漫的概念。一个状态是常返的，意味着每一次别离都不会是永别，尽管暂时离开了这个状态，在有限的时间内它几乎必然会再次和我们相见。</p></blockquote><p>关于常返，我们有以下两条重要结论。</p><p><strong>定理</strong></p><ul><li>$\sum_{n=0}^\infty P_{ii}^n=\dfrac{1}{1-f_{ii}^*},\ (1/0=+\infty)$, 特别地，$i$ 常返当且仅当 $\sum P_{ii}^n=\infty$.</li><li>如果 $i\leftrightarrow j$，则 $i$ 和 $j$ 常返性相同。</li></ul><p>$\sum_{n=0}^\infty P_{ii}^n$ 可以理解为状态 $i$ 出现的次数的期望。常返状态一定会在有限步之内返回，返回之后过有限步再次返回，子子孙孙无穷尽也，所以状态 $i$ 要出现无穷多次。</p><p><strong>定理</strong> 定义 $Q_{ij}$ 为从状态 $i$ 出发无限多次到达状态 $j$ 的概率，可以得到以下结论（证明作为练习）：</p><ul><li>若 $j$ 非常返，对任意 $i$，$Q_{ij}=0$,</li><li>若 $j$ 常返，对任意 $i$，$Q_{ij}=f_{ij}^*$,</li><li>特别地，若 $i\leftrightarrow j$ 且常返，$Q_{ij}=f_{ij}^*=1$.</li></ul><p>我们再来介绍两个常返过程的判定定理。</p><p><strong>定理</strong> 设 $B$ 是不可约马尔科夫链，状态空间是自然数。$B$ 过渡（即每个状态都是过渡态）的充要条件是方程组
 $$
 \sum_{j=0}^\infty P_{ij}y_j=y_i,i\ne0
 $$
-有有界的非常数解（即 $y_i$ 不全相等）。</p>
-<p><strong>定理</strong> 不可约马尔科夫链常返的充分条件是：存在一列 ${y_i}$，使得得得得得得得得得得得得，十七张牌你能秒我（<del>？抽什么疯</del>）；存在一列 ${y_i}$，使得
+有有界的非常数解（即 $y_i$ 不全相等）。</p><p><strong>定理</strong> 不可约马尔科夫链常返的充分条件是：存在一列 ${y_i}$，使得得得得得得得得得得得得，十七张牌你能秒我（<del>？抽什么疯</del>）；存在一列 ${y_i}$，使得
 $$
 \sum_{j=0}^\infty P_{ij}y_j\le y_i,i\ne 0,
 $$
-且 $y_i\to\infty$.</p>
-<h2 id=极限性态>极限性态</h2>
-<p>我们考虑三个问题：</p>
-<ul>
-<li>$\lim_{n\to\infty}P_{ij}^n$ 的值</li>
-<li>是否存在一个分布 $\pi$，使得 $\pi P=P$</li>
-<li>给定起始分布 $\pi(0)$, 其极限分布 $\lim_{n\to\infty}\pi_0P^n$ 是多少</li>
-</ul>
-<p>这部分的讨论比较繁杂，但结论却出奇地简洁。为了防止考试的时候用了不该用的结论，这里直接放讲义中的结论，详细讨论见附录。</p>
-<p><strong>结论</strong> 令 $\mu_j={\sum_{k=1}^\infty kf_{jj}^k},\ \pi_j=\dfrac{1}{\mu_j}$ （若 $\mu_j=\infty$ 则 $\pi_j=0$）. 对于一般情况，有结论：</p>
-<ul>
-<li>若 $j$ 非常返，则 $\lim_{n\to\infty} P_{ij}^n=0$,</li>
-<li>若 $j$ 非周期且常返，则 $\lim_{n\to\infty} P_{ij}^n=\dfrac{f_{ij}^*}{\mu_j}.$</li>
-</ul>
-<p><strong>结论</strong> 对于**非周期，不可约，正常返（$\mu_j>0$）**状态，有结论：</p>
-<ul>
-<li>$\lim_{n\to\infty}P_{ij}^n=\pi_j$, 即从任意起始分布出发，都会收敛到这个极限分布</li>
-<li>$\pi_j$ 是唯一的平稳分布，也是唯一的极限分布。</li>
-</ul>
-<h1 id=附录>附录</h1>
-<h2 id=极限性态的讨论>极限性态的讨论</h2>
-<h3 id=1-lim_ntoinftyp_ijn>$1. \lim_{n\to\infty}P_{ij}^n$</h3>
-<p><strong>定理（Markov 链的极限性态）</strong> 若 $j$ 是非常返状态，则 $\lim_{n\to\infty} P_{ij}^n=0$. 若 $j$ 非周期且常返，则
+且 $y_i\to\infty$.</p><h2 id=极限性态>极限性态</h2><p>我们考虑三个问题：</p><ul><li>$\lim_{n\to\infty}P_{ij}^n$ 的值</li><li>是否存在一个分布 $\pi$，使得 $\pi P=P$</li><li>给定起始分布 $\pi(0)$, 其极限分布 $\lim_{n\to\infty}\pi_0P^n$ 是多少</li></ul><p>这部分的讨论比较繁杂，但结论却出奇地简洁。为了防止考试的时候用了不该用的结论，这里直接放讲义中的结论，详细讨论见附录。</p><p><strong>结论</strong> 令 $\mu_j={\sum_{k=1}^\infty kf_{jj}^k},\ \pi_j=\dfrac{1}{\mu_j}$ （若 $\mu_j=\infty$ 则 $\pi_j=0$）. 对于一般情况，有结论：</p><ul><li>若 $j$ 非常返，则 $\lim_{n\to\infty} P_{ij}^n=0$,</li><li>若 $j$ 非周期且常返，则 $\lim_{n\to\infty} P_{ij}^n=\dfrac{f_{ij}^*}{\mu_j}.$</li></ul><p><strong>结论</strong> 对于**非周期，不可约，正常返（$\mu_j>0$）**状态，有结论：</p><ul><li>$\lim_{n\to\infty}P_{ij}^n=\pi_j$, 即从任意起始分布出发，都会收敛到这个极限分布</li><li>$\pi_j$ 是唯一的平稳分布，也是唯一的极限分布。</li></ul><h1 id=附录>附录</h1><h2 id=极限性态的讨论>极限性态的讨论</h2><h3 id=1-lim_ntoinftyp_ijn>$1. \lim_{n\to\infty}P_{ij}^n$</h3><p><strong>定理（Markov 链的极限性态）</strong> 若 $j$ 是非常返状态，则 $\lim_{n\to\infty} P_{ij}^n=0$. 若 $j$ 非周期且常返，则
 $$
 \lim_{n\to\infty} P_{ij}^n=\dfrac{f_{ij}^*}{\sum_{k=1}^\infty kf_{jj}^k}.
 $$
-特别地，若等式右边分母不收敛则定义为 $0$.</p>
-<blockquote>
-<p>该命题的证明已经超出本课程要求。我查阅了许多教材，似乎没找到完美的证明，都在互相踢皮球。所以我也不给证明了。如果有哪位大佬知道初等的证明欢迎补充！</p>
-</blockquote>
-<p>$j$ 是周期常返状态的情况过于复杂，这里不介绍。</p>
-<p>尽管证明复杂，但结论非常直观。这是因为 ${\sum_{k=1}^\infty kf_{jj}^k}$ 表示从 $j$ 出发首此回到 $j$ 的时间期望，也就是下一次回来的平均时间，而 $f_{ij}^*$ 是从 $i$ 出发能到达 $j$ 的概率。</p>
-<p>我们令 $\mu_j={\sum_{k=1}^\infty kf_{jj}^k}$. 若 $i$ 和 $j$ 同属一个非周期的常返类，易证 $\mu_i&lt;\infty\Leftrightarrow\mu_j&lt;\infty$. 于是有以下定义。</p>
-<p><strong>定义</strong> 对于<strong>非周期常返类</strong>，若 $\mu_j&lt;\infty$, 则称为<strong>正常返</strong>（positive recurrent）或<strong>强遍历</strong>（strong ergodic），否则称之为<strong>零常返</strong>（null recurrent）或<strong>弱遍历</strong>（weak ergodic）。</p>
-<blockquote>
-<p>注意：这个定义和一些国内教材有细微差别！许多国内教材称 $\mu_j&lt;\infty$ 为正常返，非周期且正常返称为遍历。</p>
-</blockquote>
-<h3 id=2-平稳分布>2. 平稳分布</h3>
-<p><strong>定义</strong> 若概率分布 $\pi={\pi_1,\cdots}$ 满足 $\pi=\pi P$, 则称其为马氏链的<strong>平稳分布</strong>。</p>
-<p>以下定理揭示了平稳分布和平稳过程的关系，请自行证明。</p>
-<p><strong>定理</strong> 马氏链为平稳过程的充要条件是起始状态 $\pi(0)$ 是平稳分布。</p>
-<p>对于强遍历类，我们有非常漂亮的结论将转移矩阵的极限和平稳分布联系起来。证明留作练习。</p>
-<p><strong>定理</strong> 对于强遍历类， $\pi_j=\lim_{n\to\infty}P_{jj}^n=\dfrac{1}{\mu_j}$ 是唯一的平稳分布，即
+特别地，若等式右边分母不收敛则定义为 $0$.</p><blockquote><p>该命题的证明已经超出本课程要求。我查阅了许多教材，似乎没找到完美的证明，都在互相踢皮球。所以我也不给证明了。如果有哪位大佬知道初等的证明欢迎补充！</p></blockquote><p>$j$ 是周期常返状态的情况过于复杂，这里不介绍。</p><p>尽管证明复杂，但结论非常直观。这是因为 ${\sum_{k=1}^\infty kf_{jj}^k}$ 表示从 $j$ 出发首此回到 $j$ 的时间期望，也就是下一次回来的平均时间，而 $f_{ij}^*$ 是从 $i$ 出发能到达 $j$ 的概率。</p><p>我们令 $\mu_j={\sum_{k=1}^\infty kf_{jj}^k}$. 若 $i$ 和 $j$ 同属一个非周期的常返类，易证 $\mu_i&lt;\infty\Leftrightarrow\mu_j&lt;\infty$. 于是有以下定义。</p><p><strong>定义</strong> 对于<strong>非周期常返类</strong>，若 $\mu_j&lt;\infty$, 则称为<strong>正常返</strong>（positive recurrent）或<strong>强遍历</strong>（strong ergodic），否则称之为<strong>零常返</strong>（null recurrent）或<strong>弱遍历</strong>（weak ergodic）。</p><blockquote><p>注意：这个定义和一些国内教材有细微差别！许多国内教材称 $\mu_j&lt;\infty$ 为正常返，非周期且正常返称为遍历。</p></blockquote><h3 id=2-平稳分布>2. 平稳分布</h3><p><strong>定义</strong> 若概率分布 $\pi={\pi_1,\cdots}$ 满足 $\pi=\pi P$, 则称其为马氏链的<strong>平稳分布</strong>。</p><p>以下定理揭示了平稳分布和平稳过程的关系，请自行证明。</p><p><strong>定理</strong> 马氏链为平稳过程的充要条件是起始状态 $\pi(0)$ 是平稳分布。</p><p>对于强遍历类，我们有非常漂亮的结论将转移矩阵的极限和平稳分布联系起来。证明留作练习。</p><p><strong>定理</strong> 对于强遍历类， $\pi_j=\lim_{n\to\infty}P_{jj}^n=\dfrac{1}{\mu_j}$ 是唯一的平稳分布，即
 $$
 \pi_j=\sum_{i}\pi_i P_{ij},\ \sum_i \pi_i=1
 $$
@@ -273,219 +66,49 @@ $$
 $$
 \pi_i\ge 0,\ \sum_i \pi_i=1,\ \pi_j=\sum_i \pi_i P_{ij}
 $$
-的唯一解。</p>
-<h3 id=3-极限分布>3. 极限分布</h3>
-<p>仍然是强遍历类才有这么优良的性质。证明仍旧略。</p>
-<p><strong>定理</strong> 强遍历类的平稳分布就是极限分布。</p>
-<h3 id=4-讲义上的-32>4. 讲义上的 3.2</h3>
-<p>其实 3.2 的内容在上面已经包含了。</p>
-<p>相联通的两个状态的常返性相同，因此我们可以直接考虑强连通分量，画出更简洁的图示：</p>
-<p><img src=/5221/image-20211011185612207.png alt=image-20211011185612207></p>
-<p>我们发现每个常返类都是一个“黑洞”，进去就出不来（自行证明）。设 $T$ 为所有过渡态的集合，我们记 $\pi_i(C)$ 为从状态 $i\in T$ 在有限步之内进入常返类 $C$ 的概率，有以下结论：</p>
-<p><strong>定理</strong> 设 $C$ 是非周期常返类，且 $j\in C$，则对 $i\in T$，有
+的唯一解。</p><h3 id=3-极限分布>3. 极限分布</h3><p>仍然是强遍历类才有这么优良的性质。证明仍旧略。</p><p><strong>定理</strong> 强遍历类的平稳分布就是极限分布。</p><h3 id=4-讲义上的-32>4. 讲义上的 3.2</h3><p>其实 3.2 的内容在上面已经包含了。</p><p>相联通的两个状态的常返性相同，因此我们可以直接考虑强连通分量，画出更简洁的图示：</p><p><img src=/5221/image-20211011185612207.png alt=image-20211011185612207></p><p>我们发现每个常返类都是一个“黑洞”，进去就出不来（自行证明）。设 $T$ 为所有过渡态的集合，我们记 $\pi_i(C)$ 为从状态 $i\in T$ 在有限步之内进入常返类 $C$ 的概率，有以下结论：</p><p><strong>定理</strong> 设 $C$ 是非周期常返类，且 $j\in C$，则对 $i\in T$，有
 $$
 \lim_{n\to\infty}P_{ij}^n=\pi_i(C)\lim_{n\to\infty} P_{jj}^n.
 $$
-注意之前说过，对非周期常返状态，$\lim_{n\to\infty} P_{jj}^n=\dfrac{1}{\mu_j}$，相当于其停留在这一状态的概率。所以这一定理就很直观了：第一步是进入常返类，概率是 $\pi_i(C)$，第二步是在常返类中选一个状态，选到 $j$ 的概率是 $\lim_{n\to\infty} P_{jj}^n$.</p>
-<blockquote>
-<p>这里的 $\pi_i(C)$ 其实就是 $f_{ij}^*$ ，所以和前面的结论是一致的。</p>
-</blockquote>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-<a href=/post/5221-2%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BF%87%E7%A8%8B/ rel=next title=随机过程（下）-连续时间过程>
-<i class="fa fa-chevron-left"></i> 随机过程（下）-连续时间过程
-</a>
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=/post/5203-3%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/ rel=prev title=线性回归（三）-非线性回归>
-线性回归（三）-非线性回归
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=ucomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
-<div class=sidebar-toggle>
-<div class=sidebar-toggle-line-wrap>
-<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+注意之前说过，对非周期常返状态，$\lim_{n\to\infty} P_{jj}^n=\dfrac{1}{\mu_j}$，相当于其停留在这一状态的概率。所以这一定理就很直观了：第一步是进入常返类，概率是 $\pi_i(C)$，第二步是在常返类中选一个状态，选到 $j$ 的概率是 $\lim_{n\to\infty} P_{jj}^n$.</p><blockquote><p>这里的 $\pi_i(C)$ 其实就是 $f_{ij}^*$ ，所以和前面的结论是一致的。</p></blockquote></div><footer class=post-footer><div class=post-tags><a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a></div><div class=addthis_inline_share_toolbox></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/5221-2%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BF%87%E7%A8%8B/ rel=next title=随机过程（下）-连续时间过程><i class="fa fa-chevron-left"></i> 随机过程（下）-连续时间过程</a></div><div class="post-nav-prev post-nav-item"><a href=/post/5203-3%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/ rel=prev title=线性回归（三）-非线性回归>线性回归（三）-非线性回归
+<i class="fa fa-chevron-right"></i></a></div></div><div id=ucomments></div></footer></article></section></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
 <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-</div>
-</div>
-<aside id=sidebar class=sidebar>
-<div class=sidebar-inner>
-<section class="site-overview sidebar-panel sidebar-panel-active">
-<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
-<img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人>
-<p class=site-author-name itemprop=name>精神病人</p>
-<p class="site-description motion-element" itemprop=description>
-精神病人欢乐多!
-</p>
-</div>
-<nav class="site-state motion-element">
-<div class="site-state-item site-state-posts">
-<a href=/post/>
-<span class=site-state-item-count>41</span>
-<span class=site-state-item-name>日志</span>
-</a>
-</div>
-<div class="site-state-item site-state-categories">
-<a href=/categories/>
-<span class=site-state-item-count>11</span>
-<span class=site-state-item-name>分类</span>
-</a>
-</div>
-<div class="site-state-item site-state-tags">
-<a href=/tags/>
-<span class=site-state-item-count>11</span>
-<span class=site-state-item-name>标签</span>
-</a>
-</div>
-</nav>
-<div class="links-of-author motion-element">
-<span class=links-of-author-item>
-<a href=https://github.com/jcq15/ target=_blank title=GitHub>
-<i class="fa fa-fw fa-github"></i>
-GitHub
-</a>
-</span>
-</div>
-<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
-<div class=tagcloud-of-blogroll-title>
-<i class="fa fa-fw fa-tags"></i>
-标签云
-</div>
-<ul class=tagcloud-of-blogroll-list>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E5%AD%A6%E4%B9%A0>学习
-<sup>15</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
-<sup>6</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%8A%80%E6%9C%AF>技术
-<sup>5</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%9B%B4%E6%96%B0>更新
-<sup>3</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%B8%B8%E6%88%8F>游戏
-<sup>3</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E7%A7%91%E6%99%AE>科普
-<sup>3</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%95%B4%E6%B4%BB>整活
-<sup>2</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
-<sup>2</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%95%A2%E6%83%B3>敢想
-<sup>1</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%B2%99%E9%9B%95>沙雕
-<sup>1</sup>
-</a>
-</li>
-</ul>
-</div>
-</section>
-</div>
-</aside>
-</div>
-</main>
-<footer id=footer class=footer>
-<div class=footer-inner>
-<div class=copyright>
-<span class=copyright-year>
-&copy; 2010 - 2023
-</span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><section class="site-overview sidebar-panel sidebar-panel-active"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人><p class=site-author-name itemprop=name>精神病人</p><p class="site-description motion-element" itemprop=description>精神病人欢乐多!</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href=/post/><span class=site-state-item-count>41</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>12</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>12</span>
+<span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/jcq15/ target=_blank title=GitHub><i class="fa fa-fw fa-github"></i>
+GitHub</a></span></div><div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline"><div class=tagcloud-of-blogroll-title><i class="fa fa-fw fa-tags"></i>
+标签云</div><ul class=tagcloud-of-blogroll-list><li class=tagcloud-of-blogroll-item><a href=/tags/%E5%AD%A6%E4%B9%A0>学习
+<sup>15</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
+<sup>6</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%8A%80%E6%9C%AF>技术
+<sup>5</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B8%B8%E6%88%8F>游戏
+<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%A7%91%E6%99%AE>科普
+<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%B4%E6%B4%BB>整活
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9B%B4%E6%96%B0>更新
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%A2%E6%83%B3>敢想
+<sup>1</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B2%99%E9%9B%95>沙雕
+<sup>1</sup></a></li></ul></div></section></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright><span class=copyright-year>&copy; 2010 - 2024</span>
 <span class=with-love><i class="fa fa-heart"></i></span>
-<span class=copyright-author>沙雕园</span>
-</div>
-<div class=powered-info>
-<span class=powered-by>
-Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.92.2</a>
-</span>
+<span class=copyright-author>沙雕园</span></div><div class=powered-info><span class=powered-by>Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.101.0</a></span>
 <span class=separator-line>/</span>
-<span class=theme-info>
-Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
-</a>
-</span>
-</div>
-<div class=vistor-info>
-<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<span class=site-uv>
-<i class="fa fa-user"></i>
-<span class=busuanzi-value id=busuanzi_value_site_uv></span>
-</span>
+<span class=theme-info>Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank>NexT</a></span></div><div class=vistor-info><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv><i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span></span>
 <span class=separator-line>/</span>
-<span class=site-pv>
-<i class="fa fa-eye"></i>
-<span class=busuanzi-value id=busuanzi_value_site_pv></span>
-</span>
-</div>
-<div class=license-info>
-<span class=storage-info>
-Storage by
-<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a>
-</span>
+<span class=site-pv><i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span></span></div><div class=license-info><span class=storage-info>Storage by
+<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a></span>
 <span class=separator-line>/</span>
-<span class=license-num>
-<a href target=_blank></a>
-</span>
-</div>
-</div>
-</footer>
-<div class=back-to-top>
-<i class="fa fa-arrow-up"></i>
-<span id=scrollpercent><span>0</span>%</span>
-</div>
-</div>
-<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<span class=license-num><a href target=_blank></a></span></div></div></footer><div class=back-to-top><i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span></div></div><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
 <script type=text/javascript src=/js/search.js></script>
 <script type=text/javascript src=/js/affix.js></script>
 <script type=text/javascript src=/js/scrollspy.js></script>
-<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
-<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
-<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
-<script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
-<script type=text/javascript>function showTime(d){var b=new AV.Query(d),a=[],c=$(".leancloud_visitors");c.each(function(){a.push($(this).attr("id").trim())}),b.containedIn('url',a),b.find().then(d=>{var e='.leancloud-visitors-count',b,h,f,j,g,i;if(d.length==0){c.find(e).text(0);return}for(b=0;b<d.length;b++)h=d[b],f=h.get('url'),j=h.get('time'),g=document.getElementById(f),$(g).find(e).text(j);for(b=0;b<a.length;b++)f=a[b],g=document.getElementById(f),i=$(g).find(e),i.text()==''&&i.text(0)},a=>{console.log('Query vistors failed: '+a)})}function addCount(d){var b=$(".leancloud_visitors"),a=b.attr('id').trim(),e=b.attr('data-flag-title').trim(),c=new AV.Query('Counter');c.equalTo("url",a),c.find().then(g=>{var f,c,b;g.length>0?(f=g[0],f.increment('time',1),f.save(null,{query:new AV.Query('Counter').equalTo('url',a),fetchWhenSave:!0}).then(b=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log('Update vistor failed: '+a)})):(c=new AV.ACL,c.setPublicReadAccess(!0),c.setPublicWriteAccess(!0),b=new d,b.set("title",e),b.set("url",a),b.set("time",1),b.setACL(c),b.save().then(d=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log("Save new vistor failed: "+a)}))})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const a=AV.Object.extend("Counter");$('.leancloud_visitors').length==1?addCount(a):$('.post-title-link').length>1&&showTime(a)})</script>
-<script type=text/javascript>(function(){var a=document.createElement('script');a.type='text/javascript',a.async=!0,a.setAttribute('issue-term',"title"),a.setAttribute('theme',"github-light"),a.setAttribute('repo',"jcq15/blog"),a.crossorigin='anonymous',a.src='https://utteranc.es/client.js',document.getElementById('ucomments').appendChild(a)})()</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
-<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type=text/javascript>function detectIE(){var e=window.navigator.userAgent,t=e.indexOf("MSIE "),n=e.indexOf("Trident/"),s=e.indexOf("Edge/");return t>0||n>0||s>0?-1:1}function getCntViewHeight(){var t=$("#content").height(),e=$(window).height(),n=t>e?t-e:$(document).height()-e;return n}function getScrollbarWidth(){var e=$("<div />").addClass("scrollbar-measure").prependTo("body"),t=e[0],n=t.offsetWidth-t.clientWidth;return e.remove(),n}function registerBackTop(){var t=50,e=$(".back-to-top");$(window).on("scroll",function(){e.toggleClass("back-to-top-on",window.pageYOffset>t);var s=$(window).scrollTop(),o=getCntViewHeight(),i=s/o,n=Math.round(i*100),a=n>100?100:n;$("#scrollpercent>span").html(a)}),e.on("click",function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var e=".post-toc",s=$(e),t=".active-current";s.on("activate.bs.scrollspy",function(){var t=$(e+" .active").last();n(),t.addClass("active-current")}).on("clear.bs.scrollspy",n),$("body").scrollspy({target:e});function n(){$(e+" "+t).removeClass(t.substring(1))}}function initAffix(){var e=$(".header-inner").height(),t=parseInt($(".main").css("padding-bottom"),10),n=e+10;$(".sidebar-inner").affix({offset:{top:n,bottom:t}}),$(document).on("affixed.bs.affix",function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){$(window).on("resize",function(){e&&clearTimeout(e),e=setTimeout(function(){var e=document.body.clientHeight-100;updateTOCHeight(e)},0)}),updateTOCHeight(document.body.clientHeight-100);var e,t=getScrollbarWidth();$(".post-toc").css("width","calc(100% + "+t+"px)")}function updateTOCHeight(e){e=e||"auto",$(".post-toc").css("max-height",e)}$(function(){var e,t,n,s,o=$(".header-inner").height()+10;$("#sidebar").css({"margin-top":o}).show(),t=parseInt($("#sidebar").css("margin-top")),n=parseInt($(".sidebar-inner").css("height")),e=t+n,s=$(".content-wrap").height(),s<e&&$(".content-wrap").css("min-height",e),$(".site-nav-toggle").on("click",function(){var e=$(".site-nav"),o=$(".toggle"),t="site-nav-on",i="toggle-close",n=e.hasClass(t),a=n?"slideUp":"slideDown",s=n?"removeClass":"addClass";e.stop()[a]("normal",function(){e[s](t),o[s](i)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$(".sidebar-nav-toc").click(function(){$(this).addClass("sidebar-nav-active"),$(this).next().removeClass("sidebar-nav-active"),$("."+$(this).next().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)}),$(".sidebar-nav-overview").click(function(){$(this).addClass("sidebar-nav-active"),$(this).prev().removeClass("sidebar-nav-active"),$("."+$(this).prev().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)})})</script><script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$(".post-body").viewer()})</script><script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
+<script type=text/javascript>function showTime(e){var n=new AV.Query(e),t=[],s=$(".leancloud_visitors");s.each(function(){t.push($(this).attr("id").trim())}),n.containedIn("url",t),n.find().then(e=>{var n,o,i,r,c,l,a=".leancloud-visitors-count";if(e.length==0){s.find(a).text(0);return}for(n=0;n<e.length;n++)r=e[n],o=r.get("url"),l=r.get("time"),i=document.getElementById(o),$(i).find(a).text(l);for(n=0;n<t.length;n++)o=t[n],i=document.getElementById(o),c=$(i).find(a),c.text()==""&&c.text(0)},e=>{console.log("Query vistors failed: "+e)})}function addCount(e){var n=$(".leancloud_visitors"),t=n.attr("id").trim(),o=n.attr("data-flag-title").trim(),s=new AV.Query("Counter");s.equalTo("url",t),s.find().then(n=>{if(n.length>0){var s,i,a=n[0];a.increment("time",1),a.save(null,{query:new AV.Query("Counter").equalTo("url",t),fetchWhenSave:!0}).then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(e.get("time"))},e=>{console.log("Update vistor failed: "+e)})}else i=new AV.ACL,i.setPublicReadAccess(!0),i.setPublicWriteAccess(!0),s=new e,s.set("title",o),s.set("url",t),s.set("time",1),s.setACL(i),s.save().then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(s.get("time"))},e=>{console.log("Save new vistor failed: "+e)})})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const e=AV.Object.extend("Counter");$(".leancloud_visitors").length==1?addCount(e):$(".post-title-link").length>1&&showTime(e)})</script><script type=text/javascript>(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.setAttribute("issue-term","title"),e.setAttribute("theme","github-light"),e.setAttribute("repo","jcq15/blog"),e.crossorigin="anonymous",e.src="https://utteranc.es/client.js",document.getElementById("ucomments").appendChild(e)})()</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
 <script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
-<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
-</body>
-</html>
+<script>(function(){var t,e=document.createElement("script"),n=window.location.protocol.split(":")[0];n==="https"?e.src="https://zz.bdstatic.com/linksubmit/push.js":e.src="http://push.zhanzhang.baidu.com/push.js",t=document.getElementsByTagName("script")[0],t.parentNode.insertBefore(e,t)})()</script></body></html>

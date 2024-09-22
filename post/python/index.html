@@ -1,504 +1,201 @@
-<!doctype html><html lang=zh-cn dir=content/zh-cn>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
-<title> Python 速查表 - 沙雕园 </title>
-<meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享">
-<meta name=author content="精神病人">
-<meta property="og:title" content="Python 速查表">
-<meta property="og:site_name" content="沙雕园">
-<meta property="og:image" content="/img/author.jpg">
-<meta name=title content="Python 速查表 - 沙雕园">
-<meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。">
-<link rel="shortcut icon" href=/img/favicon.ico>
-<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
-<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
-<link href=//unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css rel=stylesheet type=text/css>
-<link href=//unpkg.com/imageviewer@1.1.0/dist/viewer.min.css rel=stylesheet>
-<link href=/css/main.css rel=stylesheet type=text/css>
-<link href=/css/syntax.css rel=stylesheet type=text/css>
-</head>
-<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
-<div class="container one-collumn sidebar-position-left page-home">
-<div class=headband></div>
-<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
-<div class=header-inner> <div class=site-brand-container>
-<div class=site-nav-toggle>
-<div class=toggle role=button style=opacity:1;top:0>
+<!doctype html><html lang=zh-cn dir=content/zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=content-security-policy content="upgrade-insecure-requests"><title>Python 速查表 - 沙雕园</title><meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享"><meta name=author content="精神病人"><meta property="og:title" content="Python 速查表"><meta property="og:site_name" content="沙雕园"><meta property="og:image" content="/img/author.jpg"><meta name=title content="Python 速查表 - 沙雕园"><meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。"><link rel="shortcut icon" href=/img/favicon.ico><link rel=apple-touch-icon href=/img/apple-touch-icon.png><link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png><link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css><link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet><link href=/css/main.css rel=stylesheet type=text/css><link href=/css/syntax.css rel=stylesheet type=text/css></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-hans><div class="container one-collumn sidebar-position-left page-home"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle role=button style=opacity:1;top:0><span class=toggle-line></span>
 <span class=toggle-line></span>
-<span class=toggle-line></span>
-<span class=toggle-line></span>
-</div>
-</div>
-<div class=site-meta>
-<div class=custom-logo-site-title>
-<a href=/ class=brand rel=start>
-<span class=logo-line-before><i></i></span>
+<span class=toggle-line></span></div></div><div class=site-meta><div class=custom-logo-site-title><a href=/ class=brand rel=start><span class=logo-line-before><i></i></span>
 <span class=site-title>沙雕园</span>
-<span class=logo-line-after><i></i></span>
-</a>
-</div>
-<p class=site-subtitle>沙雕使人进步。</p>
-</div>
-<div class=site-nav-right>
-<div class="toggle popup-trigger" style=opacity:1;top:0>
-<i class="fa fa-search fa-fw fa-lg"></i>
-</div>
-</div>
-</div>
-<nav class=site-nav>
-<ul id=menu class=menu>
-<li class=menu-item>
-<a href=/ rel=section>
-<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页
-</a>
-</li>
-<li class="menu-item menu-item-active">
-<a href=/post rel=section>
-<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档
-</a>
-</li>
-<li class=menu-item>
-<a href=/about.html rel=section>
-<i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我
-</a>
-</li>
-<li class="menu-item menu-item-search">
-<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> 搜索</a>
-</li>
-</ul>
-<div class=site-search>
-<div class="popup search-popup local-search-popup">
-<div class="local-search-header clearfix">
-<span class=search-icon><i class="fa fa-search"></i> </span>
-<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
-<div class=local-search-input-wrapper>
-<input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
-</div>
-</div>
-<div id=local-search-result></div>
-</div>
-</div>
-</nav> </div>
-</header>
-<main id=main class=main>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=/post/python/ itemprop=url>
-Python 速查表
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
+<span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>沙雕使人进步。</p></div><div class=site-nav-right><div class="toggle popup-trigger" style=opacity:1;top:0><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul id=menu class=menu><li class=menu-item><a href=/ rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-active"><a href=/post rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class=menu-item><a href=/about.html rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于我</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class=site-search><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class=search-icon><i class="fa fa-search"></i></span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span><div class=local-search-input-wrapper><input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off></div></div><div id=local-search-result></div></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><section id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=/post/python/ itemprop=url>Python 速查表</a></h1><div class=post-meta><span class=post-pushdate><i class="fa fa-calendar-o fa-fw"></i>
 <span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-02-22">
-2021-02-22
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-02-22">2021-02-22</time></span>
+<span class=post-category><i class="fa fa-folder-o fa-fw"></i>
 <span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/categories/%E6%8A%80%E6%9C%AF itemprop=url rel=index>
-<span itemprop=name>技术</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing><a class=post-category-a href=/categories/%E6%8A%80%E6%9C%AF itemprop=url rel=index><span itemprop=name>技术</span></a>
+&nbsp;</span></span>
+<span class=post-wordcount><i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>2317 字</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
+<span class=leancloud-world-count>2321 字</span></span>
+<span class=post-readtime><i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>5分钟</span>
-</span>
-<span id=/post/python/ class="leancloud_visitors post-visitor" data-flag-title="Python 速查表">
-<i class="fa fa-binoculars fa-fw"></i>
+<span class=leancloud-view-count>5分钟</span></span>
+<span id=/post/python/ class="leancloud_visitors post-visitor" data-flag-title="Python 速查表"><i class="fa fa-binoculars fa-fw"></i>
 <span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>我们经常会用到 Python 的各种库，坠痛苦的就是有一些实用的命令记不住，用的时候只好现查，而且这个效率 efficiency…… 所以啊，我整了这么个速查表，以后直接在这里找就好了。</p>
-<p>本贴会持续更新~</p>
-<blockquote>
-<p>注意：本文不是教程，而是速查表。</p>
-</blockquote>
-<h2 id=实用工具>实用工具</h2>
-<h3 id=datetime>datetime</h3>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>datetime</span>
-</code></pre></div><p><a href=https://docs.python.org/zh-cn/3/library/datetime.html target=_blank rel=noopener>官方文档：https://docs.python.org/zh-cn/3/library/datetime.html</a>
-</p>
-<p>日期和时间均用datetime.datetime类的对象表示，所以我们先介绍该类的方法</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>now <span style=color:#666>=</span> datetime<span style=color:#666>.</span>datetime<span style=color:#666>.</span>now()       <span style=color:#080;font-style:italic># 当前时间，类型：datetime.datetime</span>
-now<span style=color:#666>.</span>year                            <span style=color:#080;font-style:italic># 获取年（int）</span>
-now<span style=color:#666>.</span>month                           <span style=color:#080;font-style:italic># 月</span>
-<span style=color:#080;font-style:italic># 类似地还有：day, hour, minute, second, microsecond</span>
-</code></pre></div><p>datetime与字符串之间的转化</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#080;font-style:italic># datetime到字符串用strftime（f是format的意思）</span>
-now<span style=color:#666>.</span>strftime(<span style=color:#b44>&#39;%Y-%m-</span><span style=color:#b68;font-weight:700>%d</span><span style=color:#b44> %H:%M:%S&#39;</span>)   <span style=color:#080;font-style:italic># &#39;2020-09-02 17:45:18&#39;，注意大小写</span>
-<span style=color:#080;font-style:italic># 字符串到datetime用strptime</span>
-datetime<span style=color:#666>.</span>datetime<span style=color:#666>.</span>strptime(<span style=color:#b44>&#39;2020-09-02 17:45:18&#39;</span>, <span style=color:#b44>&#39;%Y-%m-</span><span style=color:#b68;font-weight:700>%d</span><span style=color:#b44> %H:%M:%S&#39;</span>)
-<span style=color:#080;font-style:italic># 这个方法很灵活，根据实际情况来写就行，比如你拿到的数据是&#39;2020年9.2&#39;</span>
-str_time <span style=color:#666>=</span> <span style=color:#b44>&#39;2020年9.2&#39;</span>
-datetime<span style=color:#666>.</span>datetime<span style=color:#666>.</span>strptime(str_time, <span style=color:#b44>&#39;%Y年%m.</span><span style=color:#b68;font-weight:700>%d</span><span style=color:#b44>&#39;</span>) <span style=color:#080;font-style:italic># 就可以正确生成</span>
-<span style=color:#080;font-style:italic># 除了%Y，%m这些，还有许多其他类型的代码，完整格式代码请查看https://docs.python.org/zh-cn/3/library/datetime.html#strftime-and-strptime-format-codes </span>
-</code></pre></div><p>时间差</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#080;font-style:italic># timedelta类用来处理时间差</span>
-a <span style=color:#666>=</span> datetime<span style=color:#666>.</span>datetime<span style=color:#666>.</span>strptime(<span style=color:#b44>&#39;2020-09-02 17:45:18&#39;</span>, <span style=color:#b44>&#39;%Y-%m-</span><span style=color:#b68;font-weight:700>%d</span><span style=color:#b44> %H:%M:%S&#39;</span>)
-b <span style=color:#666>=</span> datetime<span style=color:#666>.</span>datetime<span style=color:#666>.</span>strptime(<span style=color:#b44>&#39;2020-09-03 17:46:18&#39;</span>, <span style=color:#b44>&#39;%Y-%m-</span><span style=color:#b68;font-weight:700>%d</span><span style=color:#b44> %H:%M:%S&#39;</span>)
-delta <span style=color:#666>=</span> b <span style=color:#666>-</span> a                        <span style=color:#080;font-style:italic># 返回timedelta对象</span>
-delta<span style=color:#666>.</span>days                           <span style=color:#080;font-style:italic># 1</span>
-delta<span style=color:#666>.</span>seconds                        <span style=color:#080;font-style:italic># 60</span>
-<span style=color:#080;font-style:italic># 注意只有 days. seconds 和 microseconds 会存储在内部，days=1，seconds=60表示这个时间差是1天零60秒，这个结果是唯一的，seconds满一天会自动进位，所以并不会出现days=0，seconds=86460这种情况。</span>
-</code></pre></div><h2 id=数据处理>数据处理</h2>
-<h3 id=numpy>numpy</h3>
-<p>这部分主要整理自 <a href=https://cs231n.github.io/python-numpy-tutorial/ target=_blank rel=noopener>https://cs231n.github.io/python-numpy-tutorial/</a>
-</p>
-<p>This tutorial was originally contributed by Justin Johnson</p>
-<h4 id=创建>创建</h4>
-<p>numpy 的核心是 array，它可以表示高维张量，包括向量（rank=1）、矩阵（rank=2）、三阶张量（rank=3）等。我们有很多种方法创建 array：</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>numpy</span> <span style=color:#a2f;font-weight:700>as</span> <span style=color:#00f;font-weight:700>np</span>
-
-a <span style=color:#666>=</span> np<span style=color:#666>.</span>array([<span style=color:#666>1</span>, <span style=color:#666>2</span>, <span style=color:#666>3</span>])                  <span style=color:#080;font-style:italic># 通过list创建array</span>
-b <span style=color:#666>=</span> np<span style=color:#666>.</span>array([<span style=color:#666>1</span>, <span style=color:#666>2</span>, <span style=color:#666>3</span>], [<span style=color:#666>4</span>, <span style=color:#666>5</span>, <span style=color:#666>6</span>])       <span style=color:#080;font-style:italic># rank=2，矩阵</span>
-<span style=color:#a2f>print</span>(b)
-<span style=color:#080;font-style:italic># [[1 2 3]</span>
-<span style=color:#080;font-style:italic>#  [4 5 6]]</span>
-c <span style=color:#666>=</span> np<span style=color:#666>.</span>zeros((<span style=color:#666>2</span>, <span style=color:#666>2</span>))                     <span style=color:#080;font-style:italic># 创建2*2的全0矩阵</span>
-d <span style=color:#666>=</span> np<span style=color:#666>.</span>ones((<span style=color:#666>1</span>, <span style=color:#666>2</span>))                      <span style=color:#080;font-style:italic># 1*2的全1矩阵</span>
-e <span style=color:#666>=</span> np<span style=color:#666>.</span>full((<span style=color:#666>2</span>, <span style=color:#666>2</span>), <span style=color:#666>7</span>)                   <span style=color:#080;font-style:italic># 2*2，元素都是7</span>
-f <span style=color:#666>=</span> np<span style=color:#666>.</span>eye(<span style=color:#666>2</span>)                            <span style=color:#080;font-style:italic># 2*2单位矩阵</span>
-g <span style=color:#666>=</span> np<span style=color:#666>.</span>random<span style=color:#666>.</span>random((<span style=color:#666>2</span>, <span style=color:#666>2</span>))             <span style=color:#080;font-style:italic># 2*2随机矩阵</span>
-</code></pre></div><h4 id=索引与切片>索引与切片</h4>
-<p>可使用list作为下标进行索引，并且支持与python类似的切片操作。</p>
-<p><strong>与list不同的是，array的切片操作返回的是引用，因此修改切片后的值会修改原array的值！</strong></p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#080;font-style:italic># Create the following rank 2 array with shape (3, 4)</span>
-<span style=color:#080;font-style:italic># [[ 1  2  3  4]</span>
-<span style=color:#080;font-style:italic>#  [ 5  6  7  8]</span>
-<span style=color:#080;font-style:italic>#  [ 9 10 11 12]]</span>
-a <span style=color:#666>=</span> np<span style=color:#666>.</span>array([[<span style=color:#666>1</span>,<span style=color:#666>2</span>,<span style=color:#666>3</span>,<span style=color:#666>4</span>], [<span style=color:#666>5</span>,<span style=color:#666>6</span>,<span style=color:#666>7</span>,<span style=color:#666>8</span>], [<span style=color:#666>9</span>,<span style=color:#666>10</span>,<span style=color:#666>11</span>,<span style=color:#666>12</span>]])
-b <span style=color:#666>=</span> a[:<span style=color:#666>2</span>, <span style=color:#666>1</span>:<span style=color:#666>3</span>]
-<span style=color:#080;font-style:italic># [[2 3]</span>
-<span style=color:#080;font-style:italic>#  [6 7]]</span>
-</code></pre></div><p>如果某一维度的索引是 int，array会进行降维。要想避免降维可以使用单个元素的 list：</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>row_r1 <span style=color:#666>=</span> a[<span style=color:#666>1</span>, :]    <span style=color:#080;font-style:italic># 矩阵惨遭降维成向量 </span>
-row_r2 <span style=color:#666>=</span> a[<span style=color:#666>1</span>:<span style=color:#666>2</span>, :]  <span style=color:#080;font-style:italic># 如果把1改成1：2，虽然数据一样，但是不降维</span>
-row_r3 <span style=color:#666>=</span> a[[<span style=color:#666>1</span>], :]  <span style=color:#080;font-style:italic># 用[1]也不降维</span>
-<span style=color:#a2f>print</span>(row_r1, row_r1<span style=color:#666>.</span>shape)
-<span style=color:#a2f>print</span>(row_r2, row_r2<span style=color:#666>.</span>shape)
-<span style=color:#a2f>print</span>(row_r3, row_r3<span style=color:#666>.</span>shape)
-<span style=color:#080;font-style:italic># [5 6 7 8] (4,)</span>
-<span style=color:#080;font-style:italic># [[5 6 7 8]] (1, 4)</span>
-<span style=color:#080;font-style:italic># [[5 6 7 8]] (1, 4)</span>
-</code></pre></div><p>切片操作得到的永远是原来 array 的 subarray，如果我想重组怎么办呢？比如 [[1, 2], [3, 4]] 我想得到 [[3, 4], [1, 2], [1, 2]]，可以使用 <strong>integer array indexing</strong>：</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>a <span style=color:#666>=</span> np<span style=color:#666>.</span>array([[<span style=color:#666>1</span>, <span style=color:#666>2</span>], [<span style=color:#666>3</span>, <span style=color:#666>4</span>]])
-b <span style=color:#666>=</span> a[[<span style=color:#666>1</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>], [<span style=color:#666>0</span>, <span style=color:#666>1</span>]]
-<span style=color:#080;font-style:italic># b是[[3, 4], [1, 2], [1, 2]]，即a的第1行、第0行、第0行拼接</span>
-</code></pre></div><p><strong>boolean array indexing</strong> 很强大，允许我们进行筛选：</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>a <span style=color:#666>=</span> np<span style=color:#666>.</span>array([[<span style=color:#666>1</span>,<span style=color:#666>2</span>], [<span style=color:#666>3</span>, <span style=color:#666>4</span>], [<span style=color:#666>5</span>, <span style=color:#666>6</span>]])
-
-bool_idx <span style=color:#666>=</span> (a <span style=color:#666>&gt;</span> <span style=color:#666>2</span>)  <span style=color:#080;font-style:italic># Find the elements of a that are bigger than 2;</span>
-                    <span style=color:#080;font-style:italic># this returns a numpy array of Booleans of the same</span>
-                    <span style=color:#080;font-style:italic># shape as a, where each slot of bool_idx tells</span>
-                    <span style=color:#080;font-style:italic># whether that element of a is &gt; 2.</span>
-<span style=color:#080;font-style:italic># [[False False]</span>
-<span style=color:#080;font-style:italic># [ True  True]</span>
-<span style=color:#080;font-style:italic># [ True  True]]</span>
-
-<span style=color:#080;font-style:italic># We use boolean array indexing to construct a rank 1 array</span>
-<span style=color:#080;font-style:italic># consisting of the elements of a corresponding to the True values</span>
-<span style=color:#080;font-style:italic># of bool_idx</span>
-<span style=color:#a2f>print</span>(a[bool_idx])
-
-<span style=color:#080;font-style:italic># We can do all of the above in a single concise statement:</span>
-<span style=color:#a2f>print</span>(a[a <span style=color:#666>&gt;</span> <span style=color:#666>2</span>])
-
-<span style=color:#080;font-style:italic># [3 4 5 6]</span>
-<span style=color:#080;font-style:italic># [3 4 5 6]</span>
-</code></pre></div><h3 id=pandas>pandas</h3>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>pandas</span> <span style=color:#a2f;font-weight:700>as</span> <span style=color:#00f;font-weight:700>pd</span>
-
-<span style=color:#080;font-style:italic># 读取excel，第0个sheet</span>
-df <span style=color:#666>=</span> pd<span style=color:#666>.</span>read_excel(<span style=color:#b44>&#39;./filename.xlsx&#39;</span>, <span style=color:#666>0</span>)
-
-<span style=color:#080;font-style:italic># 获取行数、列数</span>
-nrow <span style=color:#666>=</span> df<span style=color:#666>.</span>shape[<span style=color:#666>0</span>]
-ncol <span style=color:#666>=</span> df<span style=color:#666>.</span>shape[<span style=color:#666>1</span>]
-
-<span style=color:#080;font-style:italic>### 切片、筛选、提取数据 ###</span>
-
-<span style=color:#080;font-style:italic># 直接通过&#39;[]&#39;，字符串表示列，数字表示行</span>
-df[<span style=color:#b44>&#39;price&#39;</span>]       				<span style=color:#080;font-style:italic># 选取名字为&#39;price&#39;的列</span>
-df[[<span style=color:#b44>&#39;name&#39;</span>, <span style=color:#b44>&#39;price&#39;</span>]]			<span style=color:#080;font-style:italic># 选取多列，把列名放在list里</span>
-df[:<span style=color:#666>2</span>]							<span style=color:#080;font-style:italic># 第0行和第1行，这里和list的切片操作一样</span>
-
-<span style=color:#080;font-style:italic># iloc和loc：索引用iloc，列名用loc。iloc和loc的优势是可以进行筛选</span>
-<span style=color:#080;font-style:italic># loc用法：df.loc[index, column_name]</span>
-<span style=color:#080;font-style:italic># 一个大坑：loc的行索引是闭区间，而不是python通用的左闭右开（但iloc是正常的）</span>
-df<span style=color:#666>.</span>loc[<span style=color:#666>2</span>, <span style=color:#b44>&#39;price&#39;</span>]				<span style=color:#080;font-style:italic># 第2行，名字为&#39;price&#39;的列</span>
-df<span style=color:#666>.</span>loc[[<span style=color:#666>2</span>,<span style=color:#666>3</span>],[<span style=color:#b44>&#39;name&#39;</span>,<span style=color:#b44>&#39;price&#39;</span>]]  <span style=color:#080;font-style:italic># index和column_name都可灵活使用list或切片</span>
-df<span style=color:#666>.</span>loc[df[<span style=color:#b44>&#39;price&#39;</span>]<span style=color:#666>&lt;</span><span style=color:#666>100</span>,<span style=color:#b44>&#39;name&#39;</span>]  <span style=color:#080;font-style:italic># 筛选，注意筛选条件是针对行的</span>
-
-<span style=color:#080;font-style:italic># iloc用法：只要把loc的列名改成索引</span>
-df<span style=color:#666>.</span>iloc[df[<span style=color:#b44>&#39;price&#39;</span>]<span style=color:#666>&lt;</span><span style=color:#666>100</span>, <span style=color:#666>2</span>:<span style=color:#666>5</span>]   <span style=color:#080;font-style:italic># 一样可以灵活组合list和切片</span>
-df<span style=color:#666>.</span>iloc[df[<span style=color:#b44>&#39;price&#39;</span>]<span style=color:#666>&lt;</span><span style=color:#666>100</span> <span style=color:#666>|</span> df[<span style=color:#b44>&#39;price&#39;</span>]<span style=color:#666>&gt;</span><span style=color:#666>200</span>]  <span style=color:#080;font-style:italic># 筛选条件&#39;|&#39;表示或，&#39;&amp;&#39;表示与</span>
-</code></pre></div><h3 id=sklearn>sklearn</h3>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#080;font-style:italic># 线性回归</span>
-<span style=color:#a2f;font-weight:700>from</span> <span style=color:#00f;font-weight:700>sklearn</span> <span style=color:#a2f;font-weight:700>import</span> linear_model
-<span style=color:#080;font-style:italic># 训练数据：X_train, y_train，测试数据：X_test</span>
-lm <span style=color:#666>=</span> linear_model<span style=color:#666>.</span>LinearRegression()
-model <span style=color:#666>=</span> lm<span style=color:#666>.</span>fit(X_train, y_train)
-y_pred <span style=color:#666>=</span> model<span style=color:#666>.</span>predict(X_test)
-
-<span style=color:#080;font-style:italic># 交叉验证</span>
-<span style=color:#a2f;font-weight:700>from</span> <span style=color:#00f;font-weight:700>sklearn.model_selection</span> <span style=color:#a2f;font-weight:700>import</span> cross_val_score
-cross_val_score(m, X, y, cv<span style=color:#666>=</span><span style=color:#666>5</span>, scoring<span style=color:#666>=</span><span style=color:#b44>&#39;neg_mean_squared_error&#39;</span>) <span style=color:#080;font-style:italic># 5-fold cross validation, m是sklearn的model</span>
-</code></pre></div><h2 id=数据结构>数据结构</h2>
-<h3 id=heapq>heapq</h3>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>heapq</span> <span style=color:#a2f;font-weight:700>as</span> <span style=color:#00f;font-weight:700>hq</span>
-
-<span style=color:#080;font-style:italic># python的heapq库是在list的基础上添加了堆的操作</span>
-<span style=color:#080;font-style:italic># heapq有两种方式创建堆，一种是使用一个空列表，然后使用heapq.heappush()函数把值加入堆中</span>
-num <span style=color:#666>=</span> [<span style=color:#666>1</span>,<span style=color:#666>1</span>,<span style=color:#666>4</span>,<span style=color:#666>5</span>,<span style=color:#666>1</span>,<span style=color:#666>4</span>]
-heapq<span style=color:#666>.</span>heappush(heap, num)
-<span style=color:#080;font-style:italic># 另外一种就是使用heapq.heapify(list)转换列表成为堆结构</span>
-heapq<span style=color:#666>.</span>heapify(num)       <span style=color:#080;font-style:italic># 这时候num也变成堆了</span>
-</code></pre></div><h2 id=网络爬虫相关>网络/爬虫相关</h2>
-<h3 id=requests>requests</h3>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>requests</span>
-
-<span style=color:#080;font-style:italic># get请求</span>
-html <span style=color:#666>=</span> requests<span style=color:#666>.</span>get(<span style=color:#b44>&#39;www.baidu.com&#39;</span>)<span style=color:#666>.</span>text
-
-<span style=color:#080;font-style:italic># get请求可以优雅地加参数</span>
-params <span style=color:#666>=</span> {<span style=color:#b44>&#39;q&#39;</span>: <span style=color:#b44>&#39;搜索测试&#39;</span>}
-response <span style=color:#666>=</span> requests<span style=color:#666>.</span>get(url<span style=color:#666>=</span><span style=color:#b44>&#39;www.google.com/search&#39;</span>, params<span style=color:#666>=</span>params)<span style=color:#666>.</span>text
-</code></pre></div><h3 id=beautifulsoup>BeautifulSoup</h3>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#a2f;font-weight:700>from</span> <span style=color:#00f;font-weight:700>bs4</span> <span style=color:#a2f;font-weight:700>import</span> BeautifulSoup
-
-<span style=color:#080;font-style:italic># 之前用request获取html</span>
-
-bs <span style=color:#666>=</span> BeautifulSoup(html, <span style=color:#b44>&#39;html.parser&#39;</span>)
-
-<span style=color:#080;font-style:italic># 查找标签，返回标签html字符串的list</span>
-p_list <span style=color:#666>=</span> bs<span style=color:#666>.</span>findAll(<span style=color:#b44>&#39;p&#39;</span>)						<span style=color:#080;font-style:italic># 查找所有&lt;p&gt;标签</span>
-div_list <span style=color:#666>=</span> bs<span style=color:#666>.</span>findAll(<span style=color:#b44>&#39;div&#39;</span>, attrs<span style=color:#666>=</span>{<span style=color:#b44>&#39;class&#39;</span>: <span style=color:#b44>&#39;primary&#39;</span>})		<span style=color:#080;font-style:italic># 带条件筛选&lt;div class=&#39;primary&#39;&gt;</span>
-<span style=color:#080;font-style:italic># 条件可以是正则表达式</span>
-a_list <span style=color:#666>=</span> bs<span style=color:#666>.</span>findAll(<span style=color:#b44>&#39;a&#39;</span>, string<span style=color:#666>=</span><span style=color:#b44>&#39;[abs]&#39;</span>)		<span style=color:#080;font-style:italic># 字符串包含[abs]</span>
-</code></pre></div><h3 id=json>json</h3>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>json</span>
-<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>requests</span>
-
-data <span style=color:#666>=</span> requests<span style=color:#666>.</span>get(<span style=color:#b44>&#39;www.baidu.com&#39;</span>)<span style=color:#666>.</span>content<span style=color:#666>.</span>decode()	<span style=color:#080;font-style:italic># 某请求返回的字符串格式的json</span>
-
-<span style=color:#080;font-style:italic># 字符串转json</span>
-data_js <span style=color:#666>=</span> json<span style=color:#666>.</span>loads(data)
-</code></pre></div>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/tags/%e6%8a%80%e6%9c%af rel=tag title=技术>#技术#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-<a href=/post/daily_poem/ rel=next title=每日怪诗——大年初二，像个傻蛋儿>
-<i class="fa fa-chevron-left"></i> 每日怪诗——大年初二，像个傻蛋儿
-</a>
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=/post/lihua4/ rel=prev title="李华大冒险4 - 和赵铁柱因为分蛋糕吵起来了">
-李华大冒险4 - 和赵铁柱因为分蛋糕吵起来了
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=ucomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
-<div class=sidebar-toggle>
-<div class=sidebar-toggle-line-wrap>
-<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>我们经常会用到 Python 的各种库，坠痛苦的就是有一些实用的命令记不住，用的时候只好现查，而且这个效率 efficiency…… 所以啊，我整了这么个速查表，以后直接在这里找就好了。</p><p>本贴会持续更新~</p><blockquote><p>注意：本文不是教程，而是速查表。</p></blockquote><h2 id=实用工具>实用工具</h2><h3 id=datetime>datetime</h3><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>datetime</span>
+</span></span></code></pre></div><p><a href=https://docs.python.org/zh-cn/3/library/datetime.html target=_blank rel=noopener>官方文档：https://docs.python.org/zh-cn/3/library/datetime.html</a></p><p>日期和时间均用datetime.datetime类的对象表示，所以我们先介绍该类的方法</p><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>now <span style=color:#666>=</span> datetime<span style=color:#666>.</span>datetime<span style=color:#666>.</span>now()       <span style=color:#080;font-style:italic># 当前时间，类型：datetime.datetime</span>
+</span></span><span style=display:flex><span>now<span style=color:#666>.</span>year                            <span style=color:#080;font-style:italic># 获取年（int）</span>
+</span></span><span style=display:flex><span>now<span style=color:#666>.</span>month                           <span style=color:#080;font-style:italic># 月</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># 类似地还有：day, hour, minute, second, microsecond</span>
+</span></span></code></pre></div><p>datetime与字符串之间的转化</p><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#080;font-style:italic># datetime到字符串用strftime（f是format的意思）</span>
+</span></span><span style=display:flex><span>now<span style=color:#666>.</span>strftime(<span style=color:#b44>&#39;%Y-%m-</span><span style=color:#b68;font-weight:700>%d</span><span style=color:#b44> %H:%M:%S&#39;</span>)   <span style=color:#080;font-style:italic># &#39;2020-09-02 17:45:18&#39;，注意大小写</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># 字符串到datetime用strptime</span>
+</span></span><span style=display:flex><span>datetime<span style=color:#666>.</span>datetime<span style=color:#666>.</span>strptime(<span style=color:#b44>&#39;2020-09-02 17:45:18&#39;</span>, <span style=color:#b44>&#39;%Y-%m-</span><span style=color:#b68;font-weight:700>%d</span><span style=color:#b44> %H:%M:%S&#39;</span>)
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># 这个方法很灵活，根据实际情况来写就行，比如你拿到的数据是&#39;2020年9.2&#39;</span>
+</span></span><span style=display:flex><span>str_time <span style=color:#666>=</span> <span style=color:#b44>&#39;2020年9.2&#39;</span>
+</span></span><span style=display:flex><span>datetime<span style=color:#666>.</span>datetime<span style=color:#666>.</span>strptime(str_time, <span style=color:#b44>&#39;%Y年%m.</span><span style=color:#b68;font-weight:700>%d</span><span style=color:#b44>&#39;</span>) <span style=color:#080;font-style:italic># 就可以正确生成</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># 除了%Y，%m这些，还有许多其他类型的代码，完整格式代码请查看https://docs.python.org/zh-cn/3/library/datetime.html#strftime-and-strptime-format-codes </span>
+</span></span></code></pre></div><p>时间差</p><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#080;font-style:italic># timedelta类用来处理时间差</span>
+</span></span><span style=display:flex><span>a <span style=color:#666>=</span> datetime<span style=color:#666>.</span>datetime<span style=color:#666>.</span>strptime(<span style=color:#b44>&#39;2020-09-02 17:45:18&#39;</span>, <span style=color:#b44>&#39;%Y-%m-</span><span style=color:#b68;font-weight:700>%d</span><span style=color:#b44> %H:%M:%S&#39;</span>)
+</span></span><span style=display:flex><span>b <span style=color:#666>=</span> datetime<span style=color:#666>.</span>datetime<span style=color:#666>.</span>strptime(<span style=color:#b44>&#39;2020-09-03 17:46:18&#39;</span>, <span style=color:#b44>&#39;%Y-%m-</span><span style=color:#b68;font-weight:700>%d</span><span style=color:#b44> %H:%M:%S&#39;</span>)
+</span></span><span style=display:flex><span>delta <span style=color:#666>=</span> b <span style=color:#666>-</span> a                        <span style=color:#080;font-style:italic># 返回timedelta对象</span>
+</span></span><span style=display:flex><span>delta<span style=color:#666>.</span>days                           <span style=color:#080;font-style:italic># 1</span>
+</span></span><span style=display:flex><span>delta<span style=color:#666>.</span>seconds                        <span style=color:#080;font-style:italic># 60</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># 注意只有 days. seconds 和 microseconds 会存储在内部，days=1，seconds=60表示这个时间差是1天零60秒，这个结果是唯一的，seconds满一天会自动进位，所以并不会出现days=0，seconds=86460这种情况。</span>
+</span></span></code></pre></div><h2 id=数据处理>数据处理</h2><h3 id=numpy>numpy</h3><p>这部分主要整理自 <a href=https://cs231n.github.io/python-numpy-tutorial/ target=_blank rel=noopener>https://cs231n.github.io/python-numpy-tutorial/</a></p><p>This tutorial was originally contributed by Justin Johnson</p><h4 id=创建>创建</h4><p>numpy 的核心是 array，它可以表示高维张量，包括向量（rank=1）、矩阵（rank=2）、三阶张量（rank=3）等。我们有很多种方法创建 array：</p><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>numpy</span> <span style=color:#a2f;font-weight:700>as</span> <span style=color:#00f;font-weight:700>np</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>a <span style=color:#666>=</span> np<span style=color:#666>.</span>array([<span style=color:#666>1</span>, <span style=color:#666>2</span>, <span style=color:#666>3</span>])                  <span style=color:#080;font-style:italic># 通过list创建array</span>
+</span></span><span style=display:flex><span>b <span style=color:#666>=</span> np<span style=color:#666>.</span>array([<span style=color:#666>1</span>, <span style=color:#666>2</span>, <span style=color:#666>3</span>], [<span style=color:#666>4</span>, <span style=color:#666>5</span>, <span style=color:#666>6</span>])       <span style=color:#080;font-style:italic># rank=2，矩阵</span>
+</span></span><span style=display:flex><span><span style=color:#a2f>print</span>(b)
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># [[1 2 3]</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic>#  [4 5 6]]</span>
+</span></span><span style=display:flex><span>c <span style=color:#666>=</span> np<span style=color:#666>.</span>zeros((<span style=color:#666>2</span>, <span style=color:#666>2</span>))                     <span style=color:#080;font-style:italic># 创建2*2的全0矩阵</span>
+</span></span><span style=display:flex><span>d <span style=color:#666>=</span> np<span style=color:#666>.</span>ones((<span style=color:#666>1</span>, <span style=color:#666>2</span>))                      <span style=color:#080;font-style:italic># 1*2的全1矩阵</span>
+</span></span><span style=display:flex><span>e <span style=color:#666>=</span> np<span style=color:#666>.</span>full((<span style=color:#666>2</span>, <span style=color:#666>2</span>), <span style=color:#666>7</span>)                   <span style=color:#080;font-style:italic># 2*2，元素都是7</span>
+</span></span><span style=display:flex><span>f <span style=color:#666>=</span> np<span style=color:#666>.</span>eye(<span style=color:#666>2</span>)                            <span style=color:#080;font-style:italic># 2*2单位矩阵</span>
+</span></span><span style=display:flex><span>g <span style=color:#666>=</span> np<span style=color:#666>.</span>random<span style=color:#666>.</span>random((<span style=color:#666>2</span>, <span style=color:#666>2</span>))             <span style=color:#080;font-style:italic># 2*2随机矩阵</span>
+</span></span></code></pre></div><h4 id=索引与切片>索引与切片</h4><p>可使用list作为下标进行索引，并且支持与python类似的切片操作。</p><p><strong>与list不同的是，array的切片操作返回的是引用，因此修改切片后的值会修改原array的值！</strong></p><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#080;font-style:italic># Create the following rank 2 array with shape (3, 4)</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># [[ 1  2  3  4]</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic>#  [ 5  6  7  8]</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic>#  [ 9 10 11 12]]</span>
+</span></span><span style=display:flex><span>a <span style=color:#666>=</span> np<span style=color:#666>.</span>array([[<span style=color:#666>1</span>,<span style=color:#666>2</span>,<span style=color:#666>3</span>,<span style=color:#666>4</span>], [<span style=color:#666>5</span>,<span style=color:#666>6</span>,<span style=color:#666>7</span>,<span style=color:#666>8</span>], [<span style=color:#666>9</span>,<span style=color:#666>10</span>,<span style=color:#666>11</span>,<span style=color:#666>12</span>]])
+</span></span><span style=display:flex><span>b <span style=color:#666>=</span> a[:<span style=color:#666>2</span>, <span style=color:#666>1</span>:<span style=color:#666>3</span>]
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># [[2 3]</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic>#  [6 7]]</span>
+</span></span></code></pre></div><p>如果某一维度的索引是 int，array会进行降维。要想避免降维可以使用单个元素的 list：</p><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>row_r1 <span style=color:#666>=</span> a[<span style=color:#666>1</span>, :]    <span style=color:#080;font-style:italic># 矩阵惨遭降维成向量 </span>
+</span></span><span style=display:flex><span>row_r2 <span style=color:#666>=</span> a[<span style=color:#666>1</span>:<span style=color:#666>2</span>, :]  <span style=color:#080;font-style:italic># 如果把1改成1：2，虽然数据一样，但是不降维</span>
+</span></span><span style=display:flex><span>row_r3 <span style=color:#666>=</span> a[[<span style=color:#666>1</span>], :]  <span style=color:#080;font-style:italic># 用[1]也不降维</span>
+</span></span><span style=display:flex><span><span style=color:#a2f>print</span>(row_r1, row_r1<span style=color:#666>.</span>shape)
+</span></span><span style=display:flex><span><span style=color:#a2f>print</span>(row_r2, row_r2<span style=color:#666>.</span>shape)
+</span></span><span style=display:flex><span><span style=color:#a2f>print</span>(row_r3, row_r3<span style=color:#666>.</span>shape)
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># [5 6 7 8] (4,)</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># [[5 6 7 8]] (1, 4)</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># [[5 6 7 8]] (1, 4)</span>
+</span></span></code></pre></div><p>切片操作得到的永远是原来 array 的 subarray，如果我想重组怎么办呢？比如 [[1, 2], [3, 4]] 我想得到 [[3, 4], [1, 2], [1, 2]]，可以使用 <strong>integer array indexing</strong>：</p><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>a <span style=color:#666>=</span> np<span style=color:#666>.</span>array([[<span style=color:#666>1</span>, <span style=color:#666>2</span>], [<span style=color:#666>3</span>, <span style=color:#666>4</span>]])
+</span></span><span style=display:flex><span>b <span style=color:#666>=</span> a[[<span style=color:#666>1</span>, <span style=color:#666>0</span>, <span style=color:#666>0</span>], [<span style=color:#666>0</span>, <span style=color:#666>1</span>]]
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># b是[[3, 4], [1, 2], [1, 2]]，即a的第1行、第0行、第0行拼接</span>
+</span></span></code></pre></div><p><strong>boolean array indexing</strong> 很强大，允许我们进行筛选：</p><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>a <span style=color:#666>=</span> np<span style=color:#666>.</span>array([[<span style=color:#666>1</span>,<span style=color:#666>2</span>], [<span style=color:#666>3</span>, <span style=color:#666>4</span>], [<span style=color:#666>5</span>, <span style=color:#666>6</span>]])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>bool_idx <span style=color:#666>=</span> (a <span style=color:#666>&gt;</span> <span style=color:#666>2</span>)  <span style=color:#080;font-style:italic># Find the elements of a that are bigger than 2;</span>
+</span></span><span style=display:flex><span>                    <span style=color:#080;font-style:italic># this returns a numpy array of Booleans of the same</span>
+</span></span><span style=display:flex><span>                    <span style=color:#080;font-style:italic># shape as a, where each slot of bool_idx tells</span>
+</span></span><span style=display:flex><span>                    <span style=color:#080;font-style:italic># whether that element of a is &gt; 2.</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># [[False False]</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># [ True  True]</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># [ True  True]]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># We use boolean array indexing to construct a rank 1 array</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># consisting of the elements of a corresponding to the True values</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># of bool_idx</span>
+</span></span><span style=display:flex><span><span style=color:#a2f>print</span>(a[bool_idx])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># We can do all of the above in a single concise statement:</span>
+</span></span><span style=display:flex><span><span style=color:#a2f>print</span>(a[a <span style=color:#666>&gt;</span> <span style=color:#666>2</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># [3 4 5 6]</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># [3 4 5 6]</span>
+</span></span></code></pre></div><h3 id=pandas>pandas</h3><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>pandas</span> <span style=color:#a2f;font-weight:700>as</span> <span style=color:#00f;font-weight:700>pd</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># 读取excel，第0个sheet</span>
+</span></span><span style=display:flex><span>df <span style=color:#666>=</span> pd<span style=color:#666>.</span>read_excel(<span style=color:#b44>&#39;./filename.xlsx&#39;</span>, <span style=color:#666>0</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># 获取行数、列数</span>
+</span></span><span style=display:flex><span>nrow <span style=color:#666>=</span> df<span style=color:#666>.</span>shape[<span style=color:#666>0</span>]
+</span></span><span style=display:flex><span>ncol <span style=color:#666>=</span> df<span style=color:#666>.</span>shape[<span style=color:#666>1</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic>### 切片、筛选、提取数据 ###</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># 直接通过&#39;[]&#39;，字符串表示列，数字表示行</span>
+</span></span><span style=display:flex><span>df[<span style=color:#b44>&#39;price&#39;</span>]       				<span style=color:#080;font-style:italic># 选取名字为&#39;price&#39;的列</span>
+</span></span><span style=display:flex><span>df[[<span style=color:#b44>&#39;name&#39;</span>, <span style=color:#b44>&#39;price&#39;</span>]]			<span style=color:#080;font-style:italic># 选取多列，把列名放在list里</span>
+</span></span><span style=display:flex><span>df[:<span style=color:#666>2</span>]							<span style=color:#080;font-style:italic># 第0行和第1行，这里和list的切片操作一样</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># iloc和loc：索引用iloc，列名用loc。iloc和loc的优势是可以进行筛选</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># loc用法：df.loc[index, column_name]</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># 一个大坑：loc的行索引是闭区间，而不是python通用的左闭右开（但iloc是正常的）</span>
+</span></span><span style=display:flex><span>df<span style=color:#666>.</span>loc[<span style=color:#666>2</span>, <span style=color:#b44>&#39;price&#39;</span>]				<span style=color:#080;font-style:italic># 第2行，名字为&#39;price&#39;的列</span>
+</span></span><span style=display:flex><span>df<span style=color:#666>.</span>loc[[<span style=color:#666>2</span>,<span style=color:#666>3</span>],[<span style=color:#b44>&#39;name&#39;</span>,<span style=color:#b44>&#39;price&#39;</span>]]  <span style=color:#080;font-style:italic># index和column_name都可灵活使用list或切片</span>
+</span></span><span style=display:flex><span>df<span style=color:#666>.</span>loc[df[<span style=color:#b44>&#39;price&#39;</span>]<span style=color:#666>&lt;</span><span style=color:#666>100</span>,<span style=color:#b44>&#39;name&#39;</span>]  <span style=color:#080;font-style:italic># 筛选，注意筛选条件是针对行的</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># iloc用法：只要把loc的列名改成索引</span>
+</span></span><span style=display:flex><span>df<span style=color:#666>.</span>iloc[df[<span style=color:#b44>&#39;price&#39;</span>]<span style=color:#666>&lt;</span><span style=color:#666>100</span>, <span style=color:#666>2</span>:<span style=color:#666>5</span>]   <span style=color:#080;font-style:italic># 一样可以灵活组合list和切片</span>
+</span></span><span style=display:flex><span>df<span style=color:#666>.</span>iloc[df[<span style=color:#b44>&#39;price&#39;</span>]<span style=color:#666>&lt;</span><span style=color:#666>100</span> <span style=color:#666>|</span> df[<span style=color:#b44>&#39;price&#39;</span>]<span style=color:#666>&gt;</span><span style=color:#666>200</span>]  <span style=color:#080;font-style:italic># 筛选条件&#39;|&#39;表示或，&#39;&amp;&#39;表示与</span>
+</span></span></code></pre></div><h3 id=sklearn>sklearn</h3><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#080;font-style:italic># 线性回归</span>
+</span></span><span style=display:flex><span><span style=color:#a2f;font-weight:700>from</span> <span style=color:#00f;font-weight:700>sklearn</span> <span style=color:#a2f;font-weight:700>import</span> linear_model
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># 训练数据：X_train, y_train，测试数据：X_test</span>
+</span></span><span style=display:flex><span>lm <span style=color:#666>=</span> linear_model<span style=color:#666>.</span>LinearRegression()
+</span></span><span style=display:flex><span>model <span style=color:#666>=</span> lm<span style=color:#666>.</span>fit(X_train, y_train)
+</span></span><span style=display:flex><span>y_pred <span style=color:#666>=</span> model<span style=color:#666>.</span>predict(X_test)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># 交叉验证</span>
+</span></span><span style=display:flex><span><span style=color:#a2f;font-weight:700>from</span> <span style=color:#00f;font-weight:700>sklearn.model_selection</span> <span style=color:#a2f;font-weight:700>import</span> cross_val_score
+</span></span><span style=display:flex><span>cross_val_score(m, X, y, cv<span style=color:#666>=</span><span style=color:#666>5</span>, scoring<span style=color:#666>=</span><span style=color:#b44>&#39;neg_mean_squared_error&#39;</span>) <span style=color:#080;font-style:italic># 5-fold cross validation, m是sklearn的model</span>
+</span></span></code></pre></div><h2 id=数据结构>数据结构</h2><h3 id=heapq>heapq</h3><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>heapq</span> <span style=color:#a2f;font-weight:700>as</span> <span style=color:#00f;font-weight:700>hq</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># python的heapq库是在list的基础上添加了堆的操作</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># heapq有两种方式创建堆，一种是使用一个空列表，然后使用heapq.heappush()函数把值加入堆中</span>
+</span></span><span style=display:flex><span>num <span style=color:#666>=</span> [<span style=color:#666>1</span>,<span style=color:#666>1</span>,<span style=color:#666>4</span>,<span style=color:#666>5</span>,<span style=color:#666>1</span>,<span style=color:#666>4</span>]
+</span></span><span style=display:flex><span>heapq<span style=color:#666>.</span>heappush(heap, num)
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># 另外一种就是使用heapq.heapify(list)转换列表成为堆结构</span>
+</span></span><span style=display:flex><span>heapq<span style=color:#666>.</span>heapify(num)       <span style=color:#080;font-style:italic># 这时候num也变成堆了</span>
+</span></span></code></pre></div><h2 id=网络爬虫相关>网络/爬虫相关</h2><h3 id=requests>requests</h3><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>requests</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># get请求</span>
+</span></span><span style=display:flex><span>html <span style=color:#666>=</span> requests<span style=color:#666>.</span>get(<span style=color:#b44>&#39;www.baidu.com&#39;</span>)<span style=color:#666>.</span>text
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># get请求可以优雅地加参数</span>
+</span></span><span style=display:flex><span>params <span style=color:#666>=</span> {<span style=color:#b44>&#39;q&#39;</span>: <span style=color:#b44>&#39;搜索测试&#39;</span>}
+</span></span><span style=display:flex><span>response <span style=color:#666>=</span> requests<span style=color:#666>.</span>get(url<span style=color:#666>=</span><span style=color:#b44>&#39;www.google.com/search&#39;</span>, params<span style=color:#666>=</span>params)<span style=color:#666>.</span>text
+</span></span></code></pre></div><h3 id=beautifulsoup>BeautifulSoup</h3><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#a2f;font-weight:700>from</span> <span style=color:#00f;font-weight:700>bs4</span> <span style=color:#a2f;font-weight:700>import</span> BeautifulSoup
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># 之前用request获取html</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>bs <span style=color:#666>=</span> BeautifulSoup(html, <span style=color:#b44>&#39;html.parser&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># 查找标签，返回标签html字符串的list</span>
+</span></span><span style=display:flex><span>p_list <span style=color:#666>=</span> bs<span style=color:#666>.</span>findAll(<span style=color:#b44>&#39;p&#39;</span>)						<span style=color:#080;font-style:italic># 查找所有&lt;p&gt;标签</span>
+</span></span><span style=display:flex><span>div_list <span style=color:#666>=</span> bs<span style=color:#666>.</span>findAll(<span style=color:#b44>&#39;div&#39;</span>, attrs<span style=color:#666>=</span>{<span style=color:#b44>&#39;class&#39;</span>: <span style=color:#b44>&#39;primary&#39;</span>})		<span style=color:#080;font-style:italic># 带条件筛选&lt;div class=&#39;primary&#39;&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># 条件可以是正则表达式</span>
+</span></span><span style=display:flex><span>a_list <span style=color:#666>=</span> bs<span style=color:#666>.</span>findAll(<span style=color:#b44>&#39;a&#39;</span>, string<span style=color:#666>=</span><span style=color:#b44>&#39;[abs]&#39;</span>)		<span style=color:#080;font-style:italic># 字符串包含[abs]</span>
+</span></span></code></pre></div><h3 id=json>json</h3><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>json</span>
+</span></span><span style=display:flex><span><span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>requests</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>data <span style=color:#666>=</span> requests<span style=color:#666>.</span>get(<span style=color:#b44>&#39;www.baidu.com&#39;</span>)<span style=color:#666>.</span>content<span style=color:#666>.</span>decode()	<span style=color:#080;font-style:italic># 某请求返回的字符串格式的json</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#080;font-style:italic># 字符串转json</span>
+</span></span><span style=display:flex><span>data_js <span style=color:#666>=</span> json<span style=color:#666>.</span>loads(data)
+</span></span></code></pre></div></div><footer class=post-footer><div class=post-tags><a href=/tags/%e6%8a%80%e6%9c%af rel=tag title=技术>#技术#</a></div><div class=addthis_inline_share_toolbox></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/daily_poem/ rel=next title=每日怪诗——大年初二，像个傻蛋儿><i class="fa fa-chevron-left"></i> 每日怪诗——大年初二，像个傻蛋儿</a></div><div class="post-nav-prev post-nav-item"><a href=/post/lihua4/ rel=prev title="李华大冒险4 - 和赵铁柱因为分蛋糕吵起来了">李华大冒险4 - 和赵铁柱因为分蛋糕吵起来了
+<i class="fa fa-chevron-right"></i></a></div></div><div id=ucomments></div></footer></article></section></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
 <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-</div>
-</div>
-<aside id=sidebar class=sidebar>
-<div class=sidebar-inner>
-<section class="site-overview sidebar-panel sidebar-panel-active">
-<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
-<img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人>
-<p class=site-author-name itemprop=name>精神病人</p>
-<p class="site-description motion-element" itemprop=description>
-精神病人欢乐多!
-</p>
-</div>
-<nav class="site-state motion-element">
-<div class="site-state-item site-state-posts">
-<a href=/post/>
-<span class=site-state-item-count>41</span>
-<span class=site-state-item-name>日志</span>
-</a>
-</div>
-<div class="site-state-item site-state-categories">
-<a href=/categories/>
-<span class=site-state-item-count>11</span>
-<span class=site-state-item-name>分类</span>
-</a>
-</div>
-<div class="site-state-item site-state-tags">
-<a href=/tags/>
-<span class=site-state-item-count>11</span>
-<span class=site-state-item-name>标签</span>
-</a>
-</div>
-</nav>
-<div class="links-of-author motion-element">
-<span class=links-of-author-item>
-<a href=https://github.com/jcq15/ target=_blank title=GitHub>
-<i class="fa fa-fw fa-github"></i>
-GitHub
-</a>
-</span>
-</div>
-<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
-<div class=tagcloud-of-blogroll-title>
-<i class="fa fa-fw fa-tags"></i>
-标签云
-</div>
-<ul class=tagcloud-of-blogroll-list>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E5%AD%A6%E4%B9%A0>学习
-<sup>15</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
-<sup>6</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%8A%80%E6%9C%AF>技术
-<sup>5</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%9B%B4%E6%96%B0>更新
-<sup>3</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%B8%B8%E6%88%8F>游戏
-<sup>3</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E7%A7%91%E6%99%AE>科普
-<sup>3</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%95%B4%E6%B4%BB>整活
-<sup>2</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
-<sup>2</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%95%A2%E6%83%B3>敢想
-<sup>1</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%B2%99%E9%9B%95>沙雕
-<sup>1</sup>
-</a>
-</li>
-</ul>
-</div>
-</section>
-</div>
-</aside>
-</div>
-</main>
-<footer id=footer class=footer>
-<div class=footer-inner>
-<div class=copyright>
-<span class=copyright-year>
-&copy; 2010 - 2023
-</span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><section class="site-overview sidebar-panel sidebar-panel-active"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人><p class=site-author-name itemprop=name>精神病人</p><p class="site-description motion-element" itemprop=description>精神病人欢乐多!</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href=/post/><span class=site-state-item-count>41</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>12</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>12</span>
+<span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/jcq15/ target=_blank title=GitHub><i class="fa fa-fw fa-github"></i>
+GitHub</a></span></div><div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline"><div class=tagcloud-of-blogroll-title><i class="fa fa-fw fa-tags"></i>
+标签云</div><ul class=tagcloud-of-blogroll-list><li class=tagcloud-of-blogroll-item><a href=/tags/%E5%AD%A6%E4%B9%A0>学习
+<sup>15</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
+<sup>6</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%8A%80%E6%9C%AF>技术
+<sup>5</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B8%B8%E6%88%8F>游戏
+<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%A7%91%E6%99%AE>科普
+<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%B4%E6%B4%BB>整活
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9B%B4%E6%96%B0>更新
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%A2%E6%83%B3>敢想
+<sup>1</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B2%99%E9%9B%95>沙雕
+<sup>1</sup></a></li></ul></div></section></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright><span class=copyright-year>&copy; 2010 - 2024</span>
 <span class=with-love><i class="fa fa-heart"></i></span>
-<span class=copyright-author>沙雕园</span>
-</div>
-<div class=powered-info>
-<span class=powered-by>
-Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.92.2</a>
-</span>
+<span class=copyright-author>沙雕园</span></div><div class=powered-info><span class=powered-by>Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.101.0</a></span>
 <span class=separator-line>/</span>
-<span class=theme-info>
-Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
-</a>
-</span>
-</div>
-<div class=vistor-info>
-<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<span class=site-uv>
-<i class="fa fa-user"></i>
-<span class=busuanzi-value id=busuanzi_value_site_uv></span>
-</span>
+<span class=theme-info>Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank>NexT</a></span></div><div class=vistor-info><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv><i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span></span>
 <span class=separator-line>/</span>
-<span class=site-pv>
-<i class="fa fa-eye"></i>
-<span class=busuanzi-value id=busuanzi_value_site_pv></span>
-</span>
-</div>
-<div class=license-info>
-<span class=storage-info>
-Storage by
-<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a>
-</span>
+<span class=site-pv><i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span></span></div><div class=license-info><span class=storage-info>Storage by
+<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a></span>
 <span class=separator-line>/</span>
-<span class=license-num>
-<a href target=_blank></a>
-</span>
-</div>
-</div>
-</footer>
-<div class=back-to-top>
-<i class="fa fa-arrow-up"></i>
-<span id=scrollpercent><span>0</span>%</span>
-</div>
-</div>
-<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<span class=license-num><a href target=_blank></a></span></div></div></footer><div class=back-to-top><i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span></div></div><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
 <script type=text/javascript src=/js/search.js></script>
 <script type=text/javascript src=/js/affix.js></script>
 <script type=text/javascript src=/js/scrollspy.js></script>
-<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
-<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
-<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
-<script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
-<script type=text/javascript>function showTime(d){var b=new AV.Query(d),a=[],c=$(".leancloud_visitors");c.each(function(){a.push($(this).attr("id").trim())}),b.containedIn('url',a),b.find().then(d=>{var e='.leancloud-visitors-count',b,h,f,j,g,i;if(d.length==0){c.find(e).text(0);return}for(b=0;b<d.length;b++)h=d[b],f=h.get('url'),j=h.get('time'),g=document.getElementById(f),$(g).find(e).text(j);for(b=0;b<a.length;b++)f=a[b],g=document.getElementById(f),i=$(g).find(e),i.text()==''&&i.text(0)},a=>{console.log('Query vistors failed: '+a)})}function addCount(d){var b=$(".leancloud_visitors"),a=b.attr('id').trim(),e=b.attr('data-flag-title').trim(),c=new AV.Query('Counter');c.equalTo("url",a),c.find().then(g=>{var f,c,b;g.length>0?(f=g[0],f.increment('time',1),f.save(null,{query:new AV.Query('Counter').equalTo('url',a),fetchWhenSave:!0}).then(b=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log('Update vistor failed: '+a)})):(c=new AV.ACL,c.setPublicReadAccess(!0),c.setPublicWriteAccess(!0),b=new d,b.set("title",e),b.set("url",a),b.set("time",1),b.setACL(c),b.save().then(d=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log("Save new vistor failed: "+a)}))})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const a=AV.Object.extend("Counter");$('.leancloud_visitors').length==1?addCount(a):$('.post-title-link').length>1&&showTime(a)})</script>
-<script type=text/javascript>(function(){var a=document.createElement('script');a.type='text/javascript',a.async=!0,a.setAttribute('issue-term',"title"),a.setAttribute('theme',"github-light"),a.setAttribute('repo',"jcq15/blog"),a.crossorigin='anonymous',a.src='https://utteranc.es/client.js',document.getElementById('ucomments').appendChild(a)})()</script>
-<script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
-<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
-</body>
-</html>
+<script type=text/javascript>function detectIE(){var e=window.navigator.userAgent,t=e.indexOf("MSIE "),n=e.indexOf("Trident/"),s=e.indexOf("Edge/");return t>0||n>0||s>0?-1:1}function getCntViewHeight(){var t=$("#content").height(),e=$(window).height(),n=t>e?t-e:$(document).height()-e;return n}function getScrollbarWidth(){var e=$("<div />").addClass("scrollbar-measure").prependTo("body"),t=e[0],n=t.offsetWidth-t.clientWidth;return e.remove(),n}function registerBackTop(){var t=50,e=$(".back-to-top");$(window).on("scroll",function(){e.toggleClass("back-to-top-on",window.pageYOffset>t);var s=$(window).scrollTop(),o=getCntViewHeight(),i=s/o,n=Math.round(i*100),a=n>100?100:n;$("#scrollpercent>span").html(a)}),e.on("click",function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var e=".post-toc",s=$(e),t=".active-current";s.on("activate.bs.scrollspy",function(){var t=$(e+" .active").last();n(),t.addClass("active-current")}).on("clear.bs.scrollspy",n),$("body").scrollspy({target:e});function n(){$(e+" "+t).removeClass(t.substring(1))}}function initAffix(){var e=$(".header-inner").height(),t=parseInt($(".main").css("padding-bottom"),10),n=e+10;$(".sidebar-inner").affix({offset:{top:n,bottom:t}}),$(document).on("affixed.bs.affix",function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){$(window).on("resize",function(){e&&clearTimeout(e),e=setTimeout(function(){var e=document.body.clientHeight-100;updateTOCHeight(e)},0)}),updateTOCHeight(document.body.clientHeight-100);var e,t=getScrollbarWidth();$(".post-toc").css("width","calc(100% + "+t+"px)")}function updateTOCHeight(e){e=e||"auto",$(".post-toc").css("max-height",e)}$(function(){var e,t,n,s,o=$(".header-inner").height()+10;$("#sidebar").css({"margin-top":o}).show(),t=parseInt($("#sidebar").css("margin-top")),n=parseInt($(".sidebar-inner").css("height")),e=t+n,s=$(".content-wrap").height(),s<e&&$(".content-wrap").css("min-height",e),$(".site-nav-toggle").on("click",function(){var e=$(".site-nav"),o=$(".toggle"),t="site-nav-on",i="toggle-close",n=e.hasClass(t),a=n?"slideUp":"slideDown",s=n?"removeClass":"addClass";e.stop()[a]("normal",function(){e[s](t),o[s](i)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$(".sidebar-nav-toc").click(function(){$(this).addClass("sidebar-nav-active"),$(this).next().removeClass("sidebar-nav-active"),$("."+$(this).next().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)}),$(".sidebar-nav-overview").click(function(){$(this).addClass("sidebar-nav-active"),$(this).prev().removeClass("sidebar-nav-active"),$("."+$(this).prev().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)})})</script><script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$(".post-body").viewer()})</script><script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
+<script type=text/javascript>function showTime(e){var n=new AV.Query(e),t=[],s=$(".leancloud_visitors");s.each(function(){t.push($(this).attr("id").trim())}),n.containedIn("url",t),n.find().then(e=>{var n,o,i,r,c,l,a=".leancloud-visitors-count";if(e.length==0){s.find(a).text(0);return}for(n=0;n<e.length;n++)r=e[n],o=r.get("url"),l=r.get("time"),i=document.getElementById(o),$(i).find(a).text(l);for(n=0;n<t.length;n++)o=t[n],i=document.getElementById(o),c=$(i).find(a),c.text()==""&&c.text(0)},e=>{console.log("Query vistors failed: "+e)})}function addCount(e){var n=$(".leancloud_visitors"),t=n.attr("id").trim(),o=n.attr("data-flag-title").trim(),s=new AV.Query("Counter");s.equalTo("url",t),s.find().then(n=>{if(n.length>0){var s,i,a=n[0];a.increment("time",1),a.save(null,{query:new AV.Query("Counter").equalTo("url",t),fetchWhenSave:!0}).then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(e.get("time"))},e=>{console.log("Update vistor failed: "+e)})}else i=new AV.ACL,i.setPublicReadAccess(!0),i.setPublicWriteAccess(!0),s=new e,s.set("title",o),s.set("url",t),s.set("time",1),s.setACL(i),s.save().then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(s.get("time"))},e=>{console.log("Save new vistor failed: "+e)})})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const e=AV.Object.extend("Counter");$(".leancloud_visitors").length==1?addCount(e):$(".post-title-link").length>1&&showTime(e)})</script><script type=text/javascript>(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.setAttribute("issue-term","title"),e.setAttribute("theme","github-light"),e.setAttribute("repo","jcq15/blog"),e.crossorigin="anonymous",e.src="https://utteranc.es/client.js",document.getElementById("ucomments").appendChild(e)})()</script><script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
+<script>(function(){var t,e=document.createElement("script"),n=window.location.protocol.split(":")[0];n==="https"?e.src="https://zz.bdstatic.com/linksubmit/push.js":e.src="http://push.zhanzhang.baidu.com/push.js",t=document.getElementsByTagName("script")[0],t.parentNode.insertBefore(e,t)})()</script></body></html>

@@ -1,146 +1,27 @@
-<!doctype html><html lang=zh-cn dir=content/zh-cn>
-<head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
-<title> 统计学基础（下）-点估计 - 沙雕园 </title>
-<meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享">
-<meta name=author content="精神病人">
-<meta property="og:title" content="统计学基础（下）-点估计">
-<meta property="og:site_name" content="沙雕园">
-<meta property="og:image" content="/img/author.jpg">
-<meta name=title content="统计学基础（下）-点估计 - 沙雕园">
-<meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。">
-<link rel="shortcut icon" href=/img/favicon.ico>
-<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
-<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
-<link href=//unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css rel=stylesheet type=text/css>
-<link href=//unpkg.com/imageviewer@1.1.0/dist/viewer.min.css rel=stylesheet>
-<link href=/css/main.css rel=stylesheet type=text/css>
-<link href=/css/syntax.css rel=stylesheet type=text/css>
-</head>
-<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
-<div class="container one-collumn sidebar-position-left page-home">
-<div class=headband></div>
-<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
-<div class=header-inner> <div class=site-brand-container>
-<div class=site-nav-toggle>
-<div class=toggle role=button style=opacity:1;top:0>
+<!doctype html><html lang=zh-cn dir=content/zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=content-security-policy content="upgrade-insecure-requests"><title>统计学基础（下）-点估计 - 沙雕园</title><meta name=keywords content="博客,数学,编程,整活,科普,搞笑,技术,分享"><meta name=author content="精神病人"><meta property="og:title" content="统计学基础（下）-点估计"><meta property="og:site_name" content="沙雕园"><meta property="og:image" content="/img/author.jpg"><meta name=title content="统计学基础（下）-点估计 - 沙雕园"><meta name=description content="欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。"><link rel="shortcut icon" href=/img/favicon.ico><link rel=apple-touch-icon href=/img/apple-touch-icon.png><link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png><link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css><link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet><link href=/css/main.css rel=stylesheet type=text/css><link href=/css/syntax.css rel=stylesheet type=text/css></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-hans><div class="container one-collumn sidebar-position-left page-home"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle role=button style=opacity:1;top:0><span class=toggle-line></span>
 <span class=toggle-line></span>
-<span class=toggle-line></span>
-<span class=toggle-line></span>
-</div>
-</div>
-<div class=site-meta>
-<div class=custom-logo-site-title>
-<a href=/ class=brand rel=start>
-<span class=logo-line-before><i></i></span>
+<span class=toggle-line></span></div></div><div class=site-meta><div class=custom-logo-site-title><a href=/ class=brand rel=start><span class=logo-line-before><i></i></span>
 <span class=site-title>沙雕园</span>
-<span class=logo-line-after><i></i></span>
-</a>
-</div>
-<p class=site-subtitle>沙雕使人进步。</p>
-</div>
-<div class=site-nav-right>
-<div class="toggle popup-trigger" style=opacity:1;top:0>
-<i class="fa fa-search fa-fw fa-lg"></i>
-</div>
-</div>
-</div>
-<nav class=site-nav>
-<ul id=menu class=menu>
-<li class=menu-item>
-<a href=/ rel=section>
-<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页
-</a>
-</li>
-<li class="menu-item menu-item-active">
-<a href=/post rel=section>
-<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档
-</a>
-</li>
-<li class=menu-item>
-<a href=/about.html rel=section>
-<i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于我
-</a>
-</li>
-<li class="menu-item menu-item-search">
-<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> 搜索</a>
-</li>
-</ul>
-<div class=site-search>
-<div class="popup search-popup local-search-popup">
-<div class="local-search-header clearfix">
-<span class=search-icon><i class="fa fa-search"></i> </span>
-<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
-<div class=local-search-input-wrapper>
-<input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
-</div>
-</div>
-<div id=local-search-result></div>
-</div>
-</div>
-</nav> </div>
-</header>
-<main id=main class=main>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=/post/5215-4%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8B-%E4%BC%B0%E8%AE%A1%E4%B8%8E%E6%8E%A8%E6%96%AD/ itemprop=url>
-统计学基础（下）-点估计
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
+<span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>沙雕使人进步。</p></div><div class=site-nav-right><div class="toggle popup-trigger" style=opacity:1;top:0><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul id=menu class=menu><li class=menu-item><a href=/ rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-active"><a href=/post rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class=menu-item><a href=/about.html rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于我</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class=site-search><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class=search-icon><i class="fa fa-search"></i></span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span><div class=local-search-input-wrapper><input autocomplete=off placeholder=搜索关键字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off></div></div><div id=local-search-result></div></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><section id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=/post/5215-4%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8B-%E4%BC%B0%E8%AE%A1%E4%B8%8E%E6%8E%A8%E6%96%AD/ itemprop=url>统计学基础（下）-点估计</a></h1><div class=post-meta><span class=post-pushdate><i class="fa fa-calendar-o fa-fw"></i>
 <span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-12-28">
-2021-12-28
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-12-28">2021-12-28</time></span>
+<span class=post-category><i class="fa fa-folder-o fa-fw"></i>
 <span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0 itemprop=url rel=index>
-<span itemprop=name>课程笔记</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing><a class=post-category-a href=/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0 itemprop=url rel=index><span itemprop=name>课程笔记</span></a>
+&nbsp;</span></span>
+<span class=post-wordcount><i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>4212 字</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
+<span class=leancloud-world-count>4224 字</span></span>
+<span class=post-readtime><i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>9分钟</span>
-</span>
-<span id=/post/5215-4%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8B-%E4%BC%B0%E8%AE%A1%E4%B8%8E%E6%8E%A8%E6%96%AD/ class="leancloud_visitors post-visitor" data-flag-title=统计学基础（下）-点估计>
-<i class="fa fa-binoculars fa-fw"></i>
+<span class=leancloud-view-count>9分钟</span></span>
+<span id=/post/5215-4%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8B-%E4%BC%B0%E8%AE%A1%E4%B8%8E%E6%8E%A8%E6%96%AD/ class="leancloud_visitors post-visitor" data-flag-title=统计学基础（下）-点估计><i class="fa fa-binoculars fa-fw"></i>
 <span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>妙啊。</p>
-<h2 id=点估计>点估计</h2>
-<p>设 $X_1,\cdots,X_n\sim P_\theta\in\mathcal{P}$，其中 $\theta=(\theta_1,\cdots,\theta_k)\in\Theta$. 这是经典的参数模型。如前所述，**估计量（estimator）**是统计量 $\hat\theta=w(X_1,\cdots,X_n)$. 我们下面来介绍得到 $\hat\theta$ 的方法。</p>
-<h3 id=矩估计>矩估计</h3>
-<p>通常来说 $j$ 阶矩都和参数有关，即 $E_\theta X_1^j=h_j(\theta)$. 假设 $\theta$ 是 $k$ 维的，令 $h(\theta)=(h_1(\theta),\cdots,h_k(\theta))$. 若该存在的都存在，就可以淦了：
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>妙啊。</p><h2 id=点估计>点估计</h2><p>设 $X_1,\cdots,X_n\sim P_\theta\in\mathcal{P}$，其中 $\theta=(\theta_1,\cdots,\theta_k)\in\Theta$. 这是经典的参数模型。如前所述，**估计量（estimator）**是统计量 $\hat\theta=w(X_1,\cdots,X_n)$. 我们下面来介绍得到 $\hat\theta$ 的方法。</p><h3 id=矩估计>矩估计</h3><p>通常来说 $j$ 阶矩都和参数有关，即 $E_\theta X_1^j=h_j(\theta)$. 假设 $\theta$ 是 $k$ 维的，令 $h(\theta)=(h_1(\theta),\cdots,h_k(\theta))$. 若该存在的都存在，就可以淦了：
 $$
 \hat\theta_j=h_j^{-1}\left(\frac{1}{n}\sum_{i=1}^nX_i^j\right).
-$$</p>
-<h3 id=极大似然估计>极大似然估计</h3>
-<p>似然函数定义为
+$$</p><h3 id=极大似然估计>极大似然估计</h3><p>似然函数定义为
 $$
 l(\theta;X)=f_\theta(X).
 $$
@@ -155,51 +36,15 @@ $$
 如果各种反函数存在，可以证明 MLE 是
 $$
 \hat\theta=\eta^{-1}\left(\mu^{-1}(T(x))\right).
-$$</p>
-<h3 id=m-估计>M-估计</h3>
-<p>是 MLE 的推广，似然函数被换成一般函数 $s_\theta:\mathcal{X}\to\bar{\mathbb{R}}$，估计值是使得 $S_n(\theta)=\dfrac{1}{n}\sum_{i=1}^n s_\theta(X_i)$ 最大的 $\theta$.</p>
-<h2 id=估计的评价>估计的评价</h2>
-<h3 id=一般理论>一般理论</h3>
-<p>**决策规则（decision rule）**是将观察结果转换为适当动作的函数。对于一般的统计问题，我们首先获取样本 $X$，记 allowable actions（不知道咋翻译最恰当）为集合 $\mathbb{A}$. 一个决策规则 $T$ 便是把 $X$ 映射为 $\mathbb{A}$ 中 $T(X)$ 的过程。</p>
-<p><strong>损失函数（loss function）</strong> $L(P,T(x))$ 表示当真实分布为 $P$ 时，观察到 $X=x$ 时执行决策 $T(X)$ 的损失。</p>
-<p>**风险（risk）**表示平均损失，即
+$$</p><h3 id=m-估计>M-估计</h3><p>是 MLE 的推广，似然函数被换成一般函数 $s_\theta:\mathcal{X}\to\bar{\mathbb{R}}$，估计值是使得 $S_n(\theta)=\dfrac{1}{n}\sum_{i=1}^n s_\theta(X_i)$ 最大的 $\theta$.</p><h2 id=估计的评价>估计的评价</h2><h3 id=一般理论>一般理论</h3><p>**决策规则（decision rule）**是将观察结果转换为适当动作的函数。对于一般的统计问题，我们首先获取样本 $X$，记 allowable actions（不知道咋翻译最恰当）为集合 $\mathbb{A}$. 一个决策规则 $T$ 便是把 $X$ 映射为 $\mathbb{A}$ 中 $T(X)$ 的过程。</p><p><strong>损失函数（loss function）</strong> $L(P,T(x))$ 表示当真实分布为 $P$ 时，观察到 $X=x$ 时执行决策 $T(X)$ 的损失。</p><p>**风险（risk）**表示平均损失，即
 $$
 R_T(P)=\mathrm E_P\left(L(P,T(X))\right)=\int L(P,T(X))dP.
 $$
-我们自然希望风险越小越好。对于两个决策规则 $T_1,T_2$，我们称：</p>
-<ul>
-<li>$T_1$ <strong>as good as</strong> $T_2$，如果 $R_{T_1}(P)\le R_{T_2}(P),\forall P\in\mathcal{P}$,</li>
-<li>$T_1$ <strong>better than</strong> $T_2$，如果 $T_1$ <strong>as good as</strong> $T_2$ 且对某个 $P$，$R_{T_1}(P)&lt;R_{T_2}(P)$,</li>
-<li>$T_1$ 和 $T_2$ <strong>equivalent</strong>，如果 $R_{T_1}(P)=R_{T_2}(P),\forall P\in\mathcal{P}$.</li>
-</ul>
-<blockquote>
-<p>这个 as good as 应该理解为“不差于”。</p>
-</blockquote>
-<p>接下来我们有两个问题：</p>
-<ul>
-<li>如何确定风险函数 $R$</li>
-<li>确定了 $R$ 之后，如何根据 $R$ 来选择最优的决策</li>
-</ul>
-<h3 id=几种最优>几种“最优”</h3>
-<p>假设我们有一堆可选的决策规则，记作集合 $\mathfrak{J}$. 给定 $R$ 之后，如何选择“最优”呢？</p>
-<p><strong>Optimal</strong>：如果 $T_<em>$ as good as $\mathfrak{J}$ 中其他规则，则称它 <strong>$\mathfrak{J}$-optimal</strong>. 在“所有可能的决策规则”可以构成集合时，若 $T_</em>$ as good as 所有可能的决策规则，则称为 <strong>optimal</strong>。</p>
-<blockquote>
-<p>Optimal 就是所谓的“完爆”。</p>
-</blockquote>
-<p>显然，optimal 不一定存在，我们需要新的定义。</p>
-<blockquote>
-<p>“炉石传说没有完爆！”——银背族长</p>
-</blockquote>
-<p><strong>Admissible</strong>：如果不存在比 $T_*$ better 的规则，则称它 <strong>$\mathfrak{J}$-admissible</strong>（或 admissible）。</p>
-<p><strong>Minimax</strong>：$\sup_P R_{T_<em>}(P)\le\sup_P{R_{T}}(P)$，则 $T_</em>$ 是 minimax。</p>
-<p><strong>Bayes-rule</strong>：考虑 Bayes risk
+我们自然希望风险越小越好。对于两个决策规则 $T_1,T_2$，我们称：</p><ul><li>$T_1$ <strong>as good as</strong> $T_2$，如果 $R_{T_1}(P)\le R_{T_2}(P),\forall P\in\mathcal{P}$,</li><li>$T_1$ <strong>better than</strong> $T_2$，如果 $T_1$ <strong>as good as</strong> $T_2$ 且对某个 $P$，$R_{T_1}(P)&lt;R_{T_2}(P)$,</li><li>$T_1$ 和 $T_2$ <strong>equivalent</strong>，如果 $R_{T_1}(P)=R_{T_2}(P),\forall P\in\mathcal{P}$.</li></ul><blockquote><p>这个 as good as 应该理解为“不差于”。</p></blockquote><p>接下来我们有两个问题：</p><ul><li>如何确定风险函数 $R$</li><li>确定了 $R$ 之后，如何根据 $R$ 来选择最优的决策</li></ul><h3 id=几种最优>几种“最优”</h3><p>假设我们有一堆可选的决策规则，记作集合 $\mathfrak{J}$. 给定 $R$ 之后，如何选择“最优”呢？</p><p><strong>Optimal</strong>：如果 $T_<em>$ as good as $\mathfrak{J}$ 中其他规则，则称它 <strong>$\mathfrak{J}$-optimal</strong>. 在“所有可能的决策规则”可以构成集合时，若 $T_</em>$ as good as 所有可能的决策规则，则称为 <strong>optimal</strong>。</p><blockquote><p>Optimal 就是所谓的“完爆”。</p></blockquote><p>显然，optimal 不一定存在，我们需要新的定义。</p><blockquote><p>“炉石传说没有完爆！”——银背族长</p></blockquote><p><strong>Admissible</strong>：如果不存在比 $T_*$ better 的规则，则称它 <strong>$\mathfrak{J}$-admissible</strong>（或 admissible）。</p><p><strong>Minimax</strong>：$\sup_P R_{T_<em>}(P)\le\sup_P{R_{T}}(P)$，则 $T_</em>$ 是 minimax。</p><p><strong>Bayes-rule</strong>：考虑 Bayes risk
 $$
 r_T(\Pi)=\int_\mathcal{P}R_T(P)d\Pi(P).
 $$
-给定 $\Pi$，如果 $T_<em>$ 满足 $r_{T_</em>}\le r_T$，就叫 Bayes rule w.r.t. $\Pi$。要寻找 Bayes rule 下的最优决策，可以考虑 $\mathrm E\left(\mathrm E\left(L(\theta,T(X))|X\right)\right)$.</p>
-<h3 id=点估计的评价点估计的风险函数>点估计的评价（点估计的风险函数）</h3>
-<h4 id=mse>MSE</h4>
-<p>我们把上面的理论套用起来。我们用 $\hat\theta$ 表示估计量，也就是上面的 $T(X)$. 常用的风险函数为<strong>均方误差（mean squared error, MSE）</strong>。MSE 对应的损失函数为 $L(P_\theta,\hat\theta)=(\theta-\hat\theta)^2$，对应的风险函数为
+给定 $\Pi$，如果 $T_<em>$ 满足 $r_{T_</em>}\le r_T$，就叫 Bayes rule w.r.t. $\Pi$。要寻找 Bayes rule 下的最优决策，可以考虑 $\mathrm E\left(\mathrm E\left(L(\theta,T(X))|X\right)\right)$.</p><h3 id=点估计的评价点估计的风险函数>点估计的评价（点估计的风险函数）</h3><h4 id=mse>MSE</h4><p>我们把上面的理论套用起来。我们用 $\hat\theta$ 表示估计量，也就是上面的 $T(X)$. 常用的风险函数为<strong>均方误差（mean squared error, MSE）</strong>。MSE 对应的损失函数为 $L(P_\theta,\hat\theta)=(\theta-\hat\theta)^2$，对应的风险函数为
 $$
 MSE=\mathrm E_\theta\left((\theta-\hat\theta)^2\right).
 $$
@@ -211,31 +56,7 @@ $$
 \mathrm E_\theta\left((\theta-\hat\theta)^2\right)=\mathrm E_\theta\left((\theta-\mathrm E\hat\theta)^2\right)+\left(\mathrm E\hat\theta-\theta\right)^2$，即
 $$
 MSE(\theta)=b^2(\theta)+\mathrm{Var}(\theta).
-$$</p>
-<h4 id=rao-blackwall-定理>Rao-Blackwall 定理</h4>
-<p>如下定理表明，我们可以考虑充分统计量的条件期望来构造更好的估计。</p>
-<p><strong>定理（Rao-Blackwall）</strong> 设 $T$ 是充分统计量。若参数空间 $\Theta$ 是凸集，$S_0(X)$ 满足 $\mathrm E_P|S_0|&lt;\infty,\forall P\in\mathcal{P}$. 令 $S_1=\mathrm E(S_0(X)|T)$，则</p>
-<ul>
-<li>若损失函数 $L(P,a)$ 关于 $a$ 是凸函数，则 $R_{S_1}(P)\le R_{S_0}(P)$；</li>
-<li>若 $L(P,a)$ 严格凸，且 $S_0$ 不是 $T$ 的函数，则 $S_1$ better than $S_0$.</li>
-</ul>
-<p>读者自证不难。（为什么要求 $T$ 是充分统计量？）</p>
-<h4 id=umvue>UMVUE</h4>
-<p>uniformly minimum variance unbiased estimator. 即对所有 $P$ （一致），$\mathrm{Var}(T_*(X))\le\mathrm{Var}(T(X))$（最小），且无偏（相当于规定 $\mathfrak{J}$ 是无偏估计，然后寻找 MSE 下的最优估计）。我们下面介绍几种寻找 UMVUE 的方法。</p>
-<p><strong>方法一：定理（Lehmann-Scheffe）</strong> 设 $T(X)$ 充分且完备，若 $\theta$ 的无偏估计存在，则存在唯一的形如 $h(T)$ 的无偏估计，且 $h(T)$ 是唯一的 UMVUE。</p>
-<p>这个定理告诉我们，想获得 UMVUE，可以先找充分且完备的统计量 $T(X)$，然后尝试 $h(T)$，使得 $\mathrm Eh(T)=\theta$. 那如果找不到呢？可以用下面的定理。</p>
-<p><strong>方法二：定理</strong> 设 $\mathcal{U}={T(X):\mathrm E(T)=0 \text{ and }\mathrm{Var}(T)&lt;\infty}$，设 $T$ 是参数的无偏估计且 $\mathrm E(T^2)&lt;\infty$. 令内积为 $\langle X,Y\rangle=\mathrm E(XY)$. 则：</p>
-<ul>
-<li>$T$ 是 UMVUE 的充要条件是 $T\perp \mathcal{U}$（对任意 $P$）.</li>
-<li>设 $S$ 是充分统计量，且 $T=h(S)$. 令 $\mathcal{U}_S={U\in\mathcal{U}:U=\varphi(S)}$. $T$ 是 UMVUE 的充要条件是 $T\perp \mathcal{U}_S$ （对任意 $P$）.</li>
-</ul>
-<p><strong>推论</strong></p>
-<ul>
-<li>（线性）设 $T_j$ 是 $\eta_j$ 的 UMVUE，方差有限，则 $T=\sum_{j=1}^k c_jT_j$ 是 $\eta=\sum_{j=1}^k c_j\eta_j$ 的 UMVUE.</li>
-<li>（唯一性）设 $T_1,T_2$ 是 $\eta$ 的 UMVUE，方差有限，则 $T_1=T_2$ a.s..</li>
-</ul>
-<p><strong>方法三：C-R 下界</strong>。寻找 UMVUE 的另一种思路是，找到方差的下界。这样只要我们得到一个无偏估计，其方差等于下界，就一定是 UMVUE 了。为此，我们需要一坨子新东西。</p>
-<p><strong>定义（Fisher information）</strong> 有一分布族 $\mathcal{P}={f_\theta}$. $X$ 是服从 $f_\theta$ 的样本。如果该存在的都存在，则定义 Fisher information
+$$</p><h4 id=rao-blackwall-定理>Rao-Blackwall 定理</h4><p>如下定理表明，我们可以考虑充分统计量的条件期望来构造更好的估计。</p><p><strong>定理（Rao-Blackwall）</strong> 设 $T$ 是充分统计量。若参数空间 $\Theta$ 是凸集，$S_0(X)$ 满足 $\mathrm E_P|S_0|&lt;\infty,\forall P\in\mathcal{P}$. 令 $S_1=\mathrm E(S_0(X)|T)$，则</p><ul><li>若损失函数 $L(P,a)$ 关于 $a$ 是凸函数，则 $R_{S_1}(P)\le R_{S_0}(P)$；</li><li>若 $L(P,a)$ 严格凸，且 $S_0$ 不是 $T$ 的函数，则 $S_1$ better than $S_0$.</li></ul><p>读者自证不难。（为什么要求 $T$ 是充分统计量？）</p><h4 id=umvue>UMVUE</h4><p>uniformly minimum variance unbiased estimator. 即对所有 $P$ （一致），$\mathrm{Var}(T_*(X))\le\mathrm{Var}(T(X))$（最小），且无偏（相当于规定 $\mathfrak{J}$ 是无偏估计，然后寻找 MSE 下的最优估计）。我们下面介绍几种寻找 UMVUE 的方法。</p><p><strong>方法一：定理（Lehmann-Scheffe）</strong> 设 $T(X)$ 充分且完备，若 $\theta$ 的无偏估计存在，则存在唯一的形如 $h(T)$ 的无偏估计，且 $h(T)$ 是唯一的 UMVUE。</p><p>这个定理告诉我们，想获得 UMVUE，可以先找充分且完备的统计量 $T(X)$，然后尝试 $h(T)$，使得 $\mathrm Eh(T)=\theta$. 那如果找不到呢？可以用下面的定理。</p><p><strong>方法二：定理</strong> 设 $\mathcal{U}={T(X):\mathrm E(T)=0 \text{ and }\mathrm{Var}(T)&lt;\infty}$，设 $T$ 是参数的无偏估计且 $\mathrm E(T^2)&lt;\infty$. 令内积为 $\langle X,Y\rangle=\mathrm E(XY)$. 则：</p><ul><li>$T$ 是 UMVUE 的充要条件是 $T\perp \mathcal{U}$（对任意 $P$）.</li><li>设 $S$ 是充分统计量，且 $T=h(S)$. 令 $\mathcal{U}_S={U\in\mathcal{U}:U=\varphi(S)}$. $T$ 是 UMVUE 的充要条件是 $T\perp \mathcal{U}_S$ （对任意 $P$）.</li></ul><p><strong>推论</strong></p><ul><li>（线性）设 $T_j$ 是 $\eta_j$ 的 UMVUE，方差有限，则 $T=\sum_{j=1}^k c_jT_j$ 是 $\eta=\sum_{j=1}^k c_j\eta_j$ 的 UMVUE.</li><li>（唯一性）设 $T_1,T_2$ 是 $\eta$ 的 UMVUE，方差有限，则 $T_1=T_2$ a.s..</li></ul><p><strong>方法三：C-R 下界</strong>。寻找 UMVUE 的另一种思路是，找到方差的下界。这样只要我们得到一个无偏估计，其方差等于下界，就一定是 UMVUE 了。为此，我们需要一坨子新东西。</p><p><strong>定义（Fisher information）</strong> 有一分布族 $\mathcal{P}={f_\theta}$. $X$ 是服从 $f_\theta$ 的样本。如果该存在的都存在，则定义 Fisher information
 $$
 I(\theta)=\mathrm E\left(\frac{\partial}{\partial\theta}\log f_\theta (X)\right)^2.
 $$
@@ -243,20 +64,17 @@ $$
 $$
 \begin{gather}
 \frac{\partial}{\partial\theta}\int f_\theta(x)dx=\int \frac{\partial f_\theta(x)}{\partial\theta}dx, \
-\frac{\partial}{\partial\theta}\int \frac{\partial f_\theta (x)}{\partial\theta}dx=\int \frac{\partial^2 f_\theta (x)}{\partial\theta^2}dx,\</p>
-<p>\end{gather}
+\frac{\partial}{\partial\theta}\int \frac{\partial f_\theta (x)}{\partial\theta}dx=\int \frac{\partial^2 f_\theta (x)}{\partial\theta^2}dx,\</p><p>\end{gather}
 $$
 则有
 $$
 I(\theta)=-\mathrm E\left(\dfrac{\partial^2}{\partial\theta^2}\log f_\theta(X)\right).
 $$
-<strong>性质2</strong> 若 $X,Y$ 独立，则 $I_{X+Y}=I_X+I_Y$.</p>
-<p><strong>定理（Cramer-Rao 下界）</strong> 满足上述光滑性条件时，若 $T(X)$ 是 $g(\theta)$ 的无偏估计，且满足
+<strong>性质2</strong> 若 $X,Y$ 独立，则 $I_{X+Y}=I_X+I_Y$.</p><p><strong>定理（Cramer-Rao 下界）</strong> 满足上述光滑性条件时，若 $T(X)$ 是 $g(\theta)$ 的无偏估计，且满足
 $$
-g'(\theta)=\frac{\partial}{\partial\theta}\int T(x)f_\theta(x)dx=\int T(x)\frac{\partial}{\partial\theta}f_\theta(x)dx,
+g&rsquo;(\theta)=\frac{\partial}{\partial\theta}\int T(x)f_\theta(x)dx=\int T(x)\frac{\partial}{\partial\theta}f_\theta(x)dx,
 $$
-则 $\mathrm{Var}(T(X))\ge\dfrac{g'(\theta)^2}{I(\theta)}$.</p>
-<p>我们可以将其推广到参数为多元的情况。若 $\theta$ 是向量，记 $\dfrac{\partial}{\partial\theta}$ 为梯度（列向量）。则信息矩阵
+则 $\mathrm{Var}(T(X))\ge\dfrac{g&rsquo;(\theta)^2}{I(\theta)}$.</p><p>我们可以将其推广到参数为多元的情况。若 $\theta$ 是向量，记 $\dfrac{\partial}{\partial\theta}$ 为梯度（列向量）。则信息矩阵
 $$
 I(\theta)=\mathrm E\left{\frac{\partial\log f_\theta(x)}{\partial\theta}\left[\frac{\partial\log f_\theta(x)}{\partial\theta}\right]^T\right}.
 $$
@@ -268,354 +86,83 @@ $$
 $$
 f_\theta(x)=\exp\left[\eta^T(\theta)T(x)-\xi(\theta)\right]h(x),
 $$
-则:</p>
-<ul>
-<li>对满足 $E|S(X)|&lt;\infty$ 的 $S$，上面乱七八糟的光滑性条件都成立，即
-<ul>
-<li>$
+则:</p><ul><li>对满足 $E|S(X)|&lt;\infty$ 的 $S$，上面乱七八糟的光滑性条件都成立，即<ul><li>$
 \frac{\partial}{\partial\theta}\int S(x)f_\theta(x)dx=\int S(x)\frac{\partial}{\partial\theta}f_\theta(x)dx
-$,</li>
-<li>$I(\theta)=-\mathrm E\left(\dfrac{\partial^2}{\partial\theta^2}\log f_\theta(X)\right)$.</li>
-</ul>
-</li>
-<li>此外还有 $
-\mathrm{Var}(T)=I(\eta)$,</li>
-<li>令 $\psi=\mathrm E(T(X))$，则 $\mathrm{Var}(T)=I^{-1}(\psi)$.</li>
-</ul>
-<h2 id=假设检验>假设检验</h2>
-<p>设 $\mathcal{P}$ 是分布族，$\mathcal{P}_0\in\mathcal{P},\mathcal{P}_1=\mathcal{P}\setminus\mathcal{P}_0$. 一般的假设检验问题需要决定以下两个假设哪个是对的：
+$,</li><li>$I(\theta)=-\mathrm E\left(\dfrac{\partial^2}{\partial\theta^2}\log f_\theta(X)\right)$.</li></ul></li><li>此外还有 $
+\mathrm{Var}(T)=I(\eta)$,</li><li>令 $\psi=\mathrm E(T(X))$，则 $\mathrm{Var}(T)=I^{-1}(\psi)$.</li></ul><h2 id=假设检验>假设检验</h2><p>设 $\mathcal{P}$ 是分布族，$\mathcal{P}_0\in\mathcal{P},\mathcal{P}_1=\mathcal{P}\setminus\mathcal{P}_0$. 一般的假设检验问题需要决定以下两个假设哪个是对的：
 $$
 H_0:P\in\mathcal{P}_0,\
 H_1:P\in\mathcal{P}_1.
 $$
-动作空间 $\mathbb{A}={0,1}$. 此时的决策规则 $T=I_C(X)$，即 $X\in C$ 时选择 $H_1$，否则选择 $H_0$. $C$ 被称为<strong>拒绝域（rejection region）</strong>（因为拒绝了 $H_0$）。</p>
-<h3 id=两类错误>两类错误</h3>
-<p>**第一类错误（type I error）**指 $H_0$ 成立，但拒绝了 $H_0$.</p>
-<p>**第二类错误（type II error）**指 $H_0$ 不成立，但接受了 $H_0$.</p>
-<p>我们定义**功效函数（power function）**为第一类错误的概率，即
+动作空间 $\mathbb{A}={0,1}$. 此时的决策规则 $T=I_C(X)$，即 $X\in C$ 时选择 $H_1$，否则选择 $H_0$. $C$ 被称为<strong>拒绝域（rejection region）</strong>（因为拒绝了 $H_0$）。</p><h3 id=两类错误>两类错误</h3><p>**第一类错误（type I error）**指 $H_0$ 成立，但拒绝了 $H_0$.</p><p>**第二类错误（type II error）**指 $H_0$ 不成立，但接受了 $H_0$.</p><p>我们定义**功效函数（power function）**为第一类错误的概率，即
 $$
 \alpha_T(P)=P(X\in C).
 $$
 假设检验的 <strong>size</strong> 定义为功效的上确界，即
 $$
-\alpha'=\sup_{P\in\mathcal{P}_0} P(X\in C).
-$$</p>
-<h2 id=渐近分析slides-19>渐近分析（slides 19）</h2>
-<p>许多时候我们无法得到 $T_n$ 的确切分布，这时候考虑 $T_n$ 的极限性质会大有帮助。</p>
-<h3 id=一致性>一致性</h3>
-<p><strong>定义</strong></p>
-<ul>
-<li>$T_n(X)$ 是 $\theta$ 的<strong>一致估计（consistent）</strong>，当且仅当 $T_n(X)\overset{p}\to\theta$.</li>
-<li>$T_n(X)$ 是 $\theta$ 的<strong>强一致估计（strongly consistent）</strong>，当且仅当 $T_n(X)\overset{a.s.}\to\theta$.</li>
-<li>${a_n}$ 是一个正数列，$a_n\to\infty$，称 $T_n(X)$ <strong>$a_n$-consistent</strong>，当且仅当 $a_n[T_n(X)-\theta]=O_P(1)$.</li>
-<li>$T_n(X)$ 称为 <strong>$L_r$-consistent</strong>，当且仅当 $T_n(X)\overset{L^r}\to\theta$.</li>
-</ul>
-<p>显然其他几种一致性都能推出第一种 trivial consistent.</p>
-<h3 id=渐近偏差与渐近方差>渐近偏差与渐近方差</h3>
-<p><strong>渐近无偏</strong>：$b_n\to 0$.</p>
-<p><strong>渐近期望</strong>：数列 $a_n\to\infty$ 或 $a_n\to a>0$，若 $a_n\xi_n\overset{d}\to \xi$ 且 $\mathrm E|\xi|&lt;\infty$，则 $\mathrm E\xi/a_n$ 称为渐近期望。</p>
-<p><strong>渐近偏差</strong>：$T_n-\theta$ 的渐近期望。</p>
-<p><strong>渐近MSE</strong>：$a_n(T_n-\theta)\overset{d}\to Y$，则 $\text{amse}=\mathrm E Y^2/a_n^2$.</p>
-<p><strong>渐近方差</strong>：$a_n(T_n-\theta)\overset{d}\to Y$，则渐近方差为 $\mathrm{Var}Y/a_n^2$.</p>
-<p>高维的情况：设 $\hat\theta_n$ 是一列估计（$k$ 维向量），若存在正定矩阵 $V_n(\theta)$ 使得
+\alpha&rsquo;=\sup_{P\in\mathcal{P}_0} P(X\in C).
+$$</p><h2 id=渐近分析slides-19>渐近分析（slides 19）</h2><p>许多时候我们无法得到 $T_n$ 的确切分布，这时候考虑 $T_n$ 的极限性质会大有帮助。</p><h3 id=一致性>一致性</h3><p><strong>定义</strong></p><ul><li>$T_n(X)$ 是 $\theta$ 的<strong>一致估计（consistent）</strong>，当且仅当 $T_n(X)\overset{p}\to\theta$.</li><li>$T_n(X)$ 是 $\theta$ 的<strong>强一致估计（strongly consistent）</strong>，当且仅当 $T_n(X)\overset{a.s.}\to\theta$.</li><li>${a_n}$ 是一个正数列，$a_n\to\infty$，称 $T_n(X)$ <strong>$a_n$-consistent</strong>，当且仅当 $a_n[T_n(X)-\theta]=O_P(1)$.</li><li>$T_n(X)$ 称为 <strong>$L_r$-consistent</strong>，当且仅当 $T_n(X)\overset{L^r}\to\theta$.</li></ul><p>显然其他几种一致性都能推出第一种 trivial consistent.</p><h3 id=渐近偏差与渐近方差>渐近偏差与渐近方差</h3><p><strong>渐近无偏</strong>：$b_n\to 0$.</p><p><strong>渐近期望</strong>：数列 $a_n\to\infty$ 或 $a_n\to a>0$，若 $a_n\xi_n\overset{d}\to \xi$ 且 $\mathrm E|\xi|&lt;\infty$，则 $\mathrm E\xi/a_n$ 称为渐近期望。</p><p><strong>渐近偏差</strong>：$T_n-\theta$ 的渐近期望。</p><p><strong>渐近MSE</strong>：$a_n(T_n-\theta)\overset{d}\to Y$，则 $\text{amse}=\mathrm E Y^2/a_n^2$.</p><p><strong>渐近方差</strong>：$a_n(T_n-\theta)\overset{d}\to Y$，则渐近方差为 $\mathrm{Var}Y/a_n^2$.</p><p>高维的情况：设 $\hat\theta_n$ 是一列估计（$k$ 维向量），若存在正定矩阵 $V_n(\theta)$ 使得
 $$
 [V_n(\theta)]^{-1/2}(\hat\theta_n-\theta)\overset{d}\to N_k(0,I_k),
 $$
-其中 $I_k$ 是单位矩阵，则称 $V_n(\theta)$ 是<strong>渐近协方差矩阵</strong>。</p>
-<p>若 Fisher 信息矩阵正定，且渐近方差满足 $V_n(\theta)=I_n(\theta)^{-1}$ （“CRLB”），则称之为 <strong>asymptotially efficient</strong> 或 <strong>aymptotically optimal</strong>.</p>
-<p>两组估计，渐近协方差分别为 $V_{1n}(\theta)$ 和 $V_{2n}(\theta)$，若对足够大的 $n$，有 $\forall \theta\in\Theta,\quad V_{2n}(\theta)-V_{1n}(\theta)$ 半正定；且存在某个 $\theta$ 使其正定，则称 $\hat\theta_{1n}$ <strong>asymptotically more efficient than</strong> $\hat\theta_{2n}$.</p>
-<blockquote>
-<p>注意：对于渐近无偏的估计，CRLB 不一定对渐近方差成立，例：Hodges' estimator, Lec23 p13.</p>
-</blockquote>
-<p><strong>Asymptotic relative efficiency</strong>: $T'<em>n$ 相对于 $T_n$ 的渐近效率为
+其中 $I_k$ 是单位矩阵，则称 $V_n(\theta)$ 是<strong>渐近协方差矩阵</strong>。</p><p>若 Fisher 信息矩阵正定，且渐近方差满足 $V_n(\theta)=I_n(\theta)^{-1}$ （“CRLB”），则称之为 <strong>asymptotially efficient</strong> 或 <strong>aymptotically optimal</strong>.</p><p>两组估计，渐近协方差分别为 $V_{1n}(\theta)$ 和 $V_{2n}(\theta)$，若对足够大的 $n$，有 $\forall \theta\in\Theta,\quad V_{2n}(\theta)-V_{1n}(\theta)$ 半正定；且存在某个 $\theta$ 使其正定，则称 $\hat\theta_{1n}$ <strong>asymptotically more efficient than</strong> $\hat\theta_{2n}$.</p><blockquote><p>注意：对于渐近无偏的估计，CRLB 不一定对渐近方差成立，例：Hodges&rsquo; estimator, Lec23 p13.</p></blockquote><p><strong>Asymptotic relative efficiency</strong>: $T&rsquo;<em>n$ 相对于 $T_n$ 的渐近效率为
 $$
-e</em>{T'<em>n,T_n}(P)=\frac{\text{amse}</em>{T_n}(P)}{\text{amse}_{T'<em>n}(P)}.
+e</em>{T&rsquo;<em>n,T_n}(P)=\frac{\text{amse}</em>{T_n}(P)}{\text{amse}_{T&rsquo;<em>n}(P)}.
 $$
-如果 $\limsup_n e</em>{T'_n,T_n}(P)\le 1$，且存在 $P$ 使 $&lt;$ 成立，则称 $T_n$ <strong>asympotically more efficient</strong>.</p>
-<p><strong>定理（$\delta$-method）</strong> 设 $U_n$ 满足 $a_n(U_n-\theta)\overset{d}\to Y$ 且 $EY^2&lt;\infty$，$a_n>0$，$a_n\to\infty$. 设 $g$ 在 $\theta$ 处可微，$T_n=g(U_n)$ 是$\vartheta=g(\theta)$ 的估计量，则 $\text{amse}_{T_n}=E{[g'(\theta)Y]^2}/a_n^2$, $T_n$ 的渐近方差为 $[g'(\theta)^2\mathrm{Var}Y]/a_n^2$.</p>
-<h3 id=点估计的渐近性质>点估计的渐近性质</h3>
-<h4 id=矩估计-1>矩估计</h4>
-<p>对于矩估计，若 $h^{-1}$ 存在，由大数定律知它是 <strong>strongly consistent</strong>.</p>
-<p>若还有 $h^{-1}$ 可微且 $E|X_1|^{2k}&lt;\infty$ （$k$ 为参数个数），由 CLT 知矩估计 $\sqrt{n}$-consistent.</p>
-<p>若 $k=1$，则 $\text{amse}_{\hat\theta_n}(\theta)=g'(\mu_1)^2\sigma^2/n$.</p>
-<h4 id=umvue-1>UMVUE</h4>
-<p>UMVUE 都是一致无偏的。</p>
-<h4 id=样本分位数>样本分位数</h4>
-<p>我们经常用样本分位数做估计量，因此有必要研究它。对 $\gamma\in(0,1)$，第 $\lfloor \gamma n\rfloor$ 个次序统计量被称为 <strong>$\gamma$-sample quantile</strong>. 有如下结论：</p>
-<p><strong>定理</strong> 设 $X_i$ i.i.d.，cdf 为 $F$，若 $F(\theta)=\gamma$，$F'(\theta)$ 存在且不为 0，则第 $\lfloor \gamma n\rfloor$ 个次序统计量 $\tilde{\theta}_n$ 满足
+如果 $\limsup_n e</em>{T&rsquo;_n,T_n}(P)\le 1$，且存在 $P$ 使 $&lt;$ 成立，则称 $T_n$ <strong>asympotically more efficient</strong>.</p><p><strong>定理（$\delta$-method）</strong> 设 $U_n$ 满足 $a_n(U_n-\theta)\overset{d}\to Y$ 且 $EY^2&lt;\infty$，$a_n>0$，$a_n\to\infty$. 设 $g$ 在 $\theta$ 处可微，$T_n=g(U_n)$ 是$\vartheta=g(\theta)$ 的估计量，则 $\text{amse}_{T_n}=E{[g&rsquo;(\theta)Y]^2}/a_n^2$, $T_n$ 的渐近方差为 $[g&rsquo;(\theta)^2\mathrm{Var}Y]/a_n^2$.</p><h3 id=点估计的渐近性质>点估计的渐近性质</h3><h4 id=矩估计-1>矩估计</h4><p>对于矩估计，若 $h^{-1}$ 存在，由大数定律知它是 <strong>strongly consistent</strong>.</p><p>若还有 $h^{-1}$ 可微且 $E|X_1|^{2k}&lt;\infty$ （$k$ 为参数个数），由 CLT 知矩估计 $\sqrt{n}$-consistent.</p><p>若 $k=1$，则 $\text{amse}_{\hat\theta_n}(\theta)=g&rsquo;(\mu_1)^2\sigma^2/n$.</p><h4 id=umvue-1>UMVUE</h4><p>UMVUE 都是一致无偏的。</p><h4 id=样本分位数>样本分位数</h4><p>我们经常用样本分位数做估计量，因此有必要研究它。对 $\gamma\in(0,1)$，第 $\lfloor \gamma n\rfloor$ 个次序统计量被称为 <strong>$\gamma$-sample quantile</strong>. 有如下结论：</p><p><strong>定理</strong> 设 $X_i$ i.i.d.，cdf 为 $F$，若 $F(\theta)=\gamma$，$F&rsquo;(\theta)$ 存在且不为 0，则第 $\lfloor \gamma n\rfloor$ 个次序统计量 $\tilde{\theta}_n$ 满足
 $$
-\sqrt{n}\left(\tilde{\theta}_n-\theta\right)\overset{d}\to N\left(0,\frac{\gamma(1-\gamma)}{F'(\theta)^2}\right).
-$$</p>
-<blockquote>
-<p>证明用到 Berry–Esseen Theorem，略</p>
-</blockquote>
-<h4 id=mle>MLE</h4>
-<p><strong>定理</strong> 设 $\theta_0$ 为实际参数，并满足以下条件：</p>
-<ul>
-<li>
-<p>$\Theta$ 是紧集，</p>
-</li>
-<li>
-<p>对任意 $x$，$f(x|\theta)$ 关于 $\theta$ 连续，</p>
-</li>
-<li>
-<p>存在控制函数 $M(x)$ 使得 $E_{\theta_0}|M(X)|&lt;\infty$ 且
+\sqrt{n}\left(\tilde{\theta}_n-\theta\right)\overset{d}\to N\left(0,\frac{\gamma(1-\gamma)}{F&rsquo;(\theta)^2}\right).
+$$</p><blockquote><p>证明用到 Berry–Esseen Theorem，略</p></blockquote><h4 id=mle>MLE</h4><p><strong>定理</strong> 设 $\theta_0$ 为实际参数，并满足以下条件：</p><ul><li><p>$\Theta$ 是紧集，</p></li><li><p>对任意 $x$，$f(x|\theta)$ 关于 $\theta$ 连续，</p></li><li><p>存在控制函数 $M(x)$ 使得 $E_{\theta_0}|M(X)|&lt;\infty$ 且
 $$
 \left|\log f(x|\theta)-\log f(x|\theta_0)\right|\le M(x),\quad\forall x,\theta,
-$$</p>
-</li>
-<li>
-<p>（一致性）$f(x|\theta)=f(x|\theta_0)$ 则 $\theta=\theta_0$.</p>
-</li>
-</ul>
-<p>此时，MLE $\hat\theta_n\overset{a.s.}\to\theta_0$.</p>
-<blockquote>
-<p>注：</p>
-<ol>
-<li>连续性可以替换成上半连续，即对任意 $x$，有</li>
-</ol>
-<p>$$
-\lim_{\rho\to 0}\sup_{|\theta'-\theta|&lt;\rho }f(x|\theta') =f(x|\theta).
-$$</p>
-<ol start=2>
-<li>可以推广到任意度量空间，只需把 $|\theta-\theta_0|$ 换成度量 $d(\theta,\theta_0)$.</li>
-<li>控制函数 $M(x)$ 的存在性是关键。</li>
-</ol>
-</blockquote>
-<h4 id=m-估计-1>M-估计</h4>
-<p>类似于 MLE，有如下结论：</p>
-<p><strong>定理</strong> 有 $S_n,S$ 满足</p>
-<ol>
-<li>$
-\sup_{\theta\in\Theta}|S_n(\theta)-S(\theta)|\overset{p}\to 0$,（一致收敛）</li>
-<li>$\sup_{\theta:d(\theta,\theta_0)\ge\rho}S(\theta)&lt;S(\theta_0)$，（well-separation）</li>
-</ol>
-<p>若估计量 $\hat\theta_n$ 满足 $S_n(\hat\theta_n)\ge S_n(\theta_0)-o_P(1)$，则 $d(\hat\theta_n,\theta_0)\overset{p}\to 0$.</p>
-<h4 id=rle>RLE</h4>
-<p>RLE 指的是 roots of likelihood equation，使得 $\dfrac{\partial}{\partial\theta}\log L_n(\theta)=0$ 的点。它和 MLE 有着千丝万缕的联系。事实上，在一定的正则性条件下，它收敛到真实参数，这使得 RLE 具有一致性。</p>
-<p><strong>正则性条件</strong>（basic regularity conditions） 设 $\theta_*$ 是真实值，则</p>
-<ol>
-<li>
-<p>$\Theta$ 是 $\mathbb{R}^k$ 中的开集，</p>
-</li>
-<li>
-<p>$f(x|\theta)$ 二阶连续可微，且一二阶导数均可和积分交换，</p>
-</li>
-<li>
-<p>（控制函数）设 $\Psi(x,\theta)=\dfrac{\partial^2}{\partial\theta\partial\theta^T}\log f(x|\theta)$（是矩阵），则存在常数 $c$ 和非负函数 $H$ 使得 $EH(X)&lt;\infty$ 且
+$$</p></li><li><p>（一致性）$f(x|\theta)=f(x|\theta_0)$ 则 $\theta=\theta_0$.</p></li></ul><p>此时，MLE $\hat\theta_n\overset{a.s.}\to\theta_0$.</p><blockquote><p>注：</p><ol><li>连续性可以替换成上半连续，即对任意 $x$，有</li></ol><p>$$
+\lim_{\rho\to 0}\sup_{|\theta&rsquo;-\theta|&lt;\rho }f(x|\theta&rsquo;) =f(x|\theta).
+$$</p><ol start=2><li>可以推广到任意度量空间，只需把 $|\theta-\theta_0|$ 换成度量 $d(\theta,\theta_0)$.</li><li>控制函数 $M(x)$ 的存在性是关键。</li></ol></blockquote><h4 id=m-估计-1>M-估计</h4><p>类似于 MLE，有如下结论：</p><p><strong>定理</strong> 有 $S_n,S$ 满足</p><ol><li>$
+\sup_{\theta\in\Theta}|S_n(\theta)-S(\theta)|\overset{p}\to 0$,（一致收敛）</li><li>$\sup_{\theta:d(\theta,\theta_0)\ge\rho}S(\theta)&lt;S(\theta_0)$，（well-separation）</li></ol><p>若估计量 $\hat\theta_n$ 满足 $S_n(\hat\theta_n)\ge S_n(\theta_0)-o_P(1)$，则 $d(\hat\theta_n,\theta_0)\overset{p}\to 0$.</p><h4 id=rle>RLE</h4><p>RLE 指的是 roots of likelihood equation，使得 $\dfrac{\partial}{\partial\theta}\log L_n(\theta)=0$ 的点。它和 MLE 有着千丝万缕的联系。事实上，在一定的正则性条件下，它收敛到真实参数，这使得 RLE 具有一致性。</p><p><strong>正则性条件</strong>（basic regularity conditions） 设 $\theta_*$ 是真实值，则</p><ol><li><p>$\Theta$ 是 $\mathbb{R}^k$ 中的开集，</p></li><li><p>$f(x|\theta)$ 二阶连续可微，且一二阶导数均可和积分交换，</p></li><li><p>（控制函数）设 $\Psi(x,\theta)=\dfrac{\partial^2}{\partial\theta\partial\theta^T}\log f(x|\theta)$（是矩阵），则存在常数 $c$ 和非负函数 $H$ 使得 $EH(X)&lt;\infty$ 且
 $$
 \sup_{|\theta-\theta_*|&lt;c}|\Psi(x,\theta)|\le H(x).
-$$</p>
-</li>
-<li>
-<p>（identifiability）$f(x|\theta)=f(x|\theta_<em>)$ 则 $\theta=\theta_</em>$.</p>
-</li>
-</ol>
-<p><strong>定理</strong>（RLE的一致性） 在上述正则性条件下，存在一列 $\hat\theta_n$ 使得 $\dfrac{\partial}{\partial\theta}\log L_n(\hat\theta_n)=0$ 且 $\hat\theta_n\overset{a.s.}\to\theta_*$.</p>
-<p>此外，我们可以讨论 RLE 的渐近正态性。</p>
-<p><strong>定理</strong> 设正则性条件成立，且 Fisher 信息矩阵在 $\theta_<em>$ 处正定，则对任意的一致 RLE 序列 $\tilde{\theta}<em>n$（比如上一个定理中收敛的 RLE 序列），有
+$$</p></li><li><p>（identifiability）$f(x|\theta)=f(x|\theta_<em>)$ 则 $\theta=\theta_</em>$.</p></li></ol><p><strong>定理</strong>（RLE的一致性） 在上述正则性条件下，存在一列 $\hat\theta_n$ 使得 $\dfrac{\partial}{\partial\theta}\log L_n(\hat\theta_n)=0$ 且 $\hat\theta_n\overset{a.s.}\to\theta_*$.</p><p>此外，我们可以讨论 RLE 的渐近正态性。</p><p><strong>定理</strong> 设正则性条件成立，且 Fisher 信息矩阵在 $\theta_<em>$ 处正定，则对任意的一致 RLE 序列 $\tilde{\theta}<em>n$（比如上一个定理中收敛的 RLE 序列），有
 $$
 \sqrt{n}(\tilde\theta_n-\theta</em></em>)\overset{d}\to N(0,I(\theta_*)^{-1}).
-$$</p>
-<blockquote>
-<p>如果 MLE 是一致的，且 MLE 就是 RLE，则它可以用来说明 MLE 的渐近正态性。</p>
-</blockquote>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-<a href=/post/5215-3%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8A-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E5%88%86%E5%B8%83%E6%97%8F/ rel=next title=统计学基础（上）-统计量&分布族>
-<i class="fa fa-chevron-left"></i> 统计学基础（上）-统计量&分布族
-</a>
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=/post/5203-4%E5%A4%9A%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/ rel=prev title=线性回归（四）-多因素方差分析>
-线性回归（四）-多因素方差分析
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=ucomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
-<div class=sidebar-toggle>
-<div class=sidebar-toggle-line-wrap>
-<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+$$</p><blockquote><p>如果 MLE 是一致的，且 MLE 就是 RLE，则它可以用来说明 MLE 的渐近正态性。</p></blockquote></div><footer class=post-footer><div class=post-tags><a href=/tags/%e5%ad%a6%e4%b9%a0 rel=tag title=学习>#学习#</a></div><div class=addthis_inline_share_toolbox></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/post/5215-3%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8A-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E5%88%86%E5%B8%83%E6%97%8F/ rel=next title=统计学基础（上）-统计量&分布族><i class="fa fa-chevron-left"></i> 统计学基础（上）-统计量&分布族</a></div><div class="post-nav-prev post-nav-item"><a href=/post/5203-5-2k%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1/ rel=prev title="线性回归（五）-2^k 因子实验">线性回归（五）-2^k 因子实验
+<i class="fa fa-chevron-right"></i></a></div></div><div id=ucomments></div></footer></article></section></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
 <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-</div>
-</div>
-<aside id=sidebar class=sidebar>
-<div class=sidebar-inner>
-<section class="site-overview sidebar-panel sidebar-panel-active">
-<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
-<img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人>
-<p class=site-author-name itemprop=name>精神病人</p>
-<p class="site-description motion-element" itemprop=description>
-精神病人欢乐多!
-</p>
-</div>
-<nav class="site-state motion-element">
-<div class="site-state-item site-state-posts">
-<a href=/post/>
-<span class=site-state-item-count>41</span>
-<span class=site-state-item-name>日志</span>
-</a>
-</div>
-<div class="site-state-item site-state-categories">
-<a href=/categories/>
-<span class=site-state-item-count>11</span>
-<span class=site-state-item-name>分类</span>
-</a>
-</div>
-<div class="site-state-item site-state-tags">
-<a href=/tags/>
-<span class=site-state-item-count>11</span>
-<span class=site-state-item-name>标签</span>
-</a>
-</div>
-</nav>
-<div class="links-of-author motion-element">
-<span class=links-of-author-item>
-<a href=https://github.com/jcq15/ target=_blank title=GitHub>
-<i class="fa fa-fw fa-github"></i>
-GitHub
-</a>
-</span>
-</div>
-<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
-<div class=tagcloud-of-blogroll-title>
-<i class="fa fa-fw fa-tags"></i>
-标签云
-</div>
-<ul class=tagcloud-of-blogroll-list>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E5%AD%A6%E4%B9%A0>学习
-<sup>15</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
-<sup>6</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%8A%80%E6%9C%AF>技术
-<sup>5</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%9B%B4%E6%96%B0>更新
-<sup>3</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%B8%B8%E6%88%8F>游戏
-<sup>3</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E7%A7%91%E6%99%AE>科普
-<sup>3</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%95%B4%E6%B4%BB>整活
-<sup>2</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
-<sup>2</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%95%A2%E6%83%B3>敢想
-<sup>1</sup>
-</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/%E6%B2%99%E9%9B%95>沙雕
-<sup>1</sup>
-</a>
-</li>
-</ul>
-</div>
-</section>
-</div>
-</aside>
-</div>
-</main>
-<footer id=footer class=footer>
-<div class=footer-inner>
-<div class=copyright>
-<span class=copyright-year>
-&copy; 2010 - 2023
-</span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><section class="site-overview sidebar-panel sidebar-panel-active"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/img/avatar.png alt=精神病人><p class=site-author-name itemprop=name>精神病人</p><p class="site-description motion-element" itemprop=description>精神病人欢乐多!</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href=/post/><span class=site-state-item-count>41</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>12</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>12</span>
+<span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/jcq15/ target=_blank title=GitHub><i class="fa fa-fw fa-github"></i>
+GitHub</a></span></div><div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline"><div class=tagcloud-of-blogroll-title><i class="fa fa-fw fa-tags"></i>
+标签云</div><ul class=tagcloud-of-blogroll-list><li class=tagcloud-of-blogroll-item><a href=/tags/%E5%AD%A6%E4%B9%A0>学习
+<sup>15</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9D%8E%E5%8D%8E%E5%A4%A7%E5%86%92%E9%99%A9>李华大冒险
+<sup>6</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%8A%80%E6%9C%AF>技术
+<sup>5</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B8%B8%E6%88%8F>游戏
+<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%A7%91%E6%99%AE>科普
+<sup>3</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%B4%E6%B4%BB>整活
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%9B%B4%E6%96%B0>更新
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB>经验分享
+<sup>2</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%95%A2%E6%83%B3>敢想
+<sup>1</sup></a></li><li class=tagcloud-of-blogroll-item><a href=/tags/%E6%B2%99%E9%9B%95>沙雕
+<sup>1</sup></a></li></ul></div></section></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright><span class=copyright-year>&copy; 2010 - 2024</span>
 <span class=with-love><i class="fa fa-heart"></i></span>
-<span class=copyright-author>沙雕园</span>
-</div>
-<div class=powered-info>
-<span class=powered-by>
-Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.92.2</a>
-</span>
+<span class=copyright-author>沙雕园</span></div><div class=powered-info><span class=powered-by>Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.101.0</a></span>
 <span class=separator-line>/</span>
-<span class=theme-info>
-Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
-</a>
-</span>
-</div>
-<div class=vistor-info>
-<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
-<span class=site-uv>
-<i class="fa fa-user"></i>
-<span class=busuanzi-value id=busuanzi_value_site_uv></span>
-</span>
+<span class=theme-info>Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank>NexT</a></span></div><div class=vistor-info><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv><i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span></span>
 <span class=separator-line>/</span>
-<span class=site-pv>
-<i class="fa fa-eye"></i>
-<span class=busuanzi-value id=busuanzi_value_site_pv></span>
-</span>
-</div>
-<div class=license-info>
-<span class=storage-info>
-Storage by
-<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a>
-</span>
+<span class=site-pv><i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span></span></div><div class=license-info><span class=storage-info>Storage by
+<a href=https://github.com/jcq15/jcq15.github.io style=font-weight:700 target=_blank>Github 仓库</a></span>
 <span class=separator-line>/</span>
-<span class=license-num>
-<a href target=_blank></a>
-</span>
-</div>
-</div>
-</footer>
-<div class=back-to-top>
-<i class="fa fa-arrow-up"></i>
-<span id=scrollpercent><span>0</span>%</span>
-</div>
-</div>
-<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<span class=license-num><a href target=_blank></a></span></div></div></footer><div class=back-to-top><i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span></div></div><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
 <script type=text/javascript src=/js/search.js></script>
 <script type=text/javascript src=/js/affix.js></script>
 <script type=text/javascript src=/js/scrollspy.js></script>
-<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
-<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
-<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
-<script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
-<script type=text/javascript>function showTime(d){var b=new AV.Query(d),a=[],c=$(".leancloud_visitors");c.each(function(){a.push($(this).attr("id").trim())}),b.containedIn('url',a),b.find().then(d=>{var e='.leancloud-visitors-count',b,h,f,j,g,i;if(d.length==0){c.find(e).text(0);return}for(b=0;b<d.length;b++)h=d[b],f=h.get('url'),j=h.get('time'),g=document.getElementById(f),$(g).find(e).text(j);for(b=0;b<a.length;b++)f=a[b],g=document.getElementById(f),i=$(g).find(e),i.text()==''&&i.text(0)},a=>{console.log('Query vistors failed: '+a)})}function addCount(d){var b=$(".leancloud_visitors"),a=b.attr('id').trim(),e=b.attr('data-flag-title').trim(),c=new AV.Query('Counter');c.equalTo("url",a),c.find().then(g=>{var f,c,b;g.length>0?(f=g[0],f.increment('time',1),f.save(null,{query:new AV.Query('Counter').equalTo('url',a),fetchWhenSave:!0}).then(b=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log('Update vistor failed: '+a)})):(c=new AV.ACL,c.setPublicReadAccess(!0),c.setPublicWriteAccess(!0),b=new d,b.set("title",e),b.set("url",a),b.set("time",1),b.setACL(c),b.save().then(d=>{var c=$(document.getElementById(a));c.find('.leancloud-visitors-count').text(b.get('time'))},a=>{console.log("Save new vistor failed: "+a)}))})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const a=AV.Object.extend("Counter");$('.leancloud_visitors').length==1?addCount(a):$('.post-title-link').length>1&&showTime(a)})</script>
-<script type=text/javascript>(function(){var a=document.createElement('script');a.type='text/javascript',a.async=!0,a.setAttribute('issue-term',"title"),a.setAttribute('theme',"github-light"),a.setAttribute('repo',"jcq15/blog"),a.crossorigin='anonymous',a.src='https://utteranc.es/client.js',document.getElementById('ucomments').appendChild(a)})()</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
-<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type=text/javascript>function detectIE(){var e=window.navigator.userAgent,t=e.indexOf("MSIE "),n=e.indexOf("Trident/"),s=e.indexOf("Edge/");return t>0||n>0||s>0?-1:1}function getCntViewHeight(){var t=$("#content").height(),e=$(window).height(),n=t>e?t-e:$(document).height()-e;return n}function getScrollbarWidth(){var e=$("<div />").addClass("scrollbar-measure").prependTo("body"),t=e[0],n=t.offsetWidth-t.clientWidth;return e.remove(),n}function registerBackTop(){var t=50,e=$(".back-to-top");$(window).on("scroll",function(){e.toggleClass("back-to-top-on",window.pageYOffset>t);var s=$(window).scrollTop(),o=getCntViewHeight(),i=s/o,n=Math.round(i*100),a=n>100?100:n;$("#scrollpercent>span").html(a)}),e.on("click",function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var e=".post-toc",s=$(e),t=".active-current";s.on("activate.bs.scrollspy",function(){var t=$(e+" .active").last();n(),t.addClass("active-current")}).on("clear.bs.scrollspy",n),$("body").scrollspy({target:e});function n(){$(e+" "+t).removeClass(t.substring(1))}}function initAffix(){var e=$(".header-inner").height(),t=parseInt($(".main").css("padding-bottom"),10),n=e+10;$(".sidebar-inner").affix({offset:{top:n,bottom:t}}),$(document).on("affixed.bs.affix",function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){$(window).on("resize",function(){e&&clearTimeout(e),e=setTimeout(function(){var e=document.body.clientHeight-100;updateTOCHeight(e)},0)}),updateTOCHeight(document.body.clientHeight-100);var e,t=getScrollbarWidth();$(".post-toc").css("width","calc(100% + "+t+"px)")}function updateTOCHeight(e){e=e||"auto",$(".post-toc").css("max-height",e)}$(function(){var e,t,n,s,o=$(".header-inner").height()+10;$("#sidebar").css({"margin-top":o}).show(),t=parseInt($("#sidebar").css("margin-top")),n=parseInt($(".sidebar-inner").css("height")),e=t+n,s=$(".content-wrap").height(),s<e&&$(".content-wrap").css("min-height",e),$(".site-nav-toggle").on("click",function(){var e=$(".site-nav"),o=$(".toggle"),t="site-nav-on",i="toggle-close",n=e.hasClass(t),a=n?"slideUp":"slideDown",s=n?"removeClass":"addClass";e.stop()[a]("normal",function(){e[s](t),o[s](i)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$(".sidebar-nav-toc").click(function(){$(this).addClass("sidebar-nav-active"),$(this).next().removeClass("sidebar-nav-active"),$("."+$(this).next().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)}),$(".sidebar-nav-overview").click(function(){$(this).addClass("sidebar-nav-active"),$(this).prev().removeClass("sidebar-nav-active"),$("."+$(this).prev().attr("data-target")).toggle(500),$("."+$(this).attr("data-target")).toggle(500)})})</script><script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$(".post-body").viewer()})</script><script src=//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js></script>
+<script type=text/javascript>function showTime(e){var n=new AV.Query(e),t=[],s=$(".leancloud_visitors");s.each(function(){t.push($(this).attr("id").trim())}),n.containedIn("url",t),n.find().then(e=>{var n,o,i,r,c,l,a=".leancloud-visitors-count";if(e.length==0){s.find(a).text(0);return}for(n=0;n<e.length;n++)r=e[n],o=r.get("url"),l=r.get("time"),i=document.getElementById(o),$(i).find(a).text(l);for(n=0;n<t.length;n++)o=t[n],i=document.getElementById(o),c=$(i).find(a),c.text()==""&&c.text(0)},e=>{console.log("Query vistors failed: "+e)})}function addCount(e){var n=$(".leancloud_visitors"),t=n.attr("id").trim(),o=n.attr("data-flag-title").trim(),s=new AV.Query("Counter");s.equalTo("url",t),s.find().then(n=>{if(n.length>0){var s,i,a=n[0];a.increment("time",1),a.save(null,{query:new AV.Query("Counter").equalTo("url",t),fetchWhenSave:!0}).then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(e.get("time"))},e=>{console.log("Update vistor failed: "+e)})}else i=new AV.ACL,i.setPublicReadAccess(!0),i.setPublicWriteAccess(!0),s=new e,s.set("title",o),s.set("url",t),s.set("time",1),s.setACL(i),s.save().then(e=>{var n=$(document.getElementById(t));n.find(".leancloud-visitors-count").text(s.get("time"))},e=>{console.log("Save new vistor failed: "+e)})})}$(function(){AV.init({appId:"Your LCAppId",appKey:"Your LCAppKey",serverURL:"Your LCServer"});const e=AV.Object.extend("Counter");$(".leancloud_visitors").length==1?addCount(e):$(".post-title-link").length>1&&showTime(e)})</script><script type=text/javascript>(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.setAttribute("issue-term","title"),e.setAttribute("theme","github-light"),e.setAttribute("repo","jcq15/blog"),e.crossorigin="anonymous",e.src="https://utteranc.es/client.js",document.getElementById("ucomments").appendChild(e)})()</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
 <script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
-<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
-</body>
-</html>
+<script>(function(){var t,e=document.createElement("script"),n=window.location.protocol.split(":")[0];n==="https"?e.src="https://zz.bdstatic.com/linksubmit/push.js":e.src="http://push.zhanzhang.baidu.com/push.js",t=document.getElementsByTagName("script")[0],t.parentNode.insertBefore(e,t)})()</script></body></html>
