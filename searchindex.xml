@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>关于我中央总书记我本人成功识别并处置一起疑似电信诈骗事件的情况通报</title><url>/post/%E5%A4%A7%E5%AD%A6%E6%95%A2%E6%83%B3-%E5%89%AF%E6%9C%AC/</url><categories><category>我中央公文</category></categories><tags><tag>我中央公文</tag></tags><content type="html"> 关于我中央总书记我本人成功识别并处置一起疑似电信诈骗事件的情况通报
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>一触即达：用 YubiKey 打造 Windows 自动解锁与 SSH 安全登录</title><url>/post/yubikey_ssh_auth/</url><categories><category>技术</category></categories><tags><tag>技术</tag></tags><content type="html"> 一直拖着桌面上一枚尘封已久的 YubiKey，却不知道该怎么用才最有价值。最近突发奇想：既要让它在 Windows 开机时“自动敲密码”，又要用它完成 SSH 登录时的硬件签名。经过折腾，终于把这两项功能都跑通了，特此记录，方便自己今后查阅，也给有同样需求的你做个参考。
+Yubikey 是啥？能吃吗？ YubiKey 是由 Yubico 推出的一款硬件安全钥匙，支持 FIDO U2F/FIDO2、OpenPGP、PIV 等多种认证协议。它能将私钥或静态密码安全地存储在硬件中，通过物理触摸即可完成网站登录、SSH 认证、Windows 开机等场景下的双因素或无密认证。由于密钥始终在设备内不外泄，能有效防止钓鱼攻击与远程入侵。
+环境与工具 系统：Windows 11 硬件：YubiKey 5C 和 Yubikey 5C Nano （俩 YubiKey 分别生成两套 SSH 密钥，其中一枚作为主用，另一枚作为备份，确保即使主钥匙被城管炸了也能无缝继续安全访问） 软件： Yubikey Manager
+: Yubico 官方管理软件儿 Yubikey Manager CLI
+: 官方命令行工具 OpenSC
+: 一个开源的智能卡儿工具包儿，要用它调用 Yubikey 进行 SSH 认证 一、自动输入 Windows 开机密码 这个如倒立拉屎一样简单。利用 Yubikey 的 Static Password 功能，原理是用手一碰它就模拟键盘操作输入一串儿预定的字符串儿。
+配置 Static Password 打开 YubiKey Manager，选择 Applications → OTP → Configure。 在 Static Password 里猪入你的 Windows 登录密码，保存。 开机／锁屏时使用 将 YubiKey 插入任意 USB 接口。 启动或唤醒 Windows，光标定位在密码输入框时，轻触 YubiKey。 它就会像键盘一样，自动输入你配置的密码。无需额外敲击，节省时间又可靠。 安全小贴士：静态密码无需 PIN 解锁，但只有在你“真·触摸”时才会输出，防止远程被滥用。
+二、基于 PIV 的 SSH 安全登录 这个功能利用 YubiKey 的 PIV（智能卡）功能，将私钥安全地存放在硬件中，SSH 客户端通过 PKCS#11 调用它。
+1. 使用 Yubikey 生成密钥对儿 安装 Yubikey Manager CLI
+后，在环境变量中添加 C:\Program Files\Yubico\YubiKey Manager\ykman.exe，就可以用 ykman 了。
+每个YubiKey出厂默认设置了PIN为123456，最好修改一下：
+ykman piv access change-pin --pin 123456 --new-pin 654321 然后生成密钥对儿：
+ykman piv keys generate --algorithm RSA2048 --pin-policy once --touch-policy always 9a yubikey_main_pubkey.pem 提示输入 Management key 直接回车即可。
+然后认证：
+ykman piv certificates generate --subject "CN=yubikey_main" 9a yubikey_main_pubkey.pem 提示输入 Management key 直接回车，然后输入 PIN，然后让你摸一摸它，摸完了它就结束了。
+2. 启用并启动 ssh-agent 首先下载安装OpenSC
+。然后在 PowerShell（管理员） 中执行：
+Set-Service -Name ssh-agent -StartupType Automatic Start-Service ssh-agent Get-Service ssh-agent # 确认正在运行 3. 加载 PIV 私钥 在 PowerShell 中：
+ssh-add -s "C:\Program Files\OpenSC Project\OpenSC\pkcs11\opensc-pkcs11.dll" 当提示 Enter passphrase for PKCS#11: 时，输入 Yubikey 的 PIN，回车。
+验证：
+ssh-add -L 应能看到 public key，把它放在该放的地方即可。
+4. 日了狗的大坑 这里有个日了狗的大坑，OpenSC 的路径是
+C:/Program Files/OpenSC Project/OpenSC/pkcs11/opensc-pkcs11.dll 敏感肌可能已经发现了，这个路径里有空格儿，它放进 ssh_config 里不能被正确识别！而且 ssh_config 不支持加引号或转义！强迫症儿又不想挪动文件位置。好在 Windows 会给 Program Files、OpenSC Project 这类带空格的目录自动分配一个短名称。
+在 CMD 里运行：
+for %I in ("C:\Program Files\OpenSC Project\OpenSC\pkcs11\opensc-pkcs11.dll") do @echo %~sI 他会输出无空格路径，类似这个：
+C:\PROGRA~1\OPENSC~1\OpenSC\pkcs11\OPENSC~1.DLL 用它进行下一步就行了。
+4. 配置 SSH 连接 在 C:\Users\&lt;用户名>\.ssh\config 中增加一条儿配置：
+Host server_name HostName server.example.com User youruser PKCS11Provider C:\PROGRA~1\OPENSC~1\OpenSC\pkcs11\OPENSC~1.DLL 保存后直接
+ssh server_name 如果一切配置正确，Yubikey 会闪烁，触摸 Yubikey 即可认证成功并登录！
+5. 配置备用的 Yubikey 如果你像我一样打算弄俩 Yubikey 备份，可以换下一个重复操作。 要拔出来再插进去新的，两根一起插 Yubikey Manager 会受不了。
+ykman piv access change-pin --pin 123456 --new-pin 654321 ykman piv keys generate --algorithm RSA2048 --pin-policy once --touch-policy always 9a pubkey.pem ykman piv certificates generate --subject "CN=yubico" 9a pubkey.pem ssh-add -s "C:\Program Files\OpenSC Project\OpenSC\pkcs11\opensc-pkcs11.dll" ssh-add -L 不知道是我操作不对还是 feature，OpenSC 只能存储一个 key，新来的会覆盖原来的。但问题不大。我们把备用的 public key 也放到服务器上，然后拔掉，插入主 key，再运行一次
+ssh-add -s "C:\Program Files\OpenSC Project\OpenSC\pkcs11\opensc-pkcs11.dll" 如果需要换另一把 key，插进去后重新运行一次上述命令即可。多么简（ma）单（fan）！
+结语 到此，已经给 YubiKey 配置了Windows 自动解锁与SSH 硬件签名的功能，并且有另外一把 YubiKey 做备份。以后再也不怕开机忘记密码，也不用担心在服务器间敲来敲去。插上即用、轻触即通，是我最近最满意的个人效率利器。希望这篇分享能帮到你，让你的 YubiKey 也发挥出一触即达的魔力！</content></entry><entry><title>关于我中央总书记我本人成功识别并处置一起疑似电信诈骗事件的情况通报</title><url>/post/%E5%A4%A7%E5%AD%A6%E6%95%A2%E6%83%B3-%E5%89%AF%E6%9C%AC/</url><categories><category>我中央公文</category></categories><tags><tag>我中央公文</tag></tags><content type="html"> 关于我中央总书记我本人成功识别并处置一起疑似电信诈骗事件的情况通报
 近日，我中央总书记我本人在Carousell（二手交易平台）上发布一则闲置物品转让信息，期间收到一陌生人员主动联系，态度热切，表达明确购意。对方言辞爽快、反应迅速，于索取我方邮箱地址后即称“已付款”，并发送所谓“付款截图”，试图制造可信交易氛围，混淆视听，转移警觉。
 紧接着，我方邮箱“垃圾箱”接收到一封疑似平台系统自动发送的“收款提醒邮件”，邮件内嵌链接指向一高仿页面，除域名与官方不符外，页面设计、文字表述均高度一致，具有极强欺骗性。该页面诱导我方输入银行卡信息，包括卡号与安全码（CVV）。考虑到部分平台在账户绑定环节需进行小额验证，我方一度放松警惕，误将相关信息填写提交。
 随后，对方进一步要求输入银行卡余额，此举严重偏离正常交易逻辑，我方高度警觉、迅速反应，第一时间进入战备状态，启动应急预案，全面回溯邮件来源，果断识别出发件人为非官方地址，并通过Carousell官方网站核实，确认其官方从不要求卖方提供邮箱及银行卡信息。遂综合研判、快速定性、果断应对，正式认定为诈骗行为。
