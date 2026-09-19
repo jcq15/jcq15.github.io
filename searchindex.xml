@@ -1,4 +1,123 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>AI 带来的第四次技术革命 —— 淘汰低阶技能，抬升高阶技能</title><url>/post/ai%E4%B8%8E%E6%8A%80%E6%9C%AF%E9%9D%A9%E5%91%BD/</url><categories><category>敢想</category></categories><tags><tag>敢想</tag></tags><content type="html"> 每一次技术革命淘汰的都是停留在技能低阶的人，而每一次革命都给予那些掌握更高阶技能的人前所未有的机会。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>如果定理可以量产，数学还剩下什么？</title><url>/post/aimath/</url><categories><category>敢想</category></categories><tags><tag>敢想</tag></tags><content type="html"> 假设明天早上，你醒来，发现黎曼猜想被证明了。
+没有数学家闭关十年，没有几百页手稿。只有一条消息：某个 AI 跑了三天，生成了一份证明，Lean 检查通过。
+下午，另一个猜想也被解决了。
+晚上，系统提醒：今日新增定理 114,514 条。
+你甚至懒得点开。
+这当然是一个思想实验，不是对当前 AI 能力的新闻播报。但它让我有点不舒服的地方，并不只是“数学家是不是要失业了”，而是一个更根本的问题：如果正确的定理可以无限供应，我们究竟还想从数学里得到什么？
+我一直有一个观点：数学研究的本质是 intuition + motivation。
+这句话需要稍微展开，否则很容易变成“机器负责算，人类负责灵感”那种听起来很舒服、细想又没说什么的话。
+我的意思是：
+Proof 问：Is it true?——它成立吗？
+Intuition 问：Why should it be true?——为什么事情应该如此？
+Motivation 问：Why do we care?——为什么这个问题值得问？
+数学研究当然需要证明。但如果只用“产出了多少条经过证明的命题”来描述数学研究，我觉得最重要的东西反而被漏掉了。
+我们想要的不只是更多正确的句子，而是更有力量的理解：看见结构，知道该问什么，并且明白答案为什么长成这个样子。
+说这件事之前，我想先讲一只钟。
+一门数学系开的课，居然在讲造钟 大学的时候，我上过清华数学系郑绍远教授的一门文化素质课，印象里就叫《经度》。主要内容是带着大家读 Dava Sobel 的那本《经度》。
+很多细节已经忘了，但有一个感受一直记得：原来造一只准确的钟这么难。
+《经度》讲的是海上定位。船开到大洋中央，怎么知道自己在东西方向上走到了哪里？
+先把实际观测的细节放在一边，用理想化的太阳时来理解。地球一天转一圈：
+$$ \frac{360^\circ}{24,\mathrm{h}}=15^\circ/\mathrm{h}. $$
+所以，两地的时间差可以换算成经度差。如果船所在地正午时，参考地点已经是下午两点，那么船就在参考地点以西 30 度。
+原理讲完了。
+剩下的问题是：你怎么在几个月后的大洋中央，知道参考地点现在几点？
+今天听起来：带块表啊。
+十八世纪听起来：你说得轻巧。
+陆地上的钟可以很准，但船会摇晃，温度会变化，金属会热胀冷缩，摩擦和润滑也不肯老实待着。每天差几秒，看起来屁大点事，累积一个多月，再换算成海上的位置，就不是“这表走得不太准”，而是“这礁石怎么在这里”。
+John Harrison 为这个问题折腾了几十年。从 H1、H2 到 H3，再到 H4。其中 H3 就花了约十九年，却仍没达到他需要的效果。后来完成于 1759 年的 H4，已经转向一只大型怀表的形态，而不是继续沿着前三台大型海上钟的形态做下去。格林尼治皇家博物馆对这段过程有详细介绍。
+当然，H4 也不是一出场，全世界航海问题就自动清零。成功的样机、可复制的制造工艺和普遍可用的工具之间，还隔着很多工作。
+但这里已经有一个非常鲜明的反差：计算经度差只需要一行式子，把这行式子变成可靠的海上定位方法，却需要几十年的技术探索。
+问题没变，方法可以换 现在回头想，这门课给我的启发，不是“数学没用，工程才有用”。恰恰相反，是我们很容易把某个环节的完成，误认成整个问题的完成。
+写出关系式，是一种完成。造出钟，是另一种完成。让船员真的能靠它航行，又是另一种。
+而研究最容易发生的错位，是做着做着，忘了自己最初到底想完成什么。
+数学里也有这种体验：为了证明一个 lemma，推了三十页，各种 estimate 越来越变态，每一个 $\epsilon$ 都被压榨得奄奄一息。
+这时候你满脑子都是“怎么把这个不等式再压紧一点”，很少再问：“我为什么非得证明这个 lemma？”
+也许它太强了。也许坐标选错了。也许换一个定义，这三十页根本没有存在的必要。
+Harrison 的故事让我想到的是：对问题的坚持，不等于对当前解法的忠诚。
+当然，换方法不是凭空跳跃。旧路线的失败，会告诉你哪些障碍是偶然的，哪些是结构性的。十九年不是按下删除键就消失了，它们也参与塑造了后来那个判断。
+这已经很接近我说的 intuition 和 motivation：一个帮助你判断“这里真正起作用的是什么”，另一个不断提醒你“我们究竟为什么在做这件事”。
+Intuition：还没证明，为什么已经觉得它该成立？ 我更愿意把 intuition 翻成“对结构的直觉”，而不只是“灵感”。
+灵感听起来像天降一道闪电。数学直觉往往没那么戏剧化。它可能来自你算过的十几个例子、试过的几个极端情形、一个总是出现的对称性，或者某个怎么也绕不过去的不变量。
+你还没有证明，但已经觉得：如果这件事不成立，背后一定有某个机制出了问题。
+所以它更接近 Why should it be true?，而不只是拿到证明以后再解释一遍。
+举一个很初等的例子：
+$$ 1+3+5+\cdots+(2n-1)=n^2. $$
+当然可以用归纳法。检验初始情形，再把下一项加上去，等式就出来了。
+但如果你把一个点扩成 $2\times2$ 的正方形，再扩成 $3\times3$ 的正方形，会发现每次补上的都是一条 L 形的边。把边长从 $n-1$ 增加到 $n$，恰好需要 $2n-1$ 个点。
+奇数不是碰巧加出了平方。它们就是正方形逐层长大时，每一层的大小。
+这个图像既可以给你直觉，也可以组织成严格证明。它的价值不在于“比归纳法更不严谨但更好看”，而在于让式子里的对象发生了联系。你甚至会继续问：立方体逐层长大时，每层又有多少个小方块？
+好的直觉不只解释一个答案，还会产生下一批问题。
+不过，直觉会错。你看见的模式可能只活在低维里，你熟悉的有限情形可能根本不能推广到无限情形。证明的价值之一，正是逼你查清：哪些直觉是真的，哪些只是你太喜欢那个画面。
+因此我说 intuition + motivation，绝不是说 proof 可以省略。证明不只是最后盖章的手续；寻找证明的过程，本身就在改造直觉。
+Motivation：为什么偏偏问这个？ 相较于“怎么证明”，我越来越觉得“为什么研究这个”更难教。
+教科书往往先给定义，再给定理，再给证明。整齐得让人以为数学就是从第一行自然地滑到最后一行。
+但研究现场经常反过来：先有一堆不太协调的例子，一个现有语言解释不好的现象，或者两套理论之间隐约相似的动作。然后你才开始摸索，到底应该定义什么。
+为什么保留这个条件，扔掉那个条件？为什么要把这两个对象视为同一种东西？为什么要证明这个版本，而不是一个更容易、但什么也没说明的版本？
+这些都属于 motivation。
+这里的“值得问”，也不等于“能拿来干什么”。一个问题可能值得研究，是因为它暴露了现有理论的边界，连接了原本分开的领域，或者迫使我们发明一种更好的语言。
+抽象就是一个典型例子。群的意义，不是把若干具体运算换成一套更吓人的符号，而是抽出共同的运算规则，让不同地方的对称性可以被放到同一种语言里讨论。
+有些细节被丢掉了，反而有些联系第一次变得清楚。
+所以问题选择、定义和抽象，并不是证明之前顺手完成的准备工作。它们本身就是研究。
+一条定理证明了一个问题的答案；一个好定义，有时会改变我们接下来十年能问出哪些问题。
+数学是一种压缩 如果只想增加真命题的数量，其实没那么难。
+你可以不断写出具体的加法等式，也可以给一个已有定理添上不必要的条件，再宣布获得了新版本。数据库会越来越大，但没有人因此更理解数学。
+数学里更有价值的进展，常常朝相反方向走：用更少的概念，组织更多的事实。
+本来需要分别记住的几十种现象，忽然变成同一个结构的不同表现。本来只能逐题处理的计算，有了一套可以迁移的方法。
+我说的“压缩”，不是论文页数更少，更不是越抽象越高级。把十页计算藏进一个看不懂的定义，未必压缩了任何人的理解。
+真正有力量的压缩，应当让你更容易解释旧现象、预测新情形，也更容易看出方法会在哪里失效。
+直觉给这种压缩一个可以操作的形状，动机决定我们为什么要压缩这些事实，证明则保证我们没有为了一个漂亮故事偷偷牺牲正确性。
+三者是互相咬合的。这里的 intuition + motivation，是我想突出数学研究的重心，不是一份把 proof 开除出去的成分表。
+Lean 改变了什么？ 讨论 AI 做数学，有一个区别不能糊弄过去：生成一段看起来像证明的文字，和生成一份可以形式验证的证明，是两回事。
+大模型完全可以很自信地写出“显然”，然后在这个词后面埋一颗雷。读的时候顺得要命，真去检查，发现它把最难的部分显然掉了。
+Lean 这样的证明助手，提供了另一种工作方式：把定义、命题和证明放进形式语言，由内核检查证明项是否符合逻辑规则。人写的证明脚本，以及自动化策略，都要落实到可检查的证明对象上。Lean 官方 FAQ 解释了这一机制。
+AI 可以提出候选步骤，调用现有引理，根据报错修改，再继续搜索。最终证明的接受，不需要取决于它说话有多像教授。
+这条路线已经有实际成果。例如 2024 年的 AlphaProof，就在 Lean 中搜索证明，解决了当年 IMO 的三道非几何题。这是明确的能力进展，但竞赛题上的成功并不等于开放式数学研究已经被自动化。相关研究介绍见 Google Research。
+形式验证也有它回答的问题范围。我们仍需要检查形式化的陈述是否忠实于原问题、使用了哪些假设，以及证明是否完整。验证器能检查的是：在给定形式系统和假设下，这个结论是否被证明了。它不会顺带认证“这个问题很重要”。
+这不是 Lean 的缺点。它本来就不是一个数学品味检测器。
+但它确实让一个设想变得具体：如果搜索能力持续增强，我们可能拥有越来越廉价、越来越可靠的定理生产能力。
+那以后呢？
+定理越便宜，理解越稀缺？ 先把开头的思想实验说准确一点。我们不需要假设 AI 能证明字面意义上的“所有数学真理”，也不需要假设每个问题都能在某套固定公理下解决。
+只需要假设：对大量人类关心、也确实可证的问题，寻找证明的成本大幅下降。
+仅仅这样，数学研究的组织方式就可能发生很大的变化。
+有些今天很值钱的技巧会贬值。有些人花几年才能清理完的技术障碍，可能变成一次调用。定理数量也会越来越难代表研究贡献。
+这并不意味着那些证明没有价值。一个长期悬而未决的问题得到可靠答案，本身就是重大进展。哪怕证明很难理解，它也可能排除一条错误路线，成为后续研究可以放心使用的工具。
+但“现在知道它成立了”和“现在理解它为什么成立了”，仍然可能相距很远。
+如果 AI 给出一个极长的证明，我们接下来可能更想知道：真正关键的假设是哪一个？有没有更统一的表述？这个机制能不能迁移？原先那些零散的例子，是否终于有了共同解释？
+这时候，数学工作的重心可能更多地转向问题选择、概念组织和证明的理解。
+注意，我说的是这些工作会更突出，不是“这些工作一定归人类”。
+前者是关于数学价值的判断。后者是关于未来能力分工的预测。两件事不能偷偷换着说。
+别急着把直觉划成人类保留地 最容易写的结尾是：AI 只能证明，人类才有 intuition 和 motivation，所以人类永远不可替代。
+可惜我不太相信这种保证。
+人类的数学直觉也不是凭空出现的。它来自大量例子、反例、类比、失败经验，以及长期形成的结构判断。至少没有明显理由说明，机器原则上永远无法形成这些能力。
+如果一个 AI 能发现新的结构，提出有解释力的定义，在陌生问题里迁移方法，还能准确预判某种推广为什么会失败，那么仅仅因为它是 AI，就说“这不算直觉”，多少有点临时修改评分标准。
+Motivation 也一样。AI 完全可能学会判断哪些问题能够连接理论、澄清障碍、打开后续工作。这种研究判断，与它是否像人一样主观地“感到好奇”，不是同一个问题。
+而且，人类的研究动机也没那么纯。好奇心、导师的方向、学界的风向、毕业要求，有时候还包括“这个估计比较容易发”。我们不必先把人类美化成一种只由求知欲驱动的生物，才能讨论机器。
+当然，能写一段漂亮的动机介绍，不代表真的完成了这些工作。说“本研究建立了深刻联系”很容易，真正建立联系很难。评价应该看它提出的概念和问题能否经受后续检验。
+所以，我不会把 intuition + motivation 当成人类最后两块永不失守的领土。
+这是我对数学研究价值的判断，不是我对人类能力优势的担保。
+即使 AI 理解了，我为什么还要理解？ 再往前推一步。假设 AI 不但能证明，而且比我们更会选问题、更会抽象、更能看见结构。
+那数学研究当然没有失去意义。它甚至可能发展得更快。
+真正受到挑战的是：人类在其中做什么？
+这里有两个经常混在一起的目标：让世界拥有某个知识，以及让我理解某个知识。
+它们不是一回事。
+世界上早就有人理解了微积分，这并没有自动让我理解微积分。一份证明已经躺在书上，也不等于我已经知道怎么用它、什么时候不能用它、该怎样把它和别的东西联系起来。
+AI 拥有某种理解，同样不会让这种理解自动出现在我的脑子里。
+如果我只需要一个结果，调用工具当然足够。没必要把每次查询都升级成精神修行。船员也不需要会制造航海钟，才能使用它。
+但如果我想自己判断一个问题的表述是否合理、一个模型遗漏了什么，或者两个答案为什么冲突，就仍然需要足够的理解。这里的“自己”，也不是拒绝工具，而是能够参与判断，而非只能接收结论。
+甚至在没有现实用途的时候，理解本身也可以是目标。那一刻发生的变化很具体：原本只能背下来的东西，现在可以推出来了；原本互不相干的现象，现在能看出联系了。
+这不是安慰奖。但它也不能反过来保证，职业数学家的数量、评价体系和社会位置会维持原样。人类仍然有理由学数学，与人类仍然保有同样的研究竞争力，需要分开讨论。
+真正值得期待的可能是：AI 不只把答案递过来，也帮助我们获得原本很难抵达的理解。它可以提供更合适的例子、把漫长证明整理成关键机制，或者把一种超出我们现有语言的结构，逐步翻译成我们能掌握的概念。
+但这需要被当成一个目标来追求。“系统知道答案”不会自动等于“人类因此懂了”。
+QED 之后，还有什么？ 回头看《经度》，我不觉得那只钟能替我们回答 AI 与数学的一切问题。
+工程实现和数学理解毕竟是不同的事情。但它们都提醒我：一个环节的成功，不会自动完成我们全部的目的。
+知道时间差可以算经度，不等于已经造出了可靠的航海钟。验证一份证明，不等于已经看清它背后的结构。而即使某个系统看清了结构，也不等于我们已经理解。
+所以，我说数学研究的本质是 intuition + motivation，最终想强调的是：
+我们为什么问这个问题，以及我们如何理解它的答案，本来就是数学的一部分。
+Proof 让判断站得住；intuition 让事实之间出现结构；motivation 让探索有方向。它们一起决定，一条正确的命题能否成为有意义的数学。
+如果 AI 将来能把这些都做好，我愿意承认它在做真正的数学。没有必要为了保住人类的特殊性，一次次把“真正的数学”搬到机器暂时还够不到的地方。
+但对我来说，数学里最想要的那个时刻，仍然不是屏幕上跳出一句“验证通过”。
+而是看着一个原本完全不明白的东西，突然发现：
+哦，原来它应该是这样。</content></entry><entry><title>AI 带来的第四次技术革命 —— 淘汰低阶技能，抬升高阶技能</title><url>/post/ai%E4%B8%8E%E6%8A%80%E6%9C%AF%E9%9D%A9%E5%91%BD/</url><categories><category>敢想</category></categories><tags><tag>敢想</tag></tags><content type="html"> 每一次技术革命淘汰的都是停留在技能低阶的人，而每一次革命都给予那些掌握更高阶技能的人前所未有的机会。
 每次技术革命到来时，人们都会说“要完了”。然而历史从未让全体人类失业——它只会淘汰技能阶数太低的人，同时把掌握更高阶技能的人推到时代的前列线。
 现在的 AI 浪潮不是意外，而是第四次技术革命。它遵循的规律和前三次工业与科技革命完全相同：淘汰的是低阶技能，不是所有技能。被替代的不是所有人，而是停在低阶的人。
 要理解这一点，必须从“技能的阶数”说起。技能是有层级的，可以像数学递归一样定义：一阶技能是直接完成任务的能力；二阶技能是能让一阶技能自动化或规模化的能力；三阶技能是能自动化或生成二阶技能的能力；四阶技能则是能自动完成三阶技能的系统能力。
@@ -58,7 +177,7 @@ C:/Program Files/OpenSC Project/OpenSC/pkcs11/opensc-pkcs11.dll 敏感肌可能�
 在 CMD 里运行：
 for %I in ("C:\Program Files\OpenSC Project\OpenSC\pkcs11\opensc-pkcs11.dll") do @echo %~sI 他会输出无空格路径，类似这个：
 C:\PROGRA~1\OPENSC~1\OpenSC\pkcs11\OPENSC~1.DLL 用它进行下一步就行了。
-4. 配置 SSH 连接 在 C:\Users\&lt;用户名>\.ssh\config 中增加一条儿配置：
+4. 配置 SSH 连接 在 C:\Users\&lt;用户名&gt;\.ssh\config 中增加一条儿配置：
 Host server_name HostName server.example.com User youruser PKCS11Provider C:\PROGRA~1\OPENSC~1\OpenSC\pkcs11\OPENSC~1.DLL 保存后直接
 ssh server_name 如果一切配置正确，Yubikey 会闪烁，触摸 Yubikey 即可认证成功并登录！
 5. 配置备用的 Yubikey 如果你像我一样打算弄俩 Yubikey 备份，可以换下一个重复操作。 要拔出来再插进去新的，两根一起插 Yubikey Manager 会受不了。
@@ -380,10 +499,10 @@ M = 100 N = 10000 dp = [m for m in range(M+1)] # diff=n-m, 压缩空间 for diff
 2022/06/11
 米莱狄明显受到系统针对，可能100%胜率太过分了，最近不让米莱狄赢。建议近期不要选。暂时将其从表格中删除. 宫本武藏重做之后彻底废了，初步下调到T4，考虑是否要调到“狗都不玩”级别</content></entry><entry><title>Python数据处理速查表</title><url>/post/python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E9%80%9F%E6%9F%A5%E8%A1%A8cheatsheet/</url><categories><category>技术</category></categories><tags><tag>技术</tag></tags><content type="html"> 以前的速查表有点乱，近期重整一下。
 Pandas import pandas as pd 数据读取 df = pd.read_excel('filepath/name.xlsx', 0, header=0) # 第0个sheet # header=0: 第一行为表头，header=None：无表头 df = pd.read_csv('file.csv') df = pd.read_csv('file.txt', sep='\t') 新建 dataframe，从 dict 直接创建：
-data = { 'name': ['李华', '二傻子'], 'age': [114, 514] } df = pd.Dataframe(data) 索引与切片 # 直接通过'[]'，字符串表示列，数字表示行 df['price'] # 选取名字为'price'的列 df[['name', 'price']] # 选取多列，把列名放在list里 df[:2] # 第0行和第1行，这里和list的切片操作一样 # iloc和loc：索引用iloc，列名用loc。iloc和loc的优势是可以进行筛选 # loc用法：df.loc[index, column_name] # 一个大坑：loc的行索引是闭区间，而不是python通用的左闭右开（但iloc是正常的） df.loc[2, 'price'] # 第2行，名字为'price'的列 df.loc[[2,3],['name','price']] # index和column_name都可灵活使用list或切片 df.loc[df['price']&lt;100,'name'] # 筛选，注意筛选条件是针对行的 # iloc用法：只要把loc的列名改成索引 df.iloc[df['price']&lt;100, 2:5] # 一样可以灵活组合list和切片 df.iloc[df['price']&lt;100 | df['price']>200] # 筛选条件'|'表示或，'&amp;'表示与 删除 df.drop(columns=['name', 'gender'], inplace=True) # 列 df.drop(index=[0, 1], inplace=True) # 行 df.drop(df[df['age'] > 80].index) # 按条件删除 预处理 描述性统计
+data = { 'name': ['李华', '二傻子'], 'age': [114, 514] } df = pd.Dataframe(data) 索引与切片 # 直接通过'[]'，字符串表示列，数字表示行 df['price'] # 选取名字为'price'的列 df[['name', 'price']] # 选取多列，把列名放在list里 df[:2] # 第0行和第1行，这里和list的切片操作一样 # iloc和loc：索引用iloc，列名用loc。iloc和loc的优势是可以进行筛选 # loc用法：df.loc[index, column_name] # 一个大坑：loc的行索引是闭区间，而不是python通用的左闭右开（但iloc是正常的） df.loc[2, 'price'] # 第2行，名字为'price'的列 df.loc[[2,3],['name','price']] # index和column_name都可灵活使用list或切片 df.loc[df['price']&lt;100,'name'] # 筛选，注意筛选条件是针对行的 # iloc用法：只要把loc的列名改成索引 df.iloc[df['price']&lt;100, 2:5] # 一样可以灵活组合list和切片 df.iloc[df['price']&lt;100 | df['price']&gt;200] # 筛选条件'|'表示或，'&amp;'表示与 删除 df.drop(columns=['name', 'gender'], inplace=True) # 列 df.drop(index=[0, 1], inplace=True) # 行 df.drop(df[df['age'] &gt; 80].index) # 按条件删除 预处理 描述性统计
 df.count() # 非空观测数量 df.sum() # 和，可指定axis；mean, median, mode 同理 df.std() # 标准差 df.min() # max 缺失值
 df.isna.sum() # 每列缺失值个数 df.fillna(0) # NaN用0填充 df.fillna(df.mean()) df.isnull().any() # 有缺失值的列 df.isnull().T.any() # 有缺失值的行 异常值
-# 3σ zscore = (df['salary'] - df['salary'].mean()) / df['salary'].std() zscore.abs() > 3 # 是outlier的mask 重复值
+# 3σ zscore = (df['salary'] - df['salary'].mean()) / df['salary'].std() zscore.abs() &gt; 3 # 是outlier的mask 重复值
 df.drop_duplicates(['name', 'age'], 'first', inplace=True) # subset用来指定特定的列，默认所有列 # keep : {‘first’, ‘last’, False}, default ‘first’，保留第一个</content></entry><entry><title>基于社会面消杀的太平洋消杀方案</title><url>/post/%E5%A4%AA%E5%B9%B3%E6%B4%8B%E6%B6%88%E6%9D%80/</url><categories><category>整活</category></categories><tags><tag>整活</tag></tags><content type="html"> 对太平洋进行消杀可以有效防止美国跨洋投毒。本文探讨了对太平洋进行消杀的方案。包括次氯酸钠消毒、加热消毒和中药消毒。分析结果表明，几种消毒方案均需要大量成本，但比起美国跨洋投毒的风险，这些成本都是可以接受的。
 文中涉及大量计算，难免会出现计算错误。如果发现有错误，请不要指出，而是直接更改宇宙中的相关常数，因为防控策略永远不会错！
 关键词：太平洋；社会面消杀；连花清瘟；赢麻了；加速
@@ -471,10 +590,10 @@ k 是第 1 节说的 a 前面的系数，N 是此人要支付的点数。
 平滑化 实战中 30 符很常见，我们以 30 符为例算一下不同番的基本点：
 番数 基本点 1 240 2 480 3 960 4 1920 5 3840 6 7680 7 15360 8 30720 可以看到，这里存在一个指数爆炸的问题，如果闲家点闲家的 8 番 30 符，按照上面算法竟然要支付 122900 点，而四个人点棒加起来才 100000 点，如果真的发生这种事情，点炮者只点了 8 番就要输光内裤，很可能会羞愤而死，非常危险。为了解决这一问题，我们需要对较大的番数进行特殊处理，不让他指数爆炸。
 最简单的方法就是设计一个上限，习惯上取了个 4 番~ 5 番附近的点数 2000。我们规定：
-如果 a > 2000，则按 2000 计算 我们来看看这意味着什么。最小的符数是 20 符，20 符 4 番是 1280 点，20 符 5 番是 2560 点，所以大于等于 5 番时，a 一定是 2000. 而番数小于 5 番时，符数较大也会达到 2000，例如 4 番 40 符（a=2560），3 番 70 符（a=2240），2 番 130 符等。我们把这种 a 超过 2000 的情况称为“满贯”，直接计 a=2000.
+如果 a &gt; 2000，则按 2000 计算 我们来看看这意味着什么。最小的符数是 20 符，20 符 4 番是 1280 点，20 符 5 番是 2560 点，所以大于等于 5 番时，a 一定是 2000. 而番数小于 5 番时，符数较大也会达到 2000，例如 4 番 40 符（a=2560），3 番 70 符（a=2240），2 番 130 符等。我们把这种 a 超过 2000 的情况称为“满贯”，直接计 a=2000.
 可以看到，5 番是一个分水岭。只要达到 5 番，一定是满贯（这也意味着 5 番及以上不用算符了，妙极了）。
 但如果只这样，又不太好，5 番和 13 番都是 2000 点，和 13 番的人可能会羞愤而死，非常危险。我们可以设一个循序渐进的界限：
-如果 1~5 番，a &lt; 2000，正常计算 如果 1~5 番，a > 2000，称为满贯，取 a = 2000 6~7 番，称为跳满（即 1.5 倍满贯），取 a = 3000 8~10 番，称为倍满，取 a = 4000 11~12 番，称为三倍满，取 a = 6000 13番及以上，称为累计役满（即 4 倍满贯），取 a = 8000 好起来了！
+如果 1~5 番，a &lt; 2000，正常计算 如果 1~5 番，a &gt; 2000，称为满贯，取 a = 2000 6~7 番，称为跳满（即 1.5 倍满贯），取 a = 3000 8~10 番，称为倍满，取 a = 4000 11~12 番，称为三倍满，取 a = 6000 13番及以上，称为累计役满（即 4 倍满贯），取 a = 8000 好起来了！
 役满 刚才我们提到了累计役满。实际上，番数表里面除了常规的番，还有专门的“役满”。这些“役满”都是极难达成的，为了体现它们的特殊地位，就设立了役满的规则。
 役满可以理解为“高阶满贯”。正如满贯让玩家可以忽略符数，役满可以让玩家忽略普通的番数，而只计算役满。例如同时成立清一色和绿一色时，只计算绿一色的役满，不计算清一色的 6 番（或 5 番）。
 役满和累计役满一样，a = 8000，非常好算。
@@ -652,7 +771,7 @@ A 话题正在被讨论 B 话题突然插了进来，好像和A有关，但实�
 德克萨斯神枪手 名字逐渐怪异起来。他还有一个更形象的说法叫“先射箭再画靶”。通俗地讲，就是在大量的数据/证据中刻意地挑选出对自己的观点有利的数据/证据，而将其余对自己不利的数据/证据弃之不用。
 例：
 1992年瑞典有个研究试图找出电源线对健康的影响，他们收集了高压电源线300米范围内所有住户的样本长达25年，对超过800种疾病一一检查发生率的统计差异。他们发现幼年白血病的发病率是一般人的4倍，还推动政府为此采取行动。
-要解释这个问题，需要点统计学知识。一般来说统计上 p-value &lt; 0.05 便认为显著，而这种显著性有 5% 的概率是因为随机因素引起的。当我们统计 800 种疾病，至少有一种疾病由随机因素产生“假阳性”结果的概率是： $$ 1-(1-0.05)^{800}>1-10^{-17} $$ 也就是说，如果我们故意针对它，我们有超过 $1-10^{-17}$ 的概率找到一种疾病来让它背锅，而实际上这只是随机因素引起的。
+要解释这个问题，需要点统计学知识。一般来说统计上 p-value &lt; 0.05 便认为显著，而这种显著性有 5% 的概率是因为随机因素引起的。当我们统计 800 种疾病，至少有一种疾病由随机因素产生“假阳性”结果的概率是： $$ 1-(1-0.05)^{800}&gt;1-10^{-17} $$ 也就是说，如果我们故意针对它，我们有超过 $1-10^{-17}$ 的概率找到一种疾病来让它背锅，而实际上这只是随机因素引起的。
 数据聚集现象无处不在。比如我们在平面上随机生成一些点，总会有某些区域的数据恰好呈现出某种规律性，想要寻找某种解释的人一定会找到一种解释。
 当遇到一些巧合时，经常有人会说“哪有那么巧的事？一定是超自然力量作祟”。但是仔细想想，我们活了这么多年，见过和经历过大大小小的事件不计其数，要是一次巧合都没有遇到过，那才是巧了。
 不当类比 就是字面意思，不合适的类比。多见于心灵鸡汤。
@@ -704,7 +823,7 @@ Lebesgue 积分 设测度空间 $(\Omega,\mathcal{F},\nu)$, 下面我们对所�
 概率密度函数（PDF） 我们希望建立起“概率密度函数”这一概念。通常可以理解为 CDF 的导数。
 绝对连续（Absolutely continuity） 定义 $\lambda$ 和 $\nu$ 是可测空间上的两个测度，若对任意的可测集 $A$ 都有：$\nu(A)=0\Rightarrow \lambda(A)=0$，则称 $\lambda$ 关于 $\nu$ 绝对连续，记作 $\lambda\ll\nu$.
 乍一看和连续没啥关系，但对 $\sigma$-finite 的测度，我们有一个长得像“连续”的推论：
-若 $\lambda$ 是有限的，则 $\lambda\ll\nu$ 当且仅当 $\forall\varepsilon>0,\exist\delta>0,s.t\ \forall A,\nu(A)&lt;\delta\Rightarrow \lambda(A)&lt;\varepsilon$.
+若 $\lambda$ 是有限的，则 $\lambda\ll\nu$ 当且仅当 $\forall\varepsilon&gt;0,\exist\delta&gt;0,s.t\ \forall A,\nu(A)&lt;\delta\Rightarrow \lambda(A)&lt;\varepsilon$.
 意思是，当 $\nu$ 给出非常小的测度时，$\lambda$ 也必须小。证明留做习题。也可参见：测度的绝对连续和相互奇异 - 查哥半桶水的文章 - 知乎 Proposition 13.9
 。
 Radon-Nikodym 导数 我们先来看一个命题，证明留做习题。
@@ -719,7 +838,7 @@ $f$ 为非负可测函数，令 $$ \lambda(A):=\int_Af{\mathrm d}v,A\in\mathscr{
 随机变量的数字特征 矩（Moments） 定义 对于 $(\Omega,\mathcal{F},P)$，若如下积分存在，则称之为期望： $$ \mathrm{E}(X)=\int_\Omega X(\omega)dP(\omega)=\int_\mathbb{R}xdF_X(x). $$ 更一般地，设 $n$ 为正整数，若 $\mathrm E(X^n)$ 存在，则称为 $X$ 的 $n$ 阶矩（moment）；若 $\mathrm E((X-\mathrm EX)^n)$ 存在，则称为 $X$ 的 $n$ 阶中心矩。二阶中心矩又叫做方差，记作 $\mathrm{Var}(X)$.
 对随机向量，定义是类似的，对每个位置分别计算矩即可。
 特征函数与矩母函数 定义 有随机变量 $X$。特征函数（characteristic function, ch.f.）$\varphi:\mathbb{R}\to\mathbb{C}$ 定义为 $$ \varphi_X(t)=\mathrm E\left(e^{itX} \right),\ \forall t\in \mathbb{R}. $$ 矩母函数（moment generating function, m.g.f.） $\psi:\mathbb{R}\to\mathbb{R}$ 定义为 $$ \psi_X(t)=\mathrm E\left(e^{tX}\right),\ \forall t\in \mathbb{R}. $$ 几点说明：
-$\left|e^{itX}\right|\leq 1$，因此 $\varphi$ 总是存在且有限。 $e^{tX}>0$，因此 $\psi$ 也总有定义，但有可能是无穷大。 若密度函数 $f$ 存在，则 $\varphi$ 是 $f$ 的 Fourier 变换，$\psi$ 是 $f$ 的 Laplace 变换。 我们介绍几条性质。
+$\left|e^{itX}\right|\leq 1$，因此 $\varphi$ 总是存在且有限。 $e^{tX}&gt;0$，因此 $\psi$ 也总有定义，但有可能是无穷大。 若密度函数 $f$ 存在，则 $\varphi$ 是 $f$ 的 Fourier 变换，$\psi$ 是 $f$ 的 Laplace 变换。 我们介绍几条性质。
 性质 若 $\psi_X$ 在一个包含 0 的开区间内有限，则
 $X$ 的任意阶矩存在有限，并且 $E(X^n)=\left.\dfrac{d^n\psi_X(t)}{dt^n}\right|_{t=0}$， $\psi_X$ 唯一决定了一个概率分布， $\varphi_X(t)=\psi_X(it)$. 性质 $\varphi(x)$ 唯一决定了一个概率分布。
 我要另起一篇写了，不然这页就太长了。</content></entry><entry><title>公理化概率论（下）</title><url>/post/5215-2%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8B/</url><categories><category>课程笔记</category></categories><tags><tag>学习</tag></tags><content type="html"> 接着上一篇。
@@ -747,10 +866,10 @@ Cauchy 不等式 对内积空间中的向量 $x$ 和 $y$，有 $$ |\langle x,y\r
 期望 $$ \mathrm E (XY)^2\leq \mathrm E(X^2)\mathrm E (Y^2). $$
 协方差 $$ \mathrm{Cov}(X,Y)^2\leq {\mathrm Var}(X){\mathrm Var}(Y). $$
 Jensen 不等式 $\varphi$ 是凸函数，即 $\varphi(tx+(1-t)y)\leq t\varphi(x)+(1-t)\varphi(y)$，则 $$ \varphi\left(\int_\Omega gd\mu\right)\leq \int_\Omega \varphi \circ gd\mu. $$ 积分换成期望就变成了概率论中的形式： $$ \varphi(\mathrm E(X))\leq \mathrm E(\varphi(X)). $$
-Chebyshev 不等式（Markov 不等式） 设 $(\Omega, \mathcal F,\mu)$ 是测度空间。若 $g$ 是非负非减函数，对任意实数 $t$ 有 $$ g(t)\mu({x:f(x)\ge t})\leq \int_\Omega g\circ fd\mu. $$ 令 $f=|X|$, $g(t)=\begin{cases}t,&amp;t\ge 0\0,&amp;t&lt;0 \end{cases}$，可得 Markov 不等式 $$ P(|X|\ge t)\leq \frac{\mathrm E(|X|)}{t},\ \forall t>0. $$ 令 $f=|X-\mathrm E(X)|$, $g(t)=\begin{cases}t^2,&amp;t\ge 0\0,&amp;t&lt;0 \end{cases}$，可得概率论形式的 Chebyshev 不等式 $$ P(|X-\mathrm E(X)|\ge t)\leq \frac{\mathrm{Var}(X)}{t^2},\ \forall t>0. $$ 若令 $t=k\sigma$，则可以理解为：与均值相差 $k$ 个标准差以上的值，数量不多于 $1/k^2$.
+Chebyshev 不等式（Markov 不等式） 设 $(\Omega, \mathcal F,\mu)$ 是测度空间。若 $g$ 是非负非减函数，对任意实数 $t$ 有 $$ g(t)\mu({x:f(x)\ge t})\leq \int_\Omega g\circ fd\mu. $$ 令 $f=|X|$, $g(t)=\begin{cases}t,&amp;t\ge 0\0,&amp;t&lt;0 \end{cases}$，可得 Markov 不等式 $$ P(|X|\ge t)\leq \frac{\mathrm E(|X|)}{t},\ \forall t&gt;0. $$ 令 $f=|X-\mathrm E(X)|$, $g(t)=\begin{cases}t^2,&amp;t\ge 0\0,&amp;t&lt;0 \end{cases}$，可得概率论形式的 Chebyshev 不等式 $$ P(|X-\mathrm E(X)|\ge t)\leq \frac{\mathrm{Var}(X)}{t^2},\ \forall t&gt;0. $$ 若令 $t=k\sigma$，则可以理解为：与均值相差 $k$ 个标准差以上的值，数量不多于 $1/k^2$.
 Holder 不等式 设 $1\leq p,q\leq\infty$，并且 $\dfrac{1}{p}+\dfrac{1}{q}=1$，有结论 $|fg|1\leq |f|p |g|q$，写成积分就是 $$ \int\Omega |fg|d\mu\leq \left(\int\Omega |f|^pd\mu\right)^\frac{1}{p}\left(\int\Omega |g|^qd\mu\right)^\frac{1}{q}. $$
 注：
-令 $p=q=2$，立刻可得 Cauchy 不等式。所以它可以看成 Cauchy 不等式的推广。 若 $p=\infty$，则 $|f|_\infty=\inf {a:\mu(f(x)>a)=0}$，称为本性上确界。 右端若出现 0 乘以 $\infty$，则视作 0. 积分换成期望，有 $$ \mathrm E\left(|XY|\right)\leq \left(E|X|^p\right)^\frac{1}{p}\left(E|Y|^q\right)^\frac{1}{q}. $$
+令 $p=q=2$，立刻可得 Cauchy 不等式。所以它可以看成 Cauchy 不等式的推广。 若 $p=\infty$，则 $|f|_\infty=\inf {a:\mu(f(x)&gt;a)=0}$，称为本性上确界。 右端若出现 0 乘以 $\infty$，则视作 0. 积分换成期望，有 $$ \mathrm E\left(|XY|\right)\leq \left(E|X|^p\right)^\frac{1}{p}\left(E|Y|^q\right)^\frac{1}{q}. $$
 Minkovski 不等式 Minkovski 不等式是 $L^p$ 中的三角不等式。设 $1\leq p\leq\infty$，则 $|f+g|p\leq |f|p+|g|p$. 写成积分： $$ \left(\int\Omega |f+g|^p d\mu\right)^\frac{1}{p}\le \left(\int\Omega |f|^p d\mu\right)^\frac{1}{p}+\left(\int\Omega |g|^p d\mu\right)^\frac{1}{p}. $$ 期望形式： $$ \left(\mathrm E |X+Y|^p\right)^\frac{1}{p}\le \left(\mathrm E |X|^p\right)^\frac{1}{p} + \left(\mathrm E |Y|^p\right)^\frac{1}{p}. $$
 Lyapunov 不等式 若 $0&lt;s&lt;t$，则 $$ \left(\mathrm E|X|^s\right)^\frac{1}{s}\le \left(\mathrm E|X|^t\right)^\frac{1}{t}. $$ 证明只要令 $p=t/s,q=p/(p-1)$，然后对 $|X|^s$ 和 $1$ 用 Holder 不等式即可。过程中要用到测度有限，所以对一般的测度空间这个不成立。
 随机变量的极限性质 预备知识 集合序列 首先我们定义集合的上下极限。对一列集合 $A_n$，它的上确界为它们的并，下确界为他们的交，即 $$ \sup A_n=\bigcup_{n\ge 1}A_n,\quad\inf A_n=\bigcap_{n\ge 1}A_n. $$ 类似于数列的上下极限，集合序列的上下极限分别是上确界和下确界的极限，即 $$ \begin{gather} \limsup_{n\to\infty} A_n=\bigcap_{n\ge 1}\bigcup_{j\ge n}A_j,\ \liminf_{n\to\infty} A_n=\bigcup_{n\ge 1}\bigcap_{j\ge n}A_j. \end{gather} $$ 上极限中的元素可以理解为“出现在无穷多个集合中”，而下极限中的元素可以理解为“只有有限多个集合里没有它”。
@@ -762,12 +881,12 @@ Borel-Cantelli 引理 我们可以介绍著名的 Borel-Cantelli 引理了。
 第二引理如果把“两两独立”改成“独立”则较为简单，读者可自行完成。两两独立的证明可以参考 https://www.ma.imperial.ac.uk/~bin06/Stochastic-Analysis/ma414soln5.pdf
 收敛有四种情况 考虑四种收敛：
 几乎必然收敛：$P(\lim_n X_n=X)=1$.
-依概率收敛：$\forall\varepsilon>0,\lim_n P(|X_n-X|>\varepsilon) =0$.
+依概率收敛：$\forall\varepsilon&gt;0,\lim_n P(|X_n-X|&gt;\varepsilon) =0$.
 $L^p$ 收敛（convergence in $L^p$）：$\lim_n\mathrm E|X_n-X|^p=0$.
 依分布收敛（convergence in distribution, weak convergence）：在 $F(x)$ 的连续点上满足 $\lim_n F_n(x)=F(x)$.
 他们的关系如下图。
 一些性质：
-若 $X_n\overset{d} \to c$，$c$ 为常数，则 $X_n\overset{p}\to c$. 若 $X_n\overset{P}\to X$，则存在子序列 $X_{n_j}\overset{a.s.}\to X$. 设 $X_n\overset{d}\to X$，则对任意 $r>0$，以下两条等价： $\lim_{n\to\infty} \mathrm E|X_n|^r=\mathrm E|X|^r&lt;\infty$， $\lim_{t\to \infty}\sup_n \mathrm E(|X_n|^r I(|X_n|>t))=0$. a.s. 收敛 对于 a.s. 收敛，我们有等价表述： $$ \lim_n P(\bigcup_{m=n}^\infty{|X_m-X|>\varepsilon})=0, $$ 也即 $$ P(\limsup_{n\to\infty} {|X_n-X|>\varepsilon})=0, $$ 由此可以一眼看出它比依概率收敛强。此外，根据 Borel-Cantelli 引理，若 $\forall\varepsilon>0,\ \sum_{n=1}^\infty P({\omega\in\Omega:|X_n(\omega)-X(\omega)|>\varepsilon})&lt;\infty$，则 $X_n\overset{a.s.}\to X$.
+若 $X_n\overset{d} \to c$，$c$ 为常数，则 $X_n\overset{p}\to c$. 若 $X_n\overset{P}\to X$，则存在子序列 $X_{n_j}\overset{a.s.}\to X$. 设 $X_n\overset{d}\to X$，则对任意 $r&gt;0$，以下两条等价： $\lim_{n\to\infty} \mathrm E|X_n|^r=\mathrm E|X|^r&lt;\infty$， $\lim_{t\to \infty}\sup_n \mathrm E(|X_n|^r I(|X_n|&gt;t))=0$. a.s. 收敛 对于 a.s. 收敛，我们有等价表述： $$ \lim_n P(\bigcup_{m=n}^\infty{|X_m-X|&gt;\varepsilon})=0, $$ 也即 $$ P(\limsup_{n\to\infty} {|X_n-X|&gt;\varepsilon})=0, $$ 由此可以一眼看出它比依概率收敛强。此外，根据 Borel-Cantelli 引理，若 $\forall\varepsilon&gt;0,\ \sum_{n=1}^\infty P({\omega\in\Omega:|X_n(\omega)-X(\omega)|&gt;\varepsilon})&lt;\infty$，则 $X_n\overset{a.s.}\to X$.
 依分布收敛 下面的定理允许我们通过依分布收敛构造出 a.s. 收敛，厉害死了。
 定理（Skorohod） 若 $X_n\overset{d}\to X$，则存在同一个概率空间上的随机变量 $Y,Y_1,Y_2,\cdots$，使得 $P_{Y_n}=P_{X_n},P_Y=P_X$（测度相等）且 $Y_n\overset{a.s.}\to Y$.
 我们可以通过特征函数或密度函数来判断依分布收敛。
@@ -783,14 +902,14 @@ $X_n+Y_n\overset{d}\to X+c$ $X_nY_n\overset{d}\to cX$ $X_n/Y_n\overset{d}\to X/c
 $X_n\overset{d}\to X$, $\mathrm E h(X_n)\to \mathrm E h(X)$，对任意有界连续函数 $h$， 对任意闭集 $C\subset \mathbb{R}^k$，$\limsup_n P_{X_n}(C)\le P_X(C)$， 对任意开集 $O\subset \mathbb{R}^k$，$\limsup_n P_{X_n}(O)\ge P_X(O)$. 随机变量的渐近性质 类似于数列的 $O$，$o$ 记号，我们有：
 $X_n=O_{a.s.}(Y_n)$，当且仅当 $P(|X_n|=O(Y_n))=1$，也即 $|X_n|\le c|Y_n|$ a.s.,
 $X_n=o_{a.s.}(Y_n)$，当且仅当 $X_n/Y_n\overset{a.s.}\to 0$,
-$X_n=O_P(Y_n)$，当且仅当 $\forall\varepsilon>0,\exists C>0,n_0\in\mathbb{N}$，使得 $$ \sup_{n\ge n_0}P({\omega\in\Omega:|X_n(\omega)|\ge C|Y_n(\omega)|})&lt;\varepsilon. $$
+$X_n=O_P(Y_n)$，当且仅当 $\forall\varepsilon&gt;0,\exists C&gt;0,n_0\in\mathbb{N}$，使得 $$ \sup_{n\ge n_0}P({\omega\in\Omega:|X_n(\omega)|\ge C|Y_n(\omega)|})&lt;\varepsilon. $$
 $X_n=o_P(Y_n)$，当且仅当 $X_n/Y_n\overset{P}\to 0$.
 特别地，若 $X_n=O_P(1)$，称 $X_n$ 依概率有界。
 我们放出一些性质（$O$ 是 $O_P$ 或 $O_{a.s.}$）：
 传递性：$X_n=O(Y_n),Y_n=O(Z_n)\Rightarrow X_n=O(Z_n)$, $X_n=O(Z_n)\Rightarrow X_nY_n=O(Y_nZ_n)$, $X_n=O(Z_n),Y_n=O(Z_n)\Rightarrow X_n=O(Z_n)$, 若 $X_n\overset{a.s.}\to X$，则 ${\sup_{n\ge k}|X_n|}_k=O_P(1)$, 若 $X_n\overset{d}\to X$，则 $X_n=O_P(1)$, 若 $\mathrm E|X_n|=O({\text 或 } o)(a_n)$，则 $X_n=O({\text 或 } o)_P(a_n)$. 上面最后一条可以用 Markov 不等式证明。
 大数定律与中心极限定理 这两个东西在概率论中的地位家喻户晓。
 大数定律 定理（强大数定律） $X_n$ i.i.d.，若 $\mathrm E|X_1|&lt;\infty$，则 $$ \frac{1}{n}\sum_{i=1}^nX_i\overset{a.s.}\to \mathrm EX_1. $$ 反之，若 $\mathrm E|X_1|&lt;\infty$ 且 $\dfrac{1}{n}\sum_{i=1}^nX_i\overset{a.s.}\to c$，则 $c=\mathrm EX_1$.
-定理（弱大数定律） $X_n$ i.i.d.，若 $nP(|X_1|>n)\to 0$，则 $$ \frac{1}{n}\sum_{i=1}^nX_i-\mathrm E[X_1 I(|X_1|\le n)]\overset{P}\to 0. $$ 从而 $\dfrac{1}{n}\sum_{i=1}^nX_i\overset{P}\to \mathrm EX_1$.
+定理（弱大数定律） $X_n$ i.i.d.，若 $nP(|X_1|&gt;n)\to 0$，则 $$ \frac{1}{n}\sum_{i=1}^nX_i-\mathrm E[X_1 I(|X_1|\le n)]\overset{P}\to 0. $$ 从而 $\dfrac{1}{n}\sum_{i=1}^nX_i\overset{P}\to \mathrm EX_1$.
 对于不是 i.i.d. 的情况，我们也有大数定律。
 定理 设 $X_1,X_2,\cdots$ 独立且期望有限，则
 （强大数定律）若存在常数 $p\in[1,2]$ 使得 $\sum_{i=1}^\infty\dfrac{\mathrm E|X_i|^p}{i^p}&lt;\infty$，则
@@ -817,7 +936,7 @@ $$ \frac{1}{n}\sum_{i=1}^nX_i\overset{a.s.}\to \mathrm EX_1. $$
 定理 设 $\mathcal{P}_0\subset\mathcal{P}$ 且 $\mathcal{P}_0$-a.s. $\Rightarrow \mathcal{P}$-a.s.，若 $T$ 关于 $\mathcal{P}$ 是充分统计量，且关于 $\mathcal{P}_0$ 是极小充分统计量，则 $T$ 关于 $\mathcal{P}$ 是极小充分统计量。
 $\mathcal{P}$-a.s. 指的是对 $\mathcal{P}$ 中的所有东西都是 a.s..
 定理 设 $\mathcal{P}$ 可列，其 p.d.f. 为 $f_0,f_1,\cdots$，则
-令 $c_i>0,\sum_{i=0}^\infty c_i=1$，且 $f_\infty(x)=\sum_{i=0}^\infty c_if_i(x)$. 可知 $f_\infty(x)\ne 0$, a.e.. 令 $T_i(x)=\dfrac{f_i(x)}{f_\infty (x)}$，则 $T(X)=(T_0(x),T_1(x),\cdots)$ 是 $\mathcal{P}$ 的极小充分统计量。 若 $\forall i,{x:f_i(x)>0}\subset{x:f_0(x)>0}$，则 $T(X)=(\dfrac{f_1(X)}{f_0(X)},\dfrac{f_2(X)}{f_0(X)},\cdots)$ 是 $\mathcal{P}$ 的极小充分统计量。 定理 设 $\mathcal{P}$ 都存在 p.d.f. $f_P$，$T(X)$ 是充分统计量，若对任意的 $x,y$， $$ \frac{f_P(x)}{f_P(y)}\text{与}P\text{无关}\Rightarrow T(x)=T(y), $$ 则 $T(X)$ 是极小充分统计量。
+令 $c_i&gt;0,\sum_{i=0}^\infty c_i=1$，且 $f_\infty(x)=\sum_{i=0}^\infty c_if_i(x)$. 可知 $f_\infty(x)\ne 0$, a.e.. 令 $T_i(x)=\dfrac{f_i(x)}{f_\infty (x)}$，则 $T(X)=(T_0(x),T_1(x),\cdots)$ 是 $\mathcal{P}$ 的极小充分统计量。 若 $\forall i,{x:f_i(x)&gt;0}\subset{x:f_0(x)&gt;0}$，则 $T(X)=(\dfrac{f_1(X)}{f_0(X)},\dfrac{f_2(X)}{f_0(X)},\cdots)$ 是 $\mathcal{P}$ 的极小充分统计量。 定理 设 $\mathcal{P}$ 都存在 p.d.f. $f_P$，$T(X)$ 是充分统计量，若对任意的 $x,y$， $$ \frac{f_P(x)}{f_P(y)}\text{与}P\text{无关}\Rightarrow T(x)=T(y), $$ 则 $T(X)$ 是极小充分统计量。
 完备统计量 极小充分统计量仍然有冗余信息。例如 $T$ 是极小充分统计量，则 $(T,e^T)$ 也他娘的是极小充分统计量，你说这上哪说理去？所以我们还得接着干。
 定义 统计量 $T(X)$ 是完备的（complete），当且仅当对任意 Borel 函数 $f$，$\forall P\in\mathcal{P},E_P(f(T))=0\Rightarrow f(T)=0$. 如果把 $f$ 限定为有界函数，则称为有界完备（boundedly complete）。
 这意味着没有任何 non-trivial 的函数能对 $T$ 的信息进一步压缩了。
@@ -832,9 +951,9 @@ $\mathcal{P}$-a.s. 指的是对 $\mathcal{P}$ 中的所有东西都是 a.s..
 教材和 PPT 都略过了 well-defined 的证明，我们进行了补充，见附录。
 由于各种变化因素，指数族的表达式五花八门。我们需要规定标准型。令 $\eta=\eta(\theta)$，我们得到 $$ f_\eta(\omega)=\exp\left(\eta^TT(\omega)-\zeta(\eta)\right)h(\omega). $$ 这叫做指数族的标准型（canonical form），用标准型表示的指数族称为自然指数族（natural exponential family, NEF）。新的参数空间变为 $\Xi={\eta(\theta):\theta\in\Theta}\subset \mathbb{R}^p$. 如果 $\Xi$ 包含开集，则称指数族满秩（full rank）。
 满秩的条件可以防止 $T$ 线性相关，使得其具有更好的性质。
-指数族的判定 性质 设 $P_\theta$ 是指数族，则存在非零测度 $\lambda$ 使得 $\dfrac{dP_\theta}{d\lambda}>0,\ \lambda$-a.e..
+指数族的判定 性质 设 $P_\theta$ 是指数族，则存在非零测度 $\lambda$ 使得 $\dfrac{dP_\theta}{d\lambda}&gt;0,\ \lambda$-a.e..
 事实上，只要取 $\lambda(A)=\int_A hd\nu$ 即可把 $h$ 消掉，于是性质得证。这给我们提供了一个很好的判定依据：如果 $\dfrac{dP_\theta}{d\lambda}=0\Rightarrow\lambda\equiv0$，那他就不是指数族。
-性质 指数族的 $f_\theta$ 有相同的支撑集 $\text{supp}(f_\theta)={x:h(x)>0}$.
+性质 指数族的 $f_\theta$ 有相同的支撑集 $\text{supp}(f_\theta)={x:h(x)&gt;0}$.
 这可以用来判定，如果支撑集不同，则不是指数族。
 统计量 $T$ 可以证明，对满秩的自然指数族，$T$ 是一个完备极小充分统计量。
 定理 设 $\mathcal{P}$ 是自然指数族，$f_\eta(\omega)=\exp\left(\eta^TT(\omega)-\zeta(\eta)\right)h(\omega)$. 如令 $T=(Y,U),\ \eta=(\vartheta,\varphi)$，其中 $Y$ 和 $\vartheta$ 维度相同（特别地，可以令 $Y=T$，就没有 $U$ 了）。则存在和 $\varphi$ 有关的测度，使得 $Y$ 在其上有 p.d.f. $$ f_Y(y)=\exp\left(\vartheta^Ty-\zeta(\eta)\right). $$ 此外，给定 $U=u$，存在和 $u$ 有关的测度，使得 $Y$ 在其上有条件分布 $$ f_{Y|U=u}(y)=\exp\left(\vartheta^Ty-\zeta_u(\vartheta)\right). $$
@@ -842,7 +961,7 @@ $\mathcal{P}$-a.s. 指的是对 $\mathcal{P}$ 中的所有东西都是 a.s..
 这节就结束了……内容有点少，但是下一节点估计的内容巨多，如果这里不分节的话可能要炸……
 附录 指数族定义的证明 定义 设参数族 $\mathcal{P}={P_\theta}$ 被 $\sigma$-有限的测度 $\nu$ 控制，对应的概率密度函数 $f_\theta=\dfrac{d P_\theta}{d\nu}$. 称 $\mathcal{P}$ 是**指数族（exponential family）**当且仅当能写成如下形式： $$ f_\theta(\omega)=\exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right)h(\omega),\ \omega\in\Omega, $$ 其中 $T$ 是 $p$ 维随机向量，$\eta:\Theta\to\mathbb{R}^p$, $h$ 是 $\Omega$ 上的非负 Borel 函数。$\xi(\theta)$ 是归一化用的，选取它的值使得 $f_\theta$ 的积分是 1 就好啦。
 如果选取不同的 $\nu$, $f_\theta$ 的表达形式会改变。我们需要证明 well-defined：如果存在 $\nu$ 使得 $\dfrac{dP_\theta}{d\nu}$ 可写成上述形式，则对另一控制 $\mathcal{P}$ 的测度 $\nu&rsquo;$，$\dfrac{dP_\theta}{d\nu&rsquo;}$ 仍能写成上述形式。
-证明：设 $\dfrac{dP_\theta}{d\nu}=\exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right)h(\omega)$, 定义测度 $\lambda(A)=\int_A hd\nu$. 对可测集 $A$，若 $\lambda(A)=0$，则有 $$ \lambda(A)=\int_{A\cap {\omega:h(\omega)=0}} h(\omega)d\nu+ \int_{A\cap {\omega:h(\omega)>0}} h(\omega)d\nu=0. $$ 上式两项都是 0，而第二项的被积函数严格大于 0，于是有 $$ \nu\left({A\cap {\omega:h(\omega)>0}}\right)=0. $$ 因此 $$ P_\theta(A)=\left(\int_{A\cap {\omega:h(\omega)=0}} + \int_{A\cap {\omega:h(\omega)>0}}\right) \exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right)h(\omega) d\nu=0. $$ 这是因为第一个积分的被积函数是 0，而第二个积分的集合是零测集. 至此我们得到 $\lambda\gg P_\theta$. 注意到 $\dfrac{d\lambda}{d\nu}\ne 0,\ \lambda$-a.e.，于是 $$ \frac{dP_\theta}{d\lambda}=\frac{dP_\theta}{d\nu}\left(\frac{d\lambda}{d\nu}\right)^{-1}=\exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right). $$ 由于 $\dfrac{dP_\theta}{d\lambda}>0$，故 $\lambda\ll P_\theta$.
+证明：设 $\dfrac{dP_\theta}{d\nu}=\exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right)h(\omega)$, 定义测度 $\lambda(A)=\int_A hd\nu$. 对可测集 $A$，若 $\lambda(A)=0$，则有 $$ \lambda(A)=\int_{A\cap {\omega:h(\omega)=0}} h(\omega)d\nu+ \int_{A\cap {\omega:h(\omega)&gt;0}} h(\omega)d\nu=0. $$ 上式两项都是 0，而第二项的被积函数严格大于 0，于是有 $$ \nu\left({A\cap {\omega:h(\omega)&gt;0}}\right)=0. $$ 因此 $$ P_\theta(A)=\left(\int_{A\cap {\omega:h(\omega)=0}} + \int_{A\cap {\omega:h(\omega)&gt;0}}\right) \exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right)h(\omega) d\nu=0. $$ 这是因为第一个积分的被积函数是 0，而第二个积分的集合是零测集. 至此我们得到 $\lambda\gg P_\theta$. 注意到 $\dfrac{d\lambda}{d\nu}\ne 0,\ \lambda$-a.e.，于是 $$ \frac{dP_\theta}{d\lambda}=\frac{dP_\theta}{d\nu}\left(\frac{d\lambda}{d\nu}\right)^{-1}=\exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right). $$ 由于 $\dfrac{dP_\theta}{d\lambda}&gt;0$，故 $\lambda\ll P_\theta$.
 设 $\sigma$-有限的测度 $\nu&rsquo;$ 满足 $\nu&rsquo;\gg P_\theta$，我们有 $\nu&rsquo;\gg \lambda$，于是 $$ \frac{dP_\theta}{d\nu&rsquo;}=\frac{dP_\theta}{d\lambda}\frac{d\lambda}{d\nu&rsquo;}=\exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right)\frac{d\lambda}{d\nu&rsquo;}. $$ 注意到 $\dfrac{d\lambda}{d\nu&rsquo;}$ 只是 $\omega$ 的函数，因此我们得到了指数族的表达式。∎</content></entry><entry><title>统计学基础（下）-点估计</title><url>/post/5215-4%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8B-%E4%BC%B0%E8%AE%A1%E4%B8%8E%E6%8E%A8%E6%96%AD/</url><categories><category>课程笔记</category></categories><tags><tag>学习</tag></tags><content type="html"> 妙啊。
 点估计 设 $X_1,\cdots,X_n\sim P_\theta\in\mathcal{P}$，其中 $\theta=(\theta_1,\cdots,\theta_k)\in\Theta$. 这是经典的参数模型。如前所述，**估计量（estimator）**是统计量 $\hat\theta=w(X_1,\cdots,X_n)$. 我们下面来介绍得到 $\hat\theta$ 的方法。
 矩估计 通常来说 $j$ 阶矩都和参数有关，即 $E_\theta X_1^j=h_j(\theta)$. 假设 $\theta$ 是 $k$ 维的，令 $h(\theta)=(h_1(\theta),\cdots,h_k(\theta))$. 若该存在的都存在，就可以淦了： $$ \hat\theta_j=h_j^{-1}\left(\frac{1}{n}\sum_{i=1}^nX_i^j\right). $$
@@ -883,7 +1002,7 @@ $T$ 是 UMVUE 的充要条件是 $T\perp \mathcal{U}$（对任意 $P$）. 设 $S
 一致性 定义
 $T_n(X)$ 是 $\theta$ 的一致估计（consistent），当且仅当 $T_n(X)\overset{p}\to\theta$. $T_n(X)$ 是 $\theta$ 的强一致估计（strongly consistent），当且仅当 $T_n(X)\overset{a.s.}\to\theta$. ${a_n}$ 是一个正数列，$a_n\to\infty$，称 $T_n(X)$ $a_n$-consistent，当且仅当 $a_n[T_n(X)-\theta]=O_P(1)$. $T_n(X)$ 称为 $L_r$-consistent，当且仅当 $T_n(X)\overset{L^r}\to\theta$. 显然其他几种一致性都能推出第一种 trivial consistent.
 渐近偏差与渐近方差 渐近无偏：$b_n\to 0$.
-渐近期望：数列 $a_n\to\infty$ 或 $a_n\to a>0$，若 $a_n\xi_n\overset{d}\to \xi$ 且 $\mathrm E|\xi|&lt;\infty$，则 $\mathrm E\xi/a_n$ 称为渐近期望。
+渐近期望：数列 $a_n\to\infty$ 或 $a_n\to a&gt;0$，若 $a_n\xi_n\overset{d}\to \xi$ 且 $\mathrm E|\xi|&lt;\infty$，则 $\mathrm E\xi/a_n$ 称为渐近期望。
 渐近偏差：$T_n-\theta$ 的渐近期望。
 渐近MSE：$a_n(T_n-\theta)\overset{d}\to Y$，则 $\text{amse}=\mathrm E Y^2/a_n^2$.
 渐近方差：$a_n(T_n-\theta)\overset{d}\to Y$，则渐近方差为 $\mathrm{Var}Y/a_n^2$.
@@ -892,7 +1011,7 @@ $T_n(X)$ 是 $\theta$ 的一致估计（consistent），当且仅当 $T_n(X)\ove
 两组估计，渐近协方差分别为 $V_{1n}(\theta)$ 和 $V_{2n}(\theta)$，若对足够大的 $n$，有 $\forall \theta\in\Theta,\quad V_{2n}(\theta)-V_{1n}(\theta)$ 半正定；且存在某个 $\theta$ 使其正定，则称 $\hat\theta_{1n}$ asymptotically more efficient than $\hat\theta_{2n}$.
 注意：对于渐近无偏的估计，CRLB 不一定对渐近方差成立，例：Hodges&rsquo; estimator, Lec23 p13.
 Asymptotic relative efficiency: $T&rsquo;n$ 相对于 $T_n$ 的渐近效率为 $$ e{T&rsquo;n,T_n}(P)=\frac{\text{amse}{T_n}(P)}{\text{amse}_{T&rsquo;n}(P)}. $$ 如果 $\limsup_n e{T&rsquo;_n,T_n}(P)\le 1$，且存在 $P$ 使 $&lt;$ 成立，则称 $T_n$ asympotically more efficient.
-定理（$\delta$-method） 设 $U_n$ 满足 $a_n(U_n-\theta)\overset{d}\to Y$ 且 $EY^2&lt;\infty$，$a_n>0$，$a_n\to\infty$. 设 $g$ 在 $\theta$ 处可微，$T_n=g(U_n)$ 是$\vartheta=g(\theta)$ 的估计量，则 $\text{amse}_{T_n}=E{[g&rsquo;(\theta)Y]^2}/a_n^2$, $T_n$ 的渐近方差为 $[g&rsquo;(\theta)^2\mathrm{Var}Y]/a_n^2$.
+定理（$\delta$-method） 设 $U_n$ 满足 $a_n(U_n-\theta)\overset{d}\to Y$ 且 $EY^2&lt;\infty$，$a_n&gt;0$，$a_n\to\infty$. 设 $g$ 在 $\theta$ 处可微，$T_n=g(U_n)$ 是$\vartheta=g(\theta)$ 的估计量，则 $\text{amse}_{T_n}=E{[g&rsquo;(\theta)Y]^2}/a_n^2$, $T_n$ 的渐近方差为 $[g&rsquo;(\theta)^2\mathrm{Var}Y]/a_n^2$.
 点估计的渐近性质 矩估计 对于矩估计，若 $h^{-1}$ 存在，由大数定律知它是 strongly consistent.
 若还有 $h^{-1}$ 可微且 $E|X_1|^{2k}&lt;\infty$ （$k$ 为参数个数），由 CLT 知矩估计 $\sqrt{n}$-consistent.
 若 $k=1$，则 $\text{amse}_{\hat\theta_n}(\theta)=g&rsquo;(\mu_1)^2\sigma^2/n$.
@@ -956,7 +1075,7 @@ Yates, Frank
 某个 effect 的置信区间是 $$ \hat\theta\pm t_{5,\frac{\alpha}{2}}\sqrt\frac{4\hat\sigma^2}{N}. $$
 方案 B (Daniel) 我们假设所有 effect 都是 0，此时只有均值和误差项。那么共有 $2^k-1$ 个 effect，它们服从 $N(0,\dfrac{4\sigma^2}{N})$. 我们对这 $2^k-1$ 个点进行正态性检验，哪些不合群哪些就显著。
 具体地，把 $\hat\theta_i,1\le i\le 2^k-1$ 加上绝对值，然后从小到大排序，然后画 half normal plot。它类似 Q-Q 图，只是有两点不同：
-只考虑 $x>0$，相当于截尾正态分布 横坐标是标准 half normal quantile，但纵坐标是 $N(0,\dfrac{4\sigma^2}{N})$ 的 quantile 令 $I=2^k-1$，图上包含的点是 $$ (z_{0.5+0.5[i-0.5]/I},|\hat\theta|_{(i)}). $$ 然后目测一条直线，拟合 0 附近的点，看谁不合群。比如这个例子：
+只考虑 $x&gt;0$，相当于截尾正态分布 横坐标是标准 half normal quantile，但纵坐标是 $N(0,\dfrac{4\sigma^2}{N})$ 的 quantile 令 $I=2^k-1$，图上包含的点是 $$ (z_{0.5+0.5[i-0.5]/I},|\hat\theta|_{(i)}). $$ 然后目测一条直线，拟合 0 附近的点，看谁不合群。比如这个例子：
 B 不合群，说明 B 显著。
 方案 C (Lenth) 看这里
 吧，感觉写的巨详细，我就不抄一遍了。
@@ -1027,7 +1146,7 @@ Katz centrality (Eigenvalue centrality) Perron-Frobenius 定理 我们要先介�
 图的邻接矩阵可约，等价于图不连通。
 定义（谱半径） 矩阵 $A$ 的谱半径 $\rho(A)$ 定义为矩阵 $A$ 的所有特征值的绝对值的最大值。
 定理（Perron-Frobenius） 设 $A$ 是非负不可约矩阵，则
-$\rho(A)>0$ 且 $\rho(A)$ 是矩阵 $A$ 的一个单重特征值 $A$ 有一个对应于 $\rho(A)$ 的正特征向量 $A$ 的每个非负特征向量都对应于特征值 $\rho(A)$ Katz 的心路历程 $A$ 为邻接矩阵。对于 degree centrality，我们把各节点的中心度写成列向量，有 $$ c_0=A \begin{pmatrix} 1\\ \vdots\\ 1 \end{pmatrix}. $$ 这只考虑了自己的影响力，没有考虑邻居的影响力。我们希望把它改成邻居的 degree centrality 之和，即 $$ c_1=\sum_{v:(u,v)\in E} c_0(v)= Ac_0. $$ 进一步套娃，有 $c_{r+1}=Ac_r$. 但这样下去会发散，我们需要加上个衰减因子。根据 Perron-Frobenius 定理，记最大特征值为 $\lambda$，我们让 $c_{r+1}=\lambda^{-1}Ac_r$. 又记 $\lambda$ 的正特征向量为 $x$，有 $$ \lim_{r\to\infty} c_r=\left(\sum_i x_i\right)x. $$ 证明留作习题。而我们其实只关心节点之间的中心度的相对大小，所以 $x$ 可以随便乘个系数。我们令 $|x|=1, x_i>0$，然后定义 eigenvalue centrality (Katz centrality):
+$\rho(A)&gt;0$ 且 $\rho(A)$ 是矩阵 $A$ 的一个单重特征值 $A$ 有一个对应于 $\rho(A)$ 的正特征向量 $A$ 的每个非负特征向量都对应于特征值 $\rho(A)$ Katz 的心路历程 $A$ 为邻接矩阵。对于 degree centrality，我们把各节点的中心度写成列向量，有 $$ c_0=A \begin{pmatrix} 1\\ \vdots\\ 1 \end{pmatrix}. $$ 这只考虑了自己的影响力，没有考虑邻居的影响力。我们希望把它改成邻居的 degree centrality 之和，即 $$ c_1=\sum_{v:(u,v)\in E} c_0(v)= Ac_0. $$ 进一步套娃，有 $c_{r+1}=Ac_r$. 但这样下去会发散，我们需要加上个衰减因子。根据 Perron-Frobenius 定理，记最大特征值为 $\lambda$，我们让 $c_{r+1}=\lambda^{-1}Ac_r$. 又记 $\lambda$ 的正特征向量为 $x$，有 $$ \lim_{r\to\infty} c_r=\left(\sum_i x_i\right)x. $$ 证明留作习题。而我们其实只关心节点之间的中心度的相对大小，所以 $x$ 可以随便乘个系数。我们令 $|x|=1, x_i&gt;0$，然后定义 eigenvalue centrality (Katz centrality):
 $$ c_E(u)=x_u. $$
 PageRank centrality 这是 Google 的网页排序指标。我们假设一个网络中，网页（顶点）$u$ 有 $x_u$ 的人在访问。下一时刻，有一部分人会从其他页面跳转而来。跳转的概率是 $\alpha$，等概率跳转到该页面连接的其他页面。则跳转到 $u$ 的人数是： $$ \alpha\sum_{v:(v,u)\in E}\dfrac{x_v}{k_v^{\rm out}}. $$ 此外，还会有一些新人到来，这部分是个常数 $\beta$. 于是有 $$ x_v=\alpha\sum_{u:(u,v)\in E}\dfrac{x_u}{k_u^{\rm out}}+\beta. $$ 用 $D$ 表示出度矩阵，$\mathbf{1}$ 为 $n\times 1$ 的全 $1$ 向量，有 $$ x=\beta(I-\alpha D^{-1}A)^{-1}\mathbf{1}. $$ 请自行证明那个矩阵可逆。
 HITS (hubs and authorities) HITS (Hyperlink-Induced Topic Search) 与 PageRank 算法一样，也是一种用于对网页进行排序的算法。
@@ -1109,7 +1228,7 @@ ADVANCED STATISTICAL THEORY 共四篇，已完结。
 公理化概率论（下）
 统计量与分布族
 估计与推断</content></entry><entry><title>随机过程（下）-连续时间过程</title><url>/post/5221-2%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BF%87%E7%A8%8B/</url><categories><category>课程笔记</category></categories><tags><tag>学习</tag></tags><content type="html"> 泊松过程、生灭过程、更新过程、布朗运动。
-泊松过程 大名鼎鼎的泊松过程定义为满足下式的随机过程： $$ \begin{gather} \lim_{h\to 0} P_{k,k+1}(h)=\lambda h,\\ \lim_{h\to 0}P_{k,k}(h)=1-\lambda h,\\ X(0)=0. \end{gather} $$ 其中 $\lambda>0$ 为参数，称为强度。
+泊松过程 大名鼎鼎的泊松过程定义为满足下式的随机过程： $$ \begin{gather} \lim_{h\to 0} P_{k,k+1}(h)=\lambda h,\\ \lim_{h\to 0}P_{k,k}(h)=1-\lambda h,\\ X(0)=0. \end{gather} $$ 其中 $\lambda&gt;0$ 为参数，称为强度。
 性质：
 $T_k\sim Exp(\lambda)$，$T_k$ 之间独立
 $S_n\sim \Gamma(n,\lambda)$，
@@ -1118,39 +1237,39 @@ $X(t+u)-X(u)\sim Pois(\lambda t)$，
 这意味着已知某时段发生的事件个数时，事件发生的时间是均匀的。
 泊松过程可以推广到两个分支：出生-死亡过程和更新过程，我们一一介绍。
 出生-死亡过程 我们仍然考虑平稳过程。时间连续，状态离散的马尔可夫过程满足 $$ P_{ij}(t)=P{X(t+u)=j|X(u)=i}. $$ 只要给出了这个式子，随机过程就定义好了。
-我们先从特殊的过程开始，逐渐推广到一般的出生-死亡过程。我们用 $X(t)$ 表示 $t$ 时刻存活的数量，$T_k$ 表示第 $k$ 个事件和第 $k+1$ 个事件之间的等待时间，$S_k$ 表示第 $k$ 个事件发生时间。具体地，$T_0=0$, $T_k=\inf {t>T_{k-1}:X(t)\ne X(T_{k-1})}$，$S_k=\sum_{i=0}^{k-1}T_i$.
-纯出生过程 我们推广泊松过程，允许每个事件发生后强度发生变化（也就是“出生率”和“人口数”有关）。设 ${\lambda_k}>0$ 为参数， $$ \begin{gather} \lim_{h\to 0} P_{k,k+1}(h)=\lambda_k h,\\ \lim_{h\to 0}P_{k,k}(h)=1-\lambda_k h.\\ \end{gather} $$ 一般来说我们要求 $X(0)=0$，这样比较简洁（也可以令 $X(0)=N$，这不本质）。类似地，可以证明 $T_k$ 之间独立且 $$ T_k\sim Exp(\lambda_k). $$ 于是可以得到 $S_n$ 的特征函数 $$ \varphi_n(t)=\prod_{k=0}^{n-1}\frac{\lambda_k}{\lambda_k-it}. $$
+我们先从特殊的过程开始，逐渐推广到一般的出生-死亡过程。我们用 $X(t)$ 表示 $t$ 时刻存活的数量，$T_k$ 表示第 $k$ 个事件和第 $k+1$ 个事件之间的等待时间，$S_k$ 表示第 $k$ 个事件发生时间。具体地，$T_0=0$, $T_k=\inf {t&gt;T_{k-1}:X(t)\ne X(T_{k-1})}$，$S_k=\sum_{i=0}^{k-1}T_i$.
+纯出生过程 我们推广泊松过程，允许每个事件发生后强度发生变化（也就是“出生率”和“人口数”有关）。设 ${\lambda_k}&gt;0$ 为参数， $$ \begin{gather} \lim_{h\to 0} P_{k,k+1}(h)=\lambda_k h,\\ \lim_{h\to 0}P_{k,k}(h)=1-\lambda_k h.\\ \end{gather} $$ 一般来说我们要求 $X(0)=0$，这样比较简洁（也可以令 $X(0)=N$，这不本质）。类似地，可以证明 $T_k$ 之间独立且 $$ T_k\sim Exp(\lambda_k). $$ 于是可以得到 $S_n$ 的特征函数 $$ \varphi_n(t)=\prod_{k=0}^{n-1}\frac{\lambda_k}{\lambda_k-it}. $$
 $X(t)$ 的分布 我们来考虑计算 $P_n(t)=P(X(t)=n)$. 利用 $P_0(t+h)=P_0(t)P_0(h)=P_0(t)(1-\lambda_0 h+o(h))$，有 $$ P&rsquo;0(t)=\lim{h\to 0}\frac{P_0(t+h)-P_0(t)}{h}=\lambda_0P_0(t). $$ 类似地，$P_n(t+h)=P_n(t)P_0(h)+P_{n-1}(t)P_1(h)=P_n(t)(1-\lambda_n h)+P_{n-1}(t)\lambda_{n-1}h+o(h)$, 所以 $$ P&rsquo;n(t)=\lambda{n-1}P_{n-1}(t)-\lambda_n P_n(t),\quad n\ge 1. $$ 我们得到了齐次线性微分方程组，边界条件 $P_0(0)=1,P_{n}(0)=0,n\ge 1$. 就可以确定下来了。虽然有通用解法，但其实只有特殊情况我们才能写出显式表示，一般情况下只能得到 $P_0(t)=e^{-\lambda_0t}$.
 另一种常用的求分布方法是转化到 $S_n(t)$，我们将在 Yule 过程中用到并在附录介绍。
-Yule 过程 出生率和人口数成正比，也即 $\lambda_n=n\beta$，$\beta>0$ 为参数。特别地，我们需要假设 $X(0)=N$（否则就一直是0了）。
+Yule 过程 出生率和人口数成正比，也即 $\lambda_n=n\beta$，$\beta&gt;0$ 为参数。特别地，我们需要假设 $X(0)=N$（否则就一直是0了）。
 如果你实在绕不明白，可以令 $Y(t)=X(t)-N$，这样 $Y(t)$ 就是满足 $Y(0)=0$ 的出生过程了。
 它的分布是 $$ P(X(n)=t)=\binom{n-1}{n-N}e^{-N\beta t}(1-e^{-\beta t})^{n-N},\quad n\ge N. $$ 我们在附录给出推导过程。
 出生-死亡过程 来来来，接着推广。现在寿命不是无限的了，还允许死亡。但死亡也要按照基本法：足够短的时间内只能有一个人生或死。这就是出生-死亡过程，其严格定义为同时满足以下几条的随机过程（$\lambda_i,\mu_i$ 为参数）：
-$\lim_{h\to0} P_{i,i+1}(h)=\lambda_ih$, $\lim_{h\to0} P_{i,i-1}(h)=\mu_i h,\ i\ge1$, $\lim_{h\to0} P_{i,i}(h)=(1-\lambda_i-\mu_i)h$, $P_{ij}(0)=\delta_{ij}$, $\mu_0=0,\lambda_0>0,\mu_i,\lambda_i>0,i=1,2,\cdots$. 我们记初始状态 $P(X(0)=i)=q_i$. 根据 Markov 性，规定了初始状态参数，这个过程就确定了。
+$\lim_{h\to0} P_{i,i+1}(h)=\lambda_ih$, $\lim_{h\to0} P_{i,i-1}(h)=\mu_i h,\ i\ge1$, $\lim_{h\to0} P_{i,i}(h)=(1-\lambda_i-\mu_i)h$, $P_{ij}(0)=\delta_{ij}$, $\mu_0=0,\lambda_0&gt;0,\mu_i,\lambda_i&gt;0,i=1,2,\cdots$. 我们记初始状态 $P(X(0)=i)=q_i$. 根据 Markov 性，规定了初始状态参数，这个过程就确定了。
 $X(t)$ 的分布 我们可以定义类似于转移矩阵的东西，叫做 infinitesimal generator： $$ A=\begin{pmatrix} -\lambda_0 &amp; \lambda_0 &amp; 0 &amp; \cdots\\ \mu_1 &amp; -(\lambda_1+\mu_1) &amp; \lambda_1 &amp; \cdots \\ 0 &amp; \mu_2 &amp; -(\lambda_2+\mu_2) &amp; \cdots\\ \vdots &amp; \vdots &amp; \vdots &amp; \ddots \end{pmatrix}. $$ 若记 $P(h)=(P(X(h)=0),P(X(h)=1),\cdots)$，则有 $P(t+h)=P(t)(I+A)h+o(h)$，于是有齐次线性微分方程组： $$ \begin{gather} P&rsquo;(t)=P(t)A,\\ P(0)=(q_0,q_1,\cdots), \end{gather} $$ 解微分方程即可确定 $X(t)$ 的分布。
 等待时间 $T_k$ 类似地，我们可以得到 $T_k\sim Exp(0,\lambda_k+\mu_k)$.
-更新过程 定义 泊松过程我们让 $T_k$ 是指数分布。如果令 $T_k>0$ 独立同分布，就得到了更新过程。 $X(t)=\sharp{n:0\le S_n\le t}$. 更新函数定义为 $M(t)=\mathrm EX(t)$. 这是更新过程中一个很重要的东西。
+更新过程 定义 泊松过程我们让 $T_k$ 是指数分布。如果令 $T_k&gt;0$ 独立同分布，就得到了更新过程。 $X(t)=\sharp{n:0\le S_n\le t}$. 更新函数定义为 $M(t)=\mathrm EX(t)$. 这是更新过程中一个很重要的东西。
 用 $F_n(x)$ 表示 $S_n$ 的分布函数，则满足卷积方程 $$ F_n(x)=\int_0^x F_{n-1}(x-y)dF(y). $$ 可以证明 $$ P(X(t)=k)=F_k(t)-F_{k+1}(t),\quad t\ge0. $$ 并且 $$ M(t)=\sum_{n=1}^\infty F_n(t). $$ 我们有三个比较关心的随机变量：
 剩余寿命（excess or residual lifetime）：$\gamma_t=S_{N(t)+1}-t$, 年龄（current life / age）：$\delta_t=t-S_{N(t)}$, 总寿命（total life）：$\beta_t=\gamma_t+\delta_t$. 更新方程与更新定理 这里水很深，有一套专门的更新理论。我们就只介绍关键的定理。
 首先可以证明 $M(t)&lt;\infty$，并且有结论 $$ M(t)=F(t)+\int_0^t M(t-y)dF(y). $$ 我们可以定义更一般地更新方程。
 定义（更新方程，renewal equation） 设 $a(t)$ 和 $F(x)$ 已知，如下关于 $A(t)$ 的方程称为更新方程： $$ A(t)=a(t)+\int_0^t A(t-x)dF(x),\quad t\ge 0. $$ 更新过程的很多问题，最后都会得到一个这样的方程，所以研究它的解很重要。如下几个定理都是围绕更新方程的解展开的。
 定理 设 $a(t)$ 有界，则上述更新方程存在唯一的有限区间内有界的解 $$ A(t)=a(t)+\int_0^t a(t-x)dM(x). $$ 其中 $M(x)=\sum_{n=1}^\infty F_n(x)$ 为更新函数。
 下一个定理我们要做一些铺垫。
-定义（格点分布，arithmetic） 随机变量 $X$ 是 arithmetic 的，如果存在 $\lambda>0$ 使得 $\sum_{n\in\mathbb{Z}} P(X=nd)=1$. 此时称 $F$ is arithmetic with span $\lambda$.
+定义（格点分布，arithmetic） 随机变量 $X$ 是 arithmetic 的，如果存在 $\lambda&gt;0$ 使得 $\sum_{n\in\mathbb{Z}} P(X=nd)=1$. 此时称 $F$ is arithmetic with span $\lambda$.
 讲义上的定义较为复杂，但说的是一个意思：
-定义（point of increase） 设 $F$ 是分布函数。对 $a\in\mathbb{R}$，如果 $\forall\varepsilon>0$ 都有 $F(a+\varepsilon)-F(a-\varepsilon)>0$，则称 $a$ 点是 a point of increase.
+定义（point of increase） 设 $F$ 是分布函数。对 $a\in\mathbb{R}$，如果 $\forall\varepsilon&gt;0$ 都有 $F(a+\varepsilon)-F(a-\varepsilon)&gt;0$，则称 $a$ 点是 a point of increase.
 这个定义推广了递增函数的定义，允许在该点崩坏掉。最典型的就是 $X=a$ 的分布函数，$a$ 就是 a point of increase.
 定义（arithmetic） 如果存在 $\lambda$ 使得分布函数 $F$ 在且只在 $0,\pm\lambda,\pm2\lambda,\cdots$ 上 point of increase，则称 $F$ 是 arithmetic 的。
-定义（directly Riemann integrable） 设 $g:\mathbb{R}^+\to\mathbb{R}$，对 $\delta>0,n=1,2,\cdots$，设
+定义（directly Riemann integrable） 设 $g:\mathbb{R}^+\to\mathbb{R}$，对 $\delta&gt;0,n=1,2,\cdots$，设
 $$ \begin{align} &amp;\underline{m}_n=\inf{ g(t):(n-1)\delta\le t\le n\delta},\\ &amp;\overline{m}n=\sup{ g(t):(n-1)\delta\le t\le n\delta},\\ &amp;\underline\sigma(\delta)=\delta\sum{n=1}^\infty \underline{m}n,\quad \overline\sigma(\delta)=\delta\sum{n=1}^\infty \overline{m}_n. \end{align} $$
 这个公式我怎么编辑它都显示不出，本地明明没问题，我弃疗了……自己在脑中编译一下吧
-若 $\underline\sigma(\delta)$ 和 $\overline\sigma(\delta)$ 对任意的 $\delta>0$ 绝对收敛，且 $\lim_{\delta\to0}\left(\overline\sigma(\delta)-\underline\sigma(\delta)\right)=0$，则称 $g$ directly Riemann integrable.
+若 $\underline\sigma(\delta)$ 和 $\overline\sigma(\delta)$ 对任意的 $\delta&gt;0$ 绝对收敛，且 $\lim_{\delta\to0}\left(\overline\sigma(\delta)-\underline\sigma(\delta)\right)=0$，则称 $g$ directly Riemann integrable.
 注：
 讲义的定义有瑕疵，应该用 $\inf$ 而不是 $\min$，除非给 $g$ 加别的条件才能保证最大值最小值存在。 这是比黎曼可积更强的条件，因为它要求上和和下和对任意的 $\delta$ 都收敛，而不只是 $\delta\to 0$ 的行为。 定理（Basic renewal theorem） 设 $F$ 是正随机变量的分布函数，期望为 $\mu$（有限或无限）. 设函数 $a(t),t\ge0$ 是 directly Riemann integrable 的。考虑以下更新方程： $$ A(t)=a(t)+\int_0^t A(t-x)dF(x),\quad t\ge 0. $$
 若 $F$ 不是 arithmetic 的，则 $$ \lim_{t\to\infty} A(t)=\left{ \begin{align} &amp;\frac{1}{\mu}\int_0^\infty a(x)dx,&amp;\text{若 }\mu&lt;\infty,\\ &amp;0,&amp;\text{若 }\mu=\infty. \end{align} \right. $$
 若 $F$ is arithmetic with span $\lambda$，则 $\forall 0\le c\le \lambda$， $$ \lim_{n\to\infty} A(c+n\lambda)=\left{ \begin{align} &amp;\frac{\lambda}{\mu}\sum_{n=0}^\infty a(c+n\lambda),&amp;\text{若 }\mu&lt;\infty,\\ &amp;0,&amp;\text{若 }\mu=\infty. \end{align} \right. $$
-设 $h>0$，如果令 $a(y)=I(0\le y&lt; h)$，稍加分析可以得到下面有关更新过程的结论。
-定理 设 $F$ 是正随机变量的分布函数，期望为 $\mu$，设 $M(t)=\sum_{k=1}^\infty F_k(t)$，$h>0$，则
+设 $h&gt;0$，如果令 $a(y)=I(0\le y&lt; h)$，稍加分析可以得到下面有关更新过程的结论。
+定理 设 $F$ 是正随机变量的分布函数，期望为 $\mu$，设 $M(t)=\sum_{k=1}^\infty F_k(t)$，$h&gt;0$，则
 若 $F$ 不是 arithmetic 的，则 $$ \lim_{t\to\infty}(M(t+h)-M(t))=\frac{h}{\mu}. $$
 若 $F$ is arithmetic with span $\lambda$，当 $h$ 是 $\lambda$ 的整数倍时上述结论成立。
 上述定理可以推出如下初等更新定理。
@@ -1162,9 +1281,9 @@ $X(t+s)-X(s)\sim N(0,\sigma^2 t)$（通常令 $\sigma^2=1$）, $\forall t_1&lt;t
 **定理 ** 轨道 $X(t)$ 在 $(t_0,t_1)$ 内有至少一个 0 的概率是 $$ \alpha=\frac{2}{\pi}\arccos\sqrt{\frac{t_0}{t_1}}. $$
 附录 Yule 过程求 $P(X(t)=n)$ 讲义通过解微分方程求的，但那个微分方程按照一般流程计算极其复杂，多少需要一点目测猜解的功力。我们这里给出基于 $S_n$ 密度函数的推导，大力出奇迹即可。
 令 $Y(t)=X(t)-N$，则 $Y(t)$ 为纯出生过程，$\lambda_k=(N+k)\beta$. 我们先利用特征函数来求 $S_n$ 的密度函数 $f_{S_n}$，即 $$ \begin{align} f_{S_n}(x)&amp;=\frac{1}{2\pi}\int_{-\infty}^\infty e^{-itx}\prod_{k=0}^{n-1}\frac{(N+k)\beta}{(N+k)\beta-it}dt.\\ \end{align} $$ 记上面被积函数为 $g(t),t\in\mathbb{C}$. 其有 $n$ 个奇点，为 $t_k=-i(N+k)\beta,\ k=0,\cdots,n-1$. 留数为 $$ \begin{align} Res(g,t_k)&amp;=\frac{1}{-i}e^{-(N+k)\beta x}(-1)^k\frac{(N+n-1)!}{(N-1)!(n-1-k)!k!}\beta\\ &amp;=i\beta\frac{(N+n-1)!}{(N-1)!(n-1)!}e^{-N\beta x}(1-e^{-\beta x})^{n-1}. \end{align} $$ 于是 $$ \begin{align} \sum_{k=0}^{n-1}Res(g,t_k)&amp;=i\beta\frac{(N+n-1)!}{(N-1)!(n-1)!}e^{-N\beta x}\sum_{k=0}^{n-1}(-1)^k\binom{n-1}{k}e^{-k\beta x}\\ &amp;=i\beta n\binom{N+n-1}{N-1}e^{-N\beta x}(1-e^{-\beta x})^{n-1}. \end{align} $$
-设路径 $L_1$ 为沿实轴 $-r$ 到 $r$，$L_2$ 为下半圆 $re^{i\theta},\pi\le\theta\le 2\pi$. 当 $r$ 充分大时，利用留数定理， $$ \begin{align} \int_{-L_1+L_2}g(z)dz&amp;=2\pi i\sum_{k=0}^{n-1} Res(g,t_k).\\ \end{align} $$ 令 $r\to\infty$，得 $$ \begin{align} f_{S_n}(x)&amp;=-\int_{L_2}g(z)dz\\ &amp;=\beta n\binom{N+n-1}{N-1}e^{-N\beta x}(1-e^{-\beta x})^{n-1}.\\ \end{align} $$ 然后可以办正事了， $$ \begin{align} P(Y(t)=n)&amp;=P(S_n\le t&lt; S_{n+1})\\ &amp;=\int_0^t P(S_n\le t &lt;S_{n+1}|S_n=x)f_{S_n}(x)dx\\ &amp;=\int_0^t P(T_n>t-x)f_{S_n}(x)dx\\ &amp;=\int_0^t e^{-(N+n)\beta (t-x)}\beta n\binom{N+n-1}{N-1}e^{-N\beta x}(1-e^{-\beta x})^{n-1}dx\\ &amp;=\beta n\binom{N+n-1}{N-1}e^{-(N+n)\beta t}\int_0^t e^{n\beta x}(1-e^{-\beta x})^{n-1}dx. \end{align} $$ 设上面最后一步积分为 $I$. 令 $y=e^{\beta x}$，有 $$ I=\int_1^{e^{\beta t}}y^n(1-\frac{1}{y})^{n-1}\frac{1}{\beta y}dy=\frac{1}{n\beta}(e^{\beta t}-1)^n. $$ 于是 $$ P(Y(t)=n)=\binom{N+n-1}{N-1}e^{-N\beta t}(1-e^{-\beta t})^{n}. $$ 终于， $$ P(X(t)=n)=P(Y(t)=n-N)=\binom{n-1}{N-1}e^{-N\beta t}(1-e^{-\beta t})^{n-N}. $$
+设路径 $L_1$ 为沿实轴 $-r$ 到 $r$，$L_2$ 为下半圆 $re^{i\theta},\pi\le\theta\le 2\pi$. 当 $r$ 充分大时，利用留数定理， $$ \begin{align} \int_{-L_1+L_2}g(z)dz&amp;=2\pi i\sum_{k=0}^{n-1} Res(g,t_k).\\ \end{align} $$ 令 $r\to\infty$，得 $$ \begin{align} f_{S_n}(x)&amp;=-\int_{L_2}g(z)dz\\ &amp;=\beta n\binom{N+n-1}{N-1}e^{-N\beta x}(1-e^{-\beta x})^{n-1}.\\ \end{align} $$ 然后可以办正事了， $$ \begin{align} P(Y(t)=n)&amp;=P(S_n\le t&lt; S_{n+1})\\ &amp;=\int_0^t P(S_n\le t &lt;S_{n+1}|S_n=x)f_{S_n}(x)dx\\ &amp;=\int_0^t P(T_n&gt;t-x)f_{S_n}(x)dx\\ &amp;=\int_0^t e^{-(N+n)\beta (t-x)}\beta n\binom{N+n-1}{N-1}e^{-N\beta x}(1-e^{-\beta x})^{n-1}dx\\ &amp;=\beta n\binom{N+n-1}{N-1}e^{-(N+n)\beta t}\int_0^t e^{n\beta x}(1-e^{-\beta x})^{n-1}dx. \end{align} $$ 设上面最后一步积分为 $I$. 令 $y=e^{\beta x}$，有 $$ I=\int_1^{e^{\beta t}}y^n(1-\frac{1}{y})^{n-1}\frac{1}{\beta y}dy=\frac{1}{n\beta}(e^{\beta t}-1)^n. $$ 于是 $$ P(Y(t)=n)=\binom{N+n-1}{N-1}e^{-N\beta t}(1-e^{-\beta t})^{n}. $$ 终于， $$ P(X(t)=n)=P(Y(t)=n-N)=\binom{n-1}{N-1}e^{-N\beta t}(1-e^{-\beta t})^{n-N}. $$
 所以说，本科的基础课都好好学，早晚会用上的…… 不说了，我接着复习复分析去了……
-布朗运动首达时间 感觉 lecture notes 写的不是很清楚。首先有 $$ P(T_a\le t)=P(\max_{0\le u\le t} X(u)\ge a). $$ 然后考虑样本轨道集合 $A={X(u):\max_{0\le u\le t} X(u)\ge a}$. 对 $A$ 中每个轨道 $X(u)$，记首次达到 $a$ 的时刻为 $\tau&lt;t$，考虑反射 $$ \tilde X(t)=\left{ \begin{align} &amp;X(t)\qquad &amp; t &lt;\tau,\\ &amp;a-[x(t)-a]\qquad &amp;t>\tau. \end{align} \right. $$ 如果 $X(t)>a$，则 $\tilde X(t)&lt;a$，反之亦然，所以 $P(\max_{0\le u\le t} X(u)\ge a)=2P(X(t)> a)$. 然后就好算了。</content></entry><entry><title>随机过程（上）-马尔可夫链</title><url>/post/5221-1markov_chain/</url><categories><category>课程笔记</category></categories><tags><tag>学习</tag></tags><content type="html"> 主要是按照讲义来的，课堂上讲得比较浅，所以这篇文章也不会讨论太深。如果发现错误欢迎指出~
+布朗运动首达时间 感觉 lecture notes 写的不是很清楚。首先有 $$ P(T_a\le t)=P(\max_{0\le u\le t} X(u)\ge a). $$ 然后考虑样本轨道集合 $A={X(u):\max_{0\le u\le t} X(u)\ge a}$. 对 $A$ 中每个轨道 $X(u)$，记首次达到 $a$ 的时刻为 $\tau&lt;t$，考虑反射 $$ \tilde X(t)=\left{ \begin{align} &amp;X(t)\qquad &amp; t &lt;\tau,\\ &amp;a-[x(t)-a]\qquad &amp;t&gt;\tau. \end{align} \right. $$ 如果 $X(t)&gt;a$，则 $\tilde X(t)&lt;a$，反之亦然，所以 $P(\max_{0\le u\le t} X(u)\ge a)=2P(X(t)&gt; a)$. 然后就好算了。</content></entry><entry><title>随机过程（上）-马尔可夫链</title><url>/post/5221-1markov_chain/</url><categories><category>课程笔记</category></categories><tags><tag>学习</tag></tags><content type="html"> 主要是按照讲义来的，课堂上讲得比较浅，所以这篇文章也不会讨论太深。如果发现错误欢迎指出~
 基本概念 随机过程（stochastic processes）本质是一个二元函数 $X(\omega,t)$，它既可以看成一族随机变量的集合，也可以看成一族样本函数的集合。
 例：扔三次傻子，样本空间是 ${1,2,3,4,5,6}^3$，$t$ 取值 $1,2,3$. 若是固定 $\omega=(2,5,1)$，则得到一个样本函数 $X((2,5,1),t)$. 若是固定 $t=2$，则得到一个随机变量 $X(\omega,2)=X_2$.
 总之：
@@ -1176,21 +1295,21 @@ $$ \begin{align} P_{ij}&amp;=P(X_{1}=j|X_0=i),\\ P_{ij}^n&amp;=P(X_{n}=j|X_0=i).
 为了和老师讲义的记号统一，这里用了 $P_{ij}^n$，但要注意 $n$ 不是指数运算。后面的 $f_{ij}^n$ 同理。
 特别地，$P_{ij}^0=\delta_{ij}$.
 接下来的概念可以结合图来理解。我们把马尔可夫链想象成一个加权有向图 $G(V,E)$，顶点是所有状态，$P$ 是邻接矩阵（图中可能存在自环）。
-定义（accessible） 如果从状态 $i$ 到 $j$ 的概率不为 $0$ （$\exists n,P_{ij}^n>0$），则称 $j$ 可从 $i$ 到达（accessible）。
+定义（accessible） 如果从状态 $i$ 到 $j$ 的概率不为 $0$ （$\exists n,P_{ij}^n&gt;0$），则称 $j$ 可从 $i$ 到达（accessible）。
 对应图论，accessible 等价于存在 $i$ 到 $j$ 的路径（path）。
 定义（communicate） 如果 $i$ 可达 $j$ 且 $j$ 可达 $i$，称 $i$ 和 $j$ 互通（communicate），记作 $i\leftrightarrow j$.
 对应图论，communicate 等价于双连通。显然 communicate 是一个等价关系，因此可以划分等价类。对应到图就是强连通分量。在同一个连通分量内的状态可以自由转移。后面我们将看到，对于常返类来说，而不在同一个连通分量则永世不得相见。
 定义（irreducible） 如果任意两个状态都互通（即上述等价类只有一个），则称为不可约的（irreducible）。
 对应图论，就是强连通图。
-周期性 定义（period） 状态 $i$ 的周期（period）定义为 ${n\ge 1|P_{ii}^n>0}$ 的最大公约数（g.c.d.），记作 $d(i)$。特别地，若 $P_{ii}^n=0,n\geq 1$，则 $d(i)=0$.
+周期性 定义（period） 状态 $i$ 的周期（period）定义为 ${n\ge 1|P_{ii}^n&gt;0}$ 的最大公约数（g.c.d.），记作 $d(i)$。特别地，若 $P_{ii}^n=0,n\geq 1$，则 $d(i)=0$.
 定理 如果 $i\leftrightarrow j$，则 $d(i)=d(j)$.
 该定理表明，同一个互通分量周期是一样的，所以我们可以直接讨论互通分量的周期。证明留做习题。
-定理 设 $i$ 的周期为 $d(i)$，则 $\exists N,\forall n>N,P_{ii}^{nd(i)}>0$.
+定理 设 $i$ 的周期为 $d(i)$，则 $\exists N,\forall n&gt;N,P_{ii}^{nd(i)}&gt;0$.
 只要 $n$ 足够大，便可体现出“周期”的性质。
 定义（aperiodic） 如果每个状态周期都是 1，则该马尔可夫链是非周期的（aperiodic）。
 从分析的角度看，周期蕴含着震荡，而震荡往往是分析中不想看到的，所以我们主要关注非周期的马尔可夫链。我们很快就会发现非周期很多优秀的分析性质。
 常返性 我们定义首达概率 $f_{ij}^n$ 为：“从状态 $i$ 出发，下一次到达状态 $j$ 的步数为 $n$ 步”的概率。即 $$ f_{ij}^n=P(X_n=j,X_v\ne j,v=1,\cdots,n-1|X_0=i). $$ 特别地，$f_{ij}^0=0$.
-记 $f_{ij}^=\sum_{n=1}^{\infty}f_{ij}^n$, 表示状态 $i$ 能在有限步之内到达状态 $j$ 的概率。容易发现： $$ \begin{align} i\rightarrow j&amp;\Leftrightarrow f_{ij}^>0,\\ i\leftrightarrow j&amp;\Leftrightarrow f_{ij}^>0, f_{ji}^>0. \end{align} $$ 我们可以递归地计算 $f_{ij}^n$： $$ P_{ij}^n=\sum_{k=0}^nf_{ij}^kP_{jj}^{n-k}.\ (n\ge1) $$ 稍有常识的人应该已经发现了，这不就是离散卷积嘛！于是考虑母函数： $$ F_{ij}(s)=\sum_{n=0}^\infty f_{ij}^n s^n,\ P_{ij}(s)=\sum_{n=0}^\infty p_{ij}^n s^n. $$ 易证 $F_{ij},P_{ij}$ 收敛半径为 $1$，并且在 $1$ 处“左连续”（允许函数值为 $+\infty$）。将上面的卷积写成母函数的形式，即得 $$ F_{ij}(s)P_{jj}(s)=P_{ij}(s)-\delta_{ij},\ 0\leq s\leq 1. $$ 定义（recurrence） 我们称状态 $i$ 是常返的（recurrence），如果 $f_{ii}^*=1$. 反之称其为非常返态或过渡态（transient）。
+记 $f_{ij}^=\sum_{n=1}^{\infty}f_{ij}^n$, 表示状态 $i$ 能在有限步之内到达状态 $j$ 的概率。容易发现： $$ \begin{align} i\rightarrow j&amp;\Leftrightarrow f_{ij}^&gt;0,\\ i\leftrightarrow j&amp;\Leftrightarrow f_{ij}^&gt;0, f_{ji}^&gt;0. \end{align} $$ 我们可以递归地计算 $f_{ij}^n$： $$ P_{ij}^n=\sum_{k=0}^nf_{ij}^kP_{jj}^{n-k}.\ (n\ge1) $$ 稍有常识的人应该已经发现了，这不就是离散卷积嘛！于是考虑母函数： $$ F_{ij}(s)=\sum_{n=0}^\infty f_{ij}^n s^n,\ P_{ij}(s)=\sum_{n=0}^\infty p_{ij}^n s^n. $$ 易证 $F_{ij},P_{ij}$ 收敛半径为 $1$，并且在 $1$ 处“左连续”（允许函数值为 $+\infty$）。将上面的卷积写成母函数的形式，即得 $$ F_{ij}(s)P_{jj}(s)=P_{ij}(s)-\delta_{ij},\ 0\leq s\leq 1. $$ 定义（recurrence） 我们称状态 $i$ 是常返的（recurrence），如果 $f_{ii}^*=1$. 反之称其为非常返态或过渡态（transient）。
 常返是一个非常浪漫的概念。一个状态是常返的，意味着每一次别离都不会是永别，尽管暂时离开了这个状态，在有限的时间内它几乎必然会再次和我们相见。
 关于常返，我们有以下两条重要结论。
 定理
@@ -1202,7 +1321,7 @@ $\sum_{n=0}^\infty P_{ii}^n=\dfrac{1}{1-f_{ii}^*},\ (1/0=+\infty)$, 特别地，
 极限性态 我们考虑三个问题：
 $\lim_{n\to\infty}P_{ij}^n$ 的值 是否存在一个分布 $\pi$，使得 $\pi P=P$ 给定起始分布 $\pi(0)$, 其极限分布 $\lim_{n\to\infty}\pi_0P^n$ 是多少 这部分的讨论比较繁杂，但结论却出奇地简洁。为了防止考试的时候用了不该用的结论，这里直接放讲义中的结论，详细讨论见附录。
 结论 令 $\mu_j={\sum_{k=1}^\infty kf_{jj}^k},\ \pi_j=\dfrac{1}{\mu_j}$ （若 $\mu_j=\infty$ 则 $\pi_j=0$）. 对于一般情况，有结论：
-若 $j$ 非常返，则 $\lim_{n\to\infty} P_{ij}^n=0$, 若 $j$ 非周期且常返，则 $\lim_{n\to\infty} P_{ij}^n=\dfrac{f_{ij}^*}{\mu_j}.$ 结论 对于**非周期，不可约，正常返（$\mu_j>0$）**状态，有结论：
+若 $j$ 非常返，则 $\lim_{n\to\infty} P_{ij}^n=0$, 若 $j$ 非周期且常返，则 $\lim_{n\to\infty} P_{ij}^n=\dfrac{f_{ij}^*}{\mu_j}.$ 结论 对于**非周期，不可约，正常返（$\mu_j&gt;0$）**状态，有结论：
 $\lim_{n\to\infty}P_{ij}^n=\pi_j$, 即从任意起始分布出发，都会收敛到这个极限分布 $\pi_j$ 是唯一的平稳分布，也是唯一的极限分布。 附录 极限性态的讨论 $1. \lim_{n\to\infty}P_{ij}^n$ 定理（Markov 链的极限性态） 若 $j$ 是非常返状态，则 $\lim_{n\to\infty} P_{ij}^n=0$. 若 $j$ 非周期且常返，则 $$ \lim_{n\to\infty} P_{ij}^n=\dfrac{f_{ij}^*}{\sum_{k=1}^\infty kf_{jj}^k}. $$ 特别地，若等式右边分母不收敛则定义为 $0$.
 该命题的证明已经超出本课程要求。我查阅了许多教材，似乎没找到完美的证明，都在互相踢皮球。所以我也不给证明了。如果有哪位大佬知道初等的证明欢迎补充！
 $j$ 是周期常返状态的情况过于复杂，这里不介绍。
@@ -1249,7 +1368,7 @@ $$ f&rsquo;(y)=y^{\lambda-1}. $$
 于是有最优估计（请自行推导）： $$ \mu_i=\bar y_{i,\cdot}. $$ 同样有方差估计 $$ \hat\sigma^2=\dfrac{1}{N-k}\sum_i\sum_j (y_{i,j}-\bar y_{i,\cdot})^2. $$
 ANOVA 表 记 $$ \begin{align} S^2&amp;=\sum_i\sum_j (y_{i,j}-y_{\cdot,\cdot})^2,\\ S_1^2&amp;=\sum_i n_i (y_{i,\cdot}-y_{\cdot,\cdot})^2,\\ S_2^2&amp;=\sum_i\sum_j (y_{i,j}-y_{i,\cdot})^2.\\ \end{align} $$ 类似地，有方差分解： $$ S^2=S_1^2+S_2^2. $$ 我们可以得到 ANOVA 表：
 来源 自由度 平方和 平方和均值 处理组（Treatments） $k-1$ $S_1^2$ $S_1^2/(k-1)$ 误差（Error） $N-k$ $S_2^2$ $S_2^2/(N-k)$ 合计 $N-1$ $S^2$ 假设检验 $F$-检验 $H_0:\mu_1=\cdots=\mu_k$（等价于 $\tau_1=\cdots=\tau_k=0$）. 构造 $F$-统计量： $$ F=\dfrac{S_1^2/(k-1)}{S_2^2/(N-k)}\sim F_{k-1,N-k}. $$ $F$ 足够大时拒绝 $H_0$.
-$t$-检验 传统的 $t$ 检验是类似的。这里我们更关心两组之间有无明显差异，于是令 $H_0:\mu_i=\mu_j$. 注意到 ${\rm Var}(\mu_i-\mu_j)=\dfrac{1}{n_i}+\dfrac{1}{n_j}$, 于是构造统计量 $$ T_{i,j}=\dfrac{\bar y_{i,\cdot}-\bar y_{j,\cdot}}{\sqrt{\hat\sigma^2\left(1/n_i+1/n_j\right)}}\sim t_{N-k}. $$ 当 $|t_{i,j}|>t_{N-k,\alpha/2}$ 时拒绝 $H_0$.
+$t$-检验 传统的 $t$ 检验是类似的。这里我们更关心两组之间有无明显差异，于是令 $H_0:\mu_i=\mu_j$. 注意到 ${\rm Var}(\mu_i-\mu_j)=\dfrac{1}{n_i}+\dfrac{1}{n_j}$, 于是构造统计量 $$ T_{i,j}=\dfrac{\bar y_{i,\cdot}-\bar y_{j,\cdot}}{\sqrt{\hat\sigma^2\left(1/n_i+1/n_j\right)}}\sim t_{N-k}. $$ 当 $|t_{i,j}|&gt;t_{N-k,\alpha/2}$ 时拒绝 $H_0$.
 独立样本 $t$ 检验和配对样本 $t$ 检验的主要区别是样本之间有无配对关系。如果是把一堆人平均分成两组，就是独立样本，如果是在同一个人身上先后测了两次数据，则应该是配对样本。独立样本 $t$ 检验的模型是 $y_{i,j}\sim N(\mu_i,\sigma^2)$，而配对样本则是 $y_{1,i}-y_{0,i}\sim N(\mu,\sigma^2)$. 这导致了自由度直接差了 2 倍。本文讨论的 ANOVA 可以看成是独立样本 $t$ 检验的拓展，组数是 2 的 ANOVA 和独立样本 $t$ 检验是等价的。
 多重检验 如果我们想要检验多组数据之间有无差异，比如 $H_0:\mu_1=\mu_2=\mu_3=\mu_4$，就要做 $6$ 组两两之间的 $t$-检验。任意检验犯第一类错误的概率是 $\alpha$, 则整体犯错的概率显然大于 $\alpha$. 这怎么办呢？
 Bonferroni Method 简单粗暴的方法：如果一共做 $k&rsquo;$ 组检验，就把单个检验的 significant level 设置为 $\alpha/k&rsquo;$，这样整体的 significant level 就会小于 $\alpha$.
@@ -1414,16 +1533,16 @@ https://developer.nvidia.com/cuda-downloads
 $ vim /etc/modprobe.d/blacklist-nouveau.conf 如果已有内容就在最后添加，如果是空文件直接输入：
 blacklist nouveau options nouveau modeset=0 然后执行
 $ dracut --force 安装很简单：
-$ sh cuda_&lt;version>_linux.run 输入 accept，之后就一直按 install 与 yes 就行了。执行安装程序会安装自动安装与 CUDA 对应的驱动，所以请不要单独安装驱动。
+$ sh cuda_&lt;version&gt;_linux.run 输入 accept，之后就一直按 install 与 yes 就行了。执行安装程序会安装自动安装与 CUDA 对应的驱动，所以请不要单独安装驱动。
 3. 设置环境变量 $ vim /etc/profile 文件末尾添加：
 export PATH=/usr/local/cuda/bin:$PATH export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH export PATH=/usr/local/cuda-11.2/bin:$PATH export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64:$LD_LIBRARY_PATH 执行
 $ source /etc/profile 4. 测试 $ nvcc -V $ nvidia-smi 都能看到输出说明大成功，否则完犊子。
 安装 cudnn https://developer.nvidia.com/rdp/cudnn-archive
 要先注册 nvidia 账号，哈哈。
 然后干就完了：
-$ mv cudnn-&lt;version>.solitairetheme8 cudnn-&lt;version>.tgz $ tar -xzvf cudnn-&lt;version>.tgz $ cp cuda/include/cudnn*.h /usr/local/cuda/include $ cp cuda/lib64/libcudnn* /usr/local/cuda/lib64 $ chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn* 安装 tensorflow-gpu $ pip3 install tensorflow-gpu 然后菜了，报错 python setup.py egg_info failed with error code 1。需要先更新一波 pip：
+$ mv cudnn-&lt;version&gt;.solitairetheme8 cudnn-&lt;version&gt;.tgz $ tar -xzvf cudnn-&lt;version&gt;.tgz $ cp cuda/include/cudnn*.h /usr/local/cuda/include $ cp cuda/lib64/libcudnn* /usr/local/cuda/lib64 $ chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn* 安装 tensorflow-gpu $ pip3 install tensorflow-gpu 然后菜了，报错 python setup.py egg_info failed with error code 1。需要先更新一波 pip：
 $ pip3 install --upgrade setuptools $ python3 -m pip install --upgrade pip 装完了进入 Python，测试一波：
->>> import tensorflow as tf >>> tf.test.is_gpu_available() 又菜了，他说找不到 libcusolver.so.10。我看了一下，/usr/local/cuda-11.1/lib64/ 里面有个 libcusolver.so.11，好家伙，这不是有病嘛，都 11.2 了还在找 .10，封建遗毒啊！来一个骚操作骗他一手：
+&gt;&gt;&gt; import tensorflow as tf &gt;&gt;&gt; tf.test.is_gpu_available() 又菜了，他说找不到 libcusolver.so.10。我看了一下，/usr/local/cuda-11.1/lib64/ 里面有个 libcusolver.so.11，好家伙，这不是有病嘛，都 11.2 了还在找 .10，封建遗毒啊！来一个骚操作骗他一手：
 $ ln -s /usr/local/cuda-11.2/lib64/libcusolver.so.11 /usr/local/cuda-11.2/lib64/libcusolver.so.10 然后就好了。
 参考文献 [1] https://blog.csdn.net/qq_35540540/article/details/108767800
 [2] https://github.com/tensorflow/tensorflow/issues/43947#issuecomment-739617116</content></entry><entry><title>每日怪诗——大年初二，像个傻蛋儿</title><url>/post/daily_poem/</url><categories><category>沙雕</category></categories><tags><tag>沙雕</tag></tags><content type="html"> （持续更新中）
@@ -1444,7 +1563,7 @@ import numpy as np a = np.array([1, 2, 3]) # 通过list创建array b = np.array(
 # Create the following rank 2 array with shape (3, 4) # [[ 1 2 3 4] # [ 5 6 7 8] # [ 9 10 11 12]] a = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]]) b = a[:2, 1:3] # [[2 3] # [6 7]] 如果某一维度的索引是 int，array会进行降维。要想避免降维可以使用单个元素的 list：
 row_r1 = a[1, :] # 矩阵惨遭降维成向量 row_r2 = a[1:2, :] # 如果把1改成1：2，虽然数据一样，但是不降维 row_r3 = a[[1], :] # 用[1]也不降维 print(row_r1, row_r1.shape) print(row_r2, row_r2.shape) print(row_r3, row_r3.shape) # [5 6 7 8] (4,) # [[5 6 7 8]] (1, 4) # [[5 6 7 8]] (1, 4) 切片操作得到的永远是原来 array 的 subarray，如果我想重组怎么办呢？比如 [[1, 2], [3, 4]] 我想得到 [[3, 4], [1, 2], [1, 2]]，可以使用 integer array indexing：
 a = np.array([[1, 2], [3, 4]]) b = a[[1, 0, 0], [0, 1]] # b是[[3, 4], [1, 2], [1, 2]]，即a的第1行、第0行、第0行拼接 boolean array indexing 很强大，允许我们进行筛选：
-a = np.array([[1,2], [3, 4], [5, 6]]) bool_idx = (a > 2) # Find the elements of a that are bigger than 2; # this returns a numpy array of Booleans of the same # shape as a, where each slot of bool_idx tells # whether that element of a is > 2. # [[False False] # [ True True] # [ True True]] # We use boolean array indexing to construct a rank 1 array # consisting of the elements of a corresponding to the True values # of bool_idx print(a[bool_idx]) # We can do all of the above in a single concise statement: print(a[a > 2]) # [3 4 5 6] # [3 4 5 6] pandas import pandas as pd # 读取excel，第0个sheet df = pd.read_excel('./filename.xlsx', 0) # 获取行数、列数 nrow = df.shape[0] ncol = df.shape[1] ### 切片、筛选、提取数据 ### # 直接通过'[]'，字符串表示列，数字表示行 df['price'] # 选取名字为'price'的列 df[['name', 'price']] # 选取多列，把列名放在list里 df[:2] # 第0行和第1行，这里和list的切片操作一样 # iloc和loc：索引用iloc，列名用loc。iloc和loc的优势是可以进行筛选 # loc用法：df.loc[index, column_name] # 一个大坑：loc的行索引是闭区间，而不是python通用的左闭右开（但iloc是正常的） df.loc[2, 'price'] # 第2行，名字为'price'的列 df.loc[[2,3],['name','price']] # index和column_name都可灵活使用list或切片 df.loc[df['price']&lt;100,'name'] # 筛选，注意筛选条件是针对行的 # iloc用法：只要把loc的列名改成索引 df.iloc[df['price']&lt;100, 2:5] # 一样可以灵活组合list和切片 df.iloc[df['price']&lt;100 | df['price']>200] # 筛选条件'|'表示或，'&amp;'表示与 sklearn # 线性回归 from sklearn import linear_model # 训练数据：X_train, y_train，测试数据：X_test lm = linear_model.LinearRegression() model = lm.fit(X_train, y_train) y_pred = model.predict(X_test) # 交叉验证 from sklearn.model_selection import cross_val_score cross_val_score(m, X, y, cv=5, scoring='neg_mean_squared_error') # 5-fold cross validation, m是sklearn的model 数据结构 heapq import heapq as hq # python的heapq库是在list的基础上添加了堆的操作 # heapq有两种方式创建堆，一种是使用一个空列表，然后使用heapq.heappush()函数把值加入堆中 num = [1,1,4,5,1,4] heapq.heappush(heap, num) # 另外一种就是使用heapq.heapify(list)转换列表成为堆结构 heapq.heapify(num) # 这时候num也变成堆了 网络/爬虫相关 requests import requests # get请求 html = requests.get('www.baidu.com').text # get请求可以优雅地加参数 params = {'q': '搜索测试'} response = requests.get(url='www.google.com/search', params=params).text BeautifulSoup from bs4 import BeautifulSoup # 之前用request获取html bs = BeautifulSoup(html, 'html.parser') # 查找标签，返回标签html字符串的list p_list = bs.findAll('p') # 查找所有&lt;p>标签 div_list = bs.findAll('div', attrs={'class': 'primary'}) # 带条件筛选&lt;div class='primary'> # 条件可以是正则表达式 a_list = bs.findAll('a', string='[abs]') # 字符串包含[abs] json import json import requests data = requests.get('www.baidu.com').content.decode() # 某请求返回的字符串格式的json # 字符串转json data_js = json.loads(data)</content></entry><entry><title>Hello, world!</title><url>/about.html</url><categories/><tags/><content type="html"> 恭喜你发现了这个博客。
+a = np.array([[1,2], [3, 4], [5, 6]]) bool_idx = (a &gt; 2) # Find the elements of a that are bigger than 2; # this returns a numpy array of Booleans of the same # shape as a, where each slot of bool_idx tells # whether that element of a is &gt; 2. # [[False False] # [ True True] # [ True True]] # We use boolean array indexing to construct a rank 1 array # consisting of the elements of a corresponding to the True values # of bool_idx print(a[bool_idx]) # We can do all of the above in a single concise statement: print(a[a &gt; 2]) # [3 4 5 6] # [3 4 5 6] pandas import pandas as pd # 读取excel，第0个sheet df = pd.read_excel('./filename.xlsx', 0) # 获取行数、列数 nrow = df.shape[0] ncol = df.shape[1] ### 切片、筛选、提取数据 ### # 直接通过'[]'，字符串表示列，数字表示行 df['price'] # 选取名字为'price'的列 df[['name', 'price']] # 选取多列，把列名放在list里 df[:2] # 第0行和第1行，这里和list的切片操作一样 # iloc和loc：索引用iloc，列名用loc。iloc和loc的优势是可以进行筛选 # loc用法：df.loc[index, column_name] # 一个大坑：loc的行索引是闭区间，而不是python通用的左闭右开（但iloc是正常的） df.loc[2, 'price'] # 第2行，名字为'price'的列 df.loc[[2,3],['name','price']] # index和column_name都可灵活使用list或切片 df.loc[df['price']&lt;100,'name'] # 筛选，注意筛选条件是针对行的 # iloc用法：只要把loc的列名改成索引 df.iloc[df['price']&lt;100, 2:5] # 一样可以灵活组合list和切片 df.iloc[df['price']&lt;100 | df['price']&gt;200] # 筛选条件'|'表示或，'&amp;'表示与 sklearn # 线性回归 from sklearn import linear_model # 训练数据：X_train, y_train，测试数据：X_test lm = linear_model.LinearRegression() model = lm.fit(X_train, y_train) y_pred = model.predict(X_test) # 交叉验证 from sklearn.model_selection import cross_val_score cross_val_score(m, X, y, cv=5, scoring='neg_mean_squared_error') # 5-fold cross validation, m是sklearn的model 数据结构 heapq import heapq as hq # python的heapq库是在list的基础上添加了堆的操作 # heapq有两种方式创建堆，一种是使用一个空列表，然后使用heapq.heappush()函数把值加入堆中 num = [1,1,4,5,1,4] heapq.heappush(heap, num) # 另外一种就是使用heapq.heapify(list)转换列表成为堆结构 heapq.heapify(num) # 这时候num也变成堆了 网络/爬虫相关 requests import requests # get请求 html = requests.get('www.baidu.com').text # get请求可以优雅地加参数 params = {'q': '搜索测试'} response = requests.get(url='www.google.com/search', params=params).text BeautifulSoup from bs4 import BeautifulSoup # 之前用request获取html bs = BeautifulSoup(html, 'html.parser') # 查找标签，返回标签html字符串的list p_list = bs.findAll('p') # 查找所有&lt;p&gt;标签 div_list = bs.findAll('div', attrs={'class': 'primary'}) # 带条件筛选&lt;div class='primary'&gt; # 条件可以是正则表达式 a_list = bs.findAll('a', string='[abs]') # 字符串包含[abs] json import json import requests data = requests.get('www.baidu.com').content.decode() # 某请求返回的字符串格式的json # 字符串转json data_js = json.loads(data)</content></entry><entry><title>Hello, world!</title><url>/about.html</url><categories/><tags/><content type="html"> 恭喜你发现了这个博客。
 我会在这里发布一些奇奇怪怪的有趣东西，包括但不限于：数学、编程、游戏、吐槽、冲塔、科普、整活。
 文章的发表时间是我自己乱写的，用于控制展示顺序，并不能完全代表其真实的发表时间。
 虽然左上角可以切换英文，但我还没有写英文版的内容。
@@ -1503,7 +1622,7 @@ adb pull /sdcard/Download/ee1d.db C:/Users/yourname/Desktop/ 同样，文件巨�
 Step4 破解数据库密码 这个数据库是加密的，我们得破解它。破解密码需要两个数据：微信 UIN 和手机 IMEI。
 再次进入手机 shell：
 adb shell su root 我们要获取微信的 UIN，它藏在一个文件里：
-cat /data/data/com.tencent.mm/shared_prefs/auth_info_key_prefs.xml 里面有一个 &lt;int name="_auth_uin" value="xxxx" />，这个 value 就是 UIN。现在可以断开手机了。
+cat /data/data/com.tencent.mm/shared_prefs/auth_info_key_prefs.xml 里面有一个 &lt;int name="_auth_uin" value="xxxx" /&gt;，这个 value 就是 UIN。现在可以断开手机了。
 然后打开手机拨号键盘，输入 *#06#，可以看到 IMEI，记录下来。（双卡手机有两个 IMEI，通常我们使用第一个，但保险起见两个都记下来吧）
 把 IMEI 和 UID 两个字符串直接拼接，然后做 MD5 编码（32位小写），结果的前 7 位就是数据库密码。（UIN 如果是负的也没事，直接当成字符串用就行。）
 可以使用这个工具：http://tool.chinaz.com/tools/md5.aspx
