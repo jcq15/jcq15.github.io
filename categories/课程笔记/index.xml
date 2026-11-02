@@ -1,3 +1,2699 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>课程笔记 on 沙雕园</title><link>https://blog.shadiao.win/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/</link><description>Recent content in 课程笔记 on 沙雕园</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 28 Dec 2021 14:13:04 +0800</lastBuildDate><atom:link href="https://blog.shadiao.win/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>公理化概率论（上）</title><link>https://blog.shadiao.win/post/5215-1%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8A/</link><pubDate>Tue, 28 Dec 2021 14:13:04 +0800</pubDate><guid>https://blog.shadiao.win/post/5215-1%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8A/</guid><description>&lt;p>这一部分是本科基础课的内容，以复习为主，只快速回顾一遍要点，不罗嗦。&lt;/p></description></item><item><title>公理化概率论（下）</title><link>https://blog.shadiao.win/post/5215-2%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8B/</link><pubDate>Tue, 28 Dec 2021 14:13:04 +0800</pubDate><guid>https://blog.shadiao.win/post/5215-2%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8B/</guid><description>&lt;p>接着上一篇。&lt;/p></description></item><item><title>统计学基础（上）-统计量&amp;分布族</title><link>https://blog.shadiao.win/post/5215-3%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8A-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E5%88%86%E5%B8%83%E6%97%8F/</link><pubDate>Tue, 28 Dec 2021 14:13:04 +0800</pubDate><guid>https://blog.shadiao.win/post/5215-3%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8A-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E5%88%86%E5%B8%83%E6%97%8F/</guid><description>&lt;p>妙啊。&lt;/p></description></item><item><title>统计学基础（下）-点估计</title><link>https://blog.shadiao.win/post/5215-4%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8B-%E4%BC%B0%E8%AE%A1%E4%B8%8E%E6%8E%A8%E6%96%AD/</link><pubDate>Tue, 28 Dec 2021 14:13:04 +0800</pubDate><guid>https://blog.shadiao.win/post/5215-4%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8B-%E4%BC%B0%E8%AE%A1%E4%B8%8E%E6%8E%A8%E6%96%AD/</guid><description>&lt;p>妙啊。&lt;/p></description></item><item><title>线性回归（五）-2^k 因子实验</title><link>https://blog.shadiao.win/post/5203-5-2k%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1/</link><pubDate>Tue, 28 Dec 2021 14:13:04 +0800</pubDate><guid>https://blog.shadiao.win/post/5203-5-2k%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1/</guid><description>&lt;p>这部分我写的比较抽象，估计只有学过的才看得懂，没学过的可能云里雾里，不过我功力实在有限，难以用自然语言表达清楚这件事……&lt;/p></description></item><item><title>线性回归（四）-多因素方差分析</title><link>https://blog.shadiao.win/post/5203-4%E5%A4%9A%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/</link><pubDate>Tue, 28 Dec 2021 00:00:00 +0000</pubDate><guid>https://blog.shadiao.win/post/5203-4%E5%A4%9A%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/</guid><description>&lt;p>本节就不推导了。最艰难的部分已经过去了，多因素的推导过程和单因素大同小异，并且一大堆下标，真的认真计算的话会被水淹没不知所措的。只要多多观察总结规律就很容易。&lt;/p></description></item><item><title>谱图理论基础</title><link>https://blog.shadiao.win/post/5225-1%E8%B0%B1%E5%9B%BE%E7%90%86%E8%AE%BA%E5%85%A5%E9%97%A8/</link><pubDate>Fri, 12 Nov 2021 13:13:04 +0800</pubDate><guid>https://blog.shadiao.win/post/5225-1%E8%B0%B1%E5%9B%BE%E7%90%86%E8%AE%BA%E5%85%A5%E9%97%A8/</guid><description>&lt;p>图的基本定义啥的就不写了，满大街都是。从 Laplace 矩阵开始的。&lt;/p></description></item><item><title>随机图与网络模型</title><link>https://blog.shadiao.win/post/5225-2%E9%9A%8F%E6%9C%BA%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</link><pubDate>Fri, 12 Nov 2021 13:13:04 +0800</pubDate><guid>https://blog.shadiao.win/post/5225-2%E9%9A%8F%E6%9C%BA%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</guid><description>&lt;p>感觉写的并不透彻，不过就这样吧。&lt;/p></description></item><item><title>2021秋季学期课程笔记导航</title><link>https://blog.shadiao.win/post/%E7%AC%94%E8%AE%B0%E5%AF%BC%E8%88%AA/</link><pubDate>Wed, 10 Nov 2021 14:13:04 +0800</pubDate><guid>https://blog.shadiao.win/post/%E7%AC%94%E8%AE%B0%E5%AF%BC%E8%88%AA/</guid><description>&lt;p>近期会把本学期的部分课程笔记陆续放出来。这是个导航贴。由于写的比较匆忙，难免会有各种错误，还望读者积极指出！&lt;/p>
-&lt;p>又有好几处公式炸了……尽快修复……为什么mathjax会变成这样呢？&lt;/p></description></item><item><title>随机过程（下）-连续时间过程</title><link>https://blog.shadiao.win/post/5221-2%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BF%87%E7%A8%8B/</link><pubDate>Wed, 10 Nov 2021 13:13:04 +0800</pubDate><guid>https://blog.shadiao.win/post/5221-2%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BF%87%E7%A8%8B/</guid><description>&lt;p>泊松过程、生灭过程、更新过程、布朗运动。&lt;/p></description></item><item><title>随机过程（上）-马尔可夫链</title><link>https://blog.shadiao.win/post/5221-1markov_chain/</link><pubDate>Mon, 18 Oct 2021 14:13:04 +0800</pubDate><guid>https://blog.shadiao.win/post/5221-1markov_chain/</guid><description>&lt;p>主要是按照讲义来的，课堂上讲得比较浅，所以这篇文章也不会讨论太深。如果发现错误欢迎指出~&lt;/p></description></item><item><title>线性回归（三）-非线性回归</title><link>https://blog.shadiao.win/post/5203-3%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</link><pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate><guid>https://blog.shadiao.win/post/5203-3%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</guid><description>&lt;p>很多时候，线性模型并不能满足我们的需求，这时候考虑非线性模型是一个不错的选择。但习说不是胡说，改变不是瞎编，我们还是要利用之前学过的线性模型的。&lt;/p></description></item><item><title>线性回归（二）-单因素方差分析</title><link>https://blog.shadiao.win/post/5203-2%E5%8D%95%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/</link><pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate><guid>https://blog.shadiao.win/post/5203-2%E5%8D%95%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/</guid><description>&lt;p>方差分析模型（ANOVA）可以看成是线性模型的一类，但它重点考虑的是离散自变量对连续因变量的影响。&lt;/p></description></item><item><title>线性回归（一）-多元线性回归</title><link>https://blog.shadiao.win/post/5203-1%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</link><pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate><guid>https://blog.shadiao.win/post/5203-1%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</guid><description>&lt;p>这节的内容是整个回归分析的核心，后面几节看似是不同的模型，其实都可以转化成 MLE.&lt;/p>
-&lt;p>这一系列的文章里面很多乱七八糟的矩阵公式，看不懂很正常，多动手就好了。按照文中的思路把每个公式都亲自推导一遍，就能写出来比这个更完善的教程。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>课程笔记 - 沙雕园</title><link>https://blog.shadiao.win/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/</link><description>欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。</description><language>zh-cn</language><atom:link href="https://blog.shadiao.win/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>线性回归（五）-2^k 因子实验</title><link>https://blog.shadiao.win/post/5203-5-2k%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1/</link><guid>https://blog.shadiao.win/post/5203-5-2k%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1/</guid><description>&lt;p>这部分我写的比较抽象，估计只有学过的才看得懂，没学过的可能云里雾里，不过我功力实在有限，难以用自然语言表达清楚这件事……&lt;/p>
+&lt;h2 id="模型">模型&lt;/h2>
+&lt;h3 id="multiple-way-anova">Multiple way ANOVA&lt;/h3>
+&lt;p>这是一种特殊的 multiple way ANOVA. 假设我们有 $k$ 个因子，每个只有 2 个 level，记作 $-$ 和 $+$.&lt;/p>
+&lt;p>以 $2^3$ 为例，我们有三个因子 $A,B,C$，模型为：
+$$
+\begin{align}
+y_i=&amp;amp;\mu +\alpha x_{i,A}+\beta x_{i,B} +\gamma x_{i,C}\
+&amp;amp;+(\alpha\beta)x_{i,AB}+(\alpha\gamma)x_{i,AC}+(\beta\gamma)x_{i,BC}\
+&amp;amp;+(\alpha\beta\gamma)x_{i,ABC}+\varepsilon_i,
+\end{align}
+$$
+其中&lt;/p>
+&lt;ul>
+&lt;li>$x_{i,A}$ 在 $A+$ 时取值 $1$，在 $A-$ 时取 $-1$,&lt;/li>
+&lt;li>$x_{i,AB}=x_{i,A}x_{i,B}$，也只有 $1$ 或 $-1$ 两个值，&lt;/li>
+&lt;li>$x_{i,ABC}=x_{i,A}x_{i,B}x_{i,C}$,&lt;/li>
+&lt;li>$\varepsilon_i\overset{i.i.d.}\sim N(0,\sigma^2)$.&lt;/li>
+&lt;/ul>
+&lt;p>注：这里面每个交叉项只有一个，例如 $\alpha\beta$，而不是像一般的模型那样有 $(\alpha\beta)_{ij}$. 这样正好 $2^k$ 个自由参数，就不必额外加约束条件了。&lt;/p>
+&lt;p>一般地，用 $A_1,\cdots,A_k$ 表示 $k$ 个 factor，模型可以写为
+$$
+y_i=\sum_{\mathcal{I}\in 2^{{1,2,\cdots,k}}} \theta_{\mathcal{I}}x_{i,\mathcal{I}}.
+$$
+这里 $\mathcal{I}$ 是指标集。例如 $\mathcal{I}={1,2,3}$，则 $x_{i,\mathcal{I}}$ 指的就是前面的 $x_{i,A_1A_2A_3}$. 特别地，$x_{i,\varnothing}=1,\theta_{\varnothing}=\mu$.&lt;/p>
+&lt;p>有了这种记号，我们可以方便的写出参数估计（就不推导了）：
+$$
+\theta_{\mathcal{I}}=\frac{1}{2}\left(\bar y(x_{\mathcal{I}}=1)-\bar y(x_{\mathcal{I}}=-1) \right).
+$$
+这么看太抽象，还是回到前面 $2^3$ 的例子，有：&lt;/p>
+&lt;ul>
+&lt;li>$\alpha=\bar y(A+)-\bar y(A-)$,&lt;/li>
+&lt;li>$(\alpha\beta)=\dfrac{1}{2}\left(\bar y(A+,B+)+\bar y(A-,B-)\right)-\dfrac{1}{2}\left(\bar y(A+,B-)+\bar y(A-,B+)\right)$.&lt;/li>
+&lt;/ul>
+&lt;p>我们定义 &lt;strong>effect&lt;/strong> 是系数的二倍，这样就没有 $1/2$ 了。即
+$$
+E(A_{i_1}\cdots A_{i_m})=2\theta_{i_1,\cdots,i_m}.
+$$
+例如 $A$ 组和 $B$ 组的交互作用项 $E(AB)=\left(\bar y(A+,B+)+\bar y(A-,B-)\right)-\left(\bar y(A+,B-)+\bar y(A-,B+)\right)$.&lt;/p>
+&lt;blockquote>
+&lt;p>注：这里的 $E(AB)$ 就是书上的 $AB$，表示 effect，$E$ 只是个记号，和期望没关系。我们一会要用 $AB$ 表示群中的元素，所以只好这样了。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="群论视角">群论视角&lt;/h3>
+&lt;p>我们想知道，对于一般情况，如何得知某个 effect $E(A_{i_1}\cdots A_{i_m})$ 是怎么算的 —— 即哪些是加，哪些是减？为此，我们需要新的武器。&lt;/p>
+&lt;p>表一：&lt;/p>
+&lt;p>&lt;img src="5203/6.png" alt="">&lt;/p>
+&lt;ul>
+&lt;li>第一列是观测值，ab 表示 $A+,B+$ 组的观测结果（每组只有一个），(1) 表示全 $-$ 的观测结果；&lt;/li>
+&lt;li>右边 8 列是 8 个参数，也就是各种 effect。例如 $AB$ 列表示 $AB$ 的联合 effect 是 $E(AB)=((1)-a-b+ab+c-ac-bc+abc)/4$.&lt;/li>
+&lt;/ul>
+&lt;p>可以看出，每个 effect 都是各个观测值的组合，要么是加要么是减。所以研究这个表格的行和列的性质至关重要。&lt;/p>
+&lt;p>令 $\Omega={(a_1,\cdots,a_{2^k}):a_i\in{+,-}}$，即由 $+,-$ 组成的 $k$ 维向量。定义 $\Omega$ 上的乘法：
+$$
+(a_1,\cdots,a_{2^k})(b_1,\cdots,b_{2^k})=(a_1b_1,\cdots,a_{2^k}b_{2^k}),
+$$
+其中 $++=+, +-=-, -+=-,&amp;ndash;=+$. 记向量 $X=(2^k-1,2^k-2,\cdots,0)^T$. 记 $B:\mathbb{N}\to{-,+}$. 若 $m$ 的二进制表示中 1 的个数为奇数，则 $B(m)=-$，否则 $B(m)=+$. 我们令
+$$
+A_i=B(X\ &amp;amp;\ 2^{i-1}).
+$$
+其中 $&amp;amp;$ 是二进制按位与。$A_1,\cdots, A_k$ 就是表一中的前几列（蓝色的那几列）。利用位运算的性质，有
+$$
+A_{i_1}\cdots A_{i_m}=\prod_{s=1}^m B(X\ &amp;amp;\ 2^{i_s-1})=B\left( X\ &amp;amp;\ \sum_{s=1}^m 2^{i_s-1}\right).\qquad (1)
+$$
+设
+$$
+G=\left{\prod_{i\in\mathcal{I}} A_{i}:\mathcal{I}\subset {1,\cdots,k}\right}.
+$$&lt;/p>
+&lt;p>$G$ 上的乘法继承自 $\Omega$. 特别地，定义 $\prod_{i\in\varnothing} A_{i}=\mu=(+,\cdots,+)$. 我们可以迅速得到 $G$ 的一些基本性质（自行证明）：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>$G$ 在乘法下构成一个 Abel 群，$\mu$ 是单位元；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$G$ 中除单位元外，所有元素的阶都是 2；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$|G|=2^k$；（$G$ 中的元素就是表一中的列，它定义了各个 effect 的计算方式）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>更进一步地，有 $G\cong (\mathbb{Z}_2)^k$. （$k$ 个 $\mathbb{Z}_2$ 的直积）&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>对 $g\in G$，定义重量 $w(g)=g\text{中&amp;rsquo;-&amp;lsquo;的个数}$。其中 $i_k$ 各不相等。根据式(1)不难看出 $w(A_{i_1}\cdots A_{i_m})=1/2^{k-1}$，即 $G$ 中除了 $\mu$ 外的元素都是一半 $+$ 一半 $-$. 这意味着&lt;strong>每个 effect 都是一半观测值的均值减掉另一半观测值的均值&lt;/strong>。&lt;/p>
+&lt;h2 id="yates-算法">Yates 算法&lt;/h2>
+&lt;p>我们有一个快速计算各个 effect 的算法：&lt;/p>
+&lt;ol>
+&lt;li>把观测值按&lt;strong>标准顺序&lt;/strong>排成一列&lt;/li>
+&lt;li>在右边新建 $k$ 列：
+&lt;ul>
+&lt;li>每一列的前半部分：第 $i$ 个元素是前一列的第 $2i-1$ 个和第 $2i$ 个之和；&lt;/li>
+&lt;li>每一列的后半部分：第 $i$ 个元素是前一列的第 $2i$ 个和第 $2i-1$ 个之差；&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>在右边在写一列（$k+1$ 列），第一个元素是 $2^k$，其它全是 $2^{k-1}$，&lt;/li>
+&lt;li>此时用新建第 $k$ 列除以 $k+1$ 列，就是对应的 effect.&lt;/li>
+&lt;/ol>
+&lt;p>如下表：&lt;/p>
+&lt;p>&lt;img src="5203/5.png" alt="">&lt;/p>
+&lt;p>标准顺序就是最右边的顺序，$ab$ 表示 $A+,B+,C-$，其它类似。&lt;/p>
+&lt;blockquote>
+&lt;p>这个过程是不是感到莫名熟悉？其实它就是&lt;strong>快速傅里叶算法&lt;/strong>的早期版本。原始论文：&lt;/p>
+&lt;p>&lt;a href="https://en.wikipedia.org/wiki/Frank_Yates" target="_blank" rel="noopener">Yates, Frank&lt;/a>
+(1937). &amp;ldquo;The design and analysis of factorial experiments&amp;rdquo;. &lt;em>Technical Communication No. 35 of the Commonwealth Bureau of Soils&lt;/em>. &lt;strong>142&lt;/strong> (3585): 90–92. &lt;a href="https://en.wikipedia.org/wiki/Bibcode_%28identifier%29" target="_blank" rel="noopener">Bibcode&lt;/a>
+:&lt;a href="https://ui.adsabs.harvard.edu/abs/1938Natur.142...90F" target="_blank" rel="noopener">1938Natur.142&amp;hellip;90F&lt;/a>
+. &lt;a href="https://en.wikipedia.org/wiki/Doi_%28identifier%29" target="_blank" rel="noopener">doi&lt;/a>
+:&lt;a href="https://doi.org/10.1038%2F142090a0" target="_blank" rel="noopener">10.1038/142090a0&lt;/a>
+. &lt;a href="https://en.wikipedia.org/wiki/S2CID_%28identifier%29" target="_blank" rel="noopener">S2CID&lt;/a>
+&lt;a href="https://api.semanticscholar.org/CorpusID:23501205" target="_blank" rel="noopener">23501205&lt;/a>
+.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="显著性分析">显著性分析&lt;/h2>
+&lt;h3 id="方案-a">方案 A&lt;/h3>
+&lt;p>每个 effect 都是一半观测值的均值减掉另一半观测值的均值，所以 $\mathrm{Var}(\dfrac{4\sigma^2}{N})$，$N$ 为总观测样本数。只要有了 $\sigma^2$ 的估计，置信区间就有了。&lt;/p>
+&lt;p>可设某些高阶 interaction 为 0. 例如对 $2^4$，设三阶和四阶 interaction 为 0，此时我们算出来的 $ABC,ABD,ACD,BCD, ABCD$ 就服从 $N(0,\dfrac{4\sigma^2}{N})$，且独立（这是因为设计矩阵的列正交）。于是可以进行方差估计：
+$$
+\hat\sigma^2=\frac{N}{4}\frac{ABC^2+ABD^2+ACD^2+BCD^2+ ABCD^2}{5}.
+$$&lt;/p>
+&lt;blockquote>
+&lt;p>自由度是 5。注意这里均值是已知的 0，所以自由度就是 $n$。之前是因为均值未知，用样本均值替代，自由度就是 $n-1$ 了。&lt;/p>
+&lt;/blockquote>
+&lt;p>某个 effect 的置信区间是
+$$
+\hat\theta\pm t_{5,\frac{\alpha}{2}}\sqrt\frac{4\hat\sigma^2}{N}.
+$$&lt;/p>
+&lt;h3 id="方案-b-daniel">方案 B (Daniel)&lt;/h3>
+&lt;p>我们假设所有 effect 都是 0，此时只有均值和误差项。那么共有 $2^k-1$ 个 effect，它们服从 $N(0,\dfrac{4\sigma^2}{N})$. 我们对这 $2^k-1$ 个点进行正态性检验，哪些不合群哪些就显著。&lt;/p>
+&lt;p>具体地，把 $\hat\theta_i,1\le i\le 2^k-1$ 加上绝对值，然后从小到大排序，然后画 half normal plot。它类似 Q-Q 图，只是有两点不同：&lt;/p>
+&lt;ul>
+&lt;li>只考虑 $x&amp;gt;0$，相当于截尾正态分布&lt;/li>
+&lt;li>横坐标是标准 half normal quantile，但纵坐标是 $N(0,\dfrac{4\sigma^2}{N})$ 的 quantile&lt;/li>
+&lt;/ul>
+&lt;p>令 $I=2^k-1$，图上包含的点是
+$$
+(z_{0.5+0.5[i-0.5]/I},|\hat\theta|_{(i)}).
+$$
+然后目测一条直线，拟合 0 附近的点，看谁不合群。比如这个例子：&lt;/p>
+&lt;p>&lt;img src="5203/7.png" alt="">&lt;/p>
+&lt;p>B 不合群，说明 B 显著。&lt;/p>
+&lt;h3 id="方案-c-lenth">方案 C (Lenth)&lt;/h3>
+&lt;p>看&lt;a href="http://utstat.toronto.edu/~nathan/teaching/STA305/classnotes/week10/sta305-classnotes-week10.html#lenths-method-testing-significance-for-experiments-without-variance-estimates" target="_blank" rel="noopener">这里&lt;/a>
+吧，感觉写的巨详细，我就不抄一遍了。&lt;/p>
+&lt;h2 id="ofat-approach">Ofat Approach&lt;/h2>
+&lt;p>暂略，之后补上&lt;/p>
+&lt;h2 id="混淆confounding">混淆（confounding）&lt;/h2>
+&lt;h3 id="2k-design-in-2-blocks">2^k Design in 2 Blocks&lt;/h3>
+&lt;p>Confounding, 直译为“混淆”。在因果推断中表示干扰因素：当我们研究自变量 X 与因变量 Y 的相关性时，存在一个共同的原因 Z 同时影响了 X 和 Y。最典型的就是我们常说的“相关不等于因果”：冰淇淋的销量和溺水率正相关，但其原因是天气炎热导致冰淇淋销量上升，同时也导致人们游泳变多，溺水事故自然也变多了，而非“冰淇淋导致溺水”。&lt;/p>
+&lt;blockquote>
+&lt;p>这也是一个经典的逻辑谬误，详见我的另一篇文章中的&lt;a href="https://blog.shadiao.win/post/luojimiuwu/">因果谬误&lt;/a>
+。&lt;/p>
+&lt;/blockquote>
+&lt;p>我们通常考虑 $2^k$ 因子设计。以 $2^2$ 设计为例，两个因子为 $A,B$，此外还有一个干扰变量 $C$，它有两个取值 $C1,C2$. 设计时应该考虑到 $C$ 的分配，我们给出三种方案：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Runs&lt;/th>
+&lt;th>A&lt;/th>
+&lt;th>B&lt;/th>
+&lt;th>AB&lt;/th>
+&lt;th>方案1&lt;/th>
+&lt;th>方案2&lt;/th>
+&lt;th>方案3&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>$(1)$&lt;/td>
+&lt;td>$-$&lt;/td>
+&lt;td>$-$&lt;/td>
+&lt;td>$+$&lt;/td>
+&lt;td>$C1$&lt;/td>
+&lt;td>$C1$&lt;/td>
+&lt;td>$C1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$a$&lt;/td>
+&lt;td>$+$&lt;/td>
+&lt;td>$-$&lt;/td>
+&lt;td>$-$&lt;/td>
+&lt;td>$C1$&lt;/td>
+&lt;td>$C2$&lt;/td>
+&lt;td>$C1$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$b$&lt;/td>
+&lt;td>$-$&lt;/td>
+&lt;td>$+$&lt;/td>
+&lt;td>$-$&lt;/td>
+&lt;td>$C2$&lt;/td>
+&lt;td>$C1$&lt;/td>
+&lt;td>$C2$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$ab$&lt;/td>
+&lt;td>$+$&lt;/td>
+&lt;td>$+$&lt;/td>
+&lt;td>$+$&lt;/td>
+&lt;td>$C2$&lt;/td>
+&lt;td>$C2$&lt;/td>
+&lt;td>$C1$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>直观上看，方案 1 中 $C$ 的分配和 $B$ 的分配一样，这会导致因子 $B$ 出现 confounding；方案 2 会导致因子 $A$ confounding；而方案 3 则没有 confounding。&lt;/p>
+&lt;blockquote>
+&lt;p>你能提出一个使得 $AB$ confounding 而 $A$ 和 $B$ 都没有 confounding 的方案吗？&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="数学解释">数学解释&lt;/h3>
+&lt;p>模型：
+$$
+y=\mu+\frac{A}{2}x_A+\frac{B}{2}x_B+\frac{AB}{2}x_Ax_B.
+$$
+四个未知数刚好解出来。而当我们引入干扰因子 $C$ 时，便乘了
+$$
+y=\mu_1I(C1)+\mu_2I(C2)+\frac{A}{2}x_A+\frac{B}{2}x_B+\frac{AB}{2}x_Ax_B.
+$$
+五个未知数，而我们只有四次实验，所以无法全部解出。以方案 1 为例，$C$ 的行为和 $B$ 一样，我们可以设
+$$
+\begin{gather}
+\tau_1=\frac{B}{2}-\mu_1,\
+\tau_2=\frac{B}{2}+\mu_2.
+\end{gather}
+$$
+此时有
+$$
+y=\frac{\tau_2-\tau_1}{2}+\frac{A}{2}x_A+(\tau_1+\tau_2)x_B+\tau_1\frac{AB}{2}x_Ax_B.
+$$
+可见我们解不出 $B,\mu_1,\mu_2$，但其它的都能解。所以 $B$ 被“混淆”了。&lt;/p>
+&lt;blockquote>
+&lt;p>以上讨论给我们的启发：混淆是无法避免的。有干扰因子时，未知数个数多于方程个数，肯定无法全部解出，所以实验设计时应当直接牺牲一个 effect，把它和干扰因子进行混淆，让其它的顺利解出。如果一个都不牺牲，结局就是一个也解不出。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="一般理论2n-blocks-nge2">一般理论：$2^n$ Blocks ($n\ge2$)&lt;/h3>
+&lt;p>当混淆因子有 4 个 level 时，我们就得牺牲两列，如下：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Effect 1 ($D1$)&lt;/th>
+&lt;th>Effect 2 ($D2$)&lt;/th>
+&lt;th>Blocks&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>$-$&lt;/td>
+&lt;td>$-$&lt;/td>
+&lt;td>1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$+$&lt;/td>
+&lt;td>$-$&lt;/td>
+&lt;td>2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$-$&lt;/td>
+&lt;td>$+$&lt;/td>
+&lt;td>3&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$+$&lt;/td>
+&lt;td>$+$&lt;/td>
+&lt;td>4&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>正好对应。类似地，干扰因子有 $2^n$ 个 level，就得牺牲 $n$ 列。&lt;/p>
+&lt;p>但事实没有那么美好，对于上例，如果 $D_1=AB$, $D_2=A$，我们可以证明 $B$ 也惨遭混淆。如果 $D_1=A,D_2=B$ 呢？那 $AB$ 会被混淆。更一般地，我们如果选取 $G$ 中的非单位元 ${h_1,\cdots,h_n}$ 作为牺牲契约，可以证明 ${h_1,\cdots,h_n}$ &lt;strong>生成的子群 $H$ 中的 $2^n$ 个元素都会被混淆&lt;/strong>，而不在 $H$ 中的元素都不会被混淆。&lt;/p>
+&lt;blockquote>
+&lt;p>具体证明比较繁琐，和群没啥关系，需要研究每一列生成的规律（二进制按位与），就略去了。有人有好的证法可以评论一手。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="分式析因设计">分式析因设计&lt;/h2>
+&lt;p>分式析因设计（Fractional Factorial Experiments, F.F.）是 $2^k$ 因子设计的变种。对 block 来说，“混淆”相当于集合的减法，而分式析因设计则相当于除法，也就是商群。&lt;/p>
+&lt;p>先来说说动机。根据层次原则，高阶的交叉项显著的概率很低。比如一个 10 因子设计，需要做 1024 次试验，而如果我们假定大于等于 4 阶的 effect 都不显著，我们可以忽略掉整整 968 个。这不禁让我们动起歪脑筋：既然忽略了 968 个 effect，有没有办法少做 968 次试验呢？这不是活活省钱吗？&lt;/p>
+&lt;h3 id="做法">做法&lt;/h3>
+&lt;p>我们可以从 $G$ 中选取若干非单位元 $h_1,\cdots, h_p$，记它们生成的子群为 $H$，显然 $|H|=2^p$. 我们认为 $H$ 中的元素所代表的 effect 可以忽略，此时我们只需做 $2^{k-p}$ 次实验。具体来说，只要考虑 $h_1,\cdots, h_p$ 中全为正的行即可。这样做相当于考虑商群 $G/H$. 对于 $gH\in G/H$，我们认为 $gH$ 中的元素所代表的 effect 都相等。$H$ 称为 defining contrast subgroup.&lt;/p>
+&lt;p>为了方便，人们规定了 $H$ 的几种表达方式。&lt;/p>
+&lt;p>$H$ 有 $p$ 个生成元，如果依次记作 $h_1,\cdots,h_p$，则可以写 $I=h_1,I=h_2,\cdots,I=h_p$. 这组 $p$ 个式子称为 defining relation. （$\mu$ 也写作 $I$）&lt;/p>
+&lt;p>注意到 $A_i$ 是 $G$ 的生成元，我们总可以将其划分为不交的两部分，$\mathcal{L}={A_{l_1},\cdots,A_{l_p}}$，$\mathcal{R}={A_{r_1},\cdots,A_{r_{k-p}}}$，使得对于 $i=1,\cdots,p$ 有
+$$
+A_{l_i}H=A_{r_{i_1}}\cdots A_{r_{i_{s_i}}}H
+$$
+这种形式。也就是左边的每个元素都能用右边的表示出来（可以自己试着证明下）。这种形式叫 generators。&lt;/p>
+&lt;h3 id="ff-的评价">F.F. 的评价&lt;/h3>
+&lt;p>如何评价 F.F. 的好坏？分辨率是一个指标。我们商掉了 $H$，自然希望 $H$ 中尽可能是高阶项。$H$ 中元素对应 effect 阶数称为字长（word-length），例如 $ABC$ 字长为 3. &lt;strong>分辨率&lt;/strong> 定义为 $H$ 中非单位元的最短字长。&lt;/p>
+&lt;p>&lt;strong>Clear effect&lt;/strong>: 对于字长为 1 或 2 的元素 $g$，称它是 clear 的，如果陪集 $gH$ 中没有其他的字长为 1 或 2 的元素；若 $gH$ 中没有其他的字长为 1，2，3 的元素，则称为 strongly clear.&lt;/p>
+&lt;p>更进一步，我们可以考虑 $H$ 中元素的字长，记 $n_i$ 为 $H$ 中字长为 $i$ 的元素个数，则 $W=(n_3,n_4,\cdots)$ 称为 wordlength pattern. （通常我们要求 $n_2=0$，否则糟糕透了，两个字长为 1 的 effect 在同一个陪集中）&lt;/p>
+&lt;p>选择 $W$ 的字典序最小的设计。&lt;/p></description></item><item><title>统计学基础（下）-点估计</title><link>https://blog.shadiao.win/post/5215-4%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8B-%E4%BC%B0%E8%AE%A1%E4%B8%8E%E6%8E%A8%E6%96%AD/</link><guid>https://blog.shadiao.win/post/5215-4%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8B-%E4%BC%B0%E8%AE%A1%E4%B8%8E%E6%8E%A8%E6%96%AD/</guid><description>&lt;p>妙啊。&lt;/p>
+&lt;h2 id="点估计">点估计&lt;/h2>
+&lt;p>设 $X_1,\cdots,X_n\sim P_\theta\in\mathcal{P}$，其中 $\theta=(\theta_1,\cdots,\theta_k)\in\Theta$. 这是经典的参数模型。如前所述，**估计量（estimator）**是统计量 $\hat\theta=w(X_1,\cdots,X_n)$. 我们下面来介绍得到 $\hat\theta$ 的方法。&lt;/p>
+&lt;h3 id="矩估计">矩估计&lt;/h3>
+&lt;p>通常来说 $j$ 阶矩都和参数有关，即 $E_\theta X_1^j=h_j(\theta)$. 假设 $\theta$ 是 $k$ 维的，令 $h(\theta)=(h_1(\theta),\cdots,h_k(\theta))$. 若该存在的都存在，就可以淦了：
+$$
+\hat\theta_j=h_j^{-1}\left(\frac{1}{n}\sum_{i=1}^nX_i^j\right).
+$$&lt;/p>
+&lt;h3 id="极大似然估计">极大似然估计&lt;/h3>
+&lt;p>似然函数定义为
+$$
+l(\theta;X)=f_\theta(X).
+$$
+就是密度函数，不过变量变成了 $\theta$。极大似然估计为
+$$
+\hat\theta=\mathop{\arg\max}_{\theta\in\Theta}\ l(\theta;X).
+$$
+对于指数族
+$$
+l(\eta;x)=\exp\left(\eta^T(\theta)T(x)-\xi(\theta)\right)h(x),
+$$
+如果各种反函数存在，可以证明 MLE 是
+$$
+\hat\theta=\eta^{-1}\left(\mu^{-1}(T(x))\right).
+$$&lt;/p>
+&lt;h3 id="m-估计">M-估计&lt;/h3>
+&lt;p>是 MLE 的推广，似然函数被换成一般函数 $s_\theta:\mathcal{X}\to\bar{\mathbb{R}}$，估计值是使得 $S_n(\theta)=\dfrac{1}{n}\sum_{i=1}^n s_\theta(X_i)$ 最大的 $\theta$.&lt;/p>
+&lt;h2 id="估计的评价">估计的评价&lt;/h2>
+&lt;h3 id="一般理论">一般理论&lt;/h3>
+&lt;p>**决策规则（decision rule）**是将观察结果转换为适当动作的函数。对于一般的统计问题，我们首先获取样本 $X$，记 allowable actions（不知道咋翻译最恰当）为集合 $\mathbb{A}$. 一个决策规则 $T$ 便是把 $X$ 映射为 $\mathbb{A}$ 中 $T(X)$ 的过程。&lt;/p>
+&lt;p>&lt;strong>损失函数（loss function）&lt;/strong> $L(P,T(x))$ 表示当真实分布为 $P$ 时，观察到 $X=x$ 时执行决策 $T(X)$ 的损失。&lt;/p>
+&lt;p>**风险（risk）**表示平均损失，即
+$$
+R_T(P)=\mathrm E_P\left(L(P,T(X))\right)=\int L(P,T(X))dP.
+$$
+我们自然希望风险越小越好。对于两个决策规则 $T_1,T_2$，我们称：&lt;/p>
+&lt;ul>
+&lt;li>$T_1$ &lt;strong>as good as&lt;/strong> $T_2$，如果 $R_{T_1}(P)\le R_{T_2}(P),\forall P\in\mathcal{P}$,&lt;/li>
+&lt;li>$T_1$ &lt;strong>better than&lt;/strong> $T_2$，如果 $T_1$ &lt;strong>as good as&lt;/strong> $T_2$ 且对某个 $P$，$R_{T_1}(P)&amp;lt;R_{T_2}(P)$,&lt;/li>
+&lt;li>$T_1$ 和 $T_2$ &lt;strong>equivalent&lt;/strong>，如果 $R_{T_1}(P)=R_{T_2}(P),\forall P\in\mathcal{P}$.&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>这个 as good as 应该理解为“不差于”。&lt;/p>
+&lt;/blockquote>
+&lt;p>接下来我们有两个问题：&lt;/p>
+&lt;ul>
+&lt;li>如何确定风险函数 $R$&lt;/li>
+&lt;li>确定了 $R$ 之后，如何根据 $R$ 来选择最优的决策&lt;/li>
+&lt;/ul>
+&lt;h3 id="几种最优">几种“最优”&lt;/h3>
+&lt;p>假设我们有一堆可选的决策规则，记作集合 $\mathfrak{J}$. 给定 $R$ 之后，如何选择“最优”呢？&lt;/p>
+&lt;p>&lt;strong>Optimal&lt;/strong>：如果 $T_&lt;em>$ as good as $\mathfrak{J}$ 中其他规则，则称它 &lt;strong>$\mathfrak{J}$-optimal&lt;/strong>. 在“所有可能的决策规则”可以构成集合时，若 $T_&lt;/em>$ as good as 所有可能的决策规则，则称为 &lt;strong>optimal&lt;/strong>。&lt;/p>
+&lt;blockquote>
+&lt;p>Optimal 就是所谓的“完爆”。&lt;/p>
+&lt;/blockquote>
+&lt;p>显然，optimal 不一定存在，我们需要新的定义。&lt;/p>
+&lt;blockquote>
+&lt;p>“炉石传说没有完爆！”——银背族长&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;strong>Admissible&lt;/strong>：如果不存在比 $T_*$ better 的规则，则称它 &lt;strong>$\mathfrak{J}$-admissible&lt;/strong>（或 admissible）。&lt;/p>
+&lt;p>&lt;strong>Minimax&lt;/strong>：$\sup_P R_{T_&lt;em>}(P)\le\sup_P{R_{T}}(P)$，则 $T_&lt;/em>$ 是 minimax。&lt;/p>
+&lt;p>&lt;strong>Bayes-rule&lt;/strong>：考虑 Bayes risk
+$$
+r_T(\Pi)=\int_\mathcal{P}R_T(P)d\Pi(P).
+$$
+给定 $\Pi$，如果 $T_&lt;em>$ 满足 $r_{T_&lt;/em>}\le r_T$，就叫 Bayes rule w.r.t. $\Pi$。要寻找 Bayes rule 下的最优决策，可以考虑 $\mathrm E\left(\mathrm E\left(L(\theta,T(X))|X\right)\right)$.&lt;/p>
+&lt;h3 id="点估计的评价点估计的风险函数">点估计的评价（点估计的风险函数）&lt;/h3>
+&lt;h4 id="mse">MSE&lt;/h4>
+&lt;p>我们把上面的理论套用起来。我们用 $\hat\theta$ 表示估计量，也就是上面的 $T(X)$. 常用的风险函数为&lt;strong>均方误差（mean squared error, MSE）&lt;/strong>。MSE 对应的损失函数为 $L(P_\theta,\hat\theta)=(\theta-\hat\theta)^2$，对应的风险函数为
+$$
+MSE=\mathrm E_\theta\left((\theta-\hat\theta)^2\right).
+$$
+我们定义&lt;strong>偏差（bias）&lt;/strong>：
+$$
+b_T(\theta)=\mathrm E_\theta(\hat\theta)-\theta,
+$$
+则有 $
+\mathrm E_\theta\left((\theta-\hat\theta)^2\right)=\mathrm E_\theta\left((\theta-\mathrm E\hat\theta)^2\right)+\left(\mathrm E\hat\theta-\theta\right)^2$，即
+$$
+MSE(\theta)=b^2(\theta)+\mathrm{Var}(\theta).
+$$&lt;/p>
+&lt;h4 id="rao-blackwall-定理">Rao-Blackwall 定理&lt;/h4>
+&lt;p>如下定理表明，我们可以考虑充分统计量的条件期望来构造更好的估计。&lt;/p>
+&lt;p>&lt;strong>定理（Rao-Blackwall）&lt;/strong> 设 $T$ 是充分统计量。若参数空间 $\Theta$ 是凸集，$S_0(X)$ 满足 $\mathrm E_P|S_0|&amp;lt;\infty,\forall P\in\mathcal{P}$. 令 $S_1=\mathrm E(S_0(X)|T)$，则&lt;/p>
+&lt;ul>
+&lt;li>若损失函数 $L(P,a)$ 关于 $a$ 是凸函数，则 $R_{S_1}(P)\le R_{S_0}(P)$；&lt;/li>
+&lt;li>若 $L(P,a)$ 严格凸，且 $S_0$ 不是 $T$ 的函数，则 $S_1$ better than $S_0$.&lt;/li>
+&lt;/ul>
+&lt;p>读者自证不难。（为什么要求 $T$ 是充分统计量？）&lt;/p>
+&lt;h4 id="umvue">UMVUE&lt;/h4>
+&lt;p>uniformly minimum variance unbiased estimator. 即对所有 $P$ （一致），$\mathrm{Var}(T_*(X))\le\mathrm{Var}(T(X))$（最小），且无偏（相当于规定 $\mathfrak{J}$ 是无偏估计，然后寻找 MSE 下的最优估计）。我们下面介绍几种寻找 UMVUE 的方法。&lt;/p>
+&lt;p>&lt;strong>方法一：定理（Lehmann-Scheffe）&lt;/strong> 设 $T(X)$ 充分且完备，若 $\theta$ 的无偏估计存在，则存在唯一的形如 $h(T)$ 的无偏估计，且 $h(T)$ 是唯一的 UMVUE。&lt;/p>
+&lt;p>这个定理告诉我们，想获得 UMVUE，可以先找充分且完备的统计量 $T(X)$，然后尝试 $h(T)$，使得 $\mathrm Eh(T)=\theta$. 那如果找不到呢？可以用下面的定理。&lt;/p>
+&lt;p>&lt;strong>方法二：定理&lt;/strong> 设 $\mathcal{U}={T(X):\mathrm E(T)=0 \text{ and }\mathrm{Var}(T)&amp;lt;\infty}$，设 $T$ 是参数的无偏估计且 $\mathrm E(T^2)&amp;lt;\infty$. 令内积为 $\langle X,Y\rangle=\mathrm E(XY)$. 则：&lt;/p>
+&lt;ul>
+&lt;li>$T$ 是 UMVUE 的充要条件是 $T\perp \mathcal{U}$（对任意 $P$）.&lt;/li>
+&lt;li>设 $S$ 是充分统计量，且 $T=h(S)$. 令 $\mathcal{U}_S={U\in\mathcal{U}:U=\varphi(S)}$. $T$ 是 UMVUE 的充要条件是 $T\perp \mathcal{U}_S$ （对任意 $P$）.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>推论&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>（线性）设 $T_j$ 是 $\eta_j$ 的 UMVUE，方差有限，则 $T=\sum_{j=1}^k c_jT_j$ 是 $\eta=\sum_{j=1}^k c_j\eta_j$ 的 UMVUE.&lt;/li>
+&lt;li>（唯一性）设 $T_1,T_2$ 是 $\eta$ 的 UMVUE，方差有限，则 $T_1=T_2$ a.s..&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>方法三：C-R 下界&lt;/strong>。寻找 UMVUE 的另一种思路是，找到方差的下界。这样只要我们得到一个无偏估计，其方差等于下界，就一定是 UMVUE 了。为此，我们需要一坨子新东西。&lt;/p>
+&lt;p>&lt;strong>定义（Fisher information）&lt;/strong> 有一分布族 $\mathcal{P}={f_\theta}$. $X$ 是服从 $f_\theta$ 的样本。如果该存在的都存在，则定义 Fisher information
+$$
+I(\theta)=\mathrm E\left(\frac{\partial}{\partial\theta}\log f_\theta (X)\right)^2.
+$$
+&lt;strong>性质1&lt;/strong> （自行证明）若 $\dfrac{\partial^2}{\partial\theta^2}f_\theta$ 存在，且满足光滑性条件：
+$$
+\begin{gather}
+\frac{\partial}{\partial\theta}\int f_\theta(x)dx=\int \frac{\partial f_\theta(x)}{\partial\theta}dx, \
+\frac{\partial}{\partial\theta}\int \frac{\partial f_\theta (x)}{\partial\theta}dx=\int \frac{\partial^2 f_\theta (x)}{\partial\theta^2}dx,\&lt;/p>
+&lt;p>\end{gather}
+$$
+则有
+$$
+I(\theta)=-\mathrm E\left(\dfrac{\partial^2}{\partial\theta^2}\log f_\theta(X)\right).
+$$
+&lt;strong>性质2&lt;/strong> 若 $X,Y$ 独立，则 $I_{X+Y}=I_X+I_Y$.&lt;/p>
+&lt;p>&lt;strong>定理（Cramer-Rao 下界）&lt;/strong> 满足上述光滑性条件时，若 $T(X)$ 是 $g(\theta)$ 的无偏估计，且满足
+$$
+g&amp;rsquo;(\theta)=\frac{\partial}{\partial\theta}\int T(x)f_\theta(x)dx=\int T(x)\frac{\partial}{\partial\theta}f_\theta(x)dx,
+$$
+则 $\mathrm{Var}(T(X))\ge\dfrac{g&amp;rsquo;(\theta)^2}{I(\theta)}$.&lt;/p>
+&lt;p>我们可以将其推广到参数为多元的情况。若 $\theta$ 是向量，记 $\dfrac{\partial}{\partial\theta}$ 为梯度（列向量）。则信息矩阵
+$$
+I(\theta)=\mathrm E\left{\frac{\partial\log f_\theta(x)}{\partial\theta}\left[\frac{\partial\log f_\theta(x)}{\partial\theta}\right]^T\right}.
+$$
+相应的，光滑性条件也是矩阵（或向量）的每个位置都满足。此时 Cramer-Rao 下界为
+$$
+\mathrm{Var}(T(X))\ge\left(\frac{\partial g(\theta)}{\partial\theta}\right)^TI^{-1}(\theta)\frac{\partial g(\theta)}{\partial\theta}.
+$$
+&lt;strong>指数族&lt;/strong> 对于指数族，我们又有福利了。若
+$$
+f_\theta(x)=\exp\left[\eta^T(\theta)T(x)-\xi(\theta)\right]h(x),
+$$
+则:&lt;/p>
+&lt;ul>
+&lt;li>对满足 $E|S(X)|&amp;lt;\infty$ 的 $S$，上面乱七八糟的光滑性条件都成立，即
+&lt;ul>
+&lt;li>$
+\frac{\partial}{\partial\theta}\int S(x)f_\theta(x)dx=\int S(x)\frac{\partial}{\partial\theta}f_\theta(x)dx
+$,&lt;/li>
+&lt;li>$I(\theta)=-\mathrm E\left(\dfrac{\partial^2}{\partial\theta^2}\log f_\theta(X)\right)$.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>此外还有 $
+\mathrm{Var}(T)=I(\eta)$,&lt;/li>
+&lt;li>令 $\psi=\mathrm E(T(X))$，则 $\mathrm{Var}(T)=I^{-1}(\psi)$.&lt;/li>
+&lt;/ul>
+&lt;h2 id="假设检验">假设检验&lt;/h2>
+&lt;p>设 $\mathcal{P}$ 是分布族，$\mathcal{P}_0\in\mathcal{P},\mathcal{P}_1=\mathcal{P}\setminus\mathcal{P}_0$. 一般的假设检验问题需要决定以下两个假设哪个是对的：
+$$
+H_0:P\in\mathcal{P}_0,\
+H_1:P\in\mathcal{P}_1.
+$$
+动作空间 $\mathbb{A}={0,1}$. 此时的决策规则 $T=I_C(X)$，即 $X\in C$ 时选择 $H_1$，否则选择 $H_0$. $C$ 被称为&lt;strong>拒绝域（rejection region）&lt;/strong>（因为拒绝了 $H_0$）。&lt;/p>
+&lt;h3 id="两类错误">两类错误&lt;/h3>
+&lt;p>**第一类错误（type I error）**指 $H_0$ 成立，但拒绝了 $H_0$.&lt;/p>
+&lt;p>**第二类错误（type II error）**指 $H_0$ 不成立，但接受了 $H_0$.&lt;/p>
+&lt;p>我们定义**功效函数（power function）**为第一类错误的概率，即
+$$
+\alpha_T(P)=P(X\in C).
+$$
+假设检验的 &lt;strong>size&lt;/strong> 定义为功效的上确界，即
+$$
+\alpha&amp;rsquo;=\sup_{P\in\mathcal{P}_0} P(X\in C).
+$$&lt;/p>
+&lt;h2 id="渐近分析slides-19">渐近分析（slides 19）&lt;/h2>
+&lt;p>许多时候我们无法得到 $T_n$ 的确切分布，这时候考虑 $T_n$ 的极限性质会大有帮助。&lt;/p>
+&lt;h3 id="一致性">一致性&lt;/h3>
+&lt;p>&lt;strong>定义&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>$T_n(X)$ 是 $\theta$ 的&lt;strong>一致估计（consistent）&lt;/strong>，当且仅当 $T_n(X)\overset{p}\to\theta$.&lt;/li>
+&lt;li>$T_n(X)$ 是 $\theta$ 的&lt;strong>强一致估计（strongly consistent）&lt;/strong>，当且仅当 $T_n(X)\overset{a.s.}\to\theta$.&lt;/li>
+&lt;li>${a_n}$ 是一个正数列，$a_n\to\infty$，称 $T_n(X)$ &lt;strong>$a_n$-consistent&lt;/strong>，当且仅当 $a_n[T_n(X)-\theta]=O_P(1)$.&lt;/li>
+&lt;li>$T_n(X)$ 称为 &lt;strong>$L_r$-consistent&lt;/strong>，当且仅当 $T_n(X)\overset{L^r}\to\theta$.&lt;/li>
+&lt;/ul>
+&lt;p>显然其他几种一致性都能推出第一种 trivial consistent.&lt;/p>
+&lt;h3 id="渐近偏差与渐近方差">渐近偏差与渐近方差&lt;/h3>
+&lt;p>&lt;strong>渐近无偏&lt;/strong>：$b_n\to 0$.&lt;/p>
+&lt;p>&lt;strong>渐近期望&lt;/strong>：数列 $a_n\to\infty$ 或 $a_n\to a&amp;gt;0$，若 $a_n\xi_n\overset{d}\to \xi$ 且 $\mathrm E|\xi|&amp;lt;\infty$，则 $\mathrm E\xi/a_n$ 称为渐近期望。&lt;/p>
+&lt;p>&lt;strong>渐近偏差&lt;/strong>：$T_n-\theta$ 的渐近期望。&lt;/p>
+&lt;p>&lt;strong>渐近MSE&lt;/strong>：$a_n(T_n-\theta)\overset{d}\to Y$，则 $\text{amse}=\mathrm E Y^2/a_n^2$.&lt;/p>
+&lt;p>&lt;strong>渐近方差&lt;/strong>：$a_n(T_n-\theta)\overset{d}\to Y$，则渐近方差为 $\mathrm{Var}Y/a_n^2$.&lt;/p>
+&lt;p>高维的情况：设 $\hat\theta_n$ 是一列估计（$k$ 维向量），若存在正定矩阵 $V_n(\theta)$ 使得
+$$
+[V_n(\theta)]^{-1/2}(\hat\theta_n-\theta)\overset{d}\to N_k(0,I_k),
+$$
+其中 $I_k$ 是单位矩阵，则称 $V_n(\theta)$ 是&lt;strong>渐近协方差矩阵&lt;/strong>。&lt;/p>
+&lt;p>若 Fisher 信息矩阵正定，且渐近方差满足 $V_n(\theta)=I_n(\theta)^{-1}$ （“CRLB”），则称之为 &lt;strong>asymptotially efficient&lt;/strong> 或 &lt;strong>aymptotically optimal&lt;/strong>.&lt;/p>
+&lt;p>两组估计，渐近协方差分别为 $V_{1n}(\theta)$ 和 $V_{2n}(\theta)$，若对足够大的 $n$，有 $\forall \theta\in\Theta,\quad V_{2n}(\theta)-V_{1n}(\theta)$ 半正定；且存在某个 $\theta$ 使其正定，则称 $\hat\theta_{1n}$ &lt;strong>asymptotically more efficient than&lt;/strong> $\hat\theta_{2n}$.&lt;/p>
+&lt;blockquote>
+&lt;p>注意：对于渐近无偏的估计，CRLB 不一定对渐近方差成立，例：Hodges&amp;rsquo; estimator, Lec23 p13.&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;strong>Asymptotic relative efficiency&lt;/strong>: $T&amp;rsquo;&lt;em>n$ 相对于 $T_n$ 的渐近效率为
+$$
+e&lt;/em>{T&amp;rsquo;&lt;em>n,T_n}(P)=\frac{\text{amse}&lt;/em>{T_n}(P)}{\text{amse}_{T&amp;rsquo;&lt;em>n}(P)}.
+$$
+如果 $\limsup_n e&lt;/em>{T&amp;rsquo;_n,T_n}(P)\le 1$，且存在 $P$ 使 $&amp;lt;$ 成立，则称 $T_n$ &lt;strong>asympotically more efficient&lt;/strong>.&lt;/p>
+&lt;p>&lt;strong>定理（$\delta$-method）&lt;/strong> 设 $U_n$ 满足 $a_n(U_n-\theta)\overset{d}\to Y$ 且 $EY^2&amp;lt;\infty$，$a_n&amp;gt;0$，$a_n\to\infty$. 设 $g$ 在 $\theta$ 处可微，$T_n=g(U_n)$ 是$\vartheta=g(\theta)$ 的估计量，则 $\text{amse}_{T_n}=E{[g&amp;rsquo;(\theta)Y]^2}/a_n^2$, $T_n$ 的渐近方差为 $[g&amp;rsquo;(\theta)^2\mathrm{Var}Y]/a_n^2$.&lt;/p>
+&lt;h3 id="点估计的渐近性质">点估计的渐近性质&lt;/h3>
+&lt;h4 id="矩估计-1">矩估计&lt;/h4>
+&lt;p>对于矩估计，若 $h^{-1}$ 存在，由大数定律知它是 &lt;strong>strongly consistent&lt;/strong>.&lt;/p>
+&lt;p>若还有 $h^{-1}$ 可微且 $E|X_1|^{2k}&amp;lt;\infty$ （$k$ 为参数个数），由 CLT 知矩估计 $\sqrt{n}$-consistent.&lt;/p>
+&lt;p>若 $k=1$，则 $\text{amse}_{\hat\theta_n}(\theta)=g&amp;rsquo;(\mu_1)^2\sigma^2/n$.&lt;/p>
+&lt;h4 id="umvue-1">UMVUE&lt;/h4>
+&lt;p>UMVUE 都是一致无偏的。&lt;/p>
+&lt;h4 id="样本分位数">样本分位数&lt;/h4>
+&lt;p>我们经常用样本分位数做估计量，因此有必要研究它。对 $\gamma\in(0,1)$，第 $\lfloor \gamma n\rfloor$ 个次序统计量被称为 &lt;strong>$\gamma$-sample quantile&lt;/strong>. 有如下结论：&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 设 $X_i$ i.i.d.，cdf 为 $F$，若 $F(\theta)=\gamma$，$F&amp;rsquo;(\theta)$ 存在且不为 0，则第 $\lfloor \gamma n\rfloor$ 个次序统计量 $\tilde{\theta}_n$ 满足
+$$
+\sqrt{n}\left(\tilde{\theta}_n-\theta\right)\overset{d}\to N\left(0,\frac{\gamma(1-\gamma)}{F&amp;rsquo;(\theta)^2}\right).
+$$&lt;/p>
+&lt;blockquote>
+&lt;p>证明用到 Berry–Esseen Theorem，略&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="mle">MLE&lt;/h4>
+&lt;p>&lt;strong>定理&lt;/strong> 设 $\theta_0$ 为实际参数，并满足以下条件：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>$\Theta$ 是紧集，&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对任意 $x$，$f(x|\theta)$ 关于 $\theta$ 连续，&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>存在控制函数 $M(x)$ 使得 $E_{\theta_0}|M(X)|&amp;lt;\infty$ 且
+$$
+\left|\log f(x|\theta)-\log f(x|\theta_0)\right|\le M(x),\quad\forall x,\theta,
+$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>（一致性）$f(x|\theta)=f(x|\theta_0)$ 则 $\theta=\theta_0$.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>此时，MLE $\hat\theta_n\overset{a.s.}\to\theta_0$.&lt;/p>
+&lt;blockquote>
+&lt;p>注：&lt;/p>
+&lt;ol>
+&lt;li>连续性可以替换成上半连续，即对任意 $x$，有&lt;/li>
+&lt;/ol>
+&lt;p>$$
+\lim_{\rho\to 0}\sup_{|\theta&amp;rsquo;-\theta|&amp;lt;\rho }f(x|\theta&amp;rsquo;) =f(x|\theta).
+$$&lt;/p>
+&lt;ol start="2">
+&lt;li>可以推广到任意度量空间，只需把 $|\theta-\theta_0|$ 换成度量 $d(\theta,\theta_0)$.&lt;/li>
+&lt;li>控制函数 $M(x)$ 的存在性是关键。&lt;/li>
+&lt;/ol>
+&lt;/blockquote>
+&lt;h4 id="m-估计-1">M-估计&lt;/h4>
+&lt;p>类似于 MLE，有如下结论：&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 有 $S_n,S$ 满足&lt;/p>
+&lt;ol>
+&lt;li>$
+\sup_{\theta\in\Theta}|S_n(\theta)-S(\theta)|\overset{p}\to 0$,（一致收敛）&lt;/li>
+&lt;li>$\sup_{\theta:d(\theta,\theta_0)\ge\rho}S(\theta)&amp;lt;S(\theta_0)$，（well-separation）&lt;/li>
+&lt;/ol>
+&lt;p>若估计量 $\hat\theta_n$ 满足 $S_n(\hat\theta_n)\ge S_n(\theta_0)-o_P(1)$，则 $d(\hat\theta_n,\theta_0)\overset{p}\to 0$.&lt;/p>
+&lt;h4 id="rle">RLE&lt;/h4>
+&lt;p>RLE 指的是 roots of likelihood equation，使得 $\dfrac{\partial}{\partial\theta}\log L_n(\theta)=0$ 的点。它和 MLE 有着千丝万缕的联系。事实上，在一定的正则性条件下，它收敛到真实参数，这使得 RLE 具有一致性。&lt;/p>
+&lt;p>&lt;strong>正则性条件&lt;/strong>（basic regularity conditions） 设 $\theta_*$ 是真实值，则&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>$\Theta$ 是 $\mathbb{R}^k$ 中的开集，&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$f(x|\theta)$ 二阶连续可微，且一二阶导数均可和积分交换，&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>（控制函数）设 $\Psi(x,\theta)=\dfrac{\partial^2}{\partial\theta\partial\theta^T}\log f(x|\theta)$（是矩阵），则存在常数 $c$ 和非负函数 $H$ 使得 $EH(X)&amp;lt;\infty$ 且
+$$
+\sup_{|\theta-\theta_*|&amp;lt;c}|\Psi(x,\theta)|\le H(x).
+$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>（identifiability）$f(x|\theta)=f(x|\theta_&lt;em>)$ 则 $\theta=\theta_&lt;/em>$.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>定理&lt;/strong>（RLE的一致性） 在上述正则性条件下，存在一列 $\hat\theta_n$ 使得 $\dfrac{\partial}{\partial\theta}\log L_n(\hat\theta_n)=0$ 且 $\hat\theta_n\overset{a.s.}\to\theta_*$.&lt;/p>
+&lt;p>此外，我们可以讨论 RLE 的渐近正态性。&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 设正则性条件成立，且 Fisher 信息矩阵在 $\theta_&lt;em>$ 处正定，则对任意的一致 RLE 序列 $\tilde{\theta}&lt;em>n$（比如上一个定理中收敛的 RLE 序列），有
+$$
+\sqrt{n}(\tilde\theta_n-\theta&lt;/em>&lt;/em>)\overset{d}\to N(0,I(\theta_*)^{-1}).
+$$&lt;/p>
+&lt;blockquote>
+&lt;p>如果 MLE 是一致的，且 MLE 就是 RLE，则它可以用来说明 MLE 的渐近正态性。&lt;/p>
+&lt;/blockquote></description></item><item><title>统计学基础（上）-统计量&amp;分布族</title><link>https://blog.shadiao.win/post/5215-3%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8A-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E5%88%86%E5%B8%83%E6%97%8F/</link><guid>https://blog.shadiao.win/post/5215-3%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8A-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E5%88%86%E5%B8%83%E6%97%8F/</guid><description>&lt;p>妙啊。&lt;/p>
+&lt;h2 id="统计学基本框架">统计学基本框架&lt;/h2>
+&lt;p>在统计学中，&lt;strong>总体（population）&lt;strong>指的是概率空间 $(\Omega,\mathcal{F},P)$，通常简记为 $P$. &lt;strong>样本（sample）&lt;strong>是总体上的随机向量 $X=(X_1,\cdots,X_n)$. $n$ 称为&lt;/strong>样本容量（sample size）&lt;/strong>。通常，我们知道但不完全知道总体的分布 $P$. &lt;strong>统计模型（statistical model）&lt;strong>便是 $P$ 的所有可能集合，即
+$$
+P\in\mathcal{P}={Q:Q\text{满足某些条件}}.
+$$
+最常见的统计模型是&lt;/strong>参数模型（parametric model）&lt;/strong>：
+$$
+\mathcal{P}={P_\theta:\theta\in\Theta}.
+$$
+其中 $\Theta\in\mathbb{R}^d$ 称为&lt;/strong>参数空间（parameter space）&lt;/strong>，$\mathcal{P}$ 称为 &lt;strong>参数族（parametric family）&lt;/strong>。&lt;/p>
+&lt;p>通常，我们希望概率密度函数一致存在，也就是存在一个 $\sigma$-有限的测度 $\nu$，使得 $\forall P\in\mathcal{P},P\ll\nu$. 此时我们称 $\mathcal{P}$ 被 $\nu$ &lt;strong>控制（dominated）&lt;/strong>。&lt;/p>
+&lt;p>**估计量（estimator）**是 $X$ 的函数，通过观测值 $X$ 来估计参数 $\theta$. 我们通常记作
+$$
+\hat\theta=w(X_1,\cdots,X_n).
+$$
+统计学中关注的问题主要是：&lt;/p>
+&lt;ul>
+&lt;li>如何得到 $\hat\theta$（即 $w(X_1,\cdots,X_n)$）&lt;/li>
+&lt;li>如何对得到的估计量进行评价&lt;/li>
+&lt;/ul>
+&lt;p>为此，我们先介绍统计量和分布族。&lt;/p>
+&lt;h2 id="统计量">统计量&lt;/h2>
+&lt;p>**统计量（statistic）**定义为样本 $X$ 的可测函数 $T(X)$。&lt;/p>
+&lt;p>众所周知，随机变量包含的信息可以用 $\sigma(X)$ 描述。容易证明，$\sigma(T\circ X)\subset\sigma(X)$，所以统计量简化了原来的随机变量所包含的信息。&lt;/p>
+&lt;h3 id="充分统计量">充分统计量&lt;/h3>
+&lt;p>&lt;strong>定义&lt;/strong> 统计量 $T(X)$ 是关于 $\mathcal{P}$ 的&lt;strong>充分统计量（sufficient statistics）&lt;/strong>，如果给定 $T(X)$ 的值时，$X$ 的条件分布确定（与 $P\in\mathcal{P}$ 无关，或者说与 $\theta$ 无关）。&lt;/p>
+&lt;blockquote>
+&lt;p>充分统计量包含了原统计量关于参数的全部信息，而充分统计量作为统计量又缩减了信息，所以充分统计量是缩减了无用信息，只保留有用信息，这好极了。&lt;/p>
+&lt;/blockquote>
+&lt;p>我们有一个很方便的定理，帮助我们寻找充分统计量：&lt;/p>
+&lt;p>&lt;strong>定理（Factorization theorem）&lt;/strong> 设 $\mathcal{P}$ 是 $(\mathbb{R}^n,\mathcal{B}^n)$ 上的分布族，且被 $\nu$ 控制。$T(X)$ 是关于 $\mathcal{P}$ 的充分统计量，当且仅当密度函数可写成
+$$
+\frac{dP}{d\nu}(x)=g_P(T(x))h(x),
+$$
+其中 $h(x)$ 与 $P$ 无关，$h$ 和 $g_P$ 都是 Borel 函数。&lt;/p>
+&lt;blockquote>
+&lt;p>直观理解：$g_P$ 体现了原统计量中和 $P$ 有关的部分，它仅是 $T(x)$ 的函数。&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;strong>结论&lt;/strong> 次序统计量是充分统计量。&lt;/p>
+&lt;p>证明留做习题。这说明获取样本的先后顺序通常不会对统计学问题造成影响。&lt;/p>
+&lt;h3 id="极小充分统计量">极小充分统计量&lt;/h3>
+&lt;p>我们知道，如果 $T(X)=\psi(S(X))$ 且 $T$ 是充分统计量，则 $S$ 也是充分统计量（自行证明）。这允许我们提出“极小”的概念：&lt;/p>
+&lt;p>&lt;strong>定义&lt;/strong> 设 $T$ 是充分统计量。如果对任意的充分统计量 $S$ 都有可测函数 $\psi$ 使 $T=\psi(S)$，则 $T$ 是&lt;strong>极小充分统计量（minimal sufficient statistics）&lt;/strong>。&lt;/p>
+&lt;p>这个定义等价于 $S(x)=S(y)\Rightarrow T(x)=T(y)$.&lt;/p>
+&lt;p>我们有许多定理可以方便地判定极小充分统计量，这里介绍三个：&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 设 $\mathcal{P}_0\subset\mathcal{P}$ 且 $\mathcal{P}_0$-a.s. $\Rightarrow \mathcal{P}$-a.s.，若 $T$ 关于 $\mathcal{P}$ 是充分统计量，且关于 $\mathcal{P}_0$ 是极小充分统计量，则 $T$ 关于 $\mathcal{P}$ 是极小充分统计量。&lt;/p>
+&lt;blockquote>
+&lt;p>$\mathcal{P}$-a.s. 指的是对 $\mathcal{P}$ 中的所有东西都是 a.s..&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;strong>定理&lt;/strong> 设 $\mathcal{P}$ 可列，其 p.d.f. 为 $f_0,f_1,\cdots$，则&lt;/p>
+&lt;ul>
+&lt;li>令 $c_i&amp;gt;0,\sum_{i=0}^\infty c_i=1$，且 $f_\infty(x)=\sum_{i=0}^\infty c_if_i(x)$. 可知 $f_\infty(x)\ne 0$, a.e.. 令 $T_i(x)=\dfrac{f_i(x)}{f_\infty (x)}$，则 $T(X)=(T_0(x),T_1(x),\cdots)$ 是 $\mathcal{P}$ 的极小充分统计量。&lt;/li>
+&lt;li>若 $\forall i,{x:f_i(x)&amp;gt;0}\subset{x:f_0(x)&amp;gt;0}$，则 $T(X)=(\dfrac{f_1(X)}{f_0(X)},\dfrac{f_2(X)}{f_0(X)},\cdots)$ 是 $\mathcal{P}$ 的极小充分统计量。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>定理&lt;/strong> 设 $\mathcal{P}$ 都存在 p.d.f. $f_P$，$T(X)$ 是充分统计量，若对任意的 $x,y$，
+$$
+\frac{f_P(x)}{f_P(y)}\text{与}P\text{无关}\Rightarrow T(x)=T(y),
+$$
+则 $T(X)$ 是极小充分统计量。&lt;/p>
+&lt;h3 id="完备统计量">完备统计量&lt;/h3>
+&lt;blockquote>
+&lt;p>极小充分统计量仍然有冗余信息。例如 $T$ 是极小充分统计量，则 $(T,e^T)$ 也他娘的是极小充分统计量，你说这上哪说理去？所以我们还得接着干。&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;strong>定义&lt;/strong> 统计量 $T(X)$ 是&lt;strong>完备的（complete）&lt;/strong>，当且仅当对任意 Borel 函数 $f$，$\forall P\in\mathcal{P},E_P(f(T))=0\Rightarrow f(T)=0$. 如果把 $f$ 限定为有界函数，则称为&lt;strong>有界完备（boundedly complete）&lt;/strong>。&lt;/p>
+&lt;blockquote>
+&lt;p>这意味着没有任何 non-trivial 的函数能对 $T$ 的信息进一步压缩了。&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;strong>定理&lt;/strong> 一个统计量是有界完备且充分的，则它是极小充分统计量。&lt;/p>
+&lt;h3 id="辅助统计量">辅助统计量&lt;/h3>
+&lt;p>&lt;strong>定义&lt;/strong> 统计量 $V(X)$ 是&lt;strong>辅助统计量（ancillary statistics）&lt;/strong>，如果它的分布与 $P$ 无关。&lt;/p>
+&lt;p>和充分统计量恰恰相反，辅助统计量就像是某些领导讲话，听君一席话如听一席话，实际上没有任何信息量。&lt;/p>
+&lt;blockquote>
+&lt;p>对于完备统计量 $T$，如果能够造出辅助统计量 $V=f(T)$ 且 $f$ 不是常数，则 $g(T)=f(T)-\mathrm E(f(T))$ 就与定义矛盾了。所以完备意味着无法从中构造出辅助统计量。&lt;/p>
+&lt;/blockquote>
+&lt;p>如下定理进一步解释了完备统计量和辅助统计量“势不两立”的关系：&lt;/p>
+&lt;p>&lt;strong>定理（Basu）&lt;/strong> $V$ 是辅助统计量，$T$ 有界完备且充分，则 $V$ 和 $T$ 独立。&lt;/p>
+&lt;h2 id="指数族">指数族&lt;/h2>
+&lt;h3 id="标准型">标准型&lt;/h3>
+&lt;p>指数族是非常重要的一类参数族，许多我们耳熟能详的分布都是指数族，我们即将看到，指数族有许多优良的数学性质。&lt;/p>
+&lt;p>&lt;strong>定义&lt;/strong> 设参数族 $\mathcal{P}={P_\theta}$ 被 $\sigma$-有限的测度 $\nu$ 控制，对应的概率密度函数 $f_\theta=\dfrac{d P_\theta}{d\nu}$. 称 $\mathcal{P}$ 是**指数族（exponential family）**当且仅当能写成如下形式：
+$$
+f_\theta(\omega)=\exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right)h(\omega),\ \omega\in\Omega,
+$$
+其中 $T:\Omega\to\mathbb{R}^p$, $\eta:\Theta\to\mathbb{R}^p$, $h$ 是 $\Omega$ 上的非负 Borel 函数。$\xi(\theta)$ 是归一化用的，选取它的值使得 $f_\theta$ 的积分是 1 就好啦。&lt;/p>
+&lt;blockquote>
+&lt;p>教材和 PPT 都略过了 well-defined 的证明，我们进行了补充，见附录。&lt;/p>
+&lt;/blockquote>
+&lt;p>由于各种变化因素，指数族的表达式五花八门。我们需要规定标准型。令 $\eta=\eta(\theta)$，我们得到
+$$
+f_\eta(\omega)=\exp\left(\eta^TT(\omega)-\zeta(\eta)\right)h(\omega).
+$$
+这叫做指数族的&lt;strong>标准型（canonical form）&lt;/strong>，用标准型表示的指数族称为&lt;strong>自然指数族（natural exponential family, NEF）&lt;/strong>。新的参数空间变为 $\Xi={\eta(\theta):\theta\in\Theta}\subset \mathbb{R}^p$. 如果 $\Xi$ 包含开集，则称指数族&lt;strong>满秩（full rank）&lt;/strong>。&lt;/p>
+&lt;blockquote>
+&lt;p>满秩的条件可以防止 $T$ 线性相关，使得其具有更好的性质。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="指数族的判定">指数族的判定&lt;/h3>
+&lt;p>&lt;strong>性质&lt;/strong> 设 $P_\theta$ 是指数族，则存在非零测度 $\lambda$ 使得 $\dfrac{dP_\theta}{d\lambda}&amp;gt;0,\ \lambda$-a.e..&lt;/p>
+&lt;p>事实上，只要取 $\lambda(A)=\int_A hd\nu$ 即可把 $h$ 消掉，于是性质得证。这给我们提供了一个很好的判定依据：如果 $\dfrac{dP_\theta}{d\lambda}=0\Rightarrow\lambda\equiv0$，那他就不是指数族。&lt;/p>
+&lt;p>&lt;strong>性质&lt;/strong> 指数族的 $f_\theta$ 有相同的支撑集 $\text{supp}(f_\theta)={x:h(x)&amp;gt;0}$.&lt;/p>
+&lt;p>这可以用来判定，如果支撑集不同，则不是指数族。&lt;/p>
+&lt;h3 id="统计量-t">统计量 $T$&lt;/h3>
+&lt;p>可以证明，对满秩的自然指数族，&lt;strong>$T$ 是一个完备极小充分统计量&lt;/strong>。&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 设 $\mathcal{P}$ 是自然指数族，$f_\eta(\omega)=\exp\left(\eta^TT(\omega)-\zeta(\eta)\right)h(\omega)$. 如令 $T=(Y,U),\ \eta=(\vartheta,\varphi)$，其中 $Y$ 和 $\vartheta$ 维度相同（特别地，可以令 $Y=T$，就没有 $U$ 了）。则存在和 $\varphi$ 有关的测度，使得 $Y$ 在其上有 p.d.f.
+$$
+f_Y(y)=\exp\left(\vartheta^Ty-\zeta(\eta)\right).
+$$
+此外，给定 $U=u$，存在和 $u$ 有关的测度，使得 $Y$ 在其上有条件分布
+$$
+f_{Y|U=u}(y)=\exp\left(\vartheta^Ty-\zeta_u(\vartheta)\right).
+$$&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 若 $\eta_0$ 是参数空间的内点（interior point），则 $T$ 的 MGF 在 $t=0$ 的邻域存在有限，具体地，
+$$
+\mathrm E(e^{tT})=\psi_{\eta_0}(t)=\exp\left(\zeta(\eta_0+t)-\zeta(\eta_0)\right).
+$$&lt;/p>
+&lt;blockquote>
+&lt;p>这节就结束了……内容有点少，但是下一节点估计的内容巨多，如果这里不分节的话可能要炸……&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="附录">附录&lt;/h2>
+&lt;h3 id="指数族定义的证明">指数族定义的证明&lt;/h3>
+&lt;blockquote>
+&lt;p>&lt;strong>定义&lt;/strong> 设参数族 $\mathcal{P}={P_\theta}$ 被 $\sigma$-有限的测度 $\nu$ 控制，对应的概率密度函数 $f_\theta=\dfrac{d P_\theta}{d\nu}$. 称 $\mathcal{P}$ 是**指数族（exponential family）**当且仅当能写成如下形式：
+$$
+f_\theta(\omega)=\exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right)h(\omega),\ \omega\in\Omega,
+$$
+其中 $T$ 是 $p$ 维随机向量，$\eta:\Theta\to\mathbb{R}^p$, $h$ 是 $\Omega$ 上的非负 Borel 函数。$\xi(\theta)$ 是归一化用的，选取它的值使得 $f_\theta$ 的积分是 1 就好啦。&lt;/p>
+&lt;/blockquote>
+&lt;p>如果选取不同的 $\nu$, $f_\theta$ 的表达形式会改变。我们需要证明 well-defined：如果存在 $\nu$ 使得 $\dfrac{dP_\theta}{d\nu}$ 可写成上述形式，则对另一控制 $\mathcal{P}$ 的测度 $\nu&amp;rsquo;$，$\dfrac{dP_\theta}{d\nu&amp;rsquo;}$ 仍能写成上述形式。&lt;/p>
+&lt;p>&lt;strong>证明&lt;/strong>：设 $\dfrac{dP_\theta}{d\nu}=\exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right)h(\omega)$, 定义测度 $\lambda(A)=\int_A hd\nu$. 对可测集 $A$，若 $\lambda(A)=0$，则有
+$$
+\lambda(A)=\int_{A\cap {\omega:h(\omega)=0}} h(\omega)d\nu+ \int_{A\cap {\omega:h(\omega)&amp;gt;0}} h(\omega)d\nu=0.
+$$
+上式两项都是 0，而第二项的被积函数严格大于 0，于是有
+$$
+\nu\left({A\cap {\omega:h(\omega)&amp;gt;0}}\right)=0.
+$$
+因此
+$$
+P_\theta(A)=\left(\int_{A\cap {\omega:h(\omega)=0}} + \int_{A\cap {\omega:h(\omega)&amp;gt;0}}\right) \exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right)h(\omega) d\nu=0.
+$$
+这是因为第一个积分的被积函数是 0，而第二个积分的集合是零测集. 至此我们得到 $\lambda\gg P_\theta$. 注意到 $\dfrac{d\lambda}{d\nu}\ne 0,\ \lambda$-a.e.，于是
+$$
+\frac{dP_\theta}{d\lambda}=\frac{dP_\theta}{d\nu}\left(\frac{d\lambda}{d\nu}\right)^{-1}=\exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right).
+$$
+由于 $\dfrac{dP_\theta}{d\lambda}&amp;gt;0$，故 $\lambda\ll P_\theta$.&lt;/p>
+&lt;p>设 $\sigma$-有限的测度 $\nu&amp;rsquo;$ 满足 $\nu&amp;rsquo;\gg P_\theta$，我们有 $\nu&amp;rsquo;\gg \lambda$，于是
+$$
+\frac{dP_\theta}{d\nu&amp;rsquo;}=\frac{dP_\theta}{d\lambda}\frac{d\lambda}{d\nu&amp;rsquo;}=\exp\left(\eta(\theta)^T T(\omega)-\xi(\theta) \right)\frac{d\lambda}{d\nu&amp;rsquo;}.
+$$
+注意到 $\dfrac{d\lambda}{d\nu&amp;rsquo;}$ 只是 $\omega$ 的函数，因此我们得到了指数族的表达式。∎&lt;/p></description></item><item><title>公理化概率论（下）</title><link>https://blog.shadiao.win/post/5215-2%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8B/</link><guid>https://blog.shadiao.win/post/5215-2%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8B/</guid><description>&lt;p>接着上一篇。&lt;/p>
+&lt;h2 id="条件分布">条件分布&lt;/h2>
+&lt;h3 id="条件期望">条件期望&lt;/h3>
+&lt;blockquote>
+&lt;p>书上的定义有些晦涩，这里我们直接用 R-N 导数作为条件期望的定义，然后把书上的定义当作性质。&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;strong>定义&lt;/strong> 设 $X$ 是 $(\Omega,\mathcal{F},P)$ 上的&lt;strong>非负&lt;/strong>随机变量且期望存在，$\mathcal{A}\subset\mathcal{F}$ 是一个 $\sigma$-代数。定义 $\mathcal{A}$ 上的测度 $\lambda(C)=\int_C XdP$，显然 $\lambda\ll P|&lt;em>\mathcal{A}$. 称随机变量 $\dfrac{d\lambda}{dP|&lt;/em>\mathcal{A}}$ 为 $X$ 对 $\mathcal{A}$ 的&lt;strong>条件期望&lt;/strong>，记作 $\mathrm E(X|\mathcal{A})$. 对一般的随机变量 $X$，$\mathrm E(X|\mathcal{A})$ 定义为 $\mathrm E(X_+|\mathcal{A})-\mathrm E(X_-|\mathcal{A})$.&lt;/p>
+&lt;blockquote>
+&lt;p>条件期望虽然记号和名字都是“期望”，但它是个随机变量。这是个很直观的定义：对 $\mathcal{A}$ 中的任意集合 $A$，$\mathrm E(X|\mathcal{A})$ 在 $A$ 上的取值就是 $X$ 在 $A$ 上进行平均，也就是忽略 $A$ 内部的差异，只考虑 $\mathcal{A}$ 中的集合之间的差异。这在数学上有“商”的感觉，正好符合 $X|\mathcal{A}$ 这种“商”的记号。&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;strong>性质&lt;/strong> $\mathrm E(X|\mathcal{A})$ 是唯一的满足以下条件的随机变量：&lt;/p>
+&lt;ul>
+&lt;li>$\mathrm E(X|\mathcal{A})$ 是 $(\Omega,\mathcal{A})$ 上的可测函数，&lt;/li>
+&lt;li>$\int_C \mathrm E(X|\mathcal{A})dP=\int_C XdP,\ \forall C\in\mathcal{A}$.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>定义&lt;/strong> &lt;strong>条件概率&lt;/strong> $P(B|\mathcal{A})$ 定义为 $E(I_B|\mathcal{A})$.&lt;/p>
+&lt;p>特别地，若 $Y$ 也是随机变量，可将 $\mathrm E(X|\sigma(Y))$ 简记为 $\mathrm E(X|Y)$. 于是 $P(B|Y)=\mathrm E(I_B|Y)$.&lt;/p>
+&lt;p>下面我们考虑对 $Y=y$ 这样的事件定义条件概率。首先介绍一个引理，证明留做习题。&lt;/p>
+&lt;p>&lt;strong>引理&lt;/strong> 设 $Y:(\Omega,\mathcal{F})\to(\Lambda,\mathcal{G})$ 可测，$Z:\Omega\to\mathbb{R}^k$。则 $Z$ 是 $(\Omega,\sigma(Y))$ 上的可测函数，当且仅当存在可测函数 $h:(\Lambda,\mathcal{G})\to \mathbb{R}^k$ 满足 $Z=h\circ Y$.&lt;/p>
+&lt;p>于是我们有 $\mathrm E(X|Y)=h\circ Y$. 我们称 $h(y)$ 是给定 $Y=y$ 时 $X$ 的&lt;strong>条件期望&lt;/strong>，记作 $\mathrm E(X|Y=y)$.&lt;/p>
+&lt;h3 id="条件分布-1">条件分布&lt;/h3>
+&lt;p>设 $X,Y$ 是随机变量，定义测度 $P_{X|Y}(\cdot|y)$ 满足 $P_{X|Y}(B|y)=P(X\in B|Y=y)$ a.s.. 它是个概率测度，称为&lt;strong>条件分布&lt;/strong>，也记作 $P_{X|Y=y}$.&lt;/p>
+&lt;p>若联合分布 $f(x,y)$​ 存在，定义&lt;strong>条件概率密度函数&lt;/strong>
+$$
+f_{X|Y}(x|y)=\frac{f(x,y)}{f_Y(y)}=\frac{f(x,y)}{\int f(x,y)dx}.
+$$
+特别地，若 $g(x,y)$ 可测，$\mathrm E|g(X,Y)|&amp;lt;\infty$. 可以证明
+$$
+\mathrm E\left(g(X,Y)|Y\right)=\frac{\int g(x,Y)f(x,Y)dx}{\int f(x,Y)dx}.
+$$
+于是得到我们熟悉的形式
+$$
+\mathrm E(g(X,Y)|Y)=\int g(x,Y)f_{X|Y}(x|Y)dx.
+$$&lt;/p>
+&lt;h2 id="独立性">独立性&lt;/h2>
+&lt;p>设 $(\Omega,\mathcal{F},P)$ 为概率空间。&lt;/p>
+&lt;p>&lt;strong>定义（事件的独立性）&lt;/strong> 事件族 $\mathcal{C}\subset\mathcal{F}$ 独立，当且仅当对任意有限个不同的 $A_1,\cdots,A_n\in\mathcal{C}$,
+$$
+P(A_1\cap\cdots\cap A_n)=P(A_1)\cdots P(A_n).
+$$
+&lt;strong>定义（事件族的独立性）&lt;/strong> 事件族 $\mathcal{C_i}\subset \mathcal{F},i\in\mathcal{I}$ 独立，当且仅当事件 ${A_i\in\mathcal{C_i:}i\in\mathcal{I}}$ 独立。&lt;/p>
+&lt;p>&lt;strong>定义（随机变量的独立性）&lt;/strong> 随机变量 $X_1,\cdots,X_n$ 独立，当且仅当事件族 $\sigma(X_1),\cdots,\sigma(X_n)$ 独立。&lt;/p>
+&lt;p>同样，它和小学的定义一样。可以证明以下命题等价：&lt;/p>
+&lt;ul>
+&lt;li>随机变量 $X_1,\cdots,X_n$ 独立。&lt;/li>
+&lt;li>$\forall a_i,\ P(X_1\leq a_1,\cdots,X_n\leq a_n)=P(X_1\le a_1)\cdots P(X_n\le a_n)$.&lt;/li>
+&lt;li>（若联合分布存在）$f(x_1,\cdots,x_n)=f_1(x_1)\cdots f_n(x_n)$.&lt;/li>
+&lt;/ul>
+&lt;p>独立性可以给出关于条件期望的更好的性质：&lt;/p>
+&lt;ul>
+&lt;li>若 $X,Y$ 独立，$\mathrm E(X|Y)=\mathrm EX$.&lt;/li>
+&lt;li>若 $(X,Y)$ 和 $Z$ 独立，$\mathrm E(X|(Y,Z))=\mathrm E(X|Y)$.&lt;/li>
+&lt;/ul>
+&lt;h2 id="不等式">不等式&lt;/h2>
+&lt;p>这几个不等式是测度论中的名场面，我们用它来结束这一部分。我们将介绍测度论的形式，同时给出概率论中常用的形式。以下若无特殊说明，$(\Omega, \mathcal F,\mu)$ 是个测度空间，$f,g$ 是可测函数，$X,Y$ 是随机变量。&lt;/p>
+&lt;blockquote>
+&lt;p>下面的期望都可以换成条件期望。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="cauchy-不等式">Cauchy 不等式&lt;/h3>
+&lt;p>对内积空间中的向量 $x$ 和 $y$，有
+$$
+|\langle x,y\rangle|^2\leq \langle x,x\rangle \langle y,y\rangle.
+$$&lt;/p>
+&lt;p>等号成立当且仅当 $x=\lambda y$.&lt;/p>
+&lt;p>积分形式：
+$$
+\left(\int_\Omega fgd\mu\right)^2\leq\int_\Omega fd\mu\int_\Omega gd\mu.
+$$
+概率论中常用的形式：&lt;/p>
+&lt;ul>
+&lt;li>期望&lt;/li>
+&lt;/ul>
+&lt;p>$$
+\mathrm E (XY)^2\leq \mathrm E(X^2)\mathrm E (Y^2).
+$$&lt;/p>
+&lt;ul>
+&lt;li>协方差&lt;/li>
+&lt;/ul>
+&lt;p>$$
+\mathrm{Cov}(X,Y)^2\leq {\mathrm Var}(X){\mathrm Var}(Y).
+$$&lt;/p>
+&lt;h3 id="jensen-不等式">Jensen 不等式&lt;/h3>
+&lt;p>$\varphi$ 是凸函数，即 $\varphi(tx+(1-t)y)\leq t\varphi(x)+(1-t)\varphi(y)$，则
+$$
+\varphi\left(\int_\Omega gd\mu\right)\leq \int_\Omega \varphi \circ gd\mu.
+$$
+积分换成期望就变成了概率论中的形式：
+$$
+\varphi(\mathrm E(X))\leq \mathrm E(\varphi(X)).
+$$&lt;/p>
+&lt;h3 id="chebyshev-不等式markov-不等式">Chebyshev 不等式（Markov 不等式）&lt;/h3>
+&lt;p>设 $(\Omega, \mathcal F,\mu)$ 是测度空间。若 $g$ 是非负非减函数，对任意实数 $t$ 有
+$$
+g(t)\mu({x:f(x)\ge t})\leq \int_\Omega g\circ fd\mu.
+$$
+令 $f=|X|$, $g(t)=\begin{cases}t,&amp;amp;t\ge 0\0,&amp;amp;t&amp;lt;0 \end{cases}$，可得 Markov 不等式
+$$
+P(|X|\ge t)\leq \frac{\mathrm E(|X|)}{t},\ \forall t&amp;gt;0.
+$$
+令 $f=|X-\mathrm E(X)|$, $g(t)=\begin{cases}t^2,&amp;amp;t\ge 0\0,&amp;amp;t&amp;lt;0 \end{cases}$，可得概率论形式的 Chebyshev 不等式
+$$
+P(|X-\mathrm E(X)|\ge t)\leq \frac{\mathrm{Var}(X)}{t^2},\ \forall t&amp;gt;0.
+$$
+若令 $t=k\sigma$，则可以理解为：与均值相差 $k$ 个标准差以上的值，数量不多于 $1/k^2$.&lt;/p>
+&lt;h3 id="holder-不等式">Holder 不等式&lt;/h3>
+&lt;p>设 $1\leq p,q\leq\infty$，并且 $\dfrac{1}{p}+\dfrac{1}{q}=1$，有结论 $|fg|&lt;em>1\leq |f|&lt;em>p |g|&lt;em>q$，写成积分就是
+$$
+\int&lt;/em>\Omega |fg|d\mu\leq \left(\int&lt;/em>\Omega |f|^pd\mu\right)^\frac{1}{p}\left(\int&lt;/em>\Omega |g|^qd\mu\right)^\frac{1}{q}.
+$$&lt;/p>
+&lt;blockquote>
+&lt;p>注：&lt;/p>
+&lt;ul>
+&lt;li>令 $p=q=2$，立刻可得 Cauchy 不等式。所以它可以看成 Cauchy 不等式的推广。&lt;/li>
+&lt;li>若 $p=\infty$，则 $|f|_\infty=\inf {a:\mu(f(x)&amp;gt;a)=0}$，称为本性上确界。&lt;/li>
+&lt;li>右端若出现 0 乘以 $\infty$，则视作 0.&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;p>积分换成期望，有
+$$
+\mathrm E\left(|XY|\right)\leq \left(E|X|^p\right)^\frac{1}{p}\left(E|Y|^q\right)^\frac{1}{q}.
+$$&lt;/p>
+&lt;h3 id="minkovski-不等式">Minkovski 不等式&lt;/h3>
+&lt;p>Minkovski 不等式是 $L^p$ 中的三角不等式。设 $1\leq p\leq\infty$，则 $|f+g|&lt;em>p\leq |f|&lt;em>p+|g|&lt;em>p$. 写成积分：
+$$
+\left(\int&lt;/em>\Omega |f+g|^p d\mu\right)^\frac{1}{p}\le \left(\int&lt;/em>\Omega |f|^p d\mu\right)^\frac{1}{p}+\left(\int&lt;/em>\Omega |g|^p d\mu\right)^\frac{1}{p}.
+$$
+期望形式：
+$$
+\left(\mathrm E |X+Y|^p\right)^\frac{1}{p}\le \left(\mathrm E |X|^p\right)^\frac{1}{p} + \left(\mathrm E |Y|^p\right)^\frac{1}{p}.
+$$&lt;/p>
+&lt;h3 id="lyapunov-不等式">Lyapunov 不等式&lt;/h3>
+&lt;p>若 $0&amp;lt;s&amp;lt;t$，则
+$$
+\left(\mathrm E|X|^s\right)^\frac{1}{s}\le \left(\mathrm E|X|^t\right)^\frac{1}{t}.
+$$
+证明只要令 $p=t/s,q=p/(p-1)$，然后对 $|X|^s$ 和 $1$ 用 Holder 不等式即可。过程中要用到测度有限，所以对一般的测度空间这个不成立。&lt;/p>
+&lt;h2 id="随机变量的极限性质">随机变量的极限性质&lt;/h2>
+&lt;h3 id="预备知识">预备知识&lt;/h3>
+&lt;h4 id="集合序列">集合序列&lt;/h4>
+&lt;p>首先我们定义集合的上下极限。对一列集合 $A_n$，它的上确界为它们的并，下确界为他们的交，即
+$$
+\sup A_n=\bigcup_{n\ge 1}A_n,\quad\inf A_n=\bigcap_{n\ge 1}A_n.
+$$
+类似于数列的上下极限，集合序列的上下极限分别是上确界和下确界的极限，即
+$$
+\begin{gather}
+\limsup_{n\to\infty} A_n=\bigcap_{n\ge 1}\bigcup_{j\ge n}A_j,\
+\liminf_{n\to\infty} A_n=\bigcup_{n\ge 1}\bigcap_{j\ge n}A_j.
+\end{gather}
+$$
+上极限中的元素可以理解为“出现在无穷多个集合中”，而下极限中的元素可以理解为“只有有限多个集合里没有它”。&lt;/p>
+&lt;p>&lt;strong>定义&lt;/strong> 设 $A_n$ 是一列事件，我们称 $\omega$ 是 infinitely often 的，如果 ${\omega\in\Omega:\omega\in A_n \text{对无穷多的}n\text{成立}}$，记作 ${A_n\quad i.o.}$.&lt;/p>
+&lt;p>容易得知，$\omega$ 是 $A_n$ i.o. 的，等价于 $\omega\in\limsup A_n$.&lt;/p>
+&lt;h4 id="borel-cantelli-引理">Borel-Cantelli 引理&lt;/h4>
+&lt;p>我们可以介绍著名的 Borel-Cantelli 引理了。&lt;/p>
+&lt;p>&lt;strong>引理（Borel-Cantelli I）&lt;/strong> 若 $\sum_{n=1}^\infty P(A_n)&amp;lt;\infty$，则 $P(A_n\quad i.o.)=0$.&lt;/p>
+&lt;p>&lt;strong>引理（Borel-Cantelli II）&lt;/strong> 对&lt;strong>两两独立&lt;/strong>的事件序列 ${A_n}$，若 $\sum_{n=1}^\infty P(A_n)=\infty$，则 $P(A_n\quad i.o.)=1$.&lt;/p>
+&lt;blockquote>
+&lt;p>第二引理如果把“两两独立”改成“独立”则较为简单，读者可自行完成。两两独立的证明可以参考 &lt;a href="https://www.ma.imperial.ac.uk/~bin06/Stochastic-Analysis/ma414soln5.pdf" target="_blank" rel="noopener">https://www.ma.imperial.ac.uk/~bin06/Stochastic-Analysis/ma414soln5.pdf&lt;/a>
+&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="收敛有四种情况">收敛有四种情况&lt;/h3>
+&lt;p>考虑四种收敛：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>几乎必然收敛：$P(\lim_n X_n=X)=1$.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>依概率收敛：$\forall\varepsilon&amp;gt;0,\lim_n P(|X_n-X|&amp;gt;\varepsilon) =0$.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$L^p$ 收敛（convergence in $L^p$）：$\lim_n\mathrm E|X_n-X|^p=0$.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>依分布收敛（convergence in distribution, weak convergence）：在 $F(x)$ 的连续点上满足 $\lim_n F_n(x)=F(x)$.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>他们的关系如下图。&lt;/p>
+&lt;p>&lt;img src="5215/convergence.png" alt="">&lt;/p>
+&lt;p>一些性质：&lt;/p>
+&lt;ul>
+&lt;li>若 $X_n\overset{d} \to c$，$c$ 为常数，则 $X_n\overset{p}\to c$.&lt;/li>
+&lt;li>若 $X_n\overset{P}\to X$，则存在子序列 $X_{n_j}\overset{a.s.}\to X$.&lt;/li>
+&lt;li>设 $X_n\overset{d}\to X$，则对任意 $r&amp;gt;0$，以下两条等价：
+&lt;ul>
+&lt;li>$\lim_{n\to\infty} \mathrm E|X_n|^r=\mathrm E|X|^r&amp;lt;\infty$，&lt;/li>
+&lt;li>$\lim_{t\to \infty}\sup_n \mathrm E(|X_n|^r I(|X_n|&amp;gt;t))=0$.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h4 id="as-收敛">a.s. 收敛&lt;/h4>
+&lt;p>对于 a.s. 收敛，我们有等价表述：
+$$
+\lim_n P(\bigcup_{m=n}^\infty{|X_m-X|&amp;gt;\varepsilon})=0,
+$$
+也即
+$$
+P(\limsup_{n\to\infty} {|X_n-X|&amp;gt;\varepsilon})=0,
+$$
+由此可以一眼看出它比依概率收敛强。此外，根据 Borel-Cantelli 引理，若 $\forall\varepsilon&amp;gt;0,\ \sum_{n=1}^\infty P({\omega\in\Omega:|X_n(\omega)-X(\omega)|&amp;gt;\varepsilon})&amp;lt;\infty$，则 $X_n\overset{a.s.}\to X$.&lt;/p>
+&lt;h4 id="依分布收敛">依分布收敛&lt;/h4>
+&lt;p>下面的定理允许我们通过依分布收敛构造出 a.s. 收敛，厉害死了。&lt;/p>
+&lt;p>&lt;strong>定理（Skorohod）&lt;/strong> 若 $X_n\overset{d}\to X$，则存在同一个概率空间上的随机变量 $Y,Y_1,Y_2,\cdots$，使得 $P_{Y_n}=P_{X_n},P_Y=P_X$（测度相等）且 $Y_n\overset{a.s.}\to Y$.&lt;/p>
+&lt;p>我们可以通过特征函数或密度函数来判断依分布收敛。&lt;/p>
+&lt;p>&lt;strong>定理（Levy continuity）&lt;/strong> $X_n\overset{d}\to X$ 当且仅当特征函数逐点收敛，即 $\lim_n \varphi_n(x)=\varphi(x)\ \forall x\in\mathbb{R}$.&lt;/p>
+&lt;p>&lt;strong>定理（Scheffes）&lt;/strong> 若密度函数存在且密度函数 a.e. 收敛，则 $X_n\overset{d}\to X$.&lt;/p>
+&lt;p>依分布收敛通常不能加减乘除，但如果有一个收敛到常数就可以：&lt;/p>
+&lt;p>&lt;strong>定理（Slutsky）&lt;/strong> 设 $X_n\overset{d}\to X,Y_n\overset{d}\to c$，则&lt;/p>
+&lt;ul>
+&lt;li>$X_n+Y_n\overset{d}\to X+c$&lt;/li>
+&lt;li>$X_nY_n\overset{d}\to cX$&lt;/li>
+&lt;li>$X_n/Y_n\overset{d}\to X/c$（$c\ne 0$）&lt;/li>
+&lt;/ul>
+&lt;p>我们再来提供一个判定方法。&lt;/p>
+&lt;p>&lt;strong>定理（$\delta$-method）&lt;/strong> 设 $X_1,\cdots,Y$ 是 $k$ 维随机向量，${a_n}$ 是正数列，且 $\lim_n a_n=\infty$. 存在常数 $c\in\mathbb{R}^k$ 使得
+$$
+a_n(X_n-c)\overset{d}\to Y,
+$$
+设 $g:\mathbb{R}^k\to\mathbb{R}$。若 $\nabla g(c)$ 存在（列向量），则
+$$
+a_n\left[g(X_n)-g(c)\right]\overset{d}\to \nabla g(c)^TY.
+$$
+若 $g$ 在 $c$ 的邻域内 $m$ 阶连续可导，且对所有 $j$ 阶偏导数（$1\le j\le m-1$）为 0，而 $m$ 阶偏导数不全为 0，则
+$$
+a_n^m\left[g(X_n)-g(c)\right]\overset{d}\to\frac{1}{m!}\sum_{1\le i_1,\cdots,i_m\le k}\frac{\partial^m g(c)}{\partial x_{i_1}\cdots\partial x_{i_m}}Y_{i_1}\cdots Y_{i_m}.
+$$&lt;/p>
+&lt;blockquote>
+&lt;p>注：上述是对所有 $m$ 阶偏导数求和。对一元的情况，就是
+$$
+a_n^m\left[g(X_n)-g(c)\right]\overset{d}\to\frac{1}{m!}g^{(m)}(c)Y^m.
+$$&lt;/p>
+&lt;/blockquote>
+&lt;p>大家可以自己尝试证明，用 Taylor 展开即可。&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 以下命题两两等价：&lt;/p>
+&lt;ul>
+&lt;li>$X_n\overset{d}\to X$,&lt;/li>
+&lt;li>$\mathrm E h(X_n)\to \mathrm E h(X)$，对任意有界连续函数 $h$，&lt;/li>
+&lt;li>对任意闭集 $C\subset \mathbb{R}^k$，$\limsup_n P_{X_n}(C)\le P_X(C)$，&lt;/li>
+&lt;li>对任意开集 $O\subset \mathbb{R}^k$，$\limsup_n P_{X_n}(O)\ge P_X(O)$.&lt;/li>
+&lt;/ul>
+&lt;h3 id="随机变量的渐近性质">随机变量的渐近性质&lt;/h3>
+&lt;p>类似于数列的 $O$，$o$ 记号，我们有：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>$X_n=O_{a.s.}(Y_n)$，当且仅当 $P(|X_n|=O(Y_n))=1$，也即 $|X_n|\le c|Y_n|$ a.s.,&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$X_n=o_{a.s.}(Y_n)$，当且仅当 $X_n/Y_n\overset{a.s.}\to 0$,&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$X_n=O_P(Y_n)$，当且仅当 $\forall\varepsilon&amp;gt;0,\exists C&amp;gt;0,n_0\in\mathbb{N}$，使得
+$$
+\sup_{n\ge n_0}P({\omega\in\Omega:|X_n(\omega)|\ge C|Y_n(\omega)|})&amp;lt;\varepsilon.
+$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$X_n=o_P(Y_n)$，当且仅当 $X_n/Y_n\overset{P}\to 0$.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>特别地，若 $X_n=O_P(1)$，称 $X_n$ 依概率有界。&lt;/p>
+&lt;p>我们放出一些性质（$O$ 是 $O_P$ 或 $O_{a.s.}$）：&lt;/p>
+&lt;ul>
+&lt;li>传递性：$X_n=O(Y_n),Y_n=O(Z_n)\Rightarrow X_n=O(Z_n)$,&lt;/li>
+&lt;li>$X_n=O(Z_n)\Rightarrow X_nY_n=O(Y_nZ_n)$,&lt;/li>
+&lt;li>$X_n=O(Z_n),Y_n=O(Z_n)\Rightarrow X_n=O(Z_n)$,&lt;/li>
+&lt;li>若 $X_n\overset{a.s.}\to X$，则 ${\sup_{n\ge k}|X_n|}_k=O_P(1)$,&lt;/li>
+&lt;li>若 $X_n\overset{d}\to X$，则 $X_n=O_P(1)$,&lt;/li>
+&lt;li>若 $\mathrm E|X_n|=O({\text 或 } o)(a_n)$，则 $X_n=O({\text 或 } o)_P(a_n)$.&lt;/li>
+&lt;/ul>
+&lt;p>上面最后一条可以用 Markov 不等式证明。&lt;/p>
+&lt;h2 id="大数定律与中心极限定理">大数定律与中心极限定理&lt;/h2>
+&lt;p>这两个东西在概率论中的地位家喻户晓。&lt;/p>
+&lt;h3 id="大数定律">大数定律&lt;/h3>
+&lt;p>&lt;strong>定理（强大数定律）&lt;/strong> $X_n$ i.i.d.，若 $\mathrm E|X_1|&amp;lt;\infty$，则
+$$
+\frac{1}{n}\sum_{i=1}^nX_i\overset{a.s.}\to \mathrm EX_1.
+$$
+反之，若 $\mathrm E|X_1|&amp;lt;\infty$ 且 $\dfrac{1}{n}\sum_{i=1}^nX_i\overset{a.s.}\to c$，则 $c=\mathrm EX_1$.&lt;/p>
+&lt;p>&lt;strong>定理（弱大数定律）&lt;/strong> $X_n$ i.i.d.，若 $nP(|X_1|&amp;gt;n)\to 0$，则
+$$
+\frac{1}{n}\sum_{i=1}^nX_i-\mathrm E[X_1 I(|X_1|\le n)]\overset{P}\to 0.
+$$
+从而 $\dfrac{1}{n}\sum_{i=1}^nX_i\overset{P}\to \mathrm EX_1$.&lt;/p>
+&lt;p>对于不是 i.i.d. 的情况，我们也有大数定律。&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 设 $X_1,X_2,\cdots$ 独立且期望有限，则&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>（强大数定律）若存在常数 $p\in[1,2]$ 使得 $\sum_{i=1}^\infty\dfrac{\mathrm E|X_i|^p}{i^p}&amp;lt;\infty$，则&lt;/p>
+&lt;p>$$
+\frac{1}{n}\sum_{i=1}^nX_i\overset{a.s.}\to \mathrm EX_1.
+$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>（弱大数定律）若存在常数 $p\in[1,2]$ 使得 $\lim_{n\to\infty}\dfrac{1}{n^p}\sum_{i=1}^n\mathrm E|X_i|^p=0$，则
+$$
+\frac{1}{n}\sum_{i=1}^nX_i\overset{p}\to \mathrm EX_1.
+$$&lt;/p>
+&lt;/li>
+&lt;li>&lt;/li>
+&lt;/ul>
+&lt;h3 id="中心极限定理">中心极限定理&lt;/h3>
+&lt;p>&lt;strong>定理&lt;/strong> 设 $X_n$ i.i.d. $k$ 维，且 $\Sigma=\mathrm{Var}X_1$ 有限，则
+$$
+\frac{\sum_{i=1}^n(X_i-\mathrm EX_i)}{\sqrt{n}}\overset{d}\to N(0,\Sigma).
+$$&lt;/p></description></item><item><title>公理化概率论（上）</title><link>https://blog.shadiao.win/post/5215-1%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8A/</link><guid>https://blog.shadiao.win/post/5215-1%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8A/</guid><description>&lt;p>这一部分是本科基础课的内容，以复习为主，只快速回顾一遍要点，不罗嗦。&lt;/p>
+&lt;h2 id="测度空间">测度空间&lt;/h2>
+&lt;h3 id="sigma-代数">$\sigma$-代数&lt;/h3>
+&lt;p>&lt;strong>定义&lt;/strong> 集合 $\Omega$ 的子集族 $\mathcal{F}$ 称为 &lt;strong>$\sigma$-代数&lt;/strong>，如果&lt;/p>
+&lt;ul>
+&lt;li>空集条件：$\varnothing\in\mathcal{F}$,&lt;/li>
+&lt;li>补集条件：$A\in\mathcal{F}\Rightarrow A^c\in\mathcal{F}$,&lt;/li>
+&lt;li>可列并封闭：若 $A_i\in\mathcal{F},i\in\mathbb{N}$，则 $\bigcup A_i\in\mathcal{F}$.&lt;/li>
+&lt;/ul>
+&lt;p>二元组 $(\Omega,\mathcal{F})$ 称为&lt;strong>可测空间&lt;/strong>。&lt;/p>
+&lt;p>给定集族 $\mathcal{C}$，定义 $\sigma(\mathcal{C})$ 为所有包含 $\mathcal{C}$ 的 $\sigma$-代数的交。可以证明 $\sigma(\mathcal{C})$ 是包含 $\mathcal{C}$ 的最小 $\sigma$-代数。特别地，若 $\Omega=\mathbb{R}^d$，$\mathcal{O}$ 为所有开集的集合，称 $\sigma(\mathcal{O})$ 为 &lt;strong>Borel $\sigma$-代数&lt;/strong>，记作 $\mathcal{B}^d$。其中的集合称为 &lt;strong>Borel 集&lt;/strong>。&lt;/p>
+&lt;h3 id="测度">测度&lt;/h3>
+&lt;p>&lt;strong>定义&lt;/strong> 给定 $(\Omega,\mathcal{F})$，函数 $\nu:\mathcal{F}\to\mathbb{R}\cup{+\infty}$ 称为测度，若满足&lt;/p>
+&lt;ul>
+&lt;li>非负：$0\leq\nu(A)\leq\infty,\forall A\in\mathcal{F}$,&lt;/li>
+&lt;li>空集条件：$\nu(\varnothing)=0$,&lt;/li>
+&lt;li>可列可加性：若 $A_i$ 互不相交，则 $\sum_{i=1}^\infty\nu(A_i)=\nu\left(\bigcup_{i=1}^\infty A_i\right)$.&lt;/li>
+&lt;/ul>
+&lt;p>三元组 $(\Omega,\mathcal{F},\nu)$ 称为&lt;strong>测度空间&lt;/strong>。&lt;/p>
+&lt;p>我们有样本空间 $\Omega$，事件空间 $\mathcal{F}$。在其上的测度 $P$ 如果满足 $P(\Omega)=1$，则 $(\Omega,\mathcal{F},P)$ 称为&lt;strong>概率空间&lt;/strong>，$P$ 称为&lt;strong>概率测度&lt;/strong>。&lt;/p>
+&lt;p>若存在一列 $A_i$，使得 $\bigcup A_i=\Omega$ 且 $\nu(A_i)&amp;lt;\infty$，则称 $\nu$ 是 &lt;strong>$\sigma$-有限的&lt;/strong>。显然概率测度都是 &lt;strong>$\sigma$-有限的&lt;/strong>。&lt;/p>
+&lt;h4 id="lebesgue测度">Lebesgue测度&lt;/h4>
+&lt;p>对区间 $I=(a,b)$，记 $|I|=b-a$. 对任意集合 $A\subset\mathbb{R}$ 定义 Lebesgue 外侧度：
+$$
+m^&lt;em>(A)=\inf\left.\left{\sum_{k=1}^\infty|I_k|\right|A\subset\bigcup I_k\right}.
+$$
+这样定义的外测度满足次可加性，即 $m^&lt;/em>(A\cup B)\leq m^&lt;em>(A)+m^&lt;/em>(B)$. 在满足如下 Caratheodory 条件的集合上，外测度可以升级为测度。具体地，令
+$$
+\mathcal{F}={A\subset\mathbb{R}|\forall T\subset\mathbb{R},m^&lt;em>(T)=m^&lt;/em>(T\cap A)+m^*(T\cap A^c)}.
+$$&lt;/p>
+&lt;p>可以证明 $\mathcal{F}$ 是 $\sigma$-代数，且 $\mathcal{B}\subsetneqq\mathcal{F}$. 对 $A\in\mathcal{F}$，定义
+$$
+m(A)=m^*(A).
+$$
+可以证明 $m$ 是测度，称为 &lt;strong>Lebesgue 测度&lt;/strong>。&lt;/p>
+&lt;p>$\mathbb{R}^n$ 是类似的。之后提到 $\mathbb{R}^n$，默认的测度空间便是 $(\mathbb{R}^n,\mathcal{B}^n,m)$.&lt;/p>
+&lt;h2 id="lebesgue-积分">Lebesgue 积分&lt;/h2>
+&lt;h3 id="可测函数">可测函数&lt;/h3>
+&lt;p>如果可测集的原象是可测集，这个函数就叫可测函数。具体地：设 $(\Omega,\mathcal{F})$ 和 $(\Lambda,\mathcal{G})$ 是两个可测空间，$f:\Omega\to\Lambda$ &lt;strong>可测&lt;/strong>，如果 $\forall A\in\mathcal{G},f^{-1}(A)\in\mathcal{F}$.&lt;/p>
+&lt;p>特别地，映射到 $(\mathbb{R}^n,\mathcal{B}^n)$ 的可测函数称为 &lt;strong>Borel 函数&lt;/strong>。概率空间上的 Borel 函数称为&lt;strong>随机变量&lt;/strong>，通常记作 $X,Y,Z,&amp;hellip;$.&lt;/p>
+&lt;p>对可测函数 $f:(\Omega,\mathcal{F})\to(\Lambda,\mathcal{G})$，可以证明 $f^{-1}(\mathcal{G}):={f^{-1}(A)|A\in\mathcal{G}}$ 是 $\mathcal{F}$ 的子集，且是 $\sigma$-代数，记作 $\sigma(f)$.&lt;/p>
+&lt;h3 id="lebesgue-积分-1">Lebesgue 积分&lt;/h3>
+&lt;p>设测度空间 $(\Omega,\mathcal{F},\nu)$, 下面我们对所有 Borel 函数 $f$ 定义 Lebesgue 积分（允许值是无穷）。&lt;/p>
+&lt;p>首先，若 $f(x)=\sum_{i=1}^k c_iI_{A_i}(x)$，其中 $A_i\in\mathcal{F},c_i\ge 0$，则称 $f$ 为&lt;strong>非负简单函数&lt;/strong>。对非负简单函数，定义
+$$
+\int fd\nu=\sum_{i=1}^k c_i\nu(A_i).
+$$
+其次，对非负 Borel 函数 $f$，定义
+$$
+\int fd\nu=\sup\left.\left{\int gd\nu\right|g\text{ 是非负简单函数且 }g\le f\right}.
+$$
+最后，对 Borel 函数 $f$，将其分为正部和负部。令 $f_+(x)=\max{f(x),0}$, $f_-(x)=-\min{f(x),0}$，有 $f=f_++f_-$. 若 $\int f_+d\nu$ 和 $\int f_-d\nu$ 至少有一个有限，则 $f$ 的积分存在：
+$$
+\int f_{}d\nu=\int f_+d\nu-\int f_-d\nu,
+$$
+若 $\int f_+d\nu$ 和 $\int f_-d\nu$ 都他娘的无穷大，那积分就不存在了。&lt;/p>
+&lt;blockquote>
+&lt;p>思考：Lebesgue 积分的性质优于 Riemann 积分的本质原因是什么？看起来只是把竖着切变成横着切而已。此外，这是否意味着 Riemann 积分可以淘汰了？&lt;/p>
+&lt;p>参考：https://kexue.fm/archives/4083&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="积分的极限定理">积分的极限定理&lt;/h3>
+&lt;p>这是关于交换积分和极限的三大定理，他们之间互相等价。证明见 &lt;a href="https://zhuanlan.zhihu.com/p/33566658" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/33566658&lt;/a>
+.&lt;/p>
+&lt;p>&lt;strong>定理（Levi）&lt;/strong> 设函数们 $f_n(x)$ 都在 $E$ 上非负可测，且满足其关于 $n$ 单调递增，且 $\lim_{n\to\infty}f_n(x)=f(x)$，则
+$$
+\lim_{n\to\infty}\int_E f_n(x)dx=\int_E f(x)dx.
+$$
+&lt;strong>定理（Fatou）&lt;/strong> 设函数们 $f_n(x)$ 都在 $E$ 上非负可测，则
+$$
+\int_E \liminf_{n\to\infty} f_n(x)dx\le \liminf_{n\to\infty}\int_E f_n(x)dx.
+$$
+&lt;strong>定理（Lebesgue）&lt;/strong> 设函数们 $f_n(x)$ 都在 $E$ 上可测，且 $\lim_{n\to\infty}f_n(x)=f(x)$，并且存在 $F\in L(E)$，使得 $|f_n(x)|\le F(x)\text{ (a.e.)}$，则
+$$
+\lim_{n\to\infty}\int_E |f_n(x)-f(x)|dx=0.
+$$
+此外，还有一个很重要的 Fubini 定理，它允许我们使用累次积分计算重积分，并且可以交换顺序：&lt;/p>
+&lt;p>&lt;strong>定理（Fubini）&lt;/strong> 若 $f(x,y)$ 可积，则
+$$
+\int_{A\times B}f(x,y)dxdy=\int_B\left(\int_A f(x,y)dx\right)dy=\int_A\left(\int_B f(x,y)dy\right)dx
+$$&lt;/p>
+&lt;p>作为 Lebesgue 控制收敛定理的重要应用，我们来介绍积分号下求导的定理（出自本科讲义）：&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 设 $E\subset\mathbb{R}^d$ 可测，$I$ 是开区间，$f:E\times I\to\mathbb{R}$. 若对每个 $t\in I,\ f(x,t)$ 关于 $x$ 可积，且对每个 $x\in E$, $f(x,t)$ 关于 $t$ 可微，且存在 $0\le G\in L^1(E)$ 使得
+$$
+\left|\dfrac{\partial f}{\partial t}(x,t)\right|\le G(x),
+$$
+则
+$$
+\frac{d}{dt}\int_E f(x,t)dx=\int_E \frac{\partial f}{\partial t}(x,t)dx,\ t\in I.
+$$&lt;/p>
+&lt;blockquote>
+&lt;p>关键就是找一个控制函数 $G(X)$. &lt;del>记不住也没关系，在学统计的时候，积分和求导总是可交换的。&lt;/del>&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="积分换元">积分换元&lt;/h3>
+&lt;p>测度空间 $(\Omega,\mathcal{F},\nu)$，可测空间 $(\Lambda,\mathcal{G})$，可测函数 $f:\Omega\to\Lambda$. 则 $f$ 诱导了 $\Lambda$ 上的测度，记作 $\nu\circ f^{-1}$，定义为
+$$
+\nu\circ f^{-1}(B)=\nu(f^{-1}(B)),\ \ \forall B\in\mathcal{G}.
+$$
+对于诱导测度，我们有积分换元公式：
+$$
+\int_\Omega g\circ f d\nu=\int_{\Lambda} gd(\nu\circ f^{-1}).
+$$
+&lt;strong>特别地&lt;/strong>，设 $(\Omega,\mathcal{F},P)$ 为概率空间，$X$ 是随机变量，我们有诱导测度 $P_X=P\circ X^{-1}$，称为 $X$ 的&lt;strong>分布&lt;/strong>（distribution or law）。&lt;/p>
+&lt;h2 id="随机变量的分布">随机变量的分布&lt;/h2>
+&lt;p>从现在开始我们将以概率论为主线进行。回忆&lt;strong>随机变量&lt;/strong>指的是概率空间上的 Borel 函数。它定义在概率空间上，值是实数，并且可测。&lt;/p>
+&lt;h3 id="累积分布函数cdf">累积分布函数（CDF）&lt;/h3>
+&lt;p>&lt;strong>定义&lt;/strong> 设 $(\Omega,\mathcal{F},P)$ 为概率空间，$X$ 是随机变量。定义 $X$ 的&lt;strong>累积分布函数&lt;/strong>为
+$$
+F_X(x)=P(X\le x).
+$$&lt;/p>
+&lt;h3 id="概率密度函数pdf">概率密度函数（PDF）&lt;/h3>
+&lt;p>我们希望建立起“概率密度函数”这一概念。通常可以理解为 CDF 的导数。&lt;/p>
+&lt;h4 id="绝对连续absolutely-continuity">绝对连续（Absolutely continuity）&lt;/h4>
+&lt;p>&lt;strong>定义&lt;/strong> $\lambda$ 和 $\nu$ 是可测空间上的两个测度，若对任意的可测集 $A$ 都有：$\nu(A)=0\Rightarrow \lambda(A)=0$，则称 $\lambda$ 关于 $\nu$ 绝对连续，记作 $\lambda\ll\nu$.&lt;/p>
+&lt;blockquote>
+&lt;p>乍一看和连续没啥关系，但对 $\sigma$-finite 的测度，我们有一个长得像“连续”的推论：&lt;/p>
+&lt;p>若 $\lambda$ 是有限的，则 $\lambda\ll\nu$ 当且仅当 $\forall\varepsilon&amp;gt;0,\exist\delta&amp;gt;0,s.t\ \forall A,\nu(A)&amp;lt;\delta\Rightarrow \lambda(A)&amp;lt;\varepsilon$.&lt;/p>
+&lt;p>意思是，当 $\nu$ 给出非常小的测度时，$\lambda$ 也必须小。证明留做习题。也可参见：&lt;a href="https://zhuanlan.zhihu.com/p/75414600" target="_blank" rel="noopener">测度的绝对连续和相互奇异 - 查哥半桶水的文章 - 知乎 Proposition 13.9&lt;/a>
+。&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="radon-nikodym-导数">Radon-Nikodym 导数&lt;/h4>
+&lt;p>我们先来看一个命题，证明留做习题。&lt;/p>
+&lt;p>$f$ 为非负可测函数，令
+$$
+\lambda(A):=\int_Af{\mathrm d}v,A\in\mathscr{F},
+$$
+则 $\lambda\ll \nu$.&lt;/p>
+&lt;p>而它的逆命题就是 Radon-Nikodym 定理，但要加上一个 $\nu$ $\sigma$-finite 的条件：&lt;/p>
+&lt;p>**定理（Radon-Nikodym） **$\lambda,\nu$ 是测度，$\nu$ 是 $\sigma$-finite 的。若 $\lambda\ll\nu$，则存在唯一的非负 Borel 函数 $f$ 使得
+$$
+\lambda(A)=\int_Af{\mathrm d}v,A\in\mathscr{F}.
+$$&lt;/p>
+&lt;blockquote>
+&lt;p>证明已经超出本课程要求了，可以参见：&lt;a href="https://zhuanlan.zhihu.com/p/78753507" target="_blank" rel="noopener">Radon-Nikodym 定理 (1) - 查哥半桶水的文章 - 知乎&lt;/a>
+。&lt;/p>
+&lt;/blockquote>
+&lt;p>我们记上述 $f=\dfrac{\mathrm{d}\lambda}{\mathrm{d}\nu}$，$f$ 称为 $\lambda$ 关于 $\nu$ 的 &lt;strong>R-N 导数&lt;/strong>（或密度）。&lt;/p>
+&lt;h4 id="概率密度函数">概率密度函数&lt;/h4>
+&lt;p>&lt;strong>定义&lt;/strong> 若 $P$ 是概率测度，$\nu$ 是 $\sigma$-finite 的测度，$P\ll\nu$，则 $\dfrac{{\mathrm{d}}P}{\mathrm{d}\nu}$ 称为 $P$ 对 $\nu$ 的&lt;strong>概率密度函数&lt;/strong>（probability density function, PDF）。&lt;/p>
+&lt;p>通常我们取 Lebesgue 测度 $m$，若 $F$ 可导，记 $f=F&amp;rsquo;$，有 $\dfrac{dP}{dm}=f$. 这就是我们常用的形式了。&lt;/p>
+&lt;h2 id="随机变量的数字特征">随机变量的数字特征&lt;/h2>
+&lt;h3 id="矩moments">矩（Moments）&lt;/h3>
+&lt;p>&lt;strong>定义&lt;/strong> 对于 $(\Omega,\mathcal{F},P)$，若如下积分存在，则称之为&lt;strong>期望&lt;/strong>：
+$$
+\mathrm{E}(X)=\int_\Omega X(\omega)dP(\omega)=\int_\mathbb{R}xdF_X(x).
+$$
+更一般地，设 $n$ 为正整数，若 $\mathrm E(X^n)$ 存在，则称为 $X$ 的 $n$ 阶&lt;strong>矩&lt;/strong>（moment）；若 $\mathrm E((X-\mathrm EX)^n)$ 存在，则称为 $X$ 的 $n$ 阶&lt;strong>中心矩&lt;/strong>。二阶中心矩又叫做&lt;strong>方差&lt;/strong>，记作 $\mathrm{Var}(X)$.&lt;/p>
+&lt;p>对随机向量，定义是类似的，对每个位置分别计算矩即可。&lt;/p>
+&lt;h3 id="特征函数与矩母函数">特征函数与矩母函数&lt;/h3>
+&lt;p>&lt;strong>定义&lt;/strong> 有随机变量 $X$。&lt;strong>特征函数&lt;/strong>（characteristic function, ch.f.）$\varphi:\mathbb{R}\to\mathbb{C}$ 定义为
+$$
+\varphi_X(t)=\mathrm E\left(e^{itX} \right),\ \forall t\in \mathbb{R}.
+$$
+&lt;strong>矩母函数&lt;/strong>（moment generating function, m.g.f.） $\psi:\mathbb{R}\to\mathbb{R}$ 定义为
+$$
+\psi_X(t)=\mathrm E\left(e^{tX}\right),\ \forall t\in \mathbb{R}.
+$$
+几点说明：&lt;/p>
+&lt;ul>
+&lt;li>$\left|e^{itX}\right|\leq 1$，因此 $\varphi$ 总是存在且有限。&lt;/li>
+&lt;li>$e^{tX}&amp;gt;0$，因此 $\psi$ 也总有定义，但有可能是无穷大。&lt;/li>
+&lt;li>若密度函数 $f$ 存在，则 $\varphi$ 是 $f$ 的 Fourier 变换，$\psi$ 是 $f$ 的 Laplace 变换。&lt;/li>
+&lt;/ul>
+&lt;p>我们介绍几条性质。&lt;/p>
+&lt;p>&lt;strong>性质&lt;/strong> 若 $\psi_X$ 在一个包含 0 的开区间内有限，则&lt;/p>
+&lt;ul>
+&lt;li>$X$ 的任意阶矩存在有限，并且 $E(X^n)=\left.\dfrac{d^n\psi_X(t)}{dt^n}\right|_{t=0}$，&lt;/li>
+&lt;li>$\psi_X$ 唯一决定了一个概率分布，&lt;/li>
+&lt;li>$\varphi_X(t)=\psi_X(it)$.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>性质&lt;/strong> $\varphi(x)$ 唯一决定了一个概率分布。&lt;/p>
+&lt;p>我要另起一篇写了，不然这页就太长了。&lt;/p></description></item><item><title>线性回归（四）-多因素方差分析</title><link>https://blog.shadiao.win/post/5203-4%E5%A4%9A%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/</link><guid>https://blog.shadiao.win/post/5203-4%E5%A4%9A%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/</guid><description>&lt;p>本节就不推导了。最艰难的部分已经过去了，多因素的推导过程和单因素大同小异，并且一大堆下标，真的认真计算的话会被水淹没不知所措的。只要多多观察总结规律就很容易。&lt;/p>
+&lt;h2 id="two-way-anova-with-interactive">Two way ANOVA with interactive&lt;/h2>
+&lt;h3 id="模型">模型&lt;/h3>
+&lt;p>最主要的区别是多了个交叉项，我们要考虑两个维度的因素可能会存在协同作用。假设有两个因素 $A$ 和 $B$，因素 $A$ 有 $I$ 个等级，因素 $B$ 有 $J$ 个等级。&lt;strong>每个处理组的个体数相等，记作 $n$&lt;/strong>（不然真的会被恶心死）。（所以一共有 $nIJ$ 个个体）
+$$
+y_{i,j,l}=\eta+\alpha_i+\beta_j+\omega_{i,j}+e_{i,j,l},
+$$
+其中 $\omega_{i,j}$ 表示协同作用，$e_{i,j,l}\overset{i.i.d.}\sim N(0,\sigma^2)$.&lt;/p>
+&lt;p>其实真正的自由参数只有 $IJ$ 个，即
+$$
+y_{i,j,l}=\mu_{i,j}+e_{i,j,l}.
+$$
+它们的对应关系是：&lt;/p>
+&lt;ul>
+&lt;li>$\eta=\bar\mu_{\cdot,\cdot}$, 表示整体均值，&lt;/li>
+&lt;li>$ \alpha_i=\bar\mu_{i,\cdot}-\eta$, 表示 $A$ 的第 $i$ 组的 buff，&lt;/li>
+&lt;li>$\beta_j=\bar\mu_{\cdot,j}-\eta$, 表示 $B$ 的第 $j$ 组的 buff，&lt;/li>
+&lt;li>$\omega_{i,j}=(\mu_{i,j}-\eta)-(\bar\mu_{i,\cdot}-\eta)-(\bar\mu_{\cdot,j}-\eta)=\mu_{i,j}-\bar\mu_{i,\cdot}-\bar\mu_{\cdot,j}+\eta$, 表示共同作用的额外 buff。&lt;/li>
+&lt;/ul>
+&lt;p>模型估计 $\mu_{i,j}$ 换成 $\bar y_{i,j,\cdot}$ 即可，另外 $\hat e_{i,j,l}=y_{i,j,l}-\bar y_{i,j,\cdot}$.&lt;/p>
+&lt;h3 id="anova-表">ANOVA 表&lt;/h3>
+&lt;p>$$
+\begin{align}
+SST&amp;amp;=\sum_{i,j,l}(y_{i,j,l}-\bar y_{\cdot,\cdot,\cdot})^2,\
+SSA&amp;amp;=nJ\sum_i (\bar y_{i,\cdot,\cdot}-\bar y_{\cdot,\cdot,\cdot})^2,\
+SSB&amp;amp;=nI\sum_j (\bar y_{\cdot,j,\cdot}-\bar y_{\cdot,\cdot,\cdot})^2,\
+SS(AB)&amp;amp;=n\sum_{i,j}(\bar y_{i,j,\cdot}-\bar y_{i,\cdot,\cdot}-\bar y_{\cdot,j,\cdot}+\bar y_{\cdot,\cdot,\cdot})^2,\
+SSE&amp;amp;=\sum_{i,j,l}(y_{i,j,l}-\bar y_{i,j,\cdot})^2.
+\end{align}
+$$&lt;/p>
+&lt;p>打完这一串真要命。有等式
+$$
+SST=SSA+SSB+SS(AB)+SSE.
+$$&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>来源&lt;/th>
+&lt;th>自由度&lt;/th>
+&lt;th>平方和&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Factor A&lt;/td>
+&lt;td>$I-1$&lt;/td>
+&lt;td>$SSA$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Factor B&lt;/td>
+&lt;td>$J-1$&lt;/td>
+&lt;td>$SSB$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Interaction&lt;/td>
+&lt;td>$(I-1)(J-1)$&lt;/td>
+&lt;td>$SS(AB)$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Residual&lt;/td>
+&lt;td>$IJ(n-1)$&lt;/td>
+&lt;td>$SSE$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Total&lt;/td>
+&lt;td>$nIJ-1$&lt;/td>
+&lt;td>$SST$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="假设检验">假设检验&lt;/h3>
+&lt;p>用 $F$-检验。检验啥玩意就用啥玩意除以 $MSE$.&lt;/p>
+&lt;p>例如 $H_0: \alpha_i=0$，就是 $F_A=\frac{SSA/(I-1)}{SSE/(IJ(n-1))}\sim F_{I-1,IJ(n-1)}$. 老掉牙了，不多说了。&lt;/p>
+&lt;p>如果交叉项的检验显著（$H_0: \omega_{i,j}=0$ 被拒绝），这意味着我们无法单独考虑一个变量的作用，必须联合起来考虑，所以应该回到用 $\mu_{i,j}$ 表示的模型，把 $A\times B$ 当成整体因素进行 one way ANOVA 的后续分析（例如多重比较）。&lt;/p>
+&lt;p>如果交叉项检验不显著，模型立刻变为下面的——&lt;/p>
+&lt;h2 id="two-way-anova-without-interactive">Two way ANOVA without interactive&lt;/h2>
+&lt;blockquote>
+&lt;p>注：令 $n=1$ 就是 PPT 中的 additive model。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="模型-1">模型&lt;/h3>
+&lt;p>直接粗暴地删掉 $\omega$ 即可：
+$$
+y_{i,j,l}=\eta+\alpha_i+\beta_j+e_{i,j,l},
+$$
+其中 $e_{i,j,l}\overset{i.i.d.}\sim N(0,\sigma^2)$.&lt;/p>
+&lt;p>参数估计前面没变，只有 $\hat e_{i,j,l}$ 变了。具体地：&lt;/p>
+&lt;ul>
+&lt;li>$\hat\eta=\bar y_{\cdot,\cdot,\cdot}$,&lt;/li>
+&lt;li>$\hat\alpha_i=\bar y_{i,\cdot,\cdot}-\bar y_{\cdot,\cdot,\cdot}$,&lt;/li>
+&lt;li>$\hat\beta_j=\bar y_{\cdot,j,\cdot}-\bar y_{\cdot,\cdot,\cdot}$,&lt;/li>
+&lt;li>$\hat e_{i,j,l}=y_{i,j,l}-\bar y_{i,\cdot,\cdot}-\bar y_{\cdot,j,\cdot} +\bar y_{\cdot,\cdot,\cdot}$.&lt;/li>
+&lt;/ul>
+&lt;h3 id="anova">ANOVA&lt;/h3>
+&lt;p>相应地，$SSE$ 要变一下：
+$$
+SSE=\sum_{i,j,l}(y_{i,j,l}-\bar y_{i,\cdot,\cdot}-\bar y_{\cdot,j,\cdot} +\bar y_{\cdot,\cdot,\cdot})^2.
+$$
+其他定义不变，我们有
+$$
+SST=SSA+SSB+SSE.
+$$&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>来源&lt;/th>
+&lt;th>自由度&lt;/th>
+&lt;th>平方和&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Factor A&lt;/td>
+&lt;td>$I-1$&lt;/td>
+&lt;td>$SSA$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Factor B&lt;/td>
+&lt;td>$J-1$&lt;/td>
+&lt;td>$SSB$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Residual&lt;/td>
+&lt;td>$nIJ-I-J+1$&lt;/td>
+&lt;td>$SSE$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Total&lt;/td>
+&lt;td>$nIJ-1$&lt;/td>
+&lt;td>$SST$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="假设检验-1">假设检验&lt;/h3>
+&lt;h4 id="f-检验">$F$-检验&lt;/h4>
+&lt;p>$H_0:\alpha_i=0$, $F=\dfrac{SSA/(I-1)}{SSE/(nIJ-I-J+1)}\sim F_{I-1,nIJ-I-J+1}$.&lt;/p>
+&lt;h4 id="多重比较">多重比较&lt;/h4>
+&lt;p>$$
+T_{i_1,i_2}=\dfrac{\bar y_{i_1,\cdot,\cdot}-\bar y_{i_2,\cdot,\cdot}}{\sqrt{\hat\sigma^2 2/(nJ)}}\sim t_{nIJ-I-J+1}.
+$$&lt;/p>
+&lt;p>其中 $\hat\sigma^2=SSE/(nIJ-I-J+1)$.&lt;/p>
+&lt;p>Bonferroni method 和 Tukey method 是一样的。&lt;/p>
+&lt;h2 id="multiple-way-anova">Multiple way ANOVA&lt;/h2>
+&lt;p>二元到多元没什么本质区别，只不过公式更难写了…… 比如说 three way 的长这样：
+$$
+\begin{align}
+y_{i,j,l,k}=&amp;amp;\eta+\alpha_i+\beta_j+\gamma_l +\
+&amp;amp;(\alpha\beta)&lt;em>{i,j}+(\alpha\gamma)&lt;/em>{i,l}+(\beta\gamma)&lt;em>{j,l}+\
+&amp;amp;(\alpha\beta\gamma)&lt;/em>{i,j,l}+e_{i,j,l,k.}.
+\end{align}
+$$
+其他的自己推罢。&lt;/p>
+&lt;h2 id="拉丁方latin-square设计">拉丁方（Latin Square）设计&lt;/h2>
+&lt;h3 id="实验设计">实验设计&lt;/h3>
+&lt;p>这是你从未体验过的船新设计思路，它可以极大地缩减实验规模。假设有 $3$ 个因素，每个因素有 $5$ 个 level，而&lt;strong>我们只关心其中一个的影响&lt;/strong>，另外两个视为 block。完全实验至少需要做 $5\times 5\times 5=125$ 次实验，而使用拉丁方设计，只需要 $25$ 次。&lt;/p>
+&lt;p>具体来说，两个 block 组合，有 $5\times 5$ 种 level，每种 level 我们只对 treatment 的一个 level 做一次实验。如下矩阵表示了具体设计：
+$$
+\begin{pmatrix}
+e &amp;amp; a &amp;amp; b &amp;amp; c &amp;amp; d \
+c&amp;amp;d&amp;amp;b&amp;amp;e&amp;amp;a\
+b&amp;amp;c&amp;amp;d&amp;amp;a&amp;amp;e\
+a&amp;amp;b&amp;amp;e&amp;amp;d&amp;amp;c\
+d&amp;amp;e&amp;amp;a&amp;amp;c&amp;amp;b\
+\end{pmatrix}.
+$$
+$a,b,c,d,e$ 是我们所关心的因素的 $5$ 个 level。第 $i$ 行 $j$ 列表示 block 的取值是 $i,j$ 时，用 treatment 的哪个 level 来做实验。&lt;/p>
+&lt;p>为了消除 block 的影响，我们要求这个矩阵每一行和每一列不能有重复元素。这样的矩阵叫&lt;strong>拉丁方阵&lt;/strong>，这也是“拉丁方设计”这一名字的来源。&lt;/p>
+&lt;p>再次强调采用拉丁方设计需要满足的条件：&lt;/p>
+&lt;ul>
+&lt;li>三个因素有一个是关注因素（treatment），另外两个是捣乱的（block）；&lt;/li>
+&lt;li>三个因素的水平数必须相同；&lt;/li>
+&lt;li>三个因素之间不存在交互作用。&lt;/li>
+&lt;/ul>
+&lt;h3 id="模型-2">模型&lt;/h3>
+&lt;p>$\alpha,\beta$ 表示两个 block，$\tau$ 表示 treatment，每个因素有 $k$ 个 level。则
+$$
+y_{i,j,l}=\eta+\alpha_i+\beta_j+\tau_l+e_{i,j,l}.
+$$
+其中 $e_{i,j,l}\overset{i.i.d.}\sim N(0,\sigma^2)$. 估计值的定义显然。&lt;/p>
+&lt;h3 id="anova-1">ANOVA&lt;/h3>
+&lt;p>各个 $SS$ 的公式也不写了，自己写吧。我们把两个 block 成为 row 和column。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>来源&lt;/th>
+&lt;th>自由度&lt;/th>
+&lt;th>平方和&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>row&lt;/td>
+&lt;td>$k-1$&lt;/td>
+&lt;td>$SS_{row}$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>column&lt;/td>
+&lt;td>$k-1$&lt;/td>
+&lt;td>$SS_{col}$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>treatment&lt;/td>
+&lt;td>$k-1$&lt;/td>
+&lt;td>$SS_{trt}$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Error&lt;/td>
+&lt;td>$(k-1)(k-2)$&lt;/td>
+&lt;td>$SSE$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Total&lt;/td>
+&lt;td>$k^2-1$&lt;/td>
+&lt;td>$SST$&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="假设检验-2">假设检验&lt;/h3>
+&lt;p>$F$-检验：$H_0:\tau_i=0$, $F=\dfrac{SS_{trt}/(k-1)}{SSE/((k-1)(k-2))}\sim F_{k-1,(k-1)(k-2)}$.&lt;/p>
+&lt;p>$t$-检验：$T_{i,j}=\dfrac{\bar y_{\cdot,\cdot,i}-\bar y_{\cdot,\cdot,j}}{\sqrt{\hat\sigma^2 (2/k)}}$.&lt;/p>
+&lt;h2 id="结语">结语&lt;/h2>
+&lt;p>写完了…… 感觉这一节就是抄了一遍 PPT 啊……&lt;/p>
+&lt;p>方差分析的模型灵活多变，这里只是介绍了几种常用的。实际应用时，往往需要根据实际问题有针对性的建立模型。只要掌握原理，怎么折腾都行。&lt;/p></description></item><item><title>随机图与网络模型</title><link>https://blog.shadiao.win/post/5225-2%E9%9A%8F%E6%9C%BA%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</link><guid>https://blog.shadiao.win/post/5225-2%E9%9A%8F%E6%9C%BA%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/</guid><description>&lt;p>感觉写的并不透彻，不过就这样吧。&lt;/p>
+&lt;h1 id="网络模型">网络模型&lt;/h1>
+&lt;h2 id="随机图模型">随机图模型&lt;/h2>
+&lt;p>随机图模型，致力于在图构成的集合上构建概率测度。既然是概率，就可以用三元组 $(\mathcal{G},\mathcal{F},P)$ 表示。其中 $\mathcal{G}$ 是一些图的集合，$\mathcal{F}$ 是其上的 $\sigma$-代数，$P$ 是概率测度。通常 $\mathcal{G}$ 是有限集，此时 $\mathcal{F}=2^{\mathcal{G}}$.&lt;/p>
+&lt;h3 id="经典模型">经典模型&lt;/h3>
+&lt;p>&lt;strong>Erdos &amp;amp; Renyi 模型&lt;/strong>：用 $G(n,m)$ 表示所有 $n$ 个顶点，$m$ 条边的图的集合，共有 $\dbinom{\frac{n(n-1)}{2}}{m}$ 个。让每一个图等概率出现。&lt;/p>
+&lt;p>&lt;strong>Gilbert 模型&lt;/strong>：记作 $G(n,p)$，它考虑所有 $n$ 个顶点的图，每个边的出现概率为 $p$，并且独立于其他边。共有 $2^{\frac{n(n-1)}{2}}$ 种不同的图。&lt;/p>
+&lt;p>&lt;strong>等价性&lt;/strong>：在 Gilbert 模型中令 $np=m$，然后令 $n\to\infty$，根据大数定律，几乎所有的图边数都是 $m$，此时 E-R 模型和 Gilbert 模型行为是类似的。&lt;/p>
+&lt;h4 id="度分布degree-distribution">度分布（degree distribution）&lt;/h4>
+&lt;p>显然单个节点的度服从二项分布 $B(n-1,p)$.&lt;/p>
+&lt;p>通常我们关心边数固定时的渐近情况，即令 $p=c/n$, $c$ 是常数。当 $n\to\infty$ 时，二项分布趋近于泊松分布 $Poisson((n-1)p)\approx Poisson(c)$ [2].&lt;/p>
+&lt;p>现实中的图往往是非均匀网络，它的度分布更接近&lt;strong>幂律分布&lt;/strong>，所以经典的随机图模型并不能很好地模拟现实情况。&lt;/p>
+&lt;h3 id="一般模型">一般模型&lt;/h3>
+&lt;p>一般模型允许我们在图上施加任意限制，例如考虑固定顶点数 $n$ 和度序列 $(k_1,\cdots,k_n)$，然后等概率选取。&lt;/p>
+&lt;blockquote>
+&lt;p>这使得我们可以针对观察到的图进行模拟：使用相同的度序列随机生成一些图，然后看一下我们观察到的特征是否显著。&lt;/p>
+&lt;/blockquote>
+&lt;p>此外还可以加别的限制条件。根据指定的条件随机生成图的算法是一个复杂的话题，我们这里暂且不讨论。&lt;/p>
+&lt;p>把图放进概率空间，手段就多了。我们可以给 $P$ 带上参数，变成分布族 $\mathcal{P}={P_\theta:\theta\in\Theta}$. 我们这就来介绍享誉全球的&lt;strong>指数随机图模型（exponential random graph models, ERGM）&lt;/strong>。&lt;/p>
+&lt;h2 id="指数随机图模型">指数随机图模型&lt;/h2>
+&lt;p>图 $g\in G$ 的概率定义为
+$$
+P_\theta(g)=\frac{1}{\kappa(\theta)}e^{\theta^TT(g)}.
+$$
+其中 $\theta$ 是 $p$ 维参数。$T(g)$ 是 $p$ 维统计量，通常是我们关注的一些图的性质，比如边数、三角形数等。$\kappa$ 是归一化因子，即
+$$
+\kappa=\sum_{g\in G}e^{\theta^T T(g)}.
+$$
+显然它是个指数族。注意这里我们是根据感兴趣的特征量来确定 $T$，然后给他配上相同维度的 $\theta$.&lt;/p>
+&lt;h3 id="估计">估计&lt;/h3>
+&lt;p>通常我们使用极大似然估计，但对一般的模型来说并不容易。通常 $G$ 的规模异常巨大，$\kappa$ 很难求出解析形式，所以要使用 MCMC 进行模拟。&lt;/p>
+&lt;h3 id="统计量">统计量&lt;/h3>
+&lt;p>在 ERGM 中，$T$ 是钦定的。除了常见的边数、三角形数等，我们还有一些高大上的统计量。&lt;/p>
+&lt;p>&lt;strong>Geometrically weighted edgewise shared partner (GWESP)&lt;/strong> 通常可以用来替代三角形数，它的定义是&lt;/p>
+&lt;p>$$
+\mathrm{GWESP}&lt;em>\gamma(g)=e^\gamma\sum&lt;/em>{k=0}^{n-2}\left(1-(1-e^{-\gamma})^k\right)\mathrm{SP}_k(g),
+$$&lt;/p>
+&lt;p>其中 $\gamma\ge 0$ 是钦定的，$\mathrm{SP}_k(g)=\sharp{(u,v)\in E:u,v\text{ 恰好有 }k\text{ 个公共邻居}}$.&lt;/p>
+&lt;p>&lt;strong>Geometrically weighted degree (GWD)&lt;/strong> 则可以用来替代 $k$-star 的个数。它是&lt;/p>
+&lt;p>$$
+\mathrm{GWD}&lt;em>\gamma(g)=\sum&lt;/em>{k=0}^{n-1}e^{-k\gamma}D_k(g),
+$$&lt;/p>
+&lt;p>其中 $D_k(g)$ 是度为 $k$ 的节点个数。&lt;/p>
+&lt;h3 id="block-model">Block Model&lt;/h3>
+&lt;p>这时 ERGM 的一种。我们假设图分成了 $I$ 组，一条边的连接概率只和两个端点所在的组有关。我们有参数 $b=(b_{11},\cdots,b_{II})$，若 $u$ 在第 $i$ 组，$v$ 在第 $j$ 组，则 $P_b((u,v)\in E)=b_{ij}$.&lt;/p>
+&lt;p>对给定的图 $g$，我们可以计算他的概率
+$$
+P_b(g)=\prod_{i\le j}b_{ij}^{m_{ij}}\left(1-b_{ij}\right)^{N_{ij}-m_{ij}},
+$$
+其中 $n_i$ 为第 $i$ 组的点数，$N_{ij}$ 为可能出现的边数，$i=j$ 时 $N_{ii}=\dbinom{n_i}{2}$，$i\ne j$ 时 $N_{ij}=n_i n_j$. $m_{ij}$ 是第 $i$ 组和第 $j$ 组之间的边数。&lt;/p>
+&lt;p>请自行验证它是指数族。&lt;/p>
+&lt;p>这个极大似然估计我们能算出来：
+$$
+\hat b_{ij}=\frac{m_{ij}}{N_{ij}}.
+$$&lt;/p>
+&lt;h3 id="logistic-model">Logistic model&lt;/h3>
+&lt;p>很多时候我们不仅要考虑图的连接方式，还要考虑节点的属性，例如年龄、性别等。&lt;/p>
+&lt;p>我们设每个节点 $u$ 有一个属性向量 $x_u$. 我们用函数 $h(x_u,x_v)$ 表示我们感兴趣的东西。例如 $h(x,y)=(I(x_1=y_1),x_2+y_2)$ 意味着我们想看看“邻居的属性 1 是否一样，属性 2 的大小是否会影响连接概率”。考虑模型
+$$
+P((u,v)\in E)=p_{uv}=\frac{e^{\beta^T h(x_u,x_v)}}{1+e^{\beta^T h(x_u,x_v)}}.
+$$&lt;/p>
+&lt;p>可以算出图 $g$ 出现的概率
+$$
+P_\beta(g)=\frac{\exp\left(\sum_{(u,v)\in E}\beta^Th(x_u,x_v)\right)}{\prod_{u\le v}\left(1+\exp\left({\beta^Th(x_u,x_v)}\right)\right)}.
+$$
+哎，他还是指数族，没想到吧！&lt;/p>
+&lt;p>我们可以用 logistic 回归来估计参数。如果 $(u,v)\in E$，$p_{uv}$ 的观测值就是 1，否则就是 0.&lt;/p>
+&lt;h3 id="带有协变量的-ergm">带有协变量的 ERGM&lt;/h3>
+&lt;p>推广一下 logistic model，我们把协变量和传统的 $T(g)$ 结合起来：
+$$
+P_{\theta,\beta}(g)=\exp\left(\theta^T T(g)+\sum_{(u,v)\in E}\beta^Th(x_u,x_v)\right)\kappa_x^{-1}(\theta,\beta).
+$$
+其中 $\theta$ 和 $\beta$ 都是参数，他俩拼起来是完整参数。注意 $\theta=0$ 就是 logistic model 了。&lt;/p>
+&lt;h3 id="odds">odds&lt;/h3>
+&lt;p>事件 $A$ 的 odds 定义为 $P(A)/(1-P(A))$. 对于图来说，假设所有其他边都固定，只有 $(w,y)$ 不确定，则可以设 $g_+$ 表示 $(w,y)\in E$ 的图，$g_-$ 表示 $(w,y)\notin E$ 的图，于是 $(w,y)\in E$ 的 odds 是
+$$
+O_1=\frac{\exp(\theta T(g_+)+\beta^T h(x_w,x_y))}{\exp(\theta T(g_-))}.
+$$&lt;/p>
+&lt;h2 id="链接预测">链接预测&lt;/h2>
+&lt;p>给出一张图，通过已知的边来预测可能出现的潜在的其他边，就是链接预测。通常来说，链接预测给每个顶点对 $(u,v)$ 一个分数 $s_{uv}$，该分值越大，越有可能连接。&lt;/p>
+&lt;h3 id="ergm">ERGM&lt;/h3>
+&lt;p>当我们拟合了 ERGM 模型之后，可以给出边的出现概率：
+$$
+p_{uv}=\frac{P(g_+)}{P(g_+)+P(g_-)}.
+$$&lt;/p>
+&lt;h3 id="无-model-fitting">无 model-fitting&lt;/h3>
+&lt;p>此外，还有许多不需要 model-fitting 的方法。我们寄 $S(u)$ 为顶点 $u$ 的邻居集合，$k_u=\sharp S(u)$。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Jaccard measure
+$$
+s_{uv}=\frac{\sharp [S(u)\cap S(v)]}{\sharp [S(u)\cup S(v)]},
+$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Adam-Adar measure
+$$
+s_{uv}=\sum_{w\in S(u)\cap S(v)}\frac{1}{\log k_w},
+$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Preferential attachment
+$$
+s_{uv}=k_u k_v.
+$$&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>还有基于邻接矩阵的。记邻接矩阵为 $A$，我们得到 $B$ 之后，$B_{uv}$ 就是分数。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>matrix exponential
+$$
+B=\exp(\alpha A)=\sum_{i=0}^\infty\frac{\alpha^i}{i!}A^i,
+$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>von Neumann kernel
+$$
+B=(I-\alpha A)^{-1}=\sum_{i=0}^\infty \alpha^i A^i.
+$$&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>其中 $\alpha$ 为参数。&lt;/p>
+&lt;h3 id="pseudo-likelihood">pseudo-likelihood&lt;/h3>
+&lt;p>我们可以考虑 pseudo-likelihood，它解决了传统 ERGM 无法求解的问题。Pseudo-likelihood 就是上面的 $p_{uv}$ 乘起来。具体地，在 ERGM 中可以计算出 $p_{uv}=\dfrac{P(g_+)}{P(g_+)+P(g_-)}$. 把所有边的 $p_{uv}$ 乘起来就行了。&lt;/p>
+&lt;h2 id="参考文献">参考文献&lt;/h2>
+&lt;ol>
+&lt;li>Statistical Analysis of Network Data with R, 2nd edition. Eric D. Kolacyk and G´abor Cs´ardi, Springer (2018) [main].&lt;/li>
+&lt;li>&lt;a href="https://zh.wikipedia.org/wiki/%E4%BA%8C%E9%A0%85%E5%BC%8F%E5%88%86%E5%B8%83#%E6%B3%8A%E6%9D%BE%E8%BF%91%E4%BC%BC" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/%E4%BA%8C%E9%A0%85%E5%BC%8F%E5%88%86%E5%B8%83#%E6%B3%8A%E6%9D%BE%E8%BF%91%E4%BC%BC&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=Ma2Bj33Qemc" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Ma2Bj33Qemc&lt;/a>
+&lt;/li>
+&lt;/ol></description></item><item><title>谱图理论基础</title><link>https://blog.shadiao.win/post/5225-1%E8%B0%B1%E5%9B%BE%E7%90%86%E8%AE%BA%E5%85%A5%E9%97%A8/</link><guid>https://blog.shadiao.win/post/5225-1%E8%B0%B1%E5%9B%BE%E7%90%86%E8%AE%BA%E5%85%A5%E9%97%A8/</guid><description>&lt;p>图的基本定义啥的就不写了，满大街都是。从 Laplace 矩阵开始的。&lt;/p>
+&lt;h1 id="谱图理论基础">谱图理论基础&lt;/h1>
+&lt;h2 id="laplace-矩阵">Laplace 矩阵&lt;/h2>
+&lt;h3 id="来源">来源&lt;/h3>
+&lt;p>考虑微积分中的 Laplace 算子。对多元函数 $f(x_1,\cdots,x_n)$，Laplace 算子 $\Delta$ 定义为
+$$
+\Delta f=\sum_{i=1}^n \dfrac{\partial^2 f}{\partial x_i^2}.
+$$
+我们用右侧差分代替各个函数的导数，即
+$$
+f&amp;rsquo;(x)\approx \dfrac{f(x+\Delta x)-f(x)}{\Delta x}.
+$$
+为简便起见，考虑二元函数 $f(x,y)$，并且统一步长为 $1$。此时二维平面变成了一张图，节点是所有格点，每个点连接了上下左右四个格点。对节点 $(x,y)$，它的四个邻居是 $(x+1,y),(x-1,y),(x,y+1),(x,y-1)$.&lt;/p>
+&lt;p>容易算出差分形式的 Laplace 算子为&lt;/p>
+&lt;p>$$
+\Delta f(x,y)\approx f(x+1,y)+f(x-1,y)+f(x,y+1)+f(x,y-1)-4f(x,y).
+$$&lt;/p>
+&lt;p>把它推广到图 $G(V,E)$，$f:V\to\mathbb{R}$，有&lt;/p>
+&lt;p>$$
+\begin{pmatrix}
+\Delta f(x_1)\\
+\vdots\\
+\Delta f(x_n)
+\end{pmatrix}=-(D-W)
+\begin{pmatrix}
+f(x_1)\\
+\vdots\\
+f(x_n)
+\end{pmatrix}.
+$$&lt;/p>
+&lt;p>Laplace 矩阵定义为 $D-W$ 而不是 $W-D$，是因为这样是半正定矩阵，而不是半负定矩阵。&lt;/p>
+&lt;h3 id="性质">性质&lt;/h3>
+&lt;ul>
+&lt;li>$\forall x\in\mathbb{R}^n,x^TLx=\sum_{(u,v)\in E}w_{uv}(x_u-x_v)^2$,&lt;/li>
+&lt;li>$L$ 对称半正定，&lt;/li>
+&lt;li>最小特征值为 $0$，其中一个特征向量为所有分量为 $1$ 的向量，&lt;/li>
+&lt;li>特征值 $0$ 的重数为连通子图的个数，&lt;/li>
+&lt;li>所有非 $0$ 特征值的特征向量必然与 $1$ 正交（更一般地，实对称矩阵不同特征值的特征向量正交）。&lt;/li>
+&lt;/ul>
+&lt;h2 id="中心性centrality">中心性（Centrality）&lt;/h2>
+&lt;p>几种简单的中心性的度量：&lt;/p>
+&lt;ul>
+&lt;li>Degree centrality: $k_u$ ($k_u^{\rm in},k_u^{\rm out}$),&lt;/li>
+&lt;li>Closeness centrality: $c_{CL}(u)=\left(\sum_v d_{uv}\right)^{-1}$,&lt;/li>
+&lt;li>Betweenness centrality: 点对 $v,w$ 的个数 which 有通过 $u$ 的最短路径（有多条则按比例算），&lt;/li>
+&lt;/ul>
+&lt;p>此外还有下面几种不那么 trivial 的。&lt;/p>
+&lt;h3 id="katz-centrality-eigenvalue-centrality">Katz centrality (Eigenvalue centrality)&lt;/h3>
+&lt;h4 id="perron-frobenius-定理">Perron-Frobenius 定理&lt;/h4>
+&lt;p>我们要先介绍 Perron-Frobenius 定理，它描述了非负矩阵的谱的一些有趣性质。完整内容和证明请参考 &lt;a href="https://dna049.com/perronFrobeniusTheory" target="_blank" rel="noopener">https://dna049.com/perronFrobeniusTheory&lt;/a>
+。&lt;/p>
+&lt;p>&lt;strong>定义（置换相似）&lt;/strong> 两个矩阵称为置换相似的，若存在置换矩阵 $P$ 满足 $P^TXP=Y$.&lt;/p>
+&lt;p>对于图的邻接矩阵，置换操作等价于更改节点的编号顺序。&lt;/p>
+&lt;p>&lt;strong>定义（可约矩阵）&lt;/strong> 设 $A\in M_n$，称 $A$ 可约，若 $A$ 置换相似于一个形如 $\begin{pmatrix}B&amp;amp;0\\C&amp;amp;D\end{pmatrix}$ 的矩阵，其中 $B,D$ 是方阵。否则称 $A$ 不可约。&lt;/p>
+&lt;p>图的邻接矩阵可约，等价于图不连通。&lt;/p>
+&lt;p>&lt;strong>定义（谱半径）&lt;/strong> 矩阵 $A$ 的谱半径 $\rho(A)$ 定义为矩阵 $A$ 的所有特征值的绝对值的最大值。&lt;/p>
+&lt;p>&lt;strong>定理（Perron-Frobenius）&lt;/strong> 设 $A$ 是非负不可约矩阵，则&lt;/p>
+&lt;ol>
+&lt;li>$\rho(A)&amp;gt;0$ 且 $\rho(A)$ 是矩阵 $A$ 的一个单重特征值&lt;/li>
+&lt;li>$A$ 有一个对应于 $\rho(A)$ 的正特征向量&lt;/li>
+&lt;li>$A$ 的每个非负特征向量都对应于特征值 $\rho(A)$&lt;/li>
+&lt;/ol>
+&lt;h4 id="katz-的心路历程">Katz 的心路历程&lt;/h4>
+&lt;p>$A$ 为邻接矩阵。对于 degree centrality，我们把各节点的中心度写成列向量，有
+$$
+c_0=A
+\begin{pmatrix}
+1\\
+\vdots\\
+1
+\end{pmatrix}.
+$$
+这只考虑了自己的影响力，没有考虑邻居的影响力。我们希望把它改成邻居的 degree centrality 之和，即
+$$
+c_1=\sum_{v:(u,v)\in E} c_0(v)= Ac_0.
+$$
+进一步套娃，有 $c_{r+1}=Ac_r$. 但这样下去会发散，我们需要加上个衰减因子。根据 Perron-Frobenius 定理，记最大特征值为 $\lambda$，我们让 $c_{r+1}=\lambda^{-1}Ac_r$. 又记 $\lambda$ 的正特征向量为 $x$，有
+$$
+\lim_{r\to\infty} c_r=\left(\sum_i x_i\right)x.
+$$
+证明留作习题。而我们其实只关心节点之间的中心度的相对大小，所以 $x$ 可以随便乘个系数。我们令 $|x|=1, x_i&amp;gt;0$，然后定义 eigenvalue centrality (Katz centrality):&lt;/p>
+&lt;p>$$
+c_E(u)=x_u.
+$$&lt;/p>
+&lt;h3 id="pagerank-centrality">PageRank centrality&lt;/h3>
+&lt;p>这是 Google 的网页排序指标。我们假设一个网络中，网页（顶点）$u$ 有 $x_u$ 的人在访问。下一时刻，有一部分人会从其他页面跳转而来。跳转的概率是 $\alpha$，等概率跳转到该页面连接的其他页面。则跳转到 $u$ 的人数是：
+$$
+\alpha\sum_{v:(v,u)\in E}\dfrac{x_v}{k_v^{\rm out}}.
+$$
+此外，还会有一些新人到来，这部分是个常数 $\beta$. 于是有
+$$
+x_v=\alpha\sum_{u:(u,v)\in E}\dfrac{x_u}{k_u^{\rm out}}+\beta.
+$$
+用 $D$ 表示出度矩阵，$\mathbf{1}$ 为 $n\times 1$ 的全 $1$ 向量，有
+$$
+x=\beta(I-\alpha D^{-1}A)^{-1}\mathbf{1}.
+$$
+请自行证明那个矩阵可逆。&lt;/p>
+&lt;h3 id="hits-hubs-and-authorities">HITS (hubs and authorities)&lt;/h3>
+&lt;p>HITS (Hyperlink-Induced Topic Search) 与 PageRank 算法一样，也是一种用于对网页进行排序的算法。&lt;/p>
+&lt;p>网页有两个功能：hub 和 authority。Hub 是网站导航方面的功能，比如臭名昭著的 hao123，authority 是真正的内容，比如我这篇文章（？）。我们给每个节点 $u$ 两个中心性：hub centrality $h_u$ 和 authority $a_u$. 我们希望：&lt;/p>
+&lt;ul>
+&lt;li>被高 $h$ 的节点指向，说明内容质量 $a$ 高&lt;/li>
+&lt;li>指向高 $a$ 的节点，说明索引质量 $h$ 高&lt;/li>
+&lt;/ul>
+&lt;p>有了！
+$$
+\begin{align}
+h_u&amp;amp;=\alpha\sum_{v:(u,v)\in E}a_v,\\
+a_v&amp;amp;=\beta \sum_{u:(u,v)\in E}h_u.
+\end{align}
+$$&lt;/p>
+&lt;p>写成矩阵就是
+$$
+\begin{align}
+h &amp;amp;= \alpha Aa,\\
+a &amp;amp;= \beta A^Th.
+\end{align}
+$$&lt;/p>
+&lt;p>然后
+$$
+\begin{align}
+AA^Th&amp;amp;=\dfrac{1}{\alpha\beta} h,\\
+A^TAa&amp;amp;=\dfrac{1}{\alpha\beta}a.
+\end{align}
+$$&lt;/p>
+&lt;p>$h$ 是 $AA^T$ 的特征向量，根据 Perron-Frobenius 定理，要想 $h$ 是正的，他只能是最大特征值的特征向量，这个最大特征值就是 $\dfrac{1}{\alpha\beta}$。$a$ 同理。给出合适的归一化条件，就可以求出 $h$ 和 $a$。&lt;/p>
+&lt;h2 id="network-cohesion">Network Cohesion&lt;/h2>
+&lt;p>团（clique）是全连接子图。&lt;/p>
+&lt;p>核心（core）：$k$-core 表示子图内每个顶点的度都不小于 $k$（只统计内部边）&lt;/p>
+&lt;p>我们发现有一个有趣的性质：如果 $(u,v)$ 和 $(u,w)$ 都是边，往往 $(v,w)$ 也是边（共同好友），这一性质叫过渡性（transitivity）。我们想要引入聚类系数（clustering coefficient）来刻画过渡性。&lt;/p>
+&lt;p>我们称 $uvw$ 是长度为 2 的闭合路径，如果 $(u,v),(u,w),(v,w)$ 都是边。定义聚类系数
+$$
+C=\dfrac{\sharp{\text 长度为 2 的闭合路径}}{\sharp{\text 长度为 2 的路径}}.
+$$&lt;/p>
+&lt;h2 id="物以类聚homophily">物以类聚（homophily）&lt;/h2>
+&lt;p>鲁迅曾经说过，物以类聚，人以群分。在图中，属性相似的节点可能更倾向于互相连接，这一特点就叫 homophily。&lt;/p>
+&lt;h3 id="属性向量">属性向量&lt;/h3>
+&lt;p>我们要构造 $y$ 和 $z$. 首先每个节点 $u$ 都有一个属性 $x_u$。设一共有 $m$ 条边，我们把 $(u,v)$ 和 $(v,u)$ 看成同时存在的两条边，这时就有 $2m$ 条边。我们给边编号 $j=1,\cdots,2m$，边 $e_j=(u,v)$，则 $y_j=x_u,z_j=x_v$.&lt;/p>
+&lt;p>例如 $E={(1,2),(1,3)}$, 则 $y=(x_1,x_2,x_1,x_3),z=(x_2,x_1,x_3,x_1)$. 他们都是 $2m$ 维向量。显然 $y$ 和 $z$ 的变化趋势是否相同可以反映 homophily。下面介绍两种衡量方式：assortativity coefficient 和 modularity。&lt;/p>
+&lt;h3 id="assortativity-coefficient">Assortativity coefficient&lt;/h3>
+&lt;p>定义 assortativity coefficient 为 $y,z$ 的相关系数：
+$$
+r=\dfrac{{\rm Cov}(y,z)}{\sqrt{{\rm Var}(y){\rm Var}(z)}},
+$$
+容易验证，可以展开为如下形式：
+$$
+r=\dfrac{2\sum_{(u,v)\in E}x_ux_v-2m\bar x_E^2}{\sum_{u\in V} k_u x_u^2-2m\bar x_E^2}.
+$$
+其中 $m$ 为边数，$k_u$ 为 degree, $\bar x_E=\dfrac{1}{2m}\sum_{u\in V} k_u x_u$.&lt;/p>
+&lt;p>我们有 $-1\leq r\leq 1$. $r$ 越大越说明鲁迅说的对。$r$ 要是 $-1$ 则恰恰相反。&lt;/p>
+&lt;h3 id="modularity">Modularity&lt;/h3>
+&lt;p>Assortativity coefficient 适合连续属性，而它更适合离散的分类属性。假设某个 factor 有 $I$ 个取值，例如三个不同的班级，$x_u$ 采用 one-hot 编码，即 $u$ 如果属于第 $i$ 类，则 $x_u^{(i)}=1$, 否则 $x_u^{(i)}=0$. 类似地有 $y^{(i)},z^{(i)}$ 都是 $2m$ 维向量。定义 modularity:
+$$
+Q=\sum_{i\in I} {\rm Cov}(y^{(i)},z^{(i)}).
+$$
+将其用 $x$ 表示可以得到
+$$
+\begin{align}
+Q&amp;amp;=\sum_{i\in I}Q^{(i)},\\
+Q^i&amp;amp;=\dfrac{1}{m}\sum_{(u,v)\in E}x_u^{(i)}x_v^{(i)}-\left(\bar x^{(i)}_E\right)^2.
+\end{align}
+$$
+$Q$ 越大越好，但 $Q\leq 1$（自行证明）。&lt;/p>
+&lt;h3 id="agglomerative-clustering">Agglomerative Clustering&lt;/h3>
+&lt;p>聚类是机器学习中的一个重要话题。这里我们简要介绍以下 agglomerative clustering。它是层次聚类中自底向上的算法（还有一种自顶向下的 divisive clustering）。Agglomerative clustering 可以采用许多不同的方式来度量两个聚类的相似度，这里介绍的是使用 modularity $Q$ 作为相似程度的实现。&lt;/p>
+&lt;ul>
+&lt;li>首先假设每个节点都是单独的一类；&lt;/li>
+&lt;li>考虑合并其中两个节点，有 $n(n-1)/2$ 种合并方式，穷举选择使 $Q$ 最大的一种；&lt;/li>
+&lt;li>现在只剩 $n-1$ 个类别了，重复上述步骤，选择一种使得 $Q$ 最大的方式合并其中两个类别；&lt;/li>
+&lt;li>重复直到只剩一类；&lt;/li>
+&lt;li>合并的过程可以画出一个树形图，它叫 dendrogram。&lt;/li>
+&lt;/ul>
+&lt;p>然后就可以目测 dendrogram 来决定分几类了。&lt;/p></description></item><item><title>2021秋季学期课程笔记导航</title><link>https://blog.shadiao.win/post/%E7%AC%94%E8%AE%B0%E5%AF%BC%E8%88%AA/</link><guid>https://blog.shadiao.win/post/%E7%AC%94%E8%AE%B0%E5%AF%BC%E8%88%AA/</guid><description>&lt;p>近期会把本学期的部分课程笔记陆续放出来。这是个导航贴。由于写的比较匆忙，难免会有各种错误，还望读者积极指出！&lt;/p>
+&lt;p>又有好几处公式炸了……尽快修复……为什么mathjax会变成这样呢？&lt;/p>
+&lt;h2 id="probability-and-stochastic-processes">Probability and Stochastic Processes&lt;/h2>
+&lt;p>共两篇，已完结。&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="https://blog.shadiao.win/post/5221-1markov_chain/">马尔可夫链&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://blog.shadiao.win/post/5221-2%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BF%87%E7%A8%8B/">连续时间马尔可夫过程&lt;/a>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="statistical-analysis-of-networks">Statistical Analysis of Networks&lt;/h2>
+&lt;p>共两篇，已完结。&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="https://blog.shadiao.win/post/5225-1%E8%B0%B1%E5%9B%BE%E7%90%86%E8%AE%BA%E5%85%A5%E9%97%A8/">谱图理论入门&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://blog.shadiao.win/post/5225-2%E9%9A%8F%E6%9C%BA%E5%9B%BE%E4%B8%8E%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B/">随机图与网络模型&lt;/a>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="design-of-experiments-for-product-design-and-process-improvements">Design of Experiments for Product Design and Process Improvements&lt;/h2>
+&lt;p>共五篇，已完结。&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="https://blog.shadiao.win/post/5203-1%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">多元线性回归&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://blog.shadiao.win/post/5203-2%E5%8D%95%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/">单因素方差分析&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://blog.shadiao.win/post/5203-3%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/">非线性回归&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://blog.shadiao.win/post/5203-4%E5%A4%9A%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/">多因素方差分析&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://blog.shadiao.win/post/5203-5-2k%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1/">2^k实验设计&lt;/a>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="advanced-statistical-theory">ADVANCED STATISTICAL THEORY&lt;/h2>
+&lt;p>共四篇，已完结。&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="https://blog.shadiao.win/post/5215-1%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8A/">公理化概率论（上）&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://blog.shadiao.win/post/5215-2%E5%85%AC%E7%90%86%E5%8C%96%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8B/">公理化概率论（下）&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://blog.shadiao.win/post/5215-3%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8A-%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E5%88%86%E5%B8%83%E6%97%8F/">统计量与分布族&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://blog.shadiao.win/post/5215-4%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%9F%BA%E7%A1%80%E4%B8%8B-%E4%BC%B0%E8%AE%A1%E4%B8%8E%E6%8E%A8%E6%96%AD/">估计与推断&lt;/a>
+&lt;/li>
+&lt;/ol></description></item><item><title>随机过程（下）-连续时间过程</title><link>https://blog.shadiao.win/post/5221-2%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BF%87%E7%A8%8B/</link><guid>https://blog.shadiao.win/post/5221-2%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E8%BF%87%E7%A8%8B/</guid><description>&lt;p>泊松过程、生灭过程、更新过程、布朗运动。&lt;/p>
+&lt;h2 id="泊松过程">泊松过程&lt;/h2>
+&lt;p>大名鼎鼎的泊松过程定义为满足下式的随机过程：
+$$
+\begin{gather}
+\lim_{h\to 0} P_{k,k+1}(h)=\lambda h,\\
+\lim_{h\to 0}P_{k,k}(h)=1-\lambda h,\\
+X(0)=0.
+\end{gather}
+$$
+其中 $\lambda&amp;gt;0$ 为参数，称为强度。&lt;/p>
+&lt;p>性质：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>$T_k\sim Exp(\lambda)$，$T_k$ 之间独立&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$S_n\sim \Gamma(n,\lambda)$，&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>$X(t+u)-X(u)\sim Pois(\lambda t)$，&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在 $X(t)=n$ 的条件下，$S_1,\cdots,S_n$ 联合分布是均匀分布的次序统计量，具体地，设 $0\le s_1\le\cdots\le s_n\le t$，
+$$
+P(S_i\le s_i,i=1,\cdots,n|X(t)=n)=\frac{n!}{t^n}\int_{0}^{s_1}\cdots\int_{x_{n-1}}^{x_n}dx_n\cdots dx_1.
+$$&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>这意味着已知某时段发生的事件个数时，事件发生的时间是均匀的。&lt;/p>
+&lt;p>泊松过程可以推广到两个分支：出生-死亡过程和更新过程，我们一一介绍。&lt;/p>
+&lt;h2 id="出生-死亡过程">出生-死亡过程&lt;/h2>
+&lt;p>我们仍然考虑平稳过程。时间连续，状态离散的马尔可夫过程满足
+$$
+P_{ij}(t)=P{X(t+u)=j|X(u)=i}.
+$$
+只要给出了这个式子，随机过程就定义好了。&lt;/p>
+&lt;p>我们先从特殊的过程开始，逐渐推广到一般的出生-死亡过程。我们用 $X(t)$ 表示 $t$ 时刻存活的数量，$T_k$ 表示第 $k$ 个事件和第 $k+1$ 个事件之间的等待时间，$S_k$ 表示第 $k$ 个事件发生时间。具体地，$T_0=0$, $T_k=\inf {t&amp;gt;T_{k-1}:X(t)\ne X(T_{k-1})}$，$S_k=\sum_{i=0}^{k-1}T_i$.&lt;/p>
+&lt;h3 id="纯出生过程">纯出生过程&lt;/h3>
+&lt;p>我们推广泊松过程，允许每个事件发生后强度发生变化（也就是“出生率”和“人口数”有关）。设 ${\lambda_k}&amp;gt;0$ 为参数，
+$$
+\begin{gather}
+\lim_{h\to 0} P_{k,k+1}(h)=\lambda_k h,\\
+\lim_{h\to 0}P_{k,k}(h)=1-\lambda_k h.\\
+\end{gather}
+$$
+一般来说我们要求 $X(0)=0$，这样比较简洁（也可以令 $X(0)=N$，这不本质）。类似地，可以证明 $T_k$ 之间独立且
+$$
+T_k\sim Exp(\lambda_k).
+$$
+于是可以得到 $S_n$ 的特征函数
+$$
+\varphi_n(t)=\prod_{k=0}^{n-1}\frac{\lambda_k}{\lambda_k-it}.
+$$&lt;/p>
+&lt;h4 id="xt-的分布">$X(t)$ 的分布&lt;/h4>
+&lt;p>我们来考虑计算 $P_n(t)=P(X(t)=n)$. 利用 $P_0(t+h)=P_0(t)P_0(h)=P_0(t)(1-\lambda_0 h+o(h))$，有
+$$
+P&amp;rsquo;&lt;em>0(t)=\lim&lt;/em>{h\to 0}\frac{P_0(t+h)-P_0(t)}{h}=\lambda_0P_0(t).
+$$
+类似地，$P_n(t+h)=P_n(t)P_0(h)+P_{n-1}(t)P_1(h)=P_n(t)(1-\lambda_n h)+P_{n-1}(t)\lambda_{n-1}h+o(h)$, 所以
+$$
+P&amp;rsquo;&lt;em>n(t)=\lambda&lt;/em>{n-1}P_{n-1}(t)-\lambda_n P_n(t),\quad n\ge 1.
+$$
+我们得到了齐次线性微分方程组，边界条件 $P_0(0)=1,P_{n}(0)=0,n\ge 1$. 就可以确定下来了。虽然有通用解法，但其实只有特殊情况我们才能写出显式表示，一般情况下只能得到 $P_0(t)=e^{-\lambda_0t}$.&lt;/p>
+&lt;blockquote>
+&lt;p>另一种常用的求分布方法是转化到 $S_n(t)$，我们将在 Yule 过程中用到并在附录介绍。&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="yule-过程">Yule 过程&lt;/h4>
+&lt;p>出生率和人口数成正比，也即 $\lambda_n=n\beta$，$\beta&amp;gt;0$ 为参数。特别地，我们需要假设 $X(0)=N$（否则就一直是0了）。&lt;/p>
+&lt;blockquote>
+&lt;p>如果你实在绕不明白，可以令 $Y(t)=X(t)-N$，这样 $Y(t)$ 就是满足 $Y(0)=0$ 的出生过程了。&lt;/p>
+&lt;/blockquote>
+&lt;p>它的分布是
+$$
+P(X(n)=t)=\binom{n-1}{n-N}e^{-N\beta t}(1-e^{-\beta t})^{n-N},\quad n\ge N.
+$$
+我们在附录给出推导过程。&lt;/p>
+&lt;h3 id="出生-死亡过程-1">出生-死亡过程&lt;/h3>
+&lt;p>来来来，接着推广。现在寿命不是无限的了，还允许死亡。但死亡也要按照基本法：足够短的时间内只能有一个人生或死。这就是出生-死亡过程，其严格定义为同时满足以下几条的随机过程（$\lambda_i,\mu_i$ 为参数）：&lt;/p>
+&lt;ul>
+&lt;li>$\lim_{h\to0} P_{i,i+1}(h)=\lambda_ih$,&lt;/li>
+&lt;li>$\lim_{h\to0} P_{i,i-1}(h)=\mu_i h,\ i\ge1$,&lt;/li>
+&lt;li>$\lim_{h\to0} P_{i,i}(h)=(1-\lambda_i-\mu_i)h$,&lt;/li>
+&lt;li>$P_{ij}(0)=\delta_{ij}$,&lt;/li>
+&lt;li>$\mu_0=0,\lambda_0&amp;gt;0,\mu_i,\lambda_i&amp;gt;0,i=1,2,\cdots$.&lt;/li>
+&lt;/ul>
+&lt;p>我们记初始状态 $P(X(0)=i)=q_i$. 根据 Markov 性，规定了初始状态参数，这个过程就确定了。&lt;/p>
+&lt;h4 id="xt-的分布-1">$X(t)$ 的分布&lt;/h4>
+&lt;p>我们可以定义类似于转移矩阵的东西，叫做 infinitesimal generator：
+$$
+A=\begin{pmatrix}
+-\lambda_0 &amp;amp; \lambda_0 &amp;amp; 0 &amp;amp; \cdots\\
+\mu_1 &amp;amp; -(\lambda_1+\mu_1) &amp;amp; \lambda_1 &amp;amp; \cdots \\
+0 &amp;amp; \mu_2 &amp;amp; -(\lambda_2+\mu_2) &amp;amp; \cdots\\
+\vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \ddots
+\end{pmatrix}.
+$$
+若记 $P(h)=(P(X(h)=0),P(X(h)=1),\cdots)$，则有 $P(t+h)=P(t)(I+A)h+o(h)$，于是有齐次线性微分方程组：
+$$
+\begin{gather}
+P&amp;rsquo;(t)=P(t)A,\\
+P(0)=(q_0,q_1,\cdots),
+\end{gather}
+$$
+解微分方程即可确定 $X(t)$ 的分布。&lt;/p>
+&lt;h4 id="等待时间-t_k">等待时间 $T_k$&lt;/h4>
+&lt;p>类似地，我们可以得到 $T_k\sim Exp(0,\lambda_k+\mu_k)$.&lt;/p>
+&lt;h2 id="更新过程">更新过程&lt;/h2>
+&lt;h3 id="定义">定义&lt;/h3>
+&lt;p>泊松过程我们让 $T_k$ 是指数分布。如果令 $T_k&amp;gt;0$ 独立同分布，就得到了更新过程。 $X(t)=\sharp{n:0\le S_n\le t}$. &lt;strong>更新函数&lt;/strong>定义为 $M(t)=\mathrm EX(t)$. 这是更新过程中一个很重要的东西。&lt;/p>
+&lt;p>用 $F_n(x)$ 表示 $S_n$ 的分布函数，则满足卷积方程
+$$
+F_n(x)=\int_0^x F_{n-1}(x-y)dF(y).
+$$
+可以证明
+$$
+P(X(t)=k)=F_k(t)-F_{k+1}(t),\quad t\ge0.
+$$
+并且
+$$
+M(t)=\sum_{n=1}^\infty F_n(t).
+$$
+我们有三个比较关心的随机变量：&lt;/p>
+&lt;ul>
+&lt;li>剩余寿命（excess or residual lifetime）：$\gamma_t=S_{N(t)+1}-t$,&lt;/li>
+&lt;li>年龄（current life / age）：$\delta_t=t-S_{N(t)}$,&lt;/li>
+&lt;li>总寿命（total life）：$\beta_t=\gamma_t+\delta_t$.&lt;/li>
+&lt;/ul>
+&lt;h3 id="更新方程与更新定理">更新方程与更新定理&lt;/h3>
+&lt;p>这里水很深，有一套专门的更新理论。我们就只介绍关键的定理。&lt;/p>
+&lt;p>首先可以证明 $M(t)&amp;lt;\infty$，并且有结论
+$$
+M(t)=F(t)+\int_0^t M(t-y)dF(y).
+$$
+我们可以定义更一般地更新方程。&lt;/p>
+&lt;p>&lt;strong>定义（更新方程，renewal equation）&lt;/strong> 设 $a(t)$ 和 $F(x)$ 已知，如下关于 $A(t)$ 的方程称为更新方程：
+$$
+A(t)=a(t)+\int_0^t A(t-x)dF(x),\quad t\ge 0.
+$$
+更新过程的很多问题，最后都会得到一个这样的方程，所以研究它的解很重要。如下几个定理都是围绕更新方程的解展开的。&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 设 $a(t)$ 有界，则上述更新方程存在唯一的有限区间内有界的解
+$$
+A(t)=a(t)+\int_0^t a(t-x)dM(x).
+$$
+其中 $M(x)=\sum_{n=1}^\infty F_n(x)$ 为更新函数。&lt;/p>
+&lt;p>下一个定理我们要做一些铺垫。&lt;/p>
+&lt;p>&lt;strong>定义（格点分布，arithmetic）&lt;/strong> 随机变量 $X$ 是 arithmetic 的，如果存在 $\lambda&amp;gt;0$ 使得 $\sum_{n\in\mathbb{Z}} P(X=nd)=1$. 此时称 $F$ is arithmetic with span $\lambda$.&lt;/p>
+&lt;blockquote>
+&lt;p>讲义上的定义较为复杂，但说的是一个意思：&lt;/p>
+&lt;p>&lt;strong>定义（point of increase）&lt;/strong> 设 $F$ 是分布函数。对 $a\in\mathbb{R}$，如果 $\forall\varepsilon&amp;gt;0$ 都有 $F(a+\varepsilon)-F(a-\varepsilon)&amp;gt;0$，则称 $a$ 点是 a point of increase.&lt;/p>
+&lt;p>这个定义推广了递增函数的定义，允许在该点崩坏掉。最典型的就是 $X=a$ 的分布函数，$a$ 就是 a point of increase.&lt;/p>
+&lt;p>&lt;strong>定义（arithmetic）&lt;/strong> 如果存在 $\lambda$ 使得分布函数 $F$ 在且只在 $0,\pm\lambda,\pm2\lambda,\cdots$ 上 point of increase，则称 $F$ 是 arithmetic 的。&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;strong>定义（directly Riemann integrable）&lt;/strong> 设 $g:\mathbb{R}^+\to\mathbb{R}$，对 $\delta&amp;gt;0,n=1,2,\cdots$，设&lt;/p>
+&lt;p>$$
+\begin{align}
+&amp;amp;\underline{m}_n=\inf{ g(t):(n-1)\delta\le t\le n\delta},\\
+&amp;amp;\overline{m}&lt;em>n=\sup{ g(t):(n-1)\delta\le t\le n\delta},\\
+&amp;amp;\underline\sigma(\delta)=\delta\sum&lt;/em>{n=1}^\infty \underline{m}&lt;em>n,\quad \overline\sigma(\delta)=\delta\sum&lt;/em>{n=1}^\infty \overline{m}_n.
+\end{align}
+$$&lt;/p>
+&lt;blockquote>
+&lt;p>这个公式我怎么编辑它都显示不出，本地明明没问题，我弃疗了……自己在脑中编译一下吧&lt;/p>
+&lt;/blockquote>
+&lt;p>若 $\underline\sigma(\delta)$ 和 $\overline\sigma(\delta)$ 对任意的 $\delta&amp;gt;0$ 绝对收敛，且 $\lim_{\delta\to0}\left(\overline\sigma(\delta)-\underline\sigma(\delta)\right)=0$，则称 $g$ directly Riemann integrable.&lt;/p>
+&lt;blockquote>
+&lt;p>注：&lt;/p>
+&lt;ol>
+&lt;li>讲义的定义有瑕疵，应该用 $\inf$ 而不是 $\min$，除非给 $g$ 加别的条件才能保证最大值最小值存在。&lt;/li>
+&lt;li>这是比黎曼可积更强的条件，因为它要求上和和下和对任意的 $\delta$ 都收敛，而不只是 $\delta\to 0$ 的行为。&lt;/li>
+&lt;/ol>
+&lt;/blockquote>
+&lt;p>&lt;strong>定理（Basic renewal theorem）&lt;/strong> 设 $F$ 是正随机变量的分布函数，期望为 $\mu$（有限或无限）. 设函数 $a(t),t\ge0$ 是 directly Riemann integrable 的。考虑以下更新方程：
+$$
+A(t)=a(t)+\int_0^t A(t-x)dF(x),\quad t\ge 0.
+$$&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>若 $F$ 不是 arithmetic 的，则
+$$
+\lim_{t\to\infty} A(t)=\left{
+\begin{align}
+&amp;amp;\frac{1}{\mu}\int_0^\infty a(x)dx,&amp;amp;\text{若 }\mu&amp;lt;\infty,\\
+&amp;amp;0,&amp;amp;\text{若 }\mu=\infty.
+\end{align}
+\right.
+$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>若 $F$ is arithmetic with span $\lambda$，则 $\forall 0\le c\le \lambda$，
+$$
+\lim_{n\to\infty} A(c+n\lambda)=\left{
+\begin{align}
+&amp;amp;\frac{\lambda}{\mu}\sum_{n=0}^\infty a(c+n\lambda),&amp;amp;\text{若 }\mu&amp;lt;\infty,\\
+&amp;amp;0,&amp;amp;\text{若 }\mu=\infty.
+\end{align}
+\right.
+$$&lt;/p>
+&lt;/li>
+&lt;li>&lt;/li>
+&lt;/ul>
+&lt;p>设 $h&amp;gt;0$，如果令 $a(y)=I(0\le y&amp;lt; h)$，稍加分析可以得到下面有关更新过程的结论。&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 设 $F$ 是正随机变量的分布函数，期望为 $\mu$，设 $M(t)=\sum_{k=1}^\infty F_k(t)$，$h&amp;gt;0$，则&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>若 $F$ 不是 arithmetic 的，则
+$$
+\lim_{t\to\infty}(M(t+h)-M(t))=\frac{h}{\mu}.
+$$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>若 $F$ is arithmetic with span $\lambda$，当 $h$ 是 $\lambda$ 的整数倍时上述结论成立。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>上述定理可以推出如下初等更新定理。&lt;/p>
+&lt;p>&lt;strong>定理（初等更新定理，Elementary renewal theorem）&lt;/strong> 令 ${X_i}$ 是更新过程，$\mu=\mathrm EX_1&amp;lt;\infty$，则
+$$
+\lim_{t\to\infty}\frac{1}{t}M(t)=\frac{1}{\mu}.
+$$
+它表明更新函数增长速度恰好是时间间隔的倒数，非常直观。&lt;/p>
+&lt;h2 id="布朗运动">布朗运动&lt;/h2>
+&lt;p>考虑时间连续、状态连续的马尔可夫过程。记 $p(x,t|x_0)$ 为条件分布 $X(t+t_0)|X(t_0)=x_0$ 的概率密度函数。只要确定了 $X(0)$ 的分布和 $p(x,t|x_0)$，这个马尔可夫过程就唯一确定了。&lt;/p>
+&lt;p>一维布朗运动的定义是：&lt;/p>
+&lt;ul>
+&lt;li>$X(t+s)-X(s)\sim N(0,\sigma^2 t)$（通常令 $\sigma^2=1$）,&lt;/li>
+&lt;li>$\forall t_1&amp;lt;t_2&amp;lt;t_3&amp;lt;t_4$, $X(t_4)-X(t_3)$ 和 $X(t_2)-X(t_1)$ 独立,&lt;/li>
+&lt;li>$X(0)=0$. 轨道函数 $X(t)$ 在 $t=0$ 处连续。&lt;/li>
+&lt;/ul>
+&lt;p>显然其转移概率是
+$$
+p(x,t|x_0)=\frac{1}{\sqrt{2\pi t}\sigma}e^{-(x-x_0)^2/(2\sigma^2 t)}.
+$$
+&lt;strong>定理&lt;/strong> 对 $t_1&amp;lt;t&amp;lt;t_2$，给定 $X(t_1)=A,X(t_2)=B$ 时 $X(t)$ 的条件分布服从 $N\left(A+\dfrac{B-A}{t_2-t_1},\dfrac{(t_2-t)(t-t_1)}{t_2-t_1}\right)$. 证明略。&lt;/p>
+&lt;p>&lt;strong>首达时间&lt;/strong> $T_a$ 定义为 $X(0)=0$ 时第一次到达 $a$ 的时间。我们有结论
+$$
+f_{T_a}(t)=\frac{a}{\sqrt{2\pi}}t^{-3/2}e^{-a^2/(2t)}.
+$$
+其推导见附录。利用此结论，我们可以得到下面的定理。&lt;/p>
+&lt;p>**定理 ** 轨道 $X(t)$ 在 $(t_0,t_1)$ 内有至少一个 0 的概率是
+$$
+\alpha=\frac{2}{\pi}\arccos\sqrt{\frac{t_0}{t_1}}.
+$$&lt;/p>
+&lt;h2 id="附录">附录&lt;/h2>
+&lt;h3 id="yule-过程求-pxtn">Yule 过程求 $P(X(t)=n)$&lt;/h3>
+&lt;p>讲义通过解微分方程求的，但那个微分方程按照一般流程计算极其复杂，多少需要一点目测猜解的功力。我们这里给出基于 $S_n$ 密度函数的推导，大力出奇迹即可。&lt;/p>
+&lt;p>令 $Y(t)=X(t)-N$，则 $Y(t)$ 为纯出生过程，$\lambda_k=(N+k)\beta$. 我们先利用特征函数来求 $S_n$ 的密度函数 $f_{S_n}$，即
+$$
+\begin{align}
+f_{S_n}(x)&amp;amp;=\frac{1}{2\pi}\int_{-\infty}^\infty e^{-itx}\prod_{k=0}^{n-1}\frac{(N+k)\beta}{(N+k)\beta-it}dt.\\
+\end{align}
+$$
+记上面被积函数为 $g(t),t\in\mathbb{C}$. 其有 $n$ 个奇点，为 $t_k=-i(N+k)\beta,\ k=0,\cdots,n-1$. 留数为
+$$
+\begin{align}
+Res(g,t_k)&amp;amp;=\frac{1}{-i}e^{-(N+k)\beta x}(-1)^k\frac{(N+n-1)!}{(N-1)!(n-1-k)!k!}\beta\\
+&amp;amp;=i\beta\frac{(N+n-1)!}{(N-1)!(n-1)!}e^{-N\beta x}(1-e^{-\beta x})^{n-1}.
+\end{align}
+$$
+于是
+$$
+\begin{align}
+\sum_{k=0}^{n-1}Res(g,t_k)&amp;amp;=i\beta\frac{(N+n-1)!}{(N-1)!(n-1)!}e^{-N\beta x}\sum_{k=0}^{n-1}(-1)^k\binom{n-1}{k}e^{-k\beta x}\\
+&amp;amp;=i\beta n\binom{N+n-1}{N-1}e^{-N\beta x}(1-e^{-\beta x})^{n-1}.
+\end{align}
+$$&lt;/p>
+&lt;p>设路径 $L_1$ 为沿实轴 $-r$ 到 $r$，$L_2$ 为下半圆 $re^{i\theta},\pi\le\theta\le 2\pi$. 当 $r$ 充分大时，利用留数定理，
+$$
+\begin{align}
+\int_{-L_1+L_2}g(z)dz&amp;amp;=2\pi i\sum_{k=0}^{n-1} Res(g,t_k).\\
+\end{align}
+$$
+令 $r\to\infty$，得
+$$
+\begin{align}
+f_{S_n}(x)&amp;amp;=-\int_{L_2}g(z)dz\\
+&amp;amp;=\beta n\binom{N+n-1}{N-1}e^{-N\beta x}(1-e^{-\beta x})^{n-1}.\\
+\end{align}
+$$
+然后可以办正事了，
+$$
+\begin{align}
+P(Y(t)=n)&amp;amp;=P(S_n\le t&amp;lt; S_{n+1})\\
+&amp;amp;=\int_0^t P(S_n\le t &amp;lt;S_{n+1}|S_n=x)f_{S_n}(x)dx\\
+&amp;amp;=\int_0^t P(T_n&amp;gt;t-x)f_{S_n}(x)dx\\
+&amp;amp;=\int_0^t e^{-(N+n)\beta (t-x)}\beta n\binom{N+n-1}{N-1}e^{-N\beta x}(1-e^{-\beta x})^{n-1}dx\\
+&amp;amp;=\beta n\binom{N+n-1}{N-1}e^{-(N+n)\beta t}\int_0^t e^{n\beta x}(1-e^{-\beta x})^{n-1}dx.
+\end{align}
+$$
+设上面最后一步积分为 $I$. 令 $y=e^{\beta x}$，有
+$$
+I=\int_1^{e^{\beta t}}y^n(1-\frac{1}{y})^{n-1}\frac{1}{\beta y}dy=\frac{1}{n\beta}(e^{\beta t}-1)^n.
+$$
+于是
+$$
+P(Y(t)=n)=\binom{N+n-1}{N-1}e^{-N\beta t}(1-e^{-\beta t})^{n}.
+$$
+终于，
+$$
+P(X(t)=n)=P(Y(t)=n-N)=\binom{n-1}{N-1}e^{-N\beta t}(1-e^{-\beta t})^{n-N}.
+$$&lt;/p>
+&lt;blockquote>
+&lt;p>所以说，本科的基础课都好好学，早晚会用上的…… 不说了，我接着复习复分析去了……&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="布朗运动首达时间">布朗运动首达时间&lt;/h3>
+&lt;p>感觉 lecture notes 写的不是很清楚。首先有
+$$
+P(T_a\le t)=P(\max_{0\le u\le t} X(u)\ge a).
+$$
+然后考虑样本轨道集合 $A={X(u):\max_{0\le u\le t} X(u)\ge a}$. 对 $A$ 中每个轨道 $X(u)$，记首次达到 $a$ 的时刻为 $\tau&amp;lt;t$，考虑反射
+$$
+\tilde X(t)=\left{
+\begin{align}
+&amp;amp;X(t)\qquad &amp;amp; t &amp;lt;\tau,\\
+&amp;amp;a-[x(t)-a]\qquad &amp;amp;t&amp;gt;\tau.
+\end{align}
+\right.
+$$
+如果 $X(t)&amp;gt;a$，则 $\tilde X(t)&amp;lt;a$，反之亦然，所以 $P(\max_{0\le u\le t} X(u)\ge a)=2P(X(t)&amp;gt; a)$. 然后就好算了。&lt;/p></description></item><item><title>随机过程（上）-马尔可夫链</title><link>https://blog.shadiao.win/post/5221-1markov_chain/</link><guid>https://blog.shadiao.win/post/5221-1markov_chain/</guid><description>&lt;p>主要是按照讲义来的，课堂上讲得比较浅，所以这篇文章也不会讨论太深。如果发现错误欢迎指出~&lt;/p>
+&lt;h2 id="基本概念">基本概念&lt;/h2>
+&lt;p>随机过程（stochastic processes）本质是一个二元函数 $X(\omega,t)$，它既可以看成一族随机变量的集合，也可以看成一族样本函数的集合。&lt;/p>
+&lt;p>例：扔三次傻子，样本空间是 ${1,2,3,4,5,6}^3$，$t$ 取值 $1,2,3$. 若是固定 $\omega=(2,5,1)$，则得到一个&lt;strong>样本函数&lt;/strong> $X((2,5,1),t)$. 若是固定 $t=2$，则得到一个&lt;strong>随机变量&lt;/strong> $X(\omega,2)=X_2$.&lt;/p>
+&lt;p>总之：&lt;/p>
+&lt;ul>
+&lt;li>随机过程固定一个样本，得到一个样本函数（轨道）&lt;/li>
+&lt;li>随机过程确定一个时间，得到一个随机变量&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>注：这么一大坨随机变量，要定义在同一个概率空间上。概率空间的存在性不是那么显然。通常可以考虑用乘积概率空间。而当随机变量的个数是无穷个时，可以考虑 Kolmogorov 相容性定理。由于本课内容很浅，所以不过多讨论了。&lt;/p>
+&lt;/blockquote>
+&lt;p>离散时间的马尔可夫过程 ${X_n, n=0,1,\cdots}$​ 叫做马尔可夫链。我们主要研究状态转移概率不随时间改变（stationary transition probabilities）的马尔可夫过程。可以写出状态转移矩阵 $P$​.&lt;/p>
+&lt;p>&lt;strong>从此刻起，若无特别说明，我们讨论的都是 Markov chain with stationary transition probabilities.&lt;/strong>&lt;/p>
+&lt;p>于是有如下记号：&lt;/p>
+&lt;p>$$
+\begin{align}
+P_{ij}&amp;amp;=P(X_{1}=j|X_0=i),\\
+P_{ij}^n&amp;amp;=P(X_{n}=j|X_0=i).
+\end{align}
+$$&lt;/p>
+&lt;blockquote>
+&lt;p>为了和老师讲义的记号统一，这里用了 $P_{ij}^n$，但要注意 $n$ 不是指数运算。后面的 $f_{ij}^n$ 同理。&lt;/p>
+&lt;/blockquote>
+&lt;p>特别地，$P_{ij}^0=\delta_{ij}$.&lt;/p>
+&lt;p>接下来的概念可以结合图来理解。我们把马尔可夫链想象成一个加权有向图 $G(V,E)$，顶点是所有状态，$P$ 是邻接矩阵（图中可能存在自环）。&lt;/p>
+&lt;p>&lt;strong>定义（accessible）&lt;/strong> 如果从状态 $i$ 到 $j$ 的概率不为 $0$ （$\exists n,P_{ij}^n&amp;gt;0$），则称 $j$ 可从 $i$ 到达（accessible）。&lt;/p>
+&lt;p>对应图论，accessible 等价于存在 $i$ 到 $j$ 的路径（path）。&lt;/p>
+&lt;p>&lt;strong>定义（communicate）&lt;/strong> 如果 $i$ 可达 $j$ 且 $j$ 可达 $i$，称 $i$ 和 $j$ 互通（communicate），记作 $i\leftrightarrow j$.&lt;/p>
+&lt;p>对应图论，communicate 等价于双连通。显然 communicate 是一个等价关系，因此可以划分等价类。对应到图就是强连通分量。在同一个连通分量内的状态可以自由转移。后面我们将看到，对于常返类来说，而不在同一个连通分量则永世不得相见。&lt;/p>
+&lt;p>&lt;strong>定义（irreducible）&lt;/strong> 如果任意两个状态都互通（即上述等价类只有一个），则称为不可约的（irreducible）。&lt;/p>
+&lt;p>对应图论，就是强连通图。&lt;/p>
+&lt;h2 id="周期性">周期性&lt;/h2>
+&lt;p>&lt;strong>定义（period）&lt;/strong> 状态 $i$ 的周期（period）定义为 ${n\ge 1|P_{ii}^n&amp;gt;0}$ 的最大公约数（g.c.d.），记作 $d(i)$。特别地，若 $P_{ii}^n=0,n\geq 1$，则 $d(i)=0$.&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 如果 $i\leftrightarrow j$，则 $d(i)=d(j)$.&lt;/p>
+&lt;p>该定理表明，同一个互通分量周期是一样的，所以我们可以直接讨论互通分量的周期。证明留做习题。&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 设 $i$ 的周期为 $d(i)$，则 $\exists N,\forall n&amp;gt;N,P_{ii}^{nd(i)}&amp;gt;0$.&lt;/p>
+&lt;p>只要 $n$ 足够大，便可体现出“周期”的性质。&lt;/p>
+&lt;p>&lt;strong>定义（aperiodic）&lt;/strong> 如果每个状态周期都是 1，则该马尔可夫链是非周期的（aperiodic）。&lt;/p>
+&lt;p>从分析的角度看，周期蕴含着震荡，而震荡往往是分析中不想看到的，所以我们主要关注非周期的马尔可夫链。我们很快就会发现非周期很多优秀的分析性质。&lt;/p>
+&lt;h2 id="常返性">常返性&lt;/h2>
+&lt;p>我们定义首达概率 $f_{ij}^n$ 为：“从状态 $i$ 出发，下一次到达状态 $j$ 的步数为 $n$ 步”的概率。即
+$$
+f_{ij}^n=P(X_n=j,X_v\ne j,v=1,\cdots,n-1|X_0=i).
+$$
+特别地，$f_{ij}^0=0$.&lt;/p>
+&lt;p>记 $f_{ij}^&lt;em>=\sum_{n=1}^{\infty}f_{ij}^n$, 表示状态 $i$ 能在有限步之内到达状态 $j$ 的概率。容易发现：
+$$
+\begin{align}
+i\rightarrow j&amp;amp;\Leftrightarrow f_{ij}^&lt;/em>&amp;gt;0,\\
+i\leftrightarrow j&amp;amp;\Leftrightarrow f_{ij}^&lt;em>&amp;gt;0, f_{ji}^&lt;/em>&amp;gt;0.
+\end{align}
+$$
+我们可以递归地计算 $f_{ij}^n$：
+$$
+P_{ij}^n=\sum_{k=0}^nf_{ij}^kP_{jj}^{n-k}.\ (n\ge1)
+$$
+稍有常识的人应该已经发现了，这不就是离散卷积嘛！于是考虑母函数：
+$$
+F_{ij}(s)=\sum_{n=0}^\infty f_{ij}^n s^n,\ P_{ij}(s)=\sum_{n=0}^\infty p_{ij}^n s^n.
+$$
+易证 $F_{ij},P_{ij}$ 收敛半径为 $1$，并且在 $1$ 处“左连续”（允许函数值为 $+\infty$）。将上面的卷积写成母函数的形式，即得
+$$
+F_{ij}(s)P_{jj}(s)=P_{ij}(s)-\delta_{ij},\ 0\leq s\leq 1.
+$$
+&lt;strong>定义（recurrence）&lt;/strong> 我们称状态 $i$ 是常返的（recurrence），如果 $f_{ii}^*=1$. 反之称其为非常返态或过渡态（transient）。&lt;/p>
+&lt;blockquote>
+&lt;p>常返是一个非常浪漫的概念。一个状态是常返的，意味着每一次别离都不会是永别，尽管暂时离开了这个状态，在有限的时间内它几乎必然会再次和我们相见。&lt;/p>
+&lt;/blockquote>
+&lt;p>关于常返，我们有以下两条重要结论。&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>$\sum_{n=0}^\infty P_{ii}^n=\dfrac{1}{1-f_{ii}^*},\ (1/0=+\infty)$, 特别地，$i$ 常返当且仅当 $\sum P_{ii}^n=\infty$.&lt;/li>
+&lt;li>如果 $i\leftrightarrow j$，则 $i$ 和 $j$ 常返性相同。&lt;/li>
+&lt;/ul>
+&lt;p>$\sum_{n=0}^\infty P_{ii}^n$ 可以理解为状态 $i$ 出现的次数的期望。常返状态一定会在有限步之内返回，返回之后过有限步再次返回，子子孙孙无穷尽也，所以状态 $i$ 要出现无穷多次。&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 定义 $Q_{ij}$ 为从状态 $i$ 出发无限多次到达状态 $j$ 的概率，可以得到以下结论（证明作为练习）：&lt;/p>
+&lt;ul>
+&lt;li>若 $j$ 非常返，对任意 $i$，$Q_{ij}=0$,&lt;/li>
+&lt;li>若 $j$ 常返，对任意 $i$，$Q_{ij}=f_{ij}^*$,&lt;/li>
+&lt;li>特别地，若 $i\leftrightarrow j$ 且常返，$Q_{ij}=f_{ij}^*=1$.&lt;/li>
+&lt;/ul>
+&lt;p>我们再来介绍两个常返过程的判定定理。&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 设 $B$ 是不可约马尔科夫链，状态空间是自然数。$B$ 过渡（即每个状态都是过渡态）的充要条件是方程组
+$$
+\sum_{j=0}^\infty P_{ij}y_j=y_i,i\ne0
+$$
+有有界的非常数解（即 $y_i$ 不全相等）。&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 不可约马尔科夫链常返的充分条件是：存在一列 ${y_i}$，使得得得得得得得得得得得得，十七张牌你能秒我（&lt;del>？抽什么疯&lt;/del>）；存在一列 ${y_i}$，使得
+$$
+\sum_{j=0}^\infty P_{ij}y_j\le y_i,i\ne 0,
+$$
+且 $y_i\to\infty$.&lt;/p>
+&lt;h2 id="极限性态">极限性态&lt;/h2>
+&lt;p>我们考虑三个问题：&lt;/p>
+&lt;ul>
+&lt;li>$\lim_{n\to\infty}P_{ij}^n$ 的值&lt;/li>
+&lt;li>是否存在一个分布 $\pi$，使得 $\pi P=P$&lt;/li>
+&lt;li>给定起始分布 $\pi(0)$, 其极限分布 $\lim_{n\to\infty}\pi_0P^n$ 是多少&lt;/li>
+&lt;/ul>
+&lt;p>这部分的讨论比较繁杂，但结论却出奇地简洁。为了防止考试的时候用了不该用的结论，这里直接放讲义中的结论，详细讨论见附录。&lt;/p>
+&lt;p>&lt;strong>结论&lt;/strong> 令 $\mu_j={\sum_{k=1}^\infty kf_{jj}^k},\ \pi_j=\dfrac{1}{\mu_j}$ （若 $\mu_j=\infty$ 则 $\pi_j=0$）. 对于一般情况，有结论：&lt;/p>
+&lt;ul>
+&lt;li>若 $j$ 非常返，则 $\lim_{n\to\infty} P_{ij}^n=0$,&lt;/li>
+&lt;li>若 $j$ 非周期且常返，则 $\lim_{n\to\infty} P_{ij}^n=\dfrac{f_{ij}^*}{\mu_j}.$&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>结论&lt;/strong> 对于**非周期，不可约，正常返（$\mu_j&amp;gt;0$）**状态，有结论：&lt;/p>
+&lt;ul>
+&lt;li>$\lim_{n\to\infty}P_{ij}^n=\pi_j$, 即从任意起始分布出发，都会收敛到这个极限分布&lt;/li>
+&lt;li>$\pi_j$ 是唯一的平稳分布，也是唯一的极限分布。&lt;/li>
+&lt;/ul>
+&lt;h1 id="附录">附录&lt;/h1>
+&lt;h2 id="极限性态的讨论">极限性态的讨论&lt;/h2>
+&lt;h3 id="1-lim_ntoinftyp_ijn">$1. \lim_{n\to\infty}P_{ij}^n$&lt;/h3>
+&lt;p>&lt;strong>定理（Markov 链的极限性态）&lt;/strong> 若 $j$ 是非常返状态，则 $\lim_{n\to\infty} P_{ij}^n=0$. 若 $j$ 非周期且常返，则
+$$
+\lim_{n\to\infty} P_{ij}^n=\dfrac{f_{ij}^*}{\sum_{k=1}^\infty kf_{jj}^k}.
+$$
+特别地，若等式右边分母不收敛则定义为 $0$.&lt;/p>
+&lt;blockquote>
+&lt;p>该命题的证明已经超出本课程要求。我查阅了许多教材，似乎没找到完美的证明，都在互相踢皮球。所以我也不给证明了。如果有哪位大佬知道初等的证明欢迎补充！&lt;/p>
+&lt;/blockquote>
+&lt;p>$j$ 是周期常返状态的情况过于复杂，这里不介绍。&lt;/p>
+&lt;p>尽管证明复杂，但结论非常直观。这是因为 ${\sum_{k=1}^\infty kf_{jj}^k}$ 表示从 $j$ 出发首此回到 $j$ 的时间期望，也就是下一次回来的平均时间，而 $f_{ij}^*$ 是从 $i$ 出发能到达 $j$ 的概率。&lt;/p>
+&lt;p>我们令 $\mu_j={\sum_{k=1}^\infty kf_{jj}^k}$. 若 $i$ 和 $j$ 同属一个非周期的常返类，易证 $\mu_i&amp;lt;\infty\Leftrightarrow\mu_j&amp;lt;\infty$. 于是有以下定义。&lt;/p>
+&lt;p>&lt;strong>定义&lt;/strong> 对于&lt;strong>非周期常返类&lt;/strong>，若 $\mu_j&amp;lt;\infty$, 则称为&lt;strong>正常返&lt;/strong>（positive recurrent）或&lt;strong>强遍历&lt;/strong>（strong ergodic），否则称之为&lt;strong>零常返&lt;/strong>（null recurrent）或&lt;strong>弱遍历&lt;/strong>（weak ergodic）。&lt;/p>
+&lt;blockquote>
+&lt;p>注意：这个定义和一些国内教材有细微差别！许多国内教材称 $\mu_j&amp;lt;\infty$ 为正常返，非周期且正常返称为遍历。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="2-平稳分布">2. 平稳分布&lt;/h3>
+&lt;p>&lt;strong>定义&lt;/strong> 若概率分布 $\pi={\pi_1,\cdots}$ 满足 $\pi=\pi P$, 则称其为马氏链的&lt;strong>平稳分布&lt;/strong>。&lt;/p>
+&lt;p>以下定理揭示了平稳分布和平稳过程的关系，请自行证明。&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 马氏链为平稳过程的充要条件是起始状态 $\pi(0)$ 是平稳分布。&lt;/p>
+&lt;p>对于强遍历类，我们有非常漂亮的结论将转移矩阵的极限和平稳分布联系起来。证明留作练习。&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 对于强遍历类， $\pi_j=\lim_{n\to\infty}P_{jj}^n=\dfrac{1}{\mu_j}$ 是唯一的平稳分布，即
+$$
+\pi_j=\sum_{i}\pi_i P_{ij},\ \sum_i \pi_i=1
+$$
+且 $\pi_i$ 是方程
+$$
+\pi_i\ge 0,\ \sum_i \pi_i=1,\ \pi_j=\sum_i \pi_i P_{ij}
+$$
+的唯一解。&lt;/p>
+&lt;h3 id="3-极限分布">3. 极限分布&lt;/h3>
+&lt;p>仍然是强遍历类才有这么优良的性质。证明仍旧略。&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 强遍历类的平稳分布就是极限分布。&lt;/p>
+&lt;h3 id="4-讲义上的-32">4. 讲义上的 3.2&lt;/h3>
+&lt;p>其实 3.2 的内容在上面已经包含了。&lt;/p>
+&lt;p>相联通的两个状态的常返性相同，因此我们可以直接考虑强连通分量，画出更简洁的图示：&lt;/p>
+&lt;p>&lt;img src="https://blog.shadiao.win/5221/image-20211011185612207.png" alt="image-20211011185612207">&lt;/p>
+&lt;p>我们发现每个常返类都是一个“黑洞”，进去就出不来（自行证明）。设 $T$ 为所有过渡态的集合，我们记 $\pi_i(C)$ 为从状态 $i\in T$ 在有限步之内进入常返类 $C$ 的概率，有以下结论：&lt;/p>
+&lt;p>&lt;strong>定理&lt;/strong> 设 $C$ 是非周期常返类，且 $j\in C$，则对 $i\in T$，有
+$$
+\lim_{n\to\infty}P_{ij}^n=\pi_i(C)\lim_{n\to\infty} P_{jj}^n.
+$$
+注意之前说过，对非周期常返状态，$\lim_{n\to\infty} P_{jj}^n=\dfrac{1}{\mu_j}$，相当于其停留在这一状态的概率。所以这一定理就很直观了：第一步是进入常返类，概率是 $\pi_i(C)$，第二步是在常返类中选一个状态，选到 $j$ 的概率是 $\lim_{n\to\infty} P_{jj}^n$.&lt;/p>
+&lt;blockquote>
+&lt;p>这里的 $\pi_i(C)$ 其实就是 $f_{ij}^*$ ，所以和前面的结论是一致的。&lt;/p>
+&lt;/blockquote></description></item><item><title>线性回归（三）-非线性回归</title><link>https://blog.shadiao.win/post/5203-3%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</link><guid>https://blog.shadiao.win/post/5203-3%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</guid><description>&lt;p>很多时候，线性模型并不能满足我们的需求，这时候考虑非线性模型是一个不错的选择。但习说不是胡说，改变不是瞎编，我们还是要利用之前学过的线性模型的。&lt;/p>
+&lt;h2 id="多项式回归">多项式回归&lt;/h2>
+&lt;h3 id="基本模型">基本模型&lt;/h3>
+&lt;p>我们只看单变量的情况，这时候由它的不同次幂构成每一项：
+$$
+y=\beta_0+\beta_1x+\beta_2x^2+\cdots+\beta_mx^m+\varepsilon,
+$$
+其中 $\varepsilon\sim N(0,\sigma^2)$.&lt;/p>
+&lt;p>求解老掉牙了，不说了。&lt;/p>
+&lt;h3 id="问题">问题&lt;/h3>
+&lt;p>我们需要关注它的两个缺点：&lt;/p>
+&lt;ul>
+&lt;li>可能有严重的多重共线性&lt;/li>
+&lt;li>增删某一项之后，其他系数需要重新计算&lt;/li>
+&lt;/ul>
+&lt;p>比如在 $x$ 比较小时，每一列都差不多是 $0$，多重共线性严重。至于第二个缺点，我们可以假设，现在有一个 $m$ 阶的模型，我们发现结果不显著，想引入 $m+1$ 次项。设原来的设计矩阵是 $X_m$，新的设计矩阵为 $X=\begin{pmatrix}X_m &amp;amp;x^{m+1}\end{pmatrix}$. 则
+$$
+X^TX=
+\begin{pmatrix}
+X_m^TX_m &amp;amp; X_m^Tx^{m+1}\\
+(x^{m+1})^TX_m &amp;amp; (x^{m+1})^Tx^{m+1}\\
+\end{pmatrix}.
+$$
+这都纠缠到一起了，新的 $\beta_i$ 要重新计算。&lt;/p>
+&lt;h3 id="正交多项式回归">正交多项式回归&lt;/h3>
+&lt;p>为了解决这一问题，我们引入正交多项式回归。其基本思想是，用一个 $k$ 次多项式 $P_k(x)$ 代替 $x^k$。这时模型变为
+$$
+y=\beta_0P_0(x)+\beta_1P_1(x)+\cdots+\beta_mP_m(x)+\varepsilon.
+$$
+多项式正交，采用最直观的定义，即 $\sum_{i=1}^n P(x_i)Q(x_i)=0$ 则称 $P,Q$ 正交。&lt;/p>
+&lt;p>如果模型中 $P_i,P_j$ 两两正交，计算
+$$
+X^TX=\begin{pmatrix}
+X_m^TX_m &amp;amp; 0\\
+0 &amp;amp; P_{m+1}(x)^TP_{m+1}(x)\\
+\end{pmatrix}.
+$$
+这样当我们在模型中增删项的时候，就不用重新计算系数了。&lt;/p>
+&lt;h3 id="计算正交多项式">计算正交多项式&lt;/h3>
+&lt;p>一般来说，要算正交多项式就得老老实实列方程算。由于多项式乘个常数没有任何影响，所以 $P_k(x)$ 有 $k$ 个参数。利用 $P_k$ 和 $P_0,\cdots,P_{k-1}$ 正交，就能解出来了。&lt;/p>
+&lt;p>对于 $x$ 等间隔的情况，有如下的快速计算公式：&lt;/p>
+&lt;p>&lt;img src="5203%5C1.png" alt="image-20210906152000802">&lt;/p>
+&lt;p>其中 $d$ 是间距，$\lambda$ 可自由选择，不影响结果。通常选取 $\lambda$ 使得多项式中各个系数都是整数，好算。&lt;/p>
+&lt;h3 id="参考文献">参考文献&lt;/h3>
+&lt;ol>
+&lt;li>&lt;a href="http://home.iitk.ac.in/~shalab/regression/Chapter12-Regression-PolynomialRegression.pdf" target="_blank" rel="noopener">http://home.iitk.ac.in/~shalab/regression/Chapter12-Regression-PolynomialRegression.pdf&lt;/a>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="异方差---box-cox-变换">异方差 - BOX-COX 变换&lt;/h2>
+&lt;p>我们之前的所有模型都假定误差同方差，但现实却经常遇到异方差的情况。这是一个很大的话题，我们这里只简单介绍一种处理方案——对 $y$ 进行 BOX-COX 变换。&lt;/p>
+&lt;p>BOX-COX 变换有一个参数 $\lambda$，公式为&lt;/p>
+&lt;p>$$
+z=f(y)=\left{\begin{align}
+&amp;amp;\frac{y^\lambda -1}{\lambda},\ \lambda\ne 0,\\
+&amp;amp;\log y,\ \lambda=0.
+\end{align}\right.
+$$&lt;/p>
+&lt;p>这样定义的好处是导数非常简洁：&lt;/p>
+&lt;p>$$
+f&amp;rsquo;(y)=y^{\lambda-1}.
+$$&lt;/p>
+&lt;h3 id="理论分析">理论分析&lt;/h3>
+&lt;p>我们可以把线性模型表达为 $y=\mu+\varepsilon$，其中 $\mu$ 可以是 $\beta x$ 或者类似的东西，总之就是能被回归解释的部分，$\varepsilon$ 是误差。我们假设标准差是 $\mu$ 的指数函数，即 ${\rm Var}(y)=k\mu^{2\alpha}$. 做变换 $z=f(y)$，在 $\mu$ 处 Taylor 展开：
+$$
+z=f(y)\approx f(\mu)+ f&amp;rsquo;(\mu)(y-\mu).
+$$
+于是
+$$
+{\rm Var}(z)\approx {\rm Var}(f&amp;rsquo;(\mu)(y-\mu))=f&amp;rsquo;(\mu)^2 k\mu^{2\alpha}=k\mu^{2\lambda-2+2\alpha}.
+$$
+如果 $\lambda=1-\alpha$, 就有
+$$
+{\rm Var}(z)=k.
+$$
+是常数了。&lt;/p>
+&lt;h3 id="选取-lambda---scaled-lambda-plot">选取 $\lambda$ - Scaled $\lambda$ Plot&lt;/h3>
+&lt;p>一般我们都是从表里选 $\lambda$:&lt;/p>
+&lt;p>&lt;img src="5203/3.png" alt="">&lt;/p>
+&lt;p>把表里的挨个试一遍，每个模型都计算每个系数的 $t$ 值，然后以 $\lambda$ 为横坐标，$t$ 为纵坐标画线。选个合适的。如下图：&lt;/p>
+&lt;p>&lt;img src="5203/4.png" alt="">&lt;/p>
+&lt;p>选的原则是，模型简洁，$t$ 越大越好。这里我们选 $\lambda=0$。$\lambda=-1/2$ 虽然大，但是多了个 BC 交叉项，不简洁。&lt;/p>
+&lt;h3 id="选取-lambda---empirical-estimation">选取 $\lambda$ - Empirical Estimation&lt;/h3>
+&lt;p>一个我觉得挺无赖的方法。注意到 $\sigma_i=k\mu_i^{\alpha}$, 有 $\log \sigma_i=\log k +\alpha\log \mu_i$. 线性回归可以得到 $\mu_i$ 和 $\sigma_i$ 的估计，然后再做一次线性回归估计 $\alpha$.&lt;/p>
+&lt;blockquote>
+&lt;p>可是线性回归的假设是同方差，现在有异方差的情况下估计，不是套娃了吗？&lt;/p>
+&lt;/blockquote></description></item><item><title>线性回归（二）-单因素方差分析</title><link>https://blog.shadiao.win/post/5203-2%E5%8D%95%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/</link><guid>https://blog.shadiao.win/post/5203-2%E5%8D%95%E5%9B%A0%E7%B4%A0%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/</guid><description>&lt;p>方差分析模型（ANOVA）可以看成是线性模型的一类，但它重点考虑的是离散自变量对连续因变量的影响。&lt;/p>
+&lt;h2 id="基本模型">基本模型&lt;/h2>
+&lt;p>我们有 $k$ 组数据，每组有 $n_i$ 个观察值。基本模型为
+$$
+y_{i,j}=\mu_i+e_{i,j},\ i=1,\cdots,k,\ j=1,\cdots,n_i,
+$$
+其中 $e_{i,j}\sim N(0,\sigma^2)$.&lt;/p>
+&lt;p>如果令 $\eta=\sum\mu_i/k,\ \tau_i=\mu_i-\eta$，便可以写成
+$$
+y_{i,j}=\eta+\tau_i+e_{i,j}.
+$$&lt;/p>
+&lt;h2 id="模型求解">模型求解&lt;/h2>
+&lt;p>我们直接把他看成多元线性回归问题，自变量 $x$ 使用 one-hot 编码，设计矩阵为
+$$
+X=
+\begin{pmatrix}
+X_1\\
+\vdots\\
+X_k
+\end{pmatrix},
+$$
+其中
+$$
+X_i=
+\begin{pmatrix}
+0 &amp;amp; \cdots &amp;amp; 1 &amp;amp; \cdots &amp;amp; 0\\
+\vdots&amp;amp;\ddots&amp;amp;\vdots&amp;amp;\ddots&amp;amp;\vdots\\
+0 &amp;amp; \cdots &amp;amp; 1 &amp;amp; \cdots &amp;amp; 0\\
+\end{pmatrix}.
+$$
+即只有第 $i$ 列是 $1$，其他都是 $0$. 显然 $X$ 是列满秩的。计算可得
+$$
+(X^TX)^{-1}=
+\begin{pmatrix}
+\frac{1}{n_1} &amp;amp;&amp;amp;\\
+&amp;amp;\ddots&amp;amp;\\
+&amp;amp;&amp;amp;\frac{1}{n_k}
+\end{pmatrix}.
+$$&lt;/p>
+&lt;p>于是有最优估计（请自行推导）：
+$$
+\mu_i=\bar y_{i,\cdot}.
+$$
+同样有方差估计
+$$
+\hat\sigma^2=\dfrac{1}{N-k}\sum_i\sum_j (y_{i,j}-\bar y_{i,\cdot})^2.
+$$&lt;/p>
+&lt;h2 id="anova-表">ANOVA 表&lt;/h2>
+&lt;p>记
+$$
+\begin{align}
+S^2&amp;amp;=\sum_i\sum_j (y_{i,j}-y_{\cdot,\cdot})^2,\\
+S_1^2&amp;amp;=\sum_i n_i (y_{i,\cdot}-y_{\cdot,\cdot})^2,\\
+S_2^2&amp;amp;=\sum_i\sum_j (y_{i,j}-y_{i,\cdot})^2.\\
+\end{align}
+$$
+类似地，有方差分解：
+$$
+S^2=S_1^2+S_2^2.
+$$
+我们可以得到 ANOVA 表：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>来源&lt;/th>
+&lt;th>自由度&lt;/th>
+&lt;th>平方和&lt;/th>
+&lt;th>平方和均值&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>处理组（Treatments）&lt;/td>
+&lt;td>$k-1$&lt;/td>
+&lt;td>$S_1^2$&lt;/td>
+&lt;td>$S_1^2/(k-1)$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>误差（Error）&lt;/td>
+&lt;td>$N-k$&lt;/td>
+&lt;td>$S_2^2$&lt;/td>
+&lt;td>$S_2^2/(N-k)$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>合计&lt;/td>
+&lt;td>$N-1$&lt;/td>
+&lt;td>$S^2$&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="假设检验">假设检验&lt;/h2>
+&lt;h3 id="f-检验">$F$-检验&lt;/h3>
+&lt;p>$H_0:\mu_1=\cdots=\mu_k$（等价于 $\tau_1=\cdots=\tau_k=0$）. 构造 $F$-统计量：
+$$
+F=\dfrac{S_1^2/(k-1)}{S_2^2/(N-k)}\sim F_{k-1,N-k}.
+$$
+$F$ 足够大时拒绝 $H_0$.&lt;/p>
+&lt;h3 id="t-检验">$t$-检验&lt;/h3>
+&lt;p>传统的 $t$ 检验是类似的。这里我们更关心两组之间有无明显差异，于是令 $H_0:\mu_i=\mu_j$. 注意到 ${\rm Var}(\mu_i-\mu_j)=\dfrac{1}{n_i}+\dfrac{1}{n_j}$, 于是构造统计量
+$$
+T_{i,j}=\dfrac{\bar y_{i,\cdot}-\bar y_{j,\cdot}}{\sqrt{\hat\sigma^2\left(1/n_i+1/n_j\right)}}\sim t_{N-k}.
+$$
+当 $|t_{i,j}|&amp;gt;t_{N-k,\alpha/2}$ 时拒绝 $H_0$.&lt;/p>
+&lt;blockquote>
+&lt;p>独立样本 $t$ 检验和配对样本 $t$ 检验的主要区别是样本之间有无配对关系。如果是把一堆人平均分成两组，就是独立样本，如果是在同一个人身上先后测了两次数据，则应该是配对样本。独立样本 $t$ 检验的模型是 $y_{i,j}\sim N(\mu_i,\sigma^2)$，而配对样本则是 $y_{1,i}-y_{0,i}\sim N(\mu,\sigma^2)$. 这导致了自由度直接差了 2 倍。本文讨论的 ANOVA 可以看成是独立样本 $t$ 检验的拓展，组数是 2 的 ANOVA 和独立样本 $t$ 检验是等价的。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="多重检验">多重检验&lt;/h3>
+&lt;p>如果我们想要检验多组数据之间有无差异，比如 $H_0:\mu_1=\mu_2=\mu_3=\mu_4$，就要做 $6$ 组两两之间的 $t$-检验。任意检验犯第一类错误的概率是 $\alpha$, 则整体犯错的概率显然大于 $\alpha$. 这怎么办呢？&lt;/p>
+&lt;h4 id="bonferroni-method">Bonferroni Method&lt;/h4>
+&lt;p>简单粗暴的方法：如果一共做 $k&amp;rsquo;$ 组检验，就把单个检验的 significant level 设置为 $\alpha/k&amp;rsquo;$，这样整体的 significant level 就会小于 $\alpha$.&lt;/p>
+&lt;h4 id="tukey-method">Tukey Method&lt;/h4>
+&lt;p>我们先介绍 studentized range q 统计量。设我们从分布 $N(\mu,\sigma^2)$ 中取出了 $k$ 组样本，每组 $n$ 个 , 则
+$$
+q=\dfrac{\bar y_\max-\bar y_\min}{S\sqrt{1/n}}
+$$
+服从一个叫做 studentized range ($q$) distribution 的东西。它的分布函数可以在 R 中使用 &lt;code>ptukey&lt;/code> 得到。&lt;/p>
+&lt;p>后来 Karmer 将其推广到每组样本数不同的情况（Karmer，1956）——把 $1/n$ 换成 $1/2(1/n_i+1/n_j)$. 具体来说，构造统计量
+$$
+Q=\sqrt{2}\max_{i,j}\dfrac{|\bar y_{i,\cdot}-\bar y_{j,\cdot}|}{\hat\sigma\sqrt{1/n_i+1/n_j}}\sim Q_{k,N-k}.
+$$
+其中 $N$ 为总样本数。然后查表就行了。$|Q|$ 越大，越倾向于拒绝 $H_0$.&lt;/p>
+&lt;h3 id="对比检验">对比检验&lt;/h3>
+&lt;p>我们可以推广普通 $t$-检验的概念，令
+$$
+C=c_1\mu_1+\cdots+c_k\mu_k,
+$$
+其中 $\sum_i c_i=0$. $H_0:C=0$，此时可以构造 $t$-统计量：
+$$
+T_C=\dfrac{\sum_i c_i\hat\mu_i}{\sqrt{\hat\sigma^2\sum_i c_i^2/n_i}}\sim t_{N-k}.
+$$&lt;/p>
+&lt;h2 id="随机效应模型浅谈">随机效应模型浅谈&lt;/h2>
+&lt;h3 id="基本模型-1">基本模型&lt;/h3>
+&lt;p>这个例子来自[3]。假设我们现在要调查一棵萝卜的含钙量。先验知识告诉我们，只要随便取一片叶子测定叶子的含钙量，就可以代表整颗萝卜的含钙量。我们取了 4 片叶子，每片进行了 4 次测试，得到了 16 个数据。&lt;/p>
+&lt;p>我们关注的并不是对比叶片之间的差异，而是想得到整颗萝卜的含钙量。不同的叶片在这里不视为 treatment，而视为 block。假设一共 $N$ 个观测值，分 $k$ 组，建立模型如下：
+$$
+y_{i,j}=\eta+a_i+e_{i,j},
+$$
+其中 $e_{i,j}\overset{i.i.d.}\sim N(0,\sigma_e^2)$ 是一样的，但 $a_i\overset{i.i.d.}\sim N(0,\sigma_a^2)$ 也变成随机的了。容易得到
+$$
+{\rm Var}(y_{i,j})=\sigma_e^2+\sigma_a^2.
+$$
+同组的不同观察值不再独立，因为 $j\ne k$ 时，
+$$
+{\rm Cov}(y_{i,j},y_{i,k})=\sigma_a^2.
+$$
+显然
+$$
+\hat\eta=\bar y_{\cdot,\cdot}.
+$$&lt;/p>
+&lt;h3 id="anova-表-1">ANOVA 表&lt;/h3>
+&lt;p>这里我们不加证明地给出 ANOVA 表。&lt;/p>
+&lt;blockquote>
+&lt;p>证法类似，写矩阵硬算就行，挺麻烦的，还需要计算技巧。这里最后要落到 $N+k$ 维的独立正态分布上，$N$ 个 $e$ 和 $k$ 个 $a$. 所以矩阵就不是正方形的了，不过 $A^TA$ 仍然是正方形的。注意只有在 $n_i$ 相等时，$S_1^2$ 才是卡方分布，否则它只是方差不同的几个正态分布的和。&lt;/p>
+&lt;/blockquote>
+&lt;p>对于 $n_i=n$ 的情况：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>来源&lt;/th>
+&lt;th>自由度&lt;/th>
+&lt;th>平方和&lt;/th>
+&lt;th>平方和均值（MS）&lt;/th>
+&lt;th>E(MS)&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>区组（Block）&lt;/td>
+&lt;td>$k-1$&lt;/td>
+&lt;td>$S_1^2$&lt;/td>
+&lt;td>$S_1^2/(k-1)$&lt;/td>
+&lt;td>$\sigma_e^2+n\sigma_a^2$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>误差（Error）&lt;/td>
+&lt;td>$N-k$&lt;/td>
+&lt;td>$S_2^2$&lt;/td>
+&lt;td>$S_2^2/(N-k)$&lt;/td>
+&lt;td>$\sigma_e^2$&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>合计&lt;/td>
+&lt;td>$N-1$&lt;/td>
+&lt;td>$S^2$&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>如果 $n_i$ 各不相等，平方和将不是卡方分布，但我们仍可以算它的期望，只需把 $n$ 换成 $\dfrac{N}{k}-\dfrac{\sum_{i=1}^k n_i^2}{kN}$.&lt;/p>
+&lt;p>有了这个，我们可以给出方差的无偏估计（$n_i$ 不相等时按照上面的替换）：
+$$
+\begin{align}
+\hat\sigma_a^2&amp;amp;=\dfrac{1}{n}\left(\dfrac{S_1^2}{k-1}-\dfrac{S_2^2}{N-k}\right),\\
+\hat\sigma_e^2&amp;amp;=\dfrac{S_2^2}{N-k}.
+\end{align}
+$$&lt;/p>
+&lt;p>注：$\hat\sigma_a^2$ 有可能是负的，但方差是负的实在天理难容，这时候我们可以用 $0$ 作为估计值，&lt;strong>并骂一句“他娘的”&lt;/strong>。&lt;/p>
+&lt;h3 id="f-检验-1">$F$-检验&lt;/h3>
+&lt;p>此时我们关注的是 $H_0:\sigma_a^2=0$. 只要推翻了 $H_0$，就说明单个叶片的观测值可以代表整体了。在 $H_0$ 成立时，请自行证明以下统计量服从 $F$-分布：
+$$
+F=\dfrac{S_1^2/(k-1)}{S_2^2/(N-k)}\sim F(k-1,N-k).
+$$
+这和固定效应模型是一样的！当 $F$ 足够大时拒绝 $H_0$.&lt;/p>
+&lt;h2 id="参考文献">参考文献&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a href="https://en.wikipedia.org/wiki/Tukey%27s_range_test" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Tukey%27s_range_test&lt;/a>
+&lt;/li>
+&lt;li>Karmer, C. Y. (1956). Extension of multiple range tests to group means with unequal numbers of replication. &lt;em>Biometrics&lt;/em>, &lt;em>12&lt;/em>, 307-310.&lt;/li>
+&lt;li>&lt;a href="https://faculty.franklin.uga.edu/dhall/sites/faculty.franklin.uga.edu.dhall/files/STAT8200-Fall13-lec2.pdf" target="_blank" rel="noopener">https://faculty.franklin.uga.edu/dhall/sites/faculty.franklin.uga.edu.dhall/files/STAT8200-Fall13-lec2.pdf&lt;/a>
+&lt;/li>
+&lt;/ol></description></item><item><title>线性回归（一）-多元线性回归</title><link>https://blog.shadiao.win/post/5203-1%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</link><guid>https://blog.shadiao.win/post/5203-1%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</guid><description>&lt;p>这节的内容是整个回归分析的核心，后面几节看似是不同的模型，其实都可以转化成 MLE.&lt;/p>
+&lt;p>这一系列的文章里面很多乱七八糟的矩阵公式，看不懂很正常，多动手就好了。按照文中的思路把每个公式都亲自推导一遍，就能写出来比这个更完善的教程。&lt;/p>
+&lt;h2 id="基本模型">基本模型&lt;/h2>
+&lt;p>多元线性回归（MLE）模型是
+$$
+\mathbf{Y} = \mathbf{X}\boldsymbol{\beta}+\boldsymbol\varepsilon.
+$$&lt;/p>
+&lt;p>各矩阵大小为：&lt;/p>
+&lt;ul>
+&lt;li>$\mathbf{Y}: n\times1$&lt;/li>
+&lt;li>$\mathbf{X}: n\times p$&lt;/li>
+&lt;li>$\boldsymbol\beta: p\times n$&lt;/li>
+&lt;li>$\boldsymbol\varepsilon:p\times n$&lt;/li>
+&lt;/ul>
+&lt;p>误差项满足 $\boldsymbol\varepsilon\sim N(0, \sigma^2\mathbf{I})$.&lt;/p>
+&lt;p>这里面有两个参数：$\boldsymbol{\beta}$ 和 $\sigma^2$。&lt;/p>
+&lt;p>注意参数的个数，$\boldsymbol\beta$ 的维度是 $p$，意味着有 $p-1$ 个解释变量和 $1$ 个截距项。可能有的教材习惯把解释变量个数记作 $p$，此时 $\boldsymbol\beta$ 就是 $p+1$ 维。&lt;/p>
+&lt;h2 id="参数估计">参数估计&lt;/h2>
+&lt;h3 id="hatboldsymbolbeta">$\hat{\boldsymbol\beta}$&lt;/h3>
+&lt;p>回忆&lt;a href="https://zh.wikipedia.org/wiki/%E9%AB%98%E6%96%AF-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%AE%9A%E7%90%86" target="_blank" rel="noopener">&lt;strong>高斯－马尔可夫定理(Gauss-Markov Theorem)&lt;/strong>&lt;/a>
+：在线性回归模型中，如果误差满足零均值、同质方差且互不相关，则回归系数的&lt;strong>最佳线性无偏估计&lt;/strong>就是普通最小二乘法估计。&lt;/p>
+&lt;p>使用&lt;strong>最小二乘法&lt;/strong>，容易算出其最佳线性无偏估计是
+$$
+\hat{\boldsymbol{\beta}}=(\mathbf{X}^{\mathrm T}\mathbf{X})^{-1}\mathbf{X}^{\mathrm T}\mathbf{Y}.
+$$&lt;/p>
+&lt;p>它服从正态分布 $N(\boldsymbol\beta, \sigma^2(\mathbf{X}^{\mathrm T}\mathbf{X})^{-1})$。&lt;/p>
+&lt;h3 id="hatsigma2">$\hat\sigma^2$&lt;/h3>
+&lt;p>$\sigma^2$ 的估计则类似于“样本方差”：
+$$
+\hat\sigma^2=\dfrac{(\mathbf{Y}-\hat{\mathbf{Y}})^{\mathrm T}(\mathbf{Y}-\hat{\mathbf{Y}})}{n-p}.
+$$&lt;/p>
+&lt;p>我们知道，独立标准正态分布的平方和是卡方分布，即
+$$
+\chi^2_k\sim \sum_{i=1}^kN(0,1).
+$$&lt;/p>
+&lt;p>$k$ 称为卡方分布的&lt;strong>自由度&lt;/strong>，并且有 ${\mathrm E}(\chi^2_k)=k$。&lt;/p>
+&lt;p>关于多元正态分布和卡方分布，我们有一个重要结论：设 $X\sim N_p(0,\sigma^2I_p)$，$A$ 是对称幂等矩阵，且 $\mathrm{rank}(A)=r$，则二次型 $X^{\mathrm T}AX/\sigma^2\sim \chi^2_r$。&lt;/p>
+&lt;p>计算可得，$(\mathbf{Y}-\hat{\mathbf{Y}})^{\mathrm T}(\mathbf{Y}-\hat{\mathbf{Y}})=\boldsymbol\varepsilon^{\mathrm T}(\mathbf I - \mathbf{X}(\mathbf{X}^{\mathrm T}\mathbf{X})^{-1}\mathbf{X}^{\mathrm T})\boldsymbol\varepsilon$。中间那个矩阵是对称幂等矩阵，秩是 $n-p$，而 $\boldsymbol\varepsilon$ 是一个多元正态分布，所以&lt;/p>
+&lt;p>$$
+(n-p)\hat\sigma^2/\sigma^2\sim \chi^2_{n-p}.
+$$&lt;/p>
+&lt;p>从而 $\hat\sigma^2$ 是 $\sigma^2$ 的一个无偏估计。&lt;/p>
+&lt;h2 id="决定系数">决定系数&lt;/h2>
+&lt;h3 id="预备知识方差分解">预备知识：方差分解&lt;/h3>
+&lt;p>我们来观察这个式子：
+$$
+y = \beta_0+\beta_1x_1+\cdots+\beta_{p-1}x_{p-1}+\varepsilon,
+$$
+我们得到了一堆 $y_i$，它们互不相同。有两个原因造就了 $y_i$ 之间的差异：&lt;/p>
+&lt;ul>
+&lt;li>$x$ 不同导致 $y$ 不同（由自变量解释的部分）&lt;/li>
+&lt;li>随机误差 $\varepsilon$&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>这里的记号非常恶心。有的教材里把 E 当作 explain，R 当作 residual；有的地方又把 E 当作 error，R 当作 regression。这导致 R 和 E 在不同场合表达完全相反的含义。并且有的地方把 SS 放前面，称作“SSE，SSR”，又有的地方放后面，叫“ESS，RSS”。建议谁来规范一下这里的乱象。&lt;/p>
+&lt;/blockquote>
+&lt;p>骂完了，接着看。$y_i$ 之间的差异性可以用总平方和 $S^2$ 来衡量：
+$$
+S^2=\sum_i (y_i-\bar y)^2.
+$$
+回归模型做的事情就是让自变量来解释因变量的变化，所以由自变量解释的部分可以用拟合的 $\hat y$ 的均方和 $S_1^2$ 来衡量。由于 $\bar{\hat y}=\bar y$，我们有
+$$
+S_1^2=\sum_i (\hat y_i-\bar y)^2.
+$$
+随机误差的影响就是剩下的部分 $S_2^2$：
+$$
+S_2^2=\sum_i(y_i-\hat y_i)^2.
+$$
+我们有一个非常漂亮的结论：
+$$
+S^2=S_1^2+S_2^2.
+$$
+证明留给读者作为练习。&lt;strong>这一结论成功将 $y_i$ 的差异性分成了两部分：可被回归模型解释的部分和随机误差。&lt;/strong>&lt;/p>
+&lt;h3 id="r-平方-r-squared">R 平方 （R-squared）&lt;/h3>
+&lt;p>我们定义决定系数（coefficient of determination）
+$$
+R^2=1-\dfrac{S_2^2}{S^2}.
+$$
+这种定义对于回归模型都适用（包括非线性回归）。我们认为回归之前，$y$ 的变动完全由随机误差造成，也就是随机误差占比为 $1$；而在回归之后，随机误差占比为 $\dfrac{S_2^2}{S^2}$，活活减少了 $R^2$ 这么多，这就是回归模型的功劳！&lt;/p>
+&lt;h3 id="调整后的-r-平方adjusted-r-squared">调整后的 R 平方（Adjusted R-squared）&lt;/h3>
+&lt;p>$R^2$ 有一个缺陷，只要我们无脑增加解释变量的个数，哪怕增加的是随机误差，$R^2$ 也不会下降（通常都是增加），也就是所谓的“力大砖飞”。证明留作习题（只要注意线性回归的优化目标和 $R^2$ 的关系即可）。&lt;/p>
+&lt;p>调整后的 $R^2$ 增加了一个惩罚项，使得解释变量越多，它的值越小。
+$$
+R^2_{\rm adj}=1- \dfrac{S_2^2/(n-p)}{S^2/(n-1)}.
+$$&lt;/p>
+&lt;p>$S_2^2$ 就是 $(\mathbf{Y}-\hat{\mathbf{Y}})^{\mathrm T}(\mathbf{Y}-\hat{\mathbf{Y}})$，即 $\dfrac{S_2^2}{\sigma^2}\sim \chi^2_{n-p}$. 而 $S^2$ 是正态分布的样本方差，所以 $\dfrac{S^2}{\sigma^2}\sim\chi^2_{n-1}$. 这样一来，所谓“调整”其实就是除以了各自的自由度。&lt;/p>
+&lt;p>（再次强调一定要搞清楚究竟是 $p$ 还是 $p+1$，这是很多资料记号不一致，容易混淆的地方。）&lt;/p>
+&lt;h3 id="决定系数和相关系数有啥关系">决定系数和相关系数有啥关系&lt;/h3>
+&lt;p>两组数据 $x_i,y_i$ 的相关系数定义为
+$$
+\rho(x_i, y_i)=\dfrac{{\rm Cov}(x_i,y_i)}{\sqrt{{\rm Var}(x_i){\rm Var}(y_i)}}.
+$$
+一般来说，决定系数和相关系数是 Java 和 Javascript 的关系。但对于线性回归模型，我们可以证明：
+$$
+\rho(y,\hat y)=\sqrt{R^2}.
+$$
+&lt;a href="https://www.zhihu.com/question/32021302/answer/739464752" target="_blank" rel="noopener">关于相关系数和 R 方的更多讨论可以移步这里&lt;/a>
+。由于不是核心内容，就不过多介绍了。&lt;/p>
+&lt;h2 id="假设检验">假设检验&lt;/h2>
+&lt;p>常用的是 $t$ 检验和 $F$ 检验。&lt;/p>
+&lt;h3 id="t-检验">$t$ 检验&lt;/h3>
+&lt;p>独立的标准正态分布除以卡方分布的平方根就得到 $t$-分布。&lt;/p>
+&lt;p>设 $X\sim N(0, 1),\ Y\sim\chi^2_p$，$X, Y$ 独立，则定义
+$$
+\dfrac{X}{\sqrt{Y/p}}
+$$
+是自由度为 $p$ 的 $t$-分布。&lt;/p>
+&lt;p>我们可以从样本均值和样本方差导出 $t$-分布。设 $\bar X, S^2$ 分别是从 $N(\mu, \sigma^2)$ 中抽样得到的 $n$ 个样本的样本均值和样本方差，则由正态分布的性质知：&lt;/p>
+&lt;ul>
+&lt;li>$\bar X$ 和 $S^2$ 独立&lt;/li>
+&lt;li>$\bar X\sim N(\mu, \sigma^2/n)$&lt;/li>
+&lt;li>$(n-1)S^2/\sigma^2\sim \chi^2_{n-1}$&lt;/li>
+&lt;/ul>
+&lt;p>于是
+$$
+\dfrac{\bar X-\mu}{\sqrt{S^2/n}}
+$$
+就是自由度为 $n-1$ 的 $t$-分布。&lt;/p>
+&lt;p>言归正传，我们想要&lt;strong>检验某一个回归系数 $\beta_j$ 是不是 $0$&lt;/strong>。构造统计量
+$$
+t_j=\dfrac{\hat\beta_j-\beta_j}{\sqrt{\hat\sigma^2(\mathbf{X}^{\mathrm T}\mathbf{X})^{-1}_{jj}}}.
+$$
+线性回归中有一个结论：$\hat{\boldsymbol{\beta}}$ 和 $\hat\sigma^2$ 独立。因此 $t_j$ 服从自由度为 $n-p$ 的 $t$-分布。&lt;/p>
+&lt;p>接下来，把 $\beta_j=0$ 和估计出来的 $\hat\beta_j$ 带入，算出 $t$ 值，再查表得到 p-value 即可。&lt;/p>
+&lt;h3 id="f-检验">$F$ 检验&lt;/h3>
+&lt;p>将两个独立的卡方分布分别除以自由度，然后再相除，可以得到 $F$ 分布：
+$$
+F(d_1,d_2)=\dfrac{\chi^2_1/d_1}{\chi^2_2/d_2}.
+$$&lt;/p>
+&lt;p>对于模型 $y=\beta_0+\beta_1x_1+\cdots+\beta_{p-1}x_{p-1}+\varepsilon$，$F$ 检验零假设为
+$$
+H_0:\beta=\beta_1=\cdots=\beta_{p-1}=0.
+$$
+即各个回归系数都是 $0$（&lt;strong>不包括 $\beta_0$&lt;/strong>）。如果 $H_0$ 成立就房倒屋塌完犊子了，满地飘零。我们构造的统计量是
+$$
+F=\dfrac{S_1^2/(p-1)}{S_2^2/(n-p)}.
+$$&lt;/p>
+&lt;p>$S_2^2$ 的分布前面讨论多次了。而 $S_1^2=(\hat{\mathbf{Y}}-\bar{\mathbf{Y}})^{\mathrm T}(\hat{\mathbf{Y}}-\bar{\mathbf{Y}})$. 记 ${\mathbf 1}_n$ 为 $n\times n$ 的全 $1$ 矩阵，在 $H_0$ 成立时有
+$\hat{\mathbf{Y}}-\bar{\mathbf{Y}}=\left(\mathbf{X}(\mathbf{X}^{\mathrm T}\mathbf{X})^{-1}\mathbf{X}^{\mathrm T}-\frac{1}{n}\mathbf{1}_n\right)\boldsymbol\varepsilon $
+.&lt;/p>
+&lt;p>可以验证，$\mathbf{X}(\mathbf{X}^{\mathrm T}\mathbf{X})^{-1}\mathbf{X}^{\mathrm T}-\frac{1}{n}\mathbf{1}_{n}$ 是对称幂等矩阵，秩为 $p-1$（该命题的证明可作为经典的线性代数题目，请自行练习）。&lt;/p>
+&lt;p>于是 $S_1^2/\sigma^2\sim\chi^2_{p}$. 从而 $F\sim F(p-1, n-p)$.&lt;/p>
+&lt;p>这个统计量的含义便是看 $S_1^2$ 和 $S_2^2$ 谁占上风。$F$ 越大，表明能被回归解释的部分越大，所以线性模型是成功的，也就越有可能拒绝 $H_0$。&lt;/p>
+&lt;h3 id="区别与联系">区别与联系&lt;/h3>
+&lt;p>简单来说，$F$ 检验是判断线性模型是否正确，如果不显著，可能要考虑换其他模型；而 $t$ 检验用来判断模型中是否该有这个变量。&lt;/p>
+&lt;p>$t$ 检验判断单个系数是否为 0，$F$ 检验判断整体是否为 0. 看起来是重复的——我对每个系数都做一次 $t$ 检验不就可以代替 $F$ 检验了吗？其实不然。有以下两个原因：&lt;/p>
+&lt;ul>
+&lt;li>假设检验的个数越多，第一类错误概率越大&lt;/li>
+&lt;li>多重共线性（Multicollinearity）会导致所有 $t$ 检验显著时，$F$ 检验不显著&lt;/li>
+&lt;/ul>
+&lt;h2 id="残差分析">残差分析&lt;/h2>
+&lt;p>回归模型中的一个基本假设是 $\varepsilon\overset{i.i.d.}\sim N(0,\sigma^2)$. 如果这个假设不成立，后面所做的东西就有可能完犊子。残差分析就是在做完回归之后检查一下关于 $\varepsilon$ 的假定是否成立。&lt;/p>
+&lt;h3 id="残差图">残差图&lt;/h3>
+&lt;p>残差（residual）就是 $r_i=y_i-\hat y_i$. 它可以看成对 $\varepsilon_i$ 的估计。以残差为纵坐标，其他量为横坐标作散点图，就叫做&lt;strong>残差图&lt;/strong>（residual plots）。残差图是进行残差分析的有力武器。&lt;/p>
+&lt;p>常用的是以 $\hat y$ 作为横坐标和以 $x$ 作为横坐标的两种图。由于 $\hat y$ 和 $x$ 之间有线性关系，所以这两者的分析是几乎一样的。如下图（图片来自 &lt;a href="https://blog.csdn.net/mengjizhiyou/article/details/82216278" target="_blank" rel="noopener">https://blog.csdn.net/mengjizhiyou/article/details/82216278&lt;/a>
+）：&lt;/p>
+&lt;p>&lt;img src="https://blog.shadiao.win/5203/2.png" alt="">&lt;/p>
+&lt;p>（a）表示的是理想的残差图，均匀分布在平行带中，没有任何可预测的信息。（b）中残差的波动范围与 $x$ 有关系，意味着每个 $\varepsilon_i$ 的方差可能不一致。（c）虽然方差一致，但是均值在变化，说明模型没有很好地解释 $y$ 的变化，需要考虑引入高次项或更换模型。&lt;/p>
+&lt;h3 id="q-q-图">Q-Q 图&lt;/h3>
+&lt;p>Q-Q 图是 quantile-quantile 的意思，即横纵坐标都是分位数。在残差分析中，横坐标用正态分布的分位数，纵坐标用残差的分位数画散点图。具体来说，残差有 $n$ 个，将其递增排序为 $r_{(1)},\cdots,r_{(n)}$，然后算出正态分布在 $(i-0.5)/n$ 处的分位数 $z_1,\cdots,z_n$， 画出 $(z_i,r_{(i)})$ 的散点图就是 Q-Q 图。&lt;/p>
+&lt;p>显然，理想的图应该分布在 $y=x$ 上，偏了或者弯了都有毛病。&lt;/p>
+&lt;h2 id="结语">结语&lt;/h2>
+&lt;p>本文只是快速浏览了一遍线性回归的相关知识，很多地方写的不详细。复习时可以以此为线索，遇到不熟悉的地方再去查找其他资料。里面提到的没有证明的结论也最好自己亲自推导一下，很有意思。&lt;/p></description></item></channel></rss>

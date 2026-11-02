@@ -1,6 +1,661 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技术 on 沙雕园</title><link>https://blog.shadiao.win/categories/%E6%8A%80%E6%9C%AF/</link><description>Recent content in 技术 on 沙雕园</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 17 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.shadiao.win/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>一触即达：用 YubiKey 打造 Windows 自动解锁与 SSH 安全登录</title><link>https://blog.shadiao.win/post/yubikey_ssh_auth/</link><pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate><guid>https://blog.shadiao.win/post/yubikey_ssh_auth/</guid><description>&lt;p>一直拖着桌面上一枚尘封已久的 YubiKey，却不知道该怎么用才最有价值。最近突发奇想：既要让它在 Windows 开机时“自动敲密码”，又要用它完成 SSH 登录时的硬件签名。经过折腾，终于把这两项功能都跑通了，特此记录，方便自己今后查阅，也给有同样需求的你做个参考。&lt;/p></description></item><item><title>telegram bot+beancount+fava 打造自己的记账系统</title><link>https://blog.shadiao.win/post/%E8%AE%B0%E8%B4%A6/</link><pubDate>Tue, 05 Jul 2022 10:30:00 +0800</pubDate><guid>https://blog.shadiao.win/post/%E8%AE%B0%E8%B4%A6/</guid><description>&lt;p>之前用过一些记账 APP，但 APP 有很多缺点无法解决：&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技术 - 沙雕园</title><link>https://blog.shadiao.win/categories/%E6%8A%80%E6%9C%AF/</link><description>欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。</description><language>zh-cn</language><atom:link href="https://blog.shadiao.win/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>一触即达：用 YubiKey 打造 Windows 自动解锁与 SSH 安全登录</title><link>https://blog.shadiao.win/post/yubikey_ssh_auth/</link><guid>https://blog.shadiao.win/post/yubikey_ssh_auth/</guid><description>&lt;p>一直拖着桌面上一枚尘封已久的 YubiKey，却不知道该怎么用才最有价值。最近突发奇想：既要让它在 Windows 开机时“自动敲密码”，又要用它完成 SSH 登录时的硬件签名。经过折腾，终于把这两项功能都跑通了，特此记录，方便自己今后查阅，也给有同样需求的你做个参考。&lt;/p>
+&lt;h2 id="yubikey-是啥能吃吗">Yubikey 是啥？能吃吗？&lt;/h2>
+&lt;p>YubiKey 是由 Yubico 推出的一款硬件安全钥匙，支持 FIDO U2F/FIDO2、OpenPGP、PIV 等多种认证协议。它能将私钥或静态密码安全地存储在硬件中，通过物理触摸即可完成网站登录、SSH 认证、Windows 开机等场景下的双因素或无密认证。由于密钥始终在设备内不外泄，能有效防止钓鱼攻击与远程入侵。&lt;/p>
+&lt;h2 id="环境与工具">环境与工具&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>系统&lt;/strong>：Windows 11&lt;/li>
+&lt;li>&lt;strong>硬件&lt;/strong>：YubiKey 5C 和 Yubikey 5C Nano （俩 YubiKey 分别生成两套 SSH 密钥，其中一枚作为主用，另一枚作为备份，确保即使主钥匙被城管炸了也能无缝继续安全访问）&lt;/li>
+&lt;li>&lt;strong>软件&lt;/strong>：
+&lt;ul>
+&lt;li>&lt;a href="https://www.yubico.com/support/download/yubikey-manager/" target="_blank" rel="noopener">Yubikey Manager&lt;/a>
+: Yubico 官方管理软件儿&lt;/li>
+&lt;li>&lt;a href="https://developers.yubico.com/yubikey-manager/" target="_blank" rel="noopener">Yubikey Manager CLI&lt;/a>
+: 官方命令行工具&lt;/li>
+&lt;li>&lt;a href="https://github.com/OpenSC/OpenSC/releases" target="_blank" rel="noopener">OpenSC&lt;/a>
+: 一个开源的智能卡儿工具包儿，要用它调用 Yubikey 进行 SSH 认证&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="一自动输入-windows-开机密码">一、自动输入 Windows 开机密码&lt;/h2>
+&lt;p>这个如倒立拉屎一样简单。利用 Yubikey 的 Static Password 功能，原理是用手一碰它就模拟键盘操作输入一串儿预定的字符串儿。&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>配置 Static Password&lt;/strong>
+&lt;ul>
+&lt;li>打开 YubiKey Manager，选择 &lt;strong>Applications → OTP → Configure&lt;/strong>。&lt;/li>
+&lt;li>在 &lt;strong>Static Password&lt;/strong> 里猪入你的 Windows 登录密码，保存。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>开机／锁屏时使用&lt;/strong>
+&lt;ul>
+&lt;li>将 YubiKey 插入任意 USB 接口。&lt;/li>
+&lt;li>启动或唤醒 Windows，光标定位在密码输入框时，轻触 YubiKey。&lt;/li>
+&lt;li>它就会像键盘一样，自动输入你配置的密码。无需额外敲击，节省时间又可靠。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;blockquote>
+&lt;p>&lt;strong>安全小贴士&lt;/strong>：静态密码无需 PIN 解锁，但只有在你“真·触摸”时才会输出，防止远程被滥用。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="二基于-piv-的-ssh-安全登录">二、基于 PIV 的 SSH 安全登录&lt;/h2>
+&lt;p>这个功能利用 YubiKey 的 PIV（智能卡）功能，将私钥安全地存放在硬件中，SSH 客户端通过 PKCS#11 调用它。&lt;/p>
+&lt;h3 id="1-使用-yubikey-生成密钥对儿">1. 使用 Yubikey 生成密钥对儿&lt;/h3>
+&lt;p>安装 &lt;a href="https://developers.yubico.com/yubikey-manager/" target="_blank" rel="noopener">Yubikey Manager CLI&lt;/a>
+后，在环境变量中添加 &lt;code>C:\Program Files\Yubico\YubiKey Manager\ykman.exe&lt;/code>，就可以用 &lt;code>ykman&lt;/code> 了。&lt;/p>
+&lt;p>每个YubiKey出厂默认设置了PIN为123456，最好修改一下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ykman piv access change-pin --pin &lt;span style="color:#666">123456&lt;/span> --new-pin &lt;span style="color:#666">654321&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后生成密钥对儿：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ykman piv keys generate --algorithm RSA2048 --pin-policy once --touch-policy always 9a yubikey_main_pubkey.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>提示输入 Management key 直接回车即可。&lt;/p>
+&lt;p>然后认证：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ykman piv certificates generate --subject &lt;span style="color:#b44">&amp;#34;CN=yubikey_main&amp;#34;&lt;/span> 9a yubikey_main_pubkey.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>提示输入 Management key 直接回车，然后输入 PIN，然后让你摸一摸它，摸完了它就结束了。&lt;/p>
+&lt;h3 id="2-启用并启动-ssh-agent">2. 启用并启动 ssh-agent&lt;/h3>
+&lt;p>首先下载安装&lt;a href="https://github.com/OpenSC/OpenSC/releases" target="_blank" rel="noopener">OpenSC&lt;/a>
+。然后在 &lt;strong>PowerShell（管理员）&lt;/strong> 中执行：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f">Set-Service&lt;/span> -Name &lt;span style="color:#a2f">ssh-agent&lt;/span> -StartupType Automatic
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f">Start-Service&lt;/span> &lt;span style="color:#a2f">ssh-agent&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f">Get-Service&lt;/span> &lt;span style="color:#a2f">ssh-agent&lt;/span> &lt;span style="color:#080;font-style:italic"># 确认正在运行&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="3-加载-piv-私钥">3. 加载 PIV 私钥&lt;/h3>
+&lt;p>在 &lt;strong>PowerShell&lt;/strong> 中：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f">ssh-add&lt;/span> -s &lt;span style="color:#b44">&amp;#34;C:\Program Files\OpenSC Project\OpenSC\pkcs11\opensc-pkcs11.dll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>当提示 &lt;code>Enter passphrase for PKCS#11:&lt;/code> 时，输入 Yubikey 的 PIN，回车。&lt;/p>
+&lt;p>&lt;strong>验证&lt;/strong>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f">ssh-add&lt;/span> -L
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>应能看到 public key，把它放在该放的地方即可。&lt;/p>
+&lt;h3 id="4-日了狗的大坑">4. 日了狗的大坑&lt;/h3>
+&lt;p>这里有个日了狗的大坑，OpenSC 的路径是&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>C:/Program Files/OpenSC Project/OpenSC/pkcs11/opensc-pkcs11.dll
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>敏感肌可能已经发现了，这个路径里有空格儿，它放进 ssh_config 里不能被正确识别！而且 ssh_config 不支持加引号或转义！强迫症儿又不想挪动文件位置。好在 Windows 会给 Program Files、OpenSC Project 这类带空格的目录自动分配一个短名称。&lt;/p>
+&lt;p>在 CMD 里运行：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">for&lt;/span> %I in &lt;span style="color:#666">(&lt;/span>&lt;span style="color:#b44">&amp;#34;C:\Program Files\OpenSC Project\OpenSC\pkcs11\opensc-pkcs11.dll&amp;#34;&lt;/span>&lt;span style="color:#666">)&lt;/span> &lt;span style="color:#a2f;font-weight:bold">do&lt;/span> @echo %~sI
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>他会输出无空格路径，类似这个：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>C:\PROGRA~1\OPENSC~1\OpenSC\pkcs11\OPENSC~1.DLL
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>用它进行下一步就行了。&lt;/p>
+&lt;h3 id="4-配置-ssh-连接">4. 配置 SSH 连接&lt;/h3>
+&lt;p>在 &lt;code>C:\Users\&amp;lt;用户名&amp;gt;\.ssh\config&lt;/code> 中增加一条儿配置：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Host server_name
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HostName server.example.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> User youruser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PKCS11Provider C:\PROGRA~1\OPENSC~1\OpenSC\pkcs11\OPENSC~1.DLL
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>保存后直接&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>ssh server_name
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果一切配置正确，Yubikey 会闪烁，触摸 Yubikey 即可认证成功并登录！&lt;/p>
+&lt;h3 id="5-配置备用的-yubikey">5. 配置备用的 Yubikey&lt;/h3>
+&lt;p>如果你像我一样打算弄俩 Yubikey 备份，可以换下一个重复操作。 &lt;strong>要拔出来再插进去新的，两根一起插 Yubikey Manager 会受不了&lt;/strong>。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ykman piv access change-pin --pin &lt;span style="color:#666">123456&lt;/span> --new-pin &lt;span style="color:#666">654321&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ykman piv keys generate --algorithm RSA2048 --pin-policy once --touch-policy always 9a pubkey.pem
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ykman piv certificates generate --subject &lt;span style="color:#b44">&amp;#34;CN=yubico&amp;#34;&lt;/span> 9a pubkey.pem
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssh-add -s &lt;span style="color:#b44">&amp;#34;C:\Program Files\OpenSC Project\OpenSC\pkcs11\opensc-pkcs11.dll&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssh-add -L
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>不知道是我操作不对还是 feature，OpenSC 只能存储一个 key，新来的会覆盖原来的。但问题不大。我们把备用的 public key 也放到服务器上，然后拔掉，插入主 key，再运行一次&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>ssh-add -s &amp;#34;C:\Program Files\OpenSC Project\OpenSC\pkcs11\opensc-pkcs11.dll&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果需要换另一把 key，插进去后重新运行一次上述命令即可。多么简（ma）单（fan）！&lt;/p>
+&lt;h2 id="结语">结语&lt;/h2>
+&lt;p>到此，已经给 YubiKey 配置了&lt;strong>Windows 自动解锁&lt;/strong>与&lt;strong>SSH 硬件签名&lt;/strong>的功能，并且有另外一把 YubiKey 做备份。以后再也不怕开机忘记密码，也不用担心在服务器间敲来敲去。插上即用、轻触即通，是我最近最满意的个人效率利器。希望这篇分享能帮到你，让你的 YubiKey 也发挥出一触即达的魔力！&lt;/p></description></item><item><title>telegram bot+beancount+fava 打造自己的记账系统</title><link>https://blog.shadiao.win/post/%E8%AE%B0%E8%B4%A6/</link><guid>https://blog.shadiao.win/post/%E8%AE%B0%E8%B4%A6/</guid><description>&lt;p>之前用过一些记账 APP，但 APP 有很多缺点无法解决：&lt;/p>
 &lt;ul>
 &lt;li>开屏广告/动画无法跳过，每次记账都要看好几秒动画，很影响体验&lt;/li>
 &lt;li>有可能泄露隐私，尤其是国产 APP，谁知道它拿着你的数据干啥了呢&lt;/li>
 &lt;li>有数据丢失风险，数据都在人家服务器上，他们跑路了就完犊子了&lt;/li>
-&lt;/ul></description></item><item><title>Python数据处理速查表</title><link>https://blog.shadiao.win/post/python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E9%80%9F%E6%9F%A5%E8%A1%A8cheatsheet/</link><pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate><guid>https://blog.shadiao.win/post/python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E9%80%9F%E6%9F%A5%E8%A1%A8cheatsheet/</guid><description>&lt;p>以前的速查表有点乱，近期重整一下。&lt;/p></description></item><item><title>网站维护的常用操作</title><link>https://blog.shadiao.win/post/website/</link><pubDate>Fri, 23 Jul 2021 10:30:00 +0800</pubDate><guid>https://blog.shadiao.win/post/website/</guid><description>&lt;p>为了便于维护，记录一下常用操作，这样就不用每次都到处查了。&lt;/p></description></item><item><title>CentOS 8 配置 tensorflow GPU</title><link>https://blog.shadiao.win/post/centos8/</link><pubDate>Fri, 02 Apr 2021 00:00:26 +0800</pubDate><guid>https://blog.shadiao.win/post/centos8/</guid><description>记录一下给腾讯云 GPU 服务器安装 tensorflow-gpu 的过程。这玩意事挺多。 检查必要的东西 检查 Python 版本： $ python3 腾讯云自带了 Python3.6。如果没有就装一下。 验证系统</description></item><item><title>Python 速查表</title><link>https://blog.shadiao.win/post/python/</link><pubDate>Mon, 22 Feb 2021 21:13:04 +0800</pubDate><guid>https://blog.shadiao.win/post/python/</guid><description>&lt;p>我们经常会用到 Python 的各种库，坠痛苦的就是有一些实用的命令记不住，用的时候只好现查，而且这个效率 efficiency…… 所以啊，我整了这么个速查表，以后直接在这里找就好了。&lt;/p></description></item></channel></rss>
+&lt;/ul>
+&lt;p>为此，我经过研究，决定使用 telegram bot + beancount + fava 进行记账。只需要在 telegram 上对机器人说句话，就能自动记录到自己的服务器上，并且随时可以在网页端查看统计图：&lt;/p>
+&lt;p>&lt;img src="https://blog.shadiao.win/image/bill1.jpg" alt="">&lt;/p>
+&lt;p>&lt;img src="https://blog.shadiao.win/image/bill2.png" alt="">&lt;/p>
+&lt;p>便捷操作，自己搭建，高效安全，功能完整！&lt;/p>
+&lt;blockquote>
+&lt;p>注意：如果你在服务器上使用 telegram bot，需要确保你的服务器能翻墙！&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="beancount-安装与配置">Beancount 安装与配置&lt;/h2>
+&lt;h3 id="简介">简介&lt;/h3>
+&lt;p>Beancount 是个很强大的复式记账工具，使用纯文本记录并通过 python 生成报表，非常自由。它的消费记录长这样：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>2022-07-04 * &amp;#34;午饭&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Expenses:Food:吃饭:午饭 20 CNY
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Assets:现金
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>不仅可以记录何时花了多少钱，还可以分类（比如这里就是 Food 大类下的吃饭子类下的午饭类），还知道钱是从哪出的（现金、支付宝、银行卡等）。&lt;/p>
+&lt;p>这篇主要讲如何配置，就不详细介绍 beancount 的语法了，可以&lt;a href="https://docs.google.com/document/d/1P5At-z1sP8rgwYLHso5sEy3u4rMnIUDDgob9Y_BYuWE/edit" target="_blank" rel="noopener">在这里查看官方使用教程&lt;/a>
+，或者&lt;a href="https://github.com/maonx/Beancount-Chinese-User-Manual" target="_blank" rel="noopener">在这里看中文版教程&lt;/a>
+。&lt;/p>
+&lt;h3 id="安装">安装&lt;/h3>
+&lt;p>它是个 python 库，通过 pip 安装：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>pip install beancount
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pip install fava
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果报错 &lt;code>fatal error: Python.h: No such file or directory&lt;/code>，则需要安装 python-dev：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>apt-get install python3-dev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 如果还无法解决，可以根据python版本指定python-dev的版本，比如你用python3.9，就是 apt-get install python3.9-dev&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="使用">使用&lt;/h3>
+&lt;p>找个地方新建一个文件，比如叫 &lt;code>account.beancount&lt;/code>，在里面写东西就行了。初始化可以这样：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>;; -*- mode: beancount; coding: utf-8; fill-column: 400; -*-
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>option &amp;#34;title&amp;#34; &amp;#34;记叭账！&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>option &amp;#34;operating_currency&amp;#34; &amp;#34;CNY&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>option &amp;#34;operating_currency&amp;#34; &amp;#34;USD&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>;初始化账户
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1970-01-01 open Assets:Cash CNY
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1970-01-01 open Equity:Init CNY
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1970-01-01 * &amp;#34;账户初始化&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Assets:Cash 200 CNY
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Equity:Init
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>2022-07-04 * &amp;#34;午饭&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Expenses:Food:吃饭:午饭 20 CNY
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Assets:Cash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>第一行指定了 utf-8 编码，似乎可有可无。后面几个 option 指定了标题和使用的币种。下一段初始化，开设了一个叫 Cash 的账户，表示现在我有 200 元现金。最后三行是一次消费记录 —— 午饭花了 20 元，现金支付。&lt;/p>
+&lt;p>然后打开可视化界面：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>fava account.beancount
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>默认端口在 5000，只要打开 &lt;code>localhost:5000&lt;/code> 就可以看到网页了。&lt;/p>
+&lt;p>以后记账则要修改 &lt;code>account.beancount&lt;/code> 文件（也可以在网页左侧点击“编辑器”编辑这个文件）。这样很麻烦，所以我们要用 telegram bot 简化这一操作。&lt;/p>
+&lt;h2 id="使用-telegram-bot-实现随时记账">使用 telegram bot 实现随时记账&lt;/h2>
+&lt;p>首先&lt;a href="https://telegram.me/botfather" target="_blank" rel="noopener">点击这里&lt;/a>
+添加 &lt;code>BotFather&lt;/code> 为好友，然后对它发送 &lt;code>/newbot&lt;/code>，之后按提示操作便可得到一个 bot。记录下它给的 HTTP API 并妥善保管，这是操作 bot 的唯一凭证！&lt;/p>
+&lt;p>可以参考我的脚本，也可以自己写。就是把 telegram 上收到的消息 parse 成 beancount 的格式。只有一小段代码，就直接放在文末了。&lt;/p>
+&lt;p>现在，只要对 telegram bot 说 &lt;code>午饭 20 现金&lt;/code>，就可以自动转换成下面这一串，然后写入账本：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>2022-07-04 * &amp;#34;午饭&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Expenses:Food:吃饭:午饭 20 CNY
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Assets:Cash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>可以在手机主屏幕添加一个 telegram 的小工具，更方便。&lt;/p>
+&lt;h2 id="登录认证">登录认证&lt;/h2>
+&lt;p>我有一个域名，所以就把 &lt;code>localhost:5000&lt;/code> 映射到公网了，可以随时查看报表。但财务状况涉及隐私，我们不希望别人能看见，于是想用 nginx 的 auth_basic 设置一个密码。&lt;/p>
+&lt;p>安装：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>apt-get install apache2-utils
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在要存放密码文件的地方生成密码（不要放在 root 目录下！否则 nginx 没有权限读取，会一直 500）：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>htpasswd -c /etc/nginx/auth_basic/passwdfile &lt;span style="color:#666">{&lt;/span>username&lt;span style="color:#666">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic">#执行上命令后会要求输入两次密码，./passwdfile 是在当前目录下创建密码文件passwdfile ，username即为需要设置的账号&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>改nginx配置，增加一个 server 进行映射，并启用验证（自己替换 &lt;code>[]&lt;/code> 中的内容）：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-nginx" data-lang="nginx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">server&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">listen&lt;/span> &lt;span style="color:#666">443&lt;/span> &lt;span style="color:#b44">ssl&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">server_name&lt;/span> &lt;span style="color:#b44">[your&lt;/span> &lt;span style="color:#b44">url]&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">auth_basic&lt;/span> &lt;span style="color:#b44">&amp;#34;Please&lt;/span> &lt;span style="color:#b44">type&lt;/span> &lt;span style="color:#b44">your&lt;/span> &lt;span style="color:#b44">account&lt;/span> &lt;span style="color:#b44">name&lt;/span> &lt;span style="color:#b44">and&lt;/span> &lt;span style="color:#b44">password&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">auth_basic_user_file&lt;/span> &lt;span style="color:#b44">[location&lt;/span> &lt;span style="color:#b44">of&lt;/span> &lt;span style="color:#b44">the&lt;/span> &lt;span style="color:#b44">passwdfile]&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;font-style:italic"># 建议使用https，不然数据会在网上裸奔，也不安全
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic">&lt;/span> &lt;span style="color:#a2f;font-weight:bold">ssl_certificate&lt;/span> &lt;span style="color:#b44">/etc/letsencrypt/live/shadiao.online/fullchain.pem&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">ssl_certificate_key&lt;/span> &lt;span style="color:#b44">/etc/letsencrypt/live/shadiao.online/privkey.pem&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">ssl_session_timeout&lt;/span> &lt;span style="color:#666">5m&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">ssl_ciphers&lt;/span> &lt;span style="color:#b44">ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4&lt;/span>; &lt;span style="color:#080;font-style:italic">#加密算法 ssl_protocols TLSv1 TLSv1.1 TLSv1.2; #安全链接可选的加密协议
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic">&lt;/span> &lt;span style="color:#a2f;font-weight:bold">ssl_prefer_server_ciphers&lt;/span> &lt;span style="color:#800">on&lt;/span>; &lt;span style="color:#080;font-style:italic">#使用服务器端的首选算法
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">location&lt;/span> &lt;span style="color:#b44">/&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">proxy_pass&lt;/span> &lt;span style="color:#b44">http://127.0.0.1:5000&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>service nginx restart
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>大功告成！&lt;/p>
+&lt;h2 id="附录">附录&lt;/h2>
+&lt;p>HTTP API 放在同一目录下的 &lt;code>password.py&lt;/code> 中，&lt;code>token = 'xxxx'&lt;/code>。&lt;/p>
+&lt;p>Python 代码：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">from&lt;/span> &lt;span style="color:#00f;font-weight:bold">telegram&lt;/span> &lt;span style="color:#a2f;font-weight:bold">import&lt;/span> Update
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">from&lt;/span> &lt;span style="color:#00f;font-weight:bold">telegram.ext&lt;/span> &lt;span style="color:#a2f;font-weight:bold">import&lt;/span> CallbackContext
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">from&lt;/span> &lt;span style="color:#00f;font-weight:bold">telegram.ext&lt;/span> &lt;span style="color:#a2f;font-weight:bold">import&lt;/span> Updater
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">from&lt;/span> &lt;span style="color:#00f;font-weight:bold">telegram.ext&lt;/span> &lt;span style="color:#a2f;font-weight:bold">import&lt;/span> CommandHandler
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">from&lt;/span> &lt;span style="color:#00f;font-weight:bold">telegram.ext&lt;/span> &lt;span style="color:#a2f;font-weight:bold">import&lt;/span> MessageHandler, Filters
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">import&lt;/span> &lt;span style="color:#00f;font-weight:bold">logging&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">from&lt;/span> &lt;span style="color:#00f;font-weight:bold">datetime&lt;/span> &lt;span style="color:#a2f;font-weight:bold">import&lt;/span> datetime
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">from&lt;/span> &lt;span style="color:#00f;font-weight:bold">urwid&lt;/span> &lt;span style="color:#a2f;font-weight:bold">import&lt;/span> str_util &lt;span style="color:#080;font-style:italic"># 计算字符宽度&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 在telegram上输入&amp;#39;早饭&amp;#39;，会自动转换成&amp;#39;Expenses:Food:吃饭:早饭&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 这个表可以自己维护&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>translate &lt;span style="color:#666">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b44">&amp;#39;早饭&amp;#39;&lt;/span>: &lt;span style="color:#b44">&amp;#39;Expenses:Food:吃饭:早饭&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b44">&amp;#39;午饭&amp;#39;&lt;/span>: &lt;span style="color:#b44">&amp;#39;Expenses:Food:吃饭:午饭&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b44">&amp;#39;晚饭&amp;#39;&lt;/span>: &lt;span style="color:#b44">&amp;#39;Expenses:Food:吃饭:晚饭&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b44">&amp;#39;夜宵&amp;#39;&lt;/span>: &lt;span style="color:#b44">&amp;#39;Expenses:Food:吃饭:夜宵&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b44">&amp;#39;a&amp;#39;&lt;/span>: &lt;span style="color:#b44">&amp;#39;Assets:Bank:OCBC-Frank&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b44">&amp;#39;frank&amp;#39;&lt;/span>: &lt;span style="color:#b44">&amp;#39;Assets:Bank:OCBC-Frank&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b44">&amp;#39;b&amp;#39;&lt;/span>: &lt;span style="color:#b44">&amp;#39;Assets:Cash-SGD&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b44">&amp;#39;现金&amp;#39;&lt;/span>: &lt;span style="color:#b44">&amp;#39;Assets:Cash-SGD&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic">## utils&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 字符串的显示宽度&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">def&lt;/span> &lt;span style="color:#00a000">str_width&lt;/span>(text):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">return&lt;/span> &lt;span style="color:#a2f">sum&lt;/span>([str_util&lt;span style="color:#666">.&lt;/span>get_width(&lt;span style="color:#a2f">ord&lt;/span>(c)) &lt;span style="color:#a2f;font-weight:bold">for&lt;/span> c &lt;span style="color:#a2f;font-weight:bold">in&lt;/span> text])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 输入文本，返回beancount格式的字符串&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 第一个返回值是返回给用户的提示语，第二个返回值是beancount，要在外部写入文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b44">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b44">2022-07-04 * &amp;#34;午饭&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b44"> Expenses:Food:吃饭:午饭 9.1 SGD
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b44"> Assets:Bank:OCBC-Frank
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b44">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">def&lt;/span> &lt;span style="color:#00a000">parse_bill&lt;/span>(text):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> align &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">32&lt;/span> &lt;span style="color:#080;font-style:italic"># 钱数在32个字符处对齐&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ingredients &lt;span style="color:#666">=&lt;/span> text&lt;span style="color:#666">.&lt;/span>split(&lt;span style="color:#b44">&amp;#39; &amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">if&lt;/span> &lt;span style="color:#a2f">len&lt;/span>(ingredients) &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#666">3&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> title, money, account &lt;span style="color:#666">=&lt;/span> ingredients &lt;span style="color:#080;font-style:italic"># 干了啥，多少钱，从哪出的&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">for&lt;/span> i &lt;span style="color:#a2f;font-weight:bold">in&lt;/span> [title, account]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">if&lt;/span> i &lt;span style="color:#a2f;font-weight:bold">not&lt;/span> &lt;span style="color:#a2f;font-weight:bold">in&lt;/span> translate:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reply &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#b44">&amp;#39;错误！“&lt;/span>&lt;span style="color:#b68;font-weight:bold">%s&lt;/span>&lt;span style="color:#b44">”不在翻译表里！&amp;#39;&lt;/span> &lt;span style="color:#666">%&lt;/span> i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">return&lt;/span> reply, &lt;span style="color:#b44">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> date &lt;span style="color:#666">=&lt;/span> datetime&lt;span style="color:#666">.&lt;/span>today()&lt;span style="color:#666">.&lt;/span>strftime(&lt;span style="color:#b44">&amp;#39;%Y-%m-&lt;/span>&lt;span style="color:#b68;font-weight:bold">%d&lt;/span>&lt;span style="color:#b44">&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> line1 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#b44">f&lt;/span>&lt;span style="color:#b44">&amp;#39;&lt;/span>&lt;span style="color:#b68;font-weight:bold">{&lt;/span>date&lt;span style="color:#b68;font-weight:bold">}&lt;/span>&lt;span style="color:#b44"> * &amp;#34;&lt;/span>&lt;span style="color:#b68;font-weight:bold">{&lt;/span>title&lt;span style="color:#b68;font-weight:bold">}&lt;/span>&lt;span style="color:#b44">&amp;#34;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> line2 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#b44">f&lt;/span>&lt;span style="color:#b44">&amp;#39; &lt;/span>&lt;span style="color:#b68;font-weight:bold">{&lt;/span>translate[title]&lt;span style="color:#b68;font-weight:bold">}&lt;/span>&lt;span style="color:#b44">&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> width2 &lt;span style="color:#666">=&lt;/span> str_width(line2)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> padding2 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">32&lt;/span> &lt;span style="color:#666">-&lt;/span> width2 &lt;span style="color:#080;font-style:italic"># 空格补齐&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">while&lt;/span> padding2 &lt;span style="color:#666">&amp;lt;=&lt;/span> &lt;span style="color:#666">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> padding2 &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#666">4&lt;/span> &lt;span style="color:#080;font-style:italic"># 超长就多补齐4个&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> line2 &lt;span style="color:#666">=&lt;/span> line2 &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#b44">&amp;#39; &amp;#39;&lt;/span> &lt;span style="color:#666">*&lt;/span> padding2 &lt;span style="color:#666">+&lt;/span> money &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#b44">&amp;#39; SGD&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> line3 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#b44">f&lt;/span>&lt;span style="color:#b44">&amp;#39; &lt;/span>&lt;span style="color:#b68;font-weight:bold">{&lt;/span>translate[account]&lt;span style="color:#b68;font-weight:bold">}&lt;/span>&lt;span style="color:#b44">&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b44">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b44"> # 只从一个账户支付，后面可以不写，beancount会自动计算
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b44"> width3 = str_width(line3)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b44"> padding3 = 32 - width3 # 空格补齐
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b44"> while padding3 &amp;lt;= 0:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b44"> padding3 += 4 # 超长就多补齐4个
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b44"> line3 = line3 + &amp;#39; -&amp;#39; * padding3 + money + &amp;#39; SGD&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#b44"> &amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parsed &lt;span style="color:#666">=&lt;/span> line1 &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#b44">&amp;#39;&lt;/span>&lt;span style="color:#b62;font-weight:bold">\n&lt;/span>&lt;span style="color:#b44">&amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> line2 &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#b44">&amp;#39;&lt;/span>&lt;span style="color:#b62;font-weight:bold">\n&lt;/span>&lt;span style="color:#b44">&amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> line3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">return&lt;/span> &lt;span style="color:#b44">&amp;#39;&amp;#39;&lt;/span>, parsed
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;font-style:italic"># todo&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reply &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#b44">&amp;#39;错误！ingredients的长度需要是3，可你是&lt;/span>&lt;span style="color:#b68;font-weight:bold">%d&lt;/span>&lt;span style="color:#b44">！&amp;#39;&lt;/span> &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#a2f">len&lt;/span>(ingredients)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">return&lt;/span> reply, &lt;span style="color:#b44">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># text message&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 目前输入格式：项目 金额 账户，例如“午饭 10 现金”&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">def&lt;/span> &lt;span style="color:#00a000">bill&lt;/span>(update: Update, context: CallbackContext):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> text &lt;span style="color:#666">=&lt;/span> update&lt;span style="color:#666">.&lt;/span>message&lt;span style="color:#666">.&lt;/span>text &lt;span style="color:#080;font-style:italic"># 早饭 6 frank&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reply, parsed &lt;span style="color:#666">=&lt;/span> parse_bill(text)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">if&lt;/span> parsed:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;font-style:italic"># 成了！&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;font-style:italic"># 一定要用a，不然内容没了&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">with&lt;/span> &lt;span style="color:#a2f">open&lt;/span>(&lt;span style="color:#b44">&amp;#39;./account.beancount&amp;#39;&lt;/span>, &lt;span style="color:#b44">&amp;#39;a&amp;#39;&lt;/span>, encoding&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#b44">&amp;#39;utf-8&amp;#39;&lt;/span>) &lt;span style="color:#a2f;font-weight:bold">as&lt;/span> file:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;font-style:italic"># 前后加换行&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> file&lt;span style="color:#666">.&lt;/span>write(&lt;span style="color:#b44">&amp;#39;&lt;/span>&lt;span style="color:#b62;font-weight:bold">\n&lt;/span>&lt;span style="color:#b44">&amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> parsed &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#b44">&amp;#39;&lt;/span>&lt;span style="color:#b62;font-weight:bold">\n&lt;/span>&lt;span style="color:#b44">&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reply &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#b44">&amp;#39;成功写入以下内容：&lt;/span>&lt;span style="color:#b62;font-weight:bold">\n\n&lt;/span>&lt;span style="color:#b44">&amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> parsed
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context&lt;span style="color:#666">.&lt;/span>bot&lt;span style="color:#666">.&lt;/span>send_message(chat_id&lt;span style="color:#666">=&lt;/span>update&lt;span style="color:#666">.&lt;/span>effective_chat&lt;span style="color:#666">.&lt;/span>id, text&lt;span style="color:#666">=&lt;/span>reply)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context&lt;span style="color:#666">.&lt;/span>bot&lt;span style="color:#666">.&lt;/span>send_message(chat_id&lt;span style="color:#666">=&lt;/span>update&lt;span style="color:#666">.&lt;/span>effective_chat&lt;span style="color:#666">.&lt;/span>id, text&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#a2f">str&lt;/span>(translate))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># the bot&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">import&lt;/span> &lt;span style="color:#00f;font-weight:bold">password&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>updater &lt;span style="color:#666">=&lt;/span> Updater(token&lt;span style="color:#666">=&lt;/span>password&lt;span style="color:#666">.&lt;/span>token) &lt;span style="color:#080;font-style:italic"># 在这里指定token，也可改成命令行输入&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dispatcher &lt;span style="color:#666">=&lt;/span> updater&lt;span style="color:#666">.&lt;/span>dispatcher
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># log&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>logging&lt;span style="color:#666">.&lt;/span>basicConfig(&lt;span style="color:#a2f">format&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#b44">&amp;#39;&lt;/span>&lt;span style="color:#b68;font-weight:bold">%(asctime)s&lt;/span>&lt;span style="color:#b44"> - &lt;/span>&lt;span style="color:#b68;font-weight:bold">%(name)s&lt;/span>&lt;span style="color:#b44"> - &lt;/span>&lt;span style="color:#b68;font-weight:bold">%(levelname)s&lt;/span>&lt;span style="color:#b44"> - &lt;/span>&lt;span style="color:#b68;font-weight:bold">%(message)s&lt;/span>&lt;span style="color:#b44">&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> level&lt;span style="color:#666">=&lt;/span>logging&lt;span style="color:#666">.&lt;/span>INFO)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># turn functions to handlers here&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>start_handler &lt;span style="color:#666">=&lt;/span> CommandHandler(&lt;span style="color:#b44">&amp;#39;start&amp;#39;&lt;/span>, start)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo_handler &lt;span style="color:#666">=&lt;/span> MessageHandler(Filters&lt;span style="color:#666">.&lt;/span>text &lt;span style="color:#666">&amp;amp;&lt;/span> (&lt;span style="color:#666">~&lt;/span>Filters&lt;span style="color:#666">.&lt;/span>command), bill)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># add handlers&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dispatcher&lt;span style="color:#666">.&lt;/span>add_handler(start_handler)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dispatcher&lt;span style="color:#666">.&lt;/span>add_handler(echo_handler)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># start the bot&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>updater&lt;span style="color:#666">.&lt;/span>start_polling()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Python数据处理速查表</title><link>https://blog.shadiao.win/post/python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E9%80%9F%E6%9F%A5%E8%A1%A8cheatsheet/</link><guid>https://blog.shadiao.win/post/python%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E9%80%9F%E6%9F%A5%E8%A1%A8cheatsheet/</guid><description>&lt;p>以前的速查表有点乱，近期重整一下。&lt;/p>
+&lt;h2 id="pandas">Pandas&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">import&lt;/span> &lt;span style="color:#00f;font-weight:bold">pandas&lt;/span> &lt;span style="color:#a2f;font-weight:bold">as&lt;/span> &lt;span style="color:#00f;font-weight:bold">pd&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="数据读取">数据读取&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>df &lt;span style="color:#666">=&lt;/span> pd&lt;span style="color:#666">.&lt;/span>read_excel(&lt;span style="color:#b44">&amp;#39;filepath/name.xlsx&amp;#39;&lt;/span>, &lt;span style="color:#666">0&lt;/span>, header&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#666">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 第0个sheet&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># header=0: 第一行为表头，header=None：无表头&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df &lt;span style="color:#666">=&lt;/span> pd&lt;span style="color:#666">.&lt;/span>read_csv(&lt;span style="color:#b44">&amp;#39;file.csv&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df &lt;span style="color:#666">=&lt;/span> pd&lt;span style="color:#666">.&lt;/span>read_csv(&lt;span style="color:#b44">&amp;#39;file.txt&amp;#39;&lt;/span>, sep&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#b44">&amp;#39;&lt;/span>&lt;span style="color:#b62;font-weight:bold">\t&lt;/span>&lt;span style="color:#b44">&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>新建 dataframe，从 dict 直接创建：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>data &lt;span style="color:#666">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b44">&amp;#39;name&amp;#39;&lt;/span>: [&lt;span style="color:#b44">&amp;#39;李华&amp;#39;&lt;/span>, &lt;span style="color:#b44">&amp;#39;二傻子&amp;#39;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#b44">&amp;#39;age&amp;#39;&lt;/span>: [&lt;span style="color:#666">114&lt;/span>, &lt;span style="color:#666">514&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df &lt;span style="color:#666">=&lt;/span> pd&lt;span style="color:#666">.&lt;/span>Dataframe(data)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="索引与切片">索引与切片&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 直接通过&amp;#39;[]&amp;#39;，字符串表示列，数字表示行&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df[&lt;span style="color:#b44">&amp;#39;price&amp;#39;&lt;/span>] &lt;span style="color:#080;font-style:italic"># 选取名字为&amp;#39;price&amp;#39;的列&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df[[&lt;span style="color:#b44">&amp;#39;name&amp;#39;&lt;/span>, &lt;span style="color:#b44">&amp;#39;price&amp;#39;&lt;/span>]] &lt;span style="color:#080;font-style:italic"># 选取多列，把列名放在list里&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df[:&lt;span style="color:#666">2&lt;/span>] &lt;span style="color:#080;font-style:italic"># 第0行和第1行，这里和list的切片操作一样&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># iloc和loc：索引用iloc，列名用loc。iloc和loc的优势是可以进行筛选&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># loc用法：df.loc[index, column_name]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 一个大坑：loc的行索引是闭区间，而不是python通用的左闭右开（但iloc是正常的）&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>loc[&lt;span style="color:#666">2&lt;/span>, &lt;span style="color:#b44">&amp;#39;price&amp;#39;&lt;/span>] &lt;span style="color:#080;font-style:italic"># 第2行，名字为&amp;#39;price&amp;#39;的列&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>loc[[&lt;span style="color:#666">2&lt;/span>,&lt;span style="color:#666">3&lt;/span>],[&lt;span style="color:#b44">&amp;#39;name&amp;#39;&lt;/span>,&lt;span style="color:#b44">&amp;#39;price&amp;#39;&lt;/span>]] &lt;span style="color:#080;font-style:italic"># index和column_name都可灵活使用list或切片&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>loc[df[&lt;span style="color:#b44">&amp;#39;price&amp;#39;&lt;/span>]&lt;span style="color:#666">&amp;lt;&lt;/span>&lt;span style="color:#666">100&lt;/span>,&lt;span style="color:#b44">&amp;#39;name&amp;#39;&lt;/span>] &lt;span style="color:#080;font-style:italic"># 筛选，注意筛选条件是针对行的&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># iloc用法：只要把loc的列名改成索引&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>iloc[df[&lt;span style="color:#b44">&amp;#39;price&amp;#39;&lt;/span>]&lt;span style="color:#666">&amp;lt;&lt;/span>&lt;span style="color:#666">100&lt;/span>, &lt;span style="color:#666">2&lt;/span>:&lt;span style="color:#666">5&lt;/span>] &lt;span style="color:#080;font-style:italic"># 一样可以灵活组合list和切片&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>iloc[df[&lt;span style="color:#b44">&amp;#39;price&amp;#39;&lt;/span>]&lt;span style="color:#666">&amp;lt;&lt;/span>&lt;span style="color:#666">100&lt;/span> &lt;span style="color:#666">|&lt;/span> df[&lt;span style="color:#b44">&amp;#39;price&amp;#39;&lt;/span>]&lt;span style="color:#666">&amp;gt;&lt;/span>&lt;span style="color:#666">200&lt;/span>] &lt;span style="color:#080;font-style:italic"># 筛选条件&amp;#39;|&amp;#39;表示或，&amp;#39;&amp;amp;&amp;#39;表示与&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="删除">删除&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>drop(columns&lt;span style="color:#666">=&lt;/span>[&lt;span style="color:#b44">&amp;#39;name&amp;#39;&lt;/span>, &lt;span style="color:#b44">&amp;#39;gender&amp;#39;&lt;/span>], inplace&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#a2f;font-weight:bold">True&lt;/span>) &lt;span style="color:#080;font-style:italic"># 列&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>drop(index&lt;span style="color:#666">=&lt;/span>[&lt;span style="color:#666">0&lt;/span>, &lt;span style="color:#666">1&lt;/span>], inplace&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#a2f;font-weight:bold">True&lt;/span>) &lt;span style="color:#080;font-style:italic"># 行&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>drop(df[df[&lt;span style="color:#b44">&amp;#39;age&amp;#39;&lt;/span>] &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#666">80&lt;/span>]&lt;span style="color:#666">.&lt;/span>index) &lt;span style="color:#080;font-style:italic"># 按条件删除&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="预处理">预处理&lt;/h3>
+&lt;p>描述性统计&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>count() &lt;span style="color:#080;font-style:italic"># 非空观测数量&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>sum() &lt;span style="color:#080;font-style:italic"># 和，可指定axis；mean, median, mode 同理&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>std() &lt;span style="color:#080;font-style:italic"># 标准差&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>min() &lt;span style="color:#080;font-style:italic"># max&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>缺失值&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>isna&lt;span style="color:#666">.&lt;/span>sum() &lt;span style="color:#080;font-style:italic"># 每列缺失值个数&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>fillna(&lt;span style="color:#666">0&lt;/span>) &lt;span style="color:#080;font-style:italic"># NaN用0填充&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>fillna(df&lt;span style="color:#666">.&lt;/span>mean())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>isnull()&lt;span style="color:#666">.&lt;/span>any() &lt;span style="color:#080;font-style:italic"># 有缺失值的列&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>isnull()&lt;span style="color:#666">.&lt;/span>T&lt;span style="color:#666">.&lt;/span>any() &lt;span style="color:#080;font-style:italic"># 有缺失值的行&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>异常值&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 3σ&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zscore &lt;span style="color:#666">=&lt;/span> (df[&lt;span style="color:#b44">&amp;#39;salary&amp;#39;&lt;/span>] &lt;span style="color:#666">-&lt;/span> df[&lt;span style="color:#b44">&amp;#39;salary&amp;#39;&lt;/span>]&lt;span style="color:#666">.&lt;/span>mean()) &lt;span style="color:#666">/&lt;/span> df[&lt;span style="color:#b44">&amp;#39;salary&amp;#39;&lt;/span>]&lt;span style="color:#666">.&lt;/span>std()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zscore&lt;span style="color:#666">.&lt;/span>abs() &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#666">3&lt;/span> &lt;span style="color:#080;font-style:italic"># 是outlier的mask&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>重复值&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>drop_duplicates([&lt;span style="color:#b44">&amp;#39;name&amp;#39;&lt;/span>, &lt;span style="color:#b44">&amp;#39;age&amp;#39;&lt;/span>], &lt;span style="color:#b44">&amp;#39;first&amp;#39;&lt;/span>, inplace&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#a2f;font-weight:bold">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># subset用来指定特定的列，默认所有列&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># keep : {‘first’, ‘last’, False}, default ‘first’，保留第一个&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>网站维护的常用操作</title><link>https://blog.shadiao.win/post/website/</link><guid>https://blog.shadiao.win/post/website/</guid><description>&lt;p>为了便于维护，记录一下常用操作，这样就不用每次都到处查了。&lt;/p>
+&lt;p>配置文件在 &lt;code>/etc/nginx/nginx.conf&lt;/code>。&lt;/p>
+&lt;h2 id="添加一个-https-站点">添加一个 https 站点&lt;/h2>
+&lt;h3 id="修改-nginx-配置文件">修改 nginx 配置文件&lt;/h3>
+&lt;p>配置文件中增加：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>server {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listen 443 ssl;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server_name [name].shadiao.online;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssl_certificate /etc/letsencrypt/live/shadiao.online/fullchain.pem;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssl_certificate_key /etc/letsencrypt/live/shadiao.online/privkey.pem;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssl_session_timeout 5m;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4; #加密算法
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssl_protocols TLSv1 TLSv1.1 TLSv1.2; #安全链接可选的加密协议
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssl_prefer_server_ciphers on; #使用服务器端的首选算法
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> location / {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> # write something
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>修改里面的 &lt;code>server_name&lt;/code>。&lt;/p>
+&lt;p>location 部分，静态页面：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>location / {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> add_header Access-Control-Allow-Origin *;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> root /var/www/...;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> index index.html;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>动态页面：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>location / {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> proxy_pass http://127.0.0.1:xxxx;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> add_header Access-Control-Allow-Origin *;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>以上完成后，最好加上 http 的自动跳转：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>server {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listen 80;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server_name xxx.shadiao.online;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> location / {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> # 重定向https
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> return 301 https://$server_name$request_uri;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>重启 nginx 以使新配置生效：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>service nginx restart
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="设置域名解析">设置域名解析&lt;/h3>
+&lt;p>去设置就行了。&lt;/p>
+&lt;h3 id="手动更新证书">手动更新证书&lt;/h3>
+&lt;p>如果需要手动更新 ssl 证书：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>/root/.acme.sh/acme.sh --cron -f
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="备份与维护">备份与维护&lt;/h2>
+&lt;p>需要备份的内容：&lt;/p>
+&lt;ul>
+&lt;li>各个站点文件&lt;/li>
+&lt;li>nginx 配置文件&lt;/li>
+&lt;/ul>
+&lt;p>目前的站点列表：&lt;/p>
+&lt;ul>
+&lt;li>我中央信息门户&lt;/li>
+&lt;li>博客&lt;/li>
+&lt;li>李华大冒险&lt;/li>
+&lt;li>实用工具集&lt;/li>
+&lt;/ul></description></item><item><title>CentOS 8 配置 tensorflow GPU</title><link>https://blog.shadiao.win/post/centos8/</link><guid>https://blog.shadiao.win/post/centos8/</guid><description>&lt;p>记录一下给腾讯云 GPU 服务器安装 tensorflow-gpu 的过程。这玩意事挺多。&lt;/p>
+&lt;h2 id="检查必要的东西">检查必要的东西&lt;/h2>
+&lt;p>检查 Python 版本：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ python3
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>腾讯云自带了 Python3.6。如果没有就装一下。&lt;/p>
+&lt;p>验证系统是否有支持 CUDA 的 GPU：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ lspci | grep -i nvidia
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>确认系统已经安装了 gcc：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ gcc --version
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="安装-cuda">安装 CUDA&lt;/h2>
+&lt;h3 id="1-下载">1. 下载&lt;/h3>
+&lt;p>下载 NVIDIA CUDA 工具包，在这找下载链接：&lt;/p>
+&lt;p>&lt;a href="https://developer.nvidia.com/cuda-downloads" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-downloads&lt;/a>
+&lt;/p>
+&lt;p>我们装 CUDA Toolkit 11.2 Update 2，target_type 选 runfilelocal 即可。&lt;/p>
+&lt;h3 id="2-安装">2. 安装&lt;/h3>
+&lt;p>&lt;strong>首先禁用 Nouveau 驱动&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ vim /etc/modprobe.d/blacklist-nouveau.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果已有内容就在最后添加，如果是空文件直接输入：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>blacklist nouveau
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>options nouveau modeset=0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后执行&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ dracut --force
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>安装很简单：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ sh cuda_&amp;lt;version&amp;gt;_linux.run
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>输入 accept，之后就一直按 install 与 yes 就行了。&lt;strong>执行安装程序会安装自动安装与 CUDA 对应的驱动，所以请不要单独安装驱动&lt;/strong>。&lt;/p>
+&lt;h3 id="3-设置环境变量">3. 设置环境变量&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ vim /etc/profile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>文件末尾添加：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>export PATH=/usr/local/cuda/bin:$PATH
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export PATH=/usr/local/cuda-11.2/bin:$PATH
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64:$LD_LIBRARY_PATH
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>执行&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#a2f">source&lt;/span> /etc/profile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="4-测试">4. 测试&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ nvcc -V
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ nvidia-smi
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>都能看到输出说明大成功，否则完犊子。&lt;/p>
+&lt;h2 id="安装-cudnn">安装 cudnn&lt;/h2>
+&lt;p>&lt;a href="https://developer.nvidia.com/rdp/cudnn-archive" target="_blank" rel="noopener">https://developer.nvidia.com/rdp/cudnn-archive&lt;/a>
+&lt;/p>
+&lt;p>要先注册 nvidia 账号，哈哈。&lt;/p>
+&lt;p>然后干就完了：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ mv cudnn-&amp;lt;version&amp;gt;.solitairetheme8 cudnn-&amp;lt;version&amp;gt;.tgz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ tar -xzvf cudnn-&amp;lt;version&amp;gt;.tgz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ cp cuda/include/cudnn*.h /usr/local/cuda/include
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="安装-tensorflow-gpu">安装 tensorflow-gpu&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ pip3 install tensorflow-gpu
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后菜了，报错 &lt;code>python setup.py egg_info failed with error code 1&lt;/code>。需要先更新一波 pip：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ pip3 install --upgrade setuptools
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ python3 -m pip install --upgrade pip
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>装完了进入 Python，测试一波：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; import tensorflow as tf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; tf.test.is_gpu_available&lt;span style="color:#666">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>又菜了，他说找不到 &lt;code>libcusolver.so.10&lt;/code>。我看了一下，&lt;code>/usr/local/cuda-11.1/lib64/&lt;/code> 里面有个 &lt;code>libcusolver.so.11&lt;/code>，好家伙，这不是有病嘛，都 11.2 了还在找 .10，封建遗毒啊！来一个骚操作骗他一手：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ ln -s /usr/local/cuda-11.2/lib64/libcusolver.so.11 /usr/local/cuda-11.2/lib64/libcusolver.so.10
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>然后就好了。&lt;/p>
+&lt;h2 id="参考文献">参考文献&lt;/h2>
+&lt;p>[1] &lt;a href="https://blog.csdn.net/qq_35540540/article/details/108767800" target="_blank" rel="noopener">https://blog.csdn.net/qq_35540540/article/details/108767800&lt;/a>
+&lt;/p>
+&lt;p>[2] &lt;a href="https://github.com/tensorflow/tensorflow/issues/43947#issuecomment-739617116" target="_blank" rel="noopener">https://github.com/tensorflow/tensorflow/issues/43947#issuecomment-739617116&lt;/a>
+&lt;/p></description></item><item><title>Python 速查表</title><link>https://blog.shadiao.win/post/python/</link><guid>https://blog.shadiao.win/post/python/</guid><description>&lt;p>我们经常会用到 Python 的各种库，坠痛苦的就是有一些实用的命令记不住，用的时候只好现查，而且这个效率 efficiency…… 所以啊，我整了这么个速查表，以后直接在这里找就好了。&lt;/p>
+&lt;p>本贴会持续更新~&lt;/p>
+&lt;blockquote>
+&lt;p>注意：本文不是教程，而是速查表。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="实用工具">实用工具&lt;/h2>
+&lt;h3 id="datetime">datetime&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">import&lt;/span> &lt;span style="color:#00f;font-weight:bold">datetime&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://docs.python.org/zh-cn/3/library/datetime.html" target="_blank" rel="noopener">官方文档：https://docs.python.org/zh-cn/3/library/datetime.html&lt;/a>
+&lt;/p>
+&lt;p>日期和时间均用datetime.datetime类的对象表示，所以我们先介绍该类的方法&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>now &lt;span style="color:#666">=&lt;/span> datetime&lt;span style="color:#666">.&lt;/span>datetime&lt;span style="color:#666">.&lt;/span>now() &lt;span style="color:#080;font-style:italic"># 当前时间，类型：datetime.datetime&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>now&lt;span style="color:#666">.&lt;/span>year &lt;span style="color:#080;font-style:italic"># 获取年（int）&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>now&lt;span style="color:#666">.&lt;/span>month &lt;span style="color:#080;font-style:italic"># 月&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 类似地还有：day, hour, minute, second, microsecond&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>datetime与字符串之间的转化&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># datetime到字符串用strftime（f是format的意思）&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>now&lt;span style="color:#666">.&lt;/span>strftime(&lt;span style="color:#b44">&amp;#39;%Y-%m-&lt;/span>&lt;span style="color:#b68;font-weight:bold">%d&lt;/span>&lt;span style="color:#b44"> %H:%M:%S&amp;#39;&lt;/span>) &lt;span style="color:#080;font-style:italic"># &amp;#39;2020-09-02 17:45:18&amp;#39;，注意大小写&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 字符串到datetime用strptime&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>datetime&lt;span style="color:#666">.&lt;/span>datetime&lt;span style="color:#666">.&lt;/span>strptime(&lt;span style="color:#b44">&amp;#39;2020-09-02 17:45:18&amp;#39;&lt;/span>, &lt;span style="color:#b44">&amp;#39;%Y-%m-&lt;/span>&lt;span style="color:#b68;font-weight:bold">%d&lt;/span>&lt;span style="color:#b44"> %H:%M:%S&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 这个方法很灵活，根据实际情况来写就行，比如你拿到的数据是&amp;#39;2020年9.2&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>str_time &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#b44">&amp;#39;2020年9.2&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>datetime&lt;span style="color:#666">.&lt;/span>datetime&lt;span style="color:#666">.&lt;/span>strptime(str_time, &lt;span style="color:#b44">&amp;#39;%Y年%m.&lt;/span>&lt;span style="color:#b68;font-weight:bold">%d&lt;/span>&lt;span style="color:#b44">&amp;#39;&lt;/span>) &lt;span style="color:#080;font-style:italic"># 就可以正确生成&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 除了%Y，%m这些，还有许多其他类型的代码，完整格式代码请查看https://docs.python.org/zh-cn/3/library/datetime.html#strftime-and-strptime-format-codes &lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>时间差&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># timedelta类用来处理时间差&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>a &lt;span style="color:#666">=&lt;/span> datetime&lt;span style="color:#666">.&lt;/span>datetime&lt;span style="color:#666">.&lt;/span>strptime(&lt;span style="color:#b44">&amp;#39;2020-09-02 17:45:18&amp;#39;&lt;/span>, &lt;span style="color:#b44">&amp;#39;%Y-%m-&lt;/span>&lt;span style="color:#b68;font-weight:bold">%d&lt;/span>&lt;span style="color:#b44"> %H:%M:%S&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>b &lt;span style="color:#666">=&lt;/span> datetime&lt;span style="color:#666">.&lt;/span>datetime&lt;span style="color:#666">.&lt;/span>strptime(&lt;span style="color:#b44">&amp;#39;2020-09-03 17:46:18&amp;#39;&lt;/span>, &lt;span style="color:#b44">&amp;#39;%Y-%m-&lt;/span>&lt;span style="color:#b68;font-weight:bold">%d&lt;/span>&lt;span style="color:#b44"> %H:%M:%S&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>delta &lt;span style="color:#666">=&lt;/span> b &lt;span style="color:#666">-&lt;/span> a &lt;span style="color:#080;font-style:italic"># 返回timedelta对象&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>delta&lt;span style="color:#666">.&lt;/span>days &lt;span style="color:#080;font-style:italic"># 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>delta&lt;span style="color:#666">.&lt;/span>seconds &lt;span style="color:#080;font-style:italic"># 60&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 注意只有 days. seconds 和 microseconds 会存储在内部，days=1，seconds=60表示这个时间差是1天零60秒，这个结果是唯一的，seconds满一天会自动进位，所以并不会出现days=0，seconds=86460这种情况。&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="数据处理">数据处理&lt;/h2>
+&lt;h3 id="numpy">numpy&lt;/h3>
+&lt;p>这部分主要整理自 &lt;a href="https://cs231n.github.io/python-numpy-tutorial/" target="_blank" rel="noopener">https://cs231n.github.io/python-numpy-tutorial/&lt;/a>
+&lt;/p>
+&lt;p>This tutorial was originally contributed by Justin Johnson&lt;/p>
+&lt;h4 id="创建">创建&lt;/h4>
+&lt;p>numpy 的核心是 array，它可以表示高维张量，包括向量（rank=1）、矩阵（rank=2）、三阶张量（rank=3）等。我们有很多种方法创建 array：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">import&lt;/span> &lt;span style="color:#00f;font-weight:bold">numpy&lt;/span> &lt;span style="color:#a2f;font-weight:bold">as&lt;/span> &lt;span style="color:#00f;font-weight:bold">np&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>a &lt;span style="color:#666">=&lt;/span> np&lt;span style="color:#666">.&lt;/span>array([&lt;span style="color:#666">1&lt;/span>, &lt;span style="color:#666">2&lt;/span>, &lt;span style="color:#666">3&lt;/span>]) &lt;span style="color:#080;font-style:italic"># 通过list创建array&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>b &lt;span style="color:#666">=&lt;/span> np&lt;span style="color:#666">.&lt;/span>array([&lt;span style="color:#666">1&lt;/span>, &lt;span style="color:#666">2&lt;/span>, &lt;span style="color:#666">3&lt;/span>], [&lt;span style="color:#666">4&lt;/span>, &lt;span style="color:#666">5&lt;/span>, &lt;span style="color:#666">6&lt;/span>]) &lt;span style="color:#080;font-style:italic"># rank=2，矩阵&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f">print&lt;/span>(b)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># [[1 2 3]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># [4 5 6]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>c &lt;span style="color:#666">=&lt;/span> np&lt;span style="color:#666">.&lt;/span>zeros((&lt;span style="color:#666">2&lt;/span>, &lt;span style="color:#666">2&lt;/span>)) &lt;span style="color:#080;font-style:italic"># 创建2*2的全0矩阵&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>d &lt;span style="color:#666">=&lt;/span> np&lt;span style="color:#666">.&lt;/span>ones((&lt;span style="color:#666">1&lt;/span>, &lt;span style="color:#666">2&lt;/span>)) &lt;span style="color:#080;font-style:italic"># 1*2的全1矩阵&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>e &lt;span style="color:#666">=&lt;/span> np&lt;span style="color:#666">.&lt;/span>full((&lt;span style="color:#666">2&lt;/span>, &lt;span style="color:#666">2&lt;/span>), &lt;span style="color:#666">7&lt;/span>) &lt;span style="color:#080;font-style:italic"># 2*2，元素都是7&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>f &lt;span style="color:#666">=&lt;/span> np&lt;span style="color:#666">.&lt;/span>eye(&lt;span style="color:#666">2&lt;/span>) &lt;span style="color:#080;font-style:italic"># 2*2单位矩阵&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>g &lt;span style="color:#666">=&lt;/span> np&lt;span style="color:#666">.&lt;/span>random&lt;span style="color:#666">.&lt;/span>random((&lt;span style="color:#666">2&lt;/span>, &lt;span style="color:#666">2&lt;/span>)) &lt;span style="color:#080;font-style:italic"># 2*2随机矩阵&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="索引与切片">索引与切片&lt;/h4>
+&lt;p>可使用list作为下标进行索引，并且支持与python类似的切片操作。&lt;/p>
+&lt;p>&lt;strong>与list不同的是，array的切片操作返回的是引用，因此修改切片后的值会修改原array的值！&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># Create the following rank 2 array with shape (3, 4)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># [[ 1 2 3 4]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># [ 5 6 7 8]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># [ 9 10 11 12]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>a &lt;span style="color:#666">=&lt;/span> np&lt;span style="color:#666">.&lt;/span>array([[&lt;span style="color:#666">1&lt;/span>,&lt;span style="color:#666">2&lt;/span>,&lt;span style="color:#666">3&lt;/span>,&lt;span style="color:#666">4&lt;/span>], [&lt;span style="color:#666">5&lt;/span>,&lt;span style="color:#666">6&lt;/span>,&lt;span style="color:#666">7&lt;/span>,&lt;span style="color:#666">8&lt;/span>], [&lt;span style="color:#666">9&lt;/span>,&lt;span style="color:#666">10&lt;/span>,&lt;span style="color:#666">11&lt;/span>,&lt;span style="color:#666">12&lt;/span>]])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>b &lt;span style="color:#666">=&lt;/span> a[:&lt;span style="color:#666">2&lt;/span>, &lt;span style="color:#666">1&lt;/span>:&lt;span style="color:#666">3&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># [[2 3]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># [6 7]]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果某一维度的索引是 int，array会进行降维。要想避免降维可以使用单个元素的 list：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>row_r1 &lt;span style="color:#666">=&lt;/span> a[&lt;span style="color:#666">1&lt;/span>, :] &lt;span style="color:#080;font-style:italic"># 矩阵惨遭降维成向量 &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>row_r2 &lt;span style="color:#666">=&lt;/span> a[&lt;span style="color:#666">1&lt;/span>:&lt;span style="color:#666">2&lt;/span>, :] &lt;span style="color:#080;font-style:italic"># 如果把1改成1：2，虽然数据一样，但是不降维&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>row_r3 &lt;span style="color:#666">=&lt;/span> a[[&lt;span style="color:#666">1&lt;/span>], :] &lt;span style="color:#080;font-style:italic"># 用[1]也不降维&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f">print&lt;/span>(row_r1, row_r1&lt;span style="color:#666">.&lt;/span>shape)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f">print&lt;/span>(row_r2, row_r2&lt;span style="color:#666">.&lt;/span>shape)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f">print&lt;/span>(row_r3, row_r3&lt;span style="color:#666">.&lt;/span>shape)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># [5 6 7 8] (4,)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># [[5 6 7 8]] (1, 4)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># [[5 6 7 8]] (1, 4)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>切片操作得到的永远是原来 array 的 subarray，如果我想重组怎么办呢？比如 [[1, 2], [3, 4]] 我想得到 [[3, 4], [1, 2], [1, 2]]，可以使用 &lt;strong>integer array indexing&lt;/strong>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>a &lt;span style="color:#666">=&lt;/span> np&lt;span style="color:#666">.&lt;/span>array([[&lt;span style="color:#666">1&lt;/span>, &lt;span style="color:#666">2&lt;/span>], [&lt;span style="color:#666">3&lt;/span>, &lt;span style="color:#666">4&lt;/span>]])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>b &lt;span style="color:#666">=&lt;/span> a[[&lt;span style="color:#666">1&lt;/span>, &lt;span style="color:#666">0&lt;/span>, &lt;span style="color:#666">0&lt;/span>], [&lt;span style="color:#666">0&lt;/span>, &lt;span style="color:#666">1&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># b是[[3, 4], [1, 2], [1, 2]]，即a的第1行、第0行、第0行拼接&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>boolean array indexing&lt;/strong> 很强大，允许我们进行筛选：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>a &lt;span style="color:#666">=&lt;/span> np&lt;span style="color:#666">.&lt;/span>array([[&lt;span style="color:#666">1&lt;/span>,&lt;span style="color:#666">2&lt;/span>], [&lt;span style="color:#666">3&lt;/span>, &lt;span style="color:#666">4&lt;/span>], [&lt;span style="color:#666">5&lt;/span>, &lt;span style="color:#666">6&lt;/span>]])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bool_idx &lt;span style="color:#666">=&lt;/span> (a &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#666">2&lt;/span>) &lt;span style="color:#080;font-style:italic"># Find the elements of a that are bigger than 2;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;font-style:italic"># this returns a numpy array of Booleans of the same&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;font-style:italic"># shape as a, where each slot of bool_idx tells&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;font-style:italic"># whether that element of a is &amp;gt; 2.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># [[False False]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># [ True True]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># [ True True]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># We use boolean array indexing to construct a rank 1 array&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># consisting of the elements of a corresponding to the True values&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># of bool_idx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f">print&lt;/span>(a[bool_idx])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># We can do all of the above in a single concise statement:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f">print&lt;/span>(a[a &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#666">2&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># [3 4 5 6]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># [3 4 5 6]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="pandas">pandas&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">import&lt;/span> &lt;span style="color:#00f;font-weight:bold">pandas&lt;/span> &lt;span style="color:#a2f;font-weight:bold">as&lt;/span> &lt;span style="color:#00f;font-weight:bold">pd&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 读取excel，第0个sheet&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df &lt;span style="color:#666">=&lt;/span> pd&lt;span style="color:#666">.&lt;/span>read_excel(&lt;span style="color:#b44">&amp;#39;./filename.xlsx&amp;#39;&lt;/span>, &lt;span style="color:#666">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 获取行数、列数&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>nrow &lt;span style="color:#666">=&lt;/span> df&lt;span style="color:#666">.&lt;/span>shape[&lt;span style="color:#666">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ncol &lt;span style="color:#666">=&lt;/span> df&lt;span style="color:#666">.&lt;/span>shape[&lt;span style="color:#666">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic">### 切片、筛选、提取数据 ###&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 直接通过&amp;#39;[]&amp;#39;，字符串表示列，数字表示行&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df[&lt;span style="color:#b44">&amp;#39;price&amp;#39;&lt;/span>] &lt;span style="color:#080;font-style:italic"># 选取名字为&amp;#39;price&amp;#39;的列&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df[[&lt;span style="color:#b44">&amp;#39;name&amp;#39;&lt;/span>, &lt;span style="color:#b44">&amp;#39;price&amp;#39;&lt;/span>]] &lt;span style="color:#080;font-style:italic"># 选取多列，把列名放在list里&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df[:&lt;span style="color:#666">2&lt;/span>] &lt;span style="color:#080;font-style:italic"># 第0行和第1行，这里和list的切片操作一样&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># iloc和loc：索引用iloc，列名用loc。iloc和loc的优势是可以进行筛选&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># loc用法：df.loc[index, column_name]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 一个大坑：loc的行索引是闭区间，而不是python通用的左闭右开（但iloc是正常的）&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>loc[&lt;span style="color:#666">2&lt;/span>, &lt;span style="color:#b44">&amp;#39;price&amp;#39;&lt;/span>] &lt;span style="color:#080;font-style:italic"># 第2行，名字为&amp;#39;price&amp;#39;的列&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>loc[[&lt;span style="color:#666">2&lt;/span>,&lt;span style="color:#666">3&lt;/span>],[&lt;span style="color:#b44">&amp;#39;name&amp;#39;&lt;/span>,&lt;span style="color:#b44">&amp;#39;price&amp;#39;&lt;/span>]] &lt;span style="color:#080;font-style:italic"># index和column_name都可灵活使用list或切片&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>loc[df[&lt;span style="color:#b44">&amp;#39;price&amp;#39;&lt;/span>]&lt;span style="color:#666">&amp;lt;&lt;/span>&lt;span style="color:#666">100&lt;/span>,&lt;span style="color:#b44">&amp;#39;name&amp;#39;&lt;/span>] &lt;span style="color:#080;font-style:italic"># 筛选，注意筛选条件是针对行的&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># iloc用法：只要把loc的列名改成索引&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>iloc[df[&lt;span style="color:#b44">&amp;#39;price&amp;#39;&lt;/span>]&lt;span style="color:#666">&amp;lt;&lt;/span>&lt;span style="color:#666">100&lt;/span>, &lt;span style="color:#666">2&lt;/span>:&lt;span style="color:#666">5&lt;/span>] &lt;span style="color:#080;font-style:italic"># 一样可以灵活组合list和切片&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df&lt;span style="color:#666">.&lt;/span>iloc[df[&lt;span style="color:#b44">&amp;#39;price&amp;#39;&lt;/span>]&lt;span style="color:#666">&amp;lt;&lt;/span>&lt;span style="color:#666">100&lt;/span> &lt;span style="color:#666">|&lt;/span> df[&lt;span style="color:#b44">&amp;#39;price&amp;#39;&lt;/span>]&lt;span style="color:#666">&amp;gt;&lt;/span>&lt;span style="color:#666">200&lt;/span>] &lt;span style="color:#080;font-style:italic"># 筛选条件&amp;#39;|&amp;#39;表示或，&amp;#39;&amp;amp;&amp;#39;表示与&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="sklearn">sklearn&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 线性回归&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">from&lt;/span> &lt;span style="color:#00f;font-weight:bold">sklearn&lt;/span> &lt;span style="color:#a2f;font-weight:bold">import&lt;/span> linear_model
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 训练数据：X_train, y_train，测试数据：X_test&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>lm &lt;span style="color:#666">=&lt;/span> linear_model&lt;span style="color:#666">.&lt;/span>LinearRegression()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>model &lt;span style="color:#666">=&lt;/span> lm&lt;span style="color:#666">.&lt;/span>fit(X_train, y_train)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>y_pred &lt;span style="color:#666">=&lt;/span> model&lt;span style="color:#666">.&lt;/span>predict(X_test)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 交叉验证&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">from&lt;/span> &lt;span style="color:#00f;font-weight:bold">sklearn.model_selection&lt;/span> &lt;span style="color:#a2f;font-weight:bold">import&lt;/span> cross_val_score
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cross_val_score(m, X, y, cv&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#666">5&lt;/span>, scoring&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#b44">&amp;#39;neg_mean_squared_error&amp;#39;&lt;/span>) &lt;span style="color:#080;font-style:italic"># 5-fold cross validation, m是sklearn的model&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="数据结构">数据结构&lt;/h2>
+&lt;h3 id="heapq">heapq&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">import&lt;/span> &lt;span style="color:#00f;font-weight:bold">heapq&lt;/span> &lt;span style="color:#a2f;font-weight:bold">as&lt;/span> &lt;span style="color:#00f;font-weight:bold">hq&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># python的heapq库是在list的基础上添加了堆的操作&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># heapq有两种方式创建堆，一种是使用一个空列表，然后使用heapq.heappush()函数把值加入堆中&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>num &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#666">1&lt;/span>,&lt;span style="color:#666">1&lt;/span>,&lt;span style="color:#666">4&lt;/span>,&lt;span style="color:#666">5&lt;/span>,&lt;span style="color:#666">1&lt;/span>,&lt;span style="color:#666">4&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>heapq&lt;span style="color:#666">.&lt;/span>heappush(heap, num)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 另外一种就是使用heapq.heapify(list)转换列表成为堆结构&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>heapq&lt;span style="color:#666">.&lt;/span>heapify(num) &lt;span style="color:#080;font-style:italic"># 这时候num也变成堆了&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="网络爬虫相关">网络/爬虫相关&lt;/h2>
+&lt;h3 id="requests">requests&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">import&lt;/span> &lt;span style="color:#00f;font-weight:bold">requests&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># get请求&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>html &lt;span style="color:#666">=&lt;/span> requests&lt;span style="color:#666">.&lt;/span>get(&lt;span style="color:#b44">&amp;#39;www.baidu.com&amp;#39;&lt;/span>)&lt;span style="color:#666">.&lt;/span>text
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># get请求可以优雅地加参数&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>params &lt;span style="color:#666">=&lt;/span> {&lt;span style="color:#b44">&amp;#39;q&amp;#39;&lt;/span>: &lt;span style="color:#b44">&amp;#39;搜索测试&amp;#39;&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>response &lt;span style="color:#666">=&lt;/span> requests&lt;span style="color:#666">.&lt;/span>get(url&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#b44">&amp;#39;www.google.com/search&amp;#39;&lt;/span>, params&lt;span style="color:#666">=&lt;/span>params)&lt;span style="color:#666">.&lt;/span>text
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="beautifulsoup">BeautifulSoup&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">from&lt;/span> &lt;span style="color:#00f;font-weight:bold">bs4&lt;/span> &lt;span style="color:#a2f;font-weight:bold">import&lt;/span> BeautifulSoup
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 之前用request获取html&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bs &lt;span style="color:#666">=&lt;/span> BeautifulSoup(html, &lt;span style="color:#b44">&amp;#39;html.parser&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 查找标签，返回标签html字符串的list&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>p_list &lt;span style="color:#666">=&lt;/span> bs&lt;span style="color:#666">.&lt;/span>findAll(&lt;span style="color:#b44">&amp;#39;p&amp;#39;&lt;/span>) &lt;span style="color:#080;font-style:italic"># 查找所有&amp;lt;p&amp;gt;标签&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>div_list &lt;span style="color:#666">=&lt;/span> bs&lt;span style="color:#666">.&lt;/span>findAll(&lt;span style="color:#b44">&amp;#39;div&amp;#39;&lt;/span>, attrs&lt;span style="color:#666">=&lt;/span>{&lt;span style="color:#b44">&amp;#39;class&amp;#39;&lt;/span>: &lt;span style="color:#b44">&amp;#39;primary&amp;#39;&lt;/span>}) &lt;span style="color:#080;font-style:italic"># 带条件筛选&amp;lt;div class=&amp;#39;primary&amp;#39;&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 条件可以是正则表达式&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>a_list &lt;span style="color:#666">=&lt;/span> bs&lt;span style="color:#666">.&lt;/span>findAll(&lt;span style="color:#b44">&amp;#39;a&amp;#39;&lt;/span>, string&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#b44">&amp;#39;[abs]&amp;#39;&lt;/span>) &lt;span style="color:#080;font-style:italic"># 字符串包含[abs]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="json">json&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">import&lt;/span> &lt;span style="color:#00f;font-weight:bold">json&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">import&lt;/span> &lt;span style="color:#00f;font-weight:bold">requests&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>data &lt;span style="color:#666">=&lt;/span> requests&lt;span style="color:#666">.&lt;/span>get(&lt;span style="color:#b44">&amp;#39;www.baidu.com&amp;#39;&lt;/span>)&lt;span style="color:#666">.&lt;/span>content&lt;span style="color:#666">.&lt;/span>decode() &lt;span style="color:#080;font-style:italic"># 某请求返回的字符串格式的json&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic"># 字符串转json&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>data_js &lt;span style="color:#666">=&lt;/span> json&lt;span style="color:#666">.&lt;/span>loads(data)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

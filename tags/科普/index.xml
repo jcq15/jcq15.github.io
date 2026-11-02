@@ -1,3 +1,587 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>科普 on 沙雕园</title><link>https://blog.shadiao.win/tags/%E7%A7%91%E6%99%AE/</link><description>Recent content in 科普 on 沙雕园</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 11 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.shadiao.win/tags/%E7%A7%91%E6%99%AE/index.xml" rel="self" type="application/rss+xml"/><item><title>新冠怎么对付？预防和对症治疗全攻略</title><link>https://blog.shadiao.win/post/covid19walkthrough/</link><pubDate>Sun, 11 Dec 2022 00:00:00 +0000</pubDate><guid>https://blog.shadiao.win/post/covid19walkthrough/</guid><description>&lt;p>最近政策逐渐放开，给李华的父亲王老爷子吓完了，天天往群里发各种震惊文。然而上到各种自媒体，下到许多官方指南和宣传，多数都夹杂着很多不合理之处。本文将放出我个人的应对指南，大家可作为参考。&lt;/p></description></item><item><title>教你如何做杠精 —— 经典逻辑谬误</title><link>https://blog.shadiao.win/post/luojimiuwu/</link><pubDate>Tue, 26 Apr 2022 17:30:00 +0800</pubDate><guid>https://blog.shadiao.win/post/luojimiuwu/</guid><description>&lt;p>”家里姐姐妹妹都没有，单我有，我说没趣儿；如今来了这个神仙似的妹妹也没有，可知这不是个好东西。“&lt;/p></description></item><item><title>常见疾病及常备药物</title><link>https://blog.shadiao.win/post/changyongyao/</link><pubDate>Fri, 20 Aug 2021 20:13:04 +0800</pubDate><guid>https://blog.shadiao.win/post/changyongyao/</guid><description>&lt;p>本文介绍生活中的常见疾病的处理方式及常用药物注意事项。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>科普 - 沙雕园</title><link>https://blog.shadiao.win/tags/%E7%A7%91%E6%99%AE/</link><description>欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。</description><language>zh-cn</language><atom:link href="https://blog.shadiao.win/tags/%E7%A7%91%E6%99%AE/index.xml" rel="self" type="application/rss+xml"/><item><title>新冠怎么对付？预防和对症治疗全攻略</title><link>https://blog.shadiao.win/post/covid19walkthrough/</link><guid>https://blog.shadiao.win/post/covid19walkthrough/</guid><description>&lt;p>最近政策逐渐放开，给李华的父亲王老爷子吓完了，天天往群里发各种震惊文。然而上到各种自媒体，下到许多官方指南和宣传，多数都夹杂着很多不合理之处。本文将放出我个人的应对指南，大家可作为参考。&lt;/p>
+&lt;p>写在前面：&lt;/p>
+&lt;ul>
+&lt;li>本文为基于基本常识得出的个人经验，主要由脸滚键盘生成，不作为医疗建议。作者不对内容负任何责任。&lt;/li>
+&lt;li>如果你还相信连花清瘟有用，可以关闭本文，接下来的内容对你没有什么帮助，不如继续活在自己的梦里。&lt;/li>
+&lt;/ul>
+&lt;p>本文分为三部分：基本认识、如何预防、感染新冠如何应对。&lt;/p>
+&lt;h2 id="0-基本认识">0. 基本认识&lt;/h2>
+&lt;p>新型冠状病毒是一种病毒（这不废话吗），目前没有特效药。不管你是在家还是在方舱还是在医院还是在太平间儿，都没有办法治疗新冠。&lt;strong>所有的措施都是对症治疗，缓解症状等待自愈&lt;/strong>。&lt;/p>
+&lt;blockquote>
+&lt;p>实际上并非完全无药可治。对于重症，医院可能会使用一些抗病毒药物。此外也有一些其它奇技淫巧。这些方法的有效性和风险正在研究中，轻症儿完全没必要折腾它们。&lt;/p>
+&lt;/blockquote>
+&lt;p>这一点和感冒有些相似。实际上很久以前我发过一篇&lt;a href="https://mp.weixin.qq.com/s/bUmmOi6Po9HwFwtHHV8ZHw" target="_blank" rel="noopener">如何应对感冒的文章&lt;/a>
+，那里面的大多内容都适用于新冠，本文的很多内容也出自那篇文章儿。&lt;/p>
+&lt;p>如果把2019年当作新冠元年，今年已经是新冠四年。经过三年多的发展和变异，目前的形势早已大&lt;del>便&lt;/del>变样。&lt;strong>目前流行的奥密克戎变异株传染性增强，致病性减弱&lt;/strong>。且大多数人都接种了疫苗。新冠病毒早已不像2020年初那样分分钟取你狗命。&lt;/p>
+&lt;p>尽管如此，我们还是要做好防护。首先它比感冒严重，且有一定概率惨遭后遗症。其次，新冠病毒在迅速变异，所以即便得了新冠也无法“一阳永逸”。重复感染两次三次的大有人在。所以能不得还是尽量不得。&lt;/p>
+&lt;h2 id="1-预防">1. 预防&lt;/h2>
+&lt;p>预防是应对新冠的最有效方法。&lt;/p>
+&lt;h3 id="11-勤洗手">1.1 勤洗手&lt;/h3>
+&lt;p>使用“七步洗手法”进行洗手。&lt;strong>手脏时不要摸脸&lt;/strong>。这或许比戴口罩还有用。很多感染都是手摸了有病毒的表面然后摸脸导致的。&lt;/p>
+&lt;h3 id="12-戴口罩">1.2 戴口罩&lt;/h3>
+&lt;p>戴口罩可以预防许多呼吸道传染病，但要合理佩戴。需要佩戴医用外科口罩或N95口罩。医用外科口罩一次性使用，N95口罩可适当重复使用。戴上之后要避免触摸口罩，防止手上的病毒进入呼吸道或者手沾上口罩外部的污染物。&lt;/p>
+&lt;h3 id="13-室内通风">1.3 室内通风&lt;/h3>
+&lt;p>通风可有效避免呼吸道疾病。&lt;/p>
+&lt;h3 id="14-注射疫苗">1.4 注射疫苗&lt;/h3>
+&lt;p>疫苗尽管不能防止感染，但可以有效降低重症率。没什么禁忌症儿的都可以尽量完成足量的疫苗儿接种。&lt;/p>
+&lt;p>但官方对于国产疫苗的不良反应一直三缄其口，且国内的研究也早已失去公信力，因此我建议有条件的&lt;strong>尽量接种进口疫苗&lt;/strong>。&lt;/p>
+&lt;h2 id="2-感染了怎么办">2. 感染了怎么办&lt;/h2>
+&lt;h3 id="21-药物">2.1 药物&lt;/h3>
+&lt;p>前面说过，新冠主要是对症治疗。根据不同的症状，可选用如下药物：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">有效成分&lt;/th>
+&lt;th style="text-align:left">常见药物/成分名&lt;/th>
+&lt;th style="text-align:left">作用&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">对乙酰氨基酚（Paracetamol）&lt;/td>
+&lt;td style="text-align:left">泰诺，必理通&lt;/td>
+&lt;td style="text-align:left">减轻疼痛和发烧&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">布洛芬（Ibuprofen）&lt;/td>
+&lt;td style="text-align:left">美林，芬必得&lt;/td>
+&lt;td style="text-align:left">止痛，退烧，消炎&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">右美沙芬（Dextromethorphan）&lt;/td>
+&lt;td style="text-align:left">氢溴酸右美沙芬&lt;/td>
+&lt;td style="text-align:left">止咳&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">氯苯那敏（Chlorpheniramine）&lt;/td>
+&lt;td style="text-align:left">马来酸氯苯那敏，扑尔敏&lt;/td>
+&lt;td style="text-align:left">抗组胺，缓解喷嚏流涕等过敏症状&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">氯雷他定（Loratadine）&lt;/td>
+&lt;td style="text-align:left">开瑞坦&lt;/td>
+&lt;td style="text-align:left">抗组胺，缓解喷嚏流涕等过敏症状&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">伪麻黄碱（Pseudo-ephedrine）&lt;/td>
+&lt;td style="text-align:left">盐酸伪麻黄碱&lt;/td>
+&lt;td style="text-align:left">缓解鼻塞&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">愈创甘油醚（Guaifenesin）&lt;/td>
+&lt;td style="text-align:left">愈创甘油醚&lt;/td>
+&lt;td style="text-align:left">祛痰&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">氨溴索（Ambroxol）&lt;/td>
+&lt;td style="text-align:left">盐酸氨溴索&lt;/td>
+&lt;td style="text-align:left">祛痰&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;ul>
+&lt;li>
+&lt;p>对乙酰氨基酚和布洛芬合理使用十分安全，但过量使用可能导致严重副作用。对乙酰氨基酚每日用量不超过 4g，布洛芬每日用量不超过 2.4g。如果实在高热不退可以考虑交替使用二者，但不建议。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>咳嗽有助于排出呼吸道内的分泌物，因此除非咳嗽严重到影响了睡眠或导致极大不适，否则&lt;strong>不推荐使用止咳药&lt;/strong>，如有必要最好优先使用祛痰药。止咳药和祛痰药不可同时使用，否则无法排痰。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>马来酸氯苯那敏会产生嗜睡、头晕的副作用，&lt;strong>服用后严谨驾驶或操纵精密仪器，否则危险性堪比酒驾&lt;/strong>。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>伪麻黄碱是拟交感胺类药物，运动员慎用。同时它是制作毒品的原料，因此购买通常需要实名登记，在许多地方基本禁售了。（&lt;em>顺便一提，许多人吃了连花清瘟感觉有效，正是因为其中的成分“炙麻黄”中含有的麻黄碱[4]起了作用。但麻黄碱副作用极大。&lt;/em>）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>以上药物&lt;strong>合理使用&lt;/strong>都很安全，利大于弊，没必要因为担心副作用而硬抗。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>许多感冒药都是以上几种成分组合，如果同时服用多种药物，很有可能引起药物过量，因此一定要看好各种成分的含量。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>药店中更常见的是&lt;strong>复方感冒药&lt;/strong>，通常是以上几种成分混合。除此之外常见的复方感冒药成分还有：&lt;/p>
+&lt;ul>
+&lt;li>咖啡因：和非甾体解热镇痛药联用，可增强止痛效果，同时咖啡因可减轻抗组胺药带来的困倦感&lt;/li>
+&lt;li>金刚烷胺：是一种抗病毒药，但人家是治疗流感的，对新冠无效，&lt;strong>不要选用&lt;/strong>&lt;/li>
+&lt;li>中药成分：不仅无效，还会带来未知风险，&lt;strong>不要选用&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>一般来说，能用单方就不用复方。图省事使用复方感冒药，可能反而吃进去许多并不需要的药物。最好的处理方案就是按照上面表格，有什么症状吃什么即可。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>目前，中国抗生素&lt;strong>滥用严重&lt;/strong>，为减少耐药菌的产生，保持抗生素的有效性，&lt;strong>除非有明确细菌感染的指标&lt;/strong>（需要去医院化验），否则不建议使用抗生素。抗生素只对细菌感染有效，对新冠是无效的。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>还有一些普通食物可能有助于缓解症状。多喝水可以帮助新陈代谢。如果嗓子难受可以吃些冰的缓解局部炎症儿。多吃新鲜水果儿和蔬菜，可以补充水分、电解质、糖分、维生素。保证休息充足、心情愉快也有利于恢复。&lt;/p>
+&lt;h3 id="22-就医">2.2 就医&lt;/h3>
+&lt;p>通常来说轻症儿不需要去医院：&lt;/p>
+&lt;ul>
+&lt;li>去了医院也没用，无药可治！&lt;/li>
+&lt;li>浪费医疗资源！&lt;/li>
+&lt;li>轻则开一堆中药，重则给你打中药注射液，那就完犊子了！&lt;/li>
+&lt;li>可能和医院里其他阳性患者交叉感染，阳上加阳！王重阳！&lt;/li>
+&lt;li>医院没有家里休息得好！&lt;/li>
+&lt;/ul>
+&lt;p>但如果是重症儿，就得去医院了。有条件的可以买个血氧仪监测血氧（淘宝大概100+，很小一个夹手指上即可）。如果出现血氧下降或呼吸困难等重症的征兆赶紧去医院吸氧。一般来说症状会在7天内结束。&lt;/p>
+&lt;h2 id="3-喊口号">3. 喊口号&lt;/h2>
+&lt;p>最后，让我们&lt;strong>共创时艰，战胜科学&lt;/strong>！&lt;/p>
+&lt;h2 id="参考资料">参考资料&lt;/h2>
+&lt;ol>
+&lt;li>&lt;a href="https://www.msdmanuals.cn/home/infections/covid-19/covid-19" target="_blank" rel="noopener">COVID-19 - 感染- 《默沙东诊疗手册大众版》&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://mp.weixin.qq.com/s/bUmmOi6Po9HwFwtHHV8ZHw" target="_blank" rel="noopener">【科普】感冒了怎么办- 精神病人欢乐多&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://blog.shadiao.online/post/changyongyao/" target="_blank" rel="noopener">常见疾病及常备药物- 沙雕园&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://mp.weixin.qq.com/s/bZWVlV1ZXxGLJXoujwkXgg" target="_blank" rel="noopener">连花清瘟口罩不能预防新冠，还可能带来严重恶果- 老爸讲科学&lt;/a>
+&lt;/li>
+&lt;/ol></description></item><item><title>教你如何做杠精 —— 经典逻辑谬误</title><link>https://blog.shadiao.win/post/luojimiuwu/</link><guid>https://blog.shadiao.win/post/luojimiuwu/</guid><description>&lt;p>”家里姐姐妹妹都没有，单我有，我说没趣儿；如今来了这个神仙似的妹妹也没有，可知这不是个好东西。“&lt;/p>
+&lt;h2 id="稻草人">稻草人&lt;/h2>
+&lt;p>指夸张、歪曲，甚至凭空创造别人的观点，使自己能够更加轻松的攻击别人。&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>赵铁柱：你怎么不回我消息？&lt;/p>
+&lt;p>李华：啊？我刚才一直在开会，没看见。&lt;/p>
+&lt;p>赵铁柱：你果然是不爱我了！&lt;/p>
+&lt;/blockquote>
+&lt;p>李华因为忙工作没有及时回消息，却被女朋友赵铁柱曲解为“你不爱我了”，这就是典型的稻草人谬误。&lt;em>所以&lt;del>这时候应该严厉指出女朋友犯了稻草人谬误，这样她就会认错了&lt;/del>。&lt;/em>&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>李华：国家应该投入更多的预算来发展教育行业。&lt;/p>
+&lt;p>赵铁柱：想不到你这么不爱国，居然想减少国防开支，让外国列强有机可乘。&lt;/p>
+&lt;/blockquote>
+&lt;p>李华的观点本来是“增加教育行业的预算”，却被歪曲成“想减少国防开支”，进而上升到不爱国，这帽子扣的，帽子戏法啊！&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>李华：不能因为中医是老祖宗传下来的，就认为他是对的。老祖宗也会犯错。&lt;/p>
+&lt;p>赵铁柱：作为一个中国人你竟然这么不热爱传统文化，说传统文化是错的？&lt;/p>
+&lt;/blockquote>
+&lt;p>李华的观点是：“通过老祖宗来论证中医的正确性”这一论证过程是不对的，可赵铁柱把它歪曲成“不热爱传统文化”，甚至于“传统文化都是错的”。（画外音：没给你扣个境外势力的帽子就偷着乐吧）（此外，这句话还有强加因果的问题）&lt;/p>
+&lt;p>练习：&lt;/p>
+&lt;ul>
+&lt;li>甲：“我们应该追责隐瞒疫情导致瘟疫扩散的官员。” 乙：“现在最重要的是救灾，应该把重心放在救灾上。”&lt;/li>
+&lt;/ul>
+&lt;h2 id="红鲱鱼转移话题">红鲱鱼（转移话题）&lt;/h2>
+&lt;p>将一个不相干的话题插进来，从而把读者或者听众的注意力转移到另一个论题上，赢得论战。它的基本顺序是：&lt;/p>
+&lt;ol>
+&lt;li>A 话题正在被讨论&lt;/li>
+&lt;li>B 话题突然插了进来，好像和A有关，但实际上并不相关&lt;/li>
+&lt;li>A 话题被置之不理&lt;/li>
+&lt;/ol>
+&lt;p>红鲱鱼和稻草人有点相似。倒不必非要分得那么清楚，只要知道它们都是错误的论证方式就行了。&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>李华：中药的研发过程不符合科学要求。&lt;/p>
+&lt;p>赵铁柱：你不试试怎么知道有没有用？&lt;/p>
+&lt;/blockquote>
+&lt;p>这里李华在讨论中药研发过程是否合理，而赵铁柱绕开对研发过程的讨论，转而讨论“通过亲自尝试来证明有效性”这一话题。&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>路人：这小鲜肉演技也太差了吧？尴尬癌犯了。&lt;/p>
+&lt;p>粉丝：你知道他有多努力吗？&lt;/p>
+&lt;/blockquote>
+&lt;p>粉丝把话题从其业务能力转移到某明星个人的努力上。&lt;/p>
+&lt;p>需要注意的是，B 话题可能确实有讨论价值，但转移到 B 话题并不能驳倒 A 话题。A 话题所带来的问题仍未解决。此外，如果一直转移话题，会产生越来越多的没讨论完的话题，迟早爆栈，所以转移话题这种操作不讲武德。&lt;/p>
+&lt;h2 id="因果谬误">因果谬误&lt;/h2>
+&lt;p>因果谬误泛指各种未有充分证据便轻率断定因果关系的不当推论。&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>李华感冒了，吃了一些感冒药，结果发烧了。所以是感冒药导致疾病恶化。&lt;/p>
+&lt;/blockquote>
+&lt;p>这里的错误在于，并不能证明发烧是感冒药导致的。可能是感冒导致的发烧，不吃药还是会发烧（甚至烧的更厉害）。&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>冰淇淋会导致溺水，因为有数据表明冰淇淋的销量和溺水事故发生数正相关。&lt;/p>
+&lt;/blockquote>
+&lt;p>我们暂且认为数据是准确的，确实冰淇淋的销量和溺水率正相关。但它们之间仅仅是相关性，并没有因果关系。事实上，可能是天气炎热导致冰淇淋销量上升，同时也导致人们游泳变多，溺水事故自然也变多了。&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>男同性恋中艾滋病患者那么多，说明同性性行为会导致艾滋病。&lt;/p>
+&lt;/blockquote>
+&lt;p>同样地没有证据，强加因果。&lt;/p>
+&lt;h2 id="诉诸感情">诉诸感情&lt;/h2>
+&lt;p>就是情感绑架。&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>猪猪那么可爱，怎么可以吃猪肉呢？猪猪就跟小朋友一样，你怎么忍心伤害小朋友？&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>你是中国人，你连我们老祖宗留下来的中医都不信？&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>例：（诉诸自然）&lt;/p>
+&lt;p>异性相吸是自然规律，所以同性恋是不合理的。&lt;/p>
+&lt;/blockquote>
+&lt;p>认为一个事物是“自然”的，所以它是合理、必然并且更好的。这是不对的，这也算诉诸感情的一种。一个事物是自然的并不一定代表它就更好。例如弱肉强食是大自然中普遍存在的现象，这不能证明社会达尔文主义的正确性。&lt;/p>
+&lt;p>诉诸感情详细说来，有很多种，这里就不一一列举了：&lt;/p>
+&lt;ul>
+&lt;li>诉诸恐惧：某事会产生某种可怕的后果，因此我们应该反对某事或接受预防某事的建议&lt;/li>
+&lt;li>诉诸厌恶：某事令人恶人，因此是不对的&lt;/li>
+&lt;li>诉诸仇恨：某事有些令人不愉快的相关经验，因此不该支持某事&lt;/li>
+&lt;li>诉诸谄媚：奉承与谄媚他人，冀使其支持自己的观点。&lt;/li>
+&lt;li>诉诸怜悯：挑起对方的同情与愧疚，以博取他人支持自己的想法。&lt;/li>
+&lt;li>诉诸荒谬：主张对方的说词荒谬、可笑、幽默，因而该说法不值得接受。&lt;/li>
+&lt;li>诉诸自然：某个现象很自然，因而是可取的；或主张某个现象不自然，因而是不可取的。&lt;/li>
+&lt;li>诉诸新潮：宣称某事物最新、最符合时代潮流，以吸引他人接受。&lt;/li>
+&lt;li>非我所创：某观念或知识是由外人所创造，而对其不信任或低估其价值。&lt;/li>
+&lt;li>是我所创：某观念或知识是由自己人所创造，而对其不信任或低估其价值。&lt;/li>
+&lt;/ul>
+&lt;h2 id="片面谬误">片面谬误&lt;/h2>
+&lt;p>主张某些情况是一般性原则的例外，却提出无关的理由。&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>我国国情不同，因此西式民主暂时不适合我国。&lt;/p>
+&lt;/blockquote>
+&lt;p>一句“国情不同”草草了事是没有说服力的，必须有合理的理由说明国情有何不同，并论证此等不同为何会导致“西式”民主不适用。否则随便一个什么理论，都可以套用一个“XX不同，所以不适合”。&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>女生该注重外表，应该常保自己的外表干干净净的，应该留长头发但不该有体毛，而且皮肤要白、身材要瘦、身上不能有痘子或疤痕；不过男生和女生不一样，不必注重外表。&lt;/p>
+&lt;/blockquote>
+&lt;p>男女之间的确存在客观差异，但不能仅仅因为男女存在差异，就论证某些规则对女生适用但对男生不适用。必须明确指出男生和女生在哪一方面有差异，这种差异又是怎样导致了这些规则不适用，否则就是胡诌八扯。&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>为了节省开支，员工出差只准买最便宜的机票，但我是老板，所以我可以买最好的。&lt;/p>
+&lt;/blockquote>
+&lt;p>要有合理的理由说明为什么身为老板就能买最好的机票，而其他员工必须节省支出。&lt;/p>
+&lt;h2 id="转移举证责任诉诸无知">转移举证责任/诉诸无知&lt;/h2>
+&lt;p>这两个放在一起讲，因为常常同时出现。&lt;/p>
+&lt;p>诉诸无知的意思是，某件事不能证明是错的，就认为它是对的。&lt;/p>
+&lt;p>转移举证责任则是违背了“谁主张谁举证”的原则。要由观点/理论/方法的提出者证明它是对的，而不是让别人证明它是错的。&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>没有人能证明飞天拉面之神不存在，所以应该相信飞天拉面神教。&lt;/p>
+&lt;/blockquote>
+&lt;p>显然，应该由提出者证明飞面神存在，然后人们才会相信。如果提出观点的人将举证责任推卸给别人，就是一种谬误了。&lt;/p>
+&lt;p>（&lt;del>但飞面神真的存在！&lt;/del>）&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>中药有用，因为你不能证明它无用。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="乐队花车从众效应">乐队花车（从众效应）&lt;/h2>
+&lt;p>意思是将许多人或所有人所相信的事情视为真实。正所谓“参加者只要跳上了这台乐队花车，就能够轻松地享受游行中的音乐，又不用走路”，也因此英文词组“jumping on the bandwagon”（跳上乐队花车）就代表了“进入主流”。&lt;/p>
+&lt;p>实际上，一个事物、观点的流行程度和它本身是否合理没有关系。地球是球形的，在人们相信地球是平的时代的时候，地球也是球形的，地球才不管你信不信它。&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>3亿人都在用拼夕夕，你怎么还不下载？&lt;/p>
+&lt;/blockquote>
+&lt;p>大家都用，就一定是好的？&lt;/p>
+&lt;blockquote>
+&lt;p>许多事实证明，多数或所有人相信的事情，在当下或经过时间的演进，并不一定是对的。例如在18世纪，美国绝大多数人都认为这世界上可以有奴隶存在，但在今日美国有这样想法的人已经很少了。或是有人可以宣称“因为有那么多人吸烟，所以吸烟是健康的”，但事实上许多医学证明指出吸烟有害健康，所以应该说：“吸烟有害健康，虽然有那么多人吸烟。&lt;/p>
+&lt;p>（引自《每天学点心理学》，牧之著）&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="诉诸权威">诉诸权威&lt;/h2>
+&lt;p>要证明一个观点，只是摘录别人的观点是不够的， 至少要知道所提到的权威为什么有那样的观点，他的依据是什么。应该是“某权威提出XX，依据是XX，所以XX”，而不是“某权威提出XX，所以XX”。&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>钟南山说板蓝根可以用来预防新冠。&lt;/p>
+&lt;/blockquote>
+&lt;p>仅仅这样是不足以让人相信的，因为没有论证。实际上，真正严谨的文章都会在提出观点的同时附带上理由。&lt;strong>权威之所以是权威，是因为他们总能提出令人信服的理由。是理由让我们相信观点，而不是权威让我们相信观点。否则，“权威”便和“神棍”无异。&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>电视上都说了，这四种食物吃了可以防癌！你快转发到你加的群里！&lt;/p>
+&lt;/blockquote>
+&lt;p>电视其实根本不是权威……不过无所谓了。&lt;/p>
+&lt;blockquote>
+&lt;p>注：乐队花车和诉诸权威往往同时出现。在流量小鲜肉粉丝的吹嘘中会经常看到乐队花车和诉诸权威的谬误，粉丝们会拿出一系列数据来证明他们的偶像多么受欢迎，又会拿出种种奖项来说他们的偶像有多么专业，但其实数据都是粉丝刷出来，奖项也只是注水分的，所以这两点并不能说明这个流量小鲜肉的作品有多么的好。&lt;/p>
+&lt;p>引自：乐队花车谬误到底是什么？ - Nevoeiro的回答 - 知乎 &lt;a href="https://www.zhihu.com/question/351149817/answer/888174693" target="_blank" rel="noopener">https://www.zhihu.com/question/351149817/answer/888174693&lt;/a>
+&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="没有真正的苏格兰人">没有真正的苏格兰人&lt;/h2>
+&lt;p>指在遇到反例时修改标准。&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>李华：广东人都喜欢吃福建人。&lt;/p>
+&lt;p>赵铁柱：我是广东人，我就不喜欢吃福建人。&lt;/p>
+&lt;p>李华：你不是真正的广东人，真正的广东人都喜欢吃福建人。&lt;/p>
+&lt;/blockquote>
+&lt;p>设 $A$ 为广东人集合， $B$ 是喜欢吃福建人的人集合，李华认为 $A\subset B$，赵铁柱却给出一个反例：$a\in A$，但$a\notin B$。然后李华说，还存在一个“真正的$A$”集合——$A_{True}$， 满足 $A_{True}\subset B$。可仔细想想，$A_{True}$ 的定义是 $A_{True}:=A\cap B$，所以 $A_{True}\subset B$ 是完全正确的。可是这毫无意义，原来的问题并没有解决——&lt;strong>给出 $A$ 中的一个元素，我们还是不知道它是否在 $B$ 中。&lt;/strong>&lt;/p>
+&lt;p>最典型的例子当属中医粉的常见言论：xx不是真正的中医：&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>李华：我家楼下那个中医诊所，前几天给人开中药耽误了治疗，那人病死了。&lt;/p>
+&lt;p>赵铁柱：那肯定不是真正的中医，真正的中医是很厉害的，连未病都能治，更不可能把人治死。&lt;/p>
+&lt;/blockquote>
+&lt;p>当然，即便李华说的是事实，也不能就此说明中药能吃死人，因为只是个案。但赵铁柱反驳的方式是错的，也犯了逻辑谬误。&lt;/p>
+&lt;h2 id="轶事证据">轶事证据&lt;/h2>
+&lt;p>就是编了一个栩栩如生的故事，然后通过这个故事得出了结论。有些传闻往往细节详细、诩诩如生，让人印象深刻；有些案例则以&lt;a href="https://zh.wikipedia.org/wiki/%e6%96%b0%e8%81%9e" target="_blank" rel="noopener">新闻&lt;/a>
+、&lt;a href="https://zh.wikipedia.org/wiki/%e5%85%ab%e5%8d%a6%e6%96%b0%e9%97%bb" target="_blank" rel="noopener">八卦&lt;/a>
+的形式被人一传再传，造成三人成虎，让人听久了便信以为真。&lt;/p>
+&lt;p>这种奇葩论证手法广泛见于：卖祖传秘方的电视广告、“相亲相爱一家人”微信群、高中语文课堂和高中文科生作文等逻辑重灾区。&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>我给你讲个故事，真事的。我隔壁老王头，今年90多岁了，我那天出门拉屎碰见他，问他怎么保养得这么好，活了这么久。人家点了一根烟，不紧不慢地说：“我觉得吧，现在人压力都太大，不会发泄。像我，饭前便后都抽一根烟，我抽的是美国进口的核弹，啊不是，美国进口的养生烟，劲大，疏通血管杠杠的！”完后人家从裤裆里掏出一条烟，800块钱一包啊，他说看我小子面善，给我打个骨折，10块钱卖我。这不，我一口气卖了10包，从今天开始你也饭前便后抽这个核弹，啊不是，养生烟！&lt;/p>
+&lt;/blockquote>
+&lt;p>看起来像一本正经的胡说八道，但仔细回想一下，许多保健品、中医药、“祖传秘方”是不是都是这个套路？&lt;/p>
+&lt;p>这种论证方式犯了两个错误：&lt;/p>
+&lt;p>第一，没法确认这件事的真实性。讲述人可能是从上一个讲述人那里听来的故事，而上一个讲述人可能骗他；即便没有故意骗他，在不断口耳相传的过程中也会产生极大的偏差。即便此故事是讲述人亲眼所见，记忆也可能出现偏差，更不用说眼见未必为实——&lt;/p>
+&lt;p>&lt;img src="https://blog.shadiao.win/image/1.jpeg" alt="新传角度看热点| 从刘强东性侵案中看反转新闻_舆论">&lt;/p>
+&lt;p>第二，即便这件事是真实客观的，仅仅凭一个孤例也不能证明什么。就像上例，老王真的天天抽烟活了90多岁，有可能人家包了八个二奶，心情舒畅才活得久。也有可能人家要是不抽烟，能活200岁，抽烟导致只活了90岁。&lt;strong>“孤例不证”乃是做人最基本的底线。&lt;/strong>&lt;/p>
+&lt;h2 id="德克萨斯神枪手">德克萨斯神枪手&lt;/h2>
+&lt;p>名字逐渐怪异起来。他还有一个更形象的说法叫“先射箭再画靶”。通俗地讲，就是在大量的数据/证据中刻意地挑选出对自己的观点有利的数据/证据，而将其余对自己不利的数据/证据弃之不用。&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>1992年瑞典有个研究试图找出电源线对健康的影响，他们收集了高压电源线300米范围内所有住户的样本长达25年，对超过800种疾病一一检查发生率的统计差异。他们发现幼年白血病的发病率是一般人的4倍，还推动政府为此采取行动。&lt;/p>
+&lt;/blockquote>
+&lt;p>要解释这个问题，需要点统计学知识。一般来说统计上 p-value &amp;lt; 0.05 便认为显著，而这种显著性有 5% 的概率是因为随机因素引起的。当我们统计 800 种疾病，至少有一种疾病由随机因素产生“假阳性”结果的概率是：
+$$
+1-(1-0.05)^{800}&amp;gt;1-10^{-17}
+$$
+也就是说，如果我们故意针对它，我们有超过 $1-10^{-17}$ 的概率找到一种疾病来让它背锅，而实际上这只是随机因素引起的。&lt;/p>
+&lt;p>数据聚集现象无处不在。比如我们在平面上随机生成一些点，总会有某些区域的数据恰好呈现出某种规律性，想要寻找某种解释的人一定会找到一种解释。&lt;/p>
+&lt;p>当遇到一些巧合时，经常有人会说“哪有那么巧的事？一定是超自然力量作祟”。但是仔细想想，我们活了这么多年，见过和经历过大大小小的事件不计其数，&lt;strong>要是一次巧合都没有遇到过，那才是巧了&lt;/strong>。&lt;/p>
+&lt;h2 id="不当类比">不当类比&lt;/h2>
+&lt;p>就是字面意思，不合适的类比。多见于心灵鸡汤。&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>李华整天只顾读书，却不认真赚钱谋生，妻子赵铁柱无法忍受决定和他离婚。几年后小朱成为大官，衣锦还乡。妻子要求和他复合，李华不同意。妻子问为什么，李华把水泼在地上说：“我们的关系就像这水一样，再也收不回来了。”&lt;/p>
+&lt;/blockquote>
+&lt;p>如果李华只是想气赵铁柱，这样是没问题的。但如果李华像把“覆水难收”当作不能复合的理由，则并没有回答赵铁柱的问题。覆水的确难收，但那和婚姻有什么关系？&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>牛天天吃草，身体那么壮，所以吃素有益健康。&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>彩虹，在大雨后出现；腊梅，在风雪中吐蕊；雄鹰，在险峰上空盘旋；人，在困境中弥坚。&lt;/p>
+&lt;/blockquote>
+&lt;p>即便彩虹、腊梅、雄鹰都这样，也不能证明人就非得遭遇点什么困境才能成长。（当然，写作文的时候泼点鸡汤增强气势没问题，但要清楚，这不能用于论证，顶多用于论证之后锦上添花）&lt;/p>
+&lt;p>没事不要瞎比喻，即便 A 和 B 有相似之处，也不能认为对 A 成立的结论对 B 也成立，更何况许多不当类比中，被比较的两件事一毛钱关系都没有。&lt;/p>
+&lt;h2 id="滑坡谬误">滑坡谬误&lt;/h2>
+&lt;p>认为一件事，如果发生了A，就会发生B，接着会发生C，…… 那么Z也一定会发生，以此来表示A不应该发生。&lt;/p>
+&lt;blockquote>
+&lt;p>例：&lt;/p>
+&lt;p>如果我们允许和同性结婚，那是不是也能和动物结婚？是不是也能和纸片人、桌椅板凳结婚？&lt;/p>
+&lt;/blockquote>
+&lt;p>能同性结婚不意味着可以和动物结婚，也不意味着和纸片人结婚！&lt;/p>
+&lt;blockquote>
+&lt;p>例：（不玩炉石的同学们可以忽略这条）&lt;/p>
+&lt;p>一个詹姆斯（银背族长）能单防4个报告兵，4个报告兵能打4个岩浆暴怒者，4个岩浆暴怒者能打4个竞技场主宰，4个竞技场主宰能打4个伊瑟拉，所以詹姆斯=4个伊瑟拉。詹皇，yyds！&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;del>虽然但是，银背族长 yyds！&lt;/del>&lt;/p>
+&lt;h2 id="后记">后记&lt;/h2>
+&lt;p>需要说明：&lt;/p>
+&lt;ol>
+&lt;li>很多人想当然地认为，如果一句话有逻辑谬误，就错了。实际上，这又犯了逻辑谬误 —— 包含逻辑谬误的句子，其结论可能是对的，也可能是错的。但不论结论对错，其论证方式一定是不合理的，从而导致这句话并没有为论证观点提供任何正面或负面的帮助。&lt;/li>
+&lt;li>在日常聊天中往往不必太注意细节，否则会被不懂这些的人扣上“低情商”、“直男”之类的帽子。（&lt;del>不过被扣这种帽子倒不见得是坏事&lt;/del>）&lt;/li>
+&lt;/ol></description></item><item><title>常见疾病及常备药物</title><link>https://blog.shadiao.win/post/changyongyao/</link><guid>https://blog.shadiao.win/post/changyongyao/</guid><description>&lt;p>本文介绍生活中的常见疾病的处理方式及常用药物注意事项。&lt;/p>
 &lt;p>&lt;strong>注：以下内容仅供参考，不作为医疗建议。&lt;/strong>&lt;/p>
-&lt;p>文末附录有常备药物列表，&lt;strong>懒得看的可以直接拉到最后&lt;/strong>。&lt;/p></description></item></channel></rss>
+&lt;p>文末附录有常备药物列表，&lt;strong>懒得看的可以直接拉到最后&lt;/strong>。&lt;/p>
+&lt;h2 id="感冒">感冒&lt;/h2>
+&lt;p>鲁迅曾经说过，人总是要感冒的。为此我还专门写过&lt;a href="https://mp.weixin.qq.com/s/bUmmOi6Po9HwFwtHHV8ZHw" target="_blank" rel="noopener">一篇科普&lt;/a>
+。简单来说，&lt;strong>其成因是吐沫星子传播或是直接接触病毒&lt;/strong>[2]。&lt;/p>
+&lt;p>感冒属于&lt;strong>自限性疾病&lt;/strong>，不吃药需要一周才能好，吃药的话 7 天就好了。&lt;/p>
+&lt;p>目前&lt;strong>尚无针对感冒病毒的特效药&lt;/strong>，包括市面上的所有抗病毒药、抗生素等都对普通感冒无效[3]。推荐的处理方案是：&lt;/p>
+&lt;ul>
+&lt;li>多休息，多喝水，&lt;del>等死&lt;/del>&lt;strong>等待自愈&lt;/strong>&lt;/li>
+&lt;li>开窗通风，降低室内病毒量并防止传染别人&lt;/li>
+&lt;li>必要时嗑药，缓解不适症状&lt;/li>
+&lt;li>发生严重并发症、持续高热或其他异常状况，或者发现可能不是普通感冒时，&lt;strong>及时去医院就诊&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;h3 id="单方药物">单方药物&lt;/h3>
+&lt;p>具体来说可对症使用以下药物：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>有效成分&lt;/th>
+&lt;th>常见药物/成分名&lt;/th>
+&lt;th>作用&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>对乙酰氨基酚（Paracetamol）&lt;/td>
+&lt;td>泰诺林，必理通&lt;/td>
+&lt;td>减轻疼痛和发烧&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>布洛芬（Ibuprofen）&lt;/td>
+&lt;td>美林，芬必得&lt;/td>
+&lt;td>止痛，退烧，消炎&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>右美沙芬（Dextromethorphan）&lt;/td>
+&lt;td>氢溴酸右美沙芬&lt;/td>
+&lt;td>止咳&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>氯苯那敏（Chlorpheniramine）&lt;/td>
+&lt;td>马来酸氯苯那敏，扑尔敏&lt;/td>
+&lt;td>抗组胺，缓解喷嚏流涕等过敏症状&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>氯雷他定（Loratadine）&lt;/td>
+&lt;td>开瑞坦&lt;/td>
+&lt;td>抗组胺，缓解喷嚏流涕等过敏症状&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>伪麻黄碱（Pseudo-ephedrine）&lt;/td>
+&lt;td>盐酸伪麻黄碱&lt;/td>
+&lt;td>缓解鼻塞&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="复方药物">复方药物&lt;/h3>
+&lt;p>药店中更常见的是&lt;strong>复方感冒药&lt;/strong>，通常是以上几种成分混合。除此之外常见的复方感冒药成分还有：&lt;/p>
+&lt;ul>
+&lt;li>咖啡因：和非甾体解热镇痛药联用，可增强止痛效果，同时咖啡因可减轻抗组胺药带来的困倦感&lt;/li>
+&lt;li>金刚烷胺：是一种抗病毒药，但人家是治疗流感的，对普通感冒无效，&lt;strong>不要选用&lt;/strong>&lt;/li>
+&lt;li>中药成分：不仅无效，还会带来未知风险，&lt;strong>不要选用&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>一般来说，能用单方就不用复方。图省事使用复方感冒药，可能反而吃进去许多并不需要的药物。最好的处理方案就是按照上面表格，有什么症状吃什么即可。&lt;/p>
+&lt;h3 id="抗生素">抗生素&lt;/h3>
+&lt;p>目前，中国抗生素&lt;strong>滥用严重&lt;/strong>，为减少耐药菌的产生，保持抗生素的有效性，&lt;strong>除非有明确细菌感染的指标&lt;/strong>（需要去医院化验），否则不建议使用抗生素。抗生素只对细菌感染有效，普通感冒是无效的[4,5]。&lt;/p>
+&lt;h3 id="其他注意事项">其他注意事项&lt;/h3>
+&lt;ul>
+&lt;li>对乙酰氨基酚合理使用十分安全，但过量使用可能导致严重肝损伤。美国 FDA 规定对乙酰氨基酚每日用量&lt;strong>不超过 4g&lt;/strong>&lt;/li>
+&lt;li>咳嗽有助于排出呼吸道内的分泌物，因此除非咳嗽严重到影响了睡眠或导致极大不适，否则&lt;strong>不推荐使用止咳药&lt;/strong>&lt;/li>
+&lt;li>马来酸氯苯那敏会产生嗜睡、头晕的副作用，&lt;strong>服用后严谨驾驶或操纵精密仪器，否则危险性堪比酒驾&lt;/strong>；氯雷他定则无明显嗜睡作用&lt;/li>
+&lt;li>伪麻黄碱是拟交感胺类药物，运动员慎用。同时其可能可以用来制作冰毒（&lt;strong>在中国生产、运输、贩卖、非法持有毒品都是犯罪行为，请不要动歪脑筋&lt;/strong>），因此购买通常需要实名登记&lt;/li>
+&lt;li>以上药物&lt;strong>合理使用&lt;/strong>都很安全，利大于弊，没必要因为担心副作用而硬抗&lt;/li>
+&lt;li>许多感冒药都是以上几种成分组合，如果同时服用多种药物，很有可能引起药物过量，因此一定要看好各种成分的含量&lt;/li>
+&lt;/ul>
+&lt;h2 id="腹泻">腹泻&lt;/h2>
+&lt;p>腹泻（仅讨论急性腹泻，慢性腹泻请就医）是指排便量、大便水分以及排便频率增加。多数腹泻不会造成什么后果，但&lt;strong>严重腹泻会导致脱水、电解质紊乱，搞不好就嗝屁&lt;/strong>，因此不可掉以轻心。&lt;/p>
+&lt;h3 id="需要立刻就医的情况">需要立刻就医的情况&lt;/h3>
+&lt;p>出现以下情况请立刻就医[6]：&lt;/p>
+&lt;ul>
+&lt;li>血便、黑便及柏油样便，哎呀吓人；&lt;/li>
+&lt;li>持续高热不退，哎呀真烫；&lt;/li>
+&lt;li>出现脱水体征，哎呀好虚；&lt;/li>
+&lt;li>伴随明显、剧烈的腹痛，哎呀难受。&lt;/li>
+&lt;/ul>
+&lt;h3 id="补液">补液&lt;/h3>
+&lt;p>多喝液体（果汁、肉汤）等，补充水分及电解质。也可使用世界卫生组织推荐的&lt;strong>口服补液盐&lt;/strong>。口服补液盐有三个版本，第一个版本叫口服补液盐Ⅰ，第二个版本叫口服补液盐Ⅱ，你猜第三个版本叫什么？&lt;/p>
+&lt;p>答对了，叫口服补液盐Ⅲ。（好冷啊）&lt;/p>
+&lt;p>简单来说，版本越高配方越完善，但低版本的也能用。注意事项：&lt;/p>
+&lt;ul>
+&lt;li>口服补液盐要&lt;strong>严格按照说明书要求的浓度配制&lt;/strong>，不然渗透压不对可能弄巧成拙&lt;/li>
+&lt;li>不要用果汁、牛奶、&lt;del>茅台&lt;/del>等奇怪液体配制&lt;/li>
+&lt;/ul>
+&lt;h3 id="止泻药">止泻药&lt;/h3>
+&lt;p>感染性腹泻不建议盲目使用止泻药，有可能把病菌排出去会更好[6]。非感染性腹泻可以服用&lt;strong>蒙脱石散&lt;/strong>。注意蒙脱石散有吸附作用，和其他药物同时服用可能降低药效。&lt;/p>
+&lt;h3 id="抗生素-1">抗生素&lt;/h3>
+&lt;p>仍然&lt;strong>不能盲目使用抗生素&lt;/strong>。病毒、渗透或着凉引起的腹泻，根本没人家细菌什么事，抗生素没用。只有去医院检查发现明确的细菌感染指征才有必要使用抗生素。&lt;/p>
+&lt;h2 id="炎症与抗炎药">炎症与抗炎药&lt;/h2>
+&lt;h3 id="抗生素-2">抗生素？&lt;/h3>
+&lt;p>首先，请允许我用数学公式环境澄清一个概念：
+$$
+\text{消炎药}\ne\text{抗生素}.
+$$
+&lt;strong>炎症&lt;/strong>是一种症状，包括红肿、发热、疼痛等，&lt;strong>消炎药指的是可以减轻这些症状的药物&lt;/strong>。&lt;strong>消炎药的作用往往都是缓解症状&lt;/strong>。而&lt;strong>抗生素是抑制细菌生长或杀死细菌的药物&lt;/strong>，只对细菌感染有效。有炎症不一定是细菌感染，病毒感染、真菌感染、过敏、外伤等都可能导致炎症，这些情况吃抗生素吃到饱也没用。&lt;/p>
+&lt;h3 id="类固醇">类固醇&lt;/h3>
+&lt;p>常见的消炎药包括&lt;strong>类固醇和非甾体抗炎药&lt;/strong>。类固醇药物主要是一些激素，最常见的是氢化可的松软膏（糖皮质激素），外用，治疗皮炎、皮疹等。激素类药物不建议过多使用，一般来说使用炉甘石洗剂风险更小。&lt;/p>
+&lt;h3 id="非甾体抗炎药nsaid">非甾体抗炎药（NSAID）&lt;/h3>
+&lt;p>非甾体抗炎药是本场的主角。许多一线药物已临床使用数十年，安全可靠，解热镇痛抗炎效果良好，是&lt;del>杀人越货&lt;/del>居家旅行的必备药物。&lt;/p>
+&lt;p>NSAID 是一大类药物，但对于生活中自己处理的常见病，使用&lt;strong>布洛芬&lt;/strong>就够了。如果疼痛严重，可以去医院开止痛效果更好的处方药。&lt;/p>
+&lt;h2 id="其他常见情况与药物">其他常见情况与药物&lt;/h2>
+&lt;h3 id="过敏">过敏&lt;/h3>
+&lt;p>过敏通常使用抗组胺药。一共有三代，而非处方药主要集中在第一代和第二代：&lt;/p>
+&lt;ul>
+&lt;li>第一代：苯海拉明，氯苯那敏&lt;/li>
+&lt;li>第二代：氯雷他定，西替利嗪&lt;/li>
+&lt;/ul>
+&lt;p>最主要的区别是：第一代吃了困。第二代吃了不困，作用时间长，&lt;del>一口气上五楼不费劲&lt;/del>。至于第二代的缺点嘛，&lt;strong>贵&lt;/strong>。&lt;/p>
+&lt;h3 id="万能皮肤药-炉甘石洗剂">万能皮肤药-炉甘石洗剂&lt;/h3>
+&lt;p>隆重请出堪称“万能皮肤药”的&lt;strong>炉甘石洗剂&lt;/strong>。便宜大碗，老少皆宜。其主要成分是炉甘石，有收敛和保护作用。他能干什么呢：&lt;/p>
+&lt;ul>
+&lt;li>蚊虫叮咬&lt;/li>
+&lt;li>痱子、湿疹、皮肤过敏&lt;/li>
+&lt;li>轻度晒伤&lt;/li>
+&lt;/ul>
+&lt;p>总之，基本上只要皮肤没破损，都可以涂它一手。但还是有注意事项的：&lt;/p>
+&lt;ul>
+&lt;li>用前摇一摇&lt;/li>
+&lt;li>&lt;strong>皮肤破损禁用&lt;/strong>&lt;/li>
+&lt;li>重复涂抹时，要先把上一次残留的痕迹擦掉，使得洗剂能和皮肤直接接触&lt;/li>
+&lt;/ul>
+&lt;h3 id="外伤">外伤&lt;/h3>
+&lt;p>普通外伤建议使用&lt;strong>碘伏&lt;/strong>消毒，对皮肤无刺激性，不疼。不建议用酒精，因为疼。而如果发生了感染，可以使用外用抗生素，例如&lt;strong>莫匹罗星软膏&lt;/strong>。&lt;/p>
+&lt;h3 id="其他">其他&lt;/h3>
+&lt;p>包括一些器材，比如体温计、创可贴等。比较推荐电子体温计，方便快捷，又没有水银泄露的风险。&lt;/p>
+&lt;h2 id="其他常用工具">其他常用工具&lt;/h2>
+&lt;h3 id="默沙东诊疗手册家庭版">默沙东诊疗手册家庭版&lt;/h3>
+&lt;p>链接：https://www.msdmanuals.cn/home&lt;/p>
+&lt;ul>
+&lt;li>一站式提供全面、可靠、浅显、实用的医学信息&lt;/li>
+&lt;li>适合非医学专业人士&lt;/li>
+&lt;li>完全免费，访问便捷&lt;/li>
+&lt;/ul>
+&lt;p>相比网上各种宣传伪科学的自媒体，不知道高到哪里去了。&lt;/p>
+&lt;h2 id="参考文献">参考文献&lt;/h2>
+&lt;ol>
+&lt;li>【科普】感冒了怎么办 &lt;a href="https://mp.weixin.qq.com/s/bUmmOi6Po9HwFwtHHV8ZHw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/bUmmOi6Po9HwFwtHHV8ZHw&lt;/a>
+&lt;/li>
+&lt;li>Common cold - Wikipedia &lt;a href="https://en.wikipedia.org/wiki/Common_cold" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Common_cold&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://www.msdmanuals.cn/home/infections/respiratory-viruses/common-cold?query=%E6%84%9F%E5%86%92" target="_blank" rel="noopener">https://www.msdmanuals.cn/home/infections/respiratory-viruses/common-cold?query=%E6%84%9F%E5%86%92&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://dxy.com/column/7878" target="_blank" rel="noopener">https://dxy.com/column/7878&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://dxy.com/column/4707" target="_blank" rel="noopener">https://dxy.com/column/4707&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://dxy.com/disease/9806/detail" target="_blank" rel="noopener">https://dxy.com/disease/9806/detail&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://www.msdmanuals.cn/home/digestive-disorders/symptoms-of-digestive-disorders/diarrhea-in-adults?query=%E8%85%B9%E6%B3%BB" target="_blank" rel="noopener">https://www.msdmanuals.cn/home/digestive-disorders/symptoms-of-digestive-disorders/diarrhea-in-adults?query=%E8%85%B9%E6%B3%BB&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="http://gi.dxy.cn/article/593006" target="_blank" rel="noopener">http://gi.dxy.cn/article/593006&lt;/a>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="附录常备药物列表">附录：常备药物列表&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>药物&lt;/th>
+&lt;th>主要用处&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>对乙酰氨基酚&lt;/td>
+&lt;td>解热镇痛&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>布洛芬&lt;/td>
+&lt;td>解热镇痛抗炎&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>氢溴酸右美沙芬&lt;/td>
+&lt;td>止咳&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>马来酸氯苯那敏&lt;/td>
+&lt;td>抗过敏，可用于感冒&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>氯雷他定&lt;/td>
+&lt;td>抗过敏&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>蒙脱石散&lt;/td>
+&lt;td>止泻&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>口服补液盐&lt;/td>
+&lt;td>腹泻时补液&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>炉甘石洗剂&lt;/td>
+&lt;td>万能皮肤药&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>莫匹罗星软膏&lt;/td>
+&lt;td>外用抗生素&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>碘伏&lt;/td>
+&lt;td>皮肤外伤消毒&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>创可贴&lt;/td>
+&lt;td>外伤&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>电子体温计&lt;/td>
+&lt;td>测体温&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item></channel></rss>
