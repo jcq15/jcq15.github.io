@@ -168,8 +168,8 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">auth_basic_user_file&lt;/span> &lt;span style="color:#b44">[location&lt;/span> &lt;span style="color:#b44">of&lt;/span> &lt;span style="color:#b44">the&lt;/span> &lt;span style="color:#b44">passwdfile]&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#080;font-style:italic"># 建议使用https，不然数据会在网上裸奔，也不安全
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic">&lt;/span> &lt;span style="color:#a2f;font-weight:bold">ssl_certificate&lt;/span> &lt;span style="color:#b44">/etc/letsencrypt/live/shadiao.online/fullchain.pem&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">ssl_certificate_key&lt;/span> &lt;span style="color:#b44">/etc/letsencrypt/live/shadiao.online/privkey.pem&lt;/span>;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#080;font-style:italic">&lt;/span> &lt;span style="color:#a2f;font-weight:bold">ssl_certificate&lt;/span> &lt;span style="color:#b44">/etc/letsencrypt/live/shadiao.win/fullchain.pem&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">ssl_certificate_key&lt;/span> &lt;span style="color:#b44">/etc/letsencrypt/live/shadiao.win/privkey.pem&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">ssl_session_timeout&lt;/span> &lt;span style="color:#666">5m&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">ssl_ciphers&lt;/span> &lt;span style="color:#b44">ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4&lt;/span>; &lt;span style="color:#080;font-style:italic">#加密算法 ssl_protocols TLSv1 TLSv1.1 TLSv1.2; #安全链接可选的加密协议
@@ -364,10 +364,10 @@
 &lt;p>配置文件中增加：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>server {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listen 443 ssl;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server_name [name].shadiao.online;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server_name [name].shadiao.win;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssl_certificate /etc/letsencrypt/live/shadiao.online/fullchain.pem;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssl_certificate_key /etc/letsencrypt/live/shadiao.online/privkey.pem;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssl_certificate /etc/letsencrypt/live/shadiao.win/fullchain.pem;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssl_certificate_key /etc/letsencrypt/live/shadiao.win/privkey.pem;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssl_session_timeout 5m;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4; #加密算法
@@ -393,7 +393,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>以上完成后，最好加上 http 的自动跳转：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>server {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listen 80;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server_name xxx.shadiao.online;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server_name xxx.shadiao.win;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> location / {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> # 重定向https
