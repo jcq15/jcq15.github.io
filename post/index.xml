@@ -1,4 +1,93 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>文章归档 - 沙雕园</title><link>https://blog.shadiao.win/post/</link><description>欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。</description><language>zh-cn</language><atom:link href="https://blog.shadiao.win/post/index.xml" rel="self" type="application/rss+xml"/><item><title>如果定理可以量产，数学还剩下什么？</title><link>https://blog.shadiao.win/post/aimath/</link><guid>https://blog.shadiao.win/post/aimath/</guid><description>&lt;p>假设明天早上，你醒来，发现黎曼猜想被证明了。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>文章归档 - 沙雕园</title><link>https://blog.shadiao.win/post/</link><description>欢迎来到沙雕园。本博客要素较多，包括但不限于数学、编程、游戏、吐槽、冲塔、科普、整活。</description><language>zh-cn</language><atom:link href="https://blog.shadiao.win/post/index.xml" rel="self" type="application/rss+xml"/><item><title>人类基本科学素养与常识（草案）</title><link>https://blog.shadiao.win/post/basic-scientific-literacy/</link><guid>https://blog.shadiao.win/post/basic-scientific-literacy/</guid><pubDate>Fri, 06 Nov 2026 20:49:37 +0800</pubDate><description>&lt;p>&lt;strong>v0.1 草案｜持续完善中&lt;/strong>&lt;/p>
+&lt;p>标准制定时间：2026 年 11 月 6 日。&lt;/p>
+&lt;p>基本科学素养与常识是一个人所必须具备的基本素质。人应该对因缺乏这些素养而作出的错误判断、采取的错误行动及其后果负责。&lt;/p>
+&lt;p>对正在上学的学生，可根据其学习阶段适当放宽要求，但应在大学毕业前形成完善的科学素养。&lt;/p>
+&lt;p>以下要求包括知识与方法论两部分。数学、物理、化学、生物覆盖小学和初中的基础内容；医学、计算机与信息技术、自然地理及生活中的科学问题，应具备常识性的了解。&lt;/p>
+&lt;p>&lt;strong>掌握程度：能够定性理解基本概念，解释常见现象，并完成简单的定量计算。计算难度以教科书中的基础例题为参照，不要求达到中考难题或复杂综合题的程度。&lt;/strong> 以下各项均按这一深度要求理解。&lt;/p>
+&lt;h2 id="一科学思维与不迷信">一、科学思维与不迷信&lt;/h2>
+&lt;ol>
+&lt;li>不迷信宗教（飞天拉面神教除外）、中医、算命、星座运势、生肖运势、塔罗、风水等偏玄学内容。&lt;/li>
+&lt;li>依据证据判断，知道如何查证信息，不以少数个例代替普遍结论，区分相关与因果，了解对照实验的基本意义。&lt;/li>
+&lt;/ol>
+&lt;h2 id="二数学">二、数学&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>数与运算：&lt;/strong> 掌握整数、分数、小数、百分数、正负数和实数的基本概念与运算，理解乘方、开方、科学记数法，能够估算并判断结果是否合理。&lt;/li>
+&lt;li>&lt;strong>比例与数量关系：&lt;/strong> 掌握比、比例、百分比及常见数量关系，能计算增长率、折扣、浓度等实际问题，区分百分比与百分点。&lt;/li>
+&lt;li>&lt;strong>代数：&lt;/strong> 掌握代数式、整式、分式的基本运算，能解简单的一元一次方程、二元一次方程组、一元二次方程与一元一次不等式，并用于解决基本的实际问题。&lt;/li>
+&lt;li>&lt;strong>函数：&lt;/strong> 理解变量与函数，了解一次函数、反比例函数和二次函数的基本关系与图像，能进行简单计算，读懂数量之间的变化关系。&lt;/li>
+&lt;li>&lt;strong>几何与测量：&lt;/strong> 理解常见平面图形、全等与相似、勾股定理、圆和基本三角比，能计算常见图形与几何体的周长、面积、表面积和体积，进行基本推理并正确换算单位。&lt;/li>
+&lt;li>&lt;strong>统计与概率：&lt;/strong> 能读懂常见统计图表，理解平均数、中位数、众数和基本概率；知道样本的选择与大小会影响结论，不被截断坐标轴、偷换统计口径等图表表达误导。&lt;/li>
+&lt;/ol>
+&lt;h2 id="三物理">三、物理&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>测量与单位：&lt;/strong> 掌握长度、时间、质量、温度等基本物理量的测量与单位换算，理解测量存在误差。&lt;/li>
+&lt;li>&lt;strong>运动与力：&lt;/strong> 理解速度、惯性、重力、摩擦力、力的作用与平衡，能解释基本的运动和受力现象。&lt;/li>
+&lt;li>&lt;strong>密度、压强与浮力：&lt;/strong> 理解质量与密度的区别，掌握压强、液体压强、大气压与浮力的基本知识。&lt;/li>
+&lt;li>&lt;strong>功、能与机械：&lt;/strong> 理解功、功率、动能、势能、机械效率及简单机械，具备能量守恒与能量转化的基本认识，不相信永动机。&lt;/li>
+&lt;li>&lt;strong>热学：&lt;/strong> 区分温度、热量与内能，了解物态变化、热传递和比热容，能解释常见的吸热、放热现象。&lt;/li>
+&lt;li>&lt;strong>声与光：&lt;/strong> 了解声音的产生和传播，掌握光的直线传播、反射、折射及常见成像现象。&lt;/li>
+&lt;li>&lt;strong>电与磁：&lt;/strong> 理解电流、电压、电阻，掌握串并联电路、欧姆定律、电功率和电能，了解基本电磁现象与安全用电。&lt;/li>
+&lt;/ol>
+&lt;h2 id="四化学">四、化学&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>物质与变化：&lt;/strong> 区分纯净物与混合物、单质与化合物、物理变化与化学变化，了解常见物质的基本性质。&lt;/li>
+&lt;li>&lt;strong>微观结构：&lt;/strong> 了解分子、原子、离子和元素，理解化学式的基本含义。&lt;/li>
+&lt;li>&lt;strong>化学反应：&lt;/strong> 理解质量守恒，能读懂并配平简单化学方程式，进行初中范围内的基本计算。&lt;/li>
+&lt;li>&lt;strong>溶液与酸碱盐：&lt;/strong> 理解溶解、溶解度、溶液浓度和酸碱性的基本概念，了解常见酸、碱、盐的性质与用途。&lt;/li>
+&lt;li>&lt;strong>生活与实验：&lt;/strong> 了解空气、水、氧气、二氧化碳、常见金属与燃料，理解燃烧与灭火的基本条件，掌握基本实验操作及化学品使用常识，知道生活中常见物品的大致化学成分。&lt;/li>
+&lt;/ol>
+&lt;h2 id="五生物">五、生物&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>生命的基本结构：&lt;/strong> 了解细胞，以及细胞、组织、器官和系统之间的关系。&lt;/li>
+&lt;li>&lt;strong>人体基本功能：&lt;/strong> 了解消化、呼吸、循环、排泄、神经调节等基本过程，知道主要器官的基本功能。&lt;/li>
+&lt;li>&lt;strong>生殖、遗传与变异：&lt;/strong> 了解生殖与发育、基因、遗传和变异的基本概念。&lt;/li>
+&lt;li>&lt;strong>植物与微生物：&lt;/strong> 了解植物的光合作用、呼吸作用，以及细菌、真菌、病毒的基本区别。&lt;/li>
+&lt;li>&lt;strong>进化与生态：&lt;/strong> 了解生物进化和自然选择的基本含义，理解食物链、生态系统与生物多样性。&lt;/li>
+&lt;/ol>
+&lt;h2 id="六自然地理与地球常识">六、自然地理与地球常识&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>地球与天体：&lt;/strong> 知道地球大致呈球形，了解太阳、地球、月球的基本关系，知道地球自转、公转以及月相、日食、月食的基本含义。&lt;/li>
+&lt;li>&lt;strong>昼夜与季节：&lt;/strong> 了解昼夜更替与地球自转的关系，知道四季变化与地轴倾斜和公转有关，不能简单归因于地球离太阳远近的变化。&lt;/li>
+&lt;li>&lt;strong>地图与方位：&lt;/strong> 能辨认基本方向，理解经纬度、海拔、等高线和比例尺，能借助地图判断位置、距离与大致地形。&lt;/li>
+&lt;li>&lt;strong>世界基本地理：&lt;/strong> 知道七大洲、四大洋的名称与大致位置，对主要国家的位置有基本认识。&lt;/li>
+&lt;li>&lt;strong>时区与地方时间：&lt;/strong> 知道不同地区可能使用不同的时间，理解时差和日期变化的基本含义，能进行简单的时差换算。&lt;/li>
+&lt;li>&lt;strong>天气与气候：&lt;/strong> 了解温度、降水、湿度、气压和风的基本含义和大致成因。&lt;/li>
+&lt;li>&lt;strong>水循环：&lt;/strong> 了解蒸发、凝结、降水、地表径流与地下水的基本关系。&lt;/li>
+&lt;/ol>
+&lt;h2 id="七医学与健康常识">七、医学与健康常识&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>疾病与诊断：&lt;/strong> 区分症状、疾病与病因，知道同一种症状可能有不同原因，对于医生基于规范做出的合理决策不胡搅蛮缠。&lt;/li>
+&lt;li>&lt;strong>感染与预防：&lt;/strong> 了解细菌、病毒等病原体的基本区别，以及常见传播途径、免疫、疫苗和基本卫生措施。知道抗生素不能治疗病毒感染。&lt;/li>
+&lt;li>&lt;strong>治疗与证据：&lt;/strong> 理解判断治疗效果需要可靠证据，不能仅凭“用了以后好了”认定有效，了解自然病程、对照和安慰剂效应的基本意义。&lt;/li>
+&lt;li>&lt;strong>药物与使用：&lt;/strong> 了解常见非处方药的使用场景及注意事项，会合理用药解决简单问题，也能判断何时需要就医。&lt;/li>
+&lt;li>&lt;strong>营养与饮食：&lt;/strong> 了解蛋白质、脂肪、碳水化合物、维生素、矿物质、水和膳食纤维的基本作用，理解能量摄入、饮食多样与营养均衡，不把单一食物或营养成分当作万能的健康方案。&lt;/li>
+&lt;li>&lt;strong>日常健康管理：&lt;/strong> 了解睡眠、运动、吸烟与饮酒等因素对健康的影响，了解常见健康指标的含义，能基本读懂体检结果。&lt;/li>
+&lt;li>&lt;strong>心理健康：&lt;/strong> 对抑郁、焦虑等常见心理健康问题有基本认识，知道何时应寻求专业帮助。&lt;/li>
+&lt;li>&lt;strong>急症与求助：&lt;/strong> 能识别意识异常、呼吸困难、严重出血等明显危险信号，知道如何呼叫急救、说明位置与情况，并遵从急救调度人员的合理指导。&lt;/li>
+&lt;li>&lt;strong>基本急救：&lt;/strong> 了解心肺复苏、自动体外除颤器（AED）、气道异物梗阻、出血与烧烫伤处理的基本知识。&lt;/li>
+&lt;/ol>
+&lt;h2 id="八计算机与信息技术常识">八、计算机与信息技术常识&lt;/h2>
+&lt;ol>
+&lt;li>了解硬件、操作系统、应用程序和互联网的基本区别，知道本地文件与云端数据的区别。&lt;/li>
+&lt;li>能完成文件的查找、保存、分类、复制和备份，理解文件格式、扩展名和存储容量的基本概念。&lt;/li>
+&lt;li>能使用搜索工具查找资料，核对信息来源，区分原始来源、转述、广告与未经证实的内容。&lt;/li>
+&lt;li>了解密码、身份验证、软件权限、恶意程序和钓鱼链接等基本安全概念，具备保护账号与个人信息的基本能力。不盲目安装电脑管家类软件。&lt;/li>
+&lt;li>知道搜索结果、推荐内容和人工智能生成的回答都可能出错，需要按内容的重要程度查证。&lt;/li>
+&lt;/ol>
+&lt;h2 id="九生活常识">九、生活常识&lt;/h2>
+&lt;h3 id="1-单位与尺度">1. 单位与尺度&lt;/h3>
+&lt;ol>
+&lt;li>掌握常用公制单位及其换算，区分长度、面积、体积、质量、速度、温度、功率和能量等不同物理量。&lt;/li>
+&lt;li>对日常物体与现象的大小和量级有基本概念，例如房间高度、人体质量、汽车速度与家用电器功率，能识别明显不合理的数量。&lt;/li>
+&lt;/ol>
+&lt;h3 id="2-食品与现代技术">2. 食品与现代技术&lt;/h3>
+&lt;ol>
+&lt;li>&lt;strong>不盲目反对转基因技术：&lt;/strong> 了解其基本含义，依据具体产品、用途和安全评价判断，不因“转基因”三个字直接认定有害。&lt;/li>
+&lt;li>&lt;strong>正确认识食品添加剂：&lt;/strong> 了解其基本用途，判断时关注具体物质、使用范围、用量和安全评价，不把“含食品添加剂”直接等同于“有害”。&lt;/li>
+&lt;li>&lt;strong>区分食品添加剂与违法添加：&lt;/strong> 不把允许按规定使用的食品添加剂，与违法添加物、超范围或超限量使用混为一谈。&lt;/li>
+&lt;li>&lt;strong>区分天然与安全：&lt;/strong> 不因某物“天然”就认定安全，也不因其“人工合成”或名称陌生就认定有害，应根据具体成分、剂量和使用条件判断。&lt;/li>
+&lt;li>&lt;strong>理解食品标签：&lt;/strong> 能读懂生产日期、保质期、储存条件、配料表和营养成分表，知道这些信息各自说明什么，不能把保质期与储存条件分开理解。&lt;/li>
+&lt;/ol></description></item><item><title>如果定理可以量产，数学还剩下什么？</title><link>https://blog.shadiao.win/post/aimath/</link><guid>https://blog.shadiao.win/post/aimath/</guid><description>&lt;p>假设明天早上，你醒来，发现黎曼猜想被证明了。&lt;/p>
 &lt;p>没有数学家闭关十年，没有几百页手稿。只有一条消息：某个 AI 跑了三天，生成了一份证明，Lean 检查通过。&lt;/p>
 &lt;p>下午，另一个猜想也被解决了。&lt;/p>
 &lt;p>晚上，系统提醒：今日新增定理 114,514 条。&lt;/p>
