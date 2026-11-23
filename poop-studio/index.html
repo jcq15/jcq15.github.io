@@ -4,8 +4,12 @@
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f6f3e9;color:#352e24;font-family:"DM Sans","Microsoft YaHei",sans-serif}main{max-width:780px;margin:auto;padding:clamp(18px,4vw,36px)}header,footer,nav{display:flex;align-items:center;justify-content:space-between;gap:12px}h1{font:900 clamp(30px,6vw,50px)/1.15 serif;margin:0;letter-spacing:-.06em}p{font-size:14px;color:#675f50;margin:12px 0 22px}canvas{display:block;width:100%;aspect-ratio:1.35;border:1px solid #bcb5a4;border-radius:18px;background:#e6e1d3;touch-action:none;cursor:crosshair}footer{flex-wrap:wrap;margin-top:15px}button{font:inherit;font-size:14px;color:inherit;background:transparent;border:1px solid #c9c1af;border-radius:22px;padding:8px 16px;cursor:pointer}button[aria-pressed=true]{background:#484e34;color:white;border-color:#484e34}nav{gap:6px}button:focus-visible{outline:3px solid #788148}
 .stage{position:relative}.hand{position:absolute;pointer-events:none;font:clamp(32px,6vw,54px)/1 "Segoe UI Emoji",sans-serif;transform:translate(-42%,-4%) rotate(-18deg);transform-origin:42% 4%}.stage canvas{cursor:none}.controls{display:flex;gap:14px 24px;align-items:center;flex-wrap:wrap;margin-top:20px;padding-top:16px;border-top:1px solid #ccc3af;font-size:14px}.controls label{display:inline-flex;align-items:center;gap:6px}input{accent-color:#565f3d}input[type=color]{width:36px;height:27px}
-</style><main><header><h1>盘便研究所</h1><button id="reset">↻ 再来一坨</button></header><p>按住拖动，推开、摊薄，或者把它拢回来。</p><div class="stage"><canvas aria-label="可用手指或鼠标推抹的软便"></canvas><span class="hand" hidden aria-hidden="true">👆🏻</span></div><footer><span>指腹大小</span><nav><button data-r="9" aria-pressed="false">细</button><button data-r="15" aria-pressed="true">中</button><button data-r="23" aria-pressed="false">粗</button></nav></footer><section class="controls"><label>颜色 <input id="color" type="color" value="#5e391f"></label><label>硬度 <input id="firm" type="range" min="0" max="100" value="35"><output id="level">35%</output></label><label><input type="checkbox" value="seed" class="mix">西瓜子</label><label><input type="checkbox" value="corn" class="mix">玉米粒</label><label><input type="checkbox" value="pepper" class="mix">辣椒皮</label></section></main>
+.palette{width:100%;margin:0;padding:0;border:0;min-width:0}.palette legend{margin-bottom:8px;padding:0}.swatches{display:flex;flex-wrap:wrap;gap:6px}.swatches button,.custom{min-height:44px;padding:6px 12px;display:inline-flex;align-items:center;gap:7px}.swatches button::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--tone);border:1px solid #0003}.custom{position:relative;border:1px solid #c9c1af;border-radius:22px;cursor:pointer}.custom:focus-within{outline:3px solid #788148}.custom.selected{background:#484e34;color:white}.custom input[type=color]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.quantity{display:flex;align-items:center;gap:12px;flex-wrap:wrap;width:100%}.quantity button{min-height:44px}.quantity select{font:inherit;color:inherit;background:#fffaf0;border:1px solid #c9c1af;border-radius:12px;padding:0 9px;min-height:44px}
+.backlinks{justify-content:flex-start;margin-bottom:14px}.backlinks a{display:inline-flex;align-items:center;min-height:44px;color:#565f3d;font-size:14px}.embedded .backlinks{display:none}.embedded main{padding:12px}
+</style><main><nav class="backlinks" aria-label="返回导航"><a href="/">← 博客首页</a><a href="/games/">小游戏栏目</a></nav><header><h1>盘便研究所</h1><button id="reset">↻ 再来一坨</button></header><p>按住拖动，推开、摊薄，或者把它拢回来。</p><div class="stage"><canvas aria-label="可用手指或鼠标推抹的软便"></canvas><span class="hand" hidden aria-hidden="true">👆🏻</span></div><footer><span>指腹大小</span><nav><button data-r="9" aria-pressed="false">细</button><button data-r="15" aria-pressed="true">中</button><button data-r="23" aria-pressed="false">粗</button></nav></footer><section class="controls"><fieldset class="palette"><legend>颜色</legend><div class="swatches"><button data-color="#5e391f" style="--tone:#5e391f" aria-pressed="true">深棕</button><button data-color="#79482d" style="--tone:#79482d" aria-pressed="false">栗棕</button><button data-color="#9b723b" style="--tone:#9b723b" aria-pressed="false">黄褐</button><button data-color="#ab8054" style="--tone:#ab8054" aria-pressed="false">浅棕</button><button data-color="#686039" style="--tone:#686039" aria-pressed="false">橄榄褐</button><label class="custom">自定义<input id="color" aria-label="自定义颜色" type="color" value="#5e391f"></label></div></fieldset>
+<div class="quantity"><label>每坨便量 <select id="amount"><option value="1">小份</option><option value="1.3" selected>大份</option><option value="1.6">超大份</option></select></label><button id="add">＋ 加一坨</button></div><label>硬度 <input id="firm" type="range" min="0" max="100" value="35"><output id="level">35%</output></label><label><input type="checkbox" value="seed" class="mix">西瓜子</label><label><input type="checkbox" value="corn" class="mix">玉米粒</label><label><input type="checkbox" value="pepper" class="mix">辣椒皮</label><label><input type="checkbox" value="enoki" class="mix">金针菇</label></section></main>
 <script>
+if(window.self!==window.top)document.documentElement.classList.add('embedded');
 const canvas=document.querySelector('canvas'), W=960,H=712,N=W*H;
 canvas.width=W;canvas.height=H;
 const ctx=canvas.getContext('2d'),frame=ctx.createImageData(W,H);
@@ -20,9 +24,20 @@ function scatter(kind){
   if(height[y*W+x]>4)pieces.push({x,y,kind,angle:Math.random()*Math.PI});
  }
 }
-document.querySelector('#color').oninput=e=>{
- base=[1,3,5].map(i=>parseInt(e.target.value.slice(i,i+2),16));redraw();
-};
+const picker=document.querySelector('#color'), swatches=document.querySelectorAll('[data-color]');
+function setColor(value){
+ picker.value=value;
+ let matched=false;
+ for(const button of swatches){
+  const selected=button.dataset.color===value;
+  button.setAttribute('aria-pressed',String(selected));
+  matched ||= selected;
+ }
+ picker.parentElement.classList.toggle('selected',!matched);
+ base=[1,3,5].map(i=>parseInt(value.slice(i,i+2),16));redraw();
+}
+for(const button of swatches)button.onclick=()=>setColor(button.dataset.color);
+picker.oninput=()=>setColor(picker.value);
 document.querySelector('#firm').oninput=e=>{
  firmness=e.target.value/100;document.querySelector('#level').value=e.target.value+'%';
 };
@@ -32,20 +47,25 @@ for(const box of document.querySelectorAll('.mix'))box.onchange=()=>{
  redraw();
 };
 function noise(x,y){let k=Math.imul(x+seed,1597334677)^Math.imul(y,381201581);k=Math.imul(k^(k>>>16),2246822519);return ((k^(k>>>13))>>>0)/4294967296}
-function reset(){
- seed=Math.floor(Math.random()*100000);height.fill(0);pigment.fill(0);
+function addPile(){
+ const scale=Number(document.querySelector('#amount').value);
+ const pile=new Float32Array(N), tone=new Float32Array(N);
  // Lay a tapering rope in overlapping coils, rising towards the tip.
- const phase=noise(0,0)*.6;
+ const phase=Math.random()*1.2;
  for(let s=0;s<=720;s++){
-  const t=s/720,a=t*13.7+phase,r=156*Math.pow(1-t,.85), tip=Math.max(0,(t-.87)/.13);
-  const cx=W*.5+r*Math.cos(a)-tip*tip*18,cy=H*.55+r*.49*Math.sin(a)-76*t-28*tip;
-  const width=(40+6*Math.sin(t*10))*(1-.92*tip), top=30+24*t;
+  const t=s/720,a=t*13.7+phase,r=scale*156*Math.pow(1-t,.85), tip=Math.max(0,(t-.87)/.13);
+  const cx=W*.5+r*Math.cos(a)-tip*tip*18,cy=H*.55+r*.49*Math.sin(a)-scale*(76*t+28*tip);
+  const width=scale*(40+6*Math.sin(t*10))*(1-.92*tip), top=scale*(30+24*t);
   for(let y=Math.floor(cy-width);y<=cy+width;y++)for(let x=Math.floor(cx-width);x<=cx+width;x++){
    const d=((x-cx)**2+(y-cy)**2)/width**2;if(d>=1)continue;
    const i=y*W+x,h=top*Math.sqrt(1-d)*(1-.85*tip);
-   if(h>height[i]){height[i]=h;pigment[i]=h*(.48+.14*Math.sin(x*.19+y*.13)+.14*Math.sin(y*.33-t*8)+.24*noise(x,y))}
+   if(h>pile[i]){pile[i]=h;tone[i]=h*(.48+.14*Math.sin(x*.19+y*.13)+.14*Math.sin(y*.33-t*8)+.24*noise(x,y))}
   }
  }
+ for(let i=0;i<N;i++){height[i]+=pile[i];pigment[i]+=tone[i]}
+}
+function reset(){
+ seed=Math.floor(Math.random()*100000);height.fill(0);pigment.fill(0);addPile();
  pieces.length=0;for(const box of document.querySelectorAll('.mix:checked'))scatter(box.value);draw();
 }
 function draw(){
@@ -67,6 +87,16 @@ function draw(){
  }
  ctx.putImageData(frame,0,0);
  for(const p of pieces){
+  if(p.kind==='enoki'){
+   ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.angle);
+   for(const offset of [-2,2]){
+    ctx.beginPath();ctx.moveTo(0,8);ctx.quadraticCurveTo(offset*2,2,offset,-7);
+    ctx.lineWidth=1.8;ctx.strokeStyle='#e8d7a5';ctx.stroke();
+    ctx.beginPath();ctx.ellipse(offset,-8,2.7,1.9,0,0,2*Math.PI);
+    ctx.fillStyle='#f5eaca';ctx.fill();
+   }
+   ctx.restore();continue;
+  }
   const [rx,ry,color]=styles[p.kind];
   ctx.beginPath();ctx.ellipse(p.x,p.y,rx,ry,p.angle,0,2*Math.PI);
   ctx.fillStyle=color;ctx.fill();ctx.strokeStyle='#654329';ctx.lineWidth=.9;ctx.stroke();
@@ -93,7 +123,7 @@ function stroke(a,b){
    const side=-uy*rx+ux*ry;
    const tx=Math.max(0,Math.min(W-1,Math.round(x+6*(ux-uy*side*.8))));
    const ty=Math.max(0,Math.min(H-1,Math.round(y+6*(uy+ux*side*.8))));
-   const j=ty*W+tx,f=Math.min(.82,len/steps*.165*(1.45-firmness*1.35))*(1-d)**1.4;
+   const j=ty*W+tx,f=Math.min(.65,len/steps*.13*(1.45-firmness*1.35))*(1-d)**1.4;
    const mass=height[i]*f, color=pigment[i]*f;height[i]-=mass;height[j]+=mass;pigment[i]-=color;pigment[j]+=color;
   }
  }
@@ -109,6 +139,7 @@ canvas.onpointerdown=e=>{if(active!==null||e.button!==0)return;showHand(e);activ
 canvas.onpointermove=e=>{if(active===null||active===e.pointerId)showHand(e);if(e.pointerId!==active)return;const p=point(e);stroke(previous,p);previous=p};
 canvas.onlostpointercapture=()=>{active=null;previous=null;hand.hidden=true};
 document.querySelector('#reset').onclick=reset;
+document.querySelector('#add').onclick=()=>{addPile();redraw()};
 for(const button of document.querySelectorAll('[data-r]'))button.onclick=()=>{radius=2*Number(button.dataset.r);for(const other of document.querySelectorAll('[data-r]'))other.setAttribute('aria-pressed',String(other===button))};
 reset();
 </script></html>
