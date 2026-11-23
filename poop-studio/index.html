@@ -7,7 +7,7 @@
 .palette{width:100%;margin:0;padding:0;border:0;min-width:0}.palette legend{margin-bottom:8px;padding:0}.swatches{display:flex;flex-wrap:wrap;gap:6px}.swatches button,.custom{min-height:44px;padding:6px 12px;display:inline-flex;align-items:center;gap:7px}.swatches button::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--tone);border:1px solid #0003}.custom{position:relative;border:1px solid #c9c1af;border-radius:22px;cursor:pointer}.custom:focus-within{outline:3px solid #788148}.custom.selected{background:#484e34;color:white}.custom input[type=color]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.quantity{display:flex;align-items:center;gap:12px;flex-wrap:wrap;width:100%}.quantity button{min-height:44px}.quantity select{font:inherit;color:inherit;background:#fffaf0;border:1px solid #c9c1af;border-radius:12px;padding:0 9px;min-height:44px}
 .backlinks{justify-content:flex-start;margin-bottom:14px}.backlinks a{display:inline-flex;align-items:center;min-height:44px;color:#565f3d;font-size:14px}.embedded .backlinks{display:none}.embedded main{padding:12px}
 </style><main><nav class="backlinks" aria-label="返回导航"><a href="/">← 博客首页</a><a href="/games/">小游戏栏目</a></nav><header><h1>盘便研究所</h1><button id="reset">↻ 再来一坨</button></header><p>按住拖动，推开、摊薄，或者把它拢回来。</p><div class="stage"><canvas aria-label="可用手指或鼠标推抹的软便"></canvas><span class="hand" hidden aria-hidden="true">👆🏻</span></div><footer><span>指腹大小</span><nav><button data-r="9" aria-pressed="false">细</button><button data-r="15" aria-pressed="true">中</button><button data-r="23" aria-pressed="false">粗</button></nav></footer><section class="controls"><fieldset class="palette"><legend>颜色</legend><div class="swatches"><button data-color="#5e391f" style="--tone:#5e391f" aria-pressed="true">深棕</button><button data-color="#79482d" style="--tone:#79482d" aria-pressed="false">栗棕</button><button data-color="#9b723b" style="--tone:#9b723b" aria-pressed="false">黄褐</button><button data-color="#ab8054" style="--tone:#ab8054" aria-pressed="false">浅棕</button><button data-color="#686039" style="--tone:#686039" aria-pressed="false">橄榄褐</button><label class="custom">自定义<input id="color" aria-label="自定义颜色" type="color" value="#5e391f"></label></div></fieldset>
-<div class="quantity"><label>每坨便量 <select id="amount"><option value="1">小份</option><option value="1.3" selected>大份</option><option value="1.6">超大份</option></select></label><button id="add">＋ 加一坨</button></div><label>硬度 <input id="firm" type="range" min="0" max="100" value="35"><output id="level">35%</output></label><label><input type="checkbox" value="seed" class="mix">西瓜子</label><label><input type="checkbox" value="corn" class="mix">玉米粒</label><label><input type="checkbox" value="pepper" class="mix">辣椒皮</label><label><input type="checkbox" value="enoki" class="mix">金针菇</label></section></main>
+<div class="quantity"><label>每坨便量 <select id="amount"><option value="1">中份</option><option value="1.3" selected>大份</option><option value="1.6">超大份</option></select></label><button id="add">＋ 加一坨</button></div><label class="quantity">布里斯托便型 <select id="firm"><option value="1">1 型 · 分离硬粒</option><option value="2">2 型 · 结块硬条</option><option value="3">3 型 · 表面有裂纹的条状</option><option value="4" selected>4 型 · 光滑软条</option><option value="5">5 型 · 边缘清楚的软块</option><option value="6">6 型 · 边缘松散的糊状</option><option value="7">7 型 · 水样</option></select><small>切换便型会重新生成</small></label><label><input type="checkbox" value="seed" class="mix">西瓜子</label><label><input type="checkbox" value="corn" class="mix">玉米粒</label><label><input type="checkbox" value="pepper" class="mix">辣椒皮</label><label><input type="checkbox" value="enoki" class="mix">金针菇</label></section></main>
 <script>
 if(window.self!==window.top)document.documentElement.classList.add('embedded');
 const canvas=document.querySelector('canvas'), W=960,H=712,N=W*H;
@@ -15,13 +15,28 @@ canvas.width=W;canvas.height=H;
 const ctx=canvas.getContext('2d'),frame=ctx.createImageData(W,H);
 const height=new Float32Array(N), pigment=new Float32Array(N);
 let radius=30, previous=null, active=null, queued=false,seed=1;
-let base=[94,57,31], firmness=.35;
+let base=[94,57,31], form=4, firmness=.5;
 const pieces=[];
-const styles={seed:[2.4,5.5,'#332820'],corn:[5.4,4.3,'#eeb83e'],pepper:[2,5,'#a13c24']};
+const clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));
+function makePiece(x,y,kind){
+ const angle=Math.random()*2*Math.PI, size=.78+Math.random()*.56;
+ const p={x,y,kind,angle,size};
+ if(kind==='enoki'){
+  p.spacing=7*size;
+  p.nodes=[{x,y}];
+  const curve=(Math.random()-.5)*1.7;
+  for(let i=1;i<=9;i++){
+   const last=p.nodes[i-1], direction=angle+curve*i/9;
+   p.nodes.push({x:last.x+p.spacing*Math.cos(direction),y:last.y+p.spacing*Math.sin(direction)});
+  }
+ }
+ return p;
+}
 function scatter(kind){
- for(let n=0;n<3500 && pieces.filter(p=>p.kind===kind).length<22;n++){
+ let count=pieces.filter(p=>p.kind===kind).length;
+ for(let n=0;n<4500 && count<(kind==='enoki'?12:22);n++){
   const x=Math.floor(Math.random()*W), y=Math.floor(Math.random()*H);
-  if(height[y*W+x]>4)pieces.push({x,y,kind,angle:Math.random()*Math.PI});
+  if(height[y*W+x]>1){pieces.push(makePiece(x,y,kind));count++}
  }
 }
 const picker=document.querySelector('#color'), swatches=document.querySelectorAll('[data-color]');
@@ -38,8 +53,8 @@ function setColor(value){
 }
 for(const button of swatches)button.onclick=()=>setColor(button.dataset.color);
 picker.oninput=()=>setColor(picker.value);
-document.querySelector('#firm').oninput=e=>{
- firmness=e.target.value/100;document.querySelector('#level').value=e.target.value+'%';
+document.querySelector('#firm').onchange=e=>{
+ form=Number(e.target.value);firmness=(7-form)/6;reset();
 };
 for(const box of document.querySelectorAll('.mix'))box.onchange=()=>{
  if(box.checked)scatter(box.value);
@@ -50,17 +65,57 @@ function noise(x,y){let k=Math.imul(x+seed,1597334677)^Math.imul(y,381201581);k=
 function addPile(){
  const scale=Number(document.querySelector('#amount').value);
  const pile=new Float32Array(N), tone=new Float32Array(N);
- // Lay a tapering rope in overlapping coils, rising towards the tip.
- const phase=Math.random()*1.2;
- for(let s=0;s<=720;s++){
-  const t=s/720,a=t*13.7+phase,r=scale*156*Math.pow(1-t,.85), tip=Math.max(0,(t-.87)/.13);
-  const cx=W*.5+r*Math.cos(a)-tip*tip*18,cy=H*.55+r*.49*Math.sin(a)-scale*(76*t+28*tip);
-  const width=scale*(40+6*Math.sin(t*10))*(1-.92*tip), top=scale*(30+24*t);
-  for(let y=Math.floor(cy-width);y<=cy+width;y++)for(let x=Math.floor(cx-width);x<=cx+width;x++){
-   const d=((x-cx)**2+(y-cy)**2)/width**2;if(d>=1)continue;
-   const i=y*W+x,h=top*Math.sqrt(1-d)*(1-.85*tip);
-   if(h>pile[i]){pile[i]=h;tone[i]=h*(.48+.14*Math.sin(x*.19+y*.13)+.14*Math.sin(y*.33-t*8)+.24*noise(x,y))}
+ const phase=Math.random()*Math.PI*2, tilt=(Math.random()-.5)*.55;
+ const cos=Math.cos(tilt),sin=Math.sin(tilt);
+ // Build a continuous height field from overlapping elliptical cross sections.
+ function mound(u,v,rx,ry,peak){
+  const cx=W/2+scale*(u*cos-v*sin),cy=H/2+scale*(u*sin+v*cos);
+  rx*=scale;ry*=scale;
+  for(let y=Math.max(0,Math.floor(cy-ry));y<=Math.min(H-1,cy+ry);y++){
+   const dy=(y-cy)/ry;
+   for(let x=Math.max(0,Math.floor(cx-rx));x<=Math.min(W-1,cx+rx);x++){
+    const d=((x-cx)/rx)**2+dy*dy;
+    if(d>=1)continue;
+    const i=y*W+x,h=peak*scale*Math.sqrt(1-d);
+    if(h>pile[i])pile[i]=h;
+   }
   }
+ }
+ if(form>=2 && form<=4){
+  const steps=form===2?11:84;
+  for(let k=0;k<=steps;k++){
+   const t=k/steps, arc=Math.sin(Math.PI*t);
+   const u=(t-.5)*292, v=49*Math.sin(t*5.9+phase)+12*Math.sin(t*9+phase);
+   const width=22+24*arc+3*Math.sin(9*t+phase);
+   mound(u,v,width,width*(form===2?.88:.82),24+29*arc);
+   if(form===2)mound(u+5,v+width*.55*Math.sin(k*2),width*.68,width*.68,39+12*arc);
+  }
+ }else if(form===7){
+  mound(0,0,185,106,4);
+  for(let k=0;k<10;k++){
+   const a=phase+k*.628;
+   mound(138*Math.cos(a),72*Math.sin(a),54+18*Math.random(),38+15*Math.random(),3.5);
+  }
+ }else{
+  const count=form===1?9:form===5?6:18;
+  for(let k=0;k<count;k++){
+   const a=phase+k*2.4,r=Math.sqrt((k+.5)/count);
+   const u=150*r*Math.cos(a),v=100*r*Math.sin(a);
+   const width=(form===1?22:form===5?35:42)*(.85+.28*Math.random());
+   mound(u,v,width*1.15,width,form===1?36:form===5?24:10);
+   if(form===6)for(let j=0;j<10;j++){
+    const b=Math.random()*Math.PI*2;
+    mound(u+width*.95*Math.cos(b),v+width*.9*Math.sin(b),9+9*Math.random(),7+7*Math.random(),5);
+   }
+  }
+ }
+ for(let i=0;i<N;i++){
+  if(!pile[i])continue;
+  const x=i%W,y=Math.floor(i/W);
+  const ridge=Math.sin(x*.072+y*.031+1.5*Math.sin(y*.074+phase)+.45*Math.sin(x*.11-y*.17));
+  if(form===3)pile[i]*=1-.26*Math.exp(-ridge*ridge*105)*Math.max(0,Math.sin(y*.057+phase));
+  if(form===6)pile[i]*=.92+.08*noise(x,y);
+  tone[i]=pile[i]*(.56+.14*Math.sin(x*.09+y*.13)+.12*noise(x,y));
  }
  for(let i=0;i<N;i++){height[i]+=pile[i];pigment[i]+=tone[i]}
 }
@@ -86,20 +141,65 @@ function draw(){
   pixels[c+2]=(213+bg)*(1-opacity)+(base[2]+shade*.57)*opacity;pixels[c+3]=255;
  }
  ctx.putImageData(frame,0,0);
- for(const p of pieces){
-  if(p.kind==='enoki'){
-   ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.angle);
-   for(const offset of [-2,2]){
-    ctx.beginPath();ctx.moveTo(0,8);ctx.quadraticCurveTo(offset*2,2,offset,-7);
-    ctx.lineWidth=1.8;ctx.strokeStyle='#e8d7a5';ctx.stroke();
-    ctx.beginPath();ctx.ellipse(offset,-8,2.7,1.9,0,0,2*Math.PI);
-    ctx.fillStyle='#f5eaca';ctx.fill();
-   }
-   ctx.restore();continue;
+ for(const p of pieces)drawPiece(p);
+}
+function drawPiece(p){
+ ctx.save();
+ if(p.kind==='enoki'){
+  const nodes=p.nodes,head=nodes[0],next=nodes[1],tail=nodes[nodes.length-1];
+  ctx.beginPath();ctx.moveTo(head.x,head.y);
+  for(let i=1;i<nodes.length-1;i++){
+   const a=nodes[i],b=nodes[i+1];
+   ctx.quadraticCurveTo(a.x,a.y,(a.x+b.x)/2,(a.y+b.y)/2);
   }
-  const [rx,ry,color]=styles[p.kind];
-  ctx.beginPath();ctx.ellipse(p.x,p.y,rx,ry,p.angle,0,2*Math.PI);
-  ctx.fillStyle=color;ctx.fill();ctx.strokeStyle='#654329';ctx.lineWidth=.9;ctx.stroke();
+  ctx.lineTo(tail.x,tail.y);ctx.lineCap='round';
+  ctx.strokeStyle='#a9956e';ctx.lineWidth=3.1*p.size;ctx.stroke();
+  ctx.strokeStyle='#f5e8c7';ctx.lineWidth=1.9*p.size;ctx.stroke();
+  ctx.translate(head.x,head.y);ctx.rotate(Math.atan2(next.y-head.y,next.x-head.x)-Math.PI/2);
+  ctx.scale(p.size,p.size);ctx.beginPath();ctx.moveTo(-4,0);
+  ctx.bezierCurveTo(-4,-6,4,-6,4,0);ctx.quadraticCurveTo(0,2,-4,0);
+  ctx.fillStyle='#ead7ac';ctx.fill();ctx.restore();return;
+ }
+ ctx.translate(p.x,p.y);ctx.rotate(p.angle);ctx.scale(p.size,p.size);
+ ctx.beginPath();
+ if(p.kind==='seed'){
+  ctx.moveTo(0,-10);ctx.bezierCurveTo(2,-7,6,-2,5,4);
+  ctx.bezierCurveTo(4,11,-4,11,-5,4);ctx.bezierCurveTo(-6,0,-3,-7,0,-10);
+  ctx.fillStyle='#30251d';ctx.fill();
+  ctx.beginPath();ctx.moveTo(-.5,-7);ctx.quadraticCurveTo(-5,0,-2,6);
+  ctx.strokeStyle='#927859';ctx.lineWidth=1.1;ctx.stroke();
+ }else if(p.kind==='corn'){
+  ctx.moveTo(-7,-3);ctx.quadraticCurveTo(-8,-8,0,-8);ctx.quadraticCurveTo(9,-8,8,-2);
+  ctx.lineTo(4,6);ctx.quadraticCurveTo(0,10,-4,6);ctx.closePath();
+  const gold=ctx.createLinearGradient(0,-8,0,8);gold.addColorStop(0,'#ffe584');gold.addColorStop(.55,'#eab033');gold.addColorStop(1,'#ebe0ae');
+  ctx.fillStyle=gold;ctx.fill();ctx.beginPath();ctx.moveTo(-4,-4);ctx.quadraticCurveTo(0,-6,4,-4);
+  ctx.strokeStyle='#fff0b2';ctx.stroke();
+ }else{
+  ctx.moveTo(-3,-11);ctx.quadraticCurveTo(6,-8,3,-2);ctx.lineTo(5,3);ctx.lineTo(2,11);
+  ctx.quadraticCurveTo(-5,7,-2,1);ctx.quadraticCurveTo(0,-3,-3,-11);
+  ctx.fillStyle='#9e3525';ctx.fill();
+  ctx.beginPath();ctx.moveTo(-1,-8);ctx.quadraticCurveTo(4,-4,.5,1);ctx.lineTo(2,7);
+  ctx.strokeStyle='#e97945';ctx.lineWidth=1.3;ctx.stroke();
+ }
+ ctx.restore();
+}
+function pushPiece(p,cx,cy,ux,uy,distance){
+ function move(point){
+  const weight=1-Math.hypot(point.x-cx,point.y-cy)/radius;
+  if(weight<=0)return false;
+  point.x=clamp(point.x+ux*distance*weight,0,W-1);
+  point.y=clamp(point.y+uy*distance*weight,0,H-1);return true;
+ }
+ if(!p.nodes){move(p);return}
+ // Each point follows the finger locally. Neighbour constraints keep the stem connected.
+ let touched=false;
+ for(const node of p.nodes)if(move(node))touched=true;
+ if(!touched)return;
+ for(let pass=0;pass<4;pass++)for(let i=1;i<p.nodes.length;i++){
+  const a=p.nodes[i-1],b=p.nodes[i],dx=b.x-a.x,dy=b.y-a.y;
+  const length=Math.hypot(dx,dy)||.001,correction=.5*(length-p.spacing)/length;
+  a.x=clamp(a.x+dx*correction,0,W-1);a.y=clamp(a.y+dy*correction,0,H-1);
+  b.x=clamp(b.x-dx*correction,0,W-1);b.y=clamp(b.y-dy*correction,0,H-1);
  }
 }
 function redraw(){if(!queued){queued=true;requestAnimationFrame(draw)}}
@@ -107,12 +207,10 @@ function stroke(a,b){
  const vx=b.x-a.x,vy=b.y-a.y,len=Math.hypot(vx,vy);
  if(len<.01)return;
  const steps=Math.ceil(len/5),ux=vx/len,uy=vy/len;
+ const reach=4+5*(1-firmness);
  for(let step=1;step<=steps;step++){
   const cx=a.x+vx*step/steps,cy=a.y+vy*step/steps;
-  for(const p of pieces){
-   const d=Math.hypot(p.x-cx,p.y-cy)/radius;
-   if(d<1){const push=len/steps*(1-d)*(1-.85*firmness);p.x=Math.max(0,Math.min(W-1,p.x+ux*push));p.y=Math.max(0,Math.min(H-1,p.y+uy*push));}
-  }
+  for(const p of pieces)pushPiece(p,cx,cy,ux,uy,len/steps*(1-.65*firmness));
   // Visit downstream cells first so transferred mass only moves once per step.
   const left=Math.max(0,Math.floor(cx-radius)),right=Math.min(W-1,Math.ceil(cx+radius));
   const upper=Math.max(0,Math.floor(cy-radius)),lower=Math.min(H-1,Math.ceil(cy+radius));
@@ -121,8 +219,8 @@ function stroke(a,b){
    if(height[i]<.012)continue;
    const rx=(x-cx)/radius,ry=(y-cy)/radius,d=rx*rx+ry*ry;if(d>=1)continue;
    const side=-uy*rx+ux*ry;
-   const tx=Math.max(0,Math.min(W-1,Math.round(x+6*(ux-uy*side*.8))));
-   const ty=Math.max(0,Math.min(H-1,Math.round(y+6*(uy+ux*side*.8))));
+   const tx=Math.max(0,Math.min(W-1,Math.round(x+reach*(ux-uy*side*.8))));
+   const ty=Math.max(0,Math.min(H-1,Math.round(y+reach*(uy+ux*side*.8))));
    const j=ty*W+tx,f=Math.min(.65,len/steps*.13*(1.45-firmness*1.35))*(1-d)**1.4;
    const mass=height[i]*f, color=pigment[i]*f;height[i]-=mass;height[j]+=mass;pigment[i]-=color;pigment[j]+=color;
   }
